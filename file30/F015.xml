@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<root>
+  <rec1 KOD_OK="1" OKRNAME="Центральный федеральный округ" DATEBEG="01.01.2011" DATEEND="" />
+  <rec2 KOD_OK="2" OKRNAME="Южный федеральный округ" DATEBEG="01.01.2011" DATEEND="" />
+  <rec3 KOD_OK="3" OKRNAME="Северо-Западный федеральный округ" DATEBEG="01.01.2011" DATEEND="" />
+  <rec4 KOD_OK="4" OKRNAME="Дальневосточный федеральный округ" DATEBEG="01.01.2011" DATEEND="" />
+  <rec5 KOD_OK="5" OKRNAME="Сибирский федеральный округ" DATEBEG="01.01.2011" DATEEND="" />
+  <rec6 KOD_OK="6" OKRNAME="Уральский федеральный округ" DATEBEG="01.01.2011" DATEEND="" />
+  <rec7 KOD_OK="7" OKRNAME="Приволжский федеральный округ" DATEBEG="01.01.2011" DATEEND="" />
+  <rec8 KOD_OK="8" OKRNAME="Северо-Кавказский федеральный округ" DATEBEG="01.01.2011" DATEEND="" />
+  <rec9 KOD_OK="0" OKRNAME="-" DATEBEG="01.01.2011" DATEEND="" />
+</root>

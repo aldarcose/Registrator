@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<root>
+  <item1 IDIZ="101" IZNAME="Выздоровление" DL_USLOV="1" DATEBEG="01.01.2011" DATEEND="" />
+  <item2 IDIZ="102" IZNAME="Улучшение" DL_USLOV="1" DATEBEG="01.01.2011" DATEEND="" />
+  <item3 IDIZ="103" IZNAME="Без перемен" DL_USLOV="1" DATEBEG="01.01.2011" DATEEND="" />
+  <item4 IDIZ="104" IZNAME="Ухудшение" DL_USLOV="1" DATEBEG="01.01.2011" DATEEND="" />
+  <item5 IDIZ="201" IZNAME="Выздоровление" DL_USLOV="2" DATEBEG="01.01.2011" DATEEND="" />
+  <item6 IDIZ="202" IZNAME="Улучшение" DL_USLOV="2" DATEBEG="01.01.2011" DATEEND="" />
+  <item7 IDIZ="203" IZNAME="Без перемен" DL_USLOV="2" DATEBEG="01.01.2011" DATEEND="" />
+  <item8 IDIZ="204" IZNAME="Ухудшение" DL_USLOV="2" DATEBEG="01.01.2011" DATEEND="" />
+  <item9 IDIZ="301" IZNAME="Выздоровление" DL_USLOV="3" DATEBEG="01.01.2011" DATEEND="" />
+  <item10 IDIZ="302" IZNAME="Ремиссия" DL_USLOV="3" DATEBEG="01.01.2011" DATEEND="" />
+  <item11 IDIZ="303" IZNAME="Улучшение" DL_USLOV="3" DATEBEG="01.01.2011" DATEEND="" />
+  <item12 IDIZ="304" IZNAME="Без перемен" DL_USLOV="3" DATEBEG="01.01.2011" DATEEND="" />
+  <item13 IDIZ="305" IZNAME="Ухудшение" DL_USLOV="3" DATEBEG="01.01.2011" DATEEND="" />
+  <item14 IDIZ="401" IZNAME="Улучшение" DL_USLOV="4" DATEBEG="01.01.2011" DATEEND="" />
+  <item15 IDIZ="402" IZNAME="Без эффекта" DL_USLOV="4" DATEBEG="01.01.2011" DATEEND="" />
+  <item16 IDIZ="403" IZNAME="Ухудшение" DL_USLOV="4" DATEBEG="01.01.2011" DATEEND="" />
+  <item17 IDIZ="306" IZNAME="Осмотр" DL_USLOV="3" DATEBEG="23.01.2012" DATEEND="" />
+</root>

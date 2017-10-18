@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Views Id="Views">
+    <DetailView Id="Sluch_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="Sluch" Caption="Случай">
+              <LayoutGroup Id="Sluch_col2" Caption="Sluch_col2" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="Usls_Group" Caption="Услуги" />
+        </LayoutGroup>
+      </Layout>
+      <Items Id="Items">
+        <PropertyEditor Id="FOR_POM" Caption="Форма помощи" />
+        <PropertyEditor Id="NPR_MO" Caption="Направившее МО" />
+        <PropertyEditor Id="USL_OK" Caption="Услуга" />
+      </Items>
+    </DetailView>
+    <ListView Id="Sluch_Usls_ListView">
+      <Columns Id="Columns">
+        <ColumnInfo Id="DS" Caption="Диагноз" />
+        <ColumnInfo Id="CodeUsl" Caption="Услуга" />
+        <ColumnInfo Id="DateIn" Caption="Дата начала" />
+        <ColumnInfo Id="DateOut" Caption="Дата окончания" />
+        <ColumnInfo Id="CODE_MD" Caption="Доктор" />
+      </Columns>
+    </ListView>
+    <DetailView Id="Usl_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="Usl" Caption="Usl">
+              <LayoutGroup Id="Usl_col2" Caption="Usl_col2" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+      <Items Id="Items">
+        <PropertyEditor Id="CODE_MD" Caption="Врач" />
+        <PropertyEditor Id="CodeUsl" Caption="Услуга" />
+        <PropertyEditor Id="DateIn" Caption="Дата начала" />
+        <PropertyEditor Id="DateOut" Caption="Дата окончания" />
+        <PropertyEditor Id="DS" Caption="Диагноз" />
+      </Items>
+    </DetailView>
+  </Views>
+  <BOModel Id="BOModel">
+    <Class Name="Registrator.Module.BusinessObjects.Sluch" Caption="Случай">
+      <OwnMembers Id="OwnMembers">
+        <Member Name="CelPos" Caption="Цель посещения" />
+        <Member Name="Date" Caption="Дата" />
+        <Member Name="Diagnos" Caption="Диагноз" />
+      </OwnMembers>
+    </Class>
+  </BOModel>
+  <NavigationItems Id="NavigationItems">
+    <Items Id="Items">
+      <Item Id="Default">
+        <Items Id="Items">
+          <Item Id="Sluch_ListView" Caption="Случаи" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+  <Localization Id="Localization">
+    <LocalizationGroup Name="Enums">
+      <LocalizationGroup Name="Registrator.Module.BusinessObjects.DetProfile" Value="Признак детского профиля">
+        <LocalizationItem Name="No" Value="Нет" />
+        <LocalizationItem Name="Yes" Value="Да" />
+      </LocalizationGroup>
+      <LocalizationGroup Name="Registrator.Module.BusinessObjects.Extr" Value="Направление (госпитализация)">
+        <LocalizationItem Name="Extra" Value="Экстренная" />
+        <LocalizationItem Name="Plan" Value="Плановая" />
+      </LocalizationGroup>
+    </LocalizationGroup>
+  </Localization>
+</Application>

@@ -1,0 +1,26 @@
+<?xml version="1.0" standalone="yes"?>
+<DATAPACKET Version="2.0">
+<METADATA>
+<FIELDS>
+<FIELD FieldName="kateg_lgot_id" DisplayLabel="kateg_lgot_id" FieldType="Integer" FieldClass="TField"/>
+<FIELD FieldName="kateg_lgot" DisplayLabel="kateg_lgot" FieldType="String" FieldClass="TField"/>
+</FIELDS>
+</METADATA>
+<ROWDATA>
+<ROW kateg_lgot_id="1" kateg_lgot="Инвалиды"/>
+<ROW kateg_lgot_id="2" kateg_lgot="Инвалиды&#160;детства"/>
+<ROW kateg_lgot_id="3" kateg_lgot="Инвалиды&#160;ВОВ"/>
+<ROW kateg_lgot_id="4" kateg_lgot="Инвалиды-участники&#160;ВОВ"/>
+<ROW kateg_lgot_id="5" kateg_lgot="Участники&#160;ВОВ"/>
+<ROW kateg_lgot_id="6" kateg_lgot="Войны-интернационалисты"/>
+<ROW kateg_lgot_id="7" kateg_lgot="Другие&#160;ветераны"/>
+<ROW kateg_lgot_id="8" kateg_lgot="Узники&#160;концлагерей"/>
+<ROW kateg_lgot_id="9" kateg_lgot="Ветераны&#160;труда"/>
+<ROW kateg_lgot_id="10" kateg_lgot="Чернобыльцы"/>
+<ROW kateg_lgot_id="11" kateg_lgot="Коренное&#160;население"/>
+<ROW kateg_lgot_id="12" kateg_lgot="Дети-сироты"/>
+<ROW kateg_lgot_id="13" kateg_lgot="Многодетные&#160;матери"/>
+<ROW kateg_lgot_id="14" kateg_lgot="Инвалиды&#160;труда"/>
+<ROW kateg_lgot_id="15" kateg_lgot="Репpессиpованные"/>
+</ROWDATA>
+</DATAPACKET>

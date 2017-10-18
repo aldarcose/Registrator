@@ -1,0 +1,52 @@
+<?xml version="1.0" standalone="yes"?>
+<DATAPACKET Version="2.0">
+<METADATA>
+<FIELDS>
+<FIELD FieldName="id" DisplayLabel="id" FieldType="Integer" FieldClass="TField"/>
+<FIELD FieldName="name" DisplayLabel="name" FieldType="Unknown" FieldClass="TField"/>
+<FIELD FieldName="code" DisplayLabel="code" FieldType="Unknown" FieldClass="TField"/>
+<FIELD FieldName="lpu_id" DisplayLabel="lpu_id" FieldType="String" FieldClass="TField"/>
+<FIELD FieldName="date_vnes_inf" DisplayLabel="date_vnes_inf" FieldType="String" FieldClass="TField"/>
+<FIELD FieldName="operator_id" DisplayLabel="operator_id" FieldType="Integer" FieldClass="TField"/>
+<FIELD FieldName="pocket_id" DisplayLabel="pocket_id" FieldType="Integer" FieldClass="TField"/>
+<FIELD FieldName="sort" DisplayLabel="sort" FieldType="Integer" FieldClass="TField"/>
+<FIELD FieldName="age_from" DisplayLabel="age_from" FieldType="Integer" FieldClass="TField"/>
+<FIELD FieldName="age_for" DisplayLabel="age_for" FieldType="Integer" FieldClass="TField"/>
+<FIELD FieldName="spolref" DisplayLabel="spolref" FieldType="Unknown" FieldClass="TField"/>
+<FIELD FieldName="swconref" DisplayLabel="swconref" FieldType="Unknown" FieldClass="TField"/>
+<FIELD FieldName="sstomref" DisplayLabel="sstomref" FieldType="Unknown" FieldClass="TField"/>
+<FIELD FieldName="vid_obsl" DisplayLabel="vid_obsl" FieldType="Integer" FieldClass="TField"/>
+<FIELD FieldName="consult_quota" DisplayLabel="consult_quota" FieldType="Float" FieldClass="TField"/>
+<FIELD FieldName="hosp_quota" DisplayLabel="hosp_quota" FieldType="Float" FieldClass="TField"/>
+</FIELDS>
+</METADATA>
+<ROWDATA>
+<ROW id="101" name="Теpапия&#160;1" code="001" lpu_id="03001" date_vnes_inf="2014-01-17&#160;14:56:10.073659+09" operator_id="123456" pocket_id="null" sort="0" age_from="0" age_for="200" spolref="{2301001}" swconref="null" sstomref="null" vid_obsl="null" consult_quota="null" hosp_quota="null"/>
+<ROW id="102" name="Терапия&#160;2" code="001" lpu_id="03001" date_vnes_inf="2014-01-17&#160;14:56:12.857946+09" operator_id="123456" pocket_id="null" sort="0" age_from="0" age_for="200" spolref="{2301001}" swconref="null" sstomref="null" vid_obsl="null" consult_quota="null" hosp_quota="null"/>
+<ROW id="103" name="Терапия&#160;3" code="001" lpu_id="03001" date_vnes_inf="2014-01-17&#160;14:56:15.110515+09" operator_id="123456" pocket_id="null" sort="0" age_from="0" age_for="200" spolref="{2301001}" swconref="null" sstomref="null" vid_obsl="null" consult_quota="null" hosp_quota="null"/>
+<ROW id="104" name="Терапия&#160;4" code="001" lpu_id="03001" date_vnes_inf="2014-01-17&#160;14:56:18.8756+09" operator_id="123456" pocket_id="null" sort="0" age_from="0" age_for="200" spolref="{2301001}" swconref="null" sstomref="null" vid_obsl="null" consult_quota="null" hosp_quota="null"/>
+<ROW id="105" name="Спец.служба&#160;для&#160;взрослых" code="001" lpu_id="03001" date_vnes_inf="2014-01-17&#160;14:56:23.660074+09" operator_id="123456" pocket_id="null" sort="0" age_from="17" age_for="200" spolref="{2301001}" swconref="null" sstomref="null" vid_obsl="null" consult_quota="null" hosp_quota="null"/>
+<ROW id="106" name="ОВЛ&#160;(взр.)" code="080" lpu_id="03001" date_vnes_inf="2013-06-06&#160;16:03:52.676257+09" operator_id="123456" pocket_id="null" sort="0" age_from="0" age_for="200" spolref="{2301001}" swconref="null" sstomref="null" vid_obsl="null" consult_quota="null" hosp_quota="null"/>
+<ROW id="107" name="Проф.осмотр" code="001" lpu_id="03001" date_vnes_inf="2014-01-17&#160;14:56:21.326219+09" operator_id="123456" pocket_id="null" sort="0" age_from="0" age_for="200" spolref="{2301001}" swconref="null" sstomref="null" vid_obsl="null" consult_quota="null" hosp_quota="null"/>
+<ROW id="108" name="ОВЛ&#160;(взр.)&#160;гинекологич" code="080" lpu_id="03001" date_vnes_inf="2013-06-06&#160;16:03:43.284937+09" operator_id="123456" pocket_id="null" sort="0" age_from="0" age_for="200" spolref="{2301001}" swconref="null" sstomref="null" vid_obsl="null" consult_quota="null" hosp_quota="null"/>
+<ROW id="201" name="Педиатрия&#160;1" code="100" lpu_id="03001" date_vnes_inf="2013-06-06&#160;15:50:37.210197+09" operator_id="123456" pocket_id="null" sort="0" age_from="0" age_for="200" spolref="{2301001}" swconref="null" sstomref="null" vid_obsl="null" consult_quota="null" hosp_quota="null"/>
+<ROW id="202" name="Педиатрия&#160;2" code="100" lpu_id="03001" date_vnes_inf="2013-06-06&#160;15:50:40.721784+09" operator_id="123456" pocket_id="null" sort="0" age_from="0" age_for="200" spolref="{2301001}" swconref="null" sstomref="null" vid_obsl="null" consult_quota="null" hosp_quota="null"/>
+<ROW id="203" name="Педиатрия&#160;3" code="100" lpu_id="03001" date_vnes_inf="2013-06-06&#160;15:50:45.697547+09" operator_id="123456" pocket_id="null" sort="0" age_from="0" age_for="200" spolref="{2301001}" swconref="null" sstomref="null" vid_obsl="null" consult_quota="null" hosp_quota="null"/>
+<ROW id="204" name="Спец.отделение&#160;для&#160;детей" code="100" lpu_id="03001" date_vnes_inf="2013-07-08&#160;10:19:09.442069+09" operator_id="123456" pocket_id="null" sort="0" age_from="0" age_for="18" spolref="{2301001}" swconref="null" sstomref="null" vid_obsl="null" consult_quota="null" hosp_quota="null"/>
+<ROW id="205" name="ОВЛ&#160;(дет.)&#160;педиатрич" code="180" lpu_id="03001" date_vnes_inf="2013-06-06&#160;16:03:48.492524+09" operator_id="123456" pocket_id="null" sort="0" age_from="0" age_for="200" spolref="{2301001}" swconref="null" sstomref="null" vid_obsl="null" consult_quota="null" hosp_quota="null"/>
+<ROW id="206" name="ДШО" code="100" lpu_id="03001" date_vnes_inf="2013-06-06&#160;15:50:49.785246+09" operator_id="123456" pocket_id="null" sort="0" age_from="0" age_for="200" spolref="{2301001}" swconref="null" sstomref="null" vid_obsl="null" consult_quota="null" hosp_quota="null"/>
+<ROW id="301" name="Женская&#160;консультация" code="001" lpu_id="03001" date_vnes_inf="2014-01-17&#160;14:56:30.035277+09" operator_id="123456" pocket_id="null" sort="0" age_from="18" age_for="200" spolref="{2301001}" swconref="null" sstomref="null" vid_obsl="null" consult_quota="null" hosp_quota="null"/>
+<ROW id="401" name="ВСП" code="001" lpu_id="03001" date_vnes_inf="2014-04-22&#160;14:28:06.447293+09" operator_id="2469" pocket_id="null" sort="0" age_from="0" age_for="200" spolref="{2308011,2301001}" swconref="null" sstomref="null" vid_obsl="null" consult_quota="null" hosp_quota="null"/>
+<ROW id="501" name="Лабоpатоpия" code="090" lpu_id="03001" date_vnes_inf="2013-06-06&#160;16:04:03.235392+09" operator_id="123456" pocket_id="null" sort="0" age_from="0" age_for="200" spolref="{2301001}" swconref="null" sstomref="null" vid_obsl="null" consult_quota="null" hosp_quota="null"/>
+<ROW id="1001" name="Травмпункт" code="001" lpu_id="03001" date_vnes_inf="2014-01-17&#160;14:56:50.020383+09" operator_id="123456" pocket_id="null" sort="0" age_from="0" age_for="200" spolref="{2301001}" swconref="null" sstomref="null" vid_obsl="null" consult_quota="null" hosp_quota="null"/>
+<ROW id="1002" name="стационар&#160;на&#160;дому" code="080" lpu_id="03001" date_vnes_inf="2013-06-06&#160;15:51:16.375408+09" operator_id="123456" pocket_id="null" sort="0" age_from="0" age_for="200" spolref="{2301001}" swconref="null" sstomref="null" vid_obsl="null" consult_quota="null" hosp_quota="null"/>
+<ROW id="2001" name="Эндоскопический&#160;центр" code="090" lpu_id="03001" date_vnes_inf="2013-06-06&#160;16:03:23.910461+09" operator_id="123456" pocket_id="null" sort="0" age_from="0" age_for="200" spolref="{2301001}" swconref="null" sstomref="null" vid_obsl="null" consult_quota="null" hosp_quota="null"/>
+<ROW id="9001" name="ОВЛ&#160;не&#160;дн&#160;стац" code="080" lpu_id="03001" date_vnes_inf="2013-06-06&#160;16:03:37.709406+09" operator_id="123456" pocket_id="null" sort="0" age_from="0" age_for="200" spolref="{2301001}" swconref="null" sstomref="null" vid_obsl="null" consult_quota="null" hosp_quota="null"/>
+<ROW id="9002" name="Рентгенотделение" code="090" lpu_id="03001" date_vnes_inf="2013-06-06&#160;16:04:14.738471+09" operator_id="123456" pocket_id="null" sort="0" age_from="0" age_for="200" spolref="{2301001}" swconref="null" sstomref="null" vid_obsl="null" consult_quota="null" hosp_quota="null"/>
+<ROW id="9003" name="Администрация" code="001" lpu_id="03001" date_vnes_inf="2014-01-17&#160;14:56:52.97346+09" operator_id="123456" pocket_id="null" sort="0" age_from="0" age_for="200" spolref="{2301001}" swconref="null" sstomref="null" vid_obsl="null" consult_quota="null" hosp_quota="null"/>
+<ROW id="9004" name="Амбулатория&#160;п.Сокол" code="001" lpu_id="03001" date_vnes_inf="2014-01-17&#160;14:56:55.332659+09" operator_id="123456" pocket_id="null" sort="0" age_from="18" age_for="200" spolref="{2308011,2301001}" swconref="null" sstomref="null" vid_obsl="null" consult_quota="null" hosp_quota="null"/>
+<ROW id="203001" name="Неотложка" code="001" lpu_id="03001" date_vnes_inf="2014-01-17&#160;14:56:57.786283+09" operator_id="123456" pocket_id="null" sort="0" age_from="0" age_for="200" spolref="{2301001}" swconref="null" sstomref="null" vid_obsl="null" consult_quota="null" hosp_quota="null"/>
+<ROW id="303001" name="Дневной&#160;стационар" code="080" lpu_id="03001" date_vnes_inf="2013-06-06&#160;16:03:33.806022+09" operator_id="123456" pocket_id="null" sort="0" age_from="0" age_for="200" spolref="{2301001}" swconref="null" sstomref="null" vid_obsl="null" consult_quota="null" hosp_quota="null"/>
+<ROW id="603001" name="Женская&#160;консультация" code="100" lpu_id="03001" date_vnes_inf="2013-06-06&#160;17:26:09.469106+09" operator_id="123456" pocket_id="null" sort="0" age_from="0" age_for="17" spolref="{2301001}" swconref="null" sstomref="null" vid_obsl="null" consult_quota="null" hosp_quota="null"/>
+</ROWDATA>
+</DATAPACKET>

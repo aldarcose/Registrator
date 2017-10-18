@@ -1,0 +1,87 @@
+<?xml version="1.0" standalone="yes"?>
+<DATAPACKET Version="2.0">
+<METADATA>
+<FIELDS>
+<FIELD FieldName="uchactok_id" DisplayLabel="uchactok_id" FieldType="Integer" FieldClass="TField"/>
+<FIELD FieldName="uchactok" DisplayLabel="uchactok" FieldType="Unknown" FieldClass="TField"/>
+<FIELD FieldName="doctor_id" DisplayLabel="doctor_id" FieldType="Integer" FieldClass="TField"/>
+<FIELD FieldName="fio" DisplayLabel="fio" FieldType="Unknown" FieldClass="TField"/>
+<FIELD FieldName="otdel" DisplayLabel="otdel" FieldType="Unknown" FieldClass="TField"/>
+<FIELD FieldName="full_doctor_id" DisplayLabel="full_doctor_id" FieldType="Integer" FieldClass="TField"/>
+<FIELD FieldName="otdel_id" DisplayLabel="otdel_id" FieldType="Integer" FieldClass="TField"/>
+</FIELDS>
+</METADATA>
+<ROWDATA>
+<ROW uchactok_id="1860010" uchactok="37-й&#160;ВСП" doctor_id="1906" fio="Цыбикжапова&#160;А.Б." otdel="Амбулатория&#160;п.Сокол" full_doctor_id="1906" otdel_id="9004"/>
+<ROW uchactok_id="1870010" uchactok="38-й&#160;ВСП" doctor_id="459" fio="Цыренжапова&#160;Ж.И." otdel="Амбулатория&#160;п.Сокол" full_doctor_id="459" otdel_id="9004"/>
+<ROW uchactok_id="1890010" uchactok="40-й&#160;ВСП" doctor_id="1906" fio="Цыбикжапова&#160;А.Б." otdel="ВСП" full_doctor_id="1906" otdel_id="401"/>
+<ROW uchactok_id="1900010" uchactok="41-й&#160;ВСП" doctor_id="174" fio="Птицына&#160;С.Ц." otdel="ВСП" full_doctor_id="174" otdel_id="401"/>
+<ROW uchactok_id="1910010" uchactok="42-й&#160;ВСП" doctor_id="456" fio="Суходаев&#160;В.Н." otdel="ВСП" full_doctor_id="456" otdel_id="401"/>
+<ROW uchactok_id="1920010" uchactok="43-й&#160;ВСП" doctor_id="455" fio="Тайсаева&#160;О.Д." otdel="ВСП" full_doctor_id="455" otdel_id="401"/>
+<ROW uchactok_id="1360010" uchactok="1-й&#160;Акушерско-гинекологический" doctor_id="513" fio="Цыремпилова&#160;Л.П." otdel="Женская&#160;консультация" full_doctor_id="513" otdel_id="301"/>
+<ROW uchactok_id="1370010" uchactok="2-й&#160;Акушерско-гинекологический" doctor_id="1929" fio="Бумбошкина&#160;И.В." otdel="Женская&#160;консультация" full_doctor_id="1929" otdel_id="301"/>
+<ROW uchactok_id="1380010" uchactok="3-й&#160;Акушерско-гинекологический" doctor_id="2084" fio="Батуева&#160;И.И." otdel="Женская&#160;консультация" full_doctor_id="2084" otdel_id="301"/>
+<ROW uchactok_id="1390010" uchactok="4-й&#160;Акушерско-гинекологический" doctor_id="100" fio="Намсараева&#160;Г.Н." otdel="Женская&#160;консультация" full_doctor_id="100" otdel_id="301"/>
+<ROW uchactok_id="1400010" uchactok="5-й&#160;Акушерско-гинекологический" doctor_id="1213" fio="Дарханова&#160;С.Д." otdel="Женская&#160;консультация" full_doctor_id="1213" otdel_id="301"/>
+<ROW uchactok_id="1410010" uchactok="6-й&#160;Акушерско-гинекологический" doctor_id="null" fio="null" otdel="Женская&#160;консультация" full_doctor_id="null" otdel_id="301"/>
+<ROW uchactok_id="1420010" uchactok="7-й&#160;Акушерско-гинекологический" doctor_id="1837" fio="Асанова&#160;В.В." otdel="Женская&#160;консультация" full_doctor_id="1837" otdel_id="301"/>
+<ROW uchactok_id="1430010" uchactok="8-й&#160;Акушерско-гинекологический" doctor_id="1959" fio="Богданова&#160;Г.С." otdel="Женская&#160;консультация" full_doctor_id="1959" otdel_id="301"/>
+<ROW uchactok_id="1440010" uchactok="9-й&#160;Акушерско-гинекологический" doctor_id="825" fio="Галсанова&#160;О.Ц." otdel="Женская&#160;консультация" full_doctor_id="825" otdel_id="301"/>
+<ROW uchactok_id="1450010" uchactok="10-й&#160;Акушерско-гинекологический" doctor_id="null" fio="null" otdel="Женская&#160;консультация" full_doctor_id="null" otdel_id="301"/>
+<ROW uchactok_id="1340010" uchactok="4-й&#160;Педиатрический" doctor_id="2059" fio="Батуева&#160;С.Б." otdel="Педиатрия&#160;1" full_doctor_id="2059" otdel_id="201"/>
+<ROW uchactok_id="1460010" uchactok="1-й&#160;Педиатрический" doctor_id="450" fio="Парфенова&#160;Т.А." otdel="Педиатрия&#160;1" full_doctor_id="450" otdel_id="201"/>
+<ROW uchactok_id="1470010" uchactok="2-й&#160;Педиатрический" doctor_id="447" fio="Цыренова&#160;Н.П." otdel="Педиатрия&#160;1" full_doctor_id="447" otdel_id="201"/>
+<ROW uchactok_id="1480010" uchactok="3-й&#160;Педиатрический" doctor_id="2595" fio="Максимова&#160;Т.А." otdel="Педиатрия&#160;1" full_doctor_id="2595" otdel_id="201"/>
+<ROW uchactok_id="1490010" uchactok="5-й&#160;Педиатрический" doctor_id="692" fio="Васильева&#160;С.Ц." otdel="Педиатрия&#160;1" full_doctor_id="692" otdel_id="201"/>
+<ROW uchactok_id="1500010" uchactok="6-й&#160;Педиатрический" doctor_id="2133" fio="Гомбожапова&#160;Е.Б." otdel="Педиатрия&#160;1" full_doctor_id="2133" otdel_id="201"/>
+<ROW uchactok_id="1930010" uchactok="9-й&#160;Педиатрический" doctor_id="191" fio="Баторов&#160;В.К." otdel="Педиатрия&#160;1" full_doctor_id="191" otdel_id="201"/>
+<ROW uchactok_id="20203001" uchactok="7-й&#160;Педиатрический" doctor_id="2180" fio="Мадасова&#160;Н.Г." otdel="Педиатрия&#160;1" full_doctor_id="2180" otdel_id="201"/>
+<ROW uchactok_id="1520010" uchactok="10-й&#160;Педиатрический" doctor_id="77" fio="Алексеева&#160;Л.Я." otdel="Педиатрия&#160;2" full_doctor_id="77" otdel_id="202"/>
+<ROW uchactok_id="1530010" uchactok="11-й&#160;Педиатрический" doctor_id="2126" fio="Ешиева&#160;Л.В." otdel="Педиатрия&#160;2" full_doctor_id="2126" otdel_id="202"/>
+<ROW uchactok_id="1540010" uchactok="12-й&#160;Педиатрический" doctor_id="685" fio="Ханхараева&#160;А.С." otdel="Педиатрия&#160;2" full_doctor_id="685" otdel_id="202"/>
+<ROW uchactok_id="1550010" uchactok="13-й&#160;Педиатрический" doctor_id="2546" fio="Балданова&#160;Б.С." otdel="Педиатрия&#160;2" full_doctor_id="2546" otdel_id="202"/>
+<ROW uchactok_id="1560010" uchactok="15-й&#160;Педиатрический" doctor_id="686" fio="Гомбоева&#160;Х.Б." otdel="Педиатрия&#160;2" full_doctor_id="686" otdel_id="202"/>
+<ROW uchactok_id="1580010" uchactok="15а&#160;Педиатрический" doctor_id="140" fio="Батышева&#160;О.А." otdel="Педиатрия&#160;2" full_doctor_id="140" otdel_id="202"/>
+<ROW uchactok_id="20403001" uchactok="14-й&#160;Педиатрический" doctor_id="2132" fio="Нанзатова&#160;М.Д." otdel="Педиатрия&#160;2" full_doctor_id="2132" otdel_id="202"/>
+<ROW uchactok_id="20603001" uchactok="16-й&#160;Педиатрический" doctor_id="1874" fio="Гомбодоржиев&#160;Б.Ш." otdel="Педиатрия&#160;2" full_doctor_id="1874" otdel_id="202"/>
+<ROW uchactok_id="1570010" uchactok="31-й&#160;Педиатрический" doctor_id="2545" fio="Богданова&#160;Н.А." otdel="Педиатрия&#160;3" full_doctor_id="2545" otdel_id="203"/>
+<ROW uchactok_id="1590010" uchactok="32-й&#160;Педиатрический" doctor_id="1365" fio="Жердецкая&#160;Н.В." otdel="Педиатрия&#160;3" full_doctor_id="1365" otdel_id="203"/>
+<ROW uchactok_id="1600010" uchactok="33-й&#160;Педиатрический" doctor_id="382" fio="Верхотина&#160;О.В." otdel="Педиатрия&#160;3" full_doctor_id="382" otdel_id="203"/>
+<ROW uchactok_id="1610010" uchactok="34-й&#160;Педиатрический" doctor_id="null" fio="null" otdel="Педиатрия&#160;3" full_doctor_id="null" otdel_id="203"/>
+<ROW uchactok_id="1620010" uchactok="35-й&#160;Педиатрический" doctor_id="2283" fio="Мельникова&#160;Л.И." otdel="Педиатрия&#160;3" full_doctor_id="2283" otdel_id="203"/>
+<ROW uchactok_id="1960010" uchactok="36-й&#160;Педиатрический" doctor_id="2436" fio="Валеева&#160;Г.Р." otdel="Педиатрия&#160;3" full_doctor_id="2436" otdel_id="203"/>
+<ROW uchactok_id="1330010" uchactok="5-й&#160;Терапевтический" doctor_id="9150" fio="Эрдыниева&#160;Е.Ц." otdel="Теpапия&#160;1" full_doctor_id="9150" otdel_id="101"/>
+<ROW uchactok_id="1350010" uchactok="4-й&#160;Терапевтический" doctor_id="2615" fio="Дамбиева&#160;Н.Е." otdel="Теpапия&#160;1" full_doctor_id="2615" otdel_id="101"/>
+<ROW uchactok_id="1630010" uchactok="6-й&#160;Терапевтический" doctor_id="739" fio="Мадаева&#160;Л.А." otdel="Теpапия&#160;1" full_doctor_id="739" otdel_id="101"/>
+<ROW uchactok_id="1640010" uchactok="7-й&#160;Терапевтический" doctor_id="1096" fio="Ламажапова&#160;Г.Г." otdel="Теpапия&#160;1" full_doctor_id="1096" otdel_id="101"/>
+<ROW uchactok_id="1650010" uchactok="10-й&#160;Терапевтический" doctor_id="348" fio="Баирова&#160;Л.В." otdel="Теpапия&#160;1" full_doctor_id="348" otdel_id="101"/>
+<ROW uchactok_id="1660010" uchactok="11-й&#160;Терапевтический" doctor_id="2561" fio="Амагзаева&#160;В.Ю." otdel="Теpапия&#160;1" full_doctor_id="2561" otdel_id="101"/>
+<ROW uchactok_id="19903001" uchactok="1-й&#160;студенческий" doctor_id="null" fio="null" otdel="Теpапия&#160;1" full_doctor_id="null" otdel_id="101"/>
+<ROW uchactok_id="20003001" uchactok="2-й&#160;студенческий" doctor_id="1930" fio="Бушинова&#160;Т.М." otdel="Теpапия&#160;1" full_doctor_id="1930" otdel_id="101"/>
+<ROW uchactok_id="20103001" uchactok="3-й&#160;студенческий" doctor_id="2296" fio="Цыремпилов&#160;Э.Л." otdel="Теpапия&#160;1" full_doctor_id="2296" otdel_id="101"/>
+<ROW uchactok_id="1670010" uchactok="8-й&#160;Терапевтический" doctor_id="712" fio="Гармаева&#160;Е.Р." otdel="Терапия&#160;2" full_doctor_id="712" otdel_id="102"/>
+<ROW uchactok_id="1680010" uchactok="15-й&#160;Терапевтический" doctor_id="2365" fio="Булгутова&#160;О.В." otdel="Терапия&#160;2" full_doctor_id="2365" otdel_id="102"/>
+<ROW uchactok_id="1690010" uchactok="16-й&#160;Терапевтический" doctor_id="835" fio="Цыренова&#160;Э.Д." otdel="Терапия&#160;2" full_doctor_id="835" otdel_id="102"/>
+<ROW uchactok_id="1700010" uchactok="17-й&#160;Терапевтический" doctor_id="715" fio="Гармаева&#160;В.Б." otdel="Терапия&#160;2" full_doctor_id="715" otdel_id="102"/>
+<ROW uchactok_id="1710010" uchactok="18-й&#160;Терапевтический" doctor_id="713" fio="Доликова&#160;Н.Н." otdel="Терапия&#160;2" full_doctor_id="713" otdel_id="102"/>
+<ROW uchactok_id="1720010" uchactok="20-й&#160;Терапевтический" doctor_id="711" fio="Цыдыпова&#160;В.С." otdel="Терапия&#160;2" full_doctor_id="711" otdel_id="102"/>
+<ROW uchactok_id="1730010" uchactok="28-й&#160;Терапевтический" doctor_id="1482" fio="Цыбикова&#160;Д.Д." otdel="Терапия&#160;2" full_doctor_id="1482" otdel_id="102"/>
+<ROW uchactok_id="1950010" uchactok="9-й&#160;Терапевтический" doctor_id="1937" fio="Шагдурова&#160;С.Б." otdel="Терапия&#160;2" full_doctor_id="1937" otdel_id="102"/>
+<ROW uchactok_id="20503001" uchactok="19-й&#160;Терапевтический" doctor_id="2385" fio="Миронова&#160;С.Н." otdel="Терапия&#160;2" full_doctor_id="2385" otdel_id="102"/>
+<ROW uchactok_id="1740010" uchactok="31-й&#160;Терапевтический" doctor_id="505" fio="Алсагаева&#160;Л.С." otdel="Терапия&#160;3" full_doctor_id="505" otdel_id="103"/>
+<ROW uchactok_id="1750010" uchactok="32-й&#160;Терапевтический" doctor_id="1921" fio="Марнуева&#160;И.В." otdel="Терапия&#160;3" full_doctor_id="1921" otdel_id="103"/>
+<ROW uchactok_id="1760010" uchactok="33-й&#160;Терапевтический" doctor_id="2160" fio="Турушева&#160;И.В." otdel="Терапия&#160;3" full_doctor_id="2160" otdel_id="103"/>
+<ROW uchactok_id="1770010" uchactok="34-й&#160;Терапевтический" doctor_id="508" fio="Сафронова&#160;Г.М." otdel="Терапия&#160;3" full_doctor_id="508" otdel_id="103"/>
+<ROW uchactok_id="1780010" uchactok="35-й&#160;Терапевтический" doctor_id="507" fio="Гармаева&#160;Д.Р." otdel="Терапия&#160;3" full_doctor_id="507" otdel_id="103"/>
+<ROW uchactok_id="1790010" uchactok="36-й&#160;Терапевтический" doctor_id="null" fio="null" otdel="Терапия&#160;3" full_doctor_id="null" otdel_id="103"/>
+<ROW uchactok_id="1800010" uchactok="2-й&#160;Терапевтический" doctor_id="2197" fio="Моритуева&#160;Б.Б." otdel="Терапия&#160;4" full_doctor_id="2197" otdel_id="104"/>
+<ROW uchactok_id="1810010" uchactok="3-й&#160;Терапевтический" doctor_id="2161" fio="Рабданова&#160;М.Д." otdel="Терапия&#160;4" full_doctor_id="2161" otdel_id="104"/>
+<ROW uchactok_id="1820010" uchactok="12-й&#160;Терапевтический" doctor_id="1954" fio="Дугарон&#160;Ю.В." otdel="Терапия&#160;4" full_doctor_id="1954" otdel_id="104"/>
+<ROW uchactok_id="1840010" uchactok="25-й&#160;Терапевтический" doctor_id="345" fio="Мункуева&#160;Л.Б." otdel="Терапия&#160;4" full_doctor_id="345" otdel_id="104"/>
+<ROW uchactok_id="1850010" uchactok="26-й&#160;Терапевтический" doctor_id="371" fio="Цынгуева&#160;Ч.С." otdel="Терапия&#160;4" full_doctor_id="371" otdel_id="104"/>
+<ROW uchactok_id="1940010" uchactok="24-й&#160;Терапевтический" doctor_id="2406" fio="Юсупова&#160;Е.С." otdel="Терапия&#160;4" full_doctor_id="2406" otdel_id="104"/>
+<ROW uchactok_id="19803001" uchactok="50-й&#160;Доверенный&#160;врач" doctor_id="738" fio="Бикмулина&#160;Г.А." otdel="Терапия&#160;4" full_doctor_id="738" otdel_id="104"/>
+<ROW uchactok_id="1000" uchactok="40-й&#160;Терапевтический" doctor_id="null" fio="null" otdel="null" full_doctor_id="null" otdel_id="null"/>
+<ROW uchactok_id="1970010" uchactok="40-й&#160;Педиатрический" doctor_id="null" fio="null" otdel="null" full_doctor_id="null" otdel_id="null"/>
+</ROWDATA>
+</DATAPACKET>

@@ -1,0 +1,96 @@
+<?xml version="1.0" standalone="yes"?>
+<DATAPACKET Version="2.0">
+<METADATA>
+<FIELDS>
+<FIELD FieldName="id" DisplayLabel="id" FieldType="Integer" FieldClass="TField"/>
+<FIELD FieldName="name" DisplayLabel="name" FieldType="Unknown" FieldClass="TField"/>
+<FIELD FieldName="diagn_id" DisplayLabel="diagn_id" FieldType="Unknown" FieldClass="TField"/>
+<FIELD FieldName="code" DisplayLabel="code" FieldType="Unknown" FieldClass="TField"/>
+<FIELD FieldName="vid_preparat_id" DisplayLabel="vid_preparat_id" FieldType="Integer" FieldClass="TField"/>
+<FIELD FieldName="lpu_id" DisplayLabel="lpu_id" FieldType="String" FieldClass="TField"/>
+<FIELD FieldName="date_vnes_inf" DisplayLabel="date_vnes_inf" FieldType="String" FieldClass="TField"/>
+<FIELD FieldName="operator_id" DisplayLabel="operator_id" FieldType="Integer" FieldClass="TField"/>
+<FIELD FieldName="pocket_id" DisplayLabel="pocket_id" FieldType="Integer" FieldClass="TField"/>
+<FIELD FieldName="sort" DisplayLabel="sort" FieldType="Integer" FieldClass="TField"/>
+</FIELDS>
+</METADATA>
+<ROWDATA>
+<ROW id="113" name="Дети&#160;до&#160;18&#160;перв.&#160;и&#160;втор.&#160;поколения&#160;граждан,получивших&#160;дозу&gt;5бэр" diagn_id="null" code="113" vid_preparat_id="1" lpu_id="null" date_vnes_inf="null" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="112" name="Граждане,&#160;получившие&#160;дозу&#160;5-25&#160;бэр" diagn_id="null" code="112" vid_preparat_id="1" lpu_id="null" date_vnes_inf="null" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="111" name="Граждане,&#160;получившие&#160;дозу&#160;&gt;&#160;25&#160;бэр" diagn_id="null" code="111" vid_preparat_id="1" lpu_id="null" date_vnes_inf="null" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="100" name="Дети&#160;и&#160;подростки&#160;до&#160;18&#160;прож.&#160;в&#160;зоне&#160;с&#160;льготным&#160;соц-эконом.&#160;стат" diagn_id="null" code="100" vid_preparat_id="1" lpu_id="null" date_vnes_inf="null" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="99" name="Дети&#160;и&#160;подрростки&#160;до&#160;18&#160;прож.&#160;в&#160;зоне&#160;отселения" diagn_id="null" code="099" vid_preparat_id="1" lpu_id="null" date_vnes_inf="null" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="98" name="Граждане,&#160;эвакуированные&#160;в&#160;1986" diagn_id="null" code="098" vid_preparat_id="1" lpu_id="null" date_vnes_inf="null" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="97" name="Граждане,&#160;пост.&#160;прож&#160;в&#160;зоне&#160;отселения&#160;до&#160;их&#160;переселения" diagn_id="null" code="097" vid_preparat_id="1" lpu_id="null" date_vnes_inf="null" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="95" name="Граждане,&#160;постоянно&#160;проживающие&#160;на&#160;терр.поражения" diagn_id="null" code="095" vid_preparat_id="1" lpu_id="null" date_vnes_inf="null" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="94" name="Ликвидаторы&#160;1988-90" diagn_id="null" code="094" vid_preparat_id="1" lpu_id="null" date_vnes_inf="null" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="93" name="Ликвидаторы&#160;1986-87" diagn_id="null" code="093" vid_preparat_id="1" lpu_id="null" date_vnes_inf="null" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="92" name="Чернобыльцы-инвалиды" diagn_id="null" code="092" vid_preparat_id="1" lpu_id="null" date_vnes_inf="null" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="91" name="Граждане,&#160;получившие&#160;или&#160;перенесшие&#160;лучевую&#160;болезнь" diagn_id="null" code="091" vid_preparat_id="1" lpu_id="null" date_vnes_inf="null" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="85" name="Инвалиды,&#160;не&#160;имеющие&#160;ограничений&#160;к&#160;труд.деятельности" diagn_id="null" code="085" vid_preparat_id="1" lpu_id="null" date_vnes_inf="null" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="84" name="Дети-инвалиды" diagn_id="null" code="084" vid_preparat_id="1" lpu_id="null" date_vnes_inf="null" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="83" name="Инвалиды&#160;3&#160;степени" diagn_id="null" code="083" vid_preparat_id="1" lpu_id="null" date_vnes_inf="null" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="82" name="Инвалиды&#160;2&#160;степени" diagn_id="null" code="082" vid_preparat_id="1" lpu_id="null" date_vnes_inf="null" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="81" name="Инвалиды&#160;1&#160;степени" diagn_id="null" code="081" vid_preparat_id="1" lpu_id="null" date_vnes_inf="null" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="56" name="Гельминтозы" diagn_id="null" code="56" vid_preparat_id="2" lpu_id="null" date_vnes_inf="null" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="54" name="Адиссонова&#160;болезнь" diagn_id="null" code="54" vid_preparat_id="2" lpu_id="null" date_vnes_inf="null" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="28" name="Психические&#160;заболевания" diagn_id="null" code="28" vid_preparat_id="2" lpu_id="null" date_vnes_inf="null" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="52" name="Сифилис" diagn_id="null" code="52" vid_preparat_id="2" lpu_id="null" date_vnes_inf="null" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="51" name="Хрон.урологические&#160;заболевания" diagn_id="null" code="51" vid_preparat_id="2" lpu_id="null" date_vnes_inf="null" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="49" name="Атаксия&#160;Мари" diagn_id="null" code="49" vid_preparat_id="2" lpu_id="null" date_vnes_inf="null" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="48" name="Миопатия" diagn_id="null" code="48" vid_preparat_id="2" lpu_id="null" date_vnes_inf="null" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="47" name="Миастения" diagn_id="null" code="47" vid_preparat_id="2" lpu_id="null" date_vnes_inf="null" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="46" name="Рассеянный&#160;склероз" diagn_id="null" code="46" vid_preparat_id="2" lpu_id="null" date_vnes_inf="null" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="45" name="Преждевр.половое&#160;развитие" diagn_id="null" code="45" vid_preparat_id="2" lpu_id="null" date_vnes_inf="null" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="44" name="Гипофизарный&#160;нанизм" diagn_id="null" code="44" vid_preparat_id="2" lpu_id="null" date_vnes_inf="null" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="43" name="Пересадка&#160;органов" diagn_id="null" code="43" vid_preparat_id="2" lpu_id="null" date_vnes_inf="null" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="42" name="Протезирование&#160;клапана" diagn_id="null" code="42" vid_preparat_id="2" lpu_id="null" date_vnes_inf="null" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="40" name="Системные&#160;хрон.заболевания&#160;кожи" diagn_id="null" code="40" vid_preparat_id="2" lpu_id="null" date_vnes_inf="null" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="35" name="СПИД" diagn_id="null" code="35" vid_preparat_id="2" lpu_id="null" date_vnes_inf="null" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="25" name="Онкологические&#160;заболевания" diagn_id="C00-C99.9" code="25" vid_preparat_id="2" lpu_id="null" date_vnes_inf="null" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="26" name="Бронхиальная&#160;астма" diagn_id="J45-J45.9" code="26" vid_preparat_id="2" lpu_id="null" date_vnes_inf="null" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="27" name="Инфаркт&#160;миокарда" diagn_id="I21-I25.2" code="27" vid_preparat_id="2" lpu_id="null" date_vnes_inf="null" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="30" name="Лица,&#160;страдающие&#160;сахарным&#160;диабетом" diagn_id="E10.0-E11.9" code="30" vid_preparat_id="2" lpu_id="null" date_vnes_inf="null" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="41" name="Ревматизм" diagn_id="I01-I08." code="41" vid_preparat_id="2" lpu_id="null" date_vnes_inf="null" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="50" name="Болезнь&#160;Паркинсона" diagn_id="G20-G20." code="50" vid_preparat_id="2" lpu_id="null" date_vnes_inf="null" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="53" name="Глаукома,&#160;катаракта" diagn_id="H25-H25.,H40-H40." code="53" vid_preparat_id="2" lpu_id="null" date_vnes_inf="null" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="55" name="Шизофрения&#160;и&#160;эпилепс" diagn_id="G40-G40." code="55" vid_preparat_id="2" lpu_id="null" date_vnes_inf="null" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="38" name="Бруцеллез" diagn_id="null" code="38" vid_preparat_id="2" lpu_id="null" date_vnes_inf="null" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="29" name="Туберкулез" diagn_id="null" code="29" vid_preparat_id="2" lpu_id="null" date_vnes_inf="null" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="38" name="Лепра" diagn_id="null" code="38" vid_preparat_id="2" lpu_id="null" date_vnes_inf="null" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="37" name="Лучевая&#160;болезнь" diagn_id="null" code="37" vid_preparat_id="2" lpu_id="null" date_vnes_inf="null" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="36" name="Гематологические&#160;заболевания" diagn_id="null" code="36" vid_preparat_id="2" lpu_id="null" date_vnes_inf="null" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="34" name="Острая&#160;порфирия" diagn_id="null" code="34" vid_preparat_id="2" lpu_id="null" date_vnes_inf="null" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="33" name="Муковисцидоз(больным&#160;детям)" diagn_id="null" code="33" vid_preparat_id="2" lpu_id="null" date_vnes_inf="null" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="32" name="Дистрофия" diagn_id="null" code="32" vid_preparat_id="2" lpu_id="null" date_vnes_inf="null" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="31" name="ДЦП" diagn_id="null" code="31" vid_preparat_id="2" lpu_id="null" date_vnes_inf="null" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="50" name="Блокадники" diagn_id="null" code="050" vid_preparat_id="1" lpu_id="null" date_vnes_inf="null" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="40" name="Военнослужащие&#160;(тыловики)" diagn_id="null" code="040" vid_preparat_id="1" lpu_id="null" date_vnes_inf="null" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="10" name="Инвалиды&#160;войны" diagn_id="null" code="010" vid_preparat_id="1" lpu_id="null" date_vnes_inf="null" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="11" name="Участники&#160;Великой&#160;Отечественной&#160;войны,&#160;ставшие&#160;инвалидами" diagn_id="null" code="011" vid_preparat_id="1" lpu_id="null" date_vnes_inf="null" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="12" name="Военнослужащие&#160;и&#160;лица&#160;рядового&#160;и&#160;начальств." diagn_id="null" code="012" vid_preparat_id="1" lpu_id="null" date_vnes_inf="null" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="20" name="Участники&#160;ВОВ" diagn_id="null" code="020" vid_preparat_id="1" lpu_id="null" date_vnes_inf="null" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="30" name="Ветераны&#160;боевых&#160;действий" diagn_id="null" code="030" vid_preparat_id="1" lpu_id="null" date_vnes_inf="null" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="128" name="Граждане,&#160;эвакуированные&#160;(переселенные),подвергшиеся&#160;радиоактив." diagn_id="null" code="128" vid_preparat_id="1" lpu_id="null" date_vnes_inf="null" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="110" name="Граждане&#160;РФ,&#160;подвергшиеся&#160;радиоционному&#160;воздействию&#160;на&#160;Сем.&#160;рег." diagn_id="null" code="110" vid_preparat_id="1" lpu_id="null" date_vnes_inf="null" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="96" name="Граждане,&#160;постоянно&#160;проживающие&#160;на&#160;терр.&#160;с&#160;льготным&#160;соц-эконом" diagn_id="null" code="096" vid_preparat_id="1" lpu_id="null" date_vnes_inf="null" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="62" name="Члены&#160;семей&#160;военнослужащих&#160;и&#160;лиц&#160;рядового&#160;и&#160;начальств" diagn_id="null" code="062" vid_preparat_id="1" lpu_id="null" date_vnes_inf="null" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="61" name="Члены&#160;семей&#160;погибших&#160;в&#160;ВОВ&#160;лиц&#160;из&#160;числа&#160;местной&#160;ПВО" diagn_id="null" code="061" vid_preparat_id="1" lpu_id="null" date_vnes_inf="null" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="60" name="Члены&#160;семей&#160;погибших&#160;(умерших)&#160;инвалидов&#160;войны,&#160;участников&#160;ВОВ" diagn_id="null" code="060" vid_preparat_id="1" lpu_id="null" date_vnes_inf="null" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="150" name="Несовершеннолетние&#160;узники" diagn_id="null" code="150" vid_preparat_id="1" lpu_id="null" date_vnes_inf="null" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="140" name="Несовершеннолетние&#160;узники&#160;признанные&#160;инвалидами" diagn_id="null" code="140" vid_preparat_id="1" lpu_id="null" date_vnes_inf="null" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="132" name="Граждане&#160;из&#160;подразделений&#160;особого&#160;риска,&#160;имеющие&#160;инвалидность" diagn_id="null" code="132" vid_preparat_id="1" lpu_id="null" date_vnes_inf="null" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="131" name="Граждане&#160;из&#160;подразделений&#160;особого&#160;риска,&#160;не&#160;имеющие&#160;инвалидности" diagn_id="null" code="131" vid_preparat_id="1" lpu_id="null" date_vnes_inf="null" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="120" name="Работавшие&#160;на&#160;военных&#160;объектах" diagn_id="null" code="120" vid_preparat_id="1" lpu_id="null" date_vnes_inf="null" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="63" name="Члены&#160;семей&#160;военнослужащих,&#160;погибших&#160;в&#160;плену,&#160;признанных&#160;в&#160;устан" diagn_id="null" code="063" vid_preparat_id="1" lpu_id="null" date_vnes_inf="null" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="64" name="Родители&#160;и&#160;жены&#160;военнослужащих,&#160;погибших&#160;вследствии&#160;ранения,&#160;кон" diagn_id="null" code="064" vid_preparat_id="1" lpu_id="null" date_vnes_inf="null" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="123" name="Граждане&#160;учавствующие&#160;в&#160;ликвиданции&#160;аварии&#160;на&#160;&quot;Маяк&quot;&#160;в&#160;1957-58г." diagn_id="null" code="123" vid_preparat_id="1" lpu_id="null" date_vnes_inf="null" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="124" name="Граждане&#160;учавствующие&#160;в&#160;ликвиданции&#160;аварии&#160;на&#160;&quot;Маяк&quot;&#160;в&#160;1959-61г." diagn_id="null" code="124" vid_preparat_id="1" lpu_id="null" date_vnes_inf="null" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="23" name="дети&#160;первых&#160;3-х&#160;лет&#160;жизни,&#160;дети&#160;из&#160;многодетных&#160;семей" diagn_id="null" code="23" vid_preparat_id="2" lpu_id="null" date_vnes_inf="null" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="15" name="дети&#160;и&#160;подростки&#160;родившиеся&#160;у&#160;пострадавших(чернобольцы)" diagn_id="null" code="15" vid_preparat_id="2" lpu_id="null" date_vnes_inf="null" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="96" name="Офицеры,&#160;уволенные&#160;(20&#160;лет)" diagn_id="null" code="96" vid_preparat_id="5" lpu_id="null" date_vnes_inf="null" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="97" name="Офицеры,&#160;уволенные&#160;(25&#160;лет)" diagn_id="null" code="97" vid_preparat_id="5" lpu_id="null" date_vnes_inf="null" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="98" name="Прапорщики&#160;и&#160;мичманы&#160;(20&#160;лет)" diagn_id="null" code="98" vid_preparat_id="5" lpu_id="null" date_vnes_inf="null" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="99" name="Члены&#160;семей&#160;военнослужащих" diagn_id="null" code="99" vid_preparat_id="5" lpu_id="null" date_vnes_inf="null" operator_id="null" pocket_id="null" sort="null"/>
+</ROWDATA>
+</DATAPACKET>

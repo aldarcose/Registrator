@@ -1,0 +1,1158 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<root>
+  <rec1 IDRL="1" LICNAME="1) при осуществлении доврачебной медицинской помощи по:" IERARH="" PRIM="1" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec2 IDRL="2" LICNAME="акушерскому делу;" IERARH="1" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec3 IDRL="3" LICNAME="анестезиологии и реаниматологии;" IERARH="1" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec4 IDRL="4" LICNAME="гистологии;" IERARH="1" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec5 IDRL="5" LICNAME="диетологии;" IERARH="1" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec6 IDRL="6" LICNAME="лабораторной диагностике;" IERARH="1" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec7 IDRL="7" LICNAME="лечебному делу;" IERARH="1" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec8 IDRL="8" LICNAME="лабораторному делу;" IERARH="1" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec9 IDRL="9" LICNAME="лечебной физкультуре и спортивной медицине;" IERARH="1" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec10 IDRL="10" LICNAME="медицинскому (наркологическому) освидетельствованию;" IERARH="1" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec11 IDRL="11" LICNAME="медицинским осмотрам (предполетным, послеполетным);" IERARH="1" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec12 IDRL="12" LICNAME="медицинским осмотрам (предрейсовым, послерейсовым);" IERARH="1" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec13 IDRL="13" LICNAME="медицинской оптике;" IERARH="1" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec14 IDRL="14" LICNAME="медицинской статистике;" IERARH="1" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec15 IDRL="15" LICNAME="медицинскому массажу;" IERARH="1" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec16 IDRL="16" LICNAME="общей практике;" IERARH="1" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec17 IDRL="17" LICNAME="операционному делу;" IERARH="1" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec18 IDRL="18" LICNAME="организации сестринского дела;" IERARH="1" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec19 IDRL="19" LICNAME="паразитологии;" IERARH="1" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec20 IDRL="20" LICNAME="рентгенологии;" IERARH="1" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec21 IDRL="21" LICNAME="сестринскому делу" IERARH="1" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec22 IDRL="22" LICNAME="сестринскому делу в педиатрии;" IERARH="1" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec23 IDRL="23" LICNAME="стоматологии;" IERARH="1" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec24 IDRL="24" LICNAME="стоматологии ортопедической;" IERARH="1" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec25 IDRL="25" LICNAME="стоматологии профилактической;" IERARH="1" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec26 IDRL="26" LICNAME="скорой медицинской помощи;" IERARH="1" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec27 IDRL="27" LICNAME="судебно-медицинской экспертизе;" IERARH="1" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec28 IDRL="28" LICNAME="управлению сестринской деятельностью;" IERARH="1" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec29 IDRL="29" LICNAME="физиотерапии;" IERARH="1" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec30 IDRL="30" LICNAME="функциональной диагностике;" IERARH="1" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec31 IDRL="31" LICNAME="экспертизе временной нетрудоспособности;" IERARH="1" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec32 IDRL="32" LICNAME="2) при осуществлении амбулаторно-поликлинической медицинской помощи, в том числе:" IERARH="" PRIM="1" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec33 IDRL="33" LICNAME="а) при осуществлении первичной медико-санитарной помощи по:" IERARH="32" PRIM="0" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec34 IDRL="34" LICNAME="аллергологии и иммунологии;" IERARH="33" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec35 IDRL="35" LICNAME="анестезиологии и реаниматологии;" IERARH="33" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec36 IDRL="36" LICNAME="восстановительной медицине;" IERARH="33" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec37 IDRL="37" LICNAME="гастроэнтерологии;" IERARH="33" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec38 IDRL="38" LICNAME="гериатрии;" IERARH="33" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec39 IDRL="39" LICNAME="детской кардиологии;" IERARH="33" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec40 IDRL="40" LICNAME="детской эндокринологии;" IERARH="33" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec41 IDRL="41" LICNAME="инфекционным болезням;" IERARH="33" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec42 IDRL="42" LICNAME="кардиологии;" IERARH="33" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec43 IDRL="43" LICNAME="контролю качества медицинской помощи;" IERARH="33" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec44 IDRL="44" LICNAME="клинической лабораторной диагностике;" IERARH="33" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec45 IDRL="45" LICNAME="лечебной физкультуре и спортивной медицине;" IERARH="33" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec46 IDRL="46" LICNAME="медицинскому (наркологическому) освидетельствованию;" IERARH="33" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec47 IDRL="47" LICNAME="медицинским осмотрам (предрейсовым, послерейсовым);" IERARH="33" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec48 IDRL="48" LICNAME="медицинским осмотрам (предполетным, послеполетным);" IERARH="33" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec49 IDRL="49" LICNAME="неврологии;" IERARH="33" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec50 IDRL="50" LICNAME="нефрологии;" IERARH="33" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec51 IDRL="51" LICNAME="общей врачебной практике (семейной медицине);" IERARH="33" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec52 IDRL="52" LICNAME="общественному здоровью и организации здравоохранения;" IERARH="33" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec53 IDRL="53" LICNAME="оториноларингологии;" IERARH="33" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec54 IDRL="54" LICNAME="офтальмологии;" IERARH="33" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec55 IDRL="55" LICNAME="педиатрии;" IERARH="33" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec56 IDRL="56" LICNAME="психотерапии;" IERARH="33" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec57 IDRL="57" LICNAME="пульмонологии;" IERARH="33" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec58 IDRL="58" LICNAME="ревматологии;" IERARH="33" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec59 IDRL="59" LICNAME="рентгенологии;" IERARH="33" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec60 IDRL="60" LICNAME="стоматологии;" IERARH="33" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec61 IDRL="61" LICNAME="стоматологии детской;" IERARH="33" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec62 IDRL="62" LICNAME="терапии;" IERARH="33" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec63 IDRL="63" LICNAME="травматологии и ортопедии;" IERARH="33" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec64 IDRL="64" LICNAME="урологии;" IERARH="33" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec65 IDRL="65" LICNAME="физиотерапии;" IERARH="33" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec66 IDRL="66" LICNAME="функциональной диагностике;" IERARH="33" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec67 IDRL="67" LICNAME="хирургии;" IERARH="33" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec68 IDRL="68" LICNAME="ультразвуковой диагностике;" IERARH="33" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec69 IDRL="69" LICNAME="экспертизе временной нетрудоспособности;" IERARH="33" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec70 IDRL="70" LICNAME="эндокринологии;" IERARH="33" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec71 IDRL="71" LICNAME="эндоскопии;" IERARH="33" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec72 IDRL="72" LICNAME="б) при осуществлении медицинской помощи женщинам в период беременности, во время и после родов по:" IERARH="32" PRIM="0" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec73 IDRL="73" LICNAME="акушерству и гинекологии;" IERARH="72" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec74 IDRL="74" LICNAME="неонатологии;" IERARH="72" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec75 IDRL="75" LICNAME="экспертизе временной нетрудоспособности;" IERARH="72" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec76 IDRL="76" LICNAME="в) при осуществлении специализированной медицинской помощи по:" IERARH="32" PRIM="0" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec77 IDRL="77" LICNAME="акушерству и гинекологии;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec78 IDRL="78" LICNAME="аллергологии и иммунологии;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec79 IDRL="79" LICNAME="анестезиологии и реаниматологии;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec80 IDRL="80" LICNAME="военно-врачебной экспертизе;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec81 IDRL="81" LICNAME="восстановительной медицине;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec82 IDRL="82" LICNAME="врачебно-летной экспертизе;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec83 IDRL="83" LICNAME="гастроэнтерологии;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec84 IDRL="84" LICNAME="гематологии;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec85 IDRL="85" LICNAME="генетике;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec86 IDRL="86" LICNAME="гериатрии;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec87 IDRL="87" LICNAME="дерматовенерологии;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec88 IDRL="88" LICNAME="детской кардиологии;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec89 IDRL="89" LICNAME="детской онкологии;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec90 IDRL="90" LICNAME="детской урологии-андрологии;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec91 IDRL="91" LICNAME="детской хирургии;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec92 IDRL="92" LICNAME="детской эндокринологии;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec93 IDRL="93" LICNAME="диабетологии;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec94 IDRL="94" LICNAME="забору, хранению донорской спермы;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec95 IDRL="95" LICNAME="инфекционным болезням;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec96 IDRL="96" LICNAME="кардиологии;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec97 IDRL="97" LICNAME="клинической лабораторной диагностике;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec98 IDRL="98" LICNAME="клинической микологии;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec99 IDRL="99" LICNAME="клинической фармакологии;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec100 IDRL="100" LICNAME="колопроктологии;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec101 IDRL="101" LICNAME="контролю качества медицинской помощи;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec102 IDRL="102" LICNAME="косметологии (терапевтической);" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec103 IDRL="103" LICNAME="косметологии (хирургической);" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec104 IDRL="104" LICNAME="лабораторной генетике;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec105 IDRL="105" LICNAME="лабораторной микологии;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec106 IDRL="106" LICNAME="лечебной физкультуре и спортивной медицине;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec107 IDRL="107" LICNAME="мануальной терапии;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec108 IDRL="108" LICNAME="медицинскому (наркологическому) освидетельствованию;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec109 IDRL="109" LICNAME="медицинской генетике;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec110 IDRL="110" LICNAME="медицинским осмотрам (предварительным, периодическим);" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec111 IDRL="111" LICNAME="неврологии;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec112 IDRL="112" LICNAME="неонатологии;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec113 IDRL="113" LICNAME="нейрохирургии;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec114 IDRL="114" LICNAME="нефрологии;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec115 IDRL="115" LICNAME="общественному здоровью и организации здравоохранения;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec116 IDRL="116" LICNAME="онкологии;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec117 IDRL="117" LICNAME="ортодонтии;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec118 IDRL="118" LICNAME="оториноларингологии;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec119 IDRL="119" LICNAME="офтальмологии;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec120 IDRL="120" LICNAME="паразитологии;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec121 IDRL="121" LICNAME="педиатрии;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec122 IDRL="122" LICNAME="применению методов традиционной медицины;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec123 IDRL="123" LICNAME="профпатологии;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec124 IDRL="124" LICNAME="психиатрии;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec125 IDRL="125" LICNAME="психиатрии-наркологии;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec126 IDRL="126" LICNAME="психотерапии;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec127 IDRL="127" LICNAME="пульмонологии;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec128 IDRL="128" LICNAME="радиологии;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec129 IDRL="129" LICNAME="ревматологии;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec130 IDRL="130" LICNAME="рентгенологии;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec131 IDRL="131" LICNAME="рефлексотерапии;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec132 IDRL="132" LICNAME="сексологии;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec133 IDRL="133" LICNAME="сердечно-сосудистой хирургии;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec134 IDRL="134" LICNAME="стоматологии;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec135 IDRL="135" LICNAME="стоматологии детской;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec136 IDRL="136" LICNAME="стоматологии ортопедической;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec137 IDRL="137" LICNAME="стоматологии терапевтической;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec138 IDRL="138" LICNAME="стоматологии хирургической;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec139 IDRL="139" LICNAME="судебно-медицинской экспертизе;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec140 IDRL="140" LICNAME="судебно-медицинской экспертизе вещественных доказательств и исследования биологических объектов, в том числе:" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec141 IDRL="141" LICNAME="биохимической;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec142 IDRL="142" LICNAME="генетической;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec143 IDRL="143" LICNAME="медико-криминалистической;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec144 IDRL="144" LICNAME="спектрографической;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec145 IDRL="145" LICNAME="судебно-биологической;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec146 IDRL="146" LICNAME="судебно-гистологической;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec147 IDRL="147" LICNAME="судебно-химической;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec148 IDRL="148" LICNAME="судебно-цитологической;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec149 IDRL="149" LICNAME="химико-токсикологической;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec150 IDRL="150" LICNAME="судебно-медицинской экспертизе и исследованию трупа;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec151 IDRL="151" LICNAME="судебно-медицинской экспертизе и обследованию потерпевших," IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec152 IDRL="152" LICNAME="обвиняемых и других лиц;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec153 IDRL="153" LICNAME="судебно-психиатрической экспертизе, в том числе:" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec154 IDRL="154" LICNAME="однородной амбулаторной судебно-психиатрической экспертизе;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec155 IDRL="155" LICNAME="комплексной амбулаторной судебно-психиатрической экспертизе;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec156 IDRL="156" LICNAME="сурдологии-оториноларингологии;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec157 IDRL="157" LICNAME="терапии;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec158 IDRL="158" LICNAME="токсикологии;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec159 IDRL="159" LICNAME="торакальной хирургии;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec160 IDRL="160" LICNAME="травматологии и ортопедии;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec161 IDRL="161" LICNAME="транспортировке донорской крови и ее компонентов;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec162 IDRL="162" LICNAME="транспортировке донорской спермы;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec163 IDRL="163" LICNAME="трансфузиологии;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec164 IDRL="164" LICNAME="ультразвуковой диагностике;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec165 IDRL="165" LICNAME="урологии;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec166 IDRL="166" LICNAME="физиотерапии;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec167 IDRL="167" LICNAME="фтизиатрии;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec168 IDRL="168" LICNAME="функциональной диагностике;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec169 IDRL="169" LICNAME="хирургии;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec170 IDRL="170" LICNAME="челюстно-лицевой хирургии;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec171 IDRL="171" LICNAME="экспертизе временной нетрудоспособности;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec172 IDRL="172" LICNAME="экспертизе наркологической;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec173 IDRL="173" LICNAME="экспертизе на право владения оружием;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec174 IDRL="174" LICNAME="экспертизе профпригодности;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec175 IDRL="175" LICNAME="экспертизе связи заболевания с профессией;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec176 IDRL="176" LICNAME="эндокринологии;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec177 IDRL="177" LICNAME="эндоскопии;" IERARH="76" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec178 IDRL="178" LICNAME="3) при осуществлении стационарной медицинской помощи, в том числе:" IERARH="" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec179 IDRL="179" LICNAME="а) при осуществлении первичной медико-санитарной помощи по:" IERARH="178" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec180 IDRL="180" LICNAME="аллергологии и иммунологии;" IERARH="179" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec181 IDRL="181" LICNAME="анестезиологии и реаниматологии;" IERARH="179" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec182 IDRL="182" LICNAME="восстановительной медицине;" IERARH="179" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec183 IDRL="183" LICNAME="гастроэнтерологии;" IERARH="179" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec184 IDRL="184" LICNAME="гериатрии;" IERARH="179" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec185 IDRL="185" LICNAME="детской эндокринологии;" IERARH="179" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec186 IDRL="186" LICNAME="диетологии;" IERARH="179" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec187 IDRL="187" LICNAME="забору гемопоэтических стволовых клеток;" IERARH="179" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec188 IDRL="188" LICNAME="инфекционным болезням;" IERARH="179" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec189 IDRL="189" LICNAME="кардиологии;" IERARH="179" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec190 IDRL="190" LICNAME="контролю качества медицинской помощи;" IERARH="179" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec191 IDRL="191" LICNAME="клинической лабораторной диагностике;" IERARH="179" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec192 IDRL="192" LICNAME="лечебной физкультуре и спортивной медицине;" IERARH="179" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec193 IDRL="193" LICNAME="медицинскому (наркологическому) освидетельствованию;" IERARH="179" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec194 IDRL="194" LICNAME="неврологии;" IERARH="179" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec195 IDRL="195" LICNAME="нефрологии;" IERARH="179" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec196 IDRL="196" LICNAME="общественному здоровью и организации здравоохранения;" IERARH="179" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec197 IDRL="197" LICNAME="оториноларингологии;" IERARH="179" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec198 IDRL="198" LICNAME="офтальмологии;" IERARH="179" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec199 IDRL="199" LICNAME="педиатрии;" IERARH="179" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec200 IDRL="200" LICNAME="ревматологии;" IERARH="179" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec201 IDRL="201" LICNAME="рентгенологии;" IERARH="179" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec202 IDRL="202" LICNAME="стоматологии;" IERARH="179" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec203 IDRL="203" LICNAME="терапии;" IERARH="179" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec204 IDRL="204" LICNAME="травматологии и ортопедии;" IERARH="179" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec205 IDRL="205" LICNAME="урологии;" IERARH="179" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec206 IDRL="206" LICNAME="физиотерапии;" IERARH="179" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec207 IDRL="207" LICNAME="функциональной диагностике;" IERARH="179" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec208 IDRL="208" LICNAME="хирургии;" IERARH="179" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec209 IDRL="209" LICNAME="ультразвуковой диагностике;" IERARH="179" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec210 IDRL="210" LICNAME="экспертизе временной нетрудоспособности;" IERARH="179" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec211 IDRL="211" LICNAME="эндокринологии;" IERARH="179" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec212 IDRL="212" LICNAME="эндоскопии" IERARH="179" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec213 IDRL="213" LICNAME="б) при осуществлении медицинской помощи женщинам в период беременности, во время и после родов по:" IERARH="178" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec214 IDRL="214" LICNAME="акушерству и гинекологии;" IERARH="213" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec215 IDRL="215" LICNAME="неонатологии;" IERARH="213" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec216 IDRL="216" LICNAME="экспертизе временной нетрудоспособности;" IERARH="213" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec217 IDRL="217" LICNAME="в) при осуществлении специализированной медицинской помощи по:" IERARH="178" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec218 IDRL="218" LICNAME="абдоминальной хирургии;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec219 IDRL="219" LICNAME="акушерству и гинекологии;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec220 IDRL="220" LICNAME="аллергологии и иммунологии;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec221 IDRL="221" LICNAME="анестезиологии и реаниматологии;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec222 IDRL="222" LICNAME="бактериологии;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec223 IDRL="223" LICNAME="вирусологии;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec224 IDRL="224" LICNAME="военно-врачебной экспертизе;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec225 IDRL="225" LICNAME="восстановительной медицине;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec226 IDRL="226" LICNAME="врачебно-летной экспертизе;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec227 IDRL="227" LICNAME="гастроэнтерологии;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec228 IDRL="228" LICNAME="гематологии;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec229 IDRL="229" LICNAME="генетике;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec230 IDRL="230" LICNAME="гериатрии;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec231 IDRL="231" LICNAME="дерматовенерологии;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec232 IDRL="232" LICNAME="детской кардиологии;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec233 IDRL="233" LICNAME="детской онкологии;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec234 IDRL="234" LICNAME="детской урологии-андрологии;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec235 IDRL="235" LICNAME="детской хирургии;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec236 IDRL="236" LICNAME="детской эндокринологии;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec237 IDRL="237" LICNAME="диабетологии;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec238 IDRL="238" LICNAME="диетологии;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec239 IDRL="239" LICNAME="забору гемопоэтических стволовых клеток;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec240 IDRL="240" LICNAME="забору, заготовке, хранению донорской крови и ее компонентов;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec241 IDRL="241" LICNAME="забору, хранению донорской спермы;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec242 IDRL="242" LICNAME="забору, хранению органов и тканей человека для трансплантации;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec243 IDRL="243" LICNAME="инфекционным болезням;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec244 IDRL="244" LICNAME="кардиологии;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec245 IDRL="245" LICNAME="клинической лабораторной диагностике;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec246 IDRL="246" LICNAME="клинической микологии;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec247 IDRL="247" LICNAME="клинической фармакологии;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec248 IDRL="248" LICNAME="колопроктологии;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec249 IDRL="249" LICNAME="контролю качества медицинской помощи;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec250 IDRL="250" LICNAME="косметологии (терапевтической);" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec251 IDRL="251" LICNAME="косметологии (хирургической);" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec252 IDRL="252" LICNAME="лабораторной генетике;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec253 IDRL="253" LICNAME="лабораторной микологии;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec254 IDRL="254" LICNAME="лечебной физкультуре и спортивной медицине;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec255 IDRL="255" LICNAME="мануальной терапии;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec256 IDRL="256" LICNAME="медицинскому (наркологическому) освидетельствованию;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec257 IDRL="257" LICNAME="медицинской генетике;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec258 IDRL="258" LICNAME="неврологии;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec259 IDRL="259" LICNAME="нейрохирургии;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec260 IDRL="260" LICNAME="неонатологии;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec261 IDRL="261" LICNAME="нефрологии;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec262 IDRL="262" LICNAME="общественному здоровью и организации здравоохранения;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec263 IDRL="263" LICNAME="онкологии;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec264 IDRL="264" LICNAME="ортодонтии;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec265 IDRL="265" LICNAME="оториноларингологии;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec266 IDRL="266" LICNAME="офтальмологии;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec267 IDRL="267" LICNAME="паразитологии;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec268 IDRL="268" LICNAME="патологической анатомии;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec269 IDRL="269" LICNAME="педиатрии;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec270 IDRL="270" LICNAME="применению методов традиционной медицины;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec271 IDRL="271" LICNAME="профпатологии;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec272 IDRL="272" LICNAME="психиатрии;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec273 IDRL="273" LICNAME="психиатрии-наркологии;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec274 IDRL="274" LICNAME="психотерапии;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec275 IDRL="275" LICNAME="пульмонологии;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec276 IDRL="276" LICNAME="радиологии;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec277 IDRL="277" LICNAME="ревматологии;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec278 IDRL="278" LICNAME="рентгенологии;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec279 IDRL="279" LICNAME="рефлексотерапии;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec280 IDRL="280" LICNAME="сексологии;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec281 IDRL="281" LICNAME="сердечно-сосудистой хирургии;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec282 IDRL="282" LICNAME="стоматологии;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec283 IDRL="283" LICNAME="стоматологии детской;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec284 IDRL="284" LICNAME="стоматологии ортопедической;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec285 IDRL="285" LICNAME="стоматологии терапевтической;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec286 IDRL="286" LICNAME="стоматологии хирургической;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec287 IDRL="287" LICNAME="судебно-медицинской экспертизе;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec288 IDRL="288" LICNAME="судебно-медицинской экспертизе вещественных доказательств и" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec289 IDRL="289" LICNAME="исследованию биологических объектов, в том числе:" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec290 IDRL="290" LICNAME="биохимической;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec291 IDRL="291" LICNAME="генетической;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec292 IDRL="292" LICNAME="медико-криминалистической;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec293 IDRL="293" LICNAME="спектрографической;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec294 IDRL="294" LICNAME="судебно-биологической;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec295 IDRL="295" LICNAME="судебно-гистологической;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec296 IDRL="296" LICNAME="судебно-химической;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec297 IDRL="297" LICNAME="судебно-цитологической;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec298 IDRL="298" LICNAME="химико-токсикологической;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec299 IDRL="299" LICNAME="судебно-медицинской экспертизе и исследованию трупа;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec300 IDRL="300" LICNAME="судебно-медицинской экспертизе и обследованию потерпевших, обвиняемых и других лиц;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec301 IDRL="301" LICNAME="судебно-психиатрической экспертизе, в том числе:" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec302 IDRL="302" LICNAME="однородной стационарной судебно-психиатрической экспертизе;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec303 IDRL="303" LICNAME="комплексной стационарной судебно-психиатрической экспертизе;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec304 IDRL="304" LICNAME="(психолого-психиатрической, сексолого-психиатрической);" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec305 IDRL="305" LICNAME="сурдологии-оториноларингологии;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec306 IDRL="306" LICNAME="терапии;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec307 IDRL="307" LICNAME="токсикологии;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec308 IDRL="308" LICNAME="торакальной хирургии;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec309 IDRL="309" LICNAME="травматологии и ортопедии;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec310 IDRL="310" LICNAME="трансфузиологии;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec311 IDRL="311" LICNAME="ультразвуковой диагностике;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec312 IDRL="312" LICNAME="урологии;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec313 IDRL="313" LICNAME="физиотерапии;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec314 IDRL="314" LICNAME="фтизиатрии;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec315 IDRL="315" LICNAME="функциональной диагностике;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec316 IDRL="316" LICNAME="хирургии;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec317 IDRL="317" LICNAME="челюстно-лицевой хирургии;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec318 IDRL="318" LICNAME="экспертизе наркологической;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec319 IDRL="319" LICNAME="экспертизе временной нетрудоспособности;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec320 IDRL="320" LICNAME="экспертизе профпригодности;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec321 IDRL="321" LICNAME="экспертизе связи заболеваний с профессией;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec322 IDRL="322" LICNAME="эндокринологии;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec323 IDRL="323" LICNAME="эндоскопии;" IERARH="217" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec324 IDRL="324" LICNAME="4) при осуществлении скорой и скорой специализированной (санитарно-авиационной) медицинской помощи, в том числе:" IERARH="" PRIM="1" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec325 IDRL="325" LICNAME="а) при осуществлении скорой медицинской помощи по:" IERARH="324" PRIM="0" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec326 IDRL="326" LICNAME="акушерству и гинекологии;" IERARH="325" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec327 IDRL="327" LICNAME="анестезиологии и реаниматологии;" IERARH="325" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec328 IDRL="328" LICNAME="инфекционным болезням;" IERARH="325" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec329 IDRL="329" LICNAME="кардиологии;" IERARH="325" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec330 IDRL="330" LICNAME="контролю качества медицинской помощи;" IERARH="325" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec331 IDRL="331" LICNAME="неврологии;" IERARH="325" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec332 IDRL="332" LICNAME="нейрохирургии;" IERARH="325" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec333 IDRL="333" LICNAME="неонатологии;" IERARH="325" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec334 IDRL="334" LICNAME="общественному здоровью и организации здравоохранения;" IERARH="325" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec335 IDRL="335" LICNAME="педиатрии;" IERARH="325" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec336 IDRL="336" LICNAME="психиатрии;" IERARH="325" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec337 IDRL="337" LICNAME="скорой медицинской помощи;" IERARH="325" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec338 IDRL="338" LICNAME="терапии;" IERARH="325" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec339 IDRL="339" LICNAME="токсикологии;" IERARH="325" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec340 IDRL="340" LICNAME="травматологии и ортопедии;" IERARH="325" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec341 IDRL="341" LICNAME="транспортировке донорской крови и ее компонентов;" IERARH="325" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec342 IDRL="342" LICNAME="транспортировке органов и тканей человека для трансплантации;" IERARH="325" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec343 IDRL="343" LICNAME="трансфузиологии;" IERARH="325" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec344 IDRL="344" LICNAME="хирургии;" IERARH="325" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec345 IDRL="345" LICNAME="б) при осуществлении скорой специализированной (санитарно-авиационной) медицинской помощи:" IERARH="324" PRIM="0" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec346 IDRL="346" LICNAME="акушерству и гинекологии;" IERARH="345" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec347 IDRL="347" LICNAME="анестезиологии и реаниматологии;" IERARH="345" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec348 IDRL="348" LICNAME="инфекционным болезням;" IERARH="345" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec349 IDRL="349" LICNAME="кардиологии;" IERARH="345" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec350 IDRL="350" LICNAME="контролю качества медицинской помощи;" IERARH="345" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec351 IDRL="351" LICNAME="неврологии;" IERARH="345" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec352 IDRL="352" LICNAME="нейрохирургии;" IERARH="345" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec353 IDRL="353" LICNAME="неонатологии;" IERARH="345" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec354 IDRL="354" LICNAME="нефрологии;" IERARH="345" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec355 IDRL="355" LICNAME="общественному здоровью и организации здравоохранения;" IERARH="345" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec356 IDRL="356" LICNAME="педиатрии;" IERARH="345" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec357 IDRL="357" LICNAME="психиатрии;" IERARH="345" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec358 IDRL="358" LICNAME="токсикологии;" IERARH="345" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec359 IDRL="359" LICNAME="травматологии и ортопедии;" IERARH="345" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec360 IDRL="360" LICNAME="транспортировке донорской крови и ее компонентов;" IERARH="345" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec361 IDRL="361" LICNAME="транспортировке органов и тканей человека для трансплантации;" IERARH="345" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec362 IDRL="362" LICNAME="трансфузиологии;" IERARH="345" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec363 IDRL="363" LICNAME="урологии;" IERARH="345" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec364 IDRL="364" LICNAME="хирургии;" IERARH="345" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec365 IDRL="365" LICNAME="5) при осуществлении высокотехнологичной медицинской помощи по:" IERARH="" PRIM="1" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec366 IDRL="366" LICNAME="абдоминальной хирургии;" IERARH="365" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec367 IDRL="367" LICNAME="акушерству и гинекологии;" IERARH="365" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec368 IDRL="368" LICNAME="анестезиологии и реаниматологии;" IERARH="365" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec369 IDRL="369" LICNAME="гастроэнтерологии;" IERARH="365" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec370 IDRL="370" LICNAME="гематологии;" IERARH="365" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec371 IDRL="371" LICNAME="дерматовенерологии;" IERARH="365" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec372 IDRL="372" LICNAME="детской кардиологии;" IERARH="365" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec373 IDRL="373" LICNAME="детской онкологии;" IERARH="365" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec374 IDRL="374" LICNAME="детской урологии-андрологии;" IERARH="365" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec375 IDRL="375" LICNAME="детской хирургии;" IERARH="365" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec376 IDRL="376" LICNAME="детской эндокринологии;" IERARH="365" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec377 IDRL="377" LICNAME="забору гемопоэтических стволовых клеток;" IERARH="365" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec378 IDRL="378" LICNAME="кардиологии;" IERARH="365" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec379 IDRL="379" LICNAME="контролю качества медицинской помощи;" IERARH="365" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec380 IDRL="380" LICNAME="медицинской генетике;" IERARH="365" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec381 IDRL="381" LICNAME="неврологии;" IERARH="365" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec382 IDRL="382" LICNAME="нейрохирургии;" IERARH="365" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec383 IDRL="383" LICNAME="неонатологии;" IERARH="365" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec384 IDRL="384" LICNAME="нефрологии;" IERARH="365" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec385 IDRL="385" LICNAME="общественному здоровью и организации здравоохранения;" IERARH="365" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec386 IDRL="386" LICNAME="онкологии;" IERARH="365" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec387 IDRL="387" LICNAME="оториноларингологии;" IERARH="365" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec388 IDRL="388" LICNAME="офтальмологии;" IERARH="365" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec389 IDRL="389" LICNAME="педиатрии;" IERARH="365" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec390 IDRL="390" LICNAME="применению клеточных технологий;" IERARH="365" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec391 IDRL="391" LICNAME="ревматологии;" IERARH="365" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec392 IDRL="392" LICNAME="сердечно-сосудистой хирургии;" IERARH="365" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec393 IDRL="393" LICNAME="терапии;" IERARH="365" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec394 IDRL="394" LICNAME="торакальной хирургии;" IERARH="365" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec395 IDRL="395" LICNAME="травматологии и ортопедии;" IERARH="365" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec396 IDRL="396" LICNAME="транспортировке гемопоэтических стволовых клеток;" IERARH="365" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec397 IDRL="397" LICNAME="транспортировке органов и тканей человека для трансплантации;" IERARH="365" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec398 IDRL="398" LICNAME="ультразвуковой диагностике;" IERARH="365" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec399 IDRL="399" LICNAME="урологии;" IERARH="365" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec400 IDRL="400" LICNAME="хирургии (комбустиологии);" IERARH="365" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec401 IDRL="401" LICNAME="хирургии (трансплантации органов и тканей);" IERARH="365" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec402 IDRL="402" LICNAME="хранению гемопоэтических стволовых клеток;" IERARH="365" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec403 IDRL="403" LICNAME="челюстно-лицевой хирургии;" IERARH="365" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec404 IDRL="404" LICNAME="эндокринологии;" IERARH="365" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec405 IDRL="405" LICNAME="6) при осуществлении санаторно-курортной помощи по:" IERARH="" PRIM="1" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec406 IDRL="406" LICNAME="акушерству и гинекологии;" IERARH="405" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec407 IDRL="407" LICNAME="аллергологии и иммунологии;" IERARH="405" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec408 IDRL="408" LICNAME="восстановительной медицине;" IERARH="405" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec409 IDRL="409" LICNAME="гастроэнтерологии;" IERARH="405" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec410 IDRL="410" LICNAME="гематологии;" IERARH="405" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec411 IDRL="411" LICNAME="гериатрии;" IERARH="405" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec412 IDRL="412" LICNAME="дерматовенерологии;" IERARH="405" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec413 IDRL="413" LICNAME="детской кардиологии;" IERARH="405" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec414 IDRL="414" LICNAME="детской онкологии;" IERARH="405" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec415 IDRL="415" LICNAME="детской урологии-андрологии;" IERARH="405" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec416 IDRL="416" LICNAME="детской эндокринологии;" IERARH="405" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec417 IDRL="417" LICNAME="диетологии;" IERARH="405" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec418 IDRL="418" LICNAME="диабетологии;" IERARH="405" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec419 IDRL="419" LICNAME="кардиологии;" IERARH="405" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec420 IDRL="420" LICNAME="клинической лабораторной диагностике;" IERARH="405" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec421 IDRL="421" LICNAME="контролю качества медицинской помощи;" IERARH="405" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec422 IDRL="422" LICNAME="косметологии (терапевтической);" IERARH="405" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec423 IDRL="423" LICNAME="лечебной физкультуре и спортивной медицине;" IERARH="405" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec424 IDRL="424" LICNAME="мануальной терапии;" IERARH="405" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec425 IDRL="425" LICNAME="неврологии;" IERARH="405" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec426 IDRL="426" LICNAME="нефрологии;" IERARH="405" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec427 IDRL="427" LICNAME="общественному здоровью и организации здравоохранения;" IERARH="405" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec428 IDRL="428" LICNAME="онкологии;" IERARH="405" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec429 IDRL="429" LICNAME="ортодонтии;" IERARH="405" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec430 IDRL="430" LICNAME="оториноларингологии;" IERARH="405" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec431 IDRL="431" LICNAME="офтальмологии;" IERARH="405" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec432 IDRL="432" LICNAME="педиатрии;" IERARH="405" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec433 IDRL="433" LICNAME="применению методов традиционной медицины;" IERARH="405" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec434 IDRL="434" LICNAME="профпатологии;" IERARH="405" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec435 IDRL="435" LICNAME="психотерапии;" IERARH="405" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec436 IDRL="436" LICNAME="пульмонологии;" IERARH="405" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec437 IDRL="437" LICNAME="ревматологии;" IERARH="405" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec438 IDRL="438" LICNAME="рентгенологии;" IERARH="405" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec439 IDRL="439" LICNAME="рефлексотерапии;" IERARH="405" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec440 IDRL="440" LICNAME="сексологии;" IERARH="405" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec441 IDRL="441" LICNAME="стоматологии;" IERARH="405" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec442 IDRL="442" LICNAME="стоматологии детской;" IERARH="405" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec443 IDRL="443" LICNAME="стоматологии ортопедической;" IERARH="405" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec444 IDRL="444" LICNAME="стоматологии терапевтической;" IERARH="405" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec445 IDRL="445" LICNAME="стоматологии хирургической;" IERARH="405" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec446 IDRL="446" LICNAME="терапии;" IERARH="405" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec447 IDRL="447" LICNAME="травматологии и ортопедии;" IERARH="405" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec448 IDRL="448" LICNAME="ультразвуковой диагностике;" IERARH="405" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec449 IDRL="449" LICNAME="урологии;" IERARH="405" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec450 IDRL="450" LICNAME="физиотерапии;" IERARH="405" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec451 IDRL="451" LICNAME="фтизиатрии;" IERARH="405" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec452 IDRL="452" LICNAME="функциональной диагностике;" IERARH="405" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec453 IDRL="453" LICNAME="экспертизе временной нетрудоспособности;" IERARH="405" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec454 IDRL="454" LICNAME="эндокринологии;" IERARH="405" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec455 IDRL="455" LICNAME="эндоскопии;" IERARH="405" PRIM="2" DATEBEG="01.01.2011" DATEEND="24.05.2013" />
+  <rec456 IDRL="456" LICNAME="При оказании первичной, в том числе доврачебной, врачебной и специализированной, медико-санитарной помощи организуются и выполняются следующие работы (услуги):" IERARH="" PRIM="1" DATEBEG="26.05.2013" DATEEND="" />
+  <rec457 IDRL="457" LICNAME="1) при оказании первичной доврачебной медико-санитарной помощи в амбулаторных условиях по:" IERARH="456" PRIM="0" DATEBEG="26.05.2013" DATEEND="" />
+  <rec458 IDRL="458" LICNAME="акушерскому делу;" IERARH="457" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec459 IDRL="459" LICNAME="анестезиологии и реаниматологии;" IERARH="457" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec460 IDRL="460" LICNAME="бактериологии;" IERARH="457" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec461 IDRL="461" LICNAME="вакцинации (проведению профилактических прививок);" IERARH="457" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec462 IDRL="462" LICNAME="гигиене в стоматологии;" IERARH="457" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec463 IDRL="463" LICNAME="гигиеническому воспитанию;" IERARH="457" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec464 IDRL="464" LICNAME="гистологии;" IERARH="457" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec465 IDRL="465" LICNAME="дезинфектологии;" IERARH="457" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec466 IDRL="466" LICNAME="лабораторному делу;" IERARH="457" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec467 IDRL="467" LICNAME="лабораторной диагностике;" IERARH="457" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec468 IDRL="468" LICNAME="лечебной физкультуре;" IERARH="457" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec469 IDRL="469" LICNAME="лечебному делу;" IERARH="457" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec470 IDRL="470" LICNAME="медико-социальной помощи;" IERARH="457" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec471 IDRL="471" LICNAME="медицинской оптике;" IERARH="457" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec472 IDRL="472" LICNAME="медицинской статистике;" IERARH="457" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec473 IDRL="473" LICNAME="медицинскому массажу;" IERARH="457" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec474 IDRL="474" LICNAME="наркологии;" IERARH="457" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec475 IDRL="475" LICNAME="неотложной медицинской помощи;" IERARH="457" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec476 IDRL="476" LICNAME="операционному делу;" IERARH="457" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec477 IDRL="477" LICNAME="общей практике;" IERARH="457" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec478 IDRL="478" LICNAME="организации сестринского дела;" IERARH="457" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec479 IDRL="479" LICNAME="паразитологии;" IERARH="457" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec480 IDRL="480" LICNAME="рентгенологии;" IERARH="457" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec481 IDRL="481" LICNAME="сестринскому делу;" IERARH="457" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec482 IDRL="482" LICNAME="сестринскому делу в косметологии;" IERARH="457" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec483 IDRL="483" LICNAME="сестринскому делу в педиатрии;" IERARH="457" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec484 IDRL="484" LICNAME="стоматологии;" IERARH="457" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec485 IDRL="485" LICNAME="стоматологии ортопедической;" IERARH="457" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec486 IDRL="486" LICNAME="стоматологии профилактической;" IERARH="457" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec487 IDRL="487" LICNAME="физиотерапии;" IERARH="457" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec488 IDRL="488" LICNAME="функциональной диагностике;" IERARH="457" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec489 IDRL="489" LICNAME="энтомологии;" IERARH="457" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec490 IDRL="490" LICNAME="эпидемиологии;" IERARH="457" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec491 IDRL="491" LICNAME="2) при оказании первичной врачебной медико-санитарной помощи в амбулаторных условиях по:" IERARH="456" PRIM="0" DATEBEG="26.05.2013" DATEEND="" />
+  <rec492 IDRL="492" LICNAME="вакцинации (проведению профилактических прививок);" IERARH="491" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec493 IDRL="493" LICNAME="неотложной медицинской помощи;" IERARH="491" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec494 IDRL="494" LICNAME="общей врачебной практике (семейной медицине);" IERARH="491" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec495 IDRL="495" LICNAME="организации здравоохранения и общественному здоровью;" IERARH="491" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec496 IDRL="496" LICNAME="педиатрии;" IERARH="491" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec497 IDRL="497" LICNAME="терапии;" IERARH="491" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec498 IDRL="498" LICNAME="управлению сестринской деятельностью;" IERARH="491" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec499 IDRL="499" LICNAME="3) при оказании первичной врачебной медико-санитарной помощи в условиях дневного стационара по:" IERARH="456" PRIM="0" DATEBEG="26.05.2013" DATEEND="" />
+  <rec500 IDRL="500" LICNAME="клинической лабораторной диагностике;" IERARH="499" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec501 IDRL="501" LICNAME="неотложной медицинской помощи;" IERARH="499" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec502 IDRL="502" LICNAME="общей врачебной практике (семейной медицине);" IERARH="499" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec503 IDRL="503" LICNAME="организации здравоохранения и общественному здоровью;" IERARH="499" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec504 IDRL="504" LICNAME="педиатрии;" IERARH="499" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec505 IDRL="505" LICNAME="терапии;" IERARH="499" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec506 IDRL="506" LICNAME="управлению сестринской деятельностью;" IERARH="499" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec507 IDRL="507" LICNAME="4) при оказании первичной специализированной медико-санитарной помощи в амбулаторных условиях по:" IERARH="456" PRIM="0" DATEBEG="26.05.2013" DATEEND="" />
+  <rec508 IDRL="508" LICNAME="авиационной и космической медицине;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec509 IDRL="509" LICNAME="акушерству и гинекологии (за исключением использования вспомогательных репродуктивных технологий);" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec510 IDRL="510" LICNAME="акушерству и гинекологии (использованию вспомогательных репродуктивных технологий);" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec511 IDRL="511" LICNAME="аллергологии и иммунологии;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec512 IDRL="512" LICNAME="анестезиологии и реаниматологии;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec513 IDRL="513" LICNAME="бактериологии;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec514 IDRL="514" LICNAME="вирусологии;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec515 IDRL="515" LICNAME="водолазной медицине;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec516 IDRL="516" LICNAME="гастроэнтерологии;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec517 IDRL="517" LICNAME="гематологии;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec518 IDRL="518" LICNAME="генетике;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec519 IDRL="519" LICNAME="гериатрии;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec520 IDRL="520" LICNAME="гигиеническому воспитанию;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec521 IDRL="521" LICNAME="гистологии;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec522 IDRL="522" LICNAME="дезинфектологии;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec523 IDRL="523" LICNAME="дерматовенерологии;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec524 IDRL="524" LICNAME="детской кардиологии;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec525 IDRL="525" LICNAME="детской онкологии;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec526 IDRL="526" LICNAME="детской урологии-андрологии;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec527 IDRL="527" LICNAME="детской хирургии;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec528 IDRL="528" LICNAME="детской эндокринологии;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec529 IDRL="529" LICNAME="диабетологии;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec530 IDRL="530" LICNAME="диетологии;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec531 IDRL="531" LICNAME="забору, криоконсервации и хранению половых клеток и тканей репродуктивных органов;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec532 IDRL="532" LICNAME="инфекционным болезням;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec533 IDRL="533" LICNAME="кардиологии;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec534 IDRL="534" LICNAME="клинической лабораторной диагностике;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec535 IDRL="535" LICNAME="клинической микологии;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec536 IDRL="536" LICNAME="клинической фармакологии;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec537 IDRL="537" LICNAME="колопроктологии;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec538 IDRL="538" LICNAME="косметологии;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec539 IDRL="539" LICNAME="лабораторной генетике;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec540 IDRL="540" LICNAME="лабораторной микологии;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec541 IDRL="541" LICNAME="лечебной физкультуре и спортивной медицине;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec542 IDRL="542" LICNAME="мануальной терапии;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec543 IDRL="543" LICNAME="медицинской генетике;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec544 IDRL="544" LICNAME="медицинской статистике;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec545 IDRL="545" LICNAME="медицинской реабилитации;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec546 IDRL="546" LICNAME="неврологии;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec547 IDRL="547" LICNAME="нейрохирургии;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec548 IDRL="548" LICNAME="неотложной медицинской помощи;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec549 IDRL="549" LICNAME="нефрологии;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec550 IDRL="550" LICNAME="онкологии;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec551 IDRL="551" LICNAME="организации здравоохранения и общественному здоровью;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec552 IDRL="552" LICNAME="ортодонтии;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec553 IDRL="553" LICNAME="оториноларингологии (за исключением кохлеарной имплантации);" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec554 IDRL="554" LICNAME="офтальмологии;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec555 IDRL="555" LICNAME="паразитологии;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec556 IDRL="556" LICNAME="патологической анатомии;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec557 IDRL="557" LICNAME="пластической хирургии;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec558 IDRL="558" LICNAME="профпатологии;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec559 IDRL="559" LICNAME="психиатрии;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec560 IDRL="560" LICNAME="психиатрии-наркологии;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec561 IDRL="561" LICNAME="психотерапии;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec562 IDRL="562" LICNAME="пульмонологии;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec563 IDRL="563" LICNAME="радиологии;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec564 IDRL="564" LICNAME="ревматологии;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec565 IDRL="565" LICNAME="рентгенологии;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec566 IDRL="566" LICNAME="рефлексотерапии;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec567 IDRL="567" LICNAME="санитарно-гигиеническим лабораторным исследованиям;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec568 IDRL="568" LICNAME="сексологии;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec569 IDRL="569" LICNAME="сердечно-сосудистой хирургии;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec570 IDRL="570" LICNAME="стоматологии детской;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec571 IDRL="571" LICNAME="стоматологии общей практики;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec572 IDRL="572" LICNAME="стоматологии ортопедической;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec573 IDRL="573" LICNAME="стоматологии терапевтической;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec574 IDRL="574" LICNAME="стоматологии хирургической;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec575 IDRL="575" LICNAME="сурдологии-оториноларингологии;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec576 IDRL="576" LICNAME="токсикологии;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec577 IDRL="577" LICNAME="торакальной хирургии;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec578 IDRL="578" LICNAME="травматологии и ортопедии;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec579 IDRL="579" LICNAME="транспортировке половых клеток и (или) тканей репродуктивных органов;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec580 IDRL="580" LICNAME="ультразвуковой диагностике;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec581 IDRL="581" LICNAME="управлению сестринской деятельностью;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec582 IDRL="582" LICNAME="урологии;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec583 IDRL="583" LICNAME="физиотерапии;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec584 IDRL="584" LICNAME="фтизиатрии;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec585 IDRL="585" LICNAME="функциональной диагностике;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec586 IDRL="586" LICNAME="хирургии;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec587 IDRL="587" LICNAME="челюстно-лицевой хирургии;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec588 IDRL="588" LICNAME="эндокринологии;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec589 IDRL="589" LICNAME="эндоскопии;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec590 IDRL="590" LICNAME="энтомологии;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec591 IDRL="591" LICNAME="эпидемиологии;" IERARH="507" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec592 IDRL="592" LICNAME="5) при оказании первичной специализированной медико-санитарной помощи в условиях дневного стационара по:" IERARH="456" PRIM="0" DATEBEG="26.05.2013" DATEEND="" />
+  <rec593 IDRL="593" LICNAME="авиационной и космической медицине;" IERARH="592" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec594 IDRL="594" LICNAME="акушерству и гинекологии (за исключением использования вспомогательных репродуктивных технологий);" IERARH="592" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec595 IDRL="595" LICNAME="акушерству и гинекологии (использованию вспомогательных репродуктивных технологий);" IERARH="592" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec596 IDRL="596" LICNAME="анестезиологии и реаниматологии;" IERARH="592" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec597 IDRL="597" LICNAME="аллергологии и иммунологии;" IERARH="592" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec598 IDRL="598" LICNAME="водолазной медицине;" IERARH="592" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec599 IDRL="599" LICNAME="бактериологии;" IERARH="592" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec600 IDRL="600" LICNAME="вирусологии;" IERARH="592" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec601 IDRL="601" LICNAME="гастроэнтерологии;" IERARH="592" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec602 IDRL="602" LICNAME="гематологии;" IERARH="592" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec603 IDRL="603" LICNAME="генетике;" IERARH="592" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec604 IDRL="604" LICNAME="гериатрии;" IERARH="592" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec605 IDRL="605" LICNAME="дезинфектологии;" IERARH="592" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec606 IDRL="606" LICNAME="дерматовенерологии;" IERARH="592" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec607 IDRL="607" LICNAME="детской кардиологии;" IERARH="592" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec608 IDRL="608" LICNAME="детской онкологии;" IERARH="592" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec609 IDRL="609" LICNAME="детской урологии-андрологии;" IERARH="592" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec610 IDRL="610" LICNAME="детской хирургии;" IERARH="592" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec611 IDRL="611" LICNAME="детской эндокринологии;" IERARH="592" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec612 IDRL="612" LICNAME="диабетологии;" IERARH="592" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec613 IDRL="613" LICNAME="диетологии;" IERARH="592" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec614 IDRL="614" LICNAME="забору, криоконсервации и хранению половых клеток и тканей репродуктивных органов;" IERARH="592" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec615 IDRL="615" LICNAME="инфекционным болезням;" IERARH="592" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec616 IDRL="616" LICNAME="кардиологии;" IERARH="592" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec617 IDRL="617" LICNAME="клинической лабораторной диагностике;" IERARH="592" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec618 IDRL="618" LICNAME="клинической микологии;" IERARH="592" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec619 IDRL="619" LICNAME="клинической фармакологии;" IERARH="592" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec620 IDRL="620" LICNAME="колопроктологии;" IERARH="592" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec621 IDRL="621" LICNAME="лабораторной генетике;" IERARH="592" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec622 IDRL="622" LICNAME="лабораторной микологии;" IERARH="592" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec623 IDRL="623" LICNAME="лечебной физкультуре и спортивной медицине;" IERARH="592" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec624 IDRL="624" LICNAME="мануальной терапии;" IERARH="592" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec625 IDRL="625" LICNAME="медицинской генетике;" IERARH="592" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec626 IDRL="626" LICNAME="медицинской статистике;" IERARH="592" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec627 IDRL="627" LICNAME="медицинской реабилитации;" IERARH="592" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec628 IDRL="628" LICNAME="неврологии;" IERARH="592" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec629 IDRL="629" LICNAME="нейрохирургии;" IERARH="592" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec630 IDRL="630" LICNAME="неонатологии;" IERARH="592" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec631 IDRL="631" LICNAME="нефрологии;" IERARH="592" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec632 IDRL="632" LICNAME="онкологии;" IERARH="592" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec633 IDRL="633" LICNAME="организации здравоохранения и общественному здоровью;" IERARH="592" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec634 IDRL="634" LICNAME="ортодонтии;" IERARH="592" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec635 IDRL="635" LICNAME="оториноларингологии (за исключением кохлеарной имплантации);" IERARH="592" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec636 IDRL="636" LICNAME="офтальмологии;" IERARH="592" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec637 IDRL="637" LICNAME="паразитологии;" IERARH="592" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec638 IDRL="638" LICNAME="парадонтологии;" IERARH="592" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec639 IDRL="639" LICNAME="психиатрии;" IERARH="592" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec640 IDRL="640" LICNAME="психиатрии-наркологии;" IERARH="592" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec641 IDRL="641" LICNAME="психотерапии;" IERARH="592" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec642 IDRL="642" LICNAME="пульмонологии;" IERARH="592" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec643 IDRL="643" LICNAME="рентгенологии;" IERARH="592" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec644 IDRL="644" LICNAME="рефлексотерапии;" IERARH="592" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec645 IDRL="645" LICNAME="сексологии;" IERARH="592" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec646 IDRL="646" LICNAME="сердечно-сосудистой хирургии;" IERARH="592" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec647 IDRL="647" LICNAME="стоматологии детской;" IERARH="592" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec648 IDRL="648" LICNAME="стоматологии ортопедической;" IERARH="592" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec649 IDRL="649" LICNAME="стоматологии терапевтической;" IERARH="592" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec650 IDRL="650" LICNAME="стоматологии хирургической;" IERARH="592" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec651 IDRL="651" LICNAME="сурдологии-оториноларингологии;" IERARH="592" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec652 IDRL="652" LICNAME="травматологии и ортопедии;" IERARH="592" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec653 IDRL="653" LICNAME="транспортировке половых клеток и (или) тканей репродуктивных органов;" IERARH="592" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec654 IDRL="654" LICNAME="трансфузиологии;" IERARH="592" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec655 IDRL="655" LICNAME="ультразвуковой диагностике;" IERARH="592" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec656 IDRL="656" LICNAME="управлению сестринской деятельностью;" IERARH="592" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec657 IDRL="657" LICNAME="урологии;" IERARH="592" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec658 IDRL="658" LICNAME="физиотерапии;" IERARH="592" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec659 IDRL="659" LICNAME="фтизиатрии;" IERARH="592" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec660 IDRL="660" LICNAME="функциональной диагностике;" IERARH="592" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec661 IDRL="661" LICNAME="челюстно-лицевой хирургии;" IERARH="592" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec662 IDRL="662" LICNAME="хирургии;" IERARH="592" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec663 IDRL="663" LICNAME="хирургии (абдоминальной);" IERARH="592" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec664 IDRL="664" LICNAME="эндокринологии;" IERARH="592" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec665 IDRL="665" LICNAME="эндоскопии;" IERARH="592" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec666 IDRL="666" LICNAME="эпидемиологии." IERARH="592" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec667 IDRL="667" LICNAME="При оказании специализированной, в том числе высокотехнологичной, медицинской помощи организуются и выполняются следующие работы (услуги):" IERARH="" PRIM="1" DATEBEG="26.05.2013" DATEEND="" />
+  <rec668 IDRL="668" LICNAME="1) при оказании специализированной медицинской помощи в условиях дневного стационара по:" IERARH="667" PRIM="0" DATEBEG="26.05.2013" DATEEND="" />
+  <rec669 IDRL="669" LICNAME="авиационной и космической медицине;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec670 IDRL="670" LICNAME="акушерскому делу;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec671 IDRL="671" LICNAME="акушерству и гинекологии (за исключением использования вспомогательных репродуктивных технологий);" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec672 IDRL="672" LICNAME="акушерству и гинекологии (использованию вспомогательных репродуктивных технологий);" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec673 IDRL="673" LICNAME="аллергологии и иммунологии;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec674 IDRL="674" LICNAME="анестезиологии и реаниматологии;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec675 IDRL="675" LICNAME="бактериологии;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec676 IDRL="676" LICNAME="вирусологии;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec677 IDRL="677" LICNAME="водолазной медицине;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec678 IDRL="678" LICNAME="гастроэнтерологии;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec679 IDRL="679" LICNAME="гематологии;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec680 IDRL="680" LICNAME="генетике;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec681 IDRL="681" LICNAME="гериатрии;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec682 IDRL="682" LICNAME="гистологии;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec683 IDRL="683" LICNAME="дезинфектологии;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec684 IDRL="684" LICNAME="дерматовенерологии;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec685 IDRL="685" LICNAME="детской кардиологии;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec686 IDRL="686" LICNAME="детской онкологии;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec687 IDRL="687" LICNAME="детской урологии-андрологии;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec688 IDRL="688" LICNAME="детской хирургии;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec689 IDRL="689" LICNAME="детской эндокринологии;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec690 IDRL="690" LICNAME="диабетологии;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec691 IDRL="691" LICNAME="диетологии;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec692 IDRL="692" LICNAME="забору гемопоэтических стволовых клеток;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec693 IDRL="693" LICNAME="забору, криоконсервации и хранению половых клеток и тканей репродуктивных органов;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec694 IDRL="694" LICNAME="инфекционным болезням;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec695 IDRL="695" LICNAME="кардиологии;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec696 IDRL="696" LICNAME="клинической лабораторной диагностике;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec697 IDRL="697" LICNAME="клинической микологии;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec698 IDRL="698" LICNAME="клинической фармакологии;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec699 IDRL="699" LICNAME="колопроктологии;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec700 IDRL="700" LICNAME="лабораторной генетике;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec701 IDRL="701" LICNAME="лабораторной диагностике;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec702 IDRL="702" LICNAME="лабораторной микологии;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec703 IDRL="703" LICNAME="лабораторному делу;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec704 IDRL="704" LICNAME="лечебной физкультуре;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec705 IDRL="705" LICNAME="лечебной физкультуре и спортивной медицине;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec706 IDRL="706" LICNAME="мануальной терапии;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec707 IDRL="707" LICNAME="медицинской генетике;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec708 IDRL="708" LICNAME="медицинской оптике;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec709 IDRL="709" LICNAME="медицинской реабилитации;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec710 IDRL="710" LICNAME="медицинской статистике;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec711 IDRL="711" LICNAME="медицинскому массажу;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec712 IDRL="712" LICNAME="неврологии;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec713 IDRL="713" LICNAME="нейрохирургии;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec714 IDRL="714" LICNAME="неонатологии;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec715 IDRL="715" LICNAME="нефрологии;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec716 IDRL="716" LICNAME="общей практике;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec717 IDRL="717" LICNAME="онкологии;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec718 IDRL="718" LICNAME="операционному делу;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec719 IDRL="719" LICNAME="организации здравоохранения и общественному здоровью;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec720 IDRL="720" LICNAME="организации сестринского дела;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec721 IDRL="721" LICNAME="ортодонтии;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec722 IDRL="722" LICNAME="оториноларингологии (за исключением кохлеарной имплантации);" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec723 IDRL="723" LICNAME="офтальмологии;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec724 IDRL="724" LICNAME="патологической анатомии;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec725 IDRL="725" LICNAME="паразитологии;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec726 IDRL="726" LICNAME="педиатрии;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec727 IDRL="727" LICNAME="психиатрии;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec728 IDRL="728" LICNAME="психиатрии-наркологии;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec729 IDRL="729" LICNAME="психотерапии;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec730 IDRL="730" LICNAME="пульмонологии;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec731 IDRL="731" LICNAME="радиологии;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec732 IDRL="732" LICNAME="радиотерапии;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec733 IDRL="733" LICNAME="ревматологии;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec734 IDRL="734" LICNAME="рентгенологии;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec735 IDRL="735" LICNAME="рентгенэндоваскулярной диагностике и лечению;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec736 IDRL="736" LICNAME="рефлексотерапии;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec737 IDRL="737" LICNAME="сексологии;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec738 IDRL="738" LICNAME="сердечно-сосудистой хирургии;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec739 IDRL="739" LICNAME="сестринскому делу;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec740 IDRL="740" LICNAME="сестринскому делу в педиатрии;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec741 IDRL="741" LICNAME="стоматологии детской;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec742 IDRL="742" LICNAME="стоматологии ортопедической;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec743 IDRL="743" LICNAME="стоматологии терапевтической;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec744 IDRL="744" LICNAME="стоматологии хирургической;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec745 IDRL="745" LICNAME="сурдологии-оториноларингологии;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec746 IDRL="746" LICNAME="терапии;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec747 IDRL="747" LICNAME="торакальной хирургии;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec748 IDRL="748" LICNAME="травматологии и ортопедии;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec749 IDRL="749" LICNAME="транспортировке половых клеток и (или) тканей репродуктивных органов;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec750 IDRL="750" LICNAME="трансфузиологии;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec751 IDRL="751" LICNAME="ультразвуковой диагностике;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec752 IDRL="752" LICNAME="управлению сестринской деятельностью;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec753 IDRL="753" LICNAME="урологии;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec754 IDRL="754" LICNAME="физиотерапии;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec755 IDRL="755" LICNAME="фтизиатрии;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec756 IDRL="756" LICNAME="функциональной диагностике;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec757 IDRL="757" LICNAME="хирургии;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec758 IDRL="758" LICNAME="хирургии (абдоминальной);" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec759 IDRL="759" LICNAME="хирургии (комбустиологии);" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec760 IDRL="760" LICNAME="челюстно-лицевой хирургии;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec761 IDRL="761" LICNAME="эндокринологии;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec762 IDRL="762" LICNAME="эндоскопии;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec763 IDRL="763" LICNAME="энтомологии;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec764 IDRL="764" LICNAME="эпидемиологии;" IERARH="668" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec765 IDRL="765" LICNAME="2) при оказании специализированной медицинской помощи в стационарных условиях по:" IERARH="667" PRIM="0" DATEBEG="26.05.2013" DATEEND="" />
+  <rec766 IDRL="766" LICNAME="авиационной и космической медицине;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec767 IDRL="767" LICNAME="акушерскому делу;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec768 IDRL="768" LICNAME="акушерству и гинекологии (за исключением использования вспомогательных репродуктивных технологий);" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec769 IDRL="769" LICNAME="акушерству и гинекологии (использованию вспомогательных репродуктивных технологий);" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec770 IDRL="770" LICNAME="аллергологии и иммунологии;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec771 IDRL="771" LICNAME="анестезиологии и реаниматологии;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec772 IDRL="772" LICNAME="бактериологии;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec773 IDRL="773" LICNAME="вакцинации (проведению профилактических прививок);" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec774 IDRL="774" LICNAME="вирусологии;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec775 IDRL="775" LICNAME="водолазной медицине;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec776 IDRL="776" LICNAME="гастроэнтерологии;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec777 IDRL="777" LICNAME="гематологии;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec778 IDRL="778" LICNAME="генетике;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec779 IDRL="779" LICNAME="гериатрии;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec780 IDRL="780" LICNAME="гистологии;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec781 IDRL="781" LICNAME="дезинфектологии;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec782 IDRL="782" LICNAME="дерматовенерологии;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec783 IDRL="783" LICNAME="детской кардиологии;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec784 IDRL="784" LICNAME="детской онкологии;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec785 IDRL="785" LICNAME="детской урологии-андрологии;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec786 IDRL="786" LICNAME="детской хирургии;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec787 IDRL="787" LICNAME="детской эндокринологии;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec788 IDRL="788" LICNAME="диабетологии;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec789 IDRL="789" LICNAME="диетологии;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec790 IDRL="790" LICNAME="забору гемопоэтических стволовых клеток;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec791 IDRL="791" LICNAME="забору, криоконсервации и хранению половых клеток и тканей репродуктивных органов;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec792 IDRL="792" LICNAME="изъятию и хранению органов и (или) тканей человека для трансплантации;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec793 IDRL="793" LICNAME="инфекционным болезням;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec794 IDRL="794" LICNAME="кардиологии;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec795 IDRL="795" LICNAME="клинической лабораторной диагностике;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec796 IDRL="796" LICNAME="клинической микологии;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec797 IDRL="797" LICNAME="клинической фармакологии;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec798 IDRL="798" LICNAME="колопроктологии;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec799 IDRL="799" LICNAME="лабораторной генетике;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec800 IDRL="800" LICNAME="лабораторной диагностике;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec801 IDRL="801" LICNAME="лабораторной микологии;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec802 IDRL="802" LICNAME="лабораторному делу;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec803 IDRL="803" LICNAME="лечебной физкультуре;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec804 IDRL="804" LICNAME="лечебной физкультуре и спортивной медицине;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec805 IDRL="805" LICNAME="мануальной терапии;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec806 IDRL="806" LICNAME="медицинской генетике;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec807 IDRL="807" LICNAME="медицинской оптике;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec808 IDRL="808" LICNAME="медицинской реабилитации;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec809 IDRL="809" LICNAME="медицинской статистике;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec810 IDRL="810" LICNAME="медицинскому массажу;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec811 IDRL="811" LICNAME="неврологии;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec812 IDRL="812" LICNAME="нейрохирургии;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec813 IDRL="813" LICNAME="неонатологии;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec814 IDRL="814" LICNAME="нефрологии;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec815 IDRL="815" LICNAME="общей практике;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec816 IDRL="816" LICNAME="онкологии;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec817 IDRL="817" LICNAME="операционному делу;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec818 IDRL="818" LICNAME="организации здравоохранения и общественному здоровью;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec819 IDRL="819" LICNAME="организации сестринского дела;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec820 IDRL="820" LICNAME="ортодонтии;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec821 IDRL="821" LICNAME="оториноларингологии (за исключением кохлеарной имплантации);" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec822 IDRL="822" LICNAME="офтальмологии;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec823 IDRL="823" LICNAME="паразитологии;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec824 IDRL="824" LICNAME="патологической анатомии;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec825 IDRL="825" LICNAME="педиатрии;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec826 IDRL="826" LICNAME="пластической хирургии;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec827 IDRL="827" LICNAME="профпатологии;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec828 IDRL="828" LICNAME="психиатрии;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec829 IDRL="829" LICNAME="психиатрии-наркологии;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec830 IDRL="830" LICNAME="психотерапии;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec831 IDRL="831" LICNAME="пульмонологии;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec832 IDRL="832" LICNAME="радиологии;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec833 IDRL="833" LICNAME="радиотерапии;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec834 IDRL="834" LICNAME="реаниматологии;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec835 IDRL="835" LICNAME="ревматологии;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec836 IDRL="836" LICNAME="рентгенологии;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec837 IDRL="837" LICNAME="рентгенэндоваскулярной диагностике и лечению;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec838 IDRL="838" LICNAME="рефлексотерапии;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec839 IDRL="839" LICNAME="сексологии;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec840 IDRL="840" LICNAME="сердечно-сосудистой хирургии;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec841 IDRL="841" LICNAME="сестринскому делу;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec842 IDRL="842" LICNAME="сестринскому делу в педиатрии;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec843 IDRL="843" LICNAME="стоматологии детской;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec844 IDRL="844" LICNAME="стоматологии ортопедической;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec845 IDRL="845" LICNAME="стоматологии терапевтической;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec846 IDRL="846" LICNAME="стоматологии хирургической;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec847 IDRL="847" LICNAME="сурдологии-оториноларингологии;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec848 IDRL="848" LICNAME="терапии;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec849 IDRL="849" LICNAME="токсикологии;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec850 IDRL="850" LICNAME="торакальной хирургии;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec851 IDRL="851" LICNAME="травматологии и ортопедии;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec852 IDRL="852" LICNAME="транспортировке гемопоэтических стволовых клеток и костного мозга;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec853 IDRL="853" LICNAME="транспортировке органов и (или) тканей человека для трансплантации;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec854 IDRL="854" LICNAME="транспортировке половых клеток и (или) тканей репродуктивных органов;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec855 IDRL="855" LICNAME="трансфузиологии;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec856 IDRL="856" LICNAME="ультразвуковой диагностике;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec857 IDRL="857" LICNAME="управлению сестринской деятельностью;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec858 IDRL="858" LICNAME="урологии;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec859 IDRL="859" LICNAME="физиотерапии;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec860 IDRL="860" LICNAME="фтизиатрии;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec861 IDRL="861" LICNAME="функциональной диагностике;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec862 IDRL="862" LICNAME="хирургии;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec863 IDRL="863" LICNAME="хирургии (абдоминальной);" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec864 IDRL="864" LICNAME="хирургии (комбустиологии);" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec865 IDRL="865" LICNAME="хранению гемопоэтических стволовых клеток и костного мозга;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec866 IDRL="866" LICNAME="челюстно-лицевой хирургии;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec867 IDRL="867" LICNAME="эндокринологии;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec868 IDRL="868" LICNAME="эндоскопии;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec869 IDRL="869" LICNAME="энтомологии;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec870 IDRL="870" LICNAME="эпидемиологии;" IERARH="765" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec871 IDRL="871" LICNAME="3) при оказании высокотехнологичной медицинской помощи в условиях дневного стационара по:" IERARH="667" PRIM="0" DATEBEG="26.05.2013" DATEEND="" />
+  <rec872 IDRL="872" LICNAME="акушерству и гинекологии (использованию вспомогательных репродуктивных технологий);" IERARH="871" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec873 IDRL="873" LICNAME="акушерству и гинекологии (за исключением использования вспомогательных репродуктивных технологий);" IERARH="871" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec874 IDRL="874" LICNAME="онкологии;" IERARH="871" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec875 IDRL="875" LICNAME="ревматологии;" IERARH="871" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec876 IDRL="876" LICNAME="4) при оказании высокотехнологичной медицинской помощи в стационарных условиях по:" IERARH="667" PRIM="0" DATEBEG="26.05.2013" DATEEND="" />
+  <rec877 IDRL="877" LICNAME="акушерству и гинекологии (за исключением использования вспомогательных репродуктивных технологий);" IERARH="876" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec878 IDRL="878" LICNAME="акушерству и гинекологии (использованию вспомогательных репродуктивных технологий);" IERARH="876" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec879 IDRL="879" LICNAME="гастроэнтерологии;" IERARH="876" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec880 IDRL="880" LICNAME="гематологии;" IERARH="876" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec881 IDRL="881" LICNAME="дерматовенерологии;" IERARH="876" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec882 IDRL="882" LICNAME="детской кардиологии;" IERARH="876" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec883 IDRL="883" LICNAME="детской онкологии;" IERARH="876" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec884 IDRL="884" LICNAME="детской урологии-андрологии;" IERARH="876" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec885 IDRL="885" LICNAME="детской хирургии;" IERARH="876" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec886 IDRL="886" LICNAME="детской эндокринологии;" IERARH="876" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec887 IDRL="887" LICNAME="кардиологии;" IERARH="876" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec888 IDRL="888" LICNAME="колопроктологии;" IERARH="876" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec889 IDRL="889" LICNAME="медицинской генетике;" IERARH="876" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec890 IDRL="890" LICNAME="неврологии;" IERARH="876" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec891 IDRL="891" LICNAME="нейрохирургии;" IERARH="876" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec892 IDRL="892" LICNAME="неонатологии;" IERARH="876" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec893 IDRL="893" LICNAME="нефрологии;" IERARH="876" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec894 IDRL="894" LICNAME="онкологии;" IERARH="876" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec895 IDRL="895" LICNAME="оториноларингологии (за исключением кохлеарной имплантации);" IERARH="876" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec896 IDRL="896" LICNAME="оториноларингологии (кохлеарной имплантации);" IERARH="876" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec897 IDRL="897" LICNAME="офтальмологии;" IERARH="876" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec898 IDRL="898" LICNAME="педиатрии;" IERARH="876" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec899 IDRL="899" LICNAME="ревматологии;" IERARH="876" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec900 IDRL="900" LICNAME="сердечно-сосудистой хирургии;" IERARH="876" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec901 IDRL="901" LICNAME="торакальной хирургии;" IERARH="876" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec902 IDRL="902" LICNAME="травматологии и ортопедии;" IERARH="876" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec903 IDRL="903" LICNAME="трансплантации костного мозга и гемопоэтических стволовых клеток;" IERARH="876" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec904 IDRL="904" LICNAME="урологии;" IERARH="876" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec905 IDRL="905" LICNAME="хирургии (абдоминальной);" IERARH="876" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec906 IDRL="906" LICNAME="хирургии (комбустиологии);" IERARH="876" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec907 IDRL="907" LICNAME="хирургии (трансплантации органов и (или) тканей);" IERARH="876" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec908 IDRL="908" LICNAME="челюстно-лицевой хирургии;" IERARH="876" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec909 IDRL="909" LICNAME="эндокринологии." IERARH="876" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec910 IDRL="910" LICNAME="При оказании скорой, в том числе скорой специализированной, медицинской помощи организуются и выполняются следующие работы (услуги):" IERARH="" PRIM="1" DATEBEG="26.05.2013" DATEEND="" />
+  <rec911 IDRL="911" LICNAME="1) при оказании скорой медицинской помощи вне медицинской организации по:" IERARH="910" PRIM="0" DATEBEG="26.05.2013" DATEEND="" />
+  <rec912 IDRL="912" LICNAME="организации здравоохранения и общественному здоровью;" IERARH="911" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec913 IDRL="913" LICNAME="медицинской статистике;" IERARH="911" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec914 IDRL="914" LICNAME="скорой медицинской помощи;" IERARH="911" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec915 IDRL="915" LICNAME="управлению сестринской деятельностью;" IERARH="911" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec916 IDRL="916" LICNAME="2) при оказании скорой специализированной медицинской помощи вне медицинской организации, в том числе выездными экстренными консультативными бригадами скорой медицинской помощи, по:" IERARH="910" PRIM="0" DATEBEG="26.05.2013" DATEEND="" />
+  <rec917 IDRL="917" LICNAME="акушерству и гинекологии (за исключением использования вспомогательных репродуктивных технологий);" IERARH="916" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec918 IDRL="918" LICNAME="анестезиологии и реаниматологии;" IERARH="916" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec919 IDRL="919" LICNAME="гематологии;" IERARH="916" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec920 IDRL="920" LICNAME="детской кардиологии;" IERARH="916" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec921 IDRL="921" LICNAME="детской онкологии;" IERARH="916" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec922 IDRL="922" LICNAME="детской урологии-андрологии;" IERARH="916" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec923 IDRL="923" LICNAME="детской хирургии;" IERARH="916" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec924 IDRL="924" LICNAME="детской эндокринологии;" IERARH="916" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec925 IDRL="925" LICNAME="инфекционным болезням;" IERARH="916" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec926 IDRL="926" LICNAME="кардиологии;" IERARH="916" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec927 IDRL="927" LICNAME="неврологии;" IERARH="916" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec928 IDRL="928" LICNAME="нейрохирургии;" IERARH="916" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec929 IDRL="929" LICNAME="неонатологии;" IERARH="916" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec930 IDRL="930" LICNAME="организации здравоохранения и общественному здоровью;" IERARH="916" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec931 IDRL="931" LICNAME="офтальмологии;" IERARH="916" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec932 IDRL="932" LICNAME="педиатрии;" IERARH="916" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec933 IDRL="933" LICNAME="психиатрии;" IERARH="916" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec934 IDRL="934" LICNAME="психиатрии-наркологии;" IERARH="916" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec935 IDRL="935" LICNAME="реаниматологии;" IERARH="916" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec936 IDRL="936" LICNAME="сердечно-сосудистой хирургии;" IERARH="916" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec937 IDRL="937" LICNAME="терапии;" IERARH="916" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec938 IDRL="938" LICNAME="токсикологии;" IERARH="916" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec939 IDRL="939" LICNAME="торакальной хирургии;" IERARH="916" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec940 IDRL="940" LICNAME="травматологии и ортопедии;" IERARH="916" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec941 IDRL="941" LICNAME="управлению сестринской деятельностью;" IERARH="916" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec942 IDRL="942" LICNAME="урологии;" IERARH="916" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec943 IDRL="943" LICNAME="хирургии;" IERARH="916" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec944 IDRL="944" LICNAME="хирургии (абдоминальной);" IERARH="916" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec945 IDRL="945" LICNAME="хирургии (комбустиологии);" IERARH="916" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec946 IDRL="946" LICNAME="челюстно-лицевой хирургии;" IERARH="916" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec947 IDRL="947" LICNAME="управлению сестринской деятельностью;" IERARH="916" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec948 IDRL="948" LICNAME="эндокринологии;" IERARH="916" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec949 IDRL="949" LICNAME="эндоскопии;" IERARH="916" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec950 IDRL="950" LICNAME="3) при оказании скорой медицинской помощи в амбулаторных условиях по:" IERARH="910" PRIM="0" DATEBEG="26.05.2013" DATEEND="" />
+  <rec951 IDRL="951" LICNAME="организации здравоохранения и общественному здоровью;" IERARH="950" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec952 IDRL="952" LICNAME="медицинской статистике;" IERARH="950" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec953 IDRL="953" LICNAME="скорой медицинской помощи;" IERARH="950" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec954 IDRL="954" LICNAME="управлению сестринской деятельностью;" IERARH="950" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec955 IDRL="955" LICNAME="4) при оказании скорой специализированной медицинской помощи в амбулаторных условиях по:" IERARH="910" PRIM="0" DATEBEG="26.05.2013" DATEEND="" />
+  <rec956 IDRL="956" LICNAME="акушерству и гинекологии (за исключением использования вспомогательных репродуктивных технологий);" IERARH="955" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec957 IDRL="957" LICNAME="анестезиологии и реаниматологии;" IERARH="955" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec958 IDRL="958" LICNAME="инфекционным болезням;" IERARH="955" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec959 IDRL="959" LICNAME="кардиологии;" IERARH="955" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec960 IDRL="960" LICNAME="неврологии;" IERARH="955" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec961 IDRL="961" LICNAME="нейрохирургии;" IERARH="955" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec962 IDRL="962" LICNAME="организации здравоохранения и общественному здоровью;" IERARH="955" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec963 IDRL="963" LICNAME="педиатрии;" IERARH="955" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec964 IDRL="964" LICNAME="психиатрии;" IERARH="955" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec965 IDRL="965" LICNAME="психиатрии-наркологии;" IERARH="955" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec966 IDRL="966" LICNAME="реаниматологии;" IERARH="955" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec967 IDRL="967" LICNAME="терапии;" IERARH="955" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec968 IDRL="968" LICNAME="токсикологии;" IERARH="955" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec969 IDRL="969" LICNAME="травматологии и ортопедии;" IERARH="955" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec970 IDRL="970" LICNAME="управлению сестринской деятельностью;" IERARH="955" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec971 IDRL="971" LICNAME="5) при оказании скорой, в том числе скорой специализированной, медицинской помощи в стационарных условиях (в условиях отделения экстренной медицинской помощи) по:" IERARH="910" PRIM="0" DATEBEG="26.05.2013" DATEEND="" />
+  <rec972 IDRL="972" LICNAME="анестезиологии и реаниматологии;" IERARH="971" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec973 IDRL="973" LICNAME="дезинфектологии;" IERARH="971" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec974 IDRL="974" LICNAME="клинической лабораторной диагностике;" IERARH="971" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec975 IDRL="975" LICNAME="лабораторной диагностике;" IERARH="971" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec976 IDRL="976" LICNAME="лабораторному делу;" IERARH="971" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec977 IDRL="977" LICNAME="организации здравоохранения и общественному здоровью;" IERARH="971" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec978 IDRL="978" LICNAME="общей практике;" IERARH="971" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec979 IDRL="979" LICNAME="рентгенологии;" IERARH="971" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec980 IDRL="980" LICNAME="сестринскому делу;" IERARH="971" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec981 IDRL="981" LICNAME="скорой медицинской помощи;" IERARH="971" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec982 IDRL="982" LICNAME="ультразвуковой диагностике;" IERARH="971" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec983 IDRL="983" LICNAME="управление сестринской деятельностью;" IERARH="971" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec984 IDRL="984" LICNAME="эндоскопии." IERARH="971" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec985 IDRL="985" LICNAME="При оказании паллиативной медицинской помощи организуются и выполняются следующие работы (услуги):" IERARH="" PRIM="1" DATEBEG="26.05.2013" DATEEND="" />
+  <rec986 IDRL="986" LICNAME="1) при оказании паллиативной медицинской помощи в амбулаторных условиях по:" IERARH="985" PRIM="0" DATEBEG="26.05.2013" DATEEND="" />
+  <rec987 IDRL="987" LICNAME="анестезиологии и реаниматологии;" IERARH="986" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec988 IDRL="988" LICNAME="гематологии;" IERARH="986" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec989 IDRL="989" LICNAME="гериатрии;" IERARH="986" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec990 IDRL="990" LICNAME="детской кардиологии;" IERARH="986" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec991 IDRL="991" LICNAME="детской онкологии;" IERARH="986" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec992 IDRL="992" LICNAME="детской эндокринологии;" IERARH="986" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec993 IDRL="993" LICNAME="инфекционным болезням;" IERARH="986" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec994 IDRL="994" LICNAME="кардиологии;" IERARH="986" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec995 IDRL="995" LICNAME="клинической лабораторной диагностике;" IERARH="986" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec996 IDRL="996" LICNAME="колопроктологии;" IERARH="986" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec997 IDRL="997" LICNAME="лабораторной диагностике;" IERARH="986" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec998 IDRL="998" LICNAME="лабораторному делу;" IERARH="986" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec999 IDRL="999" LICNAME="лечебной физкультуре;" IERARH="986" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1000 IDRL="1000" LICNAME="лечебной физкультуре и спортивной медицине;" IERARH="986" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1001 IDRL="1001" LICNAME="медико-социальной помощи;" IERARH="986" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1002 IDRL="1002" LICNAME="медицинскому массажу;" IERARH="986" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1003 IDRL="1003" LICNAME="медицинской реабилитации;" IERARH="986" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1004 IDRL="1004" LICNAME="медицинской статистике;" IERARH="986" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1005 IDRL="1005" LICNAME="неврологии;" IERARH="986" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1006 IDRL="1006" LICNAME="нефрологии;" IERARH="986" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1007 IDRL="1007" LICNAME="общей практике;" IERARH="986" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1008 IDRL="1008" LICNAME="онкологии;" IERARH="986" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1009 IDRL="1009" LICNAME="организации здравоохранения и общественному здоровью;" IERARH="986" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1010 IDRL="1010" LICNAME="педиатрии;" IERARH="986" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1011 IDRL="1011" LICNAME="психиатрии;" IERARH="986" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1012 IDRL="1012" LICNAME="психиатрии-наркологии;" IERARH="986" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1013 IDRL="1013" LICNAME="психотерапии;" IERARH="986" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1014 IDRL="1014" LICNAME="рентгенологии;" IERARH="986" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1015 IDRL="1015" LICNAME="сестринскому делу;" IERARH="986" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1016 IDRL="1016" LICNAME="сестринскому делу в педиатрии;" IERARH="986" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1017 IDRL="1017" LICNAME="терапии;" IERARH="986" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1018 IDRL="1018" LICNAME="травматологии и ортопедии;" IERARH="986" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1019 IDRL="1019" LICNAME="управлению сестринской деятельностью;" IERARH="986" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1020 IDRL="1020" LICNAME="урологии;" IERARH="986" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1021 IDRL="1021" LICNAME="физиотерапии;" IERARH="986" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1022 IDRL="1022" LICNAME="хирургии;" IERARH="986" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1023 IDRL="1023" LICNAME="эндокринологии;" IERARH="986" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1024 IDRL="1024" LICNAME="2) при оказании паллиативной медицинской помощи в стационарных условиях по:" IERARH="985" PRIM="0" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1025 IDRL="1025" LICNAME="анестезиологии и реаниматологии;" IERARH="1024" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1026 IDRL="1026" LICNAME="гематологии;" IERARH="1024" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1027 IDRL="1027" LICNAME="гериатрии;" IERARH="1024" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1028 IDRL="1028" LICNAME="детской кардиологии;" IERARH="1024" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1029 IDRL="1029" LICNAME="детской онкологии;" IERARH="1024" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1030 IDRL="1030" LICNAME="детской эндокринологии;" IERARH="1024" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1031 IDRL="1031" LICNAME="диетологии;" IERARH="1024" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1032 IDRL="1032" LICNAME="инфекционным болезням;" IERARH="1024" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1033 IDRL="1033" LICNAME="кардиологии;" IERARH="1024" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1034 IDRL="1034" LICNAME="клинической лабораторной диагностике;" IERARH="1024" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1035 IDRL="1035" LICNAME="колопроктологии;" IERARH="1024" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1036 IDRL="1036" LICNAME="лечебной физкультуре;" IERARH="1024" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1037 IDRL="1037" LICNAME="лечебной физкультуре и спортивной медицине;" IERARH="1024" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1038 IDRL="1038" LICNAME="лабораторной диагностике;" IERARH="1024" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1039 IDRL="1039" LICNAME="лабораторному делу;" IERARH="1024" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1040 IDRL="1040" LICNAME="медико-социальной помощи;" IERARH="1024" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1041 IDRL="1041" LICNAME="медицинской статистике;" IERARH="1024" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1042 IDRL="1042" LICNAME="медицинской реабилитации;" IERARH="1024" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1043 IDRL="1043" LICNAME="неврологии;" IERARH="1024" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1044 IDRL="1044" LICNAME="нефрологии;" IERARH="1024" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1045 IDRL="1045" LICNAME="общей практике;" IERARH="1024" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1046 IDRL="1046" LICNAME="онкологии;" IERARH="1024" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1047 IDRL="1047" LICNAME="организации здравоохранения и общественному здоровью;" IERARH="1024" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1048 IDRL="1048" LICNAME="патологической анатомии;" IERARH="1024" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1049 IDRL="1049" LICNAME="педиатрии;" IERARH="1024" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1050 IDRL="1050" LICNAME="психиатрии;" IERARH="1024" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1051 IDRL="1051" LICNAME="психиатрии-наркологии;" IERARH="1024" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1052 IDRL="1052" LICNAME="психотерапии;" IERARH="1024" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1053 IDRL="1053" LICNAME="сестринскому делу;" IERARH="1024" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1054 IDRL="1054" LICNAME="сестринскому делу в педиатрии;" IERARH="1024" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1055 IDRL="1055" LICNAME="терапии;" IERARH="1024" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1056 IDRL="1056" LICNAME="травматологии и ортопедии;" IERARH="1024" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1057 IDRL="1057" LICNAME="трансфузиологии;" IERARH="1024" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1058 IDRL="1058" LICNAME="управлению сестринской деятельностью;" IERARH="1024" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1059 IDRL="1059" LICNAME="урологии;" IERARH="1024" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1060 IDRL="1060" LICNAME="рентгенологии;" IERARH="1024" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1061 IDRL="1061" LICNAME="физиотерапии;" IERARH="1024" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1062 IDRL="1062" LICNAME="хирургии;" IERARH="1024" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1063 IDRL="1063" LICNAME="эндокринологии." IERARH="1024" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1064 IDRL="1064" LICNAME="При оказании медицинской помощи при санаторно-курортном лечении организуются и выполняются работы (услуги) по:" IERARH="" PRIM="1" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1065 IDRL="1065" LICNAME="акушерству и гинекологии (за исключением использования вспомогательных репродуктивных технологий);" IERARH="1064" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1066 IDRL="1066" LICNAME="акушерскому делу;" IERARH="1064" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1067 IDRL="1067" LICNAME="аллергологии и иммунологии;" IERARH="1064" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1068 IDRL="1068" LICNAME="гастроэнтерологии;" IERARH="1064" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1069 IDRL="1069" LICNAME="гериатрии;" IERARH="1064" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1070 IDRL="1070" LICNAME="гигиеническому воспитанию;" IERARH="1064" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1071 IDRL="1071" LICNAME="дезинфектологии;" IERARH="1064" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1072 IDRL="1072" LICNAME="дерматовенерологии;" IERARH="1064" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1073 IDRL="1073" LICNAME="детской кардиологии;" IERARH="1064" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1074 IDRL="1074" LICNAME="детской урологии-андрологии;" IERARH="1064" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1075 IDRL="1075" LICNAME="детской хирургии;" IERARH="1064" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1076 IDRL="1076" LICNAME="детской эндокринологии;" IERARH="1064" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1077 IDRL="1077" LICNAME="диабетологии;" IERARH="1064" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1078 IDRL="1078" LICNAME="диетологии;" IERARH="1064" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1079 IDRL="1079" LICNAME="кардиологии;" IERARH="1064" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1080 IDRL="1080" LICNAME="клинической лабораторной диагностике;" IERARH="1064" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1081 IDRL="1081" LICNAME="колопроктологии;" IERARH="1064" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1082 IDRL="1082" LICNAME="лабораторной диагностике;" IERARH="1064" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1083 IDRL="1083" LICNAME="лабораторному делу;" IERARH="1064" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1084 IDRL="1084" LICNAME="лечебной физкультуре;" IERARH="1064" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1085 IDRL="1085" LICNAME="лечебной физкультуре и спортивной медицине;" IERARH="1064" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1086 IDRL="1086" LICNAME="мануальной терапии;" IERARH="1064" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1087 IDRL="1087" LICNAME="медицинской реабилитации;" IERARH="1064" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1088 IDRL="1088" LICNAME="медицинской статистике;" IERARH="1064" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1089 IDRL="1089" LICNAME="медицинскому массажу;" IERARH="1064" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1090 IDRL="1090" LICNAME="неврологии;" IERARH="1064" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1091 IDRL="1091" LICNAME="нефрологии;" IERARH="1064" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1092 IDRL="1092" LICNAME="общей практике;" IERARH="1064" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1093 IDRL="1093" LICNAME="организации здравоохранения и общественному здоровью;" IERARH="1064" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1094 IDRL="1094" LICNAME="оториноларингологии (за исключением кохлеарной имплантации);" IERARH="1064" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1095 IDRL="1095" LICNAME="офтальмологии;" IERARH="1064" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1096 IDRL="1096" LICNAME="педиатрии;" IERARH="1064" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1097 IDRL="1097" LICNAME="профпатологии;" IERARH="1064" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1098 IDRL="1098" LICNAME="психотерапии;" IERARH="1064" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1099 IDRL="1099" LICNAME="пульмонологии;" IERARH="1064" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1100 IDRL="1100" LICNAME="ревматологии;" IERARH="1064" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1101 IDRL="1101" LICNAME="рентгенологии;" IERARH="1064" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1102 IDRL="1102" LICNAME="рефлексотерапии;" IERARH="1064" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1103 IDRL="1103" LICNAME="сестринскому делу;" IERARH="1064" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1104 IDRL="1104" LICNAME="сестринскому делу в педиатрии;" IERARH="1064" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1105 IDRL="1105" LICNAME="стоматологии;" IERARH="1064" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1106 IDRL="1106" LICNAME="стоматологии детской;" IERARH="1064" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1107 IDRL="1107" LICNAME="стоматологии общей практики;" IERARH="1064" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1108 IDRL="1108" LICNAME="стоматологии терапевтической;" IERARH="1064" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1109 IDRL="1109" LICNAME="стоматологии хирургической;" IERARH="1064" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1110 IDRL="1110" LICNAME="сурдологии-оториноларингологии;" IERARH="1064" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1111 IDRL="1111" LICNAME="терапии;" IERARH="1064" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1112 IDRL="1112" LICNAME="травматологии и ортопедии;" IERARH="1064" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1113 IDRL="1113" LICNAME="ультразвуковой диагностике;" IERARH="1064" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1114 IDRL="1114" LICNAME="управлению сестринской деятельностью;" IERARH="1064" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1115 IDRL="1115" LICNAME="урологии;" IERARH="1064" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1116 IDRL="1116" LICNAME="физиотерапии;" IERARH="1064" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1117 IDRL="1117" LICNAME="фтизиатрии;" IERARH="1064" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1118 IDRL="1118" LICNAME="функциональной диагностике;" IERARH="1064" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1119 IDRL="1119" LICNAME="хирургии;" IERARH="1064" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1120 IDRL="1120" LICNAME="эндокринологии;" IERARH="1064" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1121 IDRL="1121" LICNAME="эндоскопии;" IERARH="1064" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1122 IDRL="1122" LICNAME="эпидемиологии." IERARH="1064" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1123 IDRL="1123" LICNAME="При проведении медицинских осмотров, медицинских освидетельствований и медицинских экспертиз организуются и выполняются следующие работы (услуги):" IERARH="" PRIM="1" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1124 IDRL="1124" LICNAME="1) при проведении медицинских осмотров по:" IERARH="1123" PRIM="0" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1125 IDRL="1125" LICNAME="медицинским осмотрам (предварительным, периодическим);" IERARH="1124" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1126 IDRL="1126" LICNAME="медицинским осмотрам (предполетным, послеполетным);" IERARH="1124" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1127 IDRL="1127" LICNAME="медицинским осмотрам (предрейсовым, послерейсовым);" IERARH="1124" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1128 IDRL="1128" LICNAME="медицинским осмотрам (предсменным, послесменным);" IERARH="1124" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1129 IDRL="1129" LICNAME="медицинским осмотрам профилактическим;" IERARH="1124" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1130 IDRL="1130" LICNAME="2) при проведении медицинских освидетельствований:" IERARH="1123" PRIM="0" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1131 IDRL="1131" LICNAME="медицинскому освидетельствованию кандидатов в усыновители, опекуны (попечители) или приемные родители;" IERARH="1130" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1132 IDRL="1132" LICNAME="медицинскому освидетельствованию на выявление ВИЧ-инфекции;" IERARH="1130" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1133 IDRL="1133" LICNAME="медицинскому освидетельствованию на наличие инфекционных заболеваний, представляющих опасность для окружающих и являющихся основанием для отказа иностранным гражданам и лицам без гражданства в выдаче либо аннулировании разрешения на временное проживание, или вида на жительство, или разрешения на работу в Российской Федерации;" IERARH="1130" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1134 IDRL="1134" LICNAME="медицинскому освидетельствованию на наличие медицинских противопоказаний к управлению транспортным средством;" IERARH="1130" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1135 IDRL="1135" LICNAME="медицинскому освидетельствованию на наличие медицинских противопоказаний к владению оружием;" IERARH="1130" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1136 IDRL="1136" LICNAME="медицинскому освидетельствованию на состояние опьянения (алкогольного, наркотического или иного токсического);" IERARH="1130" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1137 IDRL="1137" LICNAME="психиатрическому освидетельствованию;" IERARH="1130" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1138 IDRL="1138" LICNAME="3) при проведении медицинских экспертиз по:" IERARH="1123" PRIM="0" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1139 IDRL="1139" LICNAME="военно-врачебной экспертизе;" IERARH="1138" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1140 IDRL="1140" LICNAME="врачебно-летной экспертизе;" IERARH="1138" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1141 IDRL="1141" LICNAME="медико-социальной экспертизе;" IERARH="1138" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1142 IDRL="1142" LICNAME="судебно-медицинской экспертизе;" IERARH="1138" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1143 IDRL="1143" LICNAME="судебно-медицинской экспертизе вещественных доказательств и исследованию биологических объектов (биохимической, генетической, медико-криминалистической, спектрографической, судебно-биологической, судебно-гистологической, судебно-химической, судебно-цитологической, химико-токсикологической);" IERARH="1138" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1144 IDRL="1144" LICNAME="судебно-медицинской экспертизе и исследованию трупа;" IERARH="1138" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1145 IDRL="1145" LICNAME="судебно-медицинской экспертизе и обследованию потерпевших, обвиняемых и других лиц;" IERARH="1138" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1146 IDRL="1146" LICNAME="судебно-психиатрической экспертизе:" IERARH="1138" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1147 IDRL="1147" LICNAME="однородной амбулаторной судебно-психиатрической экспертизе;" IERARH="1138" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1148 IDRL="1148" LICNAME="комплексной амбулаторной судебно-психиатрической экспертизе;" IERARH="1138" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1149 IDRL="1149" LICNAME="однородной стационарной судебно-психиатрической экспертизе;" IERARH="1138" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1150 IDRL="1150" LICNAME="комплексной стационарной судебно-психиатрической экспертизе (психолого-психиатрической, сексолого-психиатрической);" IERARH="1138" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1151 IDRL="1151" LICNAME="экспертизе качества медицинской помощи;" IERARH="1138" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1152 IDRL="1152" LICNAME="экспертизе профессиональной пригодности;" IERARH="1138" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1153 IDRL="1153" LICNAME="экспертизе временной нетрудоспособности;" IERARH="1138" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1154 IDRL="1154" LICNAME="экспертизе связи заболевания с профессией." IERARH="1138" PRIM="2" DATEBEG="26.05.2013" DATEEND="" />
+  <rec1155 IDRL="1155" LICNAME="При обращении донорской крови и (или) ее компонентов в медицинских целях организуются и выполняются работы (услуги) по заготовке, хранению донорской крови и (или) ее компонентов." IERARH="" PRIM="1" DATEBEG="26.05.2013" DATEEND="" />
+</root>

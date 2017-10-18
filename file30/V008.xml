@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<root>
+  <rec1 IDVMP="1" VMPNAME="Первичная медико-санитарная помощь" DATEBEG="01.01.2011" DATEEND="" />
+  <rec2 IDVMP="2" VMPNAME="Скорая, в том числе специализированная медицинская помощь" DATEBEG="01.01.2011" DATEEND="" />
+  <rec3 IDVMP="3" VMPNAME="Специализированная медицинская помощь" DATEBEG="01.01.2011" DATEEND="" />
+  <rec4 IDVMP="11" VMPNAME="первичная доврачебная медико-санитарная помощь" DATEBEG="01.01.2013" DATEEND="" />
+  <rec5 IDVMP="12" VMPNAME="первичная врачебная медико-санитарная помощь" DATEBEG="01.01.2013" DATEEND="" />
+  <rec6 IDVMP="13" VMPNAME="первичная специализированная медико-санитарная помощь" DATEBEG="01.01.2013" DATEEND="" />
+  <rec7 IDVMP="21" VMPNAME="скорая специализированная медицинская помощь" DATEBEG="01.01.2013" DATEEND="" />
+  <rec8 IDVMP="22" VMPNAME="санитарно-авиационная медицинская помощь" DATEBEG="01.01.2013" DATEEND="" />
+  <rec9 IDVMP="31" VMPNAME="специализированная медицинская помощь" DATEBEG="01.01.2013" DATEEND="" />
+  <rec10 IDVMP="32" VMPNAME="высокотехнологичная специализированная медицинская помощь" DATEBEG="01.01.2013" DATEEND="" />
+  <rec11 IDVMP="4" VMPNAME="Паллиативная медицинская помощь" DATEBEG="01.01.2013" DATEEND="" />
+</root>

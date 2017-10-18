@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application Copyright="BadmaevaNK &amp; RadnaevMB">
+  <NavigationItems>
+    <Items>
+      <Item Id="Default">
+        <Items>
+          <Item Id="DoctorRole_ListView" Index="0" />
+          <Item Id="MyDetails" Index="1" />
+          <Item Id="HospitalCase_ListView" Index="2" />
+          <Item Id="DispanserizaionCase_ListView" Index="3" />
+          <Item Id="VipiskaMedicamenta_ListView" Index="4" />
+          <Item Id="DnevnoyStacionar_ListView" Caption="Дневной стационар" Index="5" />
+          <Item Id="CsgVidVme_ListView" Removed="True" />
+        </Items>
+      </Item>
+      <Item Id="@04f32711-2bd7-4acf-b37b-97d5368bf049">
+        <Items>
+          <Item Id="CsgVidVme_ListView" ViewId="CsgVidVme_ListView" ObjectKey="" IsNewNode="True" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+  <Options Skin="Visual Studio 2013 Blue" UIType="TabbedMDI" FormStyle="Ribbon">
+    <RibbonOptions RibbonControlStyle="Office2013" />
+  </Options>
+  <SchemaModules>
+    <SchemaModule Name="SystemModule" Version="14.2.7.0" IsNewNode="True" />
+    <SchemaModule Name="SystemWindowsFormsModule" Version="14.2.7.0" IsNewNode="True" />
+  </SchemaModules>
+</Application>

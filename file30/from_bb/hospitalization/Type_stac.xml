@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<root>
+  <rec1 CODE="1" NAME="Терапия"  />
+  <rec2 CODE="2" NAME="Акушерский"  />
+  <rec3 CODE="3" NAME="МПБ"  />
+  <rec4 CODE="4" NAME="Неврологический"  />
+  <rec5 CODE="5" NAME="Подготовка к ЭКО" />
+ </root>

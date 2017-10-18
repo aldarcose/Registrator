@@ -1,0 +1,29 @@
+<?xml version="1.0" standalone="yes"?>
+<DATAPACKET Version="2.0">
+<METADATA>
+<FIELDS>
+<FIELD FieldName="id" DisplayLabel="id" FieldType="Integer" FieldClass="TField"/>
+<FIELD FieldName="name" DisplayLabel="name" FieldType="Unknown" FieldClass="TField"/>
+<FIELD FieldName="code" DisplayLabel="code" FieldType="Unknown" FieldClass="TField"/>
+<FIELD FieldName="kod_oms2" DisplayLabel="kod_oms2" FieldType="Integer" FieldClass="TField"/>
+<FIELD FieldName="lpu_id" DisplayLabel="lpu_id" FieldType="String" FieldClass="TField"/>
+<FIELD FieldName="date_vnes_inf" DisplayLabel="date_vnes_inf" FieldType="String" FieldClass="TField"/>
+<FIELD FieldName="operator_id" DisplayLabel="operator_id" FieldType="Integer" FieldClass="TField"/>
+<FIELD FieldName="pocket_id" DisplayLabel="pocket_id" FieldType="Integer" FieldClass="TField"/>
+<FIELD FieldName="sort" DisplayLabel="sort" FieldType="Integer" FieldClass="TField"/>
+</FIELDS>
+</METADATA>
+<ROWDATA>
+<ROW id="1" name="Работающий,&#160;служащий" code="1" kod_oms2="null" lpu_id="03001" date_vnes_inf="2011-06-09&#160;13:57:57.371729+09" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="2" name="Неработающий" code="2" kod_oms2="null" lpu_id="03001" date_vnes_inf="2011-06-09&#160;13:57:57.371729+09" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="3" name="Дети" code="3" kod_oms2="null" lpu_id="03001" date_vnes_inf="2011-06-09&#160;13:57:57.371729+09" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="4" name="Пенсионер&#160;(неработающий)" code="4" kod_oms2="null" lpu_id="03001" date_vnes_inf="2011-06-09&#160;13:57:57.371729+09" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="5" name="Пенсионер&#160;(работающий)" code="5" kod_oms2="null" lpu_id="03001" date_vnes_inf="2011-06-09&#160;13:57:57.371729+09" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="6" name="Безработный&#160;зарегистрированный" code="6" kod_oms2="null" lpu_id="03001" date_vnes_inf="2011-06-09&#160;13:57:57.371729+09" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="7" name="Подростки" code="7" kod_oms2="null" lpu_id="03001" date_vnes_inf="2011-06-09&#160;13:57:57.371729+09" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="8" name="Военнослужащий&#160;неаттестованный" code="8" kod_oms2="null" lpu_id="03001" date_vnes_inf="2011-06-09&#160;13:57:57.371729+09" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="9" name="Домохозяйки" code="9" kod_oms2="null" lpu_id="03001" date_vnes_inf="2011-06-09&#160;13:57:57.371729+09" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="10" name="Студенты" code="10" kod_oms2="null" lpu_id="03001" date_vnes_inf="2011-06-09&#160;13:57:57.371729+09" operator_id="null" pocket_id="null" sort="null"/>
+<ROW id="11" name="Индивидуальные&#160;плательщики" code="11" kod_oms2="null" lpu_id="03001" date_vnes_inf="2011-06-09&#160;13:57:57.371729+09" operator_id="null" pocket_id="null" sort="null"/>
+</ROWDATA>
+</DATAPACKET>

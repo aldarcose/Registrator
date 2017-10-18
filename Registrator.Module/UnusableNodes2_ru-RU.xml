@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Views Id="Views">
+    <DetailView Id="MedService_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="CommonService">
+              <LayoutGroup Id="CommonService_col1">
+                <LayoutGroup Id="Auto473c8f80-ba60-41f3-b874-7f363668c745" Caption="Auto473c8f80-ba60-41f3-b874-7f363668c745(6)" />
+                <LayoutGroup Id="Autob404b432-f468-4092-b9ce-a669305609ef" Caption="Autob404b432-f468-4092-b9ce-a669305609ef(9)" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>

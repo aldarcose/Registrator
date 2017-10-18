@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<root>
+  <rec1 IDIDST="0" STNAME="Не принято решение об оплате" DATEBEG="01.01.2011" DATEEND="" />
+  <rec2 IDIDST="1" STNAME="Оплачена" DATEBEG="01.01.2011" DATEEND="" />
+  <rec3 IDIDST="2" STNAME="Не оплачена" DATEBEG="01.01.2011" DATEEND="" />
+  <rec4 IDIDST="3" STNAME="Частично оплачена" DATEBEG="01.01.2011" DATEEND="" />
+</root>

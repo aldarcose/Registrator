@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<packet>
+  <zglv type="VidMp" version="1.1" date="01.01.2013" />
+  <zap IDVMP="1" VMPNAME="Первичная медико-санитарная помощь" DATEBEG="01.01.2011" DATEEND="" />
+  <zap IDVMP="2" VMPNAME="Скорая, в том числе специализированная, медицинская помощь" DATEBEG="01.01.2011" DATEEND="" />
+  <zap IDVMP="3" VMPNAME="Специализированная, в том числе высокотехнологичная, медицинская помощь" DATEBEG="01.01.2011" DATEEND="" />
+  <zap IDVMP="11" VMPNAME="первичная доврачебная медико-санитарная помощь" DATEBEG="01.01.2013" DATEEND="" />
+  <zap IDVMP="12" VMPNAME="первичная врачебная медико-санитарная помощь" DATEBEG="01.01.2013" DATEEND="" />
+  <zap IDVMP="13" VMPNAME="первичная специализированная медико-санитарная помощь" DATEBEG="01.01.2013" DATEEND="" />
+  <zap IDVMP="21" VMPNAME="скорая специализированная медицинская помощь" DATEBEG="01.01.2013" DATEEND="" />
+  <zap IDVMP="22" VMPNAME="санитарно-авиационная медицинская помощь" DATEBEG="01.01.2013" DATEEND="" />
+  <zap IDVMP="31" VMPNAME="специализированная медицинская помощь" DATEBEG="01.01.2013" DATEEND="" />
+  <zap IDVMP="32" VMPNAME="высокотехнологичная специализированная медицинская помощь" DATEBEG="01.01.2013" DATEEND="" />
+  <zap IDVMP="4" VMPNAME="Паллиативная медицинская помощь" DATEBEG="01.01.2013" DATEEND="" />
+</packet>

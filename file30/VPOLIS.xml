@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<root>
+  <rec1 IDDOC="1" DOCNAME="Полис ОМС старого образца" DATEBEG="01.01.2011" DATEEND="" />
+  <rec2 IDDOC="2" DOCNAME="Временное свидетельство, подтверждающее оформление полиса обязательного медицинского страхования" DATEBEG="01.01.2011" DATEEND="" />
+  <rec3 IDDOC="3" DOCNAME="Полис ОМС единого образца" DATEBEG="01.01.2011" DATEEND="" />
+</root>

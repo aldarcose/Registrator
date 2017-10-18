@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<root>
+  <rec1 IDVED="1" VEDNAME="Муниципального образования" DATEBEG="01.01.2011" DATEEND="" />
+  <rec2 IDVED="2" VEDNAME="Субъекта Российской Федерации" DATEBEG="01.01.2011" DATEEND="" />
+  <rec3 IDVED="4" VEDNAME="Минобрнауки России" DATEBEG="01.01.2011" DATEEND="" />
+  <rec4 IDVED="5" VEDNAME="Минобороны России" DATEBEG="01.01.2011" DATEEND="" />
+  <rec5 IDVED="6" VEDNAME="МВД России" DATEBEG="01.01.2011" DATEEND="" />
+  <rec6 IDVED="8" VEDNAME="ФСБ России" DATEBEG="01.01.2011" DATEEND="" />
+  <rec7 IDVED="9" VEDNAME="РАМН" DATEBEG="01.01.2011" DATEEND="" />
+  <rec8 IDVED="10" VEDNAME="ФМБА России" DATEBEG="01.01.2011" DATEEND="" />
+  <rec9 IDVED="11" VEDNAME="Прочих федеральных министерств и ведомств" DATEBEG="01.01.2011" DATEEND="" />
+  <rec10 IDVED="12" VEDNAME="НУЗ ОАО &quot;РЖД&quot;" DATEBEG="01.01.2011" DATEEND="" />
+  <rec11 IDVED="13" VEDNAME="Автономные МО" DATEBEG="01.01.2011" DATEEND="" />
+  <rec12 IDVED="14" VEDNAME="Общественных, религиозных организаций" DATEBEG="01.01.2011" DATEEND="" />
+  <rec13 IDVED="15" VEDNAME="Иные" DATEBEG="01.01.2011" DATEEND="" />
+  <rec14 IDVED="7" VEDNAME="ФСИН России" DATEBEG="25.10.2012" DATEEND="" />
+  <rec15 IDVED="16" VEDNAME="Минтруда России" DATEBEG="22.11.2012" DATEEND="" />
+  <rec16 IDVED="3" VEDNAME="Минздрав России" DATEBEG="12.12.2012" DATEEND="" />
+</root>

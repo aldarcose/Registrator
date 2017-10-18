@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<packet>
+  <zglv type="DispR" version="1.1" date="06.03.2014" />
+  <zap IDDR="1" DRNAME="Присвоена I группа здоровья" DATEBEG="26.12.2013" DATEEND="" />
+  <zap IDDR="2" DRNAME="Присвоена II группа здоровья" DATEBEG="26.12.2013" DATEEND="" />
+  <zap IDDR="3" DRNAME="Присвоена III группа здоровья" DATEBEG="26.12.2013" DATEEND="" />
+  <zap IDDR="4" DRNAME="Присвоена IV группа здоровья" DATEBEG="26.12.2013" DATEEND="" />
+  <zap IDDR="5" DRNAME="Присвоена V группа здоровья" DATEBEG="26.12.2013" DATEEND="" />
+  <zap IDDR="6" DRNAME="Направлен на II этап диспансеризации" DATEBEG="26.12.2013" DATEEND="06.03.2014" />
+  <zap IDDR="7" DRNAME="Проведен периодический медицинский осмотр несовершеннолетнему" DATEBEG="26.12.2013" DATEEND="" />
+  <zap IDDR="11" DRNAME="Направлен на II этап диспансеризации, предварительно присвоена I группа здоровья" DATEBEG="06.03.2014" DATEEND="" />
+  <zap IDDR="12" DRNAME="Направлен на II этап диспансеризации, предварительно присвоена II группа здоровья" DATEBEG="06.03.2014" DATEEND="" />
+  <zap IDDR="13" DRNAME="Направлен на II этап диспансеризации, предварительно присвоена III группа здоровья" DATEBEG="06.03.2014" DATEEND="" />
+</packet>

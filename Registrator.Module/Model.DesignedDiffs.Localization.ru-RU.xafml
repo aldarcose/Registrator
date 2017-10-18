@@ -1,0 +1,478 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application Title="MIS" Copyright="BadmaevaNK &amp; RadnaevMB">
+  <BOModel>
+    <Class Name="Registrator.Module.BusinessObjects.Pacient" Caption="Пациент">
+      <OwnMembers>
+        <Member Name="Address" Caption="Адрес" />
+        <Member Name="Document" Caption="Документ" />
+        <Member Name="Gender" Caption="Пол" />
+        <Member Name="Polises" Caption="Полисы" />
+      </OwnMembers>
+    </Class>
+  </BOModel>
+  <NavigationItems>
+    <Items>
+      <Item Id="Reports" Caption="Отчеты" />
+      <Item Id="Default" Caption="Основные">
+        <Items>
+          <Item Id="Constants_ListView" Caption="Константы программы" />
+          <Item Id="DnevnoyStacionar_ListView" Caption="Дневной стационар" />
+          <Item Id="Pacient_ListView" Caption="Пациенты" />
+          <Item Id="VERS_SPEC_ListView" Caption="Медицинские специальности" />
+        </Items>
+      </Item>
+      <Item Id="@04f32711-2bd7-4acf-b37b-97d5368bf049" Caption="Справочники">
+        <Items>
+          <Item Id="Address_ListView" Caption="Адреса" />
+          <Item Id="Constants_ListView" Caption="Константы программы" />
+          <Item Id="Doctor_ListView" Caption="Доктора" />
+          <Item Id="DoctorDolgnost_ListView" Caption="Должности" />
+          <Item Id="Document_ListView" Caption="Документы" />
+          <Item Id="MedOrg_ListView" Caption="Реестр МО" />
+          <Item Id="Otdel_ListView_Copy" Caption="Отделы" />
+          <Item Id="Polis_ListView" Caption="Полисы" />
+          <Item Id="StacionarBindDoctorHistory_ListView" Caption="История передачи стационара" />
+          <Item Id="StrahMedOrg_ListView" Caption="Реестр СМО" />
+          <Item Id="Street_ListView" Caption="Улицы" />
+          <Item Id="Uchastok_ListView" Caption="Участки" />
+        </Items>
+      </Item>
+      <Item Id="@ffaaf455-8652-42aa-8784-3d65c1407880" Caption="Классификаторы">
+        <Items>
+          <Item Id="VidDispanserizacii_ListView" Caption="Вид диспансеризации" />
+          <Item Id="VidMedPomoshi_ListView" Caption="Вид мед. помощи" />
+          <Item Id="VidUslugiMedPomoshi_ListView" Caption="Вид услуги мед. помощи" />
+          <Item Id="Celpos_ListView" Caption="Цель посещения" />
+          <Item Id="City_ListView" Caption="Населенный пункт" />
+          <Item Id="ClinicStatGroups_ListView" Caption="Клинико-статистические группы" />
+          <Item Id="Country_ListView" Caption="Страна" />
+          <Item Id="District_ListView" Caption="Район" />
+          <Item Id="DoctorProfil_ListView" Caption="Профиль врача" />
+          <Item Id="DoctorSpecTree_ListView" Caption="Врачебные специальности (дерево)" />
+          <Item Id="DoctorUslugi_ListView" Caption="Услуги врача" />
+          <Item Id="FormaMedPomoshi_ListView" Caption="Форма мед. помощи" />
+          <Item Id="IshodZabolevaniya_ListView" Caption="Исход заболевания" />
+          <Item Id="Kategoriya_ListView" Caption="Категория" />
+          <Item Id="KategoriyaLgot_ListView" Caption="Категории льготников" />
+          <Item Id="Lgota_ListView" Caption="Льгота" />
+          <Item Id="MedProfil_ListView" Caption="Мед. профили" />
+          <Item Id="MKB10_ListView" Caption="Диагноз MKB10" />
+          <Item Id="Otdel_ListView" Caption="Отделение" />
+          <Item Id="Republic_ListView" Caption="Субъект РФ" />
+          <Item Id="ResultatDispanserizacii_ListView" Caption="Результат диспансеризации" />
+          <Item Id="SocStatus_ListView" Caption="Социальный статус" />
+          <Item Id="TipStacionara_ListView" Caption="Тип стационара" />
+          <Item Id="VidDocumenta_ListView" Caption="Тип документа, удостоверяющего личность" />
+          <Item Id="VidPolisa_ListView" Caption="Тип полиса" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+  <Views>
+    <DetailView Id="CommonProtocol_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SizeableEditors" Caption="SizeableEditors">
+            <TabbedGroup Id="Tabs">
+              <LayoutGroup Id="AnamnezTemplates" Caption="Шаблоны анамнеза" />
+              <LayoutGroup Id="ComplainTemplates" Caption="Шаблоны жалоб" />
+              <LayoutGroup Id="RecomendTemplates" Caption="Шаблоны рекомендаций" />
+              <LayoutGroup Id="ObjStatusTerTemplates" Caption="Шаблоны объективного статуса" />
+            </TabbedGroup>
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs">
+            <LayoutGroup Id="AnamnezTemplates" Caption="Шаблоны анамнеза" />
+            <LayoutGroup Id="ComplainTemplates" Caption="Шаблоны жалоб" />
+            <LayoutGroup Id="ObjStatusTerTemplates" Caption="Шаблоны объективного статуса" />
+            <LayoutGroup Id="RecomendTemplates" Caption="Шаблоны рекомендаций" />
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="DispanserizaionCase_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="AbstractCase" Caption="Данные">
+              <LayoutGroup Id="AbstractCase_col1">
+                <LayoutGroup Id="Autodba19b3b-eea0-4524-9b5c-a3d5653367b2" Caption="Autodba19b3b-eea0-4524-9b5c-a3d5653367b2(5)" />
+                <TabbedGroup Id="Item3">
+                  <LayoutGroup Id="Item2" Caption="Состояние здоровья" />
+                  <LayoutGroup Id="Item4" Caption="Реабилитация" />
+                </TabbedGroup>
+              </LayoutGroup>
+              <LayoutGroup Id="AbstractCase_col2" Caption="AbstractCase_col2" />
+            </LayoutGroup>
+            <LayoutGroup Id="DispanserizaionCase" Caption="Type" />
+            <LayoutGroup Id="DispCase" Caption="Результат диспансеризации" />
+          </LayoutGroup>
+          <LayoutGroup Id="Services_Group" Caption="Услуги" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="DispanserizationService_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SizeableEditors" Caption="SizeableEditors">
+            <TabbedGroup Id="Tabs">
+              <LayoutGroup Id="EditableProtocol.Records" Caption="Протокол" />
+              <LayoutGroup Id="CommonProtocol.RecomendTemplates" Caption="Рекомендации" />
+              <LayoutGroup Id="Item1" Caption="Диагнозы до обследования" />
+              <LayoutGroup Id="Item2" Caption="Диагнозы после обследования" />
+            </TabbedGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="DispsServiceList_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="DispsServiceList" Caption="Disps Service List">
+              <LayoutGroup Id="DispsServiceList_col2" Caption="DispsServiceList_col2" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="DispTypeCreateInfo_DetailView">
+      <Items>
+        <PropertyEditor Id="AllowedTypes" Caption="Выберите тип" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="AllowedTypes_Group" Caption="Выберите тип:" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="DnevnoyStacionar_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="DnevnoyStacionar" Caption="Dnevnoy Stacionar" />
+            <LayoutGroup Id="XPObject" Caption="Идентификатор объекта" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Doctor_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="Doctor" Caption="Doctor" />
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs">
+            <LayoutGroup Id="Templates" Caption="Шаблоны" />
+            <LayoutGroup Id="Item1" Caption="Роли" />
+            <LayoutGroup Id="DoctorRoles" Caption="Шаблоны" />
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="DoctorSpecTree_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="DoctorSpecTree" Caption="Doctor Spec Tree" />
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs">
+            <LayoutGroup Id="TerrUslugi" Caption="Оказываемые специальностью услуги">
+              <LayoutGroup Id="DefaultServices" Caption="Услуги по умолчанию для посещений" />
+            </LayoutGroup>
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="HospitalCase_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="CommonCase" Caption="Госпитализация">
+              <LayoutGroup Id="CommonCase_col1" Caption="CommonCase_col1">
+                <LayoutGroup Id="Autoa8c4d257-d9c4-4bc3-a207-aea182e24f60" Caption="Autoa8c4d257-d9c4-4bc3-a207-aea182e24f60(10)" />
+              </LayoutGroup>
+              <LayoutGroup Id="CommonCase_col2" Caption="CommonCase_col2" />
+            </LayoutGroup>
+            <LayoutGroup Id="AbstractCase" Caption="Abstract Case">
+              <LayoutGroup Id="AbstractCase_col2" Caption="AbstractCase_col2" />
+              <LayoutGroup Id="AbstractCase_col1" Caption="AbstractCase_col1" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <TabbedGroup Id="Protocol">
+            <LayoutGroup Id="Anamnez" Caption="Анамнез" />
+            <LayoutGroup Id="Complains" Caption="Жалобы" />
+            <LayoutGroup Id="Recs" Caption="Рекомендации" />
+            <LayoutGroup Id="ObjStatus" Caption="Объективный статус терапевта" />
+          </TabbedGroup>
+          <TabbedGroup Id="Tabs">
+            <LayoutGroup Id="Services" Caption="Услуги" />
+            <LayoutGroup Id="Diagnoses" Caption="Диагнозы" />
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="MedOrg_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="MedOrg" Caption="Med Org" />
+          </LayoutGroup>
+          <LayoutGroup Id="SizeableEditors" Caption="Полное наименование" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="MedService_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="CommonService" Caption="Данные услуги">
+              <LayoutGroup Id="Auto7f761246-4387-4bdb-bd14-9ff0283a30a0" Caption="" />
+            </LayoutGroup>
+            <TabbedGroup Id="Data" Caption="">
+              <LayoutGroup Id="CommonService" Caption="Данные услуги">
+                <LayoutGroup Id="PreD" Caption="PreD" />
+                <LayoutGroup Id="MainD" Caption="MainD" />
+                <LayoutGroup Id="Dates" Caption="Dates" />
+                <TabbedGroup Id="@252aad17-fe87-4ac7-a50a-3e01b6f09cb9">
+                  <LayoutGroup Id="@00125a52-d82b-4714-bd25-33b7ae2fcde8" Caption="Анамнез" />
+                  <LayoutGroup Id="@210a5f45-c6a7-4c58-88ef-0e0fa01e9e54" Caption="Жалобы" />
+                  <LayoutGroup Id="@b8a36eef-ab47-4674-a300-36dcd237c204" Caption="Рекомендации" />
+                  <LayoutGroup Id="@ee043f3f-35c7-4e88-a6b8-60bf3fa07b4a" Caption="Объективный статус терапевта" />
+                  <LayoutGroup Id="@644be72d-70f9-44a3-970c-5ad175cb3ca8" Caption="Назначенные препараты" />
+                  <LayoutGroup Id="Item1" Caption="Протокол" />
+                </TabbedGroup>
+              </LayoutGroup>
+              <LayoutGroup Id="Diagnoses" Caption="Диагнозы услуги" />
+            </TabbedGroup>
+            <LayoutGroup Id="AbstractService" Caption="AbstractService" />
+          </LayoutGroup>
+          <LayoutGroup Id="SizeableEditors" Caption="SizeableEditors" />
+          <TabbedGroup Id="Tabs">
+            <LayoutGroup Id="Protocol.AnamnezTemplates" Caption="Шаблоны анамнеза" />
+            <LayoutGroup Id="Protocol.ComplainTemplates" Caption="Шаблоны жалоб" />
+            <LayoutGroup Id="Protocol.ObjStatusTerTemplates" Caption="Шаблоны объективного статуса" />
+            <LayoutGroup Id="Protocol.RecomendTemplates" Caption="Шаблоны рекомендаций" />
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="MKBWithDispInfoAfter_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="Healing" Caption="Лечение" />
+            <LayoutGroup Id="Rehabilition" Caption="Реабилитация/СКЛ" />
+            <LayoutGroup Id="Consultation" Caption="Дополнительные консультации">
+              <LayoutGroup Id="Auto494e0274-406f-4712-9f89-b2fec59ef090" Caption="" />
+            </LayoutGroup>
+            <LayoutGroup Id="MKBWithDispInfoAfter" Caption="MKBWith Disp Info After" />
+          </LayoutGroup>
+          <LayoutGroup Id="SizeableEditors" Caption="Рекомендации">
+            <LayoutGroup Id="RecomendTemplates_Group" Caption="Шаблоны рекомендаций" />
+          </LayoutGroup>
+          <LayoutGroup Id="RecomendTemplates_Group" Caption="Шаблоны рекомендаций" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="MKBWithDispInfoBefore_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="Heal_Layout" Caption="Лечение">
+              <LayoutGroup Id="Heal" Caption="Лечение" />
+            </LayoutGroup>
+            <LayoutGroup Id="Rehab_Layout" Caption="Реабилитация/СКЛ">
+              <LayoutGroup Id="Rehab" Caption="Реабилитация/СКЛ" />
+            </LayoutGroup>
+            <LayoutGroup Id="MKBWithDispInfoBefore" Caption="MKBWith Disp Info Before" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="MKBWithType_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors" Caption="Диагноз">
+            <LayoutGroup Id="MKBWithType" Caption="Информация о диагнозе">
+              <LayoutGroup Id="MKBWithType_col1">
+                <LayoutGroup Id="Auto596db65d-e81c-4159-bc29-84f4471bef85" Caption="Auto596db65d-e81c-4159-bc29-84f4471bef85(6)" />
+              </LayoutGroup>
+              <LayoutGroup Id="MKBWithType_col2" Caption="MKBWithType_col2" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Pacient_DetailView">
+      <Items>
+        <PropertyEditor Id="Address.Build" Caption="Корпус" />
+        <PropertyEditor Id="Address.Flat" Caption="Квартира" />
+        <PropertyEditor Id="Address.House" Caption="Дом" />
+        <PropertyEditor Id="Address.Level1" Caption="Регион" />
+        <PropertyEditor Id="Address.Level2" Caption="Район" />
+        <PropertyEditor Id="Address.Level3" Caption="Город" />
+        <PropertyEditor Id="Address.Level4" Caption="Поселок" />
+        <PropertyEditor Id="Address.Street" Caption="Улица" />
+        <PropertyEditor Id="AddressFact.Build" Caption="Корпус" />
+        <PropertyEditor Id="AddressFact.Flat" Caption="Квартира" />
+        <PropertyEditor Id="AddressFact.House" Caption="Дом" />
+        <PropertyEditor Id="AddressFact.Level1" Caption="Регион" />
+        <PropertyEditor Id="AddressFact.Level2" Caption="Район" />
+        <PropertyEditor Id="AddressFact.Level3" Caption="Город" />
+        <PropertyEditor Id="AddressFact.Level4" Caption="Поселок" />
+        <PropertyEditor Id="AddressFact.Street" Caption="Улица" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="Item1" Caption="Пациент">
+              <TabbedGroup Id="Item6" Caption="Tabs">
+                <LayoutGroup Id="Pacient" Caption="Общая информация">
+                  <LayoutGroup Id="Pacient_col1">
+                    <LayoutGroup Id="Auto8c381dd7-2f38-4ffb-b22e-306c72b2ae6e" Caption="Auto8c381dd7-2f38-4ffb-b22e-306c72b2ae6e(7)" />
+                    <LayoutGroup Id="Autodec89098-ef6e-4b42-b866-6dfa51a48eb5" Caption="Autodec89098-ef6e-4b42-b866-6dfa51a48eb5(9)">
+                      <LayoutGroup Id="Auto80e3ae82-d3de-40db-bd8f-b5f130ab4b2b" Caption="Auto80e3ae82-d3de-40db-bd8f-b5f130ab4b2b(10)" />
+                      <LayoutGroup Id="Autocad59d92-4c52-4256-9576-a6a9a240a115" Caption="Autocad59d92-4c52-4256-9576-a6a9a240a115(13)">
+                        <LayoutGroup Id="Auto4fa5883a-1dd1-44d0-ab86-5cb79dafd9e7" Caption="Auto4fa5883a-1dd1-44d0-ab86-5cb79dafd9e7(18)" />
+                        <LayoutGroup Id="Autob3cc080e-ec5c-4ef2-8e74-85b1fc151c56" Caption="Autob3cc080e-ec5c-4ef2-8e74-85b1fc151c56(21)" />
+                      </LayoutGroup>
+                    </LayoutGroup>
+                  </LayoutGroup>
+                </LayoutGroup>
+                <LayoutGroup Id="Disability" Caption="Инвалидность" />
+                <LayoutGroup Id="Address" Caption="Адрес">
+                  <TabbedGroup Id="@8a856325-2828-4bd5-a8fe-15be54b9a098">
+                    <LayoutGroup Id="Auto59fb0a6f-09e0-4f35-ac73-e9fb20994655" Caption="Прописки">
+                      <LayoutGroup Id="Autoaf50159f-3d64-47bf-bb31-529a9cbc12da" Caption="Autoaf50159f-3d64-47bf-bb31-529a9cbc12da(50)" />
+                    </LayoutGroup>
+                    <LayoutGroup Id="@7ecbf7c7-9ff3-4689-93a1-1b751bc2bf88" Caption="Проживания">
+                      <LayoutGroup Id="Auto927ee6ec-7ca3-425c-a98e-819af8e2f593" Caption="Auto927ee6ec-7ca3-425c-a98e-819af8e2f593(59)" />
+                    </LayoutGroup>
+                  </TabbedGroup>
+                </LayoutGroup>
+                <LayoutGroup Id="Document" Caption="Документ">
+                  <LayoutGroup Id="Auto54b487f7-2d8a-45e8-bd85-6f17669c2e87" Caption="Auto54b487f7-2d8a-45e8-bd85-6f17669c2e87(36)">
+                    <LayoutGroup Id="Autodd75d144-7d6a-4515-b3e8-0ce3e1a3b500" Caption="Autodd75d144-7d6a-4515-b3e8-0ce3e1a3b500(37)">
+                      <LayoutGroup Id="Autob7600a52-f34c-401e-ae33-86b3532c8d44" Caption="Autob7600a52-f34c-401e-ae33-86b3532c8d44(39)">
+                        <LayoutGroup Id="Auto8d83cc16-44bc-47e4-b26e-9cd41c6eb945" Caption="Auto8d83cc16-44bc-47e4-b26e-9cd41c6eb945(40)" />
+                        <LayoutGroup Id="Auto15962cc4-8c81-4bfa-8b9d-45c3865e5201" Caption="Auto15962cc4-8c81-4bfa-8b9d-45c3865e5201(43)" />
+                      </LayoutGroup>
+                    </LayoutGroup>
+                  </LayoutGroup>
+                </LayoutGroup>
+                <LayoutGroup Id="Polises" Caption="Полисы" />
+              </TabbedGroup>
+            </LayoutGroup>
+            <LayoutGroup Id="Pacient" Caption="Данные пациента">
+              <LayoutGroup Id="Pacient_col1">
+                <LayoutGroup Id="Autodec89098-ef6e-4b42-b866-6dfa51a48eb5" Caption="Autodec89098-ef6e-4b42-b866-6dfa51a48eb5(9)">
+                  <LayoutGroup Id="Auto80e3ae82-d3de-40db-bd8f-b5f130ab4b2b" Caption="Auto80e3ae82-d3de-40db-bd8f-b5f130ab4b2b(10)" />
+                  <LayoutGroup Id="Autocad59d92-4c52-4256-9576-a6a9a240a115" Caption="Autocad59d92-4c52-4256-9576-a6a9a240a115(13)" />
+                </LayoutGroup>
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="Item4" Caption="Мед. данные">
+            <TabbedGroup Id="Tabs">
+              <LayoutGroup Id="VisitCases" Caption="Посещения" />
+              <LayoutGroup Id="DnevnieStacionari" Caption="Дневной стационар" />
+            </TabbedGroup>
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs">
+            <LayoutGroup Id="Sluchs" Caption="Случаи" />
+            <LayoutGroup Id="DnevnieStacionari" Caption="Дневной стационар" />
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="Pacient_Polises_ListView">
+      <Columns>
+        <ColumnInfo Id="Pacient" Caption="Пациент" />
+        <ColumnInfo Id="PRZ" Caption="ПРЗ" />
+        <ColumnInfo Id="Type" Caption="Тип" />
+        <ColumnInfo Id="Number" Caption="Номер" />
+        <ColumnInfo Id="DateBegin" Caption="Дата начала" />
+        <ColumnInfo Id="DateEnd" Caption="Дата окончания" />
+      </Columns>
+    </ListView>
+    <DetailView Id="Polis_DetailView" Caption="Полис">
+      <Items>
+        <PropertyEditor Id="DateBegin" Caption="Дата начала" />
+        <PropertyEditor Id="DateEnd" Caption="Дата окончания" />
+        <PropertyEditor Id="Number" Caption="Номер" />
+        <PropertyEditor Id="PRZ" Caption="ПРЗ" />
+        <PropertyEditor Id="Type" Caption="Тип" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="Polis" Caption="Polis">
+              <LayoutGroup Id="Polis_col1">
+                <LayoutGroup Id="Auto11054bf3-e7d6-4fd0-a1b4-726d37222d79" Caption="">
+                  <LayoutGroup Id="Auto3b84c036-6c3f-446d-8ace-120fd0ae8db3" Caption="" />
+                  <LayoutGroup Id="Auto2fd23ec6-0068-4795-a447-2b062b0b5567" Caption="" />
+                </LayoutGroup>
+                <LayoutGroup Id="Item1" Caption="Страховая организация, выдавшая полис" />
+              </LayoutGroup>
+              <LayoutGroup Id="Polis_col2" Caption="Polis_col2" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="Polis_ListView" Caption="Полисы" />
+    <ListView Id="Polis_LookupListView" Caption="Полисы" />
+    <DetailView Id="ProtocolRecordType_DetailView">
+      <Items>
+        <PropertyEditor Id="Gender" Caption="Фильтр по полу" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="ProtocolRecordType" Caption="Данные поля протокола">
+              <LayoutGroup Id="ProtocolRecordType_col1">
+                <LayoutGroup Id="Auto58c3bc11-a979-4399-8463-3f232113e835" Caption="Auto58c3bc11-a979-4399-8463-3f232113e835(6)" />
+              </LayoutGroup>
+              <LayoutGroup Id="Auto94bf786f-3e74-4c73-bd2f-9af30aaa49b8" Caption="Auto94bf786f-3e74-4c73-bd2f-9af30aaa49b8(10)">
+                <LayoutGroup Id="Item4" Caption="Фильтр">
+                  <TabbedGroup Id="Item6">
+                    <LayoutGroup Id="Item7" Caption="Возраст">
+                      <LayoutGroup Id="Auto3ad1b223-9535-45ff-b277-7b2a663369c7" Caption="">
+                        <LayoutGroup Id="Item2" Caption="С этого возраста включительно" />
+                        <LayoutGroup Id="Item3" Caption="По (включительно)" />
+                      </LayoutGroup>
+                    </LayoutGroup>
+                    <LayoutGroup Id="Item5" Caption="Пол" />
+                  </TabbedGroup>
+                </LayoutGroup>
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="VisitCase_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="CommonCase" Caption="Данные случая">
+              <LayoutGroup Id="CommonCase_col1" Caption="CommonCase_col1">
+                <LayoutGroup Id="Auto6c1517ed-0c27-4ffd-a7aa-06a0e1330fb3" Caption="Auto6c1517ed-0c27-4ffd-a7aa-06a0e1330fb3(7)">
+                  <LayoutGroup Id="Auto1fc2a34e-291d-44e8-9c93-b041fe18d9d3" Caption="Auto1fc2a34e-291d-44e8-9c93-b041fe18d9d3(7)" />
+                </LayoutGroup>
+              </LayoutGroup>
+              <LayoutGroup Id="CommonCase_col2" Caption="CommonCase_col2">
+                <LayoutGroup Id="Auto7fe4713d-44cc-419a-95a4-c462bc9c98fd" Caption="Auto7fe4713d-44cc-419a-95a4-c462bc9c98fd(11)" />
+              </LayoutGroup>
+            </LayoutGroup>
+            <LayoutGroup Id="AbstractCase" Caption="AbstractCase" />
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs">
+            <LayoutGroup Id="Services" Caption="Услуги" />
+            <LayoutGroup Id="Diagnoses" Caption="Диагнозы" />
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>

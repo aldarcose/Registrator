@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <NavigationItems Id="NavigationItems">
+    <Items Id="Items">
+      <Item Id="Default">
+        <Items Id="Items">
+          <Item Id="R001_ListView" Caption="Причины внесения изменений в РС ЕРЗ" />
+          <Item Id="V010_ListView" Caption="Способы оплаты мед. помощи" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+</Application>

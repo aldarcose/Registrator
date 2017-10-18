@@ -1,0 +1,77 @@
+diff a/Registrator.Module/Controllers/CommonCaseViewController.cs b/Registrator.Module/Controllers/CommonCaseViewController.cs	(rejected hunks)
+@@ -89,18 +89,73 @@
+                         var os = Application.CreateObjectSpace();
+ 
+                         // ������� ������ ������ � ���� ������������
+-                        var commonCase = os.CreateObject(typeOfCommonCase);
+-                        
++                        var commonCase = os.CreateObject(typeof(HospitalCase));
++
+                         // ����������� ������ � ��������
+                         ((AbstractCase)commonCase).Pacient = os.GetObject(pacient);
+ 
+                         // ������� ��������� ���
++                        
+                         DetailView dv = Application.CreateDetailView(os, commonCase, View);
+                         dv.ViewEditMode = DevExpress.ExpressApp.Editors.ViewEditMode.Edit;
+                         e.ShowViewParameters.CreatedView = dv;
++
++                        //svp.TargetWindow = TargetWindow.NewModalWindow;
++                        //Application.ShowViewStrategy.ShowView(svp, new ShowViewSource(Frame, (ActionBase)NewCommonCaseAction));
+                     }
+                 }
+             }
+         }
++
++        private void CreateCommonCase(Type commonCaseType, CelPosescheniya celPos = CelPosescheniya.LechebnoDiagnosticheskaya)
++        {
++            var listView = View as ListView;
++            var pacient = ((PropertyCollectionSource)listView.CollectionSource).MasterObject as Pacient;
++            if (pacient != null)
++            {
++                // ������� ObjectSpace
++                var os = Application.CreateObjectSpace();
++
++                // ������� ������ ������ � ���� ������������
++                var commonCase = os.CreateObject(commonCaseType);
++
++                // ����������� ������ � ��������
++                ((AbstractCase)commonCase).Pacient = os.GetObject(pacient);
++
++                if (commonCaseType == typeof(VisitCase))
++                {
++                    ((VisitCase)commonCase).Cel = celPos;
++                }
++
++                // ������� ��������� ���
++                ShowViewParameters svp = new ShowViewParameters();
++                DetailView dv = Application.CreateDetailView(os, commonCase);
++                dv.ViewEditMode = DevExpress.ExpressApp.Editors.ViewEditMode.Edit;
++                svp.CreatedView = dv;
++                
++                //svp.TargetWindow = TargetWindow.NewModalWindow;
++                Application.ShowViewStrategy.ShowView(svp, new ShowViewSource(Frame, (ActionBase)NewCommonCaseAction));
++            }
++        }
++
++        private void CelVisita_Accepting(object sender, DialogControllerAcceptingEventArgs  e)
++        {
++            var field = e.AcceptActionArgs.CurrentObject as VisitCaseFields;
++            if (field !=null)
++                CreateCommonCase(typeof(VisitCase), field.CelPosesch);
++        }
++    }
++
++    [DomainComponent]
++    [XafDisplayName("���� ���������")]
++    public class VisitCaseFields
++    {
++        public VisitCaseFields()
++        {
++            CelPosesch = CelPosescheniya.LechebnoDiagnosticheskaya;
++        }
++
++        [XafDisplayName("�������, ����������, ���� ���������")]
++        public CelPosescheniya CelPosesch { get; set; }
+     }
+ }

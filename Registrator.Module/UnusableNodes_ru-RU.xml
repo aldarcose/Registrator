@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Views Id="Views">
+    <DetailView Id="Pacient_DetailView">
+      <Items Id="Items">
+        <PropertyEditor Id="Address.Level1Type" Caption="Тип" />
+        <PropertyEditor Id="Address.Level2Type" Caption="Тип" />
+        <PropertyEditor Id="Address.Level3Type" Caption="Тип" />
+        <PropertyEditor Id="Address.Level4Type" Caption="Тип" />
+        <PropertyEditor Id="Address.StreetType" Caption="Тип" />
+      </Items>
+    </DetailView>
+  </Views>
+</Application>

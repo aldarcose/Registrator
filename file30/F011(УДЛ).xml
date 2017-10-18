@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<PACKET>
+  <ZGLV type="TipDoc" version="1.2" date="07.11.2013" />
+  <ZAP IDDoc="1" DocName="Паспорт гражданина СССР" DocSer="R-ББ" DocNum="999999" DATEBEG="01.01.2011" DATEEND="" />
+  <ZAP IDDoc="2" DocName="Загранпаспорт гражданина СССР" DocSer="S" DocNum="00000009" DATEBEG="01.01.2011" DATEEND="" />
+  <ZAP IDDoc="3" DocName="Свидетельство о рождении, выданное в Российской Федерации" DocSer="R-ББ" DocNum="999999" DATEBEG="01.01.2011" DATEEND="" />
+  <ZAP IDDoc="4" DocName="Удостоверение личности офицера" DocSer="ББ" DocNum="9999999" DATEBEG="01.01.2011" DATEEND="" />
+  <ZAP IDDoc="5" DocName="Справка об освобождении из места лишения свободы" DocSer="S" DocNum="00000009" DATEBEG="01.01.2011" DATEEND="" />
+  <ZAP IDDoc="6" DocName="Паспорт Минморфлота" DocSer="ББ" DocNum="999999" DATEBEG="01.01.2011" DATEEND="" />
+  <ZAP IDDoc="7" DocName="Военный билет" DocSer="ББ" DocNum="9999990" DATEBEG="01.01.2011" DATEEND="" />
+  <ZAP IDDoc="8" DocName="Дипломатический паспорт гражданина Российской Федерации" DocSer="99" DocNum="9999999" DATEBEG="01.01.2011" DATEEND="" />
+  <ZAP IDDoc="9" DocName="Паспорт иностранного гражданина" DocSer="S" DocNum="0000000009" DATEBEG="01.01.2011" DATEEND="" />
+  <ZAP IDDoc="10" DocName="Свидетельство о регистрации ходатайства о признании иммигранта беженцем на территории Российской Федерации" DocSer="S" DocNum="00000009" DATEBEG="01.01.2011" DATEEND="" />
+  <ZAP IDDoc="11" DocName="Вид на жительство" DocSer="S1" DocNum="00000009" DATEBEG="01.01.2011" DATEEND="" />
+  <ZAP IDDoc="12" DocName="Удостоверение беженца в Российской Федерации" DocSer="S" DocNum="00000009" DATEBEG="01.01.2011" DATEEND="" />
+  <ZAP IDDoc="13" DocName="Временное удостоверение личности гражданина Российской Федерации" DocSer="S" DocNum="00000009" DATEBEG="01.01.2011" DATEEND="" />
+  <ZAP IDDoc="14" DocName="Паспорт гражданина Российской Федерации" DocSer="99 99" DocNum="9999990" DATEBEG="01.01.2011" DATEEND="" />
+  <ZAP IDDoc="15" DocName="Заграничный паспорт гражданина Российской Федерации" DocSer="99" DocNum="9999999" DATEBEG="01.01.2011" DATEEND="" />
+  <ZAP IDDoc="16" DocName="Паспорт моряка" DocSer="ББ" DocNum="9999990" DATEBEG="01.01.2011" DATEEND="" />
+  <ZAP IDDoc="17" DocName="Военный билет офицера запаса" DocSer="ББ" DocNum="999999" DATEBEG="01.01.2011" DATEEND="" />
+  <ZAP IDDoc="18" DocName="Иные документы" DocSer="S1" DocNum="0000000009" DATEBEG="01.01.2011" DATEEND="" />
+  <ZAP IDDoc="21" DocName="Документ иностранного гражданина" DocSer="S1" DocNum="000000000009" DATEBEG="04.07.2013" DATEEND="" />
+  <ZAP IDDoc="22" DocName="Документ лица без гражданства" DocSer="S1" DocNum="000000000009" DATEBEG="04.07.2013" DATEEND="" />
+  <ZAP IDDoc="23" DocName="Разрешение на временное проживание" DocSer="S1" DocNum="000000000009" DATEBEG="04.07.2013" DATEEND="" />
+  <ZAP IDDoc="24" DocName="Свидетельство о рождении, выданное не в Российской Федерации" DocSer="S1" DocNum="000000000009" DATEBEG="04.07.2013" DATEEND="" />
+  <ZAP IDDoc="25" DocName="Свидетельство о предоставлении временного убежища на территории Российской Федерации" DocSer="99" DocNum="9999999" DATEBEG="07.11.2013" DATEEND="" />
+</PACKET>

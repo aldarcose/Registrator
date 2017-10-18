@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<packet>
+  <zglv type="MedSpec" version="2.1.2" date="26.12.2013" />
+  <zap RECID="0" CODE="0" NAME="Врачебные специальности" HIGH="" OKSO="1" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="1" CODE="1" NAME="Лечебное дело. Педиатрия" HIGH="0" OKSO="2" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="2" CODE="2" NAME="Медико-профилактическое дело" HIGH="0" OKSO="138" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="3" CODE="3" NAME="Стоматология" HIGH="0" OKSO="154" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="4" CODE="4" NAME="Фармация" HIGH="0" OKSO="161" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="5" CODE="5" NAME="Сестринское дело" HIGH="0" OKSO="165" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="6" CODE="6" NAME="Медицинская биохимия" HIGH="0" OKSO="167" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="7" CODE="7" NAME="Медицинская биофизика" HIGH="0" OKSO="168" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="8" CODE="8" NAME="Акушерство и гинекология" HIGH="1" OKSO="3" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="9" CODE="9" NAME="Анестезиология и реаниматология" HIGH="1" OKSO="8" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="10" CODE="10" NAME="Дерматовенерология" HIGH="1" OKSO="12" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="11" CODE="11" NAME="Детская хирургия" HIGH="1" OKSO="125" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="12" CODE="12" NAME="Генетика" HIGH="1" OKSO="14" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="13" CODE="13" NAME="Клиническая лабораторная диагностика" HIGH="1" OKSO="18" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="14" CODE="14" NAME="Неврология" HIGH="1" OKSO="23" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="15" CODE="15" NAME="Неонатология" HIGH="1" OKSO="137" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="16" CODE="16" NAME="Общая врачебная практика (семейная медицина)" HIGH="1" OKSO="30" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="17" CODE="17" NAME="Онкология" HIGH="1" OKSO="102" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="18" CODE="18" NAME="Организация здравоохранения и общественное здоровье" HIGH="1" OKSO="56" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="19" CODE="19" NAME="Оториноларингология" HIGH="1" OKSO="38" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="20" CODE="20" NAME="Офтальмология" HIGH="1" OKSO="40" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="21" CODE="21" NAME="Патологическая анатомия" HIGH="1" OKSO="41" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="22" CODE="22" NAME="Педиатрия" HIGH="1" OKSO="105" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="23" CODE="23" NAME="Психиатрия" HIGH="1" OKSO="42" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="24" CODE="24" NAME="Рентгенология" HIGH="1" OKSO="47" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="25" CODE="25" NAME="Скорая медицинская помощь" HIGH="1" OKSO="50" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="26" CODE="26" NAME="Судебно-медицинская экспертиза" HIGH="1" OKSO="57" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="27" CODE="27" NAME="Терапия" HIGH="1" OKSO="58" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="28" CODE="28" NAME="Травматология и ортопедия" HIGH="1" OKSO="80" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="29" CODE="29" NAME="Фтизиатрия" HIGH="1" OKSO="86" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="30" CODE="30" NAME="Хирургия" HIGH="1" OKSO="88" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="31" CODE="31" NAME="Эндокринология" HIGH="1" OKSO="99" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="32" CODE="32" NAME="Инфекционные болезни" HIGH="1" OKSO="16" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="33" CODE="33" NAME="Ультразвуковая диагностика" HIGH="8" OKSO="4" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="34" CODE="34" NAME="Физиотерапия" HIGH="8" OKSO="5" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="35" CODE="35" NAME="Функциональная диагностика" HIGH="8" OKSO="6" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="36" CODE="36" NAME="Эндоскопия" HIGH="8" OKSO="7" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="37" CODE="37" NAME="Токсикология" HIGH="9" OKSO="9" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="38" CODE="38" NAME="Трансфузиология" HIGH="9" OKSO="10" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="39" CODE="39" NAME="Функциональная диагностика" HIGH="9" OKSO="11" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="40" CODE="40" NAME="Клиническая микология" HIGH="10" OKSO="13" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="41" CODE="41" NAME="Детская онкология" HIGH="11" OKSO="126" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="42" CODE="42" NAME="Детская урология - андрология" HIGH="11" OKSO="127" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="43" CODE="43" NAME="Колопроктология" HIGH="11" OKSO="128" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="44" CODE="44" NAME="Нейрохирургия" HIGH="11" OKSO="129" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="45" CODE="45" NAME="Сердечно-сосудистая хирургия" HIGH="11" OKSO="130" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="46" CODE="46" NAME="Торакальная хирургия" HIGH="11" OKSO="131" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="47" CODE="47" NAME="Трансфузиология" HIGH="11" OKSO="132" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="48" CODE="48" NAME="Ультразвуковая диагностика" HIGH="11" OKSO="133" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="49" CODE="49" NAME="Функциональная диагностика" HIGH="11" OKSO="134" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="50" CODE="50" NAME="Челюстно-лицевая хирургия" HIGH="11" OKSO="135" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="51" CODE="51" NAME="Эндоскопия" HIGH="11" OKSO="136" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="52" CODE="52" NAME="Лабораторная генетика" HIGH="12" OKSO="15" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="53" CODE="53" NAME="Клиническая микология" HIGH="32" OKSO="17" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="54" CODE="54" NAME="Бактериология" HIGH="13" OKSO="19" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="55" CODE="55" NAME="Вирусология" HIGH="13" OKSO="20" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="56" CODE="56" NAME="Лабораторная генетика" HIGH="13" OKSO="21" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="57" CODE="57" NAME="Лабораторная микология" HIGH="13" OKSO="22" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="58" CODE="58" NAME="Восстановительная медицина" HIGH="14" OKSO="26" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="59" CODE="59" NAME="Лечебная физкультура и спортивная медицина" HIGH="14" OKSO="27" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="61" CODE="61" NAME="Мануальная терапия" HIGH="14" OKSO="24" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="62" CODE="62" NAME="Рефлексотерапия" HIGH="14" OKSO="25" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="63" CODE="63" NAME="Физиотерапия" HIGH="14" OKSO="28" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="64" CODE="64" NAME="Функциональная диагностика" HIGH="14" OKSO="29" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="65" CODE="65" NAME="Восстановительная медицина" HIGH="16" OKSO="31" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="66" CODE="66" NAME="Гериатрия" HIGH="16" OKSO="32" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="67" CODE="67" NAME="Лечебная физкультура и спортивная медицина" HIGH="16" OKSO="33" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="69" CODE="69" NAME="Ультразвуковая диагностика" HIGH="16" OKSO="34" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="70" CODE="70" NAME="Физиотерапия" HIGH="16" OKSO="35" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="71" CODE="71" NAME="Функциональная диагностика" HIGH="16" OKSO="36" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="72" CODE="72" NAME="Эндоскопия" HIGH="16" OKSO="37" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="73" CODE="73" NAME="Детская онкология" HIGH="17" OKSO="103" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="74" CODE="74" NAME="Радиология" HIGH="17" OKSO="104" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="75" CODE="75" NAME="Сурдология - оториноларингология" HIGH="19" OKSO="39" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="77" CODE="77" NAME="Аллергология и иммунология" HIGH="22" OKSO="110" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="78" CODE="78" NAME="Восстановительная медицина" HIGH="22" OKSO="111" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="79" CODE="79" NAME="Гастроэнтерология" HIGH="22" OKSO="112" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="80" CODE="80" NAME="Гематология" HIGH="22" OKSO="113" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="81" CODE="81" NAME="Детская кардиология" HIGH="22" OKSO="108" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="82" CODE="82" NAME="Детская онкология" HIGH="22" OKSO="106" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="83" CODE="83" NAME="Детская эндокринология" HIGH="22" OKSO="107" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="84" CODE="84" NAME="Диетология" HIGH="22" OKSO="114" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="85" CODE="85" NAME="Клиническая фармакология" HIGH="22" OKSO="115" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="86" CODE="86" NAME="Лечебная физкультура и спортивная медицина" HIGH="22" OKSO="109" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="88" CODE="88" NAME="Мануальная терапия" HIGH="22" OKSO="116" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="89" CODE="89" NAME="Нефрология" HIGH="22" OKSO="117" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="90" CODE="90" NAME="Пульмонология" HIGH="22" OKSO="118" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="91" CODE="91" NAME="Ревматология" HIGH="22" OKSO="119" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="92" CODE="92" NAME="Трансфузиология" HIGH="22" OKSO="120" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="93" CODE="93" NAME="Ультразвуковая диагностика" HIGH="22" OKSO="121" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="94" CODE="94" NAME="Физиотерапия" HIGH="22" OKSO="122" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="95" CODE="95" NAME="Функциональная диагностика" HIGH="22" OKSO="123" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="96" CODE="96" NAME="Эндоскопия" HIGH="22" OKSO="124" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="97" CODE="97" NAME="Психиатрия-наркология" HIGH="23" OKSO="46" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="98" CODE="98" NAME="Психотерапия" HIGH="23" OKSO="43" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="99" CODE="99" NAME="Сексология" HIGH="23" OKSO="44" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="100" CODE="100" NAME="Судебно-психиатрическая экспертиза" HIGH="23" OKSO="45" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="102" CODE="102" NAME="Радиология" HIGH="24" OKSO="48" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="103" CODE="103" NAME="Ультразвуковая диагностика" HIGH="24" OKSO="49" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="104" CODE="104" NAME="Восстановительная медицина" HIGH="25" OKSO="51" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="105" CODE="105" NAME="Лечебная физкультура и спортивная медицина" HIGH="25" OKSO="52" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="107" CODE="107" NAME="Ультразвуковая диагностика" HIGH="25" OKSO="53" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="108" CODE="108" NAME="Физиотерапия" HIGH="25" OKSO="54" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="109" CODE="109" NAME="Функциональная диагностика" HIGH="25" OKSO="55" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="110" CODE="110" NAME="Авиационная и космическая медицина" HIGH="27" OKSO="71" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="112" CODE="112" NAME="Аллергология и иммунология" HIGH="27" OKSO="72" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="113" CODE="113" NAME="Восстановительная медицина" HIGH="27" OKSO="73" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="114" CODE="114" NAME="Гастроэнтерология" HIGH="27" OKSO="59" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="115" CODE="115" NAME="Гематология" HIGH="27" OKSO="60" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="116" CODE="116" NAME="Гериатрия" HIGH="27" OKSO="61" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="117" CODE="117" NAME="Диетология" HIGH="27" OKSO="62" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="118" CODE="118" NAME="Кардиология" HIGH="27" OKSO="63" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="119" CODE="119" NAME="Клиническая фармакология" HIGH="27" OKSO="64" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="120" CODE="120" NAME="Лечебная физкультура и спортивная медицина" HIGH="27" OKSO="74" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="122" CODE="122" NAME="Мануальная терапия" HIGH="27" OKSO="75" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="123" CODE="123" NAME="Нефрология" HIGH="27" OKSO="65" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="124" CODE="124" NAME="Профпатология" HIGH="27" OKSO="76" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="125" CODE="125" NAME="Пульмонология" HIGH="27" OKSO="66" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="126" CODE="126" NAME="Ревматология" HIGH="27" OKSO="67" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="127" CODE="127" NAME="Рефлексотерапия" HIGH="27" OKSO="77" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="128" CODE="128" NAME="Трансфузиология" HIGH="27" OKSO="68" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="129" CODE="129" NAME="Ультразвуковая диагностика" HIGH="27" OKSO="69" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="130" CODE="130" NAME="Физиотерапия" HIGH="27" OKSO="78" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="131" CODE="131" NAME="Функциональная диагностика" HIGH="27" OKSO="70" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="132" CODE="132" NAME="Эндоскопия" HIGH="27" OKSO="79" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="133" CODE="133" NAME="Восстановительная медицина" HIGH="28" OKSO="82" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="134" CODE="134" NAME="Лечебная физкультура и спортивная медицина" HIGH="28" OKSO="83" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="136" CODE="136" NAME="Мануальная терапия" HIGH="28" OKSO="81" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="137" CODE="137" NAME="Физиотерапия" HIGH="28" OKSO="" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="138" CODE="138" NAME="Пульмонология" HIGH="29" OKSO="87" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="139" CODE="139" NAME="Колопроктология" HIGH="30" OKSO="89" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="140" CODE="140" NAME="Нейрохирургия" HIGH="30" OKSO="90" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="141" CODE="141" NAME="Сердечно-сосудистая хирургия" HIGH="30" OKSO="92" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="142" CODE="142" NAME="Торакальная хирургия" HIGH="30" OKSO="93" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="143" CODE="143" NAME="Трансфузиология" HIGH="30" OKSO="94" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="144" CODE="144" NAME="Ультразвуковая диагностика" HIGH="30" OKSO="97" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="145" CODE="145" NAME="Урология" HIGH="30" OKSO="91" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="146" CODE="146" NAME="Функциональная диагностика" HIGH="30" OKSO="98" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="147" CODE="147" NAME="Челюстно-лицевая хирургия" HIGH="30" OKSO="95" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="148" CODE="148" NAME="Эндоскопия" HIGH="30" OKSO="96" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="149" CODE="149" NAME="Детская эндокринология" HIGH="31" OKSO="101" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="150" CODE="150" NAME="Диабетология" HIGH="31" OKSO="100" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="151" CODE="151" NAME="Клиническая лабораторная диагностика" HIGH="2" OKSO="139" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="152" CODE="152" NAME="Общая гигиена" HIGH="2" OKSO="145" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="153" CODE="153" NAME="Социальная гигиена и организация госсанэпидслужбы" HIGH="2" OKSO="153" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="154" CODE="154" NAME="Эпидемиология" HIGH="2" OKSO="142" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="155" CODE="155" NAME="Бактериология" HIGH="151" OKSO="140" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="156" CODE="156" NAME="Вирусология" HIGH="151" OKSO="141" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="157" CODE="157" NAME="Лабораторная генетика" HIGH="151" OKSO="202" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="158" CODE="158" NAME="Лабораторная микология" HIGH="151" OKSO="203" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="159" CODE="159" NAME="Гигиена детей и подростков" HIGH="152" OKSO="146" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="160" CODE="160" NAME="Гигиена питания" HIGH="152" OKSO="148" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="161" CODE="161" NAME="Гигиена труда" HIGH="152" OKSO="149" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="162" CODE="162" NAME="Гигиеническое воспитание" HIGH="152" OKSO="147" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="163" CODE="163" NAME="Коммунальная гигиена" HIGH="152" OKSO="150" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="164" CODE="164" NAME="Радиационная гигиена" HIGH="152" OKSO="151" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="165" CODE="165" NAME="Санитарно-гигиенические лабораторные исследования" HIGH="152" OKSO="152" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="167" CODE="167" NAME="Бактериология" HIGH="154" OKSO="204" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="168" CODE="168" NAME="Вирусология" HIGH="154" OKSO="205" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="169" CODE="169" NAME="Дезинфектология" HIGH="154" OKSO="143" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="170" CODE="170" NAME="Паразитология" HIGH="154" OKSO="144" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="171" CODE="171" NAME="Стоматология общей практики" HIGH="3" OKSO="155" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="172" CODE="172" NAME="Клиническая лабораторная диагностика" HIGH="3" OKSO="206" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="173" CODE="173" NAME="Ортодонтия" HIGH="171" OKSO="156" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="174" CODE="174" NAME="Стоматология детская" HIGH="171" OKSO="157" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="175" CODE="175" NAME="Стоматология ортопедическая" HIGH="171" OKSO="159" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="176" CODE="176" NAME="Стоматология терапевтическая" HIGH="171" OKSO="158" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="177" CODE="177" NAME="Стоматология хирургическая" HIGH="171" OKSO="160" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="178" CODE="178" NAME="Челюстно-лицевая хирургия" HIGH="171" OKSO="207" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="179" CODE="179" NAME="Физиотерапия" HIGH="171" OKSO="208" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="180" CODE="180" NAME="Бактериология" HIGH="172" OKSO="209" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="181" CODE="181" NAME="Вирусология" HIGH="172" OKSO="210" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="182" CODE="182" NAME="Лабораторная генетика" HIGH="172" OKSO="211" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="183" CODE="183" NAME="Лабораторная микология" HIGH="172" OKSO="212" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="184" CODE="184" NAME="Управление и экономика фармации" HIGH="4" OKSO="162" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="185" CODE="185" NAME="Фармацевтическая химия и фармакогнозия" HIGH="4" OKSO="164" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="186" CODE="186" NAME="Управление сестринской деятельностью" HIGH="5" OKSO="166" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="187" CODE="187" NAME="Генетика" HIGH="6" OKSO="213" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="188" CODE="188" NAME="Лабораторная генетика" HIGH="187" OKSO="216" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="189" CODE="189" NAME="Клиническая лабораторная диагностика" HIGH="6" OKSO="214" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="190" CODE="190" NAME="Бактериология" HIGH="189" OKSO="217" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="191" CODE="191" NAME="Вирусология" HIGH="189" OKSO="218" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="192" CODE="192" NAME="Лабораторная микология" HIGH="189" OKSO="220" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="193" CODE="193" NAME="Лабораторная генетика" HIGH="189" OKSO="219" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="194" CODE="194" NAME="Судебно-медицинская экспертиза" HIGH="6" OKSO="215" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="195" CODE="195" NAME="Клиническая лабораторная диагностика" HIGH="7" OKSO="221" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="196" CODE="196" NAME="Рентгенология" HIGH="7" OKSO="222" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="197" CODE="197" NAME="Бактериология" HIGH="195" OKSO="223" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="198" CODE="198" NAME="Вирусология" HIGH="195" OKSO="224" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="199" CODE="199" NAME="Лабораторная генетика" HIGH="195" OKSO="225" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="200" CODE="200" NAME="Лабораторная микология" HIGH="195" OKSO="226" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="201" CODE="201" NAME="Радиология" HIGH="196" OKSO="227" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="202" CODE="202" NAME="Функциональная диагностика" HIGH="196" OKSO="228" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="203" CODE="203" NAME="Ультразвуковая диагностика" HIGH="196" OKSO="229" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="204" CODE="204" NAME="Средний медицинский персонал" HIGH="" OKSO="169" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="205" CODE="205" NAME="Организация сестринского дела" HIGH="204" OKSO="170" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="206" CODE="206" NAME="Лечебное дело" HIGH="204" OKSO="171" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="207" CODE="207" NAME="Акушерское дело" HIGH="204" OKSO="172" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="208" CODE="208" NAME="Стоматология" HIGH="204" OKSO="173" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="209" CODE="209" NAME="Стоматология ортопедическая" HIGH="204" OKSO="174" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="210" CODE="210" NAME="Эпидемиология (паразитология)" HIGH="204" OKSO="175" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="211" CODE="211" NAME="Гигиена и санитария" HIGH="204" OKSO="176" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="212" CODE="212" NAME="Дезинфекционное дело" HIGH="204" OKSO="177" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="213" CODE="213" NAME="Гигиеническое воспитание" HIGH="204" OKSO="178" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="214" CODE="214" NAME="Энтомология" HIGH="204" OKSO="179" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="215" CODE="215" NAME="Лабораторная диагностика" HIGH="204" OKSO="180" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="216" CODE="216" NAME="Гистология" HIGH="204" OKSO="181" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="217" CODE="217" NAME="Лабораторное дело" HIGH="204" OKSO="182" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="218" CODE="218" NAME="Фармация" HIGH="204" OKSO="183" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="219" CODE="219" NAME="Сестринское дело" HIGH="204" OKSO="184" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="221" CODE="221" NAME="Сестринское дело в педиатрии" HIGH="204" OKSO="185" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="222" CODE="222" NAME="Операционное дело" HIGH="204" OKSO="186" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="223" CODE="223" NAME="Анестезиология и реаниматология" HIGH="204" OKSO="187" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="224" CODE="224" NAME="Общая практика" HIGH="204" OKSO="188" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="225" CODE="225" NAME="Рентгенология" HIGH="204" OKSO="189" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="226" CODE="226" NAME="Функциональная диагностика" HIGH="204" OKSO="190" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="227" CODE="227" NAME="Физиотерапия" HIGH="204" OKSO="191" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="228" CODE="228" NAME="Медицинский массаж" HIGH="204" OKSO="192" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="229" CODE="229" NAME="Фармацевтическая технология" HIGH="4" OKSO="163" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="230" CODE="230" NAME="Лечебная физкультура" HIGH="204" OKSO="193" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="231" CODE="231" NAME="Диетология" HIGH="204" OKSO="194" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="232" CODE="232" NAME="Медицинская статистика" HIGH="204" OKSO="195" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="233" CODE="233" NAME="Стоматология профилактическая" HIGH="204" OKSO="" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="234" CODE="234" NAME="Судебно-медицинская экспертиза" HIGH="204" OKSO="" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="235" CODE="235" NAME="Медицинская оптика" HIGH="204" OKSO="" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="236" CODE="236" NAME="Медико-социальная экспертиза" HIGH="27" OKSO="" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="237" CODE="237" NAME="Медико-социальная экспертиза" HIGH="28" OKSO="" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="238" CODE="238" NAME="Медико-социальная экспертиза" HIGH="29" OKSO="" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="239" CODE="239" NAME="Медико-социальная экспертиза" HIGH="30" OKSO="" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="240" CODE="240" NAME="Медико-социальная экспертиза" HIGH="31" OKSO="" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="241" CODE="241" NAME="Медико-социальная экспертиза" HIGH="11" OKSO="" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="242" CODE="242" NAME="Медико-социальная экспертиза" HIGH="14" OKSO="" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="243" CODE="243" NAME="Медико-социальная экспертиза" HIGH="17" OKSO="" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="244" CODE="244" NAME="Медико-социальная экспертиза" HIGH="19" OKSO="" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="245" CODE="245" NAME="Медико-социальная экспертиза" HIGH="20" OKSO="" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="246" CODE="246" NAME="Медико-социальная экспертиза" HIGH="22" OKSO="" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="247" CODE="247" NAME="Пластическая хирургия" HIGH="30" OKSO="" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="248" CODE="248" NAME="Рентгенэндоваскулярные диагностика и лечение" HIGH="30" OKSO="" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="249" CODE="249" NAME="Ультразвуковая диагностика" HIGH="31" OKSO="" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="250" CODE="250" NAME="Рентгенэндоваскулярные диагностика и лечение" HIGH="8" OKSO="" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="251" CODE="251" NAME="Трансфузиология" HIGH="8" OKSO="" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="252" CODE="252" NAME="Косметология" HIGH="10" OKSO="" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="253" CODE="253" NAME="Рентгенэндоваскулярные диагностика и лечение" HIGH="11" OKSO="" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="254" CODE="254" NAME="Рентгенэндоваскулярные диагностика и лечение" HIGH="14" OKSO="" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="255" CODE="255" NAME="Аллергология и иммунология" HIGH="16" OKSO="" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="256" CODE="256" NAME="Водолазная медицина" HIGH="16" OKSO="" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="257" CODE="257" NAME="Гастроэнтерология" HIGH="16" OKSO="" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="258" CODE="258" NAME="Гематология" HIGH="16" OKSO="" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="259" CODE="259" NAME="Диетология" HIGH="16" OKSO="" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="260" CODE="260" NAME="Кардиология" HIGH="16" OKSO="" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="261" CODE="261" NAME="Нефрология" HIGH="16" OKSO="" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="262" CODE="262" NAME="Пульмонология" HIGH="16" OKSO="" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="263" CODE="263" NAME="Ревматология" HIGH="16" OKSO="" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="264" CODE="264" NAME="Трансфузиология" HIGH="16" OKSO="" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="265" CODE="265" NAME="Рентгенэндоваскулярные диагностика и лечение" HIGH="17" OKSO="" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="266" CODE="266" NAME="Рентгенэндоваскулярные диагностика и лечение" HIGH="24" OKSO="" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="267" CODE="267" NAME="Организация здравоохранения и общественное здоровье" HIGH="2" OKSO="" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="268" CODE="268" NAME="Организация здравоохранения и общественное здоровье" HIGH="3" OKSO="" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="269" CODE="269" NAME="Медицинская кибернетика" HIGH="0" OKSO="168" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="270" CODE="270" NAME="Клиническая лабораторная диагностика" HIGH="269" OKSO="221" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="271" CODE="271" NAME="Рентгенология" HIGH="269" OKSO="222" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="272" CODE="272" NAME="Бактериология" HIGH="270" OKSO="223" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="273" CODE="273" NAME="Вирусология" HIGH="270" OKSO="224" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="274" CODE="274" NAME="Лабораторная генетика" HIGH="270" OKSO="225" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="275" CODE="275" NAME="Лабораторная микология" HIGH="270" OKSO="226" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="276" CODE="276" NAME="Радиология" HIGH="271" OKSO="227" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="277" CODE="277" NAME="Функциональная диагностика" HIGH="271" OKSO="228" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="278" CODE="278" NAME="Ультразвуковая диагностика" HIGH="271" OKSO="229" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="279" CODE="279" NAME="Медико-социальная помощь" HIGH="204" OKSO="" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="280" CODE="280" NAME="Наркология" HIGH="204" OKSO="" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="281" CODE="281" NAME="Реабилитационное сестринское дело" HIGH="204" OKSO="" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="282" CODE="282" NAME="Сестринское дело в косметологии" HIGH="204" OKSO="" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="283" CODE="283" NAME="Скорая и неотложная помощь" HIGH="204" OKSO="" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="284" CODE="284" NAME="Бактериология" HIGH="204" OKSO="" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="285" CODE="285" NAME="Физиология" HIGH="28" OKSO="84" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="286" CODE="286" NAME="Физиотерапия" HIGH="1" OKSO="85" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="287" CODE="287" NAME="Естественные науки" HIGH="0" OKSO="196" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="288" CODE="288" NAME="Биофизика" HIGH="287" OKSO="197" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="289" CODE="289" NAME="Медицинская биофизика" HIGH="287" OKSO="198" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="290" CODE="290" NAME="Медицинская кибернетика" HIGH="287" OKSO="199" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="291" CODE="3200" NAME="Биохимия" HIGH="287" OKSO="200" DATEBEG="26.12.2013" DATEEND="" />
+  <zap RECID="292" CODE="3201" NAME="Медицинская биохимия" HIGH="287" OKSO="201" DATEBEG="26.12.2013" DATEEND="" />
+</packet>

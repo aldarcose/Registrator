@@ -1,0 +1,484 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5F15837D-D1E5-44DC-92F0-4F2EBE9C3F8D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Registrator.Module</RootNamespace>
+    <AssemblyName>Registrator.Module</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'EasyTest|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\EasyTest\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;EASYTEST</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Charts.v14.2.Core, Version=14.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.AuditTrail.v14.2, Version=14.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.ConditionalAppearance.v14.2, Version=14.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.Notifications.v14.2, Version=14.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.ReportsV2.v14.2, Version=14.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.Security.v14.2, Version=14.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.StateMachine.v14.2, Version=14.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.TreeListEditors.v14.2, Version=14.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.TreeListEditors.Win.v14.2, Version=14.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.Validation.v14.2, Version=14.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.Win.v14.2, Version=14.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.Xpo.v14.2">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Office.v14.2.Core, Version=14.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v14.2.Core, Version=14.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v14.2.Core">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Data.v14.2">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.v14.2">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Persistent.Base.v14.2">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Persistent.BaseImpl.v14.2">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v14.2.Core, Version=14.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v14.2.Core, Version=14.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v14.2, Version=14.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Xpo.v14.2">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v14.2.Wizard, Version=14.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v14.2, Version=14.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v14.2, Version=14.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraGauges.v14.2.Core, Version=14.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v14.2, Version=14.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v14.2.UI, Version=14.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v14.2, Version=14.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v14.2.Extensions, Version=14.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v14.2, Version=14.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BusinessObjects\Abstract\AbstractCase.cs" />
+    <Compile Include="BusinessObjects\Abstract\AbstractProtocol.cs" />
+    <Compile Include="BusinessObjects\Abstract\AbstractService.cs" />
+    <Compile Include="BusinessObjects\Abstract\Types.cs" />
+    <Compile Include="BusinessObjects\Address.cs" />
+    <Compile Include="BusinessObjects\CallCardUrgent.cs" />
+    <Compile Include="BusinessObjects\Dictionaries\BaseCommon\DocSerialNumberTemplate.cs" />
+    <Compile Include="BusinessObjects\Dictionaries\BaseCommon\EducationInstituteType.cs" />
+    <Compile Include="BusinessObjects\Dictionaries\BaseDispancerization\DispsServiceList.cs" />
+    <Compile Include="BusinessObjects\Dictionaries\BaseDispancerization\DispType.cs" />
+    <Compile Include="BusinessObjects\Dictionaries\BaseDispancerization\HealingConditions.cs" />
+    <Compile Include="BusinessObjects\Dictionaries\BaseDispancerization\Rehabilitation.cs" />
+    <Compile Include="BusinessObjects\Dictionaries\BaseDispancerization\ServiceWithInfo.cs" />
+    <Compile Include="BusinessObjects\Dictionaries\BaseMedical\Medicament.cs" />
+    <Compile Include="BusinessObjects\Dictionaries\BaseDispancerization\MKBWithDispInfo.cs" />
+    <Compile Include="BusinessObjects\Dictionaries\BaseMedical\MKBWithType.cs" />
+    <Compile Include="BusinessObjects\Dictionaries\BaseMedical\Protocol.cs" />
+    <Compile Include="BusinessObjects\Dictionaries\BaseMedical\ProtocolRecordType.cs" />
+    <Compile Include="BusinessObjects\Dictionaries\BaseMedical\ProtocolRecord.cs" />
+    <Compile Include="BusinessObjects\Dictionaries\BaseMedical\ResultatObrasheniya.cs" />
+    <Compile Include="BusinessObjects\Dictionaries\BaseMedical\TerritorialUsluga.cs" />
+    <Compile Include="BusinessObjects\Dictionaries\BaseMedical\SposobOplatiMedPom.cs" />
+    <Compile Include="BusinessObjects\Dictionaries\BaseMedical\VidMedVmeshatelstva.cs" />
+    <Compile Include="BusinessObjects\Dictionaries\BaseMedical\VipiskaMedicamenta.cs" />
+    <Compile Include="BusinessObjects\Dictionaries\BasePacient\DisabilityData.cs" />
+    <Compile Include="BusinessObjects\Dictionaries\BaseDoctor\TextTemplate.cs" />
+    <Compile Include="BusinessObjects\Dictionaries\BaseStacionar\CsgVidVme.cs" />
+    <Compile Include="BusinessObjects\Dictionaries\BaseStacionar\StacionarBindDoctorHistory.cs" />
+    <Compile Include="BusinessObjects\Dictionaries\Constants.cs" />
+    <Compile Include="BusinessObjects\DispanserizaionCase.cs" />
+    <Compile Include="BusinessObjects\DispanserizationService.cs" />
+    <Compile Include="BusinessObjects\HospitalCase.cs" />
+    <Compile Include="BusinessObjects\Interfaces\IReestrFederalPortalChildren.cs" />
+    <Compile Include="BusinessObjects\Interfaces\IWorkflowCaseStateProvider.cs" />
+    <Compile Include="BusinessObjects\Interfaces\IWorkflowCaseStatus.cs" />
+    <Compile Include="BusinessObjects\Interfaces\IReestrTFoms.cs" />
+    <Compile Include="BusinessObjects\Interfaces\IWorkflowServiceStateProvider.cs" />
+    <Compile Include="BusinessObjects\Interfaces\IWorkflowServiceStatus.cs" />
+    <Compile Include="BusinessObjects\MedService.cs" />
+    <Compile Include="BusinessObjects\Settings.cs" />
+    <Compile Include="BusinessObjects\Interfaces\IOrganization.cs" />
+    <Compile Include="BusinessObjects\Dictionaries\BaseDoctor\DoctorUslugi.cs" />
+    <Compile Include="BusinessObjects\Dictionaries\BaseMedical\VidDispanserizacii.cs" />
+    <Compile Include="BusinessObjects\Dictionaries\BaseDoctor\DoctorDolgnost.cs" />
+    <Compile Include="BusinessObjects\Dictionaries\BaseMedical\FormaMedPomoshi.cs" />
+    <Compile Include="BusinessObjects\Dictionaries\BasePacient\VidDocumenta.cs" />
+    <Compile Include="BusinessObjects\Dictionaries\BaseStacionar\ClinicStatGroups.cs" />
+    <Compile Include="BusinessObjects\Dictionaries\BaseStacionar\TipStacionara.cs" />
+    <Compile Include="BusinessObjects\Dictionaries\BasePacient\Kategoriya.cs" />
+    <Compile Include="BusinessObjects\Dictionaries\BasePacient\KategoriyaLgot.cs" />
+    <Compile Include="BusinessObjects\Dictionaries\Kladr.cs" />
+    <Compile Include="BusinessObjects\Dictionaries\KladrType.cs" />
+    <Compile Include="BusinessObjects\Dictionaries\BasePacient\Lgota.cs" />
+    <Compile Include="BusinessObjects\Dictionaries\BaseMedical\MedProfil.cs" />
+    <Compile Include="BusinessObjects\Dictionaries\BaseDoctor\DoctorSpec.cs" />
+    <Compile Include="BusinessObjects\Dictionaries\BaseMedical\IshodZabolevaniya.cs" />
+    <Compile Include="BusinessObjects\Dictionaries\BaseMedical\MKB10.cs" />
+    <Compile Include="BusinessObjects\Dictionaries\BaseMedical\ResultatDispanserizacii.cs" />
+    <Compile Include="BusinessObjects\Dictionaries\BasePacient\SocStatus.cs" />
+    <Compile Include="BusinessObjects\DnevnoyStacionar.cs" />
+    <Compile Include="BusinessObjects\StateMachines\WorkflowCaseStatusStateMachine.cs" />
+    <Compile Include="BusinessObjects\StateMachines\WorkflowServiceStatusStateMaching.cs" />
+    <Compile Include="BusinessObjects\StrahMedOrg.cs" />
+    <Compile Include="BusinessObjects\Uchastok.cs" />
+    <Compile Include="BusinessObjects\Dictionaries\Street.cs" />
+    <Compile Include="BusinessObjects\Dictionaries\BaseMedical\VidUslugiMedPomoshi.cs" />
+    <Compile Include="BusinessObjects\Dictionaries\BaseMedical\VidMedPomoshi.cs" />
+    <Compile Include="BusinessObjects\Dictionaries\BasePacient\VidPolisa.cs" />
+    <Compile Include="BusinessObjects\Otdel.cs" />
+    <Compile Include="BusinessObjects\Dictionaries\BaseDoctor\VERS_SPEC.cs" />
+    <Compile Include="BusinessObjects\Doctor.cs" />
+    <Compile Include="BusinessObjects\Dictionaries\BasePacient\Document.cs" />
+    <Compile Include="BusinessObjects\DTO\PERS_LIST\PERS_LIST.cs" />
+    <Compile Include="BusinessObjects\DTO\PERS_LIST\PERS.cs" />
+    <Compile Include="BusinessObjects\DTO\PERS_LIST\ZGLV.cs" />
+    <Compile Include="BusinessObjects\DTO\ZL_LIST\ZL_LIST.cs" />
+    <Compile Include="BusinessObjects\DTO\ZL_LIST\SCHET.cs" />
+    <Compile Include="BusinessObjects\DTO\ZL_LIST\ZAP.cs" />
+    <Compile Include="BusinessObjects\DTO\ZL_LIST\PACIENT.cs" />
+    <Compile Include="BusinessObjects\DTO\ZL_LIST\SLUCH.cs" />
+    <Compile Include="BusinessObjects\DTO\ZL_LIST\USL.cs" />
+    <Compile Include="BusinessObjects\MedOrg.cs" />
+    <Compile Include="BusinessObjects\Pacient.cs" />
+    <Compile Include="BusinessObjects\Polis.cs" />
+    <Compile Include="BusinessObjects\Recipe.cs" />
+    <Compile Include="BusinessObjects\Utils.cs" />
+    <Compile Include="BusinessObjects\Utils\InputBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BusinessObjects\VisitCase.cs" />
+    <Compile Include="BusinessRules\CaseValueForReestrRule.cs" />
+    <Compile Include="BusinessRules\DispServiceListValueRule.cs" />
+    <Compile Include="BusinessRules\DSValueRule.cs" />
+    <Compile Include="BusinessRules\PacientValueRule.cs" />
+    <Compile Include="BusinessRules\EditableProtocolValueRule.cs" />
+    <Compile Include="Controllers\AbstractServiceViewController.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\AbstractServiceViewController.Designer.cs">
+      <DependentUpon>AbstractServiceViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\CallCardUrgentViewController.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\CallCardUrgentViewController.Designer.cs">
+      <DependentUpon>CallCardUrgentViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\CommonCaseViewController.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\CommonCaseViewController.Designer.cs">
+      <DependentUpon>CommonCaseViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\DiagnoseListViewController.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\DiagnoseListViewController.Designer.cs">
+      <DependentUpon>DiagnoseListViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\DispCaseViewController.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\DispCaseViewController.Designer.cs">
+      <DependentUpon>DispCaseViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\CommonServiceViewController.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\CommonServiceViewController.Designer.cs">
+      <DependentUpon>CommonServiceViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\MKBWithDispInfoBeforeViewController.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\MKBWithDispInfoBeforeViewController.Designer.cs">
+      <DependentUpon>MKBWithDispInfoBeforeViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\TextTemplateViewController.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\TextTemplateViewController.Designer.cs">
+      <DependentUpon>TextTemplateViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Module.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Module.Designer.cs">
+      <DependentUpon>Module.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DatabaseUpdate\Updater.cs" />
+    <Compile Include="Reports\PacientReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\PacientReport.Designer.cs">
+      <DependentUpon>PacientReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\PacientReportParametersObject.cs" />
+    <Compile Include="Reports\VisitReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\VisitReport.Designer.cs">
+      <DependentUpon>VisitReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\VisitReportParametersObject.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="BusinessObjects\Utils\InputBox.resx">
+      <DependentUpon>InputBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controllers\CallCardUrgentViewController.resx">
+      <DependentUpon>CallCardUrgentViewController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controllers\CommonCaseViewController.resx">
+      <DependentUpon>CommonCaseViewController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controllers\DiagnoseListViewController.resx">
+      <DependentUpon>DiagnoseListViewController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controllers\DispCaseViewController.resx">
+      <DependentUpon>DispCaseViewController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controllers\CommonServiceViewController.resx">
+      <DependentUpon>CommonServiceViewController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controllers\MKBWithDispInfoBeforeViewController.resx">
+      <DependentUpon>MKBWithDispInfoBeforeViewController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controllers\TextTemplateViewController.resx">
+      <DependentUpon>TextTemplateViewController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model.DesignedDiffs.xafml" />
+    <EmbeddedResource Include="Module.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Module.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Reports\PacientReport.resx">
+      <DependentUpon>PacientReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\VisitReport.resx">
+      <DependentUpon>VisitReport.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DatabaseUpdate\ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Controllers\ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="FunctionalTests\ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="FunctionalTests\sample.ets" />
+    <None Include="FunctionalTests\WebSample.ets" />
+    <None Include="Images\ReadMe.txt" />
+    <EmbeddedResource Include="Model.DesignedDiffs.Localization.ru-RU.xafml">
+      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="FunctionalTests\config.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DatabaseUpdate\xml\F005.xml" />
+    <None Include="UnusableNodes1.xml">
+      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UnusableNodes2.xml">
+      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UnusableNodes3.xml">
+      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UnusableNodes4.xml">
+      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UnusableNodes_ru-RU.xml">
+      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UnusableNodes5.xml">
+      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UnusableNodes6.xml">
+      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UnusableNodes1_ru-RU.xml">
+      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UnusableNodes2_ru-RU.xml">
+      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UnusableNodes3_ru-RU.xml">
+      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UnusableNodes4_ru-RU.xml">
+      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UnusableNodes5_ru-RU.xml">
+      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UnusableNodes6_ru-RU.xml">
+      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UnusableNodes.xml">
+      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UnusableNodes7.xml">
+      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UnusableNodes8.xml">
+      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UnusableNodes9.xml">
+      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UnusableNodes10.xml">
+      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UnusableNodes11.xml">
+      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Welcome.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="BusinessObjects\FederalPortalOrphan\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

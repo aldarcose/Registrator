@@ -1,0 +1,360 @@
+<document showGrid="TRUE" globalx="0" globaly="0" pagesize="A5" numCopyes="2" orientation="Portrait" version="1" step="5" shouldMost="true" >
+ <line heigth="1" y1="174.625" y2="166.423" x1="14.5521" x2="14.5521" />
+ <line heigth="1" y1="87.5771" y2="92.6042" x1="114.035" x2="114.035" />
+ <line heigth="1" y1="87.5771" y2="92.6042" x1="98.1604" x2="98.1604" />
+ <font size="7" strikeOut="false" bold="false" underline="false" name="Times New Roman" italic="false" />
+ <text y1="108.744" x1="91.2812" text="(заполняется специалистом 
+аптечного учреждения)" angle="0" />
+ <line heigth="1" y1="45.5083" y2="52.1229" x1="33.6021" x2="33.6021" />
+ <font size="10" strikeOut="false" bold="true" underline="false" name="MS Shell Dlg" italic="false" />
+ <text width="39.4229" height="3.43958" y1="66.4104" x1="59.0021" text="#:print_num:" angle="0" />
+ <font size="8" strikeOut="false" bold="true" underline="false" name="MS Shell Dlg" italic="false" />
+ <text y1="135.996" x1="39.6875" text="#:print_kol_vo:" angle="0" />
+ <line heigth="1" y1="76.9937" y2="76.9937" x1="34.925" x2="41.8042" />
+ <font size="7" strikeOut="false" bold="false" underline="false" name="Times New Roman" italic="false" />
+ <text y1="125.942" x1="81.2271" text="Код лекарственного препарата
+______________________________________" angle="0" />
+ <font size="8" strikeOut="false" bold="true" underline="false" name="MS Shell Dlg" italic="false" />
+ <text y1="96.8375" x1="25.4" text="#:print_patient_addr:" angle="0" />
+ <font size="10" strikeOut="false" bold="true" underline="false" name="MS Shell Dlg" italic="false" />
+ <text width="39.4229" height="3.43958" y1="181.769" x1="78.3167" text="#:print_num:" angle="0" />
+ <line heigth="1" y1="45.5083" y2="52.1229" x1="17.9917" x2="17.9917" />
+ <font size="8" strikeOut="false" bold="false" underline="false" name="MS Shell Dlg" italic="false" />
+ <text y1="140.494" x1="13.7583" text="Signa" angle="0" />
+ <line heigth="1" y1="52.1229" y2="52.1229" x1="12.7" x2="28.8396" />
+ <line heigth="1" y1="77.2583" y2="82.55" x1="81.4917" x2="81.4917" />
+ <line heigth="1" y1="87.5771" y2="92.6042" x1="94.1917" x2="94.1917" />
+ <line heigth="1" y1="87.5771" y2="92.6042" x1="34.3958" x2="34.3958" />
+ <line heigth="1" y1="76.9937" y2="80.9625" x1="41.8042" x2="41.8042" />
+ <line heigth="1" y1="170.656" y2="170.656" x1="134.144" x2="14.5521" />
+ <line heigth="1" y1="28.0458" y2="28.0458" x1="27.5167" x2="44.9792" />
+ <line heigth="1" y1="66.1458" y2="70.3792" x1="111.654" x2="111.654" />
+ <line heigth="1" y1="77.2583" y2="82.55" x1="89.1646" x2="89.1646" />
+ <line heigth="1" y1="45.5083" y2="52.1229" x1="12.7" x2="12.7" />
+ <line heigth="1" y1="77.2583" y2="82.55" x1="77.5229" x2="77.5229" />
+ <line heigth="1" y1="87.5771" y2="92.6042" x1="102.129" x2="102.129" />
+ <font size="8" strikeOut="false" bold="true" underline="false" name="MS Shell Dlg" italic="false" />
+ <text y1="77.5229" x1="26.7229" text="#:print_patient_db:" angle="0" />
+ <line heigth="1" y1="77.2583" y2="82.55" x1="97.3667" x2="97.3667" />
+ <line heigth="1" y1="158.221" y2="158.221" x1="79.9042" x2="133.879" />
+ <line heigth="1" y1="174.625" y2="166.423" x1="134.144" x2="134.144" />
+ <line heigth="1" y1="77.2583" y2="82.55" x1="119.856" x2="119.856" />
+ <line heigth="1" y1="66.1458" y2="70.3792" x1="113.506" x2="113.506" />
+ <font size="8" strikeOut="false" bold="true" underline="false" name="MS Shell Dlg" italic="false" />
+ <text y1="47.3604" x1="35.1896" text="#:print_diagn:" angle="0" />
+ <font size="8" strikeOut="false" bold="true" underline="false" name="MS Shell Dlg" italic="false" />
+ <text width="55.2979" height="8.99583" y1="116.946" x1="18.2562" text="#:print_rp:" angle="0" />
+ <line heigth="1" y1="87.5771" y2="92.6042" x1="38.1" x2="38.1" />
+ <line heigth="1" y1="66.1458" y2="70.3792" x1="107.95" x2="107.95" />
+ <font size="8" strikeOut="false" bold="true" underline="false" name="MS Shell Dlg" italic="false" />
+ <text y1="47.0958" x1="15.0812" text="#:print_lgota:" angle="0" />
+ <line heigth="1" y1="66.1458" y2="70.3792" x1="121.708" x2="121.708" />
+ <line heigth="1" y1="135.467" y2="135.467" x1="29.6333" x2="73.8187" />
+ <font size="7" strikeOut="false" bold="false" underline="false" name="Times New Roman" italic="false" />
+ <text y1="134.673" x1="80.6979" text="Торговое  наименование __________________
+______________________________________" angle="0" />
+ <line heigth="1" y1="109.008" y2="158.485" x1="79.9042" x2="79.9042" />
+ <line heigth="1" y1="30.4271" y2="34.3958" x1="23.8125" x2="23.8125" />
+ <font size="8" strikeOut="false" bold="false" underline="false" name="Times New Roman" italic="false" />
+ <text y1="166.952" x1="25.1354" text="Приготовил" angle="0" />
+ <line heigth="1" y1="80.9625" y2="80.9625" x1="25.6646" x2="32.5437" />
+ <line heigth="1" y1="77.2583" y2="82.55" x1="73.5542" x2="73.5542" />
+ <font size="6" strikeOut="false" bold="false" underline="false" name="Times New Roman" italic="false" />
+ <text y1="73.5542" x1="13.7583" text="Ф,И,О, Пациента___________________________________________________________________________________________________" angle="0" />
+ <line heigth="1" y1="66.1458" y2="70.3792" x1="134.408" x2="134.408" />
+ <line heigth="1" y1="30.4271" y2="34.3958" x1="13.2292" x2="13.2292" />
+ <font size="8" strikeOut="false" bold="false" underline="false" name="MS Shell Dlg" italic="false" />
+ <text y1="66.1458" x1="100.012" text="от" angle="0" />
+ <line heigth="1" y1="24.0771" y2="28.0458" x1="34.3958" x2="34.3958" />
+ <line heigth="1" y1="87.5771" y2="92.6042" x1="50.5354" x2="50.5354" />
+ <line heigth="1" y1="45.5083" y2="52.1229" x1="44.7146" x2="44.7146" />
+ <line heigth="1" y1="30.4271" y2="34.3958" x1="65.8812" x2="65.8812" />
+ <font size="6" strikeOut="false" bold="false" underline="false" name="Times New Roman" italic="false" />
+ <text y1="22.7542" x1="104.246" text="Код формы по ОКУД 3108805   
+         Форма N 148-1/у-06 (л)" angle="0" />
+ <line heigth="1" y1="24.0771" y2="28.0458" x1="38.1" x2="38.1" />
+ <line heigth="1" y1="66.1458" y2="70.3792" x1="116.946" x2="116.946" />
+ <line heigth="1" y1="87.5771" y2="92.6042" x1="62.1771" x2="62.1771" />
+ <font size="8" strikeOut="false" bold="false" underline="false" name="Times New Roman" italic="false" />
+ <text y1="116.417" x1="13.7583" text="Rp:" angle="0" />
+ <font size="6" strikeOut="false" bold="false" underline="false" name="Times New Roman" italic="false" />
+ <text y1="6.35" x1="13.4937" text="Министерство здравоохранения   
+Российской Федерации" angle="0" />
+ <line heigth="1" y1="30.4271" y2="34.3958" x1="20.3729" x2="20.3729" />
+ <font size="8" strikeOut="false" bold="false" underline="false" name="Times New Roman" italic="false" />
+ <text y1="166.688" x1="67.7333" text="Проверил" angle="0" />
+ <font size="6" strikeOut="false" bold="false" underline="false" name="Times New Roman" italic="false" />
+ <text y1="43.6562" x1="70.9083" text="1) Федеральный бюджет
+2) бюджет субъекта
+Российской Федерации
+3) муниципальный  бюджет
+(нужное подчеркнуть)" angle="0" />
+ <font size="6" strikeOut="false" bold="false" underline="false" name="Times New Roman" italic="false" />
+ <text y1="37.0417" x1="37.8354" text="Код нозологи-
+ческой формы      
+(по МКБ-10)" angle="0" />
+ <line heigth="1" y1="77.2583" y2="82.55" x1="85.4604" x2="85.4604" />
+ <font size="8" strikeOut="false" bold="false" underline="false" name="Times New Roman" italic="false" />
+ <text y1="166.688" x1="107.95" text="Отпустил" angle="0" />
+ <font size="6" strikeOut="false" bold="true" underline="false" name="Times New Roman" italic="false" />
+ <text y1="49.4771" x1="116.152" text="#:cross_3m:" angle="0" />
+ <line heigth="1" y1="76.9937" y2="80.9625" x1="49.2125" x2="49.2125" />
+ <line heigth="1" y1="77.2583" y2="82.55" x1="108.744" x2="108.744" />
+ <line heigth="1" y1="87.5771" y2="92.6042" x1="133.085" x2="133.085" />
+ <line heigth="1" y1="87.5771" y2="92.6042" x1="54.2396" x2="54.2396" />
+ <line heigth="1" y1="66.1458" y2="66.1458" x1="113.506" x2="120.65" />
+ <font size="9" strikeOut="false" bold="false" underline="false" name="Times New Roman" italic="false" />
+ <text y1="187.59" x1="79.9042" text="Наименование лекарственного препарата:     
+__________________________________
+
+Дозировка: ________________________" angle="0" />
+ <font size="6" strikeOut="false" bold="true" underline="false" name="Times New Roman" italic="false" />
+ <text y1="46.5667" x1="116.946" text="#:cross_1m:" angle="0" />
+ <line heigth="1" y1="77.2583" y2="82.55" x1="93.1333" x2="93.1333" />
+ <font size="6" strikeOut="false" bold="false" underline="false" name="Times New Roman" italic="false" />
+ <text y1="36.7771" x1="98.425" text="% оплаты из
+источника
+финансиро-
+вания:
+1).100%
+2). 50%
+(нужное под-
+черкнуть)" angle="0" />
+ <line heigth="1" y1="166.423" y2="166.423" x1="134.144" x2="14.5521" />
+ <font size="8" strikeOut="false" bold="true" underline="false" name="MS Shell Dlg" italic="false" />
+ <text y1="30.6917" x1="14.8167" text="#:print_ogrn:" angle="0" />
+ <line heigth="1" y1="24.0771" y2="28.0458" x1="30.9562" x2="30.9562" />
+ <font size="5" strikeOut="false" bold="false" underline="false" name="Times New Roman" italic="false" />
+ <text y1="37.3062" x1="13.2292" text="   Код 
+категории 
+ граждан " angle="0" />
+ <font size="6" strikeOut="false" bold="true" underline="false" name="Times New Roman" italic="false" />
+ <text y1="44.1854" x1="116.152" text="#:cross_10d:" angle="0" />
+ <font size="8" strikeOut="false" bold="true" underline="false" name="MS Shell Dlg" italic="false" />
+ <text y1="72.2313" x1="31.2208" text="#:print_patient_fio:" angle="0" />
+ <line heigth="1" y1="66.1458" y2="70.3792" x1="124.883" x2="124.883" />
+ <font size="6" strikeOut="false" bold="false" underline="false" name="Times New Roman" italic="false" />
+ <text y1="103.452" x1="13.4937" text="Ф.И.О. лечащего врача__________________________________________________________________________________________" angle="0" />
+ <line heigth="1" y1="30.4271" y2="34.3958" x1="51.5938" x2="51.5938" />
+ <line heigth="1" y1="66.1458" y2="70.3792" x1="131.233" x2="131.233" />
+ <font size="6" strikeOut="false" bold="false" underline="false" name="Times New Roman" italic="false" />
+ <text y1="79.1104" x1="43.6562" text="." angle="0" />
+ <font size="6" strikeOut="false" bold="false" underline="false" name="Times New Roman" italic="false" />
+ <text y1="78.5812" x1="32.5437" text="." angle="0" />
+ <font size="6" strikeOut="false" bold="false" underline="false" name="Times New Roman" italic="false" />
+ <text y1="19.5792" x1="13.7583" text="Медицинская организация" angle="0" />
+ <line heigth="1" y1="34.3958" y2="34.3958" x1="13.2292" x2="69.3208" />
+ <line heigth="1" y1="87.5771" y2="92.6042" x1="90.2229" x2="90.2229" />
+ <line heigth="1" y1="45.5083" y2="52.1229" x1="23.5479" x2="23.5479" />
+ <font size="8" strikeOut="false" bold="true" underline="false" name="MS Shell Dlg" italic="false" />
+ <text y1="46.8313" x1="98.1604" text="#:print_no_cost:" angle="0" />
+ <font size="9" strikeOut="false" bold="true" underline="false" name="Times New Roman" italic="false" />
+ <text y1="6.08542" x1="47.0958" text="image_index_0" angle="0" />
+ <font size="7" strikeOut="false" bold="false" underline="false" name="Times New Roman" italic="false" />
+ <text y1="120.65" x1="80.9625" text="Дата отпуска: &quot;____&quot;_______________200___г.       " angle="0" />
+ <line heigth="1" y1="107.685" y2="112.712" x1="47.8896" x2="47.8896" />
+ <line heigth="1" y1="36.2479" y2="61.1187" x1="133.879" x2="133.879" />
+ <line heigth="1" y1="76.9937" y2="76.9937" x1="45.7729" x2="59.5312" />
+ <font size="8" strikeOut="false" bold="true" underline="false" name="MS Shell Dlg" italic="false" />
+ <text y1="131.762" x1="29.3687" text="#:print_doza:" angle="0" />
+ <font size="6" strikeOut="false" bold="false" underline="false" name="Times New Roman" italic="false" />
+ <text y1="109.008" x1="13.7583" text="Код лечащего врача       " angle="0" />
+ <font size="6" strikeOut="false" bold="true" underline="false" name="Times New Roman" italic="false" />
+ <text y1="41.5396" x1="116.152" text="#:cross_5d:" angle="0" />
+ <line heigth="1" y1="87.5771" y2="92.6042" x1="118.004" x2="118.004" />
+ <line heigth="1" y1="125.677" y2="125.677" x1="15.0812" x2="74.3479" />
+ <line heigth="1" y1="77.2583" y2="82.55" x1="116.152" x2="116.152" />
+ <line heigth="1" y1="87.5771" y2="92.6042" x1="110.067" x2="110.067" />
+ <line heigth="1" y1="76.9937" y2="76.9937" x1="25.6646" x2="32.5437" />
+ <line heigth="1" y1="107.685" y2="112.712" x1="51.8583" x2="51.8583" />
+ <line heigth="1" y1="66.1458" y2="66.1458" x1="121.708" x2="134.408" />
+ <line heigth="1" y1="76.9937" y2="80.9625" x1="29.1042" x2="29.1042" />
+ <line heigth="1" y1="87.5771" y2="92.6042" x1="106.098" x2="106.098" />
+ <font size="7" strikeOut="false" bold="false" underline="false" name="Times New Roman" italic="false" />
+ <text y1="144.463" x1="80.9625" text="Количество____________________________" angle="0" />
+ <line heigth="1" y1="87.5771" y2="87.5771" x1="30.4271" x2="133.085" />
+ <line heigth="1" y1="77.2583" y2="77.2583" x1="73.5542" x2="127.529" />
+ <line heigth="1" y1="76.9937" y2="80.9625" x1="59.5312" x2="59.5312" />
+ <line heigth="1" y1="77.2583" y2="82.55" x1="105.04" x2="105.04" />
+ <line heigth="1" y1="80.9625" y2="80.9625" x1="45.7729" x2="59.5312" />
+ <line heigth="1" y1="87.5771" y2="92.6042" x1="46.3021" x2="46.3021" />
+ <font size="8" strikeOut="false" bold="true" underline="false" name="MS Shell Dlg" italic="false" />
+ <text y1="50.8" x1="74.0833" text="#:print_mun:" angle="0" />
+ <line heigth="1" y1="87.5771" y2="92.6042" x1="70.1146" x2="70.1146" />
+ <line heigth="1" y1="87.5771" y2="92.6042" x1="58.2083" x2="58.2083" />
+ <line heigth="1" y1="87.5771" y2="92.6042" x1="74.0833" x2="74.0833" />
+ <line heigth="1" y1="76.9937" y2="80.9625" x1="34.925" x2="34.925" />
+ <line heigth="1" y1="45.5083" y2="52.1229" x1="28.8396" x2="28.8396" />
+ <line heigth="1" y1="76.9937" y2="80.9625" x1="56.0917" x2="56.0917" />
+ <line heigth="1" y1="131.233" y2="131.233" x1="22.4896" x2="73.5542" />
+ <line heigth="1" y1="30.4271" y2="34.3958" x1="69.3208" x2="69.3208" />
+ <line heigth="1" y1="30.4271" y2="34.3958" x1="48.1542" x2="48.1542" />
+ <line heigth="1" y1="24.0771" y2="24.0771" x1="27.5167" x2="44.9792" />
+ <line heigth="1" y1="36.2479" y2="36.2479" x1="69.0562" x2="133.35" />
+ <font size="8" strikeOut="false" bold="false" underline="false" name="Times New Roman" italic="false" />
+ <text y1="146.05" x1="14.0229" text="Подпись лечащего врача _______________
+и личная печать лечащего
+врача ____________________________
+                                  М.П." angle="0" />
+ <line heigth="1" y1="61.1187" y2="61.1187" x1="69.0562" x2="133.879" />
+ <font size="8" strikeOut="false" bold="true" underline="false" name="MS Shell Dlg" italic="false" />
+ <text y1="102.394" x1="39.9521" text="#:print_doc_fio:" angle="0" />
+ <line heigth="1" y1="76.9937" y2="80.9625" x1="32.5437" x2="32.5437" />
+ <line heigth="1" y1="87.5771" y2="92.6042" x1="86.2542" x2="86.2542" />
+ <line heigth="1" y1="87.5771" y2="92.6042" x1="78.0521" x2="78.0521" />
+ <line heigth="1" y1="107.685" y2="112.712" x1="35.9833" x2="35.9833" />
+ <line heigth="1" y1="70.3792" y2="70.3792" x1="113.506" x2="120.65" />
+ <line heigth="1" y1="87.5771" y2="92.6042" x1="125.677" x2="125.677" />
+ <line heigth="1" y1="120.915" y2="120.915" x1="14.8167" x2="74.3479" />
+ <line heigth="1" y1="174.625" y2="166.688" x1="93.1333" x2="93.1333" />
+ <line heigth="1" y1="30.4271" y2="34.3958" x1="16.9333" x2="16.9333" />
+ <line heigth="1" y1="30.4271" y2="34.3958" x1="30.9562" x2="30.9562" />
+ <font size="8" strikeOut="false" bold="true" underline="false" name="MS Shell Dlg" italic="false" />
+ <text width="56.0917" height="3.96875" y1="127.265" x1="22.225" text="#:print_dtd:" angle="0" />
+ <line heigth="1" y1="107.685" y2="112.712" x1="43.9208" x2="43.9208" />
+ <line heigth="1" y1="70.3792" y2="70.3792" x1="104.51" x2="111.654" />
+ <font size="7" strikeOut="false" bold="false" underline="false" name="Times New Roman" italic="false" />
+ <text y1="115.887" x1="80.6979" text="Отпущено по рецепту:         " angle="0" />
+ <line heigth="1" y1="87.5771" y2="92.6042" x1="66.1458" x2="66.1458" />
+ <line heigth="1" y1="92.6042" y2="92.6042" x1="30.4271" x2="133.085" />
+ <font size="8" strikeOut="false" bold="false" underline="false" name="Times New Roman" italic="false" />
+ <text y1="132.292" x1="14.2875" text="Дозировка" angle="0" />
+ <font size="10" strikeOut="false" bold="true" underline="false" name="MS Shell Dlg" italic="false" />
+ <text y1="66.4104" x1="36.7771" text="#:print_ser:" angle="0" />
+ <line heigth="1" y1="76.9937" y2="80.9625" x1="52.6521" x2="52.6521" />
+ <line heigth="1" y1="112.712" y2="112.712" x1="35.9833" x2="55.8271" />
+ <line heigth="1" y1="24.0771" y2="28.0458" x1="27.5167" x2="27.5167" />
+ <line heigth="1" y1="77.2583" y2="82.55" x1="127.529" x2="127.529" />
+ <line heigth="1" y1="107.685" y2="112.712" x1="39.9521" x2="39.9521" />
+ <line heigth="1" y1="77.2583" y2="82.55" x1="123.825" x2="123.825" />
+ <line heigth="1" y1="87.5771" y2="92.6042" x1="82.2854" x2="82.2854" />
+ <line heigth="1" y1="45.5083" y2="52.1229" x1="50.0062" x2="50.0062" />
+ <line heigth="1" y1="77.2583" y2="82.55" x1="112.448" x2="112.448" />
+ <font size="6" strikeOut="false" bold="false" underline="false" name="Times New Roman" italic="false" />
+ <text y1="36.7771" x1="74.6125" text="Источник финанси-
+рования     
+
+" angle="0" />
+ <line heigth="1" y1="52.1229" y2="52.1229" x1="61.1187" x2="33.6021" />
+ <line heigth="1" y1="30.4271" y2="34.3958" x1="58.4729" x2="58.4729" />
+ <line heigth="1" y1="82.55" y2="82.55" x1="73.5542" x2="127.529" />
+ <line heigth="1" y1="87.5771" y2="92.6042" x1="42.0688" x2="42.0688" />
+ <font size="7" strikeOut="false" bold="false" underline="false" name="Times New Roman" italic="false" />
+ <text y1="150.019" x1="81.4917" text="На общую сумму_______________________
+_____________________________________" angle="0" />
+ <line heigth="1" y1="109.008" y2="109.008" x1="79.9042" x2="133.879" />
+ <line heigth="1" y1="30.4271" y2="34.3958" x1="34.3958" x2="34.3958" />
+ <line heigth="1" y1="45.5083" y2="52.1229" x1="55.8271" x2="55.8271" />
+ <line heigth="1" y1="35.9833" y2="60.8542" x1="96.8375" x2="96.8375" />
+ <font size="8" strikeOut="false" bold="false" underline="false" name="Times New Roman" italic="false" />
+ <text y1="136.525" x1="14.0229" text="Количество единиц" angle="0" />
+ <line heigth="1" y1="76.9937" y2="80.9625" x1="45.7729" x2="45.7729" />
+ <font size="8" strikeOut="false" bold="true" underline="false" name="MS Shell Dlg" italic="false" />
+ <text y1="45.5083" x1="74.0833" text="#:print_sub_rf:" angle="0" />
+ <line heigth="1" y1="30.4271" y2="34.3958" x1="37.8354" x2="37.8354" />
+ <line heigth="1" y1="70.3792" y2="70.3792" x1="121.708" x2="134.408" />
+ <line heigth="1" y1="76.9937" y2="80.9625" x1="45.7729" x2="45.7729" />
+ <font size="8" strikeOut="false" bold="true" underline="false" name="MS Shell Dlg" italic="false" />
+ <text y1="49.2125" x1="97.8958" text="#:print_half_cost:" angle="0" />
+ <line heigth="1" y1="77.2583" y2="82.55" x1="101.335" x2="101.335" />
+ <line heigth="1" y1="174.625" y2="166.688" x1="52.6521" x2="52.6521" />
+ <line heigth="1" y1="45.5083" y2="52.1229" x1="38.8937" x2="38.8937" />
+ <line heigth="1" y1="45.5083" y2="45.5083" x1="33.6021" x2="61.1187" />
+ <line heigth="1" y1="107.685" y2="112.712" x1="55.8271" x2="55.8271" />
+ <font size="10" strikeOut="false" bold="true" underline="false" name="MS Shell Dlg" italic="false" />
+ <text width="25.4" height="3.43958" y1="181.769" x1="56.3562" text="#:print_ser:" angle="0" />
+ <font size="9" strikeOut="false" bold="false" underline="false" name="Times New Roman" italic="false" />
+ <text y1="66.675" x1="14.0229" text="РЕЦЕПТ  серия                      №" angle="0" />
+ <font size="8" strikeOut="false" bold="true" underline="false" name="MS Shell Dlg" italic="false" />
+ <text y1="88.3708" x1="31.4854" text="#:print_ser_pol:" angle="0" />
+ <font size="8" strikeOut="false" bold="false" underline="false" name="Times New Roman" italic="false" />
+ <text y1="127.794" x1="14.2875" text="D.t.d." angle="0" />
+ <line heigth="1" y1="66.1458" y2="70.3792" x1="104.51" x2="104.51" />
+ <line heigth="1" y1="30.4271" y2="34.3958" x1="55.0333" x2="55.0333" />
+ <line heigth="1" y1="144.463" y2="144.463" x1="22.7542" x2="73.5542" />
+ <font size="8" strikeOut="false" bold="true" underline="false" name="MS Shell Dlg" italic="false" />
+ <text y1="42.8625" x1="74.0833" text="#:print_fed:" angle="0" />
+ <line heigth="1" y1="76.9937" y2="80.9625" x1="25.6646" x2="25.6646" />
+ <font size="6" strikeOut="false" bold="false" underline="false" name="Times New Roman" italic="false" />
+ <text y1="24.0771" x1="13.7583" text="  Штамп
+Код ОГРН  " angle="0" />
+ <line heigth="1" y1="24.0771" y2="28.0458" x1="41.5396" x2="41.5396" />
+ <font size="6" strikeOut="false" bold="false" underline="false" name="Times New Roman" italic="false" />
+ <text y1="5.29167" x1="103.188" text="        УТВЕРЖДЕНА
+Приказом Министерства
+здравоохранения   
+Российской Федерации      
+от 20 декабря 2012 г. N 1175н
+" angle="0" />
+ <font size="6" strikeOut="false" bold="false" underline="false" name="Times New Roman" italic="false" />
+ <text y1="36.2479" x1="116.152" text="Рецепт действи-
+телен в течение 
+5 дней, 
+10 дней,
+1 месяца,
+3 месяцев
+(нужное
+подчеркнуть)
+
+" angle="0" />
+ <font size="8" strikeOut="false" bold="true" underline="false" name="MS Shell Dlg" italic="false" />
+ <text width="17.1979" height="12.1708" y1="182.033" x1="118.004" text="#:print_date_vp_ss:" angle="0" />
+ <font size="8" strikeOut="false" bold="true" underline="false" name="MS Shell Dlg" italic="false" />
+ <text y1="78.3167" x1="74.8771" text="#:print_snils:" angle="0" />
+ <line heigth="1" y1="24.0771" y2="28.0458" x1="44.9792" x2="44.9792" />
+ <line heigth="1" y1="87.5771" y2="92.6042" x1="30.4271" x2="30.4271" />
+ <line heigth="1" y1="45.5083" y2="52.1229" x1="61.1187" x2="61.1187" />
+ <font size="8" strikeOut="false" bold="true" underline="false" name="MS Shell Dlg" italic="false" />
+ <text y1="66.675" x1="106.098" text="#:print_date_vp:" angle="0" />
+ <line heigth="1" y1="66.1458" y2="66.1458" x1="104.51" x2="111.654" />
+ <line heigth="1" y1="66.1458" y2="70.3792" x1="128.058" x2="128.058" />
+ <font size="9" strikeOut="false" bold="false" underline="false" name="Times New Roman" italic="false" />
+ <text y1="187.325" x1="15.875" text="Способ применения:
+Продолжительность_______________дней                           
+Количество приемов в день:__________раз    
+На 1 прием:_____________________единиц      " angle="0" />
+ <line heigth="1" y1="174.625" y2="174.625" x1="134.144" x2="14.5521" />
+ <font size="6" strikeOut="false" bold="false" underline="false" name="Times New Roman" italic="false" />
+ <text y1="84.1375" x1="14.0229" text="№ страхового 
+медицинского   
+полиса  " angle="0" />
+ <font size="8" strikeOut="false" bold="false" underline="false" name="Times New Roman" italic="false" />
+ <text y1="93.6625" x1="13.7583" text="№ медицинской карты амбулаторного больного (история развития 
+ребенка)____________________________________________________________________" angle="0" />
+ <line heigth="1" y1="30.4271" y2="34.3958" x1="41.275" x2="41.275" />
+ <font size="8" strikeOut="false" bold="true" underline="false" name="MS Shell Dlg" italic="false" />
+ <text y1="108.479" x1="37.3062" text="#:print_doc_kod:" angle="0" />
+ <line heigth="1" y1="80.9625" y2="80.9625" x1="34.925" x2="41.8042" />
+ <line heigth="1" y1="76.9937" y2="80.9625" x1="49.2125" x2="49.2125" />
+ <line heigth="1" y1="66.1458" y2="70.3792" x1="120.65" x2="120.65" />
+ <line heigth="1" y1="30.4271" y2="34.3958" x1="44.7146" x2="44.7146" />
+ <line heigth="1" y1="87.5771" y2="92.6042" x1="121.973" x2="121.973" />
+ <line heigth="1" y1="30.4271" y2="34.3958" x1="27.2521" x2="27.2521" />
+ <font size="8" strikeOut="false" bold="true" underline="false" name="MS Shell Dlg" italic="false" />
+ <text y1="140.494" x1="23.0187" text="#:print_signa:" angle="0" />
+ <line heigth="1" y1="36.2479" y2="61.1187" x1="69.0562" x2="69.0562" />
+ <line heigth="1" y1="45.5083" y2="45.5083" x1="12.7" x2="28.8396" />
+ <line heigth="1" y1="30.4271" y2="30.4271" x1="13.2292" x2="69.3208" />
+ <font size="7" strikeOut="false" bold="false" underline="false" name="Times New Roman" italic="false" />
+ <text y1="112.977" x1="13.7583" text="Выписано:" angle="0" />
+ <font size="7" strikeOut="false" bold="false" underline="false" name="Times New Roman" italic="false" />
+ <text y1="177.271" x1="15.0812" text="------------------------------------------------------------ (Линия отрыва )---------------------------------------------------------------------
+" angle="0" />
+ <line heigth="1" y1="87.5771" y2="92.6042" x1="129.381" x2="129.381" />
+ <line heigth="1" y1="36.2479" y2="61.1187" x1="115.094" x2="115.094" />
+ <line heigth="1" y1="109.008" y2="158.221" x1="133.879" x2="133.879" />
+ <line heigth="1" y1="139.965" y2="139.965" x1="40.4812" x2="73.2896" />
+ <line heigth="1" y1="76.9937" y2="80.9625" x1="38.3646" x2="38.3646" />
+ <line heigth="1" y1="30.4271" y2="34.3958" x1="62.1771" x2="62.1771" />
+ <font size="8" strikeOut="false" bold="true" underline="false" name="MS Shell Dlg" italic="false" />
+ <text y1="88.3708" x1="59.5312" text="#:print_num_pol:" angle="0" />
+ <font size="8" strikeOut="false" bold="false" underline="false" name="Times New Roman" italic="false" />
+ <text y1="77.7875" x1="62.1771" text="СНИЛС" angle="0" />
+ <font size="9" strikeOut="false" bold="false" underline="false" name="Times New Roman" italic="false" />
+ <text y1="182.562" x1="15.6104" text="Корешок РЕЦЕПТА     Серия ___________ № ______________________ от __________" angle="0" />
+ <font size="6" strikeOut="false" bold="false" underline="false" name="Times New Roman" italic="false" />
+ <text y1="76.7292" x1="14.5521" text="Дата 
+рождения:" angle="0" />
+ <line heigth="1" y1="107.685" y2="107.685" x1="35.9833" x2="55.8271" />
+ <line heigth="1" y1="180.975" y2="180.975" x1="14.5521" x2="134.673" />
+</document>

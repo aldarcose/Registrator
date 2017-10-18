@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<root>
+  <rec1 IDFRMMP="1" FRMMPNAME="Экстренная" DATEBEG="01.01.2013" DATEEND="" />
+  <rec2 IDFRMMP="2" FRMMPNAME="Неотложная" DATEBEG="01.01.2013" DATEEND="" />
+  <rec3 IDFRMMP="3" FRMMPNAME="Плановая" DATEBEG="01.01.2013" DATEEND="" />
+</root>

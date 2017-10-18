@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<packet>
+  <zglv type="UslMp" version="1.1" date="24.01.2014" />
+  <zap IDUMP="1" UMPNAME="Стационарно" DATEBEG="18.10.2012" DATEEND="" />
+  <zap IDUMP="2" UMPNAME="В дневном стационаре" DATEBEG="18.10.2012" DATEEND="" />
+  <zap IDUMP="3" UMPNAME="Амбулаторно" DATEBEG="18.10.2012" DATEEND="" />
+  <zap IDUMP="4" UMPNAME="Вне медицинской организации" DATEBEG="18.10.2012" DATEEND="" />
+</packet>

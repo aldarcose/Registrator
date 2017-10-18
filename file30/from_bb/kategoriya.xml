@@ -1,0 +1,33 @@
+<?xml version="1.0" standalone="yes"?>
+<DATAPACKET Version="2.0">
+<METADATA>
+<FIELDS>
+<FIELD FieldName="id" DisplayLabel="id" FieldType="Integer" FieldClass="TField"/>
+<FIELD FieldName="name" DisplayLabel="name" FieldType="Unknown" FieldClass="TField"/>
+<FIELD FieldName="kod_oms" DisplayLabel="kod_oms" FieldType="Unknown" FieldClass="TField"/>
+<FIELD FieldName="code" DisplayLabel="code" FieldType="Unknown" FieldClass="TField"/>
+<FIELD FieldName="lpu_id" DisplayLabel="lpu_id" FieldType="String" FieldClass="TField"/>
+<FIELD FieldName="date_vnes_inf" DisplayLabel="date_vnes_inf" FieldType="String" FieldClass="TField"/>
+<FIELD FieldName="operator_id" DisplayLabel="operator_id" FieldType="Integer" FieldClass="TField"/>
+<FIELD FieldName="pocket_id" DisplayLabel="pocket_id" FieldType="Integer" FieldClass="TField"/>
+<FIELD FieldName="sort" DisplayLabel="sort" FieldType="Integer" FieldClass="TField"/>
+<FIELD FieldName="uchastok_id" DisplayLabel="uchastok_id" FieldType="Integer" FieldClass="TField"/>
+<FIELD FieldName="reestr_code" DisplayLabel="reestr_code" FieldType="String" FieldClass="TField"/>
+</FIELDS>
+</METADATA>
+<ROWDATA>
+<ROW id="1" name="работающий" kod_oms="1" code="1" lpu_id="03001" date_vnes_inf="2013-03-27&#160;07:44:37.249096+09" operator_id="null" pocket_id="null" sort="null" uchastok_id="null" reestr_code="1"/>
+<ROW id="2" name="неработающий&#160;&#160;&#160;" kod_oms="5,A" code="2" lpu_id="03001" date_vnes_inf="2013-03-27&#160;07:44:37.249096+09" operator_id="null" pocket_id="null" sort="null" uchastok_id="null" reestr_code="2"/>
+<ROW id="3" name="пенсионеры&#160;&#160;&#160;&#160;&#160;" kod_oms="2" code="3" lpu_id="03001" date_vnes_inf="2013-03-27&#160;07:44:37.249096+09" operator_id="null" pocket_id="null" sort="null" uchastok_id="null" reestr_code="3"/>
+<ROW id="4" name="учащиеся&#160;&#160;&#160;&#160;&#160;&#160;&#160;" kod_oms="4" code="4" lpu_id="03001" date_vnes_inf="2013-03-27&#160;07:44:37.249096+09" operator_id="null" pocket_id="null" sort="null" uchastok_id="null" reestr_code="4"/>
+<ROW id="5" name="дошкольники&#160;&#160;&#160;&#160;" kod_oms="3" code="5" lpu_id="03001" date_vnes_inf="2013-03-27&#160;07:44:37.249096+09" operator_id="null" pocket_id="null" sort="null" uchastok_id="null" reestr_code="5"/>
+<ROW id="6" name="аттестов.состав" kod_oms="null" code="6" lpu_id="03001" date_vnes_inf="2013-03-27&#160;07:44:37.249096+09" operator_id="null" pocket_id="null" sort="null" uchastok_id="null" reestr_code="6"/>
+<ROW id="8" name="Инвалид&#160;ВОВ" kod_oms="null" code="8" lpu_id="03001" date_vnes_inf="2013-07-31&#160;10:32:26.705984+09" operator_id="null" pocket_id="null" sort="null" uchastok_id="null" reestr_code="8"/>
+<ROW id="12" name="студент&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;" kod_oms="9" code="12" lpu_id="03001" date_vnes_inf="2013-03-27&#160;07:44:37.249096+09" operator_id="null" pocket_id="null" sort="null" uchastok_id="null" reestr_code="12"/>
+<ROW id="13" name="неорганизованые" kod_oms="null" code="13" lpu_id="03001" date_vnes_inf="2013-03-27&#160;07:44:37.249096+09" operator_id="null" pocket_id="null" sort="null" uchastok_id="null" reestr_code="13"/>
+<ROW id="14" name="отказной&#160;ребенок" kod_oms="null" code="14" lpu_id="03001" date_vnes_inf="2013-03-27&#160;07:44:37.249096+09" operator_id="null" pocket_id="null" sort="null" uchastok_id="null" reestr_code="14"/>
+<ROW id="15" name="БОМЖ&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;" kod_oms="8" code="15" lpu_id="03001" date_vnes_inf="2013-03-27&#160;07:44:37.249096+09" operator_id="null" pocket_id="null" sort="null" uchastok_id="null" reestr_code="15"/>
+<ROW id="16" name="Переселенцы(беж" kod_oms="6,B" code="16" lpu_id="03001" date_vnes_inf="2013-03-27&#160;07:44:37.249096+09" operator_id="null" pocket_id="null" sort="null" uchastok_id="null" reestr_code="16"/>
+<ROW id="25" name="Инв.нагр.зн.Жит.бл.Л" kod_oms="null" code="25" lpu_id="03001" date_vnes_inf="2013-07-31&#160;10:32:26.705984+09" operator_id="null" pocket_id="null" sort="null" uchastok_id="null" reestr_code="25"/>
+</ROWDATA>
+</DATAPACKET>

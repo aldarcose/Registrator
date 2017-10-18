@@ -1,0 +1,39 @@
+<?xml version="1.0" standalone="yes"?>
+<DATAPACKET Version="2.0">
+<METADATA>
+<FIELDS>
+<FIELD FieldName="otdel" DisplayLabel="otdel" FieldType="Integer" FieldClass="TField"/>
+<FIELD FieldName="nam_otdel" DisplayLabel="nam_otdel" FieldType="Unknown" FieldClass="TField"/>
+<FIELD FieldName="reestr_code" DisplayLabel="reestr_code" FieldType="Unknown" FieldClass="TField"/>
+</FIELDS>
+</METADATA>
+<ROWDATA>
+<ROW otdel="204" nam_otdel="Спец.отделение&#160;для&#160;детей" reestr_code="100"/>
+<ROW otdel="401" nam_otdel="ВСП" reestr_code="001"/>
+<ROW otdel="101" nam_otdel="Теpапия&#160;1" reestr_code="001"/>
+<ROW otdel="102" nam_otdel="Терапия&#160;2" reestr_code="001"/>
+<ROW otdel="103" nam_otdel="Терапия&#160;3" reestr_code="001"/>
+<ROW otdel="104" nam_otdel="Терапия&#160;4" reestr_code="001"/>
+<ROW otdel="107" nam_otdel="Проф.осмотр" reestr_code="001"/>
+<ROW otdel="105" nam_otdel="Спец.служба&#160;для&#160;взрослых" reestr_code="001"/>
+<ROW otdel="301" nam_otdel="Женская&#160;консультация" reestr_code="001"/>
+<ROW otdel="1001" nam_otdel="Травмпункт" reestr_code="001"/>
+<ROW otdel="9003" nam_otdel="Администрация" reestr_code="001"/>
+<ROW otdel="9004" nam_otdel="Амбулатория&#160;п.Сокол" reestr_code="001"/>
+<ROW otdel="203001" nam_otdel="Неотложка" reestr_code="001"/>
+<ROW otdel="201" nam_otdel="Педиатрия&#160;1" reestr_code="100"/>
+<ROW otdel="202" nam_otdel="Педиатрия&#160;2" reestr_code="100"/>
+<ROW otdel="203" nam_otdel="Педиатрия&#160;3" reestr_code="100"/>
+<ROW otdel="206" nam_otdel="ДШО" reestr_code="100"/>
+<ROW otdel="1002" nam_otdel="стационар&#160;на&#160;дому" reestr_code="080"/>
+<ROW otdel="2001" nam_otdel="Эндоскопический&#160;центр" reestr_code="090"/>
+<ROW otdel="303001" nam_otdel="Дневной&#160;стационар" reestr_code="080"/>
+<ROW otdel="9001" nam_otdel="ОВЛ&#160;не&#160;дн&#160;стац" reestr_code="080"/>
+<ROW otdel="108" nam_otdel="ОВЛ&#160;(взр.)&#160;гинекологич" reestr_code="080"/>
+<ROW otdel="205" nam_otdel="ОВЛ&#160;(дет.)&#160;педиатрич" reestr_code="180"/>
+<ROW otdel="106" nam_otdel="ОВЛ&#160;(взр.)" reestr_code="080"/>
+<ROW otdel="501" nam_otdel="Лабоpатоpия" reestr_code="090"/>
+<ROW otdel="9002" nam_otdel="Рентгенотделение" reestr_code="090"/>
+<ROW otdel="603001" nam_otdel="Женская&#160;консультация" reestr_code="100"/>
+</ROWDATA>
+</DATAPACKET>

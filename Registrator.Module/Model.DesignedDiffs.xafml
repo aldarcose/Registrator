@@ -1,0 +1,1383 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application Title="Registrator" Logo="ExpressAppLogo" Copyright="Sayan Damdinov">
+  <ActionDesign>
+    <Actions>
+      <Action Id="EditTextTemplateAction" ImageName="Action_Edit" SelectionDependencyType="Independent" />
+    </Actions>
+  </ActionDesign>
+  <BOModel>
+    <Class Name="Registrator.Module.BusinessObjects.Abstract.CommonCase">
+      <OwnMembers>
+        <Member Name="OslozhDiagnoses" AllowEdit="False" />
+        <Member Name="SoputsDiagnoses" AllowEdit="False" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Registrator.Module.BusinessObjects.Abstract.CommonService">
+      <AppearanceRules>
+        <AppearanceRule Id="@374e184a-89bd-4e9a-b61f-22bc7eed049b" TargetItems="CaseDiagnose" IsNewNode="True" />
+        <AppearanceRule Id="PreDiagnose_Hide" TargetItems="PreDiagnose" Visibility="Hide" Criteria="[IsMainService] = False" IsNewNode="True" />
+      </AppearanceRules>
+      <OwnMembers>
+        <Member Name="CaseDiagnose" AllowEdit="True" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Registrator.Module.BusinessObjects.Dictionaries.CommonProtocol">
+      <OwnMembers>
+        <Member Name="Anamnez" RowCount="10" />
+        <Member Name="Complain" RowCount="10" />
+        <Member Name="ObjectiveStatus" RowCount="10" />
+        <Member Name="Recommendation" RowCount="10" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Registrator.Module.BusinessObjects.Dictionaries.DisablityData">
+      <AppearanceRules>
+        <AppearanceRule Id="ChildDisabilityAppearence" Criteria="[Invalidnost] = ##Enum#Registrator.Module.BusinessObjects.Invalidnost,Net#" Context="Any" AppearanceItemType="LayoutItem" Visibility="Hide" />
+        <AppearanceRule Id="GroupDisabilityAppearence" Visibility="Hide" Criteria="[Invalidnost] = ##Enum#Registrator.Module.BusinessObjects.Invalidnost,Net#" Context="Any" AppearanceItemType="LayoutItem" />
+      </AppearanceRules>
+    </Class>
+    <Class Name="Registrator.Module.BusinessObjects.Dictionaries.DispsServiceList">
+      <OwnMembers>
+        <Member Name="Age" ImmediatePostData="True" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Registrator.Module.BusinessObjects.Dictionaries.ProtocolRecord">
+      <OwnMembers>
+        <Member Name="Type" AllowEdit="False" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Registrator.Module.BusinessObjects.Dictionaries.ProtocolRecordType">
+      <AppearanceRules>
+        <AppearanceRule Id="TimeFromHide" Context="Any" />
+        <AppearanceRule Id="TimeToHide" Context="Any" AppearanceItemType="LayoutItem" Criteria="[TimeType] = ##Enum#Registrator.Module.BusinessObjects.Dictionaries.TimeTypes,FromLimit# Or [TimeType] = ##Enum#Registrator.Module.BusinessObjects.Dictionaries.TimeTypes,All#" />
+      </AppearanceRules>
+    </Class>
+    <Class Name="Registrator.Module.BusinessObjects.DnevnoyStacionar">
+      <AppearanceRules>
+        <AppearanceRule Id="@cea7339c-a85d-40e5-9f10-e4a687f86469" Context="ListView" TargetItems="ResultatOplati" Criteria="[ResultatOplati] = ##Enum#Registrator.Module.BusinessObjects.Oplata,Polnaya#" BackColor="0, 192, 0" Enabled="False" IsNewNode="True" />
+      </AppearanceRules>
+    </Class>
+    <Class Name="Registrator.Module.Controllers.TextTemplateField">
+      <OwnMembers>
+        <Member Name="Text" RowCount="10" />
+      </OwnMembers>
+    </Class>
+  </BOModel>
+  <NavigationItems DefaultChildItemsDisplayStyle="List" DefaultLeafImageName="BO_List" NavigationStyle="TreeList" StartupNavigationItem="Pacient_ListView">
+    <Items>
+      <Item Id="Reports" Index="-1" />
+      <Item Id="Default" Index="0">
+        <Items>
+          <Item Id="AbstractService_ListView" Removed="True" />
+          <Item Id="Address_ListView" Removed="True" />
+          <Item Id="City_ListView" Removed="True" />
+          <Item Id="ClinicStatGroups_ListView" Removed="True" />
+          <Item Id="CommonProtocol_ListView" Removed="True" />
+          <Item Id="Constants_ListView" Removed="True" />
+          <Item Id="Country_ListView" Removed="True" />
+          <Item Id="DisablityData_ListView" Removed="True" />
+          <Item Id="DispsServiceList_ListView" Removed="True" />
+          <Item Id="District_ListView" Removed="True" />
+          <Item Id="DnevnoyStacionar_ListView" ViewId="DnevnoyStacionar_ListView" ObjectKey="" IsNewNode="True" Removed="True" />
+          <Item Id="Doctor_ListView" ImageName="BO_Customer" Removed="True" />
+          <Item Id="DoctorDolgnost_ListView" Removed="True" />
+          <Item Id="DoctorSpecTree_ListView" Removed="True" />
+          <Item Id="DoctorUslugi_ListView" Removed="True" />
+          <Item Id="Document_ListView" Removed="True" />
+          <Item Id="EditableProtocol_ListView" Removed="True" />
+          <Item Id="FormaMedPomoshi_ListView" Removed="True" />
+          <Item Id="IshodZabolevaniya_ListView" Removed="True" />
+          <Item Id="Kategoriya_ListView" Removed="True" />
+          <Item Id="KategoriyaLgot_ListView" Removed="True" />
+          <Item Id="Kladr_ListView" Removed="True" />
+          <Item Id="KladrType_ListView" Removed="True" />
+          <Item Id="Lgota_ListView" Removed="True" />
+          <Item Id="Medicament_ListView" Removed="True" />
+          <Item Id="MedOrg_ListView" Removed="True" />
+          <Item Id="MedProfil_ListView" Removed="True" />
+          <Item Id="MKB10_ListView" Removed="True" />
+          <Item Id="Otdel_ListView" Removed="True" />
+          <Item Id="Pacient_ListView" ImageName="BO_Person" />
+          <Item Id="PACIENT_ListView" Removed="True" />
+          <Item Id="PERS_LIST_ListView" Removed="True" />
+          <Item Id="PERS_ListView" Removed="True" />
+          <Item Id="Polis_ListView" Removed="True" />
+          <Item Id="ProtocolRecord_ListView" Removed="True" />
+          <Item Id="ProtocolRecordType_ListView" Removed="True" />
+          <Item Id="Republic_ListView" Removed="True" />
+          <Item Id="ResultatDispanserizacii_ListView" Removed="True" />
+          <Item Id="ResultatObrasheniya_ListView" Removed="True" />
+          <Item Id="SCHET_ListView" Removed="True" />
+          <Item Id="SLUCH_ListView" Removed="True" />
+          <Item Id="SocStatus_ListView" Removed="True" />
+          <Item Id="SposobOplatiMedPom_ListView" Removed="True" />
+          <Item Id="StacionarBindDoctorHistory_ListView" Removed="True" />
+          <Item Id="StrahMedOrg_ListView" Removed="True" />
+          <Item Id="Street_ListView" Removed="True" />
+          <Item Id="TerritorialUsluga_ListView" Removed="True" />
+          <Item Id="TipStacionara_ListView" Removed="True" />
+          <Item Id="Uchastok_ListView" Removed="True" />
+          <Item Id="USL_ListView" Removed="True" />
+          <Item Id="VERS_SPEC_ListView" Removed="True" />
+          <Item Id="VidDispanserizacii_ListView" Removed="True" />
+          <Item Id="VidDocumenta_ListView" Removed="True" />
+          <Item Id="VidMedPomoshi_ListView" Removed="True" />
+          <Item Id="VidMedVmeshatelstva_ListView" Removed="True" />
+          <Item Id="VidPolisa_ListView" Removed="True" />
+          <Item Id="VidUsloviyOkazMedPomoshi_ListView" Removed="True" />
+          <Item Id="ZAP_ListView" Removed="True" />
+          <Item Id="ZGLV_ListView" Removed="True" />
+          <Item Id="ZL_LIST_ListView" Removed="True" />
+        </Items>
+      </Item>
+      <Item Id="@c3f0e586-d05b-4458-a4c2-f9bc66ab8b38" Caption="Реестры" Index="1" IsNewNode="True">
+        <Items IsNewNode="True">
+          <Item Id="PERS_LIST_ListView" ViewId="PERS_LIST_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="PERS_ListView" ViewId="PERS_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="SCHET_ListView" ViewId="SCHET_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="USL_ListView" ViewId="USL_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="ZAP_ListView" ViewId="ZAP_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="ZGLV_ListView" ViewId="ZGLV_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="ZL_LIST_ListView" ViewId="ZL_LIST_ListView" ObjectKey="" IsNewNode="True" />
+        </Items>
+      </Item>
+      <Item Id="@04f32711-2bd7-4acf-b37b-97d5368bf049" Index="2" IsNewNode="True">
+        <Items IsNewNode="True">
+          <Item Id="Address_ListView" ViewId="Address_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="CommonProtocol_ListView" ViewId="CommonProtocol_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="Constants_ListView" ViewId="Constants_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="DisablityData_ListView" ViewId="DisablityData_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="DispsServiceList_ListView" ViewId="DispsServiceList_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="Doctor_ListView" ViewId="Doctor_ListView" ObjectKey="" ImageName="BO_Customer" IsNewNode="True" />
+          <Item Id="DoctorDolgnost_ListView" ViewId="DoctorDolgnost_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="Document_ListView" ViewId="Document_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="EditableProtocol_ListView" ViewId="EditableProtocol_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="Kladr_ListView" ViewId="Kladr_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="KladrType_ListView" ViewId="KladrType_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="Medicament_ListView" ViewId="Medicament_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="MedOrg_ListView" ViewId="MedOrg_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="Otdel_ListView_Copy" ViewId="Otdel_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="Polis_ListView" ViewId="Polis_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="ProtocolRecord_ListView" ViewId="ProtocolRecord_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="ProtocolRecordType_ListView" ViewId="ProtocolRecordType_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="StacionarBindDoctorHistory_ListView" ViewId="StacionarBindDoctorHistory_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="StrahMedOrg_ListView" ViewId="StrahMedOrg_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="Street_ListView" ViewId="Street_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="TerritorialUsluga_ListView" ViewId="TerritorialUsluga_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="Uchastok_ListView" ViewId="Uchastok_ListView" ObjectKey="" IsNewNode="True" />
+        </Items>
+      </Item>
+      <Item Id="@ffaaf455-8652-42aa-8784-3d65c1407880" Index="3" IsNewNode="True">
+        <Items IsNewNode="True">
+          <Item Id="VidDispanserizacii_ListView" ViewId="VidDispanserizacii_ListView" ObjectKey="" Index="0" IsNewNode="True" />
+          <Item Id="VidMedPomoshi_ListView" ViewId="VidMedPomoshi_ListView" ObjectKey="" Index="1" IsNewNode="True" />
+          <Item Id="VidUslugiMedPomoshi_ListView" ViewId="VidUslugiMedPomoshi_ListView" ObjectKey="" Index="2" IsNewNode="True" />
+          <Item Id="Celpos_ListView" ViewId="Celpos_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="City_ListView" ViewId="City_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="ClinicStatGroups_ListView" ViewId="ClinicStatGroups_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="Country_ListView" ViewId="Country_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="District_ListView" ViewId="District_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="DoctorProfil_ListView" ViewId="DoctorProfil_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="DoctorSpecTree_ListView" ViewId="DoctorSpecTree_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="DoctorUslugi_ListView" ViewId="DoctorUslugi_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="FormaMedPomoshi_ListView" ViewId="FormaMedPomoshi_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="IshodZabolevaniya_ListView" ViewId="IshodZabolevaniya_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="Kategoriya_ListView" ViewId="Kategoriya_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="KategoriyaLgot_ListView" ViewId="KategoriyaLgot_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="Lgota_ListView" ViewId="Lgota_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="MedProfil_ListView" ViewId="MedProfil_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="MKB10_ListView" ViewId="MKB10_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="Otdel_ListView" ViewId="Otdel_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="Republic_ListView" ViewId="Republic_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="ResultatDispanserizacii_ListView" ViewId="ResultatDispanserizacii_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="ResultatObrasheniya_ListView" ViewId="ResultatObrasheniya_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="SocStatus_ListView" ViewId="SocStatus_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="SposobOplatiMedPom_ListView" ViewId="SposobOplatiMedPom_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="TipStacionara_ListView" ViewId="TipStacionara_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="VidDocumenta_ListView" ViewId="VidDocumenta_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="VidMedVmeshatelstva_ListView" ViewId="VidMedVmeshatelstva_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="VidPolisa_ListView" ViewId="VidPolisa_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="VidUsloviyOkazMedPomoshi_ListView" ViewId="VidUsloviyOkazMedPomoshi_ListView" ObjectKey="" IsNewNode="True" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+  <Options DataAccessMode="Server" />
+  <SchemaModules>
+    <SchemaModule Name="SystemModule" Version="14.2.7.0" IsNewNode="True" />
+  </SchemaModules>
+  <Views>
+    <DetailView Id="Address_DetailView">
+      <Items>
+        <PropertyEditor Id="Build" Caption="Корп." />
+        <PropertyEditor Id="Flat" Caption="Кв." />
+        <PropertyEditor Id="House" Caption="Дом" />
+        <PropertyEditor Id="Level1" Caption="Регион" />
+        <PropertyEditor Id="Level2" Caption="Район" />
+        <PropertyEditor Id="Level3" Caption="Город" />
+        <PropertyEditor Id="Level4" Caption="Пункт" />
+        <PropertyEditor Id="Street" Caption="Улица" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="Address" RelativeSize="100" Direction="Vertical" Caption="Адрес">
+              <LayoutGroup Id="Address_col1" RelativeSize="100">
+                <LayoutItem Id="Level1" SizeConstraintsType="Default" RelativeSize="3.9360393603936039" Index="0" />
+                <LayoutItem Id="Level2" SizeConstraintsType="Default" RelativeSize="2.9520295202952029" Index="1" />
+                <LayoutItem Id="Level3" SizeConstraintsType="Default" RelativeSize="2.9520295202952029" Index="2" />
+                <LayoutItem Id="Level4" SizeConstraintsType="Default" RelativeSize="2.9520295202952029" Index="3" />
+                <LayoutItem Id="Street" ViewItem="Street" SizeConstraintsType="Default" Index="4" RelativeSize="2.9520295202952029" IsNewNode="True" />
+                <LayoutGroup Id="Auto77f14fc9-6203-4ddc-ac5e-c56a6a27ef57" ShowCaption="False" Caption="" Direction="Horizontal" Index="5" RelativeSize="84.255842558425584" IsNewNode="True">
+                  <LayoutItem Id="House" ViewItem="House" SizeConstraintsType="Default" Index="0" RelativeSize="25" IsNewNode="True" />
+                  <LayoutItem Id="Build" ViewItem="Build" SizeConstraintsType="Default" Index="1" RelativeSize="37.42690058479532" IsNewNode="True" />
+                  <LayoutItem Id="Flat" ViewItem="Flat" SizeConstraintsType="Default" Index="2" RelativeSize="37.57309941520468" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutItem Id="Country" SizeConstraintsType="Default" RelativeSize="3.9360393603936039" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="Address_col2" RelativeSize="50" Caption="Address_col2" Direction="Horizontal" Removed="True">
+                <LayoutItem Id="Build" Removed="True" />
+                <LayoutItem Id="Flat" Removed="True" />
+                <LayoutItem Id="House" Removed="True" />
+                <LayoutItem Id="Street" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="CallCardUrgent_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="CallCardUrgent" RelativeSize="45.394006659267482">
+              <LayoutGroup Id="CallCardUrgent_col1" RelativeSize="39.514066496163686">
+                <LayoutItem Id="Date" SizeConstraintsType="Default" RelativeSize="8.51063829787234" />
+                <LayoutItem Id="CallPerson.FIO" SizeConstraintsType="Default" RelativeSize="6.3829787234042552" />
+                <LayoutItem Id="CallPerson.PhoneNumber" SizeConstraintsType="Default" RelativeSize="6.3829787234042552" />
+                <LayoutItem Id="From03" SizeConstraintsType="Default" RelativeSize="6.3829787234042552" />
+                <LayoutItem Id="BrigadeNum" SizeConstraintsType="Default" RelativeSize="6.3829787234042552" />
+                <LayoutItem Id="Doctor" SizeConstraintsType="Default" RelativeSize="6.3829787234042552" />
+                <LayoutItem Id="AcceptTime" SizeConstraintsType="Default" RelativeSize="6.3829787234042552" />
+                <LayoutItem Id="BrigadeAcceptTime" SizeConstraintsType="Default" RelativeSize="6.3829787234042552" />
+                <LayoutItem Id="BrigadeGoTime" SizeConstraintsType="Default" RelativeSize="6.3829787234042552" />
+                <LayoutItem Id="BrigadeArriveTime" SizeConstraintsType="Default" RelativeSize="6.3829787234042552" />
+                <LayoutItem Id="StartTransportTime" SizeConstraintsType="Default" RelativeSize="6.3829787234042552" />
+                <LayoutItem Id="ArriveTransportTime" SizeConstraintsType="Default" RelativeSize="6.3829787234042552" />
+                <LayoutItem Id="NextCallOrReturnTime" SizeConstraintsType="Default" RelativeSize="6.3829787234042552" />
+                <LayoutItem Id="SpentTime" SizeConstraintsType="Default" RelativeSize="8.51063829787234" />
+              </LayoutGroup>
+              <LayoutGroup Id="CallCardUrgent_col2" RelativeSize="60.485933503836314">
+                <LayoutItem Id="Address" ViewItem="Address" SizeConstraintsType="Default" Index="2" RelativeSize="85.1063829787234" IsNewNode="True" />
+                <LayoutItem Id="Reason" SizeConstraintsType="Default" RelativeSize="8.51063829787234" />
+                <LayoutItem Id="SMO" SizeConstraintsType="Default" RelativeSize="86" Index="2" Removed="True" />
+                <LayoutItem Id="BirthDate" SizeConstraintsType="Default" Index="3" RelativeSize="6" Removed="True" />
+                <LayoutItem Id="Gender" SizeConstraintsType="Default" Index="3" RelativeSize="80" Removed="True" />
+                <LayoutItem Id="Motive" SizeConstraintsType="Default" RelativeSize="6.3829787234042552" />
+                <LayoutItem Id="Nam" SizeConstraintsType="Default" Index="3" RelativeSize="6" Removed="True" />
+                <LayoutItem Id="Ot" SizeConstraintsType="Default" Index="3" RelativeSize="6" Removed="True" />
+                <LayoutItem Id="PolicyNumber" SizeConstraintsType="Default" RelativeSize="6.8181818181818183" Index="9" Removed="True" />
+                <LayoutItem Id="PolicySerial" SizeConstraintsType="Default" RelativeSize="6.8181818181818183" Index="9" Removed="True" />
+                <LayoutItem Id="DocumentNumber" SizeConstraintsType="Default" RelativeSize="6.8181818181818183" Removed="True" />
+                <LayoutItem Id="DocumentSerial" SizeConstraintsType="Default" RelativeSize="6.8181818181818183" Removed="True" />
+                <LayoutItem Id="DocumentType" SizeConstraintsType="Default" RelativeSize="6.8181818181818183" Removed="True" />
+                <LayoutItem Id="Fam" Removed="True" />
+                <LayoutItem Id="HasDocument" SizeConstraintsType="Default" RelativeSize="6.8181818181818183" Removed="True" />
+                <LayoutItem Id="HasPolicy" SizeConstraintsType="Default" RelativeSize="6.8181818181818183" Removed="True" />
+                <LayoutItem Id="PolicyType" SizeConstraintsType="Default" RelativeSize="6.8181818181818183" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+            <LayoutGroup Id="XPObject" RelativeSize="54.605993340732518" Caption="Данные пациента" ShowCaption="True" CaptionLocation="Top" Index="1">
+              <LayoutGroup Id="PacientData" Caption="ФИО, дата рождения" Index="0" ShowCaption="True" CaptionLocation="Top" RelativeSize="24.618736383442265" Direction="Vertical" IsNewNode="True">
+                <LayoutGroup Id="Auto391ca599-d202-4df1-a10d-70f6431c3068" ShowCaption="False" Caption="" Direction="Horizontal" Index="0" RelativeSize="60" IsNewNode="True">
+                  <LayoutItem Id="Fam" ViewItem="Fam" CaptionLocation="Top" SizeConstraintsType="Default" Index="0" RelativeSize="33.55263157894737" IsNewNode="True" />
+                  <LayoutItem Id="Nam" ViewItem="Nam" CaptionLocation="Top" SizeConstraintsType="Default" Index="1" RelativeSize="32.89473684210526" IsNewNode="True" />
+                  <LayoutItem Id="Ot" ViewItem="Ot" CaptionLocation="Top" SizeConstraintsType="Default" Index="2" RelativeSize="33.55263157894737" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutGroup Id="Auto7567e77d-595c-467b-be4a-2e8604e5031b" ShowCaption="False" Caption="" Direction="Horizontal" Index="1" RelativeSize="40" IsNewNode="True">
+                  <LayoutItem Id="BirthDate" ViewItem="BirthDate" SizeConstraintsType="Default" Index="0" RelativeSize="40.6578947368421" IsNewNode="True" />
+                  <LayoutItem Id="Gender" ViewItem="Gender" SizeConstraintsType="Default" Index="1" RelativeSize="59.3421052631579" IsNewNode="True" />
+                </LayoutGroup>
+              </LayoutGroup>
+              <LayoutItem Id="HasDocument" Index="1" ViewItem="HasDocument" SizeConstraintsType="Default" RelativeSize="5.2287581699346406" IsNewNode="True" />
+              <LayoutGroup Id="Document" Caption="Документ, удостоверяющий личность" Index="2" ShowCaption="True" CaptionLocation="Top" RelativeSize="26.36165577342048" IsNewNode="True">
+                <LayoutItem Id="DocumentType" ViewItem="DocumentType" Index="0" SizeConstraintsType="Default" RelativeSize="50" CaptionLocation="Top" IsNewNode="True" />
+                <LayoutGroup Id="Auto50eeb564-bfed-4358-b118-a248710b7598" ShowCaption="False" Caption="" Direction="Horizontal" Index="1" RelativeSize="50" IsNewNode="True">
+                  <LayoutItem Id="DocumentSerial" ViewItem="DocumentSerial" CaptionLocation="Top" SizeConstraintsType="Default" Index="0" RelativeSize="33.55263157894737" IsNewNode="True" />
+                  <LayoutItem Id="DocumentNumber" ViewItem="DocumentNumber" CaptionLocation="Top" SizeConstraintsType="Default" Index="1" RelativeSize="66.44736842105263" IsNewNode="True" />
+                </LayoutGroup>
+              </LayoutGroup>
+              <LayoutItem Id="HasPolicy" Index="3" ViewItem="HasPolicy" SizeConstraintsType="Default" RelativeSize="5.2287581699346406" IsNewNode="True" />
+              <LayoutGroup Id="Policy" ShowCaption="True" Caption="Мед. полис" CaptionLocation="Top" Index="4" RelativeSize="38.562091503267972" IsNewNode="True">
+                <LayoutItem Id="PolicyType" ViewItem="PolicyType" SizeConstraintsType="Default" Index="0" RelativeSize="33.333333333333336" CaptionLocation="Top" IsNewNode="True" />
+                <LayoutGroup Id="Auto7b35ec20-81d7-479c-a4a9-6c09bc08e55e" ShowCaption="False" Caption="" Direction="Horizontal" Index="1" RelativeSize="27.777777777777779" IsNewNode="True">
+                  <LayoutItem Id="PolicySerial" ViewItem="PolicySerial" CaptionLocation="Top" SizeConstraintsType="Default" Index="0" RelativeSize="33.55263157894737" IsNewNode="True" />
+                  <LayoutItem Id="PolicyNumber" ViewItem="PolicyNumber" CaptionLocation="Top" SizeConstraintsType="Default" Index="1" RelativeSize="66.44736842105263" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutItem Id="SMO" ViewItem="SMO" SizeConstraintsType="Default" Index="2" RelativeSize="38.888888888888886" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutItem Id="Oid" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="CommonProtocol_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SizeableEditors" RelativeSize="100" Direction="Vertical" Index="0">
+            <TabbedGroup Id="Tabs" Index="0" RelativeSize="100" IsNewNode="True">
+              <LayoutGroup Id="AnamnezTemplates" ShowCaption="True" Direction="Horizontal" Index="0" RelativeSize="100" IsNewNode="True">
+                <LayoutItem Id="AnamnezTemplates" ShowCaption="False" ViewItem="AnamnezTemplates" SizeConstraintsType="Default" Index="0" RelativeSize="48.066298342541437" IsNewNode="True" />
+                <LayoutItem Id="Anamnez" ShowCaption="False" ViewItem="Anamnez" SizeConstraintsType="Default" Index="1" RelativeSize="51.933701657458563" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="ComplainTemplates" ShowCaption="True" Direction="Horizontal" Index="1" RelativeSize="100" IsNewNode="True">
+                <LayoutItem Id="ComplainTemplates" ShowCaption="False" ViewItem="ComplainTemplates" SizeConstraintsType="Default" Index="0" RelativeSize="49.309392265193367" IsNewNode="True" />
+                <LayoutItem Id="Complain" ShowCaption="False" ViewItem="Complain" SizeConstraintsType="Default" Index="1" RelativeSize="50.690607734806633" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="RecomendTemplates" ShowCaption="True" Direction="Horizontal" Index="2" RelativeSize="100" IsNewNode="True">
+                <LayoutItem Id="RecomendTemplates" ShowCaption="False" ViewItem="RecomendTemplates" SizeConstraintsType="Default" Index="0" RelativeSize="49.309392265193367" IsNewNode="True" />
+                <LayoutItem Id="Recommendation" ShowCaption="False" ViewItem="Recommendation" SizeConstraintsType="Default" Index="1" RelativeSize="50.690607734806633" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="ObjStatusTerTemplates" ShowCaption="True" Direction="Horizontal" Index="3" RelativeSize="100" IsNewNode="True">
+                <LayoutItem Id="ObjStatusTerTemplates" ShowCaption="False" ViewItem="ObjStatusTerTemplates" SizeConstraintsType="Default" Index="0" RelativeSize="49.309392265193367" IsNewNode="True" />
+                <LayoutItem Id="ObjectiveStatus" ViewItem="ObjectiveStatus" SizeConstraintsType="Default" Index="1" RelativeSize="50.690607734806633" ShowCaption="False" IsNewNode="True" />
+              </LayoutGroup>
+            </TabbedGroup>
+            <LayoutItem Id="Anamnez" Removed="True" />
+            <LayoutItem Id="Complain" Removed="True" />
+            <LayoutItem Id="ObjectiveStatus" Removed="True" />
+            <LayoutItem Id="Recommendation" Removed="True" />
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" RelativeSize="9.36768149882904" Removed="True">
+            <LayoutGroup Id="AnamnezTemplates" Direction="Horizontal" RelativeSize="100">
+              <LayoutItem Id="Anamnez" ViewItem="Anamnez" SizeConstraintsType="Default" Index="1" RelativeSize="50.6993006993007" ShowCaption="False" IsNewNode="True" />
+              <LayoutItem Id="AnamnezTemplates" SizeConstraintsType="Default" RelativeSize="49.3006993006993" ShowCaption="False" />
+            </LayoutGroup>
+            <LayoutGroup Id="ComplainTemplates" RelativeSize="100" Direction="Horizontal">
+              <LayoutItem Id="Complain" ViewItem="Complain" SizeConstraintsType="Default" Index="1" RelativeSize="50" ShowCaption="False" IsNewNode="True" />
+              <LayoutItem Id="ComplainTemplates" SizeConstraintsType="Default" RelativeSize="50" />
+            </LayoutGroup>
+            <LayoutGroup Id="ObjStatusTerTemplates" RelativeSize="100" Direction="Horizontal">
+              <LayoutItem Id="ObjStatusTerTemplates" ShowCaption="False" ViewItem="ObjStatusTerTemplates" SizeConstraintsType="Default" Index="0" RelativeSize="50" IsNewNode="True" Removed="True" />
+              <LayoutItem Id="ObjectiveStatus" ViewItem="ObjectiveStatus" SizeConstraintsType="Default" Index="1" RelativeSize="50" IsNewNode="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="RecomendTemplates" RelativeSize="100" Direction="Horizontal">
+              <LayoutItem Id="Recommendation" ViewItem="Recommendation" SizeConstraintsType="Default" Index="1" RelativeSize="50" ShowCaption="False" IsNewNode="True" />
+              <LayoutItem Id="RecomendTemplates" SizeConstraintsType="Default" RelativeSize="50" />
+            </LayoutGroup>
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="DispanserizaionCase_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="35.91885441527446">
+            <LayoutGroup Id="AbstractCase" Caption="Abstract Case" RelativeSize="100" Direction="Vertical" Index="0">
+              <LayoutGroup Id="AbstractCase_col1" RelativeSize="100">
+                <LayoutGroup Id="Autodba19b3b-eea0-4524-9b5c-a3d5653367b2" ShowCaption="False" Direction="Horizontal" Index="0" RelativeSize="14.50381679389313" IsNewNode="True">
+                  <LayoutItem Id="DateIn" ViewItem="DateIn" SizeConstraintsType="Default" Index="0" RelativeSize="50" IsNewNode="True" />
+                  <LayoutItem Id="DateOut" ViewItem="DateOut" SizeConstraintsType="Default" Index="1" RelativeSize="50" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutItem Id="MainDiagnose.Diagnose" SizeConstraintsType="Default" RelativeSize="12.631578947368421" Index="1" Removed="True" />
+                <LayoutItem Id="ResultD" ViewItem="ResultD" SizeConstraintsType="Default" Index="1" RelativeSize="9.16030534351145" IsNewNode="True" />
+                <LayoutItem Id="IsPacientHealthy" ViewItem="IsPacientHealthy" SizeConstraintsType="Default" Index="2" RelativeSize="9.16030534351145" IsNewNode="True" />
+                <LayoutItem Id="InspectionResult" ViewItem="InspectionResult" SizeConstraintsType="Default" Index="3" RelativeSize="9.16030534351145" IsNewNode="True" />
+                <LayoutItem Id="MainDiagnose.Type" SizeConstraintsType="Default" RelativeSize="10.084033613445378" Index="3" Removed="True" />
+                <TabbedGroup Id="Item3" CaptionLocation="Top" Index="4" RelativeSize="58.015267175572518" IsNewNode="True">
+                  <LayoutGroup Id="Item2" ShowCaption="True" CaptionLocation="Top" Index="0" RelativeSize="100" IsNewNode="True">
+                    <LayoutItem Id="HealthGroupForSportObsBefore" ViewItem="HealthGroupForSportObsBefore" SizeConstraintsType="Default" Index="0" RelativeSize="28.571428571428573" IsNewNode="True" />
+                    <LayoutItem Id="HealthGroupObsBefore" ViewItem="HealthGroupObsBefore" SizeConstraintsType="Default" Index="1" RelativeSize="21.428571428571427" IsNewNode="True" />
+                    <LayoutItem Id="HealthGroupObsAfter" ViewItem="HealthGroupObsAfter" SizeConstraintsType="Default" Index="2" RelativeSize="21.428571428571427" IsNewNode="True" />
+                    <LayoutItem Id="HealthGroupForSportObsAfter" ViewItem="HealthGroupForSportObsAfter" SizeConstraintsType="Default" Index="3" RelativeSize="28.571428571428573" IsNewNode="True" />
+                  </LayoutGroup>
+                  <LayoutGroup Id="Item4" ShowCaption="True" CaptionLocation="Top" Direction="Vertical" Index="1" RelativeSize="100" IsNewNode="True">
+                    <LayoutItem Id="Rehab.IsNeed" ViewItem="Rehab.IsNeed" SizeConstraintsType="Default" Index="0" RelativeSize="28.571428571428573" IsNewNode="True" />
+                    <LayoutItem Id="Rehab.SetDate" ViewItem="Rehab.SetDate" SizeConstraintsType="Default" Index="1" RelativeSize="21.428571428571427" IsNewNode="True" />
+                    <LayoutItem Id="Rehab.Progress" ViewItem="Rehab.Progress" SizeConstraintsType="Default" Index="2" RelativeSize="50" IsNewNode="True" />
+                  </LayoutGroup>
+                </TabbedGroup>
+                <LayoutItem Id="DateIn" SizeConstraintsType="Default" RelativeSize="15.384615384615385" Removed="True" />
+                <LayoutItem Id="DateOut" SizeConstraintsType="Default" RelativeSize="11.538461538461538" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="AbstractCase_col2" RelativeSize="50" Direction="Horizontal" Removed="True">
+                <LayoutItem Id="MainDiagnose.Character" Removed="True" />
+                <LayoutItem Id="MainDiagnose.Doctor" Removed="True" />
+                <LayoutItem Id="MainDiagnose.FirstTime" Removed="True" />
+                <LayoutItem Id="MainDiagnose.Stadia" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+            <LayoutGroup Id="DispanserizaionCase" RelativeSize="22.149837133550488" Direction="Horizontal" Removed="True">
+              <LayoutItem Id="Type" Removed="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="DispCase" RelativeSize="10.749185667752442" Direction="Horizontal" Removed="True">
+              <LayoutItem Id="ResultD" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="Services_Group" Direction="Vertical" RelativeSize="64.081145584725533">
+            <LayoutItem Id="Services" ShowCaption="False" SizeConstraintsType="Default" RelativeSize="100" Index="0" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="DispanserizationService_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="15.466666666666667">
+            <LayoutGroup Id="AbstractService" Index="0" RelativeSize="71.551724137931032">
+              <LayoutItem Id="DateIn" SizeConstraintsType="Default" RelativeSize="38.554216867469883" />
+              <LayoutItem Id="Doctor" SizeConstraintsType="Default" RelativeSize="28.91566265060241" Index="1" />
+              <LayoutItem Id="Usluga" SizeConstraintsType="Default" RelativeSize="32.53012048192771" Index="2" />
+              <LayoutItem Id="DateOut" SizeConstraintsType="Default" RelativeSize="22.429906542056074" Removed="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="DispService" RelativeSize="28.448275862068964">
+              <LayoutItem Id="MedSestra" SizeConstraintsType="Default" RelativeSize="100" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="SizeableEditors" RelativeSize="84.533333333333331" Caption="SizeableEditors" Direction="Vertical">
+            <TabbedGroup Id="Tabs" Index="0" RelativeSize="100" IsNewNode="True">
+              <LayoutGroup Id="EditableProtocol.Records" ShowCaption="True" Caption="Протокол" Index="0" RelativeSize="100" IsNewNode="True">
+                <LayoutItem Id="EditableProtocol.Records" ShowCaption="False" ViewItem="EditableProtocol.Records" SizeConstraintsType="Default" Index="0" RelativeSize="100" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="CommonProtocol.RecomendTemplates" ShowCaption="True" Caption="Рекомендации" Direction="Horizontal" Index="1" RelativeSize="100" IsNewNode="True">
+                <LayoutItem Id="CommonProtocol.RecomendTemplates" ViewItem="CommonProtocol.RecomendTemplates" SizeConstraintsType="Default" Index="0" RelativeSize="48.204419889502759" ShowCaption="False" IsNewNode="True" />
+                <LayoutItem Id="CommonProtocol.Recommendation" ViewItem="CommonProtocol.Recommendation" SizeConstraintsType="Default" Index="1" RelativeSize="51.795580110497241" ShowCaption="False" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="Item1" ShowCaption="True" CaptionLocation="Top" Direction="Vertical" Index="2" RelativeSize="100" IsNewNode="True">
+                <LayoutItem Id="DiagnosesBefore" ViewItem="DiagnosesBefore" SizeConstraintsType="Default" Index="0" RelativeSize="100" ShowCaption="False" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="Item2" ShowCaption="True" CaptionLocation="Top" Direction="Vertical" Index="3" RelativeSize="100" IsNewNode="True">
+                <LayoutItem Id="DiagnosesAfter" ViewItem="DiagnosesAfter" SizeConstraintsType="Default" Index="0" RelativeSize="100" ShowCaption="False" IsNewNode="True" />
+              </LayoutGroup>
+            </TabbedGroup>
+            <LayoutItem Id="CommonProtocol.Anamnez" SizeConstraintsType="Default" RelativeSize="4.2586750788643535" Removed="True" />
+            <LayoutItem Id="CommonProtocol.Complain" Removed="True" />
+            <LayoutItem Id="CommonProtocol.ObjectiveStatus" Removed="True" />
+            <LayoutItem Id="CommonProtocol.Recommendation" Removed="True" />
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" RelativeSize="9.36768149882904" Removed="True">
+            <LayoutGroup Id="CommonProtocol.ComplainTemplates" Index="0" RelativeSize="100" Removed="True">
+              <LayoutItem Id="CommonProtocol.ComplainTemplates" SizeConstraintsType="Default" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="CommonProtocol.RecomendTemplates" Index="0" RelativeSize="100" Direction="Horizontal" Caption="Шаблоны рекомендаций">
+              <LayoutItem Id="CommonProtocol.Recommendation" ViewItem="CommonProtocol.Recommendation" SizeConstraintsType="Default" Index="1" RelativeSize="50" IsNewNode="True" />
+              <LayoutItem Id="CommonProtocol.RecomendTemplates" SizeConstraintsType="Default" RelativeSize="50" />
+            </LayoutGroup>
+            <LayoutGroup Id="CommonProtocol.Medicaments" Index="1" RelativeSize="100" Removed="True">
+              <LayoutItem Id="CommonProtocol.Medicaments" SizeConstraintsType="Default" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="CommonProtocol.ObjStatusTerTemplates" Index="1" RelativeSize="100" Removed="True">
+              <LayoutItem Id="CommonProtocol.ObjStatusTerTemplates" SizeConstraintsType="Default" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="EditableProtocol.Records" Index="1" RelativeSize="100">
+              <LayoutItem Id="EditableProtocol.Records" SizeConstraintsType="Default" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="CommonProtocol.AnamnezTemplates" Removed="True" />
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="DispsServiceList_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="20.883054892601432">
+            <LayoutGroup Id="DispsServiceList" RelativeSize="100" Caption="Disps Service List" Direction="Vertical">
+              <LayoutGroup Id="DispsServiceList_col1" RelativeSize="100">
+                <LayoutItem Id="Type" SizeConstraintsType="Default" RelativeSize="23.529411764705884" />
+                <LayoutItem Id="Age" SizeConstraintsType="Default" RelativeSize="17.647058823529413" />
+                <LayoutItem Id="Month" SizeConstraintsType="Default" RelativeSize="17.647058823529413" />
+                <LayoutItem Id="Gender" ViewItem="Gender" SizeConstraintsType="Default" Index="3" RelativeSize="17.647058823529413" IsNewNode="True" />
+                <LayoutItem Id="EducationInstitute" ViewItem="EducationInstitute" SizeConstraintsType="Default" Index="4" RelativeSize="23.529411764705884" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="DispsServiceList_col2" Index="2" RelativeSize="49.832775919732441" Direction="Horizontal" Removed="True">
+                <LayoutItem Id="EducationInstitute" Removed="True" />
+                <LayoutItem Id="Gender" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="Services_Group" Direction="Vertical" RelativeSize="79.116945107398564">
+            <LayoutItem Id="Services" SizeConstraintsType="Default" RelativeSize="100" ShowCaption="False" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="DispTypeCreateInfo_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="AllowedTypes_Group" Direction="Vertical" RelativeSize="100">
+            <LayoutItem Id="AllowedTypes" ShowCaption="False" SizeConstraintsType="Default" RelativeSize="100" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="DnevnoyStacionar_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="DnevnoyStacionar" Caption="Dnevnoy Stacionar" RelativeSize="22.533333333333335">
+              <LayoutGroup Id="DnevnoyStacionar_col1" RelativeSize="50">
+                <LayoutItem Id="DataPriema" SizeConstraintsType="Default" RelativeSize="23.529411764705884" />
+                <LayoutItem Id="DataVypiski" SizeConstraintsType="Default" RelativeSize="17.647058823529413" />
+                <LayoutItem Id="KoikoDni" SizeConstraintsType="Default" RelativeSize="17.647058823529413" />
+                <LayoutItem Id="Diagnose" SizeConstraintsType="Default" RelativeSize="17.647058823529413" />
+                <LayoutItem Id="NaDomy" SizeConstraintsType="Default" RelativeSize="23.529411764705884" />
+              </LayoutGroup>
+              <LayoutGroup Id="DnevnoyStacionar_col2" RelativeSize="50">
+                <LayoutItem Id="Type" SizeConstraintsType="Default" RelativeSize="23.529411764705884" />
+                <LayoutItem Id="Resultat" SizeConstraintsType="Default" RelativeSize="17.647058823529413" />
+                <LayoutItem Id="Doctor" SizeConstraintsType="Default" RelativeSize="17.647058823529413" />
+                <LayoutItem Id="FromLPU" SizeConstraintsType="Default" RelativeSize="41.1764705882353" />
+              </LayoutGroup>
+            </LayoutGroup>
+            <LayoutGroup Id="XPObject" Direction="Horizontal" RelativeSize="77.466666666666669">
+              <LayoutItem Id="Oid" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="DnevnoyStacionar_ListView">
+      <Columns>
+        <ColumnInfo Id="DataPriema" Width="42" />
+        <ColumnInfo Id="DataVypiski" Width="42" />
+        <ColumnInfo Id="KoikoDni" Width="69" />
+        <ColumnInfo Id="Diagnose" Width="37" />
+        <ColumnInfo Id="NaDomy" Width="79" />
+        <ColumnInfo Id="Type" Width="28" />
+        <ColumnInfo Id="Resultat" Width="28" />
+        <ColumnInfo Id="Doctor" Width="28" />
+        <ColumnInfo Id="FromLPU" Width="28" />
+        <ColumnInfo Id="Pacient" Width="38" />
+      </Columns>
+    </ListView>
+    <DetailView Id="Doctor_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="28.92271662763466">
+            <LayoutGroup Id="Doctor" Caption="Doctor" RelativeSize="100">
+              <LayoutGroup Id="Doctor_col1" RelativeSize="50">
+                <LayoutItem Id="LastName" SizeConstraintsType="Default" RelativeSize="15.384615384615385" />
+                <LayoutItem Id="FirstName" SizeConstraintsType="Default" RelativeSize="11.538461538461538" />
+                <LayoutItem Id="MiddleName" SizeConstraintsType="Default" RelativeSize="11.538461538461538" />
+                <LayoutItem Id="Birthdate" SizeConstraintsType="Default" RelativeSize="11.538461538461538" />
+                <LayoutItem Id="FullName" SizeConstraintsType="Default" RelativeSize="11.538461538461538" />
+                <LayoutItem Id="InnerCode" SizeConstraintsType="Default" RelativeSize="11.538461538461538" />
+                <LayoutItem Id="FederalCode" SizeConstraintsType="Default" RelativeSize="11.538461538461538" />
+                <LayoutItem Id="SNILS" SizeConstraintsType="Default" RelativeSize="15.384615384615385" />
+              </LayoutGroup>
+              <LayoutGroup Id="Doctor_col2" RelativeSize="50">
+                <LayoutItem Id="HireDate" SizeConstraintsType="Default" RelativeSize="15.384615384615385" />
+                <LayoutItem Id="DismissDate" SizeConstraintsType="Default" RelativeSize="11.538461538461538" />
+                <LayoutItem Id="Position" SizeConstraintsType="Default" RelativeSize="11.538461538461538" />
+                <LayoutItem Id="Otdelenie" SizeConstraintsType="Default" RelativeSize="11.538461538461538" />
+                <LayoutItem Id="SpecialityTree" SizeConstraintsType="Default" RelativeSize="11.538461538461538" />
+                <LayoutItem Id="IsActive" SizeConstraintsType="Default" RelativeSize="11.538461538461538" />
+                <LayoutItem Id="UserName" SizeConstraintsType="Default" RelativeSize="11.538461538461538" />
+                <LayoutItem Id="ChangePasswordOnFirstLogon" SizeConstraintsType="Default" RelativeSize="15.384615384615385" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" RelativeSize="71.077283372365343">
+            <LayoutGroup Id="Uchastki" RelativeSize="100">
+              <LayoutItem Id="Uchastki" SizeConstraintsType="Default" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="Templates" Direction="Vertical" ShowCaption="True" Index="1" RelativeSize="100" IsNewNode="True">
+              <TabbedGroup Id="@efe6566f-abbe-4bbc-b7c0-10efe79f1124" Index="0" RelativeSize="100" IsNewNode="True">
+                <LayoutGroup Id="AnamnezTemplates" Index="0" ShowCaption="True" RelativeSize="100" IsNewNode="True">
+                  <LayoutItem Id="AnamnezTemplates" ViewItem="AnamnezTemplates" ShowCaption="False" Index="0" SizeConstraintsType="Default" RelativeSize="100" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutGroup Id="ComplainTemplates" Index="1" ShowCaption="True" RelativeSize="100" IsNewNode="True">
+                  <LayoutItem Id="ComplainTemplates" ViewItem="ComplainTemplates" ShowCaption="False" Index="0" SizeConstraintsType="Default" RelativeSize="100" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutGroup Id="RecomendTemplates" Index="2" ShowCaption="True" RelativeSize="100" IsNewNode="True">
+                  <LayoutItem Id="RecomendTemplates" ViewItem="RecomendTemplates" ShowCaption="False" Index="0" SizeConstraintsType="Default" RelativeSize="100" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutGroup Id="ObjStatusTerTemplates" Index="3" ShowCaption="True" RelativeSize="100" IsNewNode="True">
+                  <LayoutItem Id="ObjStatusTerTemplates" ViewItem="ObjStatusTerTemplates" ShowCaption="False" Index="0" SizeConstraintsType="Default" RelativeSize="100" IsNewNode="True" />
+                </LayoutGroup>
+              </TabbedGroup>
+            </LayoutGroup>
+            <LayoutGroup Id="Item1" ShowCaption="True" CaptionLocation="Top" Direction="Vertical" Index="2" RelativeSize="100" IsNewNode="True">
+              <LayoutItem Id="DoctorRoles" ViewItem="DoctorRoles" SizeConstraintsType="Default" Index="0" RelativeSize="100" ShowCaption="False" IsNewNode="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="AnamnezTemplates" Removed="True" />
+            <LayoutGroup Id="ComplainTemplates" Removed="True" />
+            <LayoutGroup Id="DoctorRoles" Removed="True">
+              <LayoutItem Id="DoctorRoles" Removed="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="ObjStatusTerTemplates" Removed="True" />
+            <LayoutGroup Id="RecomendTemplates" Removed="True" />
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="DoctorSpecTree_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="20.133333333333333">
+            <LayoutGroup Id="DoctorSpecTree" Caption="Doctor Spec Tree" RelativeSize="100" Direction="Vertical">
+              <LayoutGroup Id="DoctorSpecTree_col1" RelativeSize="100">
+                <LayoutItem Id="Code" SizeConstraintsType="Default" RelativeSize="28.571428571428573" Index="0" />
+                <LayoutItem Id="Name" SizeConstraintsType="Default" RelativeSize="21.428571428571427" Index="1" />
+                <LayoutItem Id="Parent" SizeConstraintsType="Default" RelativeSize="21.428571428571427" Index="2" />
+                <LayoutItem Id="MedProfil" SizeConstraintsType="Default" RelativeSize="28.571428571428573" />
+              </LayoutGroup>
+              <LayoutGroup Id="DoctorSpecTree_col2" RelativeSize="50" Removed="True">
+                <LayoutItem Id="UslugaLPU" SizeConstraintsType="Default" RelativeSize="21.428571428571427" Removed="True" />
+                <LayoutItem Id="UslugaMUR" SizeConstraintsType="Default" RelativeSize="50" Removed="True" />
+                <LayoutItem Id="UslugaNaDomy" SizeConstraintsType="Default" RelativeSize="28.571428571428573" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" RelativeSize="79.86666666666666">
+            <LayoutGroup Id="Children" RelativeSize="100">
+              <LayoutItem Id="Children" SizeConstraintsType="Default" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="TerrUslugi" RelativeSize="100">
+              <LayoutGroup Id="DefaultServices" Index="0" ShowCaption="True" Caption="Doctor Spec Tree" RelativeSize="21.645796064400717" IsNewNode="True">
+                <LayoutGroup Id="DefaultServices1" Index="0" ShowCaption="False" RelativeSize="100" IsNewNode="True">
+                  <LayoutItem Id="UslugaNaDomy" Index="0" ViewItem="UslugaNaDomy" SizeConstraintsType="Default" RelativeSize="36.363636363636367" IsNewNode="True" />
+                  <LayoutItem Id="UslugaLPU" Index="1" ViewItem="UslugaLPU" SizeConstraintsType="Default" RelativeSize="27.272727272727273" IsNewNode="True" />
+                  <LayoutItem Id="UslugaMUR" ViewItem="UslugaMUR" SizeConstraintsType="Default" RelativeSize="36.363636363636367" Index="2" IsNewNode="True" />
+                </LayoutGroup>
+              </LayoutGroup>
+              <LayoutItem Id="TerrUslugi" SizeConstraintsType="Default" RelativeSize="78.354203935599287" Index="1" />
+            </LayoutGroup>
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="DoctorSpecTree_ListView" AllowNew="False" AllowDelete="False" />
+    <DetailView Id="EditableProtocol_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="Records_Group" Direction="Vertical" RelativeSize="100">
+            <LayoutItem Id="Records" ShowCaption="False" SizeConstraintsType="Default" RelativeSize="100" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="EditableProtocol_Records_ListView" AllowEdit="True" />
+    <DetailView Id="HospitalCase_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="27.326968973747018">
+            <LayoutGroup Id="CommonCase" Caption="Common Case" RelativeSize="86.8995633187773" Index="0">
+              <LayoutGroup Id="CommonCase_col1" RelativeSize="66.423357664233578">
+                <LayoutItem Id="FormaPomoshi" SizeConstraintsType="Default" RelativeSize="19.277108433734941" />
+                <LayoutItem Id="Hospitalizacia" ViewItem="Hospitalizacia" SizeConstraintsType="Default" Index="1" RelativeSize="14.457831325301205" IsNewNode="True" />
+                <LayoutItem Id="Resultat" SizeConstraintsType="Default" RelativeSize="50" Index="1" Removed="True" />
+                <LayoutItem Id="FromLPU" SizeConstraintsType="Default" RelativeSize="14.457831325301205" Index="2" />
+                <LayoutItem Id="DateIn" ViewItem="DateIn" SizeConstraintsType="Default" Index="3" RelativeSize="14.457831325301205" IsNewNode="True" />
+                <LayoutItem Id="DateOut" ViewItem="DateOut" SizeConstraintsType="Default" Index="4" RelativeSize="14.457831325301205" IsNewNode="True" />
+                <LayoutGroup Id="Autoa8c4d257-d9c4-4bc3-a207-aea182e24f60" ShowCaption="False" Direction="Horizontal" Index="5" RelativeSize="22.891566265060241" IsNewNode="True">
+                  <LayoutItem Id="Service.KolUslug" ViewItem="Service.KolUslug" SizeConstraintsType="Default" Index="0" RelativeSize="50.549450549450548" IsNewNode="True" />
+                  <LayoutItem Id="NaDomy" ViewItem="NaDomy" SizeConstraintsType="Default" Index="1" RelativeSize="49.450549450549452" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutItem Id="VesPriRozhdenii" SizeConstraintsType="Default" RelativeSize="27.272727272727273" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="CommonCase_col2" RelativeSize="33.576642335766422">
+                <LayoutItem Id="MainDiagnose.Diagnose" ViewItem="MainDiagnose.Diagnose" SizeConstraintsType="Default" Index="0" RelativeSize="19.277108433734941" IsNewNode="True" />
+                <LayoutItem Id="MainDiagnose.Stadia" ViewItem="MainDiagnose.Stadia" SizeConstraintsType="Default" Index="1" RelativeSize="14.457831325301205" IsNewNode="True" />
+                <LayoutItem Id="MainDiagnose.Character" ViewItem="MainDiagnose.Character" SizeConstraintsType="Default" Index="2" RelativeSize="14.457831325301205" IsNewNode="True" />
+                <LayoutItem Id="MainDiagnose.FirstTime" ViewItem="MainDiagnose.FirstTime" SizeConstraintsType="Default" Index="3" RelativeSize="14.457831325301205" IsNewNode="True" />
+                <LayoutItem Id="Doctor" SizeConstraintsType="Default" RelativeSize="37.349397590361448" Index="4" />
+                <LayoutItem Id="Ishod" SizeConstraintsType="Default" RelativeSize="50" Removed="True" />
+                <LayoutItem Id="OsobiySluchay" SizeConstraintsType="Default" RelativeSize="36.363636363636367" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+            <LayoutItem Id="Service.Usluga" ViewItem="Service.Usluga" SizeConstraintsType="Default" Index="1" RelativeSize="13.100436681222707" IsNewNode="True" />
+            <LayoutGroup Id="AbstractCase" Caption="Abstract Case" RelativeSize="23.63013698630137" Index="2" Direction="Vertical" Removed="True">
+              <LayoutGroup Id="AbstractCase_col2" RelativeSize="100" Direction="Horizontal" Index="0">
+                <LayoutItem Id="MainDiagnose.Character" Removed="True" />
+                <LayoutItem Id="MainDiagnose.Doctor" Removed="True" />
+                <LayoutItem Id="MainDiagnose.FirstTime" Removed="True" />
+                <LayoutItem Id="MainDiagnose.Stadia" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="AbstractCase_col1" RelativeSize="50" Direction="Horizontal" Removed="True">
+                <LayoutItem Id="DateIn" Removed="True" />
+                <LayoutItem Id="DateOut" Removed="True" />
+                <LayoutItem Id="MainDiagnose.Diagnose" Removed="True" />
+                <LayoutItem Id="MainDiagnose.Type" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+            <LayoutGroup Id="HospitalCase" RelativeSize="26.36986301369863" Direction="Horizontal" Removed="True">
+              <LayoutItem Id="Hospitalizacia" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <TabbedGroup Id="Protocol" Index="1" RelativeSize="72.673031026252986" IsNewNode="True">
+            <LayoutGroup Id="Anamnez" ShowCaption="True" Index="0" RelativeSize="100" Direction="Horizontal" IsNewNode="True">
+              <LayoutItem Id="Service.CommonProtocol.AnamnezTemplates" ViewItem="Service.CommonProtocol.AnamnezTemplates" SizeConstraintsType="Default" Index="0" RelativeSize="49.926578560939795" ShowCaption="False" IsNewNode="True" />
+              <LayoutItem Id="Service.CommonProtocol.Anamnez" ViewItem="Service.CommonProtocol.Anamnez" SizeConstraintsType="Default" Index="1" RelativeSize="50.073421439060205" ShowCaption="False" IsNewNode="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="Complains" ShowCaption="True" Index="1" RelativeSize="100" Direction="Horizontal" IsNewNode="True">
+              <LayoutItem Id="Service.CommonProtocol.ComplainTemplates" ViewItem="Service.CommonProtocol.ComplainTemplates" SizeConstraintsType="Default" Index="0" RelativeSize="49.926578560939795" ShowCaption="False" IsNewNode="True" />
+              <LayoutItem Id="Service.CommonProtocol.Complain" ViewItem="Service.CommonProtocol.Complain" SizeConstraintsType="Default" Index="1" RelativeSize="50.073421439060205" ShowCaption="False" IsNewNode="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="Recs" ShowCaption="True" Index="2" RelativeSize="100" Direction="Horizontal" IsNewNode="True">
+              <LayoutItem Id="Service.CommonProtocol.RecomendTemplates" ViewItem="Service.CommonProtocol.RecomendTemplates" SizeConstraintsType="Default" Index="0" RelativeSize="49.926578560939795" ShowCaption="False" IsNewNode="True" />
+              <LayoutItem Id="Service.CommonProtocol.Recommendation" ViewItem="Service.CommonProtocol.Recommendation" SizeConstraintsType="Default" Index="1" RelativeSize="50.073421439060205" ShowCaption="False" IsNewNode="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="ObjStatus" ShowCaption="True" Index="3" RelativeSize="100" Direction="Horizontal" IsNewNode="True">
+              <LayoutItem Id="Service.CommonProtocol.ObjStatusTerTemplates" ViewItem="Service.CommonProtocol.ObjStatusTerTemplates" SizeConstraintsType="Default" Index="0" RelativeSize="49.926578560939795" ShowCaption="False" IsNewNode="True" />
+              <LayoutItem Id="Service.CommonProtocol.ObjectiveStatus" ViewItem="Service.CommonProtocol.ObjectiveStatus" SizeConstraintsType="Default" Index="1" RelativeSize="50.073421439060205" ShowCaption="False" IsNewNode="True" />
+            </LayoutGroup>
+          </TabbedGroup>
+          <LayoutGroup Id="SizeableEditors" Removed="True">
+            <LayoutItem Id="Service.Protocol.Anamnez" Removed="True" />
+            <LayoutItem Id="Service.Protocol.Complain" Removed="True" />
+            <LayoutItem Id="Service.Protocol.ObjectiveStatus" Removed="True" />
+            <LayoutItem Id="Service.Protocol.Recommendation" Removed="True" />
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" RelativeSize="76.697892271662766" Removed="True">
+            <LayoutGroup Id="OslozhDiagnoses" Index="0" RelativeSize="100" Removed="True">
+              <LayoutItem Id="OslozhDiagnoses" SizeConstraintsType="Default" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="Services" Index="0" RelativeSize="100">
+              <LayoutItem Id="Services" SizeConstraintsType="Default" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="Diagnoses" Index="1" RelativeSize="100" Removed="True">
+              <LayoutItem Id="Diagnoses" SizeConstraintsType="Default" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="SoputsDiagnoses" Removed="True" />
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="Kladr_ListView" DataAccessMode="Server" Criteria="StartsWith([Code], '03')" />
+    <DetailView Id="MedOrg_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="MedOrg" Caption="Med Org" RelativeSize="22.533333333333335">
+              <LayoutGroup Id="MedOrg_col1" RelativeSize="50">
+                <LayoutItem Id="ShortName" SizeConstraintsType="Default" RelativeSize="17.647058823529413" />
+                <LayoutItem Id="License" SizeConstraintsType="Default" RelativeSize="17.647058823529413" />
+                <LayoutItem Id="D_Begin" SizeConstraintsType="Default" RelativeSize="17.647058823529413" />
+                <LayoutItem Id="WebSite" SizeConstraintsType="Default" RelativeSize="23.529411764705884" />
+              </LayoutGroup>
+              <LayoutGroup Id="MedOrg_col2" RelativeSize="50">
+                <LayoutItem Id="Phone" SizeConstraintsType="Default" RelativeSize="17.647058823529413" />
+                <LayoutItem Id="Email" SizeConstraintsType="Default" RelativeSize="17.647058823529413" />
+                <LayoutItem Id="JurAddress" SizeConstraintsType="Default" RelativeSize="17.647058823529413" />
+                <LayoutItem Id="Ruk_FIO" SizeConstraintsType="Default" RelativeSize="23.529411764705884" />
+              </LayoutGroup>
+            </LayoutGroup>
+            <LayoutItem Id="FullName" ViewItem="FullName" SizeConstraintsType="Default" Index="1" RelativeSize="77.466666666666669" IsNewNode="True" />
+          </LayoutGroup>
+          <LayoutGroup Id="SizeableEditors" RelativeSize="69.525267993874422" Direction="Horizontal" Removed="True">
+            <LayoutItem Id="FullName" Removed="True" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="MedProfil_ListView" AllowNew="False" AllowDelete="True" />
+    <DetailView Id="MedService_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="CommonService" Caption="Common Service" Index="0" RelativeSize="100" Direction="Vertical" Removed="True">
+              <LayoutItem Id="PreDiagnose" SizeConstraintsType="Default" RelativeSize="20.253164556962027" Index="0" />
+              <LayoutItem Id="CaseDiagnose" SizeConstraintsType="Default" Index="1" RelativeSize="15.189873417721518" />
+              <LayoutItem Id="KolUslug" SizeConstraintsType="Default" RelativeSize="15.189873417721518" Index="2" />
+              <LayoutItem Id="Otdelenie" SizeConstraintsType="Default" Index="3" RelativeSize="15.189873417721518" />
+              <LayoutItem Id="Doctor" ViewItem="Doctor" SizeConstraintsType="Default" Index="4" RelativeSize="15.189873417721518" IsNewNode="True" />
+              <LayoutGroup Id="Auto7f761246-4387-4bdb-bd14-9ff0283a30a0" ShowCaption="False" Direction="Horizontal" Index="5" RelativeSize="18.9873417721519" IsNewNode="True">
+                <LayoutItem Id="DateIn" ViewItem="DateIn" SizeConstraintsType="Default" Index="0" RelativeSize="50" IsNewNode="True" />
+                <LayoutItem Id="DateOut" ViewItem="DateOut" SizeConstraintsType="Default" Index="1" RelativeSize="50" IsNewNode="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+            <TabbedGroup Id="Data" Index="0" RelativeSize="100" IsNewNode="True">
+              <LayoutGroup Id="CommonService" Index="0" Caption="Common Service" RelativeSize="100" ShowCaption="True" IsNewNode="True">
+                <LayoutItem Id="Usluga" ViewItem="Usluga" SizeConstraintsType="Default" Index="0" RelativeSize="4.0506329113924053" IsNewNode="True" />
+                <LayoutItem Id="CasePreDiagnose" ViewItem="CasePreDiagnose" SizeConstraintsType="Default" Index="1" RelativeSize="3.037974683544304" IsNewNode="True" />
+                <LayoutGroup Id="PreD" ShowCaption="False" Direction="Horizontal" Index="2" RelativeSize="4.556962025316456" IsNewNode="True">
+                  <LayoutItem Id="CasePreDiagnoseIsFirstTime" ViewItem="CasePreDiagnoseIsFirstTime" SizeConstraintsType="Default" Index="0" RelativeSize="33.576642335766422" IsNewNode="True" />
+                  <LayoutItem Id="CasePreDiagnoseStadia" ViewItem="CasePreDiagnoseStadia" SizeConstraintsType="Default" Index="1" RelativeSize="32.846715328467155" IsNewNode="True" />
+                  <LayoutItem Id="CasePreDiagnoseCharacter" ViewItem="CasePreDiagnoseCharacter" SizeConstraintsType="Default" Index="2" RelativeSize="33.576642335766422" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutItem Id="CaseDiagnose" ViewItem="CaseDiagnose" SizeConstraintsType="Default" Index="3" RelativeSize="3.037974683544304" IsNewNode="True" />
+                <LayoutGroup Id="MainD" ShowCaption="False" Direction="Horizontal" Index="4" RelativeSize="4.556962025316456" IsNewNode="True">
+                  <LayoutItem Id="CaseDiagnoseIsFirstTime" ViewItem="CaseDiagnoseIsFirstTime" SizeConstraintsType="Default" Index="0" RelativeSize="33.576642335766422" IsNewNode="True" />
+                  <LayoutItem Id="CaseDiagnoseStadia" ViewItem="CaseDiagnoseStadia" SizeConstraintsType="Default" Index="1" RelativeSize="32.846715328467155" IsNewNode="True" />
+                  <LayoutItem Id="CaseDiagnoseCharacter" ViewItem="CaseDiagnoseCharacter" SizeConstraintsType="Default" Index="2" RelativeSize="33.576642335766422" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutItem Id="KolUslug" Index="5" ViewItem="KolUslug" RelativeSize="3.037974683544304" SizeConstraintsType="Default" IsNewNode="True" />
+                <LayoutItem Id="Doctor" ViewItem="Doctor" SizeConstraintsType="Default" Index="6" RelativeSize="3.037974683544304" IsNewNode="True" />
+                <LayoutGroup Id="Dates" ShowCaption="False" Direction="Vertical" Index="7" RelativeSize="4.556962025316456" IsNewNode="True">
+                  <LayoutItem Id="DateIn" ViewItem="DateIn" SizeConstraintsType="Default" Index="0" RelativeSize="100" IsNewNode="True" />
+                </LayoutGroup>
+                <TabbedGroup Id="@252aad17-fe87-4ac7-a50a-3e01b6f09cb9" Index="8" RelativeSize="70.12658227848101" IsNewNode="True">
+                  <LayoutGroup Id="@00125a52-d82b-4714-bd25-33b7ae2fcde8" ShowCaption="True" Index="0" RelativeSize="100" Direction="Horizontal" IsNewNode="True">
+                    <LayoutItem Id="CommonProtocol.AnamnezTemplates" ViewItem="CommonProtocol.AnamnezTemplates" SizeConstraintsType="Default" Index="0" RelativeSize="48.10318664643399" ShowCaption="False" IsNewNode="True" />
+                    <LayoutItem Id="CommonProtocol.Anamnez" ViewItem="CommonProtocol.Anamnez" SizeConstraintsType="Default" Index="1" RelativeSize="51.89681335356601" ShowCaption="False" IsNewNode="True" />
+                  </LayoutGroup>
+                  <LayoutGroup Id="@210a5f45-c6a7-4c58-88ef-0e0fa01e9e54" ShowCaption="True" Direction="Horizontal" Index="1" RelativeSize="100" IsNewNode="True">
+                    <LayoutItem Id="CommonProtocol.ComplainTemplates" ViewItem="CommonProtocol.ComplainTemplates" SizeConstraintsType="Default" Index="0" RelativeSize="48.10318664643399" ShowCaption="False" IsNewNode="True" />
+                    <LayoutItem Id="CommonProtocol.Complain" ViewItem="CommonProtocol.Complain" SizeConstraintsType="Default" Index="1" RelativeSize="51.89681335356601" ShowCaption="False" IsNewNode="True" />
+                  </LayoutGroup>
+                  <LayoutGroup Id="@b8a36eef-ab47-4674-a300-36dcd237c204" ShowCaption="True" Direction="Horizontal" Index="2" RelativeSize="100" IsNewNode="True">
+                    <LayoutItem Id="CommonProtocol.RecomendTemplates" ViewItem="CommonProtocol.RecomendTemplates" SizeConstraintsType="Default" Index="0" RelativeSize="48.10318664643399" ShowCaption="False" IsNewNode="True" />
+                    <LayoutItem Id="CommonProtocol.Recommendation" ViewItem="CommonProtocol.Recommendation" SizeConstraintsType="Default" Index="1" RelativeSize="51.89681335356601" ShowCaption="False" IsNewNode="True" />
+                  </LayoutGroup>
+                  <LayoutGroup Id="@ee043f3f-35c7-4e88-a6b8-60bf3fa07b4a" ShowCaption="True" Direction="Horizontal" Index="3" RelativeSize="100" IsNewNode="True">
+                    <LayoutItem Id="CommonProtocol.ObjStatusTerTemplates" ViewItem="CommonProtocol.ObjStatusTerTemplates" SizeConstraintsType="Default" Index="0" RelativeSize="48.10318664643399" ShowCaption="False" IsNewNode="True" />
+                    <LayoutItem Id="CommonProtocol.ObjectiveStatus" ViewItem="CommonProtocol.ObjectiveStatus" SizeConstraintsType="Default" Index="1" RelativeSize="51.89681335356601" ShowCaption="False" IsNewNode="True" />
+                  </LayoutGroup>
+                  <LayoutGroup Id="@644be72d-70f9-44a3-970c-5ad175cb3ca8" ShowCaption="True" Index="4" RelativeSize="100" Direction="Vertical" IsNewNode="True">
+                    <LayoutItem Id="CommonProtocol.Medicaments" ViewItem="CommonProtocol.Medicaments" SizeConstraintsType="Default" Index="0" RelativeSize="100" ShowCaption="False" IsNewNode="True" />
+                  </LayoutGroup>
+                  <LayoutGroup Id="Item1" ShowCaption="True" CaptionLocation="Top" Direction="Vertical" Index="5" RelativeSize="100" IsNewNode="True">
+                    <LayoutItem Id="EditableProtocol.Records" ViewItem="EditableProtocol.Records" SizeConstraintsType="Default" Index="0" RelativeSize="100" ShowCaption="False" IsNewNode="True" />
+                  </LayoutGroup>
+                </TabbedGroup>
+              </LayoutGroup>
+              <LayoutGroup Id="Diagnoses" ShowCaption="True" Index="1" RelativeSize="100" Direction="Vertical" IsNewNode="True">
+                <LayoutItem Id="Diagnoses" ViewItem="Diagnoses" Index="0" SizeConstraintsType="Default" RelativeSize="100" IsNewNode="True" />
+              </LayoutGroup>
+            </TabbedGroup>
+            <LayoutGroup Id="AbstractService" Index="1" RelativeSize="73.887587822014055" Direction="Horizontal" Removed="True">
+              <LayoutItem Id="DateIn" Removed="True" />
+              <LayoutItem Id="DateOut" Removed="True" />
+              <LayoutItem Id="Doctor" Removed="True" />
+              <LayoutItem Id="Usluga" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="SizeableEditors" RelativeSize="56.801909307875896" Direction="Horizontal" Removed="True">
+            <LayoutItem Id="Protocol.Anamnez" Removed="True" />
+            <LayoutItem Id="Protocol.Complain" Removed="True" />
+            <LayoutItem Id="Protocol.ObjectiveStatus" Removed="True" />
+            <LayoutItem Id="Protocol.Recommendation" Removed="True" />
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" RelativeSize="9.54653937947494" Removed="True">
+            <LayoutGroup Id="Diagnoses" RelativeSize="100" Removed="True">
+              <LayoutItem Id="Diagnoses" SizeConstraintsType="Default" RelativeSize="100" Removed="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="Protocol.AnamnezTemplates" Direction="Horizontal" RelativeSize="100">
+              <LayoutItem Id="Protocol.Anamnez" ViewItem="Protocol.Anamnez" SizeConstraintsType="Default" Index="1" RelativeSize="50.070521861777152" ShowCaption="False" IsNewNode="True" />
+              <LayoutItem Id="Protocol.AnamnezTemplates" SizeConstraintsType="Default" RelativeSize="49.929478138222848" />
+            </LayoutGroup>
+            <LayoutGroup Id="Protocol.ComplainTemplates" RelativeSize="100" Direction="Horizontal">
+              <LayoutItem Id="Protocol.Complain" ViewItem="Protocol.Complain" SizeConstraintsType="Default" Index="1" RelativeSize="50.070521861777152" ShowCaption="False" IsNewNode="True" />
+              <LayoutItem Id="Protocol.ComplainTemplates" SizeConstraintsType="Default" RelativeSize="49.929478138222848" />
+            </LayoutGroup>
+            <LayoutGroup Id="Protocol.ObjStatusTerTemplates" RelativeSize="100" Direction="Horizontal">
+              <LayoutItem Id="Protocol.ObjectiveStatus" ViewItem="Protocol.ObjectiveStatus" SizeConstraintsType="Default" Index="1" RelativeSize="50.070521861777152" ShowCaption="False" IsNewNode="True" />
+              <LayoutItem Id="Protocol.ObjStatusTerTemplates" SizeConstraintsType="Default" RelativeSize="49.929478138222848" />
+            </LayoutGroup>
+            <LayoutGroup Id="Protocol.RecomendTemplates" RelativeSize="100" Direction="Horizontal">
+              <LayoutItem Id="Protocol.Recommendation" ViewItem="Protocol.Recommendation" SizeConstraintsType="Default" Index="1" RelativeSize="50.070521861777152" ShowCaption="False" IsNewNode="True" />
+              <LayoutItem Id="Protocol.RecomendTemplates" SizeConstraintsType="Default" RelativeSize="49.929478138222848" />
+            </LayoutGroup>
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="MKB10_LookupListView">
+      <Columns>
+        <ColumnInfo Id="AUTOP" Index="-1" />
+        <ColumnInfo Id="CODE" Index="-1" />
+        <ColumnInfo Id="DOKD" Index="-1" />
+        <ColumnInfo Id="DOKP" Index="-1" />
+        <ColumnInfo Id="High" Index="-1" />
+        <ColumnInfo Id="KD" Index="-1" />
+        <ColumnInfo Id="KEY" Index="-1" />
+        <ColumnInfo Id="KP" Index="-1" />
+        <ColumnInfo Id="MIN_KD" Index="-1" />
+        <ColumnInfo Id="NXT" Index="-1" />
+        <ColumnInfo Id="OMS" Index="-1" />
+        <ColumnInfo Id="OMSD" Index="-1" />
+        <ColumnInfo Id="REG" Index="-1" />
+        <ColumnInfo Id="SEX" Index="-1" />
+        <ColumnInfo Id="SP" Index="-1" />
+        <ColumnInfo Id="MKB" Index="0" />
+        <ColumnInfo Id="NAME" Index="1" />
+      </Columns>
+    </ListView>
+    <DetailView Id="MKBWithDispInfoAfter_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="53.629976580796253">
+            <LayoutGroup Id="MKBWithDispInfo" RelativeSize="34.497816593886462" Index="0">
+              <LayoutItem Id="MKB10" SizeConstraintsType="Default" RelativeSize="20.253164556962027" />
+              <LayoutItem Id="IsNew" ViewItem="IsNew" SizeConstraintsType="Default" Index="1" RelativeSize="15.189873417721518" IsNewNode="True" />
+              <LayoutItem Id="DispObser" SizeConstraintsType="Default" RelativeSize="15.189873417721518" Index="2" />
+              <LayoutItem Id="RecommendsHighTech" ViewItem="RecommendsHighTech" SizeConstraintsType="Default" Index="3" RelativeSize="15.189873417721518" IsNewNode="True" />
+              <LayoutItem Id="RecommendsAmbulance" ViewItem="RecommendsAmbulance" SizeConstraintsType="Default" Index="4" RelativeSize="15.189873417721518" IsNewNode="True" />
+              <LayoutItem Id="RecommendsResort" ViewItem="RecommendsResort" SizeConstraintsType="Default" Index="5" RelativeSize="18.9873417721519" IsNewNode="True" />
+            </LayoutGroup>
+            <LayoutItem Id="HealingEnabled" ViewItem="HealingEnabled" SizeConstraintsType="Default" Index="1" RelativeSize="5.2401746724890828" IsNewNode="True" />
+            <LayoutGroup Id="Healing" Index="2" Direction="Horizontal" ShowCaption="True" Caption="Лечение" RelativeSize="14.192139737991266" IsNewNode="True">
+              <LayoutItem Id="Healing.HealCondition" ViewItem="Healing.HealCondition" Index="0" SizeConstraintsType="Default" RelativeSize="50" IsNewNode="True" />
+              <LayoutItem Id="Healing.MedOrganization" ViewItem="Healing.MedOrganization" Index="1" SizeConstraintsType="Default" RelativeSize="50" IsNewNode="True" />
+            </LayoutGroup>
+            <LayoutItem Id="RehabEnabled" ViewItem="RehabEnabled" SizeConstraintsType="Default" Index="3" RelativeSize="5.2401746724890828" IsNewNode="True" />
+            <LayoutGroup Id="Rehabilition" Index="4" Direction="Horizontal" ShowCaption="True" Caption="Реабилитация/СКЛ" RelativeSize="14.192139737991266" IsNewNode="True">
+              <LayoutItem Id="Rehabilitation.HealCondition" ViewItem="Rehabilitation.HealCondition" Index="0" SizeConstraintsType="Default" RelativeSize="50" IsNewNode="True" />
+              <LayoutItem Id="Rehabilitation.MedOrganization" ViewItem="Rehabilitation.MedOrganization" Index="1" SizeConstraintsType="Default" RelativeSize="50" IsNewNode="True" />
+            </LayoutGroup>
+            <LayoutItem Id="AddConsultEnabled" ViewItem="AddConsultEnabled" SizeConstraintsType="Default" Index="5" RelativeSize="5.2401746724890828" IsNewNode="True" />
+            <LayoutGroup Id="Consultation" Index="6" Direction="Vertical" ShowCaption="True" Caption="Дополнительные консультации" RelativeSize="21.397379912663755" IsNewNode="True">
+              <LayoutGroup Id="Auto494e0274-406f-4712-9f89-b2fec59ef090" ShowCaption="False" Direction="Horizontal" Index="0" RelativeSize="54.285714285714285" Caption="Auto494e0274-406f-4712-9f89-b2fec59ef090" IsNewNode="True">
+                <LayoutItem Id="AdditionalConsult.HealCondition" ViewItem="AdditionalConsult.HealCondition" SizeConstraintsType="Default" Index="0" RelativeSize="50" IsNewNode="True" />
+                <LayoutItem Id="AdditionalConsult.MedOrganization" ViewItem="AdditionalConsult.MedOrganization" SizeConstraintsType="Default" Index="1" RelativeSize="50" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutItem Id="AdditionalConsult.AdditionalConsultation" ViewItem="AdditionalConsult.AdditionalConsultation" SizeConstraintsType="Default" Index="1" RelativeSize="45.714285714285715" IsNewNode="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="MKBWithDispInfoAfter" Caption="MKBWith Disp Info After" RelativeSize="52" Removed="True">
+              <LayoutGroup Id="MKBWithDispInfoAfter_col1" RelativeSize="50">
+                <LayoutItem Id="Healing.HealCondition" SizeConstraintsType="Default" RelativeSize="23.529411764705884" Index="0" />
+                <LayoutItem Id="RecommendsAmbulance" SizeConstraintsType="Default" RelativeSize="23.529411764705884" Index="0" Removed="True" />
+                <LayoutItem Id="RecommendsHighTech" SizeConstraintsType="Default" RelativeSize="23.529411764705884" Index="0" Removed="True" />
+                <LayoutItem Id="RecommendsResort" SizeConstraintsType="Default" RelativeSize="23.529411764705884" Index="0" Removed="True" />
+                <LayoutItem Id="Healing.MedOrganization" SizeConstraintsType="Default" RelativeSize="76.470588235294116" Index="1" />
+                <LayoutItem Id="IsNew" SizeConstraintsType="Default" RelativeSize="20" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="MKBWithDispInfoAfter_col2" RelativeSize="50">
+                <LayoutItem Id="AdditionalConsult.AdditionalConsultation" SizeConstraintsType="Default" RelativeSize="23.529411764705884" />
+                <LayoutItem Id="AdditionalConsult.HealCondition" SizeConstraintsType="Default" RelativeSize="17.647058823529413" />
+                <LayoutItem Id="AdditionalConsult.MedOrganization" SizeConstraintsType="Default" RelativeSize="17.647058823529413" />
+                <LayoutItem Id="Rehabilitation.HealCondition" SizeConstraintsType="Default" RelativeSize="23.529411764705884" />
+                <LayoutItem Id="Rehabilitation.MedOrganization" SizeConstraintsType="Default" RelativeSize="17.647058823529413" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="SizeableEditors" RelativeSize="46.370023419203747" Direction="Vertical" Caption="SizeableEditors">
+            <LayoutGroup Id="RecomendTemplates_Group" ShowCaption="True" Direction="Horizontal" Index="0" RelativeSize="100" Caption="RecomendTemplates_Group" IsNewNode="True">
+              <LayoutItem Id="RecomendTemplates" ShowCaption="False" ViewItem="RecomendTemplates" SizeConstraintsType="Default" Index="0" RelativeSize="50" IsNewNode="True" />
+              <LayoutItem Id="Recommendation" ViewItem="Recommendation" SizeConstraintsType="Default" Index="1" RelativeSize="50" ShowCaption="False" IsNewNode="True" />
+            </LayoutGroup>
+            <LayoutItem Id="Recommendation" Removed="True" />
+          </LayoutGroup>
+          <LayoutGroup Id="RecomendTemplates_Group" Direction="Horizontal" RelativeSize="8.5480093676814981" Removed="True">
+            <LayoutItem Id="Recommendation" ViewItem="Recommendation" SizeConstraintsType="Default" Index="1" RelativeSize="50" IsNewNode="True" />
+            <LayoutItem Id="RecomendTemplates" ShowCaption="False" SizeConstraintsType="Default" RelativeSize="50" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="MKBWithDispInfoBefore_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="MKBWithDispInfo" RelativeSize="9.7189695550351285" Index="0">
+              <LayoutItem Id="MKB10" SizeConstraintsType="Default" RelativeSize="38.554216867469883" />
+              <LayoutItem Id="DispObser" SizeConstraintsType="Default" Index="1" RelativeSize="28.91566265060241" />
+              <LayoutItem Id="HighTechRecommend" ViewItem="HighTechRecommend" SizeConstraintsType="Default" Index="2" RelativeSize="32.53012048192771" IsNewNode="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="Heal_Layout" CaptionLocation="Top" Index="1" ShowCaption="False" RelativeSize="16.744730679156909" Caption="@185e7f87-02d2-475b-af5b-761013c94ce5" IsNewNode="True">
+              <LayoutItem Id="HealingEnabled" ViewItem="HealingEnabled" SizeConstraintsType="Default" Index="0" RelativeSize="18.88111888111888" IsNewNode="True" />
+              <LayoutGroup Id="Heal" ShowCaption="True" CaptionLocation="Top" Index="1" RelativeSize="81.11888111888112" Caption="Лечение" IsNewNode="True">
+                <LayoutGroup Id="Auto17cd6cab-b072-41c8-92f5-be55c13dcc27" ShowCaption="False" Caption="" Direction="Horizontal" Index="0" RelativeSize="63.636363636363633" IsNewNode="True">
+                  <LayoutGroup Id="Autobaf52390-57a4-467c-bc6b-2caa36f758bd" ShowCaption="False" Caption="" Index="0" RelativeSize="50" IsNewNode="True">
+                    <LayoutItem Id="Healing.HealCondition" ViewItem="Healing.HealCondition" SizeConstraintsType="Default" Index="0" RelativeSize="57.142857142857146" IsNewNode="True" />
+                    <LayoutItem Id="Healing.NotDone" ViewItem="Healing.NotDone" SizeConstraintsType="Default" Index="1" RelativeSize="42.857142857142854" IsNewNode="True" />
+                  </LayoutGroup>
+                  <LayoutGroup Id="Auto1489cd94-4868-45d1-a1a0-e4f99c7f6b2f" ShowCaption="False" Caption="" Index="1" RelativeSize="50" IsNewNode="True">
+                    <LayoutItem Id="Healing.MedOrganization" ViewItem="Healing.MedOrganization" SizeConstraintsType="Default" Index="0" RelativeSize="57.142857142857146" IsNewNode="True" />
+                    <LayoutItem Id="Healing.NotDoneReason" ViewItem="Healing.NotDoneReason" SizeConstraintsType="Default" Index="1" RelativeSize="42.857142857142854" IsNewNode="True" />
+                  </LayoutGroup>
+                </LayoutGroup>
+                <LayoutItem Id="Healing.AnotherReason" ViewItem="Healing.AnotherReason" SizeConstraintsType="Default" Index="1" RelativeSize="36.363636363636367" IsNewNode="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+            <LayoutGroup Id="Rehab_Layout" Index="2" CaptionLocation="Top" ShowCaption="False" RelativeSize="73.536299765807968" Caption="@92af98e0-217c-4d19-8136-b15f89b535a4" IsNewNode="True">
+              <LayoutItem Id="RehabEnabled" ViewItem="RehabEnabled" SizeConstraintsType="Default" Index="0" RelativeSize="4.2993630573248405" IsNewNode="True" />
+              <LayoutGroup Id="Rehab" ShowCaption="True" CaptionLocation="Top" Index="1" RelativeSize="95.70063694267516" Direction="Vertical" Caption="Реабилитация/СКЛ" IsNewNode="True">
+                <LayoutGroup Id="Autodad20202-68a0-401c-9310-00f2e81addf6" ShowCaption="False" Caption="" Direction="Horizontal" Index="0" RelativeSize="9.8591549295774641" IsNewNode="True">
+                  <LayoutGroup Id="Autod2ff2b4a-b7e0-48d3-a242-67a32450c92e" ShowCaption="False" Caption="" Index="0" RelativeSize="50" IsNewNode="True">
+                    <LayoutItem Id="Rehabilitation.HealCondition" ViewItem="Rehabilitation.HealCondition" SizeConstraintsType="Default" Index="0" RelativeSize="57.142857142857146" IsNewNode="True" />
+                    <LayoutItem Id="Rehabilitation.NotDone" ViewItem="Rehabilitation.NotDone" SizeConstraintsType="Default" Index="1" RelativeSize="42.857142857142854" IsNewNode="True" />
+                  </LayoutGroup>
+                  <LayoutGroup Id="Auto28d343d7-8240-4797-af32-aa7bedef6c3b" ShowCaption="False" Caption="" Index="1" RelativeSize="50" IsNewNode="True">
+                    <LayoutItem Id="Rehabilitation.MedOrganization" ViewItem="Rehabilitation.MedOrganization" SizeConstraintsType="Default" Index="0" RelativeSize="57.142857142857146" IsNewNode="True" />
+                    <LayoutItem Id="Rehabilitation.NotDoneReason" ViewItem="Rehabilitation.NotDoneReason" SizeConstraintsType="Default" Index="1" RelativeSize="42.857142857142854" IsNewNode="True" />
+                  </LayoutGroup>
+                </LayoutGroup>
+                <LayoutItem Id="Rehabilitation.AnotherReason" ViewItem="Rehabilitation.AnotherReason" SizeConstraintsType="Default" Index="1" RelativeSize="90.140845070422529" IsNewNode="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+            <LayoutGroup Id="MKBWithDispInfoBefore" Caption="MKBWith Disp Info Before" RelativeSize="67.44730679156909" Direction="Horizontal" Removed="True">
+              <LayoutGroup Id="MKBWithDispInfoBefore_col1" Removed="True" />
+              <LayoutGroup Id="MKBWithDispInfoBefore_col2" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="MKBWithType_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="MKBWithType" Caption="MKBWith Type" RelativeSize="100" Direction="Vertical">
+              <LayoutGroup Id="MKBWithType_col1" RelativeSize="100">
+                <LayoutItem Id="Diagnose" SizeConstraintsType="Default" RelativeSize="3.9360393603936039" />
+                <LayoutGroup Id="Auto596db65d-e81c-4159-bc29-84f4471bef85" ShowCaption="False" Direction="Horizontal" Index="1" RelativeSize="4.4280442804428048" IsNewNode="True">
+                  <LayoutItem Id="Type" ViewItem="Type" SizeConstraintsType="Default" Index="0" RelativeSize="50" IsNewNode="True" />
+                  <LayoutItem Id="FirstTime" ViewItem="FirstTime" SizeConstraintsType="Default" Index="1" RelativeSize="50" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutItem Id="Character" ViewItem="Character" SizeConstraintsType="Default" Index="2" RelativeSize="2.9520295202952029" IsNewNode="True" Removed="True" />
+                <LayoutItem Id="Type" SizeConstraintsType="Default" RelativeSize="4.074702886247878" Index="2" Removed="True" />
+                <LayoutItem Id="Doctor" ViewItem="Doctor" SizeConstraintsType="Default" Index="4" RelativeSize="85.731857318573191" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="MKBWithType_col2" RelativeSize="50" Direction="Horizontal" Removed="True">
+                <LayoutItem Id="FirstTime" Removed="True" />
+                <LayoutItem Id="Phase" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Pacient_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="57.2">
+            <LayoutGroup Id="Item1" ShowCaption="True" CaptionLocation="Top" Index="0" RelativeSize="100" Caption="Item1" IsNewNode="True">
+              <LayoutItem Id="FullName" ViewItem="FullName" SizeConstraintsType="Default" Index="0" RelativeSize="8.2051282051282044" IsNewNode="True" />
+              <LayoutItem Id="IsNewBorn" ViewItem="IsNewBorn" SizeConstraintsType="Default" Index="1" RelativeSize="6.1538461538461542" IsNewNode="True" />
+              <LayoutItem Id="IsEarlyBorn" ViewItem="IsEarlyBorn" SizeConstraintsType="Default" Index="2" RelativeSize="6.1538461538461542" IsNewNode="True" />
+              <LayoutItem Id="BornWeight" ViewItem="BornWeight" SizeConstraintsType="Default" Index="3" RelativeSize="6.1538461538461542" IsNewNode="True" />
+              <LayoutItem Id="ChildParent" ViewItem="ChildParent" SizeConstraintsType="Default" Index="4" RelativeSize="6.1538461538461542" IsNewNode="True" />
+              <TabbedGroup Id="Item6" CaptionLocation="Top" Index="5" RelativeSize="67.179487179487182" IsNewNode="True">
+                <LayoutGroup Id="Pacient" ShowCaption="True" Direction="Vertical" Index="0" RelativeSize="100" Caption="Pacient" IsNewNode="True">
+                  <LayoutGroup Id="Pacient_col1" ShowCaption="False" Index="0" RelativeSize="100" IsNewNode="True">
+                    <LayoutGroup Id="Auto8c381dd7-2f38-4ffb-b22e-306c72b2ae6e" ShowCaption="False" Direction="Horizontal" Index="0" RelativeSize="15.765765765765766" Caption="Auto8c381dd7-2f38-4ffb-b22e-306c72b2ae6e" IsNewNode="True">
+                      <LayoutItem Id="LastName" ViewItem="LastName" SizeConstraintsType="Default" Index="0" RelativeSize="32.33618233618234" IsNewNode="True" />
+                      <LayoutItem Id="FirstName" ViewItem="FirstName" SizeConstraintsType="Default" Index="1" RelativeSize="31.33903133903134" IsNewNode="True" />
+                      <LayoutItem Id="MiddleName" ViewItem="MiddleName" SizeConstraintsType="Default" Index="2" RelativeSize="36.324786324786324" IsNewNode="True" />
+                    </LayoutGroup>
+                    <LayoutGroup Id="Autodec89098-ef6e-4b42-b866-6dfa51a48eb5" ShowCaption="False" Direction="Horizontal" Index="1" RelativeSize="84.234234234234236" Caption="Autodec89098-ef6e-4b42-b866-6dfa51a48eb5" IsNewNode="True">
+                      <LayoutGroup Id="Auto80e3ae82-d3de-40db-bd8f-b5f130ab4b2b" ShowCaption="False" Index="0" RelativeSize="32.33618233618234" Caption="Auto80e3ae82-d3de-40db-bd8f-b5f130ab4b2b" IsNewNode="True">
+                        <LayoutItem Id="Gender" ViewItem="Gender" SizeConstraintsType="Default" Index="0" RelativeSize="16.0427807486631" IsNewNode="True" />
+                        <LayoutItem Id="SNILS" ViewItem="SNILS" SizeConstraintsType="Default" Index="1" RelativeSize="12.834224598930481" IsNewNode="True" />
+                        <LayoutItem Id="Prikreplenie" ViewItem="Prikreplenie" SizeConstraintsType="Default" Index="2" RelativeSize="12.834224598930481" IsNewNode="True" />
+                        <LayoutItem Id="Uchastok" ViewItem="Uchastok" SizeConstraintsType="Default" Index="3" RelativeSize="12.834224598930481" IsNewNode="True" />
+                        <LayoutItem Id="PhoneNumber" ViewItem="PhoneNumber" SizeConstraintsType="Default" Index="4" RelativeSize="45.454545454545453" IsNewNode="True" />
+                      </LayoutGroup>
+                      <LayoutGroup Id="Autocad59d92-4c52-4256-9576-a6a9a240a115" ShowCaption="False" Index="1" RelativeSize="67.663817663817667" Caption="Autocad59d92-4c52-4256-9576-a6a9a240a115" IsNewNode="True">
+                        <LayoutGroup Id="Auto4fa5883a-1dd1-44d0-ab86-5cb79dafd9e7" ShowCaption="False" Direction="Horizontal" Index="0" RelativeSize="17.647058823529413" Caption="Auto4fa5883a-1dd1-44d0-ab86-5cb79dafd9e7" IsNewNode="True">
+                          <LayoutItem Id="Birthdate" ViewItem="Birthdate" SizeConstraintsType="Default" Index="0" RelativeSize="46.315789473684212" IsNewNode="True" />
+                          <LayoutItem Id="BirthPlace" ViewItem="BirthPlace" SizeConstraintsType="Default" Index="1" RelativeSize="53.684210526315788" IsNewNode="True" />
+                        </LayoutGroup>
+                        <LayoutGroup Id="Autob3cc080e-ec5c-4ef2-8e74-85b1fc151c56" ShowCaption="False" Direction="Horizontal" Index="1" RelativeSize="17.647058823529413" Caption="Autob3cc080e-ec5c-4ef2-8e74-85b1fc151c56" IsNewNode="True">
+                          <LayoutItem Id="CitizenCategory" ViewItem="CitizenCategory" SizeConstraintsType="Default" Index="0" RelativeSize="46.315789473684212" IsNewNode="True" />
+                          <LayoutItem Id="SocStatus" ViewItem="SocStatus" SizeConstraintsType="Default" Index="1" RelativeSize="53.684210526315788" IsNewNode="True" />
+                        </LayoutGroup>
+                        <LayoutItem Id="WorkPlace" ViewItem="WorkPlace" SizeConstraintsType="Default" Index="2" RelativeSize="12.834224598930481" IsNewNode="True" />
+                        <LayoutItem Id="LearningPlace" ViewItem="LearningPlace" SizeConstraintsType="Default" Index="3" RelativeSize="51.8716577540107" IsNewNode="True" />
+                      </LayoutGroup>
+                    </LayoutGroup>
+                  </LayoutGroup>
+                </LayoutGroup>
+                <LayoutGroup Id="Disability" ShowCaption="True" Direction="Vertical" Index="1" RelativeSize="100" Caption="Инвалидность" IsNewNode="True">
+                  <LayoutItem Id="Disability.Invalidnost" ViewItem="Disability.Invalidnost" SizeConstraintsType="Default" Index="0" RelativeSize="14.414414414414415" IsNewNode="True" />
+                  <LayoutItem Id="Disability.InvalidnostGroup" ViewItem="Disability.InvalidnostGroup" SizeConstraintsType="Default" Index="1" RelativeSize="10.810810810810811" IsNewNode="True" />
+                  <LayoutItem Id="Disability.InvalidDetstva" ViewItem="Disability.InvalidDetstva" SizeConstraintsType="Default" Index="2" RelativeSize="10.810810810810811" IsNewNode="True" />
+                  <LayoutItem Id="Disability.Kategoriya" ViewItem="Disability.Kategoriya" SizeConstraintsType="Default" Index="3" RelativeSize="10.810810810810811" IsNewNode="True" />
+                  <LayoutItem Id="Disability.Lgota" ViewItem="Disability.Lgota" SizeConstraintsType="Default" Index="4" RelativeSize="10.810810810810811" IsNewNode="True" />
+                  <LayoutItem Id="Disability" SizeConstraintsType="Default" Index="5" RelativeSize="42.342342342342342" ShowCaption="False" ViewItem="" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutGroup Id="Address" ShowCaption="True" CaptionLocation="Top" Direction="Vertical" Index="2" RelativeSize="100" Caption="Address" IsNewNode="True">
+                  <TabbedGroup Id="@8a856325-2828-4bd5-a8fe-15be54b9a098" Index="0" RelativeSize="100" IsNewNode="True">
+                    <LayoutGroup Id="Auto59fb0a6f-09e0-4f35-ac73-e9fb20994655" ShowCaption="True" Index="0" RelativeSize="100" Caption="Auto59fb0a6f-09e0-4f35-ac73-e9fb20994655" IsNewNode="True">
+                      <LayoutItem Id="Address.Country" ViewItem="Address.Country" SizeConstraintsType="Default" Index="0" RelativeSize="16.842105263157894" IsNewNode="True" />
+                      <LayoutItem Id="Address.Level1" ViewItem="Address.Level1" SizeConstraintsType="Default" Index="1" RelativeSize="12.631578947368421" IsNewNode="True" />
+                      <LayoutItem Id="Address.Level2" ViewItem="Address.Level2" SizeConstraintsType="Default" Index="2" RelativeSize="12.631578947368421" IsNewNode="True" />
+                      <LayoutItem Id="Address.Level3" ViewItem="Address.Level3" SizeConstraintsType="Default" Index="3" RelativeSize="12.631578947368421" IsNewNode="True" />
+                      <LayoutItem Id="Address.Level4" ViewItem="Address.Level4" SizeConstraintsType="Default" Index="4" RelativeSize="12.631578947368421" IsNewNode="True" />
+                      <LayoutItem Id="Address.Street" ViewItem="Address.Street" SizeConstraintsType="Default" Index="5" RelativeSize="12.631578947368421" IsNewNode="True" />
+                      <LayoutGroup Id="Autoaf50159f-3d64-47bf-bb31-529a9cbc12da" ShowCaption="False" Direction="Horizontal" Index="6" RelativeSize="20" Caption="Autoaf50159f-3d64-47bf-bb31-529a9cbc12da" IsNewNode="True">
+                        <LayoutItem Id="Address.House" ViewItem="Address.House" SizeConstraintsType="Default" Index="0" RelativeSize="32.803468208092482" IsNewNode="True" />
+                        <LayoutItem Id="Address.Build" ViewItem="Address.Build" SizeConstraintsType="Default" Index="1" RelativeSize="31.936416184971097" IsNewNode="True" />
+                        <LayoutItem Id="Address.Flat" ViewItem="Address.Flat" SizeConstraintsType="Default" Index="2" RelativeSize="35.260115606936417" IsNewNode="True" />
+                      </LayoutGroup>
+                    </LayoutGroup>
+                    <LayoutGroup Id="@7ecbf7c7-9ff3-4689-93a1-1b751bc2bf88" ShowCaption="True" Direction="Vertical" Index="1" RelativeSize="100" IsNewNode="True">
+                      <LayoutItem Id="AddressFact.Country" ViewItem="AddressFact.Country" SizeConstraintsType="Default" Index="0" RelativeSize="16.842105263157894" IsNewNode="True" />
+                      <LayoutItem Id="AddressFact.Level1" ViewItem="AddressFact.Level1" SizeConstraintsType="Default" Index="1" RelativeSize="12.631578947368421" IsNewNode="True" />
+                      <LayoutItem Id="AddressFact.Level2" ViewItem="AddressFact.Level2" SizeConstraintsType="Default" Index="2" RelativeSize="12.631578947368421" IsNewNode="True" />
+                      <LayoutItem Id="AddressFact.Level3" ViewItem="AddressFact.Level3" SizeConstraintsType="Default" Index="3" RelativeSize="12.631578947368421" IsNewNode="True" />
+                      <LayoutItem Id="AddressFact.Level4" ViewItem="AddressFact.Level4" SizeConstraintsType="Default" Index="4" RelativeSize="12.631578947368421" IsNewNode="True" />
+                      <LayoutItem Id="AddressFact.Street" ViewItem="AddressFact.Street" SizeConstraintsType="Default" Index="5" RelativeSize="12.631578947368421" IsNewNode="True" />
+                      <LayoutGroup Id="Auto927ee6ec-7ca3-425c-a98e-819af8e2f593" ShowCaption="False" Direction="Horizontal" Index="6" RelativeSize="20" IsNewNode="True">
+                        <LayoutItem Id="AddressFact.House" ViewItem="AddressFact.House" SizeConstraintsType="Default" Index="0" RelativeSize="35.115606936416185" IsNewNode="True" />
+                        <LayoutItem Id="AddressFact.Build" ViewItem="AddressFact.Build" SizeConstraintsType="Default" Index="1" RelativeSize="31.791907514450866" IsNewNode="True" />
+                        <LayoutItem Id="AddressFact.Flat" ViewItem="AddressFact.Flat" SizeConstraintsType="Default" Index="2" RelativeSize="33.092485549132945" IsNewNode="True" />
+                      </LayoutGroup>
+                    </LayoutGroup>
+                  </TabbedGroup>
+                </LayoutGroup>
+                <LayoutGroup Id="Document" ShowCaption="True" CaptionLocation="Top" Index="3" RelativeSize="100" Direction="Vertical" Caption="Document" IsNewNode="True">
+                  <LayoutGroup Id="Auto54b487f7-2d8a-45e8-bd85-6f17669c2e87" ShowCaption="False" Direction="Vertical" Index="0" RelativeSize="100" Caption="Auto54b487f7-2d8a-45e8-bd85-6f17669c2e87" IsNewNode="True">
+                    <LayoutGroup Id="Autodd75d144-7d6a-4515-b3e8-0ce3e1a3b500" ShowCaption="False" Index="0" RelativeSize="100" Caption="Autodd75d144-7d6a-4515-b3e8-0ce3e1a3b500" IsNewNode="True">
+                      <LayoutItem Id="Document.Type" ViewItem="Document.Type" SizeConstraintsType="Default" Index="0" RelativeSize="14.414414414414415" IsNewNode="True" />
+                      <LayoutGroup Id="Autob7600a52-f34c-401e-ae33-86b3532c8d44" ShowCaption="False" Direction="Horizontal" Index="1" RelativeSize="85.585585585585591" Caption="Autob7600a52-f34c-401e-ae33-86b3532c8d44" IsNewNode="True">
+                        <LayoutGroup Id="Auto8d83cc16-44bc-47e4-b26e-9cd41c6eb945" ShowCaption="False" Index="0" RelativeSize="42.450142450142451" Caption="Auto8d83cc16-44bc-47e4-b26e-9cd41c6eb945" IsNewNode="True">
+                          <LayoutItem Id="Document.Serial" ViewItem="Document.Serial" SizeConstraintsType="Default" Index="0" RelativeSize="15.789473684210526" IsNewNode="True" />
+                          <LayoutItem Id="Document.Number" ViewItem="Document.Number" SizeConstraintsType="Default" Index="1" RelativeSize="84.21052631578948" IsNewNode="True" />
+                        </LayoutGroup>
+                        <LayoutGroup Id="Auto15962cc4-8c81-4bfa-8b9d-45c3865e5201" ShowCaption="False" Index="1" RelativeSize="57.549857549857549" Caption="Auto15962cc4-8c81-4bfa-8b9d-45c3865e5201" IsNewNode="True">
+                          <LayoutItem Id="Document.DateBegin" ViewItem="Document.DateBegin" SizeConstraintsType="Default" Index="0" RelativeSize="15.789473684210526" IsNewNode="True" />
+                          <LayoutItem Id="Document.DateEnd" ViewItem="Document.DateEnd" SizeConstraintsType="Default" Index="1" RelativeSize="84.21052631578948" IsNewNode="True" />
+                        </LayoutGroup>
+                      </LayoutGroup>
+                    </LayoutGroup>
+                  </LayoutGroup>
+                </LayoutGroup>
+                <LayoutGroup Id="Polises" ShowCaption="True" Index="4" RelativeSize="100" Caption="Полиса" IsNewNode="True">
+                  <LayoutItem Id="Polises" ShowCaption="False" ViewItem="Polises" SizeConstraintsType="Default" Index="0" RelativeSize="100" IsNewNode="True" />
+                </LayoutGroup>
+              </TabbedGroup>
+            </LayoutGroup>
+            <LayoutGroup Id="Pacient" ShowCaption="True" Direction="Horizontal" Index="1" RelativeSize="31.628787878787879" Removed="True">
+              <LayoutGroup Id="Pacient_col1" ShowCaption="False" Index="0" RelativeSize="49.419218585005282" IsNewNode="True">
+                <LayoutItem Id="LastName" ViewItem="LastName" SizeConstraintsType="Default" Index="0" RelativeSize="22.535211267605632" IsNewNode="True" />
+                <LayoutItem Id="FirstName" ViewItem="FirstName" SizeConstraintsType="Default" Index="1" RelativeSize="16.901408450704224" IsNewNode="True" />
+                <LayoutItem Id="MiddleName" ViewItem="MiddleName" SizeConstraintsType="Default" Index="2" RelativeSize="16.901408450704224" IsNewNode="True" />
+                <LayoutGroup Id="Autodec89098-ef6e-4b42-b866-6dfa51a48eb5" ShowCaption="False" Direction="Horizontal" Index="3" RelativeSize="43.661971830985912" IsNewNode="True">
+                  <LayoutGroup Id="Auto80e3ae82-d3de-40db-bd8f-b5f130ab4b2b" ShowCaption="False" Index="0" RelativeSize="50" IsNewNode="True">
+                    <LayoutItem Id="Birthdate" ViewItem="Birthdate" SizeConstraintsType="Default" Index="0" RelativeSize="48.387096774193552" IsNewNode="True" />
+                    <LayoutItem Id="Gender" ViewItem="Gender" SizeConstraintsType="Default" Index="1" RelativeSize="51.612903225806448" IsNewNode="True" />
+                  </LayoutGroup>
+                  <LayoutGroup Id="Autocad59d92-4c52-4256-9576-a6a9a240a115" ShowCaption="False" Index="1" RelativeSize="50" IsNewNode="True">
+                    <LayoutItem Id="BirthPlace" ViewItem="BirthPlace" SizeConstraintsType="Default" Index="0" RelativeSize="48.387096774193552" IsNewNode="True" />
+                    <LayoutItem Id="PhoneNumber" ViewItem="PhoneNumber" SizeConstraintsType="Default" Index="1" RelativeSize="51.612903225806448" IsNewNode="True" />
+                  </LayoutGroup>
+                </LayoutGroup>
+              </LayoutGroup>
+              <LayoutGroup Id="Pacient_col2" ShowCaption="False" Index="1" RelativeSize="50.580781414994718" IsNewNode="True">
+                <LayoutItem Id="SNILS" ViewItem="SNILS" SizeConstraintsType="Default" Index="0" RelativeSize="22.535211267605632" IsNewNode="True" />
+                <LayoutItem Id="WorkPlace" ViewItem="WorkPlace" SizeConstraintsType="Default" Index="1" RelativeSize="16.901408450704224" IsNewNode="True" />
+                <LayoutItem Id="LearningPlace" ViewItem="LearningPlace" SizeConstraintsType="Default" Index="2" RelativeSize="16.901408450704224" IsNewNode="True" />
+                <LayoutItem Id="Prikreplenie" ViewItem="Prikreplenie" SizeConstraintsType="Default" Index="3" RelativeSize="43.661971830985912" IsNewNode="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="Item4" ShowCaption="True" CaptionLocation="Top" Index="1" RelativeSize="42.8" Caption="Item4" IsNewNode="True">
+            <TabbedGroup Id="Tabs" Index="0" RelativeSize="100" IsNewNode="True">
+              <LayoutGroup Id="VisitCases" Index="0" ShowCaption="True" RelativeSize="100" Caption="Посещения" IsNewNode="True">
+                <LayoutItem Id="VisitCases" SizeConstraintsType="Default" Index="0" RelativeSize="100" ShowCaption="False" ViewItem="VisitCases" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="DnevnieStacionari" ShowCaption="True" Index="1" RelativeSize="100" Caption="Дневной стационар" IsNewNode="True">
+                <LayoutItem Id="DnevnieStacionari" ShowCaption="False" ViewItem="DnevnieStacionari" SizeConstraintsType="Default" Index="0" RelativeSize="100" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="HostpitalCases" Index="2" ShowCaption="True" RelativeSize="100" IsNewNode="True">
+                <LayoutItem Id="HospitalCases" ViewItem="HospitalCases" SizeConstraintsType="Default" Index="0" RelativeSize="100" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="DispanserizaionCases" ShowCaption="True" Index="3" RelativeSize="100" IsNewNode="True">
+                <LayoutItem Id="DispanserizaionCases" ViewItem="DispanserizaionCases" SizeConstraintsType="Default" Index="0" RelativeSize="100" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="Cases" ShowCaption="True" Index="4" RelativeSize="100" IsNewNode="True">
+                <LayoutItem Id="Cases" ViewItem="Cases" SizeConstraintsType="Default" Index="0" RelativeSize="100" IsNewNode="True" />
+              </LayoutGroup>
+            </TabbedGroup>
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" Index="1" RelativeSize="73.185011709601881" Removed="True">
+            <LayoutGroup Id="Sluchs" ShowCaption="True" Index="0" RelativeSize="100" IsNewNode="True">
+              <LayoutItem Id="Sluchs" ShowCaption="False" ViewItem="Sluchs" SizeConstraintsType="Default" Index="0" RelativeSize="100" IsNewNode="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="DnevnieStacionari" ShowCaption="True" Index="1" RelativeSize="100" IsNewNode="True">
+              <LayoutItem Id="DnevnieStacionari" ShowCaption="False" ViewItem="DnevnieStacionari" SizeConstraintsType="Default" Index="0" RelativeSize="100" IsNewNode="True" />
+            </LayoutGroup>
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="Pacient_ListView" DataAccessMode="Server" Criteria="False" />
+    <ListView Id="Pacient_Polises_ListView">
+      <Columns>
+        <ColumnInfo Id="PRZ" Index="-1" />
+      </Columns>
+    </ListView>
+    <ListView Id="PERS_LIST_People_ListView" IsFooterVisible="True" />
+    <DetailView Id="Polis_DetailView">
+      <Items>
+        <PropertyEditor Id="Number" EditMaskType="RegEx" />
+        <PropertyEditor Id="Serial" EditMaskType="RegEx" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="Polis" Caption="Polis" RelativeSize="100" Direction="Vertical">
+              <LayoutGroup Id="Polis_col1" RelativeSize="100">
+                <LayoutItem Id="Type" SizeConstraintsType="Default" RelativeSize="6.8085106382978724" />
+                <LayoutGroup Id="Auto11054bf3-e7d6-4fd0-a1b4-726d37222d79" ShowCaption="False" Direction="Horizontal" Index="1" RelativeSize="10.212765957446809" IsNewNode="True">
+                  <LayoutGroup Id="Auto3b84c036-6c3f-446d-8ace-120fd0ae8db3" ShowCaption="False" Index="0" RelativeSize="51.728723404255319" IsNewNode="True">
+                    <LayoutItem Id="Serial" ViewItem="Serial" SizeConstraintsType="Default" Index="0" RelativeSize="50" IsNewNode="True" />
+                    <LayoutItem Id="DateBegin" ViewItem="DateBegin" SizeConstraintsType="Default" Index="1" RelativeSize="50" IsNewNode="True" />
+                  </LayoutGroup>
+                  <LayoutGroup Id="Auto2fd23ec6-0068-4795-a447-2b062b0b5567" ShowCaption="False" Index="1" RelativeSize="48.271276595744681" IsNewNode="True">
+                    <LayoutItem Id="Number" ViewItem="Number" SizeConstraintsType="Default" Index="0" RelativeSize="50" IsNewNode="True" />
+                    <LayoutItem Id="DateEnd" ViewItem="DateEnd" SizeConstraintsType="Default" Index="1" RelativeSize="50" IsNewNode="True" />
+                  </LayoutGroup>
+                </LayoutGroup>
+                <LayoutGroup Id="Item1" ShowCaption="True" CaptionLocation="Top" Direction="Vertical" Index="2" RelativeSize="82.978723404255319" IsNewNode="True">
+                  <LayoutItem Id="FilterBy" ViewItem="FilterBy" SizeConstraintsType="Default" Index="0" RelativeSize="8.96358543417367" IsNewNode="True" />
+                  <LayoutItem Id="SMO" ViewItem="SMO" SizeConstraintsType="Default" Index="1" RelativeSize="91.036414565826334" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutItem Id="SMO" ViewItem="SMO" SizeConstraintsType="Default" Index="2" RelativeSize="5.1063829787234045" Removed="True" />
+                <LayoutItem Id="Number" SizeConstraintsType="Default" RelativeSize="5.1063829787234045" Removed="True" />
+                <LayoutItem Id="Serial" SizeConstraintsType="Default" RelativeSize="5.1063829787234045" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="Polis_col2" RelativeSize="50" Direction="Horizontal" Removed="True">
+                <LayoutItem Id="DateBegin" Removed="True" />
+                <LayoutItem Id="DateEnd" Removed="True" />
+                <LayoutItem Id="FilterBy" Removed="True" />
+                <LayoutItem Id="PRZ" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="ProtocolRecord_ListView" AllowEdit="True" AllowNew="False" AllowDelete="False" AutoExpandAllGroups="True" DataAccessMode="Client" />
+    <DetailView Id="ProtocolRecordType_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="46.13583138173302">
+            <LayoutGroup Id="ProtocolRecordType" RelativeSize="100" Direction="Vertical" Caption="Данные поля протокола">
+              <LayoutGroup Id="ProtocolRecordType_col1" Index="0" RelativeSize="24.225352112676056">
+                <LayoutGroup Id="Auto58c3bc11-a979-4399-8463-3f232113e835" ShowCaption="False" Direction="Vertical" Index="0" RelativeSize="100" IsNewNode="True">
+                  <LayoutItem Id="IsRequired" ViewItem="IsRequired" SizeConstraintsType="Default" Index="0" RelativeSize="37.2093023255814" IsNewNode="True" />
+                  <LayoutItem Id="Name" ViewItem="Name" SizeConstraintsType="Default" Index="1" RelativeSize="27.906976744186046" IsNewNode="True" />
+                  <LayoutItem Id="Type" ViewItem="Type" SizeConstraintsType="Default" Index="2" RelativeSize="34.883720930232556" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutItem Id="TimeFrom.Month" ViewItem="TimeFrom.Month" SizeConstraintsType="Default" Index="1" RelativeSize="15.789473684210526" Removed="True" />
+                <LayoutItem Id="TimeTo.Month" ViewItem="TimeTo.Month" SizeConstraintsType="Default" Index="1" RelativeSize="17.763157894736842" Removed="True" />
+                <LayoutItem Id="TimeTo.Year" SizeConstraintsType="Default" Index="2" RelativeSize="21.621621621621621" Removed="True" />
+                <LayoutItem Id="TimeFrom.Year" Removed="True" />
+                <LayoutItem Id="TimeType" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="Auto94bf786f-3e74-4c73-bd2f-9af30aaa49b8" ShowCaption="False" Caption="" Direction="Vertical" Index="1" RelativeSize="59.154929577464792" IsNewNode="True">
+                <LayoutGroup Id="Item4" ShowCaption="True" CaptionLocation="Top" Index="0" RelativeSize="100" IsNewNode="True">
+                  <TabbedGroup Id="Item6" CaptionLocation="Top" Index="0" RelativeSize="100" IsNewNode="True">
+                    <LayoutGroup Id="Item7" ShowCaption="True" CaptionLocation="Top" Direction="Vertical" Index="0" RelativeSize="100" IsNewNode="True">
+                      <LayoutItem Id="TimeType" ViewItem="TimeType" SizeConstraintsType="Default" Index="0" RelativeSize="24.427480916030536" IsNewNode="True" />
+                      <LayoutGroup Id="Auto3ad1b223-9535-45ff-b277-7b2a663369c7" ShowCaption="False" Direction="Horizontal" Index="1" RelativeSize="67.938931297709928" IsNewNode="True">
+                        <LayoutGroup Id="Item2" ShowCaption="True" CaptionLocation="Top" Index="0" RelativeSize="47.894103489771361" IsNewNode="True">
+                          <LayoutItem Id="TimeFrom.Year" ViewItem="TimeFrom.Year" SizeConstraintsType="Default" Index="0" RelativeSize="50" IsNewNode="True" />
+                          <LayoutItem Id="TimeFrom.Month" ViewItem="TimeFrom.Month" SizeConstraintsType="Default" Index="1" RelativeSize="50" IsNewNode="True" />
+                        </LayoutGroup>
+                        <LayoutGroup Id="Item3" ShowCaption="True" CaptionLocation="Top" Index="1" RelativeSize="52.105896510228639" IsNewNode="True">
+                          <LayoutItem Id="TimeTo.Year" ViewItem="TimeTo.Year" SizeConstraintsType="Default" Index="0" RelativeSize="50" IsNewNode="True" />
+                          <LayoutItem Id="TimeTo.Month" ViewItem="TimeTo.Month" SizeConstraintsType="Default" Index="1" RelativeSize="50" IsNewNode="True" />
+                        </LayoutGroup>
+                      </LayoutGroup>
+                      <LayoutItem Id="Item8" ShowCaption="False" ViewItem="" SizeConstraintsType="Default" Index="2" RelativeSize="7.6335877862595423" IsNewNode="True" />
+                    </LayoutGroup>
+                    <LayoutGroup Id="Item5" ShowCaption="True" CaptionLocation="Top" Index="1" RelativeSize="100" IsNewNode="True">
+                      <LayoutItem Id="Gender" ViewItem="Gender" SizeConstraintsType="Default" Index="0" RelativeSize="100" IsNewNode="True" />
+                    </LayoutGroup>
+                  </TabbedGroup>
+                </LayoutGroup>
+              </LayoutGroup>
+              <LayoutGroup Id="ProtocolRecordType_col2" Index="2" RelativeSize="16.619718309859156">
+                <LayoutItem Id="Criteria" SizeConstraintsType="Default" RelativeSize="45.762711864406782" Index="0" />
+                <LayoutItem Id="IsMultipleChoiceList" SizeConstraintsType="Default" RelativeSize="54.237288135593218" Index="1" />
+                <LayoutItem Id="IsRequired" SizeConstraintsType="Default" Index="2" RelativeSize="38.554216867469883" Removed="True" />
+                <LayoutItem Id="Gender" SizeConstraintsType="Default" RelativeSize="41.666666666666664" Removed="True" />
+                <LayoutItem Id="Type" SizeConstraintsType="Default" RelativeSize="37.5" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" RelativeSize="53.86416861826698" Index="1">
+            <LayoutGroup Id="ServicesFor" Index="0" RelativeSize="100">
+              <LayoutItem Id="ServicesFor" SizeConstraintsType="Default" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="ListValues" Index="1" RelativeSize="100">
+              <LayoutItem Id="ListValues" SizeConstraintsType="Default" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="_children" Index="2" RelativeSize="100">
+              <LayoutItem Id="_children" SizeConstraintsType="Default" RelativeSize="100" />
+            </LayoutGroup>
+          </TabbedGroup>
+          <LayoutGroup Id="SizeableEditors" Direction="Horizontal" RelativeSize="24.94145199063232" Caption="Имя записи" Removed="True">
+            <LayoutItem Id="Name" Removed="True" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="TextTemplateField_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="TextTemplateField" RelativeSize="100">
+              <LayoutItem Id="Text" CaptionLocation="Top" SizeConstraintsType="Default" RelativeSize="100" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="USL_ListView" IsFooterVisible="True" />
+    <DetailView Id="VisitCase_DetailView">
+      <Items>
+        <PropertyEditor Id="MainDiagnose.Character" AllowEdit="False" />
+        <PropertyEditor Id="MainDiagnose.Diagnose" AllowEdit="False" />
+        <PropertyEditor Id="MainDiagnose.Doctor" AllowEdit="False" />
+        <PropertyEditor Id="MainDiagnose.FirstTime" AllowEdit="False" />
+        <PropertyEditor Id="MainDiagnose.Stadia" AllowEdit="False" />
+        <PropertyEditor Id="MainDiagnose.Type" AllowEdit="False" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="35.91885441527446" Direction="Vertical">
+            <LayoutGroup Id="CommonCase" Caption="Common Case" Index="0" RelativeSize="100" Direction="Vertical">
+              <LayoutGroup Id="CommonCase_col1" RelativeSize="64.8854961832061" Index="0" Caption="CommonCase_col1">
+                <LayoutGroup Id="Auto6c1517ed-0c27-4ffd-a7aa-06a0e1330fb3" ShowCaption="False" Direction="Vertical" Index="0" RelativeSize="100" Caption="Auto6c1517ed-0c27-4ffd-a7aa-06a0e1330fb3" IsNewNode="True">
+                  <LayoutItem Id="MainDiagnose.Diagnose" ViewItem="MainDiagnose.Diagnose" SizeConstraintsType="Default" Index="0" RelativeSize="18.823529411764707" IsNewNode="True" />
+                  <LayoutGroup Id="Auto1fc2a34e-291d-44e8-9c93-b041fe18d9d3" ShowCaption="False" Direction="Horizontal" Index="1" RelativeSize="21.176470588235293" Caption="Auto1fc2a34e-291d-44e8-9c93-b041fe18d9d3" IsNewNode="True">
+                    <LayoutItem Id="MainDiagnose.FirstTime" ViewItem="MainDiagnose.FirstTime" SizeConstraintsType="Default" Index="0" RelativeSize="33.612040133779267" IsNewNode="True" />
+                    <LayoutItem Id="MainDiagnose.Stadia" ViewItem="MainDiagnose.Stadia" SizeConstraintsType="Default" Index="1" RelativeSize="32.775919732441473" IsNewNode="True" />
+                    <LayoutItem Id="MainDiagnose.Character" ViewItem="MainDiagnose.Character" SizeConstraintsType="Default" Index="2" RelativeSize="33.612040133779267" IsNewNode="True" />
+                  </LayoutGroup>
+                  <LayoutItem Id="VesPriRozhdenii" ViewItem="VesPriRozhdenii" SizeConstraintsType="Default" Index="2" RelativeSize="14.117647058823529" IsNewNode="True" />
+                  <LayoutItem Id="OsobiySluchay" ViewItem="OsobiySluchay" SizeConstraintsType="Default" Index="3" RelativeSize="14.117647058823529" IsNewNode="True" />
+                  <LayoutGroup Id="Auto121accf4-1a43-45f6-be82-1d26b1b6b86d" ShowCaption="False" Caption="" Direction="Horizontal" Index="4" RelativeSize="14.117647058823529" IsNewNode="True">
+                    <LayoutItem Id="FromLPU" ViewItem="FromLPU" SizeConstraintsType="Default" Index="0" RelativeSize="50" IsNewNode="True" />
+                    <LayoutItem Id="FormaPomoshi" ViewItem="FormaPomoshi" SizeConstraintsType="Default" Index="1" RelativeSize="50" IsNewNode="True" />
+                  </LayoutGroup>
+                  <LayoutItem Id="Doctor" ViewItem="Doctor" SizeConstraintsType="Default" Index="5" RelativeSize="17.647058823529413" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutItem Id="FromLPU" SizeConstraintsType="Default" RelativeSize="29.906542056074766" Index="1" Removed="True" />
+                <LayoutItem Id="VesPriRozhdenii" ViewItem="VesPriRozhdenii" SizeConstraintsType="Default" Index="2" RelativeSize="50" Removed="True" />
+                <LayoutItem Id="FormaPomoshi" Removed="True" />
+                <LayoutItem Id="Resultat" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="CommonCase_col2" RelativeSize="35.114503816793892" Direction="Vertical" Index="1" Caption="CommonCase_col2">
+                <LayoutGroup Id="Auto7fe4713d-44cc-419a-95a4-c462bc9c98fd" ShowCaption="False" Direction="Horizontal" Index="0" RelativeSize="39.130434782608695" Caption="Auto7fe4713d-44cc-419a-95a4-c462bc9c98fd" IsNewNode="True">
+                  <LayoutItem Id="DateIn" ViewItem="DateIn" SizeConstraintsType="Default" Index="0" RelativeSize="48.16053511705686" IsNewNode="True" />
+                  <LayoutItem Id="DateOut" ViewItem="DateOut" SizeConstraintsType="Default" Index="1" RelativeSize="51.83946488294314" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutItem Id="Doctor" ViewItem="Doctor" SizeConstraintsType="Default" Index="1" RelativeSize="20.338983050847457" Removed="True" />
+                <LayoutItem Id="Ishod" ViewItem="Ishod" SizeConstraintsType="Default" Index="1" RelativeSize="26.086956521739129" IsNewNode="True" Removed="True" />
+                <LayoutItem Id="Resultat" ViewItem="Resultat" SizeConstraintsType="Default" Index="2" RelativeSize="34.782608695652172" IsNewNode="True" />
+                <LayoutItem Id="OsobiySluchay" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+            <LayoutGroup Id="AbstractCase" Index="1" RelativeSize="19.88950276243094" Direction="Horizontal" Removed="True">
+              <LayoutItem Id="DateIn" Removed="True" />
+              <LayoutItem Id="DateOut" Removed="True" />
+              <LayoutItem Id="Diagnose" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" RelativeSize="64.081145584725533">
+            <LayoutGroup Id="Services" RelativeSize="100" Index="0" Caption="Services">
+              <LayoutItem Id="Services" SizeConstraintsType="Default" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="Diagnoses" ShowCaption="True" Index="1" RelativeSize="100" Caption="Diagnoses" IsNewNode="True" Removed="True">
+              <LayoutItem Id="Diagnoses" ViewItem="Diagnoses" SizeConstraintsType="Default" Index="0" RelativeSize="100" IsNewNode="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="OslozhDiagnoses" RelativeSize="100" Index="1" Removed="True">
+              <LayoutItem Id="OslozhDiagnoses" SizeConstraintsType="Default" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="SoputsDiagnoses" RelativeSize="100" Index="1" Removed="True">
+              <LayoutItem Id="SoputsDiagnoses" SizeConstraintsType="Default" RelativeSize="100" />
+            </LayoutGroup>
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="ZL_LIST_ZAPS_ListView" IsFooterVisible="True" />
+  </Views>
+</Application>

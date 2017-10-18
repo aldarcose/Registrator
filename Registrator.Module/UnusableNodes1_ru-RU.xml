@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Views Id="Views">
+    <ListView Id="Pacient_Sluchs_ListView">
+      <Columns Id="Columns">
+        <ColumnInfo Id="DET" Caption="Признак ребенка" />
+        <ColumnInfo Id="EXTR" Caption="Экстренно" />
+        <ColumnInfo Id="LPU" Caption="МО" />
+        <ColumnInfo Id="LPU_1" Caption="МО_1" />
+        <ColumnInfo Id="PODR" Caption="Подразделение" />
+        <ColumnInfo Id="PROFIL" Caption="Профиль" />
+        <ColumnInfo Id="USL_OK" Caption="Услуга оказана" />
+        <ColumnInfo Id="VIDPOM" Caption="Вид помощи" />
+        <ColumnInfo Id="NPR_MO" Caption="Направившее МО" />
+        <ColumnInfo Id="FOR_POM" Caption="Форма помощи" />
+      </Columns>
+    </ListView>
+  </Views>
+  <BOModel Id="BOModel">
+    <Class Name="Registrator.Module.BusinessObjects.Pacient">
+      <OwnMembers Id="OwnMembers">
+        <Member Name="Sluchs" Caption="Случаи" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Registrator.Module.BusinessObjects.Sluch">
+      <OwnMembers Id="OwnMembers">
+        <Member Name="Pacient" Caption="Пациент" />
+      </OwnMembers>
+    </Class>
+  </BOModel>
+</Application>

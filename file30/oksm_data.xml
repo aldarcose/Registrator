@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<values>
+<value code="004" short="АФГАНИСТАН" full="Переходное Исламское Государство Афганистан" a2="AF" a3="AFG"></value>
+<value code="008" short="АЛБАНИЯ" full="Республика Албания" a2="AL" a3="ALB"></value>
+<value code="010" short="АНТАРКТИДА" full="" a2="AQ" a3="ATA"></value>
+<value code="012" short="АЛЖИР" full="Алжирская Народная Демократическая Республика" a2="DZ" a3="DZA"></value>
+<value code="016" short="АМЕРИКАНСКОЕ САМОА" full="" a2="AS" a3="ASM"></value>
+<value code="020" short="АНДОРРА" full="Княжество Андорра" a2="AD" a3="AND"></value>
+<value code="024" short="АНГОЛА" full="Республика Ангола" a2="AO" a3="AGO"></value>
+<value code="028" short="АНТИГУА И БАРБУДА" full="" a2="AG" a3="ATG"></value>
+<value code="031" short="АЗЕРБАЙДЖАН" full="Республика Азербайджан" a2="AZ" a3="AZE"></value>
+<value code="032" short="АРГЕНТИНА" full="Аргентинская Республика" a2="AR" a3="ARG"></value>
+<value code="036" short="АВСТРАЛИЯ" full="" a2="AU" a3="AUS"></value>
+<value code="040" short="АВСТРИЯ" full="Австрийская Республика" a2="AT" a3="AUT"></value>
+<value code="044" short="БАГАМЫ" full="Содружество Багамы" a2="BS" a3="BHS"></value>
+<value code="048" short="БАХРЕЙН" full="Королевство Бахрейн" a2="BH" a3="BHR"></value>
+<value code="050" short="БАНГЛАДЕШ" full="Народная Республика Бангладеш" a2="BD" a3="BGD"></value>
+<value code="051" short="АРМЕНИЯ" full="Республика Армения" a2="AM" a3="ARM"></value>
+<value code="052" short="БАРБАДОС" full="" a2="BB" a3="BRB"></value>
+<value code="056" short="БЕЛЬГИЯ" full="Королевство Бельгии" a2="BE" a3="BEL"></value>
+<value code="060" short="БЕРМУДЫ" full="" a2="BM" a3="BMU"></value>
+<value code="064" short="БУТАН" full="Королевство Бутан" a2="BT" a3="BTN"></value>
+<value code="068" short="БОЛИВИЯ, МНОГОНАЦИОНАЛЬНОЕ ГОСУДАРСТВО" full="Многонациональное Государство Боливия" a2="BO" a3="BOL"></value>
+<value code="070" short="БОСНИЯ И ГЕРЦЕГОВИНА" full="" a2="BA" a3="BIH"></value>
+<value code="072" short="БОТСВАНА" full="Республика Ботсвана" a2="BW" a3="BWA"></value>
+<value code="074" short="ОСТРОВ БУВЕ" full="" a2="BV" a3="BVT"></value>
+<value code="076" short="БРАЗИЛИЯ" full="Федеративная Республика Бразилия" a2="BR" a3="BRA"></value>
+<value code="084" short="БЕЛИЗ" full="" a2="BZ" a3="BLZ"></value>
+<value code="086" short="БРИТАНСКАЯ ТЕРРИТОРИЯ В ИНДИЙСКОМ ОКЕАНЕ" full="" a2="IO" a3="IOT"></value>
+<value code="090" short="СОЛОМОНОВЫ ОСТРОВА" full="" a2="SB" a3="SLB"></value>
+<value code="092" short="ВИРГИНСКИЕ ОСТРОВА, БРИТАНСКИЕ" full="Британские Виргинские острова" a2="VG" a3="VGB"></value>
+<value code="096" short="БРУНЕЙ-ДАРУССАЛАМ" full="" a2="BN" a3="BRN"></value>
+<value code="100" short="БОЛГАРИЯ" full="Республика Болгария" a2="BG" a3="BGR"></value>
+<value code="104" short="МЬЯНМА" full="Республика Союза Мьянма" a2="MM" a3="MMR"></value>
+<value code="108" short="БУРУНДИ" full="Республика Бурунди" a2="BI" a3="BDI"></value>
+<value code="112" short="БЕЛАРУСЬ" full="Республика Беларусь" a2="BY" a3="BLR"></value>
+<value code="116" short="КАМБОДЖА" full="Королевство Камбоджа" a2="KH" a3="KHM"></value>
+<value code="120" short="КАМЕРУН" full="Республика Камерун" a2="CM" a3="CMR"></value>
+<value code="124" short="КАНАДА" full="" a2="CA" a3="CAN"></value>
+<value code="132" short="КАБО-ВЕРДЕ" full="Республика Кабо-Верде" a2="CV" a3="CPV"></value>
+<value code="136" short="ОСТРОВА КАЙМАН" full="" a2="KY" a3="CYM"></value>
+<value code="140" short="ЦЕНТРАЛЬНО-АФРИКАНСКАЯ РЕСПУБЛИКА" full="" a2="CF" a3="CAF"></value>
+<value code="144" short="ШРИ-ЛАНКА" full="Демократическая Социалистическая Республика Шри-Ланка" a2="LK" a3="LKA"></value>
+<value code="148" short="ЧАД" full="Республика Чад" a2="TD" a3="TCD"></value>
+<value code="152" short="ЧИЛИ" full="Республика Чили" a2="CL" a3="CHL"></value>
+<value code="156" short="КИТАЙ" full="Китайская Народная Республика" a2="CN" a3="CHN"></value>
+<value code="158" short="ТАЙВАНЬ (КИТАЙ)" full="" a2="TW" a3="TWN"></value>
+<value code="162" short="ОСТРОВ РОЖДЕСТВА" full="" a2="CX" a3="CXR"></value>
+<value code="166" short="КОКОСОВЫЕ (КИЛИНГ) ОСТРОВА" full="" a2="CC" a3="CCK"></value>
+<value code="170" short="КОЛУМБИЯ" full="Республика Колумбия" a2="CO" a3="COL"></value>
+<value code="174" short="КОМОРЫ" full="Союз Коморы" a2="KM" a3="COM"></value>
+<value code="175" short="МАЙОТТА" full="" a2="YT" a3="MYT"></value>
+<value code="178" short="КОНГО" full="Республика Конго" a2="CG" a3="COG"></value>
+<value code="180" short="КОНГО, ДЕМОКРАТИЧЕСКАЯ РЕСПУБЛИКА" full="Демократическая Республика Конго" a2="CD" a3="COD"></value>
+<value code="184" short="ОСТРОВА КУКА" full="" a2="CK" a3="COK"></value>
+<value code="188" short="КОСТА-РИКА" full="Республика Коста-Рика" a2="CR" a3="CRI"></value>
+<value code="191" short="ХОРВАТИЯ" full="Республика Хорватия" a2="HR" a3="HRV"></value>
+<value code="192" short="КУБА" full="Республика Куба" a2="CU" a3="CUB"></value>
+<value code="196" short="КИПР" full="Республика Кипр" a2="CY" a3="CYP"></value>
+<value code="203" short="ЧЕШСКАЯ РЕСПУБЛИКА" full="" a2="CZ" a3="CZE"></value>
+<value code="204" short="БЕНИН" full="Республика Бенин" a2="BJ" a3="BEN"></value>
+<value code="208" short="ДАНИЯ" full="Королевство Дания" a2="DK" a3="DNK"></value>
+<value code="212" short="ДОМИНИКА" full="Содружество Доминики" a2="DM" a3="DMA"></value>
+<value code="214" short="ДОМИНИКАНСКАЯ РЕСПУБЛИКА" full="" a2="DO" a3="DOM"></value>
+<value code="218" short="ЭКВАДОР" full="Республика Эквадор" a2="EC" a3="ECU"></value>
+<value code="222" short="ЭЛЬ-САЛЬВАДОР" full="Республика Эль-Сальвадор" a2="SV" a3="SLV"></value>
+<value code="226" short="ЭКВАТОРИАЛЬНАЯ ГВИНЕЯ" full="Республика Экваториальная Гвинея" a2="GQ" a3="GNQ"></value>
+<value code="231" short="ЭФИОПИЯ" full="Федеративная Демократическая Республика Эфиопия" a2="ET" a3="ETH"></value>
+<value code="232" short="ЭРИТРЕЯ" full="Государство Эритрея" a2="ER" a3="ERI"></value>
+<value code="233" short="ЭСТОНИЯ" full="Эстонская Республика" a2="EE" a3="EST"></value>
+<value code="234" short="ФАРЕРСКИЕ ОСТРОВА" full="" a2="FO" a3="FRO"></value>
+<value code="238" short="ФОЛКЛЕНДСКИЕ ОСТРОВА (МАЛЬВИНСКИЕ)" full="" a2="FK" a3="FLK"></value>
+<value code="239" short="ЮЖНАЯ ДЖОРДЖИЯ И ЮЖНЫЕ САНДВИЧЕВЫ ОСТРОВА" full="" a2="GS" a3="SGS"></value>
+<value code="242" short="ФИДЖИ" full="Республика Фиджи" a2="FJ" a3="FJI"></value>
+<value code="246" short="ФИНЛЯНДИЯ" full="Финляндская Республика" a2="FI" a3="FIN"></value>
+<value code="248" short="ЭЛАНДСКИЕ ОСТРОВА" full="" a2="АХ" a3="ALA"></value>
+<value code="250" short="ФРАНЦИЯ" full="Французская Республика" a2="FR" a3="FRA"></value>
+<value code="254" short="ФРАНЦУЗСКАЯ ГВИАНА" full="" a2="GF" a3="GUF"></value>
+<value code="258" short="ФРАНЦУЗСКАЯ ПОЛИНЕЗИЯ" full="" a2="PF" a3="PYF"></value>
+<value code="260" short="ФРАНЦУЗСКИЕ ЮЖНЫЕ ТЕРРИТОРИИ" full="" a2="TF" a3="ATF"></value>
+<value code="262" short="ДЖИБУТИ" full="Республика Джибути" a2="DJ" a3="DJI"></value>
+<value code="266" short="ГАБОН" full="Габонская Республика" a2="GA" a3="GAB"></value>
+<value code="268" short="ГРУЗИЯ" full="" a2="GE" a3="GEO"></value>
+<value code="270" short="ГАМБИЯ" full="Республика Гамбия" a2="GM" a3="GMB"></value>
+<value code="275" short="ПАЛЕСТИНА, ГОСУДАРСТВО" full="Государство Палестина" a2="PS" a3="PSE"></value>
+<value code="276" short="ГЕРМАНИЯ" full="Федеративная Республика Германия" a2="DE" a3="DEU"></value>
+<value code="288" short="ГАНА" full="Республика Гана" a2="GH" a3="GHA"></value>
+<value code="292" short="ГИБРАЛТАР" full="" a2="GI" a3="GIB"></value>
+<value code="296" short="КИРИБАТИ" full="Республика Кирибати" a2="KI" a3="KIR"></value>
+<value code="300" short="ГРЕЦИЯ" full="Греческая Республика" a2="GR" a3="GRC"></value>
+<value code="304" short="ГРЕНЛАНДИЯ" full="" a2="GL" a3="GRL"></value>
+<value code="308" short="ГРЕНАДА" full="" a2="GD" a3="GRD"></value>
+<value code="312" short="ГВАДЕЛУПА" full="" a2="GP" a3="GLP"></value>
+<value code="316" short="ГУАМ" full="" a2="GU" a3="GUM"></value>
+<value code="320" short="ГВАТЕМАЛА" full="Республика Гватемала" a2="GT" a3="GTM"></value>
+<value code="324" short="ГВИНЕЯ" full="Гвинейская Республика" a2="GN" a3="GIN"></value>
+<value code="328" short="ГАЙАНА" full="Республика Гайана" a2="GY" a3="GUY"></value>
+<value code="332" short="ГАИТИ" full="Республика Гаити" a2="HT" a3="HTI"></value>
+<value code="334" short="ОСТРОВ ХЕРД И ОСТРОВА МАКДОНАЛЬД" full="" a2="HM" a3="HMD"></value>
+<value code="336" short="ПАПСКИЙ ПРЕСТОЛ (ГОСУДАРСТВО - ГОРОД ВАТИКАН)" full="" a2="VA" a3="VAT"></value>
+<value code="340" short="ГОНДУРАС" full="Республика Гондурас" a2="HN" a3="HND"></value>
+<value code="344" short="ГОНКОНГ" full="Специальный административный регион Китая Гонконг" a2="HK" a3="HKG"></value>
+<value code="348" short="ВЕНГРИЯ" full="Венгрия" a2="HU" a3="HUN"></value>
+<value code="352" short="ИСЛАНДИЯ" full="Республика Исландия" a2="IS" a3="ISL"></value>
+<value code="356" short="ИНДИЯ" full="Республика Индия" a2="IN" a3="IND"></value>
+<value code="360" short="ИНДОНЕЗИЯ" full="Республика Индонезия" a2="ID" a3="IDN"></value>
+<value code="364" short="ИРАН, ИСЛАМСКАЯ РЕСПУБЛИКА" full="Исламская Республика Иран" a2="IR" a3="IRN"></value>
+<value code="368" short="ИРАК" full="Республика Ирак" a2="IQ" a3="IRQ"></value>
+<value code="372" short="ИРЛАНДИЯ" full="" a2="IE" a3="IRL"></value>
+<value code="376" short="ИЗРАИЛЬ" full="Государство Израиль" a2="IL" a3="ISR"></value>
+<value code="380" short="ИТАЛИЯ" full="Итальянская Республика" a2="IT" a3="ITA"></value>
+<value code="384" short="КОТ Д&apos;ИВУАР" full="Республика Кот д&apos;Ивуар" a2="CI" a3="CIV"></value>
+<value code="388" short="ЯМАЙКА" full="" a2="JM" a3="JAM"></value>
+<value code="392" short="ЯПОНИЯ" full="" a2="JP" a3="JPN"></value>
+<value code="398" short="КАЗАХСТАН" full="Республика Казахстан" a2="KZ" a3="KAZ"></value>
+<value code="400" short="ИОРДАНИЯ" full="Иорданское Хашимитское Королевство" a2="JO" a3="JOR"></value>
+<value code="404" short="КЕНИЯ" full="Республика Кения" a2="KE" a3="KEN"></value>
+<value code="408" short="КОРЕЯ, НАРОДНО-ДЕМОКРАТИЧЕСКАЯ РЕСПУБЛИКА" full="Корейская Народно-Демократическая Республика" a2="KP" a3="PRK"></value>
+<value code="410" short="КОРЕЯ, РЕСПУБЛИКА" full="Республика Корея" a2="KR" a3="KOR"></value>
+<value code="414" short="КУВЕЙТ" full="Государство Кувейт" a2="KW" a3="KWT"></value>
+<value code="417" short="КИРГИЗИЯ" full="Киргизская Республика" a2="KG" a3="KGZ"></value>
+<value code="418" short="ЛАОССКАЯ НАРОДНО-ДЕМОКРАТИЧЕСКАЯ РЕСПУБЛИКА" full="" a2="LA" a3="LAO"></value>
+<value code="422" short="ЛИВАН" full="Ливанская Республика" a2="LB" a3="LBN"></value>
+<value code="426" short="ЛЕСОТО" full="Королевство Лесото" a2="LS" a3="LSO"></value>
+<value code="428" short="ЛАТВИЯ" full="Латвийская Республика" a2="LV" a3="LVA"></value>
+<value code="430" short="ЛИБЕРИЯ" full="Республика Либерия" a2="LR" a3="LBR"></value>
+<value code="434" short="ЛИВИЯ" full="Ливия" a2="LY" a3="LBY"></value>
+<value code="438" short="ЛИХТЕНШТЕЙН" full="Княжество Лихтенштейн" a2="LI" a3="LIE"></value>
+<value code="440" short="ЛИТВА" full="Литовская Республика" a2="LT" a3="LTU"></value>
+<value code="442" short="ЛЮКСЕМБУРГ" full="Великое Герцогство Люксембург" a2="LU" a3="LUX"></value>
+<value code="446" short="МАКАО" full="Специальный административный регион Китая Макао" a2="MO" a3="MAC"></value>
+<value code="450" short="МАДАГАСКАР" full="Республика Мадагаскар" a2="MG" a3="MDG"></value>
+<value code="454" short="МАЛАВИ" full="Республика Малави" a2="MW" a3="MWI"></value>
+<value code="458" short="МАЛАЙЗИЯ" full="" a2="MY" a3="MYS"></value>
+<value code="462" short="МАЛЬДИВЫ" full="Мальдивская Республика" a2="MV" a3="MDV"></value>
+<value code="466" short="МАЛИ" full="Республика Мали" a2="ML" a3="MLI"></value>
+<value code="470" short="МАЛЬТА" full="Республика Мальта" a2="MT" a3="MLT"></value>
+<value code="474" short="МАРТИНИКА" full="" a2="MQ" a3="MTQ"></value>
+<value code="478" short="МАВРИТАНИЯ" full="Исламская Республика Мавритания" a2="MR" a3="MRT"></value>
+<value code="480" short="МАВРИКИЙ" full="Республика Маврикий" a2="MU" a3="MUS"></value>
+<value code="484" short="МЕКСИКА" full="Мексиканские Соединенные Штаты" a2="MX" a3="MEX"></value>
+<value code="492" short="МОНАКО" full="Княжество Монако" a2="MC" a3="MCO"></value>
+<value code="496" short="МОНГОЛИЯ" full="" a2="MN" a3="MNG"></value>
+<value code="498" short="МОЛДОВА, РЕСПУБЛИКА" full="Республика Молдова" a2="MD" a3="MDA"></value>
+<value code="499" short="ЧЕРНОГОРИЯ" full="" a2="ME" a3="MNE"></value>
+<value code="500" short="МОНТСЕРРАТ" full="" a2="MS" a3="MSR"></value>
+<value code="504" short="МАРОККО" full="Королевство Марокко" a2="MA" a3="MAR"></value>
+<value code="508" short="МОЗАМБИК" full="Республика Мозамбик" a2="MZ" a3="MOZ"></value>
+<value code="512" short="ОМАН" full="Султанат Оман" a2="OM" a3="OMN"></value>
+<value code="516" short="НАМИБИЯ" full="Республика Намибия" a2="NA" a3="NAM"></value>
+<value code="520" short="НАУРУ" full="Республика Науру" a2="NR" a3="NRU"></value>
+<value code="524" short="НЕПАЛ" full="Федеративная Демократическая Республика Непал" a2="NP" a3="NPL"></value>
+<value code="528" short="НИДЕРЛАНДЫ" full="Королевство Нидерландов" a2="NL" a3="NLD"></value>
+<value code="531" short="КЮРАСАО" full="" a2="CW" a3="CUW"></value>
+<value code="533" short="АРУБА" full="" a2="AW" a3="ABW"></value>
+<value code="534" short="СЕН-МАРТЕН (нидерландская часть)" full="" a2="SX" a3="SXM"></value>
+<value code="535" short="БОНЭЙР, СИНТ-ЭСТАТИУС И САБА" full="" a2="BQ" a3="BES"></value>
+<value code="540" short="НОВАЯ КАЛЕДОНИЯ" full="" a2="NC" a3="NCL"></value>
+<value code="548" short="ВАНУАТУ" full="Республика Вануату" a2="VU" a3="VUT"></value>
+<value code="554" short="НОВАЯ ЗЕЛАНДИЯ" full="" a2="NZ" a3="NZL"></value>
+<value code="558" short="НИКАРАГУА" full="Республика Никарагуа" a2="NI" a3="NIC"></value>
+<value code="562" short="НИГЕР" full="Республика Нигер" a2="NE" a3="NER"></value>
+<value code="566" short="НИГЕРИЯ" full="Федеративная Республика Нигерия" a2="NG" a3="NGA"></value>
+<value code="570" short="НИУЭ" full="Ниуэ" a2="NU" a3="NIU"></value>
+<value code="574" short="ОСТРОВ НОРФОЛК" full="" a2="NF" a3="NFK"></value>
+<value code="578" short="НОРВЕГИЯ" full="Королевство Норвегия" a2="NO" a3="NOR"></value>
+<value code="580" short="СЕВЕРНЫЕ МАРИАНСКИЕ ОСТРОВА" full="Содружество Северных Марианских островов" a2="MP" a3="MNP"></value>
+<value code="581" short="МАЛЫЕ ТИХООКЕАНСКИЕ ОТДАЛЕННЫЕ ОСТРОВА СОЕДИНЕННЫХ ШТАТОВ" full="" a2="UM" a3="UMI"></value>
+<value code="583" short="МИКРОНЕЗИЯ, ФЕДЕРАТИВНЫЕ ШТАТЫ" full="Федеративные штаты Микронезии" a2="FM" a3="FSM"></value>
+<value code="584" short="МАРШАЛЛОВЫ ОСТРОВА" full="Республика Маршалловы Острова" a2="MH" a3="MHL"></value>
+<value code="585" short="ПАЛАУ" full="Республика Палау" a2="PW" a3="PLW"></value>
+<value code="586" short="ПАКИСТАН" full="Исламская Республика Пакистан" a2="PK" a3="PAK"></value>
+<value code="591" short="ПАНАМА" full="Республика Панама" a2="PA" a3="PAN"></value>
+<value code="598" short="ПАПУА НОВАЯ ГВИНЕЯ" full="Независимое Государство Папуа Новая Гвинея" a2="PG" a3="PNG"></value>
+<value code="600" short="ПАРАГВАЙ" full="Республика Парагвай" a2="PY" a3="PRY"></value>
+<value code="604" short="ПЕРУ" full="Республика Перу" a2="PE" a3="PER"></value>
+<value code="608" short="ФИЛИППИНЫ" full="Республика Филиппины" a2="PH" a3="PHL"></value>
+<value code="612" short="ПИТКЕРН" full="" a2="PN" a3="PCN"></value>
+<value code="616" short="ПОЛЬША" full="Республика Польша" a2="PL" a3="POL"></value>
+<value code="620" short="ПОРТУГАЛИЯ" full="Португальская Республика" a2="PT" a3="PRT"></value>
+<value code="624" short="ГВИНЕЯ-БИСАУ" full="Республика Гвинея-Бисау" a2="GW" a3="GNB"></value>
+<value code="626" short="ТИМОР-ЛЕСТЕ" full="Демократическая Республика Тимор-Лесте" a2="TL" a3="TLS"></value>
+<value code="630" short="ПУЭРТО-РИКО" full="" a2="PR" a3="PRI"></value>
+<value code="634" short="КАТАР" full="Государство Катар" a2="QA" a3="QAT"></value>
+<value code="638" short="РЕЮНЬОН" full="" a2="RE" a3="REU"></value>
+<value code="642" short="РУМЫНИЯ" full="" a2="RO" a3="ROU"></value>
+<value code="643" short="РОССИЯ" full="Российская Федерация" a2="RU" a3="RUS"></value>
+<value code="646" short="РУАНДА" full="Руандийская Республика" a2="RW" a3="RWA"></value>
+<value code="652" short="СЕН-БАРТЕЛЕМИ" full="" a2="BL" a3="BLM"></value>
+<value code="654" short="СВЯТАЯ ЕЛЕНА, ОСТРОВ ВОЗНЕСЕНИЯ, ТРИСТАН-ДА-КУНЬЯ" full="" a2="SH" a3="SHN"></value>
+<value code="659" short="СЕНТ-КИТС И НЕВИС" full="" a2="KN" a3="KNA"></value>
+<value code="660" short="АНГИЛЬЯ" full="" a2="AI" a3="AIA"></value>
+<value code="662" short="СЕНТ-ЛЮСИЯ" full="" a2="LC" a3="LCA"></value>
+<value code="663" short="СЕН-МАРТЕН" full="" a2="MF" a3="MAF"></value>
+<value code="666" short="СЕН-ПЬЕР И МИКЕЛОН" full="" a2="PM" a3="SPM"></value>
+<value code="670" short="СЕНТ-ВИНСЕНТ И ГРЕНАДИНЫ" full="" a2="VC" a3="VCT"></value>
+<value code="674" short="САН-МАРИНО" full="Республика Сан-Марино" a2="SM" a3="SMR"></value>
+<value code="678" short="САН-ТОМЕ И ПРИНСИПИ" full="Демократическая Республика Сан-Томе и Принсипи" a2="ST" a3="STP"></value>
+<value code="682" short="САУДОВСКАЯ АРАВИЯ" full="Королевство Саудовская Аравия" a2="SA" a3="SAU"></value>
+<value code="686" short="СЕНЕГАЛ" full="Республика Сенегал" a2="SN" a3="SEN"></value>
+<value code="688" short="СЕРБИЯ" full="Республика Сербия" a2="RS" a3="SRB"></value>
+<value code="690" short="СЕЙШЕЛЫ" full="Республика Сейшелы" a2="SC" a3="SYC"></value>
+<value code="694" short="СЬЕРРА-ЛЕОНЕ" full="Республика Сьерра-Леоне" a2="SL" a3="SLE"></value>
+<value code="702" short="СИНГАПУР" full="Республика Сингапур" a2="SG" a3="SGP"></value>
+<value code="703" short="СЛОВАКИЯ" full="Словацкая Республика" a2="SK" a3="SVK"></value>
+<value code="704" short="ВЬЕТНАМ" full="Социалистическая Республика Вьетнам" a2="VN" a3="VNM"></value>
+<value code="705" short="СЛОВЕНИЯ" full="Республика Словения" a2="SI" a3="SVN"></value>
+<value code="706" short="СОМАЛИ" full="Федеративная Республика Сомали" a2="SO" a3="SOM"></value>
+<value code="710" short="ЮЖНАЯ АФРИКА" full="Южно-Африканская Республика" a2="ZA" a3="ZAF"></value>
+<value code="716" short="ЗИМБАБВЕ" full="Республика Зимбабве" a2="ZW" a3="ZWE"></value>
+<value code="724" short="ИСПАНИЯ" full="Королевство Испания" a2="ES" a3="ESP"></value>
+<value code="728" short="ЮЖНЫЙ СУДАН" full="Республика Южный Судан" a2="SS" a3="SSD"></value>
+<value code="729" short="СУДАН" full="Республика Судан" a2="SD" a3="SDN"></value>
+<value code="732" short="ЗАПАДНАЯ САХАРА Росстандарта от 14.12.2011 N 1514-ст" full="" a2="EH" a3="ESH"></value>
+<value code="740" short="СУРИНАМ" full="Республика Суринам" a2="SR" a3="SUR"></value>
+<value code="744" short="ШПИЦБЕРГЕН И ЯН МАЙЕН" full="" a2="SJ" a3="SJM"></value>
+<value code="748" short="СВАЗИЛЕНД" full="Королевство Свазиленд" a2="SZ" a3="SWZ"></value>
+<value code="752" short="ШВЕЦИЯ" full="Королевство Швеция" a2="SE" a3="SWE"></value>
+<value code="756" short="ШВЕЙЦАРИЯ" full="Швейцарская Конфедерация" a2="CH" a3="CHE"></value>
+<value code="760" short="СИРИЙСКАЯ АРАБСКАЯ РЕСПУБЛИКА" full="" a2="SY" a3="SYR"></value>
+<value code="762" short="ТАДЖИКИСТАН" full="Республика Таджикистан" a2="TJ" a3="TJK"></value>
+<value code="764" short="ТАИЛАНД" full="Королевство Таиланд" a2="TH" a3="THA"></value>
+<value code="768" short="ТОГО" full="Тоголезская Республика" a2="TG" a3="TGO"></value>
+<value code="772" short="ТОКЕЛАУ" full="" a2="TK" a3="TKL"></value>
+<value code="776" short="ТОНГА" full="Королевство Тонга" a2="TO" a3="TON"></value>
+<value code="780" short="ТРИНИДАД И ТОБАГО" full="Республика Тринидад и Тобаго" a2="TT" a3="TTO"></value>
+<value code="784" short="ОБЪЕДИНЕННЫЕ АРАБСКИЕ ЭМИРАТЫ" full="" a2="AE" a3="ARE"></value>
+<value code="788" short="ТУНИС" full="Тунисская Республика" a2="TN" a3="TUN"></value>
+<value code="792" short="ТУРЦИЯ" full="Турецкая Республика" a2="TR" a3="TUR"></value>
+<value code="795" short="ТУРКМЕНИЯ" full="Туркменистан" a2="TM" a3="TKM"></value>
+<value code="796" short="ОСТРОВА ТЕРКС И КАЙКОС" full="" a2="TC" a3="TCA"></value>
+<value code="798" short="ТУВАЛУ" full="" a2="TV" a3="TUV"></value>
+<value code="800" short="УГАНДА" full="Республика Уганда" a2="UG" a3="UGA"></value>
+<value code="804" short="УКРАИНА" full="" a2="UA" a3="UKR"></value>
+<value code="807" short="РЕСПУБЛИКА МАКЕДОНИЯ" full="" a2="MK" a3="MKD"></value>
+<value code="818" short="ЕГИПЕТ" full="Арабская Республика Египет" a2="EG" a3="EGY"></value>
+<value code="826" short="СОЕДИНЕННОЕ КОРОЛЕВСТВО" full="Соединенное Королевство Великобритании и Северной Ирландии" a2="GB" a3="GBR"></value>
+<value code="831" short="ГЕРНСИ" full="" a2="GG" a3="GGY"></value>
+<value code="832" short="ДЖЕРСИ" full="" a2="JE" a3="JEY"></value>
+<value code="833" short="ОСТРОВ МЭН" full="" a2="IM" a3="IMN"></value>
+<value code="834" short="ТАНЗАНИЯ, ОБЪЕДИНЕННАЯ РЕСПУБЛИКА" full="Объединенная Республика Танзания" a2="TZ" a3="TZA"></value>
+<value code="840" short="СОЕДИНЕННЫЕ ШТАТЫ" full="Соединенные Штаты Америки" a2="US" a3="USA"></value>
+<value code="850" short="ВИРГИНСКИЕ ОСТРОВА, США" full="Виргинские острова Соединенных Штатов" a2="VI" a3="VIR"></value>
+<value code="854" short="БУРКИНА-ФАСО" full="" a2="BF" a3="BFA"></value>
+<value code="858" short="УРУГВАЙ" full="Восточная Республика Уругвай" a2="UY" a3="URY"></value>
+<value code="860" short="УЗБЕКИСТАН" full="Республика Узбекистан" a2="UZ" a3="UZB"></value>
+<value code="862" short="ВЕНЕСУЭЛА БОЛИВАРИАНСКАЯ РЕСПУБЛИКА" full="Боливарианская Республика Венесуэла" a2="VE" a3="VEN"></value>
+<value code="876" short="УОЛЛИС И ФУТУНА" full="" a2="WF" a3="WLF"></value>
+<value code="882" short="САМОА" full="Независимое Государство Самоа" a2="WS" a3="WSM"></value>
+<value code="887" short="ЙЕМЕН" full="Йеменская Республика" a2="YE" a3="YEM"></value>
+<value code="894" short="ЗАМБИЯ" full="Республика Замбия" a2="ZM" a3="ZMB"></value>
+<value code="895" short="АБХАЗИЯ" full="Республика Абхазия" a2="AB" a3="ABH"></value>
+<value code="896" short="ЮЖНАЯ ОСЕТИЯ" full="Республика Южная Осетия" a2="OS" a3="OST"></value>
+</values>

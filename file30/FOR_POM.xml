@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<packet>
+  <zglv type="FRMMP" version="1.0" date="01.01.2013" />
+  <zap IDFRMMP="1" FRMMPNAME="Экстренная" DATEBEG="01.01.2013" DATEEND="" />
+  <zap IDFRMMP="2" FRMMPNAME="Неотложная" DATEBEG="01.01.2013" DATEEND="" />
+  <zap IDFRMMP="3" FRMMPNAME="Плановая" DATEBEG="01.01.2013" DATEEND="" />
+</packet>

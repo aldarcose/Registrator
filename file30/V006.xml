@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<root>
+  <rec1 IDUMP="1" UMPNAME="Стационаро" DATEBEG="18.10.2012" DATEEND="" />
+  <rec2 IDUMP="2" UMPNAME="В дневном стационаре" DATEBEG="18.10.2012" DATEEND="" />
+  <rec3 IDUMP="3" UMPNAME="Амбулаторно" DATEBEG="18.10.2012" DATEEND="" />
+  <rec4 IDUMP="4" UMPNAME="Вне медицинской организации" DATEBEG="18.10.2012" DATEEND="" />
+</root>
