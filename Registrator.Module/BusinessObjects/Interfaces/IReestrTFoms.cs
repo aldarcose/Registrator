@@ -8,7 +8,6 @@ using Registrator.Module.BusinessObjects;
 
 namespace Registrator.Module.BusinessObjects.Interfaces
 {
-
     /// <summary>
     /// ИНтерфейс объекта, данные которого должны попадать в реестр.
     /// </summary>

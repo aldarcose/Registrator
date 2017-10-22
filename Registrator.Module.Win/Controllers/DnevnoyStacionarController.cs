@@ -220,7 +220,7 @@ namespace Registrator.Module.Win.Controllers
                     // если установлен флаг поиска иногородних и пациент не иногородний, то пропускаем
                     if (ds.Pacient != null)
                     {
-                        var polis = ds.Pacient.GetCurrentPolis();
+                        var polis = ds.Pacient.CurrentPolis;
                         if (polis != null)
                             if (polis.IsFromAnotherRegion != fields.IsInogorodniy)
                                 continue;

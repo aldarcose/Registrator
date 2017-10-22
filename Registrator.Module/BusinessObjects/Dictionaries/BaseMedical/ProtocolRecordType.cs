@@ -15,9 +15,12 @@ using DevExpress.Xpo;
 namespace Registrator.Module.BusinessObjects.Dictionaries
 {
     /// <summary>
+    /// Тип записи протокола
+    /// </summary>
+    /// <remarks>
     /// Представляет тип записи протокола: имя, список услуг, в которых оно используется, тип данных и т.п.
     /// Реализует Аттрибут шаблона EAV.
-    /// </summary>
+    /// </remarks>
     [DefaultClassOptions]
     [XafDisplayName("Справочник Поле протокола")]
     public class ProtocolRecordType : BaseObject, ITreeNode
@@ -150,11 +153,9 @@ namespace Registrator.Module.BusinessObjects.Dictionaries
         [XafDisplayName("Тип значения")]
         public XPCollection<ProtocolRecordType> _children 
         {
-            get
-            {
-                return GetCollection<ProtocolRecordType>("_children");
-            } 
+            get { return GetCollection<ProtocolRecordType>("_children"); }
         }
+
         [Browsable(false)]
         public ITreeNode Parent { get { return _parent as ITreeNode; } }
         
@@ -177,7 +178,8 @@ namespace Registrator.Module.BusinessObjects.Dictionaries
         [Appearance("ListVisible", Context = "DetailView", Criteria = "[Type]!=6", Visibility = ViewItemVisibility.Hide)] // список выбора
         [Association("RecordType-ListValues")]
         [XafDisplayName("Список значений для выбора")]
-        public XPCollection<StringValue> ListValues {
+        public XPCollection<StringValue> ListValues 
+        {
             get { return GetCollection<StringValue>("ListValues"); }
         }
 

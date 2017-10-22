@@ -20,7 +20,7 @@ namespace Registrator.Module.BusinessObjects.Dictionaries
         public string Anamnez { get; set; }
 
         /// <summary>
-        /// 
+        /// Шаблоны анамнеза
         /// </summary>
         [XafDisplayName("Шаблоны анамнеза")]
         public IList<AnamnezTemplate> AnamnezTemplates
@@ -28,15 +28,15 @@ namespace Registrator.Module.BusinessObjects.Dictionaries
             get { return CurrentDoctor.AnamnezTemplates; }
         }
 
-            /// <summary>
-        /// 
+        /// <summary>
+        /// Жалобы
         /// </summary>
         [Size(1000)]
         [XafDisplayName("Жалобы")]
         public string Complain { get; set; }
 
         /// <summary>
-        /// 
+        /// Шаблоны жалоб
         /// </summary>
         [XafDisplayName("Шаблоны жалоб")]
         public IList<ComplainTemplate> ComplainTemplates
@@ -45,14 +45,14 @@ namespace Registrator.Module.BusinessObjects.Dictionaries
         }
 
         /// <summary>
-        /// 
+        /// Рекомендации
         /// </summary>
         [Size(1000)]
         [XafDisplayName("Рекомендации")]
         public string Recommendation { get; set; }
 
         /// <summary>
-        /// 
+        /// Шаблоны рекомендаций
         /// </summary>
         [XafDisplayName("Шаблоны рекомендаций")]
         public IList<RecomendTemplate> RecomendTemplates
@@ -61,14 +61,14 @@ namespace Registrator.Module.BusinessObjects.Dictionaries
         }
 
         /// <summary>
-        /// 
+        /// Объективный статус терапевта
         /// </summary>
         [Size(1000)]
         [XafDisplayName("Объективный статус терапевта")]
         public string ObjectiveStatus { get; set; }
 
         /// <summary>
-        /// 
+        /// Шаблоны объективного статуса
         /// </summary>
         [XafDisplayName("Шаблоны объективного статуса")]
         public IList<ObjStatusTerTemplate> ObjStatusTerTemplates
@@ -88,11 +88,9 @@ namespace Registrator.Module.BusinessObjects.Dictionaries
     {
         public EditableProtocol(Session session) : base(session) { }
 
-        public override void AfterConstruction()
-        {
-            base.AfterConstruction();
-        }
-
+        /// <summary>
+        /// Протокол
+        /// </summary>
         [Association("Protocol-Records")]
         [XafDisplayName("Протокол")]
         public XPCollection<ProtocolRecord> Records
@@ -109,8 +107,8 @@ namespace Registrator.Module.BusinessObjects.Dictionaries
                 today = createDate.Value;
             var age = pacient.GetAge(today);
             DateTime bd = pacient.Birthdate.Value;
+            
             // смотрим по году исполнения
-
             if (age >= 3)
             {
                 if (today.Month < bd.Month)
@@ -185,6 +183,7 @@ namespace Registrator.Module.BusinessObjects.Dictionaries
                         break;
                 }
             }
+
             foreach (var protocolRecord in listToRemove)
             {
                 Records.Remove(protocolRecord);

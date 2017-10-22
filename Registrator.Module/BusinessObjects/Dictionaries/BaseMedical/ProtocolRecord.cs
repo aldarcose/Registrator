@@ -32,36 +32,23 @@ namespace Registrator.Module.BusinessObjects.Dictionaries
 
             // если комплекс, создаем комплекс для значений
             if (type.Type == TypeEnum.Complex)
-            {
-                createComplex(protocolRecord, type);
-            }
+                CreateComplex(protocolRecord, type);
 
             return protocolRecord;
         }
 
-        private static void createComplex(ProtocolRecord parent, ProtocolRecordType type)
+        private static void CreateComplex(ProtocolRecord parent, ProtocolRecordType type)
         {
-            if (type.Children.Count > 0)
+            foreach (var protocolRecordType in type._children)
             {
-                foreach (var protocolRecordType in type._children)
-                {
-                    var protocolRecord = new ProtocolRecord(parent.Session) { Type = protocolRecordType };
-                    protocolRecord.Value = protocolRecordType.GetDefaultValue();
-                    parent._children.Add(protocolRecord);
+                var protocolRecord = new ProtocolRecord(parent.Session) { Type = protocolRecordType };
+                protocolRecord.Value = protocolRecordType.GetDefaultValue();
+                parent._children.Add(protocolRecord);
 
-                    if (protocolRecordType.Type == TypeEnum.Complex)
-                        createComplex(protocolRecord, protocolRecordType);
-                }
+                if (protocolRecordType.Type == TypeEnum.Complex)
+                    CreateComplex(protocolRecord, protocolRecordType);
             }
         }
-
-        public override void AfterConstruction()
-        {
-            base.AfterConstruction();
-            this.Type = null;
-            this.Value = string.Empty;
-        }
-
 
         [XafDisplayName("Поле")]
         [VisibleInListView(true)]
@@ -86,11 +73,22 @@ namespace Registrator.Module.BusinessObjects.Dictionaries
 
         [Association("RecordParent - RecordChildren")]
         [Browsable(false)]
-        public XPCollection<ProtocolRecord> _children { get { return GetCollection<ProtocolRecord>("_children"); } }
+        public XPCollection<ProtocolRecord> _children 
+        { 
+            get { return GetCollection<ProtocolRecord>("_children"); }
+        }
+
         [Browsable(false)]
-        public ITreeNode Parent { get { return _parent as ITreeNode; } }
+        public ITreeNode Parent 
+        { 
+            get { return _parent as ITreeNode; } 
+        }
+
         [Browsable(false)]
-        public IBindingList Children { get { return _children as IBindingList; } }
+        public IBindingList Children 
+        { 
+            get { return _children as IBindingList; } 
+        }
         #endregion
     }
 }

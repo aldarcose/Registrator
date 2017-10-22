@@ -161,7 +161,8 @@ namespace Registrator.Module.Win.Controllers
             if (e.EditPainter!=null)
             {
                 e.Appearance.FillRectangle(e.Cache, e.Bounds);
-                DevExpress.XtraEditors.Drawing.ControlGraphicsInfoArgs c = new DevExpress.XtraEditors.Drawing.ControlGraphicsInfoArgs(e.EditViewInfo, e.Cache, e.EditViewInfo.Bounds);
+                DevExpress.XtraEditors.Drawing.ControlGraphicsInfoArgs c = 
+                    new DevExpress.XtraEditors.Drawing.ControlGraphicsInfoArgs(e.EditViewInfo, e.Cache, e.EditViewInfo.Bounds);
                 e.EditPainter.Draw(c);
 
                 var commonPen = Pens.LightBlue;
@@ -203,7 +204,7 @@ namespace Registrator.Module.Win.Controllers
                     foreach (var criteria in hideCriterias)
                     {
                         // проверяем каждый критерий
-                        if (checkCriteria(criteria, parentEntity) == false)
+                        if (CheckCriteria(criteria, parentEntity) == false)
                         {
                             hide = false;
                             break;
@@ -215,17 +216,17 @@ namespace Registrator.Module.Win.Controllers
             }
         }
 
-        private bool checkCriteria(string criteria, ProtocolRecord parentEntity)
+        private bool CheckCriteria(string criteria, ProtocolRecord parentEntity)
         {
-            string name = getFieldFromCriteria(criteria);
-            string value = getValueFromCriteria(criteria);
+            string name = GetFieldFromCriteria(criteria);
+            string value = GetValueFromCriteria(criteria);
             bool checkIsEqual = !criteria.Contains("!");
             return parentEntity._children.Any(
                 t => t.Type.Name == name && (checkIsEqual ? t.Value == value : t.Value != value));
 
         }
 
-        public string getFieldFromCriteria(string criteria)
+        public string GetFieldFromCriteria(string criteria)
         {
             int index = criteria.IndexOf("=");
             if (index == -1)
@@ -239,7 +240,7 @@ namespace Registrator.Module.Win.Controllers
             return criteria.Substring(0, index).Trim();
         }
 
-        public string getValueFromCriteria(string criteria)
+        public string GetValueFromCriteria(string criteria)
         {
             int index = criteria.IndexOf("=");
             if (index == -1)
@@ -266,7 +267,7 @@ namespace Registrator.Module.Win.Controllers
                 {
                     treeList.HideEditor(); //скрыть редактор для комплексных типов
                 }
-                if (type.Type == TypeEnum.Address)
+                else if (type.Type == TypeEnum.Address)
                 {
                     (Application as WinApplication).StartSplash();
 
@@ -293,20 +294,18 @@ namespace Registrator.Module.Win.Controllers
                     
                     Application.ShowViewStrategy.ShowView(svp, new ShowViewSource(null, null));
                 }
-                if (type.Type == TypeEnum.List)
+                else if (type.Type == TypeEnum.List)
                 {
                     var checkedComboEditor = treeList.ActiveEditor as CheckedComboBoxEdit;
-                    
-                    if (checkedComboEditor!=null && checkedComboEditor.IsEditorActive)
+                    if (checkedComboEditor !=null && checkedComboEditor.IsEditorActive)
                     {
                         if (checkedComboEditor.IsPopupOpen == false)
                             checkedComboEditor.ShowPopup();
                     }
-
                     var comboEditor = treeList.ActiveEditor as ComboBoxEdit;
                     if (comboEditor != null && comboEditor.IsEditorActive)
                     {
-                        if (comboEditor.IsPopupOpen ==false)
+                        if (comboEditor.IsPopupOpen == false)
                             comboEditor.ShowPopup();
                     }
                 }
@@ -315,7 +314,6 @@ namespace Registrator.Module.Win.Controllers
 
         private void dv_Closing(object sender, EventArgs e)
         {
-            
         }
 
         private void dc_Accepting(object sender, DialogControllerAcceptingEventArgs e)

@@ -18,12 +18,6 @@ namespace Registrator.Module.BusinessObjects
     {
         public MedService(Session session) : base(session) { }
 
-        public override void AfterConstruction()
-        {
-            base.AfterConstruction();
-
-        }
-
         #region Reestr Methods
         public override bool IsValidForReestr()
         {

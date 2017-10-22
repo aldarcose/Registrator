@@ -176,9 +176,10 @@ namespace Registrator.Module.Controllers
         private void NewDispCaseAction_Execute(object sender, SimpleActionExecuteEventArgs e)
         {
             var listView = View as ListView;
-            if (listView != null)
+            var propertyCollSource = (PropertyCollectionSource) listView.CollectionSource;
+            if (listView != null && propertyCollSource != null)
             {
-                var pacient = ((PropertyCollectionSource) listView.CollectionSource).MasterObject as Pacient;
+                var pacient = propertyCollSource.MasterObject as Pacient;
 
                 // запрашиваем дату создания (задним числом)
                 InputBox input = new InputBox();

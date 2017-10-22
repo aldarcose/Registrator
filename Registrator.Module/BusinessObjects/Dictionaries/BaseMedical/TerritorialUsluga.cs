@@ -20,7 +20,6 @@ namespace Registrator.Module.BusinessObjects.Dictionaries
     [XafDisplayName("Территориальные услуги")]
     public class TerritorialUsluga : DevExpress.Persistent.BaseImpl.BaseObject, ITreeNode
     {
-
         public TerritorialUsluga() { }
         public TerritorialUsluga(Session session) : base(session) { }
 
@@ -37,6 +36,7 @@ namespace Registrator.Module.BusinessObjects.Dictionaries
         [XafDisplayName("Наименование")]
         public string Name { get; set; }
 
+        /// <inheritdoc/>
         public override string ToString()
         {
             return string.Format("{0} (код {1})", Name, Code);
@@ -100,7 +100,7 @@ namespace Registrator.Module.BusinessObjects.Dictionaries
             get { return GetCollection<ProtocolRecordType>("ProtocolRecordTypes"); }
         }
 
-        #region Tree
+        #region ITreeNode
         [Association("TerUslParent-TerUslChildren")]
         [Browsable(false)]
         public TerritorialUsluga parent { get; set; }

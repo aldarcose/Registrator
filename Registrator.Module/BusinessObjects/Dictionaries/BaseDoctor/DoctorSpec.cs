@@ -1,4 +1,6 @@
-﻿using DevExpress.ExpressApp.DC;
+﻿using DevExpress.Data.Filtering;
+using DevExpress.ExpressApp;
+using DevExpress.ExpressApp.DC;
 using DevExpress.Persistent.Base;
 using DevExpress.Persistent.Base.General;
 using DevExpress.Persistent.BaseImpl;
@@ -8,11 +10,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Xml.Linq;
+
 namespace Registrator.Module.BusinessObjects.Dictionaries
-{    /// <summary>
+{   
+    /// <summary>
     /// Виды специальностей (PRVS)
     /// </summary>
-    //[DefaultClassOptions]
+    [DefaultClassOptions]
     public class DoctorSpec : BaseObject
     {
         public DoctorSpec() { }
@@ -85,14 +89,13 @@ namespace Registrator.Module.BusinessObjects.Dictionaries
         /// </summary>
         /// <param name="updater">Пространство объектов ObjectSpace</param>
         /// <param name="xmlPath">Путь до файла классификатора</param>
-        public static void UpdateDbFromXml(DevExpress.ExpressApp.IObjectSpace objSpace, string xmlPath)
+        public static void UpdateDbFromXml(IObjectSpace objSpace, string xmlPath)
         {
             XDocument doc = XDocument.Load(xmlPath);
-
             foreach (XElement el in doc.Root.Elements("zap"))
             {
                 string id = el.Attribute("CODE").Value;
-                DoctorSpec obj = objSpace.FindObject<DoctorSpec>(DevExpress.Data.Filtering.CriteriaOperator.Parse("Code=?", id));
+                DoctorSpec obj = objSpace.FindObject<DoctorSpec>(CriteriaOperator.Parse("Code=?", id));
                 if (obj == null)
                 {
                     obj = objSpace.CreateObject<DoctorSpec>();
@@ -122,11 +125,8 @@ namespace Registrator.Module.BusinessObjects.Dictionaries
         [Association("SpecParent-SpecChildren"), DevExpress.Xpo.Aggregated]
         [Browsable(false)]
         public XPCollection<DoctorSpecTree> children 
-        { 
-            get
-            {
-                return GetCollection<DoctorSpecTree>("children");
-            }
+        {
+            get { return GetCollection<DoctorSpecTree>("children"); }
         }
         
         [XafDisplayName("Вложенные специальности")]
@@ -170,13 +170,10 @@ namespace Registrator.Module.BusinessObjects.Dictionaries
 
         public XPCollection<TerritorialUsluga> TerrUslugi
         {
-            get
-            {
-                return GetCollection<TerritorialUsluga>("TerrUslugi");
-            }
+            get { return GetCollection<TerritorialUsluga>("TerrUslugi"); }
         }
 
-        public static void GetTree(DevExpress.ExpressApp.IObjectSpace objectSpace, List<DoctorSpec> specs, ITreeNode parentNode)
+        public static void GetTree(IObjectSpace objectSpace, List<DoctorSpec> specs, ITreeNode parentNode)
         {
             var parent = parentNode as DoctorSpecTree;
             if (parent != null)
@@ -187,9 +184,7 @@ namespace Registrator.Module.BusinessObjects.Dictionaries
                     node.Code = spec.Code;
                     node.Name = spec.Name;
                     node.parent = parent;
-
                     parent.children.Add(node);
-
                     GetTree(objectSpace, specs, node);
                 }
             }
@@ -200,12 +195,10 @@ namespace Registrator.Module.BusinessObjects.Dictionaries
                     var firstLevelNode = objectSpace.CreateObject<DoctorSpecTree>();
                     firstLevelNode.Code = spec.Code;
                     firstLevelNode.Name = spec.Name;
-
                     GetTree(objectSpace, specs, firstLevelNode);
                 }
             }
         }
     }
-
 }
 

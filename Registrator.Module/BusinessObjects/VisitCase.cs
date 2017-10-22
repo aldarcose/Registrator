@@ -23,11 +23,14 @@ namespace Registrator.Module.BusinessObjects
     public class VisitCase : CommonCase
     {
         private MestoObsluzhivaniya _mesto;
+        private const int minCodeForResultat = 301;
+        private const int maxCodeForResultat = 315;
 
         public VisitCase(Session session)
             : base(session)
         {
         }
+
         public override void AfterConstruction()
         {
             base.AfterConstruction();
@@ -36,8 +39,6 @@ namespace Registrator.Module.BusinessObjects
 
         private void SetDefaultValues()
         {
-            
-            
             /*
              * Code = 29 - "За посещение в поликлинике"
              * Code = 30 - "За обращение (законченный случай) в поликлинике"
@@ -65,14 +66,13 @@ namespace Registrator.Module.BusinessObjects
                 this.DetProfil = Pacient.GetAge() >= 18 ? PriznakDetProfila.No : PriznakDetProfila.Yes;
 
                 // если в качестве пациента указан мать, то указывается вес. в посещении не используется (уточнить)
-                if (false)
-                    this.VesPriRozhdenii = 0;
+                //if (false)
+                //    this.VesPriRozhdenii = 0;
             }
 
             if (this.Doctor != null)
             {
                 this.DoctorSpec = Doctor.SpecialityTree;
-
                 this.Otdelenie = this.Doctor.Otdelenie;
 
                 if (DoctorSpec != null)
@@ -95,8 +95,7 @@ namespace Registrator.Module.BusinessObjects
             }
             
             // текущая версия классификатора специальностей.
-            this.VersionSpecClassifier="V015";
-
+            this.VersionSpecClassifier = "V015";
             this.StatusOplati = Oplata.NetResheniya;
         }
 
@@ -108,7 +107,7 @@ namespace Registrator.Module.BusinessObjects
         public CelPosescheniya Cel { get; set; }
 
         /// <summary>
-        /// Цель посещения
+        /// Место обслуживания
         /// </summary>
         [XafDisplayName("Место обслуживания")]
         [Browsable(false)]
@@ -126,20 +125,9 @@ namespace Registrator.Module.BusinessObjects
         {
             get
             {
-                // исключаем результаты диспансеризации (в посещениях не нужно)
-                int minCodeForResultat = 301;
-                int maxCodeForResultat = 315;
-                var codeList = new List<string>();
-                for (int i = minCodeForResultat; i<maxCodeForResultat+1;i++)
-                    codeList.Add(i.ToString());
-
+                List<string> codeList = Enumerable.Range(minCodeForResultat, maxCodeForResultat).Select(e => e.ToString()).ToList();
                 var criteriaOperators = new List<CriteriaOperator>();
-
-                //criteriaOperators.Add(base.ResultatCriteria);
-                
-                criteriaOperators.Add(
-                    new InOperator("Code", codeList)
-                    );
+                criteriaOperators.Add(new InOperator("Code", codeList));
                 
                 // если помощь оказывается вне ЛПУ, то также доступные результаты уровня 4
                 string notInLpuCode = "4";
@@ -157,12 +145,7 @@ namespace Registrator.Module.BusinessObjects
 
         public override System.Xml.Linq.XElement GetReestrElement()
         {
-            throw new NotImplementedException();
-
-            var cases = Pacient.Cases.ToList<AbstractCase>();
-
-            int index = cases.IndexOf((AbstractCase)this);
-
+            int index = Pacient.Cases.IndexOf(this);
             return GetReestrElement(index);
         }
 
@@ -291,11 +274,13 @@ namespace Registrator.Module.BusinessObjects
             return element;
         }
 
+        /// <summary>
+        /// Критерий диагнозов
+        /// </summary>
         public override CriteriaOperator DiagnoseCriteria
         {
             get
             {
-                // Фильтровать диагнозы
                 // Выводим все диагнозы
                 return CriteriaOperator.Parse("1=1");
             }

@@ -43,13 +43,7 @@ namespace Registrator.Module.BusinessObjects
             if (createdBy != null)
             {
                 // находим доктора с таким же Логином
-                var doctor = Session.FindObject<Doctor>(CriteriaOperator.Parse("UserName=?", createdBy.UserName));
-
-                if (doctor != null)
-                {
-                    this.Doctor = doctor;
-                }
-
+                Doctor = Session.FindObject<Doctor>(CriteriaOperator.Parse("UserName=?", createdBy.UserName));
             }
 
             this.DateIn = DateTime.Now;
@@ -88,8 +82,8 @@ namespace Registrator.Module.BusinessObjects
                 this.DetProfil = Pacient.GetAge() >= 18 ? PriznakDetProfila.No : PriznakDetProfila.Yes;
 
                 // если в качестве пациента указан мать, то указывается вес. в посещении не используется (уточнить)
-                if (false)
-                    this.VesPriRozhdenii = 0;
+                //if (false)
+                //    VesPriRozhdenii = 0;
             }
 
             if (this.Doctor != null)
@@ -163,8 +157,8 @@ namespace Registrator.Module.BusinessObjects
             {
                 // получаем все инстансы объекта КСГ
                 // используем след. критерий для получения всех инстансев
-                CriteriaOperator co = CriteriaOperator.Parse("1=1");
-                var KSGs = Session.GetObjects(Session.GetClassInfo<ClinicStatGroups>(), co, null, 0, false, false).Cast<ClinicStatGroups>().ToList();
+                CriteriaOperator criteria = CriteriaOperator.Parse("1=1");
+                var KSGs = new XPCollection<ClinicStatGroups>(Session, criteria).ToList();
                 return new InOperator("MKB", KSGs.Select(t => t.Diagnose.MKB));
             }
             set
@@ -186,12 +180,8 @@ namespace Registrator.Module.BusinessObjects
 
         public override System.Xml.Linq.XElement GetReestrElement()
         {
-            throw new NotImplementedException();
-
             var cases = Pacient.Cases.ToList<AbstractCase>();
-
             int index = cases.IndexOf((AbstractCase)this);
-
             return GetReestrElement(index);
         }
 

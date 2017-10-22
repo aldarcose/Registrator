@@ -86,13 +86,8 @@ namespace Registrator.Module.Win.Controllers
                 e.Criteria = CriteriaOperator.Or(list);
                 e.Handled = true;
             }
-            
         }
-        protected override void OnViewControlsCreated()
-        {
-            base.OnViewControlsCreated();
-            // Access and customize the target View control.
-        }
+
         protected override void OnDeactivated()
         {
             var filterController = Frame.GetController<FilterController>();
@@ -101,7 +96,6 @@ namespace Registrator.Module.Win.Controllers
                 filterController.CustomBuildCriteria -= filterController_CustomBuildCriteria;
             }
 
-            // Unsubscribe from previously subscribed events and release other references and resources.
             base.OnDeactivated();
         }
     }

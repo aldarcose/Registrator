@@ -24,37 +24,28 @@ namespace Registrator.Module.BusinessObjects
     [XafDisplayName("Пациент")]
     [DefaultProperty("FullName")]
     public class Pacient : DevExpress.Persistent.BaseImpl.BaseObject, IReestrTFoms
-    { // Inherit from a different class to provide a custom primary key, concurrency and deletion behavior, etc. (http://documentation.devexpress.com/#Xaf/CustomDocument3146).
-        public Pacient(Session session)
-            : base(session)
-        {
-        }
+    {
+        private Polis curPolis;
+
+        public Pacient(Session session) : base(session) { }
+
         public override void AfterConstruction()
         {
             base.AfterConstruction();
-            Document = new Document(Session);
-            Address = new Address(Session);
-            AddressFact = new Address(Session);
-            Disability = new DisablityData(Session) { Invalidnost = Invalidnost.Net };
             IsNewBorn = true;
-        }
-        protected override void OnLoaded()
-        {
-            base.OnLoaded();
-            this.Cases.Load();
         }
 
         public void PolisesCollectionChanged(object sender, XPCollectionChangedEventArgs e)
         {
             OnChanged("CurrentPolis");
-            OnChanged("IsInogorodniy");}
+            OnChanged("IsInogorodniy");
+        }
 
         public void CasesCollectionChanged(object sender, XPCollectionChangedEventArgs e)
         {
             OnChanged("VisitCases");
             OnChanged("HospitalCases");
             OnChanged("DispanserizaionCases");
-            
         }
 
         #region Признак детского профиля
@@ -98,29 +89,22 @@ namespace Registrator.Module.BusinessObjects
         /// </summary>
         [Size(100)]
         [XafDisplayName("Фамилия")]
-        [VisibleInDetailView(true)]
-        [VisibleInListView(true)]
-        [VisibleInLookupListView(true)]
         [RuleRequiredField(DefaultContexts.Save, ResultType = ValidationResultType.Warning)]
         public string LastName { get; set; }
+
         /// <summary>
         /// Имя
         /// </summary>
         [Size(100)]
         [XafDisplayName("Имя")]
-        [VisibleInDetailView(true)]
-        [VisibleInListView(true)]
-        [VisibleInLookupListView(true)]
         [RuleRequiredField(DefaultContexts.Save, ResultType = ValidationResultType.Warning)]
         public string FirstName { get; set; }
+        
         /// <summary>
         /// Отчество
         /// </summary>
         [Size(100)]
         [XafDisplayName("Отчество")]
-        [VisibleInDetailView(true)]
-        [VisibleInListView(true)]
-        [VisibleInLookupListView(true)]
         public string MiddleName { get; set; }
 
         /// <summary>
@@ -133,18 +117,13 @@ namespace Registrator.Module.BusinessObjects
         [VisibleInLookupListView(false)]
         public string FullName
         {
-            get
-            {
-                return string.Format("{0} {1} {2}", LastName, FirstName, MiddleName);
-            }
+            get { return string.Format("{0} {1} {2}", LastName, FirstName, MiddleName); }
         }
 
         /// <summary>
         /// Дата рождения
         /// </summary>
         [XafDisplayName("Дата рождения")]
-        [VisibleInDetailView(true)]
-        [VisibleInListView(true)]
         [VisibleInLookupListView(false)]
         [RuleRequiredField(DefaultContexts.Save, ResultType = ValidationResultType.Warning)]
         public DateTime? Birthdate { get; set; }
@@ -152,27 +131,29 @@ namespace Registrator.Module.BusinessObjects
         [NonPersistent]
         public Polis CurrentPolis
         {
-            get { return GetCurrentPolis(); }
+            get 
+            {
+                if (curPolis == null)
+                    curPolis = GetCurrentPolis();
+                return curPolis; 
+            }
         }
 
-        public Polis GetCurrentPolis()
+        private Polis GetCurrentPolis()
         {
-            var polis = Polises.FirstOrDefault(t => t.IsActive);
-            return polis;
+            return Polises.FirstOrDefault(t => t.IsActive);
         }
 
         [XafDisplayName("Иногородний")]
-        //PersistentAlias("Iif(IsNull(CurrentPolis), Null, CurrentPolis.IsFromAnotherRegion)")]
         [NonPersistent]
         public bool? IsInogorodniy
         {
             get
             {
-                var polis = GetCurrentPolis();
+                var polis = CurrentPolis;
                 if (polis == null)
                     return null;
                 return polis.IsFromAnotherRegion;
-                //return (bool?)EvaluateAlias("IsInogorodniy");
             }
         }
 
@@ -212,7 +193,6 @@ namespace Registrator.Module.BusinessObjects
         /// </summary>
         [DevExpress.Xpo.Aggregated]
         [XafDisplayName("Адрес проживания")]
-        [VisibleInDetailView(true)]
         [VisibleInListView(false)]
         [VisibleInLookupListView(false)]
         public Address AddressFact { get; set; }
@@ -225,7 +205,6 @@ namespace Registrator.Module.BusinessObjects
         [VisibleInDetailView(true)]
         [VisibleInListView(false)]
         [VisibleInLookupListView(false)]
-        
         public Document Document { get; set; }
 
         /// <summary>
@@ -251,8 +230,6 @@ namespace Registrator.Module.BusinessObjects
         [RuleRequiredField(DefaultContexts.Save, ResultType = ValidationResultType.Warning)]
         public MedOrg Prikreplenie { get; set; }
 
-        [VisibleInListView(false)]
-        [VisibleInLookupListView(false)]
         [NonPersistent]
         [Browsable(false)]
         private CriteriaOperator LPUCriteria
@@ -284,7 +261,6 @@ namespace Registrator.Module.BusinessObjects
         /// </summary>
         [Size(200)]
         [XafDisplayName("Место работы")]
-        [VisibleInDetailView(true)]
         [VisibleInListView(false)]
         [VisibleInLookupListView(false)]
         public string WorkPlace { get; set; }
@@ -294,7 +270,6 @@ namespace Registrator.Module.BusinessObjects
         /// </summary>
         [Size(200)]
         [XafDisplayName("Место учебы")]
-        [VisibleInDetailView(true)]
         [VisibleInListView(false)]
         [VisibleInLookupListView(false)]
         public string LearningPlace { get; set; }
@@ -304,24 +279,17 @@ namespace Registrator.Module.BusinessObjects
         /// </summary>
         [Size(100)]
         [XafDisplayName("Телефон")]
-        [VisibleInDetailView(true)]
-        [VisibleInListView(true)]
-        [VisibleInLookupListView(true)]
         public string PhoneNumber { get; set; }
 
         /// <summary>
         /// Участок
         /// </summary>
         [XafDisplayName("Участок")]
-        [VisibleInDetailView(true)]
-        [VisibleInListView(true)]
-        [VisibleInLookupListView(true)]
         public Uchastok Uchastok { get; set; }
         /// <summary>
         /// Категория граждан, к которой относится пациент
         /// </summary>
         [XafDisplayName("Категория")]
-        [VisibleInDetailView(true)]
         [VisibleInListView(false)]
         [VisibleInLookupListView(false)]
         [RuleRequiredField(DefaultContexts.Save, ResultType = ValidationResultType.Warning)]
@@ -330,7 +298,6 @@ namespace Registrator.Module.BusinessObjects
         /// Социальный статус пациента
         /// </summary>
         [XafDisplayName("Соц. статус")]
-        [VisibleInDetailView(true)]
         [VisibleInListView(false)]
         [VisibleInLookupListView(false)]
         [RuleRequiredField(DefaultContexts.Save, ResultType = ValidationResultType.Warning)]
@@ -363,11 +330,9 @@ namespace Registrator.Module.BusinessObjects
         [RuleRequiredField(DefaultContexts.Save, ResultType = ValidationResultType.Warning)]
         public XPCollection<Polis> Polises
         {
-            get
-            {
-                return GetCollection<Polis>("Polises");
-            }
+            get { return GetCollection<Polis>("Polises"); }
         }
+
         /*
         [DevExpress.Xpo.Aggregated, Association("Pacient_Sluch")]
         [XafDisplayName("Случаи")]
@@ -402,22 +367,12 @@ namespace Registrator.Module.BusinessObjects
             get
             {
                 // Получить все абстрактные случаи
-                var cases = Cases;
                 var list = new List<DispanserizaionCase>();
                 // найти те слуачи типы, которых возвращаемого значения
-                foreach (var myCase in cases)
-                {
-                    if (myCase is DispanserizaionCase)
-                        list.Add(myCase as DispanserizaionCase);
-                }
-
-                // отдать этот список
-                if (list.Count != 0)
-                    return list;
-
-                return null;
+                foreach (var dispCase in Cases.OfType<DispanserizaionCase>())
+                    list.Add(dispCase);
+                return list;
             }
-
         }
 
         [XafDisplayName("Госпитализации")]
@@ -427,20 +382,11 @@ namespace Registrator.Module.BusinessObjects
             get
             {
                 // Получить все абстрактные случаи
-                var cases = Cases;
                 var list = new List<HospitalCase>();
                 // найти те слуачи типы, которых возвращаемого значения
-                foreach (var myCase in cases)
-                {
-                    if (myCase is HospitalCase)
-                        list.Add(myCase as HospitalCase);
-                }
-
-                // отдать этот список
-                if (list.Count != 0)
-                    return list;
-
-                return null;
+                foreach (var hospitalCase in Cases.OfType<HospitalCase>())
+                    list.Add(hospitalCase);
+                return list;
             }
         }
 
@@ -451,20 +397,11 @@ namespace Registrator.Module.BusinessObjects
             get
             {
                 // Получить все абстрактные случаи
-                var cases = Cases;
                 var list = new List<VisitCase>();
                 // найти те слуачи типы, которых возвращаемого значения
-                foreach(var myCase in cases)
-                {
-                    if (myCase is VisitCase)
-                        list.Add(myCase as VisitCase);
-                }
-
-                // отдать этот список
-                if (list.Count != 0)
-                    return list;
-                
-                return null;
+                foreach(var visitCase in Cases.OfType<VisitCase>())
+                    list.Add(visitCase);
+                return list;
             }
         }
 

@@ -30,7 +30,7 @@ namespace Registrator.Module.BusinessObjects.Dictionaries
         [XafDisplayName("Комментарий")]
         public string Comment { get; set; }
 
-        [Browsable(false)][Association("Protocol-Medicaments")]
+        [Association("Protocol-Medicaments")]
         public CommonProtocol Protocol { get; set; }
     }
 }

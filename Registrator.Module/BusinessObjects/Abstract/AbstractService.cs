@@ -23,12 +23,15 @@ namespace Registrator.Module.BusinessObjects.Abstract
     public abstract class AbstractService : BaseObject
     {
         private Doctor _doctor;
+        private TerritorialUsluga _usluga;
+
         protected AbstractService(Session session) : base(session) { }
+
         public override void AfterConstruction()
         {
             base.AfterConstruction();
+            
             EditableProtocol = new EditableProtocol(Session);
-
             CommonProtocol = new CommonProtocol(Session);
 
             DateIn = DateTime.Now;
@@ -39,11 +42,8 @@ namespace Registrator.Module.BusinessObjects.Abstract
             {
                 // находим доктора с таким же Логином
                 var doctor = Session.FindObject<Doctor>(CriteriaOperator.Parse("UserName=?", createdBy.UserName));
-
                 if (doctor != null)
-                {
                     this.Doctor = doctor;
-                }
             }
         }
 
@@ -102,11 +102,9 @@ namespace Registrator.Module.BusinessObjects.Abstract
         /// </summary>
         [XafDisplayName("Специальность врача")]
         [Browsable(false)]
-        public DoctorSpecTree DoctorSpec {
-            get
-            {
-                return Doctor != null ? Doctor.SpecialityTree : null;
-            }
+        public DoctorSpecTree DoctorSpec 
+        {
+            get { return Doctor != null ? Doctor.SpecialityTree : null; }
         }
 
         /// <summary>
@@ -140,8 +138,6 @@ namespace Registrator.Module.BusinessObjects.Abstract
 
         #endregion
 
-        private TerritorialUsluga _usluga;
-
         /// <summary>
         /// Услуга
         /// Для реестра ТФОМС нужно только для общих случаев
@@ -157,22 +153,15 @@ namespace Registrator.Module.BusinessObjects.Abstract
             set
             {
                 SetPropertyValue("Usluga", ref _usluga, value);
-
-                if (IsLoading || IsDeleted)
+                
+                if (IsLoading || IsDeleted || value == null)
                     return;
 
-                if (value == null)
-                    return;
-
-                var protocolRecordTypes = Session.GetObjects(Session.GetClassInfo(typeof (ProtocolRecordType)),
-                    new ContainsOperator("ServicesFor",
-                        new BinaryOperator("Code", value.Code, BinaryOperatorType.Equal)), null, 0, 0, false, false)
-                    .Cast<ProtocolRecordType>()
-                    .ToList();
-
-                var records =
-                    protocolRecordTypes.Select(
-                        protocolRecordType => ProtocolRecord.GetProtocolRecord(Session, protocolRecordType)).ToList();
+                var criteria = new ContainsOperator("ServicesFor", new BinaryOperator("Code", value.Code, BinaryOperatorType.Equal));
+                IList<ProtocolRecordType> protocolRecordTypes = new XPCollection<ProtocolRecordType>(Session, criteria);
+                
+                var records = protocolRecordTypes.Select(protocolRecordType => 
+                    ProtocolRecord.GetProtocolRecord(Session, protocolRecordType));
 
                 if (records.Any())
                 {
@@ -210,10 +199,7 @@ namespace Registrator.Module.BusinessObjects.Abstract
             {
                 // если не указана специальность выводим все услуги
                 if (DoctorSpec == null)
-                {
                     return CriteriaOperator.Parse("true");
-                }
-
                 return new ContainsOperator("DoctorSpec", new BinaryOperator("Code", DoctorSpec.Code));
             }
             set
@@ -221,8 +207,6 @@ namespace Registrator.Module.BusinessObjects.Abstract
                 throw new NotImplementedException();
             }
         }
-
-        
     }
 
     /// <summary>
@@ -231,9 +215,9 @@ namespace Registrator.Module.BusinessObjects.Abstract
     public abstract class CommonService : AbstractService, IReestrTFoms
     {
         private CommonCase _case;
+        private MKBWithType _caseDiagnose;
 
-        public CommonService(Session session) : base(session)
-        {}
+        public CommonService(Session session) : base(session) { }
 
         public override void AfterConstruction()
         {
@@ -244,12 +228,8 @@ namespace Registrator.Module.BusinessObjects.Abstract
             {
                 // находим доктора с таким же Логином
                 var doctor = Session.FindObject<Doctor>(CriteriaOperator.Parse("UserName=?", createdBy.UserName));
-
                 if (doctor != null)
-                {
                     this.Doctor = doctor;
-                }
-
             }
 
             this.DateIn = DateTime.Now;
@@ -261,17 +241,12 @@ namespace Registrator.Module.BusinessObjects.Abstract
             this.KolUslug = 1;
             
             if (Case != null && Case.Pacient != null)
-            {
                 this.DetProfil = Case.Pacient.GetAge() >= 18 ? PriznakDetProfila.No : PriznakDetProfila.Yes;
-            }
 
             if (this.Doctor != null)
-            {
                 this.Otdelenie = this.Doctor.Otdelenie;
-
-                if (DoctorSpec != null)
-                    this.Profil = DoctorSpec.MedProfil;
-            }
+            if (DoctorSpec != null)
+                this.Profil = DoctorSpec.MedProfil;
 
             if (Case != null)
             {
@@ -374,10 +349,8 @@ namespace Registrator.Module.BusinessObjects.Abstract
         public double KolUslug { get; set; }
         #endregion
 
-
-
         #region Основной диагноз
-        private MKBWithType _caseDiagnose;
+        
         [NonPersistent]
         [ImmediatePostData]
         [XafDisplayName("Основной диагноз")]
@@ -419,8 +392,7 @@ namespace Registrator.Module.BusinessObjects.Abstract
             }
             set
             {
-                if (!IsMainService)
-                    return;
+                if (!IsMainService) return;
 
                 // если услуга основная
                 if (_caseDiagnose == null)
@@ -606,19 +578,16 @@ namespace Registrator.Module.BusinessObjects.Abstract
         [NonPersistent]
         public bool AutoOpen { get; set; }
 
-        // Возвращает ТРУ если случай, в которой создана услуга, - дневной стационар
+        // Возвращает Истина если случай, в которой создана услуга - дневной стационар
         [NonPersistent]
         [Browsable(false)]
         public bool ShowKolUslug
         {
             get
             {
-                if (Case == null)
-                    return false;
-
+                if (Case == null) return false;
                 if (Case.GetType().ToString().Contains("HospitalCase"))
                     return true;
-
                 return false;
             }
         }
@@ -627,12 +596,12 @@ namespace Registrator.Module.BusinessObjects.Abstract
         /// Случай, в рамках которого была оказана услуга
         /// </summary>
         [Association("CommonCase-CommonServices")]
-        public CommonCase Case// {get;set;}
+        public CommonCase Case
         {
             get { return _case; }
             set
             {
-                SetPropertyValue("Case", ref _case, (CommonCase)value);
+                SetPropertyValue("Case", ref _case, value);
             }
         }
 
@@ -643,10 +612,7 @@ namespace Registrator.Module.BusinessObjects.Abstract
         [ImmediatePostData]
         public XPCollection<MKBWithType> Diagnoses
         {
-            get
-            {
-                return GetCollection<MKBWithType>("Diagnoses");
-            }
+            get { return GetCollection<MKBWithType>("Diagnoses"); }
         }
 
         //интерфейс элемента реестра реализуется в конкретной услуге
@@ -662,10 +628,7 @@ namespace Registrator.Module.BusinessObjects.Abstract
     /// </summary>
     public abstract class DispService : AbstractService, IReestrTFoms
     {
-        public DispService(Session session) : base(session)
-        {
-            
-        }
+        public DispService(Session session) : base(session) { }
 
         public override void AfterConstruction()
         {
@@ -677,20 +640,13 @@ namespace Registrator.Module.BusinessObjects.Abstract
             this.EditableProtocolChanged += DispService_EditableProtocolChanged;
         }
 
-        protected override void OnLoaded()
-        {
-            base.OnLoaded();
-        }
-
         private void DispService_EditableProtocolChanged(object sender, EventArgs e)
         {
             if (Case != null)
             {
                 var pacient = Case.Pacient;
                 if (pacient != null)
-                {
                     EditableProtocol.ApplyPacientFilter(pacient, DateIn);
-                }
             }
         }
 
@@ -709,6 +665,7 @@ namespace Registrator.Module.BusinessObjects.Abstract
                 var medSestraCode = "219";
                 return CriteriaOperator.Parse("SpecialityTree.Code=?", medSestraCode);}
         }
+
         [XafDisplayName("Выявленные диагнозы до обследования")]
         [Association("DispService-MKBWithDispInfoBefore")]
         public XPCollection<MKBWithDispInfoBefore> DiagnosesBefore
@@ -734,5 +691,4 @@ namespace Registrator.Module.BusinessObjects.Abstract
         public abstract XElement GetReestrElement();
         public abstract XElement GetReestrElement(int zapNumber);
     }
-
 }

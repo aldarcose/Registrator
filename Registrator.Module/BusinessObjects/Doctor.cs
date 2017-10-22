@@ -17,6 +17,7 @@ using System.ComponentModel;
 using DevExpress.ExpressApp.Utils;
 using DevExpress.ExpressApp.Security.Strategy;
 using DevExpress.Data.Filtering;
+using DevExpress.Persistent.BaseImpl;
 
 namespace Registrator.Module.BusinessObjects
 {
@@ -25,11 +26,15 @@ namespace Registrator.Module.BusinessObjects
     /// </summary>
     [DefaultClassOptions]
     [DefaultProperty("FullName")]
-    public class Doctor : DevExpress.Persistent.BaseImpl.BaseObject, ISecurityUser, IAuthenticationStandardUser, IOperationPermissionProvider 
-    { // Inherit from a different class to provide a custom primary key, concurrency and deletion behavior, etc. (http://documentation.devexpress.com/#Xaf/CustomDocument3146).
-        public Doctor(Session session)
-            : base(session)
-        {
+    public class Doctor : BaseObject, ISecurityUser, IAuthenticationStandardUser, IOperationPermissionProvider 
+    {
+        private bool changePasswordOnFirstLogon;
+        private string userName = String.Empty;
+        private string storedPassword;
+        private bool isActive = true;
+
+        public Doctor(Session session) : base(session)
+        { 
         }
 
         /// <summary>
@@ -37,7 +42,6 @@ namespace Registrator.Module.BusinessObjects
         /// </summary>
         [Size(100)]
         [XafDisplayName("Фамилия")]
-        [VisibleInLookupListView(true)]
         public string LastName { get; set; }
 
         /// <summary>
@@ -45,7 +49,6 @@ namespace Registrator.Module.BusinessObjects
         /// </summary>
         [Size(100)]
         [XafDisplayName("Имя")]
-        [VisibleInLookupListView(true)]
         public string FirstName { get; set; }
 
         /// <summary>
@@ -53,7 +56,6 @@ namespace Registrator.Module.BusinessObjects
         /// </summary>
         [Size(100)]
         [XafDisplayName("Отчество")]
-        [VisibleInLookupListView(true)]
         public string MiddleName { get; set; }
 
         /// <summary>
@@ -127,11 +129,9 @@ namespace Registrator.Module.BusinessObjects
         {
             get
             {
-                
                 if (SpecialityTree == null) return null;
                 return SpecialityTree.Code;
             }
-
         }
 
         /// <summary>
@@ -153,23 +153,12 @@ namespace Registrator.Module.BusinessObjects
                 return GetCollection<Uchastok>("Uchastki");
             }
         }
-        /*
-        /// <summary>
-        /// Услуги, окаываемые врачом
-        /// </summary>
-        [XafDisplayName("Оказываемые услуги")]
-        public List<DoctorUslugi> Uslugi {get;set;}*/
-
+        
+        /// <inheritdoc/>
         public override string ToString()
         {
             return this.FullName;
         }
-        /*
-        [PersistentAlias("FullName")]
-        public string Text
-        {
-            get { return (string)EvaluateAlias("Text"); }
-        }*/
 
         // пример записи из XML
         // <ROW fio="Баирова&#160;Л.В." dan_id="167" fam="Баирова" nam="Людмила" mid="Викторовна" date_born="26.08.1981" sex="ж" full_doctor_id="348" users_id="348" norma="30.12.1899&#160;0:15:00" stavka="1" inner_doctor_code="348" federal_code="348" sp_otdel_id="101" sp_spec_doctor_id="176" spec_doctor="Терапевты-1" sp_lpu_id="2301001" full_fio="348&#160;Баирова&#160;Л.В.&#160;(Терапевты-1)" full_name="348&#160;Баирова&#160;Л.В.&#160;(Терапевты-1)" spec_name="Баирова&#160;Л.В.&#160;(Терапевты-1)" expiration_date="23.02.2025" employee_type="0" dolg_name="Врач-терапевт&#160;участковый" otdel_fio="Баирова&#160;Л.В.&#160;(Теpапия&#160;1)" dolg_fio="Баирова&#160;Л.В.&#160;(Врач-терапевт&#160;участковый)" blist_dolg="ТЕРАПЕВТ" can_have_schedule="1"/>
@@ -232,44 +221,32 @@ namespace Registrator.Module.BusinessObjects
             CustomMessageTemplate = "An active employee must have at least one role assigned")]
         public XPCollection<DoctorRole> DoctorRoles
         {
-            get
-            { return GetCollection<DoctorRole>("DoctorRoles"); }
+            get { return GetCollection<DoctorRole>("DoctorRoles"); }
         }
+
         #region Шаблоны
         [XafDisplayName("Анамнез")]
         public IList<AnamnezTemplate> AnamnezTemplates
         {
-            get
-            {
-                return TextTemplates.OfType<AnamnezTemplate>().ToList();
-            }
+            get { return TextTemplates.OfType<AnamnezTemplate>().ToList(); }
         }
 
         [XafDisplayName("Жалобы")]
         public IList<ComplainTemplate> ComplainTemplates
         {
-            get
-            {
-                return TextTemplates.OfType<ComplainTemplate>().ToList();
-            }
+            get { return TextTemplates.OfType<ComplainTemplate>().ToList(); }
         }
 
         [XafDisplayName("Рекомендации")]
         public IList<RecomendTemplate> RecomendTemplates
         {
-            get
-            {
-                return TextTemplates.OfType<RecomendTemplate>().ToList();
-            }
+            get { return TextTemplates.OfType<RecomendTemplate>().ToList(); }
         }
 
         [XafDisplayName("Объективный статус терапевта")]
         public IList<ObjStatusTerTemplate> ObjStatusTerTemplates
         {
-            get
-            {
-                return TextTemplates.OfType<ObjStatusTerTemplate>().ToList();
-            }
+            get { return TextTemplates.OfType<ObjStatusTerTemplate>().ToList(); }
         }
 
         [Association("Doctor-TextTemplates")]
@@ -287,21 +264,17 @@ namespace Registrator.Module.BusinessObjects
                 if (textTemplate.GetType() == typeToDelete)
                     listToDelete.Add(textTemplate);
             }
-            Session.Delete(listToDelete);
 
+            Session.Delete(listToDelete);
             Session.CommitTransaction();
         }
 
         public void CreateTemplates(string text, Type typeToCreate)
         {
             var textValues = text.Split(new string[] {"\n"}, StringSplitOptions.RemoveEmptyEntries);
-
             for (int i = 0; i < textValues.Count(); i++)
             {
-
                 if (textValues[i].Trim().Length == 0) continue;
-
-
                 if (textValues[i].StartsWith("\t") == false)
                 {
                     var template = GenTemplate(0, i, textValues, typeToCreate);
@@ -316,8 +289,6 @@ namespace Registrator.Module.BusinessObjects
             OnChanged("ComplainTemplates");
             OnChanged("RecomendTemplates");
             OnChanged("ObjStatusTerTemplates");
-
-            //
             Session.CommitTransaction();
         }
 
@@ -360,25 +331,25 @@ namespace Registrator.Module.BusinessObjects
         #endregion
 
         #region ISecurityUser Members
-        private bool isActive = true;
+        
         public bool IsActive
         {
             get { return isActive; }
             set { SetPropertyValue("IsActive", ref isActive, value); }
         }
-        private string userName = String.Empty;
+        
         [RuleRequiredField("DoctorUserNameRequired", DefaultContexts.Save)]
-        [RuleUniqueValue("DoctorUserNameIsUnique", DefaultContexts.Save,
+        [RuleUniqueValue("DoctorUserNameIsUnique", DefaultContexts.Save, 
             "Такой логин уже зарегистрирован в системе. Выберите, пожалуйста, другой.")]
         public string UserName
         {
             get { return userName; }
             set { SetPropertyValue("UserName", ref userName, value); }
         }
+
         #endregion
 
         #region IAuthenticationStandardUser Members
-        private bool changePasswordOnFirstLogon;
         public bool ChangePasswordOnFirstLogon
         {
             get { return changePasswordOnFirstLogon; }
@@ -387,17 +358,19 @@ namespace Registrator.Module.BusinessObjects
                 SetPropertyValue("ChangePasswordOnFirstLogon", ref changePasswordOnFirstLogon, value);
             }
         }
-        private string storedPassword;
+        
         [Browsable(false), Size(SizeAttribute.Unlimited), Persistent, SecurityBrowsable]
         protected string StoredPassword
         {
             get { return storedPassword; }
             set { storedPassword = value; }
         }
+
         public bool ComparePassword(string password)
         {
             return SecurityUserBase.ComparePassword(this.storedPassword, password);
         }
+
         public void SetPassword(string password)
         {
             this.storedPassword = new PasswordCryptographer().GenerateSaltedPassword(password);
@@ -410,29 +383,23 @@ namespace Registrator.Module.BusinessObjects
         {
             return new IOperationPermission[0];
         }
+
         IEnumerable<IOperationPermissionProvider> IOperationPermissionProvider.GetChildren()
         {
             return new EnumerableConverter<IOperationPermissionProvider, DoctorRole>(DoctorRoles);
         }
         #endregion
-
-        
     }
     
     [ImageName("BO_Role")]
     public class DoctorRole : SecuritySystemRoleBase
     {
-        public DoctorRole(Session session)
-            : base(session)
-        {
-        }
+        public DoctorRole(Session session) : base(session) { }
+
         [Association("Doctors-DoctorRoles")]
         public XPCollection<Doctor> Doctors
         {
-            get
-            {
-                return GetCollection<Doctor>("Doctors");
-            }
+            get { return GetCollection<Doctor>("Doctors"); }
         }
     }
 }

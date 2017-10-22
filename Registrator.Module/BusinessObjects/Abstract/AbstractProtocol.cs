@@ -5,23 +5,9 @@ using DevExpress.Persistent.BaseImpl;
 
 namespace Registrator.Module.BusinessObjects.Abstract
 {
-    public abstract class AbstractProtocol : BaseObject{
-        public AbstractProtocol(Session session)
-            : base(session)
-        {
-        }
-        public override void AfterConstruction()
-        {
-            base.AfterConstruction();
-            // Place your initialization code here (http://documentation.devexpress.com/#Xaf/CustomDocument2834).
-
-            //this.DoctorCreated = CurrentDoctor; // установить при открытии в контроллере
-        }
-
-        protected override void OnLoaded()
-        {
-            base.OnLoaded();
-        }
+    public abstract class AbstractProtocol : BaseObject
+    {
+        public AbstractProtocol(Session session) : base(session) { }
 
         [Browsable(false)]
         public Doctor DoctorCreated { get; set; }

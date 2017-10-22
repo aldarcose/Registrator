@@ -9,18 +9,13 @@ namespace Registrator.Module.Win.Controllers
     // For more typical usage scenarios, be sure to check out http://documentation.devexpress.com/#Xaf/clsDevExpressExpressAppViewControllertopic.
     public partial class ProtocolRecordTypeViewController : ViewController
     {
+        private PropertyEditor propertyEditor = null;
+
         public ProtocolRecordTypeViewController()
         {
             InitializeComponent();
-            // Target required Views (via the TargetXXX properties) and create their Actions.
-        }
-        protected override void OnActivated()
-        {
-            base.OnActivated();
-            // Perform various tasks depending on the target View.
         }
 
-        private PropertyEditor propertyEditor = null;
         protected override void OnViewControlsCreated()
         {
             base.OnViewControlsCreated();
@@ -40,7 +35,7 @@ namespace Registrator.Module.Win.Controllers
         {
             var enumEditor = sender as EnumPropertyEditor;
             var value = (TimeTypes)enumEditor.Control.SelectedIndex;
-            if (value != null)
+            if (value >= 0)
             {
                 SetPropertyEditorsEditable(value);
             }
@@ -93,10 +88,7 @@ namespace Registrator.Module.Win.Controllers
         protected override void OnDeactivated()
         {
             if (propertyEditor != null)
-            {
                 propertyEditor.ControlValueChanged -= propertyEditor_ControlValueChanged;
-            }
-            // Unsubscribe from previously subscribed events and release other references and resources.
             base.OnDeactivated();
         }
 

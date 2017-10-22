@@ -27,7 +27,8 @@ namespace Registrator.Module.BusinessObjects.Abstract
     public abstract class AbstractCase : BaseObject, IWorkflowCaseStateProvider
     {
         public AbstractCase(Session session) : base (session)
-        { }
+        { 
+        }
 
         public override void AfterConstruction()
         {
@@ -51,7 +52,7 @@ namespace Registrator.Module.BusinessObjects.Abstract
         /// </summary>
         [XafDisplayName("Идентификатор случая для пациента (порядковый номер)")]
         [Browsable(false)]
-        public int Id {get;set;}
+        public int Id { get; set; }
 
 		/// <summary>
         /// Обяательное поле N(4)
@@ -183,13 +184,15 @@ namespace Registrator.Module.BusinessObjects.Abstract
             }
         }
 
-        
+        #region IStateMachineProvider
         public IList<IStateMachine> GetStateMachines()
         {
             List<IStateMachine> result = new List<IStateMachine>();
             result.Add(new WorkflowCaseStatusStateMachine(XPObjectSpace.FindObjectSpaceByObject(this)));
             return result;
         }
+        #endregion
+
         [Browsable(false)]
         public WorkflowCaseStatus WorkflowCaseStatus { get; set; }
     }
@@ -204,7 +207,8 @@ namespace Registrator.Module.BusinessObjects.Abstract
 
         public CommonCase(Session session)
             : base(session)
-        { }
+        { 
+        }
 
         public override void AfterConstruction()
         {
@@ -229,22 +233,17 @@ namespace Registrator.Module.BusinessObjects.Abstract
             }
         }
 
+        /*
         protected override void OnLoaded()
         {
             base.OnLoaded();
-
-            if (this.MainDiagnose == null)
-            {
-                this.MainDiagnose = new MKBWithType(Session);
-            }
-
-            if (this.PreDiagnose == null)
-            {
-                this.PreDiagnose = new MKBWithType(Session);
-            }
-
-            this.Services.Load();
+            if (MainDiagnose == null)
+                MainDiagnose = new MKBWithType(Session);
+            if (PreDiagnose == null)
+                PreDiagnose = new MKBWithType(Session);
+            Services.Load();
         }
+        */
 
         #region Мин. поля для реестра ТФОМС
 
@@ -265,8 +264,6 @@ namespace Registrator.Module.BusinessObjects.Abstract
         [LookupEditorMode(LookupEditorMode.AllItemsWithSearch)]
         public MedOrg FromLPU { get; set; }
 
-        [VisibleInListView(false)]
-        [VisibleInLookupListView(false)]
         [NonPersistent]
         [Browsable(false)]
         private CriteriaOperator LPUCriteria
@@ -301,7 +298,6 @@ namespace Registrator.Module.BusinessObjects.Abstract
         /// Признак детского профиля (0-нет, 1-да)
         /// Заполняется в зависимости от профиля оказанной медицинской помощи
         /// </summary>
-
         [Browsable(false)]
         public PriznakDetProfila DetProfil { get; set; }
 
@@ -319,18 +315,13 @@ namespace Registrator.Module.BusinessObjects.Abstract
         /// Диагноз сопутствующего заболевания T(10)
         /// </summary>
         [XafDisplayName("Диагнозы сопутствующих заболеваний")]
-        public IList<MKB10> SoputsDiagnoses// {get;set;}
+        public IList<MKB10> SoputsDiagnoses
         {
             get
             {
-                if (Services == null)
-                    return null;
-
                 //выбрать из диагнозов сопутствующие диагнозы
                 var list = new List<MKB10>();
-
                 // выбираем диагнозы
-
                 return list;
             }
             set
@@ -344,18 +335,13 @@ namespace Registrator.Module.BusinessObjects.Abstract
         /// Диагноз осложнения заболеваия T(10)
         /// </summary>
         [XafDisplayName("Диагнозы осложнения заболевания")]
-        public IList<MKB10> OslozhDiagnoses// {get;set;} 
+        public IList<MKB10> OslozhDiagnoses
         {
             get
             {
-                if (Services == null)
-                    return null;
-
                 //выбрать из диагнозов диагнозы осложнения
                 var list = new List<MKB10>();
-                
                 // выбираем диагнозы
-
                 return list;
             }
             set
@@ -367,17 +353,13 @@ namespace Registrator.Module.BusinessObjects.Abstract
         /// <summary>
         /// Диагнозы всех услуг
         /// </summary>
-
         public IList<MKBWithType> Diagnoses
         {
             get
             {
                 var list = new List<MKBWithType>();
                 foreach (var commonService in Services)
-                {
-                    list.AddRange(commonService.Diagnoses.ToList());
-                }
-
+                    list.AddRange(commonService.Diagnoses);
                 return list;
             }
         }
@@ -385,8 +367,10 @@ namespace Registrator.Module.BusinessObjects.Abstract
         /// <summary>
         /// Условно-обязательный множ. N(4)
         /// Вес при рождении
-        /// Указывается при оказании медицинской помощи недоношенным и маловесным детям. Поле заполняется, если в качестве пациента указана мать
         /// </summary>
+        /// <remarks>
+        /// Указывается при оказании медицинской помощи недоношенным и маловесным детям. Поле заполняется, если в качестве пациента указана мать
+        /// </remarks>
         [XafDisplayName("Вес при рождении")]
         [VisibleInListView(false)]
         [VisibleInLookupListView(false)]
@@ -436,8 +420,6 @@ namespace Registrator.Module.BusinessObjects.Abstract
         [LookupEditorMode(LookupEditorMode.AllItemsWithSearch)]
         public IshodZabolevaniya Ishod { get; set; }
 
-        [VisibleInListView(false)]
-        [VisibleInLookupListView(false)]
         [NonPersistent]
         [Browsable(false)]
         public virtual CriteriaOperator ResultatCriteria
@@ -452,8 +434,6 @@ namespace Registrator.Module.BusinessObjects.Abstract
             }
         }
 
-        [VisibleInListView(false)]
-        [VisibleInLookupListView(false)]
         [NonPersistent]
         [Browsable(false)]
         private CriteriaOperator IshodCriteria
@@ -461,9 +441,7 @@ namespace Registrator.Module.BusinessObjects.Abstract
             get
             {
                 if (UsloviyaPomoshi == null)
-                {
                     return CriteriaOperator.Parse("1!=1");
-                }
                 return CriteriaOperator.Parse("DL_USLOV=?", UsloviyaPomoshi.Code.ToString());
             }
         }
@@ -522,12 +500,9 @@ namespace Registrator.Module.BusinessObjects.Abstract
         {
             get
             {
-                if (Services == null)
-                    return 0;
                 decimal sum = 0;
                 foreach (var service in Services)
                     sum += service.Sum;
-
                 return sum;
             }
             set

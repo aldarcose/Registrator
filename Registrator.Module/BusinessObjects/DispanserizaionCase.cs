@@ -17,7 +17,7 @@ namespace Registrator.Module.BusinessObjects
     [DefaultClassOptions]
     [XafDisplayName("Диспансеризации")]
     public class DispanserizaionCase : DispCase, IReestrFederalPortalChildren
-    { // Inherit from a different class to provide a custom primary key, concurrency and deletion behavior, etc. (http://documentation.devexpress.com/#Xaf/CustomDocument3146).
+    { 
         public DispanserizaionCase(Session session)
             : base(session)
         {
@@ -26,7 +26,6 @@ namespace Registrator.Module.BusinessObjects
         public override void AfterConstruction()
         {
             base.AfterConstruction();
-            // Place your initialization code here (http://documentation.devexpress.com/#Xaf/CustomDocument2834).
             Rehab = new Rehabilitation(Session);
         }
 
@@ -54,10 +53,8 @@ namespace Registrator.Module.BusinessObjects
         public void AddDefaultServices(Pacient pacient, DateTime? date = null)
         {
             // получаем список данных по услугам для текущего типа диспансеризации
-            var servicesToAddInfo =
-                Session.GetObjects(Session.GetClassInfo(typeof (DispsServiceList)), CriteriaOperator.Parse("Type=?", Type),
-                    null, 0, 0, false, false).Cast<DispsServiceList>().ToList();
-
+            CriteriaOperator criteria = CriteriaOperator.Parse("Type=?", Type);
+            var servicesToAddInfo = new XPCollection<DispsServiceList>(Session, criteria).ToList();
             if (servicesToAddInfo.Count > 0)
             {
                 // находим среди них тот, который удовлетворяем заданным критериям
@@ -87,12 +84,6 @@ namespace Registrator.Module.BusinessObjects
             }
         }
 
-
-        public void LoadServices()
-        {
-            
-        }
-
         public override bool IsValidForReestr()
         {
             throw new NotImplementedException();
@@ -120,7 +111,6 @@ namespace Registrator.Module.BusinessObjects
             }
         }
 
-
         public XElement GetCardBlock()
         {
             var protocols = new List<ProtocolRecord>();
@@ -135,7 +125,7 @@ namespace Registrator.Module.BusinessObjects
 
             var pediatrService = this.Services.First(t => t.Usluga.Code.Equals("161014"));
 
-                /* idType - вид карты обследования
+             /* idType - вид карты обследования
              * Для детей-сирот:
              * 1 — карта диспансеризации
              * Для всех:
@@ -144,23 +134,18 @@ namespace Registrator.Module.BusinessObjects
              * 4 — периодический осмотр (при указании образовательного учреждения)
              */
 
-            bool isPacientOrphan = false;
-
             int idType = 1;
             switch (this.Type)
             {
                 case DispType.ProfOsmotrAdult:
                     // только дети
                     return null;
-                    break;
                 case DispType.DOGVN1:
                     // только дети
                     return null;
-                    break;
                 case DispType.DOGVN2:
                     // только дети
                     return null;
-                    break;
                 case DispType.ProfOsmotrChild:
                     idType = 2;
                     break;
@@ -173,19 +158,15 @@ namespace Registrator.Module.BusinessObjects
                 case DispType.DispStacionarChildOrphan1:
                     // пока сирот не трогаем
                     return null;
-                    break;
                 case DispType.DispStacionarChildOrphan12:
                     // пока сирот не трогаем
                     return null;
-                    break;
                 case DispType.DispChildOrphan1:
                     // пока сирот не трогаем
                     return null;
-                    break;
                 case DispType.DispChildOrphan12:
                     // пока сирот не трогаем
                     return null;
-                    break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }

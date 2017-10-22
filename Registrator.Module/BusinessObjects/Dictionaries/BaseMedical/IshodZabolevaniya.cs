@@ -7,8 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+
 namespace Registrator.Module.BusinessObjects.Dictionaries
-{    /// <summary>
+{   
+    /// <summary>
     /// Классификатор исходов заболевания (V012).
     /// </summary>
     [DefaultClassOptions] 
