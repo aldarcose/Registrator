@@ -23,6 +23,7 @@ using Address = Registrator.Module.BusinessObjects.Address;
 using ListView = DevExpress.ExpressApp.ListView;
 using Task = System.Threading.Tasks.Task;
 using Timer = System.Timers.Timer;
+using DevExpress.Persistent.Validation;
 
 namespace Registrator.Module.Win.Controllers
 {
@@ -186,41 +187,42 @@ namespace Registrator.Module.Win.Controllers
         {
             var listView = this.View as ListView;
 
-            var filterFields = e.PopupWindowViewCurrentObject as PacientFilterFields;
+            var filterFieldsParameters = e.PopupWindowViewCurrentObject as PacientFilterFieldsParameters;
+            Validator.RuleSet.Validate(ObjectSpace, filterFieldsParameters, "Action");
 
             if (listView != null)
             {
                 listView.CollectionSource.Criteria.Clear();
 
                 var fioCriteriaStringBuilder = new StringBuilder();
-                if (filterFields != null)
+                if (filterFieldsParameters != null)
                 {
                     bool needAnd = false;
-                    if (string.IsNullOrEmpty(filterFields.LastName) == false)
+                    if (!string.IsNullOrEmpty(filterFieldsParameters.LastName))
                     {
-                        fioCriteriaStringBuilder.AppendFormat("Lower(LastName) like '{0}%'", filterFields.LastName.ToLower());
+                        fioCriteriaStringBuilder.AppendFormat("Lower(LastName) like '{0}%'", filterFieldsParameters.LastName.ToLower());
                         needAnd = true;
                     }
 
-                    if (string.IsNullOrEmpty(filterFields.FirstName) == false)
+                    if (!string.IsNullOrEmpty(filterFieldsParameters.FirstName))
                     {
                         if (needAnd)
                             fioCriteriaStringBuilder.Append(" AND ");
-                        fioCriteriaStringBuilder.AppendFormat("Lower(FirstName) like '{0}%'", filterFields.FirstName.ToLower());
+                        fioCriteriaStringBuilder.AppendFormat("Lower(FirstName) like '{0}%'", filterFieldsParameters.FirstName.ToLower());
                         needAnd = true;
                     }
 
-                    if (string.IsNullOrEmpty(filterFields.MiddleName) == false)
+                    if (!string.IsNullOrEmpty(filterFieldsParameters.MiddleName))
                     {
                         if (needAnd)
                             fioCriteriaStringBuilder.Append(" AND ");
-                        fioCriteriaStringBuilder.AppendFormat("Lower(MiddleName) like '{0}%'", filterFields.MiddleName.ToLower());
+                        fioCriteriaStringBuilder.AppendFormat("Lower(MiddleName) like '{0}%'", filterFieldsParameters.MiddleName.ToLower());
                     }
 
                     listView.CollectionSource.Criteria.Add("FIOFilter",
                         CriteriaOperator.Parse(fioCriteriaStringBuilder.ToString()));
 
-                    var polisCriteriaString = string.Format("Number like '{0}%'", filterFields.PolisNum);
+                    var polisCriteriaString = string.Format("Number like '{0}%'", filterFieldsParameters.PolisNum);
 
                     listView.CollectionSource.Criteria.Add("PolisFilter",
                         new ContainsOperator("Polises",
@@ -231,7 +233,7 @@ namespace Registrator.Module.Win.Controllers
 
         private void pacientFilterAction_CustomizePopupWindowParams(object sender, CustomizePopupWindowParamsEventArgs e)
         {
-            e.View = Application.CreateDetailView(Application.CreateObjectSpace(), new PacientFilterFields());
+            e.View = Application.CreateDetailView(Application.CreateObjectSpace(), new PacientFilterFieldsParameters());
         }
 
         private void LoadNewSRZAction_Execute(object sender, SimpleActionExecuteEventArgs e)
@@ -1289,14 +1291,17 @@ namespace Registrator.Module.Win.Controllers
 
     [DomainComponent]
     [XafDisplayName("Поиск пациента")]
-    public class PacientFilterFields
+    [RuleCriteria("Iris.Jurist.Lawsuit.ImagesSumLength", "Action",
+        "not IsNullOrEmpty(LastName) or not IsNullOrEmpty(FirstName) or not IsNullOrEmpty(MiddleName) or not IsNullOrEmpty(PolisNum)",
+        "Необходимо указать хотя бы один параметр поиска", SkipNullOrEmptyValues = false)]
+    public class PacientFilterFieldsParameters
     {
         private static string lastName;
         private static string firstName;
         private static string middleName;
         private static string polisNum;
 
-        public PacientFilterFields()
+        public PacientFilterFieldsParameters()
         {
             LastName = LastName ?? string.Empty;
             FirstName = FirstName ?? string.Empty;
