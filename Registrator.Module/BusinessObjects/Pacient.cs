@@ -26,6 +26,7 @@ namespace Registrator.Module.BusinessObjects
     public class Pacient : DevExpress.Persistent.BaseImpl.BaseObject, IReestrTFoms
     {
         private Polis curPolis;
+        private int? age;
 
         public Pacient(Session session) : base(session) { }
 
@@ -153,7 +154,11 @@ namespace Registrator.Module.BusinessObjects
                 var polis = CurrentPolis;
                 if (polis == null)
                     return null;
-                return polis.IsFromAnotherRegion;
+
+                // Идет обращение к Kladr с последующей его загрузкой 
+                // Оптимизировать
+                return null;
+                //return polis.IsFromAnotherRegion;
             }
         }
 
@@ -177,25 +182,36 @@ namespace Registrator.Module.BusinessObjects
         [VisibleInLookupListView(false)]
         [RuleRequiredField(DefaultContexts.Save)]
         public Gender Gender { get; set; }
-
+        
         /// <summary>
         /// Адрес пациента
         /// </summary>
-        [DevExpress.Xpo.Aggregated]
+        [DevExpress.Xpo.Aggregated, ExpandObjectMembers(ExpandObjectMembers.Never)]
+        [Delayed(true)]
         [XafDisplayName("Адрес прописки")]
-        [VisibleInDetailView(true)]
+        [VisibleInDetailView(false)]
         [VisibleInListView(false)]
         [VisibleInLookupListView(false)]
-        public Address Address { get; set; }
+        public Address Address
+        {
+            get { return GetDelayedPropertyValue<Address>("Address"); }
+            set { SetDelayedPropertyValue<Address>("Address", value); } 
+        }
 
         /// <summary>
         /// Адрес пациента
         /// </summary>
-        [DevExpress.Xpo.Aggregated]
+        [DevExpress.Xpo.Aggregated, ExpandObjectMembers(ExpandObjectMembers.Never)]
+        [Delayed(true)]
         [XafDisplayName("Адрес проживания")]
+        [VisibleInDetailView(false)]
         [VisibleInListView(false)]
         [VisibleInLookupListView(false)]
-        public Address AddressFact { get; set; }
+        public Address AddressFact 
+        {
+            get { return GetDelayedPropertyValue<Address>("AddressFact"); }
+            set { SetDelayedPropertyValue<Address>("AddressFact", value); } 
+        } 
 
         /// <summary>
         /// Документ, удостоверяющий личность пациента
@@ -294,6 +310,7 @@ namespace Registrator.Module.BusinessObjects
         [VisibleInLookupListView(false)]
         [RuleRequiredField(DefaultContexts.Save, ResultType = ValidationResultType.Warning)]
         public Kategoriya CitizenCategory { get; set; }
+        
         /// <summary>
         /// Социальный статус пациента
         /// </summary>
@@ -302,20 +319,23 @@ namespace Registrator.Module.BusinessObjects
         [VisibleInLookupListView(false)]
         [RuleRequiredField(DefaultContexts.Save, ResultType = ValidationResultType.Warning)]
         public SocStatus SocStatus { get; set; }
-
+        
         /// <summary>
         /// Кол-во полных лет
         /// </summary>
         [XafDisplayName("Кол-во полных лет")]
-        [VisibleInListView(true)]
-        [NonPersistent]
         public int Age
         {
-            get { return GetAge(); }
+            get 
+            {
+                if (!age.HasValue) age = GetAge();
+                return age.Value; 
+            }
         }
 
         #region Инвалидность
-        /// <summary> Данные инвалидности
+        /// <summary> 
+        /// Данные инвалидности
         /// </summary>
         [XafDisplayName("Инвалидность")]
         [DevExpress.Xpo.Aggregated]
@@ -328,27 +348,18 @@ namespace Registrator.Module.BusinessObjects
         [DevExpress.Xpo.Aggregated, Association("Pacient_Polis")]
         [XafDisplayName("Полиса")]
         [RuleRequiredField(DefaultContexts.Save, ResultType = ValidationResultType.Warning)]
+        [Browsable(false)]
         public XPCollection<Polis> Polises
         {
             get { return GetCollection<Polis>("Polises"); }
         }
-
-        /*
-        [DevExpress.Xpo.Aggregated, Association("Pacient_Sluch")]
-        [XafDisplayName("Случаи")]
-        public XPCollection<Sluch> Sluchs
-        {
-            get
-            {
-                return GetCollection<Sluch>("Sluchs");
-            }
-        }*/
 
         /// <summary>
         /// Список дневных стационаров (госпитализаций)
         /// </summary>
         [XafDisplayName("Дневной стационар")]
         [DevExpress.Xpo.Aggregated, Association("Pacient_DnevnoyStacionar")]
+        [Browsable(false)]
         public XPCollection<DnevnoyStacionar> DnevnieStacionari
         {
             get
@@ -356,12 +367,12 @@ namespace Registrator.Module.BusinessObjects
                 return GetCollection<DnevnoyStacionar>("DnevnieStacionari");
             }
         }
-
+        
         /// <summary>
         /// Список случаев
         /// </summary>
         [XafDisplayName("Диспансеризации")]
-        [NonPersistent]
+        [Browsable(false)]
         public IList<DispanserizaionCase> DispanserizaionCases
         {
             get
@@ -376,7 +387,7 @@ namespace Registrator.Module.BusinessObjects
         }
 
         [XafDisplayName("Госпитализации")]
-        [NonPersistent]
+        [Browsable(false)]
         public IList<HospitalCase> HospitalCases
         {
             get
@@ -391,7 +402,7 @@ namespace Registrator.Module.BusinessObjects
         }
 
         [XafDisplayName("Посещения")]
-        [NonPersistent]
+        [Browsable(false)]
         public IList<VisitCase> VisitCases
         {
             get
@@ -404,12 +415,13 @@ namespace Registrator.Module.BusinessObjects
                 return list;
             }
         }
-
+        
         /// <summary>
         /// Список всех случаев
         /// </summary>
         [XafDisplayName("Все случаи")]
         [DevExpress.Xpo.Aggregated, Association("AbstractCase-Pacient")]
+        [Browsable(false)]
         public XPCollection<AbstractCase> Cases
         {
             get

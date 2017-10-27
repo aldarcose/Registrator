@@ -19,7 +19,9 @@ namespace Registrator.Module.BusinessObjects
     [DefaultClassOptions]
     public class Polis : BaseObject
     {
-private  Kladr filterby;
+        private bool isFromAnotherRegion;
+        private  Kladr filterby;
+
         public Polis() { }
         public Polis(Session session) : base(session) { }
 
@@ -58,53 +60,39 @@ private  Kladr filterby;
         /// </summary>
         [XafDisplayName("Страховая организация")]
         [DataSourceCriteriaProperty("ShowSMOCriteria")]
-        [LookupEditorMode(LookupEditorMode.AllItemsWithSearch)]
+        //[LookupEditorMode(LookupEditorMode.AllItemsWithSearch)]
         [RuleRequiredField(DefaultContexts.Save)]
         public StrahMedOrg SMO { get; set; }
 
-        [VisibleInListView(false)]
-        [VisibleInLookupListView(false)]
-        [NonPersistent]
         [Browsable(false)]
         private CriteriaOperator ShowSMOCriteria
         {
-            get
-            {
-                return CriteriaOperator.And(SMODateEndCriteria, SMORegionCriteria);
-            }
+            get { return CriteriaOperator.And(SMODateEndCriteria, SMORegionCriteria); }
         }
 
         /// <summary>
         /// Исключенные из реестра СМО
         /// </summary>
-        [VisibleInListView(false)]
-        [VisibleInLookupListView(false)]
-        [NonPersistent]
         [Browsable(false)]
         private CriteriaOperator SMODateEndCriteria
         {
-            get
-            {
-                return CriteriaOperator.Parse("D_End is null");
-            }
+            get { return CriteriaOperator.Parse("D_End is null"); }
         }
 
-        private bool _isFromAnotherRegion;
+        
         [Browsable(false)]
         public bool IsFromAnotherRegion
         {
             get
             {
-                _isFromAnotherRegion = SMO.TF_OKATO != Settings.RegionSettings.GetCurrentRegionOKATO(Session);
-                return _isFromAnotherRegion;
+                // Обращение к Kladr с полной его загрузкой. wtf!?
+                // _isFromAnotherRegion = SMO.TF_OKATO != Settings.RegionSettings.GetCurrentRegionOKATO(Session);
+                return isFromAnotherRegion;
             }
-            set { SetPropertyValue("IsFromAnotherRegion", ref _isFromAnotherRegion, value); }
+            set { SetPropertyValue("IsFromAnotherRegion", ref isFromAnotherRegion, value); }
         }
 
         #region Фильтрация по региону
-        [VisibleInListView(false)]
-        [VisibleInLookupListView(false)]
-        [NonPersistent]
         [Browsable(false)]
         private CriteriaOperator SMORegionCriteria
         {
@@ -112,9 +100,7 @@ private  Kladr filterby;
             {
                 // если не выбран фильтр, то показываем все СМО
                 if (FilterBy == null)
-                {
                     return CriteriaOperator.Parse("1=1");
-                }
 
                 var okato = FilterBy.CodeOkato;
                 // код ТФ ОКАТО - это 5 первых цифр ОКАТО
@@ -143,9 +129,6 @@ private  Kladr filterby;
             }
         }
 
-        [VisibleInListView(false)]
-        [VisibleInLookupListView(false)]
-        [NonPersistent]
         [Browsable(false)]
         private CriteriaOperator KladrLevelCriteria
         {

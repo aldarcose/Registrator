@@ -51,19 +51,11 @@ namespace Registrator.Module.Win.Controllers
             {
                 if (View.Id == "Pacient_DetailView")
                 {
+                    /*
                     _templateMain.Ribbon.SelectedPage = _templateMain.Ribbon.Pages[0];
                     var pacient = View.CurrentObject as Pacient;
                     if (pacient != null)
                     {
-                        // при открытии детального представления создаем объект с данными по инвалидности
-                        pacient.Disability = pacient.Disability ??
-                                     new DisablityData(
-                                         ((XPObjectSpace) View.ObjectSpace).Session);
-
-                        pacient.AddressFact = pacient.AddressFact ??
-                                     new Address(
-                                         ((XPObjectSpace)View.ObjectSpace).Session);
-
                         DisabilitySetView(false);
                     }
 
@@ -71,7 +63,7 @@ namespace Registrator.Module.Win.Controllers
                     if (disabilityEditor != null)
                     {
                         disabilityEditor.ControlValueChanged += propertyEditorDisability_ControlValueChanged;
-                    }
+                    }*/
                 }
 
                 if (View is ListView && View.Id == "Pacient_ListView")
@@ -81,6 +73,7 @@ namespace Registrator.Module.Win.Controllers
                 }
             }
 
+            /*
             var loggedDoctor = (Doctor)SecuritySystem.CurrentUser;
             var isAdmin = loggedDoctor.DoctorRoles.Any(t => t.IsAdministrative);
 
@@ -97,6 +90,7 @@ namespace Registrator.Module.Win.Controllers
                 LoadNewSRZAction.Active.SetItemValue("ReestrImport", false);
                 Frame.GetController<DeleteObjectsViewController>().Active.SetItemValue("AdminCanDelete", false);
             }
+            */
         }
 
         private void propertyEditorDisability_ControlValueChanged(object sender, EventArgs e)
@@ -137,12 +131,13 @@ namespace Registrator.Module.Win.Controllers
             var view = View as DetailView;
             if (view != null)
             {
+                /*
                 var pacient = view.CurrentObject as Pacient;
                 if (pacient != null)
                 {
                     pacient.Cases.CollectionChanged -= pacient.CasesCollectionChanged;
                     pacient.Polises.CollectionChanged -= pacient.PolisesCollectionChanged;
-                }
+                }*/
             }
             // Unsubscribe from previously subscribed events and release other references and resources.s
             base.OnDeactivated();
@@ -171,6 +166,7 @@ namespace Registrator.Module.Win.Controllers
             var view = View as DetailView;
             if (view != null)
             {
+                /*
                 var pacient = view.CurrentObject as Pacient;
                 if (pacient != null)
                 {
@@ -179,7 +175,7 @@ namespace Registrator.Module.Win.Controllers
 
                     // реагируем на изменения в полисах
                     pacient.Polises.CollectionChanged += pacient.PolisesCollectionChanged;
-                }
+                }*/
             }
         }
 
