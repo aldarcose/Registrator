@@ -146,7 +146,6 @@ namespace Registrator.Module.BusinessObjects
         }
 
         [XafDisplayName("Иногородний")]
-        [NonPersistent]
         public bool? IsInogorodniy
         {
             get
@@ -218,7 +217,6 @@ namespace Registrator.Module.BusinessObjects
         /// </summary>
         [DevExpress.Xpo.Aggregated]
         [XafDisplayName("Документ")]
-        [VisibleInDetailView(true)]
         [VisibleInListView(false)]
         [VisibleInLookupListView(false)]
         public Document Document { get; set; }
@@ -348,7 +346,6 @@ namespace Registrator.Module.BusinessObjects
         [DevExpress.Xpo.Aggregated, Association("Pacient_Polis")]
         [XafDisplayName("Полиса")]
         [RuleRequiredField(DefaultContexts.Save, ResultType = ValidationResultType.Warning)]
-        [Browsable(false)]
         public XPCollection<Polis> Polises
         {
             get { return GetCollection<Polis>("Polises"); }
@@ -359,7 +356,6 @@ namespace Registrator.Module.BusinessObjects
         /// </summary>
         [XafDisplayName("Дневной стационар")]
         [DevExpress.Xpo.Aggregated, Association("Pacient_DnevnoyStacionar")]
-        [Browsable(false)]
         public XPCollection<DnevnoyStacionar> DnevnieStacionari
         {
             get
@@ -372,7 +368,6 @@ namespace Registrator.Module.BusinessObjects
         /// Список случаев
         /// </summary>
         [XafDisplayName("Диспансеризации")]
-        [Browsable(false)]
         public IList<DispanserizaionCase> DispanserizaionCases
         {
             get
@@ -387,7 +382,6 @@ namespace Registrator.Module.BusinessObjects
         }
 
         [XafDisplayName("Госпитализации")]
-        [Browsable(false)]
         public IList<HospitalCase> HospitalCases
         {
             get
@@ -402,7 +396,6 @@ namespace Registrator.Module.BusinessObjects
         }
 
         [XafDisplayName("Посещения")]
-        [Browsable(false)]
         public IList<VisitCase> VisitCases
         {
             get

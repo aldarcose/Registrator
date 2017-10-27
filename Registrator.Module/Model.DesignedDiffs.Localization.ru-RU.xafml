@@ -6,7 +6,6 @@
         <Member Name="Address" Caption="Адрес" />
         <Member Name="Document" Caption="Документ" />
         <Member Name="Gender" Caption="Пол" />
-        <Member Name="Polises" Caption="Полисы" />
       </OwnMembers>
     </Class>
   </BOModel>
@@ -304,24 +303,6 @@
       </Layout>
     </DetailView>
     <DetailView Id="Pacient_DetailView">
-      <Items>
-        <PropertyEditor Id="Address.Build" Caption="Корпус" />
-        <PropertyEditor Id="Address.Flat" Caption="Квартира" />
-        <PropertyEditor Id="Address.House" Caption="Дом" />
-        <PropertyEditor Id="Address.Level1" Caption="Регион" />
-        <PropertyEditor Id="Address.Level2" Caption="Район" />
-        <PropertyEditor Id="Address.Level3" Caption="Город" />
-        <PropertyEditor Id="Address.Level4" Caption="Поселок" />
-        <PropertyEditor Id="Address.Street" Caption="Улица" />
-        <PropertyEditor Id="AddressFact.Build" Caption="Корпус" />
-        <PropertyEditor Id="AddressFact.Flat" Caption="Квартира" />
-        <PropertyEditor Id="AddressFact.House" Caption="Дом" />
-        <PropertyEditor Id="AddressFact.Level1" Caption="Регион" />
-        <PropertyEditor Id="AddressFact.Level2" Caption="Район" />
-        <PropertyEditor Id="AddressFact.Level3" Caption="Город" />
-        <PropertyEditor Id="AddressFact.Level4" Caption="Поселок" />
-        <PropertyEditor Id="AddressFact.Street" Caption="Улица" />
-      </Items>
       <Layout>
         <LayoutGroup Id="Main">
           <LayoutGroup Id="SimpleEditors">
@@ -340,16 +321,6 @@
                   </LayoutGroup>
                 </LayoutGroup>
                 <LayoutGroup Id="Disability" Caption="Инвалидность" />
-                <LayoutGroup Id="Address" Caption="Адрес">
-                  <TabbedGroup Id="@8a856325-2828-4bd5-a8fe-15be54b9a098">
-                    <LayoutGroup Id="Auto59fb0a6f-09e0-4f35-ac73-e9fb20994655" Caption="Прописки">
-                      <LayoutGroup Id="Autoaf50159f-3d64-47bf-bb31-529a9cbc12da" Caption="Autoaf50159f-3d64-47bf-bb31-529a9cbc12da(50)" />
-                    </LayoutGroup>
-                    <LayoutGroup Id="@7ecbf7c7-9ff3-4689-93a1-1b751bc2bf88" Caption="Проживания">
-                      <LayoutGroup Id="Auto927ee6ec-7ca3-425c-a98e-819af8e2f593" Caption="Auto927ee6ec-7ca3-425c-a98e-819af8e2f593(59)" />
-                    </LayoutGroup>
-                  </TabbedGroup>
-                </LayoutGroup>
                 <LayoutGroup Id="Document" Caption="Документ">
                   <LayoutGroup Id="Auto54b487f7-2d8a-45e8-bd85-6f17669c2e87" Caption="Auto54b487f7-2d8a-45e8-bd85-6f17669c2e87(36)">
                     <LayoutGroup Id="Autodd75d144-7d6a-4515-b3e8-0ce3e1a3b500" Caption="Autodd75d144-7d6a-4515-b3e8-0ce3e1a3b500(37)">
@@ -378,23 +349,9 @@
               <LayoutGroup Id="DnevnieStacionari" Caption="Дневной стационар" />
             </TabbedGroup>
           </LayoutGroup>
-          <TabbedGroup Id="Tabs">
-            <LayoutGroup Id="Sluchs" Caption="Случаи" />
-            <LayoutGroup Id="DnevnieStacionari" Caption="Дневной стационар" />
-          </TabbedGroup>
         </LayoutGroup>
       </Layout>
     </DetailView>
-    <ListView Id="Pacient_Polises_ListView">
-      <Columns>
-        <ColumnInfo Id="Pacient" Caption="Пациент" />
-        <ColumnInfo Id="PRZ" Caption="ПРЗ" />
-        <ColumnInfo Id="Type" Caption="Тип" />
-        <ColumnInfo Id="Number" Caption="Номер" />
-        <ColumnInfo Id="DateBegin" Caption="Дата начала" />
-        <ColumnInfo Id="DateEnd" Caption="Дата окончания" />
-      </Columns>
-    </ListView>
     <DetailView Id="Polis_DetailView" Caption="Полис">
       <Items>
         <PropertyEditor Id="DateBegin" Caption="Дата начала" />

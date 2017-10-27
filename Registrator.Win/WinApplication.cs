@@ -1,4 +1,5 @@
 using DevExpress.ExpressApp;
+using DevExpress.ExpressApp.Security;
 using DevExpress.ExpressApp.Win;
 using DevExpress.ExpressApp.Win.Templates.Ribbon;
 using DevExpress.ExpressApp.Xpo;
@@ -17,14 +18,34 @@ namespace Registrator.Win {
             // поле используем в кастомных формах
             Instance = this;
         }
+
         protected override void CreateDefaultObjectSpaceProvider(CreateCustomObjectSpaceProviderEventArgs args) {
             args.ObjectSpaceProvider = new XPObjectSpaceProvider(args.ConnectionString, args.Connection);
         }
+
         private void RegistratorWindowsFormsApplication_CustomizeLanguagesList(object sender, CustomizeLanguagesListEventArgs e) {
             string userLanguageName = System.Threading.Thread.CurrentThread.CurrentUICulture.Name;
             if(userLanguageName != "en-US" && e.Languages.IndexOf(userLanguageName) == -1) {
                 e.Languages.Add(userLanguageName);
             }
+        }
+
+        /// <inheritdoc/>
+        protected override void OnLoggingOn(LogonEventArgs args)
+        {
+            base.OnLoggingOn(args);
+
+            AuthenticationStandardLogonParameters logon = args.LogonParameters as AuthenticationStandardLogonParameters;
+            if (logon == null)
+                return;
+
+            // Пароль по умолчанию в режиме отладки
+#if DEBUG
+            if (String.IsNullOrEmpty(logon.Password))
+            {
+                logon.Password = logon.UserName + "123";
+            }
+#endif
         }
 
         protected override void OnCustomizeTemplate(DevExpress.ExpressApp.Templates.IFrameTemplate frameTemplate, string templateContextName)
@@ -36,6 +57,7 @@ namespace Registrator.Win {
             }
             base.OnCustomizeTemplate(frameTemplate, templateContextName);
         }
+
         private void RegistratorWindowsFormsApplication_DatabaseVersionMismatch(object sender, DevExpress.ExpressApp.DatabaseVersionMismatchEventArgs e) {
 #if EASYTEST
             e.Updater.Update();

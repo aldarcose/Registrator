@@ -365,7 +365,9 @@
     <EmbeddedResource Include="Controllers\TextTemplateViewController.resx">
       <DependentUpon>TextTemplateViewController.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Model.DesignedDiffs.xafml" />
+    <EmbeddedResource Include="Model.DesignedDiffs.xafml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Module.resx">
       <SubType>Designer</SubType>
       <DependentUpon>Module.cs</DependentUpon>
@@ -402,82 +404,6 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="DatabaseUpdate\xml\F005.xml" />
-    <None Include="UnusableNodes1.xml">
-      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="UnusableNodes2.xml">
-      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="UnusableNodes3.xml">
-      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="UnusableNodes4.xml">
-      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="UnusableNodes_ru-RU.xml">
-      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="UnusableNodes5.xml">
-      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="UnusableNodes6.xml">
-      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="UnusableNodes1_ru-RU.xml">
-      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="UnusableNodes2_ru-RU.xml">
-      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="UnusableNodes3_ru-RU.xml">
-      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="UnusableNodes4_ru-RU.xml">
-      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="UnusableNodes5_ru-RU.xml">
-      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="UnusableNodes6_ru-RU.xml">
-      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="UnusableNodes.xml">
-      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="UnusableNodes7.xml">
-      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="UnusableNodes8.xml">
-      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="UnusableNodes9.xml">
-      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="UnusableNodes10.xml">
-      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="UnusableNodes11.xml">
-      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
-      <SubType>Designer</SubType>
-    </None>
     <Content Include="Welcome.html" />
   </ItemGroup>
   <ItemGroup>
