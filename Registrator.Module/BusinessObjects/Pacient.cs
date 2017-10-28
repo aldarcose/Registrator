@@ -185,7 +185,7 @@ namespace Registrator.Module.BusinessObjects
         /// <summary>
         /// Адрес пациента
         /// </summary>
-        [DevExpress.Xpo.Aggregated, ExpandObjectMembers(ExpandObjectMembers.Never)]
+        [DevExpress.Xpo.Aggregated]
         [Delayed(true)]
         [XafDisplayName("Адрес прописки")]
         [VisibleInDetailView(false)]
@@ -200,7 +200,7 @@ namespace Registrator.Module.BusinessObjects
         /// <summary>
         /// Адрес пациента
         /// </summary>
-        [DevExpress.Xpo.Aggregated, ExpandObjectMembers(ExpandObjectMembers.Never)]
+        [DevExpress.Xpo.Aggregated]
         [Delayed(true)]
         [XafDisplayName("Адрес проживания")]
         [VisibleInDetailView(false)]
