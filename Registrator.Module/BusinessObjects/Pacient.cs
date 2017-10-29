@@ -183,10 +183,10 @@ namespace Registrator.Module.BusinessObjects
         public Gender Gender { get; set; }
         
         /// <summary>
-        /// Адрес пациента
+        /// Адрес прописки пациента
         /// </summary>
-        [DevExpress.Xpo.Aggregated]
         [Delayed(true)]
+        [DevExpress.Xpo.Aggregated, ExpandObjectMembers(ExpandObjectMembers.Never)]
         [XafDisplayName("Адрес прописки")]
         [VisibleInDetailView(false)]
         [VisibleInListView(false)]
@@ -198,10 +198,10 @@ namespace Registrator.Module.BusinessObjects
         }
 
         /// <summary>
-        /// Адрес пациента
+        /// Адрес проживания пациента
         /// </summary>
-        [DevExpress.Xpo.Aggregated]
         [Delayed(true)]
+        [DevExpress.Xpo.Aggregated, ExpandObjectMembers(ExpandObjectMembers.Never)]
         [XafDisplayName("Адрес проживания")]
         [VisibleInDetailView(false)]
         [VisibleInListView(false)]

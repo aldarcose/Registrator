@@ -2,6 +2,10 @@
 <Application>
   <Views>
     <DetailView Id="Pacient_DetailView">
+      <Items>
+        <ActionContainerViewItem Id="Registrator.Module.Win.Controllers.CopyAddressFromFactAction" Caption="Registrator.Module.Win.Controllers.CopyAddressFromFactAction(83)" />
+        <ActionContainerViewItem Id="Registrator.Module.Win.Controllers.CopyAddressToFactAction" Caption="Registrator.Module.Win.Controllers.CopyAddressToFactAction(84)" />
+      </Items>
       <Layout>
         <LayoutGroup Id="Main">
           <LayoutGroup Id="SimpleEditors">
@@ -20,16 +24,6 @@
                   </LayoutGroup>
                 </LayoutGroup>
                 <LayoutGroup Id="Disability" Caption="Инвалидность" />
-                <LayoutGroup Id="Address" Caption="Адрес">
-                  <TabbedGroup Id="@8a856325-2828-4bd5-a8fe-15be54b9a098">
-                    <LayoutGroup Id="Auto59fb0a6f-09e0-4f35-ac73-e9fb20994655" Caption="Прописки">
-                      <LayoutGroup Id="Autoaf50159f-3d64-47bf-bb31-529a9cbc12da" Caption="Autoaf50159f-3d64-47bf-bb31-529a9cbc12da(50)" />
-                    </LayoutGroup>
-                    <LayoutGroup Id="@7ecbf7c7-9ff3-4689-93a1-1b751bc2bf88" Caption="Проживания">
-                      <LayoutGroup Id="Auto927ee6ec-7ca3-425c-a98e-819af8e2f593" Caption="Auto927ee6ec-7ca3-425c-a98e-819af8e2f593(59)" />
-                    </LayoutGroup>
-                  </TabbedGroup>
-                </LayoutGroup>
                 <LayoutGroup Id="Document" Caption="Документ">
                   <LayoutGroup Id="Auto54b487f7-2d8a-45e8-bd85-6f17669c2e87" Caption="Auto54b487f7-2d8a-45e8-bd85-6f17669c2e87(36)">
                     <LayoutGroup Id="Autodd75d144-7d6a-4515-b3e8-0ce3e1a3b500" Caption="Autodd75d144-7d6a-4515-b3e8-0ce3e1a3b500(37)">
@@ -40,7 +34,13 @@
                     </LayoutGroup>
                   </LayoutGroup>
                 </LayoutGroup>
-                <LayoutGroup Id="Polises" Caption="Полисы" />
+                <LayoutGroup Id="Polises" Caption="Полиса" />
+                <LayoutGroup Id="Item2" Caption="Адреса">
+                  <LayoutGroup Id="Auto9bc7093d-d592-49ee-a816-8c38b1675529" Caption="Auto9bc7093d-d592-49ee-a816-8c38b1675529(53)" />
+                  <LayoutGroup Id="Auto1ed8e34a-c3fb-4d3b-825c-f5d4cdc346c9" Caption="Auto1ed8e34a-c3fb-4d3b-825c-f5d4cdc346c9(56)">
+                    <LayoutGroup Id="Auto989d857b-360a-43f5-b8f7-abff7bf4b9fc" Caption="Auto989d857b-360a-43f5-b8f7-abff7bf4b9fc(58)" />
+                  </LayoutGroup>
+                </LayoutGroup>
               </TabbedGroup>
             </LayoutGroup>
           </LayoutGroup>
@@ -50,6 +50,10 @@
               <LayoutGroup Id="DnevnieStacionari" Caption="Дневной стационар" />
             </TabbedGroup>
           </LayoutGroup>
+          <TabbedGroup Id="Tabs">
+            <LayoutGroup Id="DnevnieStacionari" Caption="Дневной стационар" />
+            <LayoutGroup Id="Polises" Caption="Полиса" />
+          </TabbedGroup>
         </LayoutGroup>
       </Layout>
     </DetailView>

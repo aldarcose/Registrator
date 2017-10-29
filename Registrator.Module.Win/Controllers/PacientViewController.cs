@@ -24,6 +24,7 @@ using ListView = DevExpress.ExpressApp.ListView;
 using Task = System.Threading.Tasks.Task;
 using Timer = System.Timers.Timer;
 using DevExpress.Persistent.Validation;
+using DevExpress.Persistent.Base;
 
 namespace Registrator.Module.Win.Controllers
 {
@@ -1065,11 +1066,14 @@ namespace Registrator.Module.Win.Controllers
             var dv = View as DetailView;
             if (dv != null)
             {
+                Cloner cloner = new Cloner();
                 var pacient = dv.CurrentObject as Pacient;
-                if (pacient != null)
+                if (pacient != null && pacient.Address != null)
                 {
-                    //pacient.Address = pacient.AddressFact;
-                    pacient.Address.Copy(pacient.AddressFact);
+                    if (pacient.AddressFact == null)
+                        throw new UserFriendlyException("Адрес проживания пуст");
+                    Address adNew = (Address)cloner.CloneTo(pacient.AddressFact, typeof(Address));
+                    pacient.Address = adNew;
                     ObjectSpace.SetModified(pacient);
                     dv.Refresh();
                 }
@@ -1081,11 +1085,14 @@ namespace Registrator.Module.Win.Controllers
             var dv = View as DetailView;
             if (dv != null)
             {
+                Cloner cloner = new Cloner();
                 var pacient = dv.CurrentObject as Pacient;
-                if (pacient != null)
+                if (pacient != null && pacient.AddressFact != null)
                 {
-                    //pacient.AddressFact = pacient.Address;
-                    pacient.AddressFact.Copy(pacient.Address);
+                    if (pacient.Address == null)
+                        throw new UserFriendlyException("Адрес прописки пуст");
+                    Address adNew = (Address)cloner.CloneTo(pacient.Address, typeof(Address));
+                    pacient.AddressFact = adNew;
                     ObjectSpace.SetModified(pacient);
                     dv.Refresh();
                 }

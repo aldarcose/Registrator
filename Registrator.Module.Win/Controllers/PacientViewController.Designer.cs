@@ -71,6 +71,7 @@ namespace Registrator.Module.Win.Controllers
             this.GetPacientPoliciesInfo.ConfirmationMessage = null;
             this.GetPacientPoliciesInfo.Id = "0b536aaf-1412-4f38-a4c9-e4d63e1fadf3";
             this.GetPacientPoliciesInfo.TargetObjectType = typeof(Registrator.Module.BusinessObjects.Pacient);
+            this.GetPacientPoliciesInfo.TargetViewNesting = DevExpress.ExpressApp.Nesting.Root;
             this.GetPacientPoliciesInfo.TargetViewType = DevExpress.ExpressApp.ViewType.DetailView;
             this.GetPacientPoliciesInfo.ToolTip = null;
             this.GetPacientPoliciesInfo.TypeOfView = typeof(DevExpress.ExpressApp.DetailView);
@@ -82,8 +83,9 @@ namespace Registrator.Module.Win.Controllers
             this.CopyAddressToFactAction.Category = "CopyAddressToFactCategory";
             this.CopyAddressToFactAction.ConfirmationMessage = "Вы собираетесь установить значения адреса прописки для адреса проживания.\r\nПродол" +
     "жить?";
-            this.CopyAddressToFactAction.Id = "e8fe09da-ffb1-4103-906f-423894010244";
+            this.CopyAddressToFactAction.Id = "Registrator.Module.Win.Controllers.CopyAddressToFactAction";
             this.CopyAddressToFactAction.TargetObjectType = typeof(Registrator.Module.BusinessObjects.Pacient);
+            this.CopyAddressToFactAction.TargetViewNesting = DevExpress.ExpressApp.Nesting.Root;
             this.CopyAddressToFactAction.TargetViewType = DevExpress.ExpressApp.ViewType.DetailView;
             this.CopyAddressToFactAction.ToolTip = null;
             this.CopyAddressToFactAction.TypeOfView = typeof(DevExpress.ExpressApp.DetailView);
@@ -95,7 +97,7 @@ namespace Registrator.Module.Win.Controllers
             this.CopyAddressFromFactAction.Category = "CopyAddressFromFactCategory";
             this.CopyAddressFromFactAction.ConfirmationMessage = "Вы собираетесь установить значения адреса проживания для адреса прописки.\r\nПродол" +
     "жить?";
-            this.CopyAddressFromFactAction.Id = "e2ab62c2-33c5-4c4d-965b-7a19c0e94afc";
+            this.CopyAddressFromFactAction.Id = "Registrator.Module.Win.Controllers.CopyAddressFromFactAction";
             this.CopyAddressFromFactAction.TargetObjectType = typeof(Registrator.Module.BusinessObjects.Pacient);
             this.CopyAddressFromFactAction.TargetViewType = DevExpress.ExpressApp.ViewType.DetailView;
             this.CopyAddressFromFactAction.ToolTip = null;
