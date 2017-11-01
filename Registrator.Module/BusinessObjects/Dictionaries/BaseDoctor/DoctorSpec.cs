@@ -167,7 +167,6 @@ namespace Registrator.Module.BusinessObjects.Dictionaries
         /// </summary>
         [XafDisplayName("Оказываемые специальностью услуги")]
         [Association("DoctorSpec-TerrServices")]
-
         public XPCollection<TerritorialUsluga> TerrUslugi
         {
             get { return GetCollection<TerritorialUsluga>("TerrUslugi"); }

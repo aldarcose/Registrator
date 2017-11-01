@@ -41,30 +41,23 @@ namespace Registrator.Module.Controllers
             }
 
             var detailView = View as DetailView;
-            if (detailView!=null)
+            if (detailView != null)
             {
                 var commonService = detailView.CurrentObject as CommonService;
-                if (commonService != null)
+                if (commonService == null) return;
+                
+                if (commonService.AutoOpen) commonService.AutoOpen = false;
+                if (commonService.Usluga == null && commonService.Case is VisitCase && 
+                    commonService.Case.Doctor != null && commonService.Case.Doctor.SpecialityTree != null)
                 {
-                    if (commonService.AutoOpen)
-                        commonService.AutoOpen = false;
-
-                    if (commonService.Usluga == null)
-                    {
-                        if (commonService.Case is VisitCase){
-                            if (commonService.Case.Doctor != null && commonService.Case.Doctor.SpecialityTree != null)
-                            {
-                                // устанавливаем услугу по умолчанию
-                                if (commonService.Case.Pacient.IsInogorodniy.HasValue &&
-                                    commonService.Case.Pacient.IsInogorodniy.Value)
-                                    commonService.Usluga = commonService.Case.Doctor.SpecialityTree.UslugaMUR;
-                                else
-                                    commonService.Usluga = ((VisitCase) commonService.Case).Mesto == MestoObsluzhivaniya.LPU
-                                        ? commonService.Case.Doctor.SpecialityTree.UslugaLPU
-                                        : commonService.Case.Doctor.SpecialityTree.UslugaNaDomy;
-                            }
-                        }
-                    }
+                    // устанавливаем услугу по умолчанию
+                    if (commonService.Case.Pacient.IsInogorodniy.HasValue &&
+                        commonService.Case.Pacient.IsInogorodniy.Value)
+                        commonService.Usluga = commonService.Case.Doctor.SpecialityTree.UslugaMUR;
+                    else
+                        commonService.Usluga = ((VisitCase)commonService.Case).Mesto == MestoObsluzhivaniya.LPU
+                            ? commonService.Case.Doctor.SpecialityTree.UslugaLPU
+                            : commonService.Case.Doctor.SpecialityTree.UslugaNaDomy;
                 }
             }
         }

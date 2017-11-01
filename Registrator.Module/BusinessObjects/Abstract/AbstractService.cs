@@ -100,7 +100,6 @@ namespace Registrator.Module.BusinessObjects.Abstract
         /// Обязательное поле N(9)
         /// Специальность врача, выполнившего услугу
         /// </summary>
-        [XafDisplayName("Специальность врача")]
         [Browsable(false)]
         public DoctorSpecTree DoctorSpec 
         {
@@ -289,7 +288,7 @@ namespace Registrator.Module.BusinessObjects.Abstract
         protected override void OnSaved()
         {
             base.OnSaved();
-            if (IsMainService)
+            if (IsMainService && _caseDiagnose != null)
             {
                 Case.MainDiagnose.Diagnose = _caseDiagnose.Diagnose;
                 Case.MainDiagnose.Type = _caseDiagnose.Type;

@@ -151,13 +151,11 @@ namespace Registrator.Module.BusinessObjects
             get
             {
                 var polis = CurrentPolis;
-                if (polis == null)
+                if (CurrentPolis == null)
                     return null;
 
-                // Идет обращение к Kladr с последующей его загрузкой 
-                // Оптимизировать
-                return null;
-                //return polis.IsFromAnotherRegion;
+                // Идет обращение к Kladr с последующей его загрузкой. Оптимизировать
+                return CurrentPolis.IsFromAnotherRegion;
             }
         }
 

@@ -107,24 +107,23 @@ namespace Registrator.Module.Controllers
             var listView = View as ListView;
             if (listView != null)
             {
-                var pacient = ((PropertyCollectionSource) listView.CollectionSource).MasterObject as Pacient;
-                
+                var pacient = ((PropertyCollectionSource)listView.CollectionSource).MasterObject as Pacient;
                 if (pacient != null)
                 {
                     // создаем ObjectSpace
                     var os = Application.CreateObjectSpace();
-
                     // создаем нужный объект в этом пространстве
                     var commonCase = os.CreateObject(commonCaseType);
-                    
                     // привязываем случай к пациенту
                     ((AbstractCase) commonCase).Pacient = os.GetObject(pacient);
-
                     if (fields != null)
                     {
-                        ((VisitCase) commonCase).Cel = fields.CelPosesch;
-                        ((VisitCase) commonCase).Mesto = fields.Mesto;
+                        ((VisitCase)commonCase).Cel = fields.CelPosesch;
+                        ((VisitCase)commonCase).Mesto = fields.Mesto;
                     }
+
+                    // Промежуточный коммит. GetObjectsNonReenterant workaround.
+                    os.CommitChanges();
 
                     // создаем детальный вид
                     ShowViewParameters svp = new ShowViewParameters();
