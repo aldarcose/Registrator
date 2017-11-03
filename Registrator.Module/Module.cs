@@ -20,22 +20,24 @@ using DevExpress.Persistent.Validation;
 using Registrator.Module.BusinessObjects;
 using Registrator.Module.BusinessRules;
 using Registrator.Module.Reports;
+using DevExpress.Utils;
+using System.Drawing;
 
-namespace Registrator.Module {
-    // For more typical usage scenarios, be sure to check out http://documentation.devexpress.com/#Xaf/clsDevExpressExpressAppModuleBasetopic.
-    public sealed partial class RegistratorModule : ModuleBase {
-        public RegistratorModule() {
+namespace Registrator.Module 
+{
+    public sealed partial class RegistratorModule : ModuleBase 
+    {
+        public RegistratorModule() 
+        {
             InitializeComponent();
         }
-        //public override IEnumerable<ModuleUpdater> GetModuleUpdaters(IObjectSpace objectSpace, Version versionFromDB) {
-        //    ModuleUpdater updater = new DatabaseUpdate.Updater(objectSpace, versionFromDB);
-        //    return new ModuleUpdater[] { updater };
-        //}
-        public override void Setup(XafApplication application) {
+
+        public override void Setup(XafApplication application) 
+        {
             base.Setup(application);
 
-            //ValidationRulesRegistrator.RegisterRule(moduleManager, typeof(PacientDocumentValueRule), typeof(IRuleBaseProperties));
-            // Manage various aspects of the application UI and behavior at the module level.
+            // Установка шрифтов
+            AppearanceObject.DefaultFont = new Font(FontFamily.GenericSansSerif, 10);
         }
 
         public override void Setup(ApplicationModulesManager moduleManager)

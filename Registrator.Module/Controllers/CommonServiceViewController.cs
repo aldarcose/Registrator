@@ -27,10 +27,8 @@ namespace Registrator.Module.Controllers
         protected override void OnActivated()
         {
             base.OnActivated();
-            // Perform various tasks depending on the target View.
 
             var listView = View as ListView;
-
             if (listView != null)
             {
                 var newController = Frame.GetController<DevExpress.ExpressApp.SystemModule.NewObjectViewController>();

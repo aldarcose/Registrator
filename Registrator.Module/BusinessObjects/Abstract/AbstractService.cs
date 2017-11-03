@@ -8,6 +8,7 @@ using DevExpress.ExpressApp.DC;
 using DevExpress.ExpressApp.Editors;
 using DevExpress.Persistent.Base;
 using DevExpress.Persistent.BaseImpl;
+using DevExpress.ExpressApp.Xpo;
 using DevExpress.Xpo;
 using Registrator.Module.BusinessObjects.Dictionaries;
 using Registrator.Module.BusinessObjects.Dictionaries.BaseMedical;
@@ -214,7 +215,22 @@ namespace Registrator.Module.BusinessObjects.Abstract
     public abstract class CommonService : AbstractService, IReestrTFoms
     {
         private CommonCase _case;
-        private MKBWithType _caseDiagnose;
+        // Первичный диагноз
+        private MKB10 preDiagnose;
+        // Первичный диагноз выявлен впервые
+        private bool preDiagnoseIsFirstTime;
+        // Характер первичного диагноза
+        private KharakterDiagnoza preDiagnoseCharacter;
+        // Стадия первичного диагноза
+        private StadiaDiagnoza preDiagnoseStadia;
+        // Основной диагноз
+        private MKB10 mainDiagnose;
+        // Основной диагноз впервые выявлен
+        private bool mainDiagnoseIsFirstTime;
+        // характрер основного диагноза
+        private KharakterDiagnoza mainDiagnoseCharacter;
+        // Стадия основного диагноза
+        private StadiaDiagnoza mainDiagnoseStadia;
 
         public CommonService(Session session) : base(session) { }
 
@@ -232,7 +248,6 @@ namespace Registrator.Module.BusinessObjects.Abstract
             }
 
             this.DateIn = DateTime.Now;
-
             string MOCode = Settings.MOSettings.GetCurrentMOCode(Session);
             this.LPU = Session.FindObject<MedOrg>(CriteriaOperator.Parse("Code=?", MOCode));
             this.LPU_1 = MOCode;
@@ -247,59 +262,19 @@ namespace Registrator.Module.BusinessObjects.Abstract
             if (DoctorSpec != null)
                 this.Profil = DoctorSpec.MedProfil;
 
-            if (Case != null)
-            {
-                _caseDiagnose = Case.MainDiagnose ?? new MKBWithType(Session);
-                _casePreDiagnose = Case.PreDiagnose ?? new MKBWithType(Session);
-            }
-            
-            IsMainService = false;
-            AutoOpen = false;
-
             // т.к. абстрактная услуга не содержит ссылку на случай
             // ссылку на случай (2-х видов) хранят только два типа услуг (общий и диспансеризации)
             // применяем фильтр к пациенту при добавлении записей при создании протокола в абстрактную услугу
             this.EditableProtocolChanged += CommonService_EditableProtocolChanged;
         }
-
-        protected override void OnLoaded()
-        {
-            base.OnLoaded();
-
-            if (Case != null)
-            {
-                _caseDiagnose = Case.MainDiagnose ?? new MKBWithType(Session);
-                _casePreDiagnose = Case.PreDiagnose ?? new MKBWithType(Session);
-            }
-        }
-
+        
         void CommonService_EditableProtocolChanged(object sender, EventArgs e)
         {
             if (Case != null)
             {
                 var pacient = Case.Pacient;
                 if (pacient != null)
-                {
                     EditableProtocol.ApplyPacientFilter(pacient);
-                }
-            }
-        }
-
-        protected override void OnSaved()
-        {
-            base.OnSaved();
-            if (IsMainService && _caseDiagnose != null)
-            {
-                Case.MainDiagnose.Diagnose = _caseDiagnose.Diagnose;
-                Case.MainDiagnose.Type = _caseDiagnose.Type;
-                Case.MainDiagnose.Character = _caseDiagnose.Character;
-                Case.MainDiagnose.FirstTime = _caseDiagnose.FirstTime;
-                Case.MainDiagnose.Doctor = _caseDiagnose.Doctor;
-                Case.PreDiagnose.Diagnose = _casePreDiagnose.Diagnose;
-                Case.PreDiagnose.Type = _casePreDiagnose.Type;
-                Case.PreDiagnose.Character = _casePreDiagnose.Character;
-                Case.PreDiagnose.FirstTime = _casePreDiagnose.FirstTime;
-                Case.PreDiagnose.Doctor = _casePreDiagnose.Doctor;
             }
         }
 
@@ -348,219 +323,100 @@ namespace Registrator.Module.BusinessObjects.Abstract
         public double KolUslug { get; set; }
         #endregion
 
-        #region Основной диагноз
-        
-        [NonPersistent]
-        [ImmediatePostData]
-        [XafDisplayName("Основной диагноз")]
-        public MKB10 CaseDiagnose 
-        {
-            get
-            {
-                if (IsMainService && _caseDiagnose != null && _caseDiagnose.Diagnose != null)
-                    return _caseDiagnose.Diagnose;
-                if (Case != null)
-                    return Case.MainDiagnose.Diagnose;
-                return null;
-            }
-            set
-            {
-                if (!IsMainService)
-                    return;
-
-                // если услуга основная
-                if (_caseDiagnose  == null)
-                    _caseDiagnose = new MKBWithType(Session);
-
-                _caseDiagnose.Diagnose = value;
-            }
-        }
-
-        [NonPersistent]
-        [Appearance("TimeVisibility", Context = "DetailView", Visibility = ViewItemVisibility.Hide, Criteria = "IsNull(CaseDiagnose)")]
-        [XafDisplayName("Впервые выявлен")]
-        public bool CaseDiagnoseIsFirstTime
-        {
-            get
-            {
-                if (IsMainService && _caseDiagnose != null)
-                    return _caseDiagnose.FirstTime;
-                if (Case != null)
-                    return Case.MainDiagnose.FirstTime;
-                return false;
-            }
-            set
-            {
-                if (!IsMainService) return;
-
-                // если услуга основная
-                if (_caseDiagnose == null)
-                    _caseDiagnose = new MKBWithType(Session);
-
-                _caseDiagnose.FirstTime = value;
-            }
-        }
-
-        [NonPersistent]
-        [Appearance("CharacterVisibility", Context = "DetailView", Visibility = ViewItemVisibility.Hide, Criteria = "IsNull(CaseDiagnose)")]
-        [XafDisplayName("Характер")]
-        public KharakterDiagnoza CaseDiagnoseCharacter
-        {
-            get
-            {
-                if (IsMainService && _caseDiagnose != null)
-                    return _caseDiagnose.Character;
-                if (Case != null)
-                    return Case.MainDiagnose.Character;
-                return KharakterDiagnoza.Net;
-            }
-            set
-            {
-                if (!IsMainService)
-                    return;
-
-                // если услуга основная
-                if (_caseDiagnose == null)
-                    _caseDiagnose = new MKBWithType(Session);
-
-                _caseDiagnose.Character = value;
-            }
-        }
-
-        [NonPersistent]
-        [Appearance("StadiaVisibility", Context = "DetailView", Visibility = ViewItemVisibility.Hide, Criteria = "IsNull(CaseDiagnose)")]
-        [XafDisplayName("Стадия")]
-        public StadiaDiagnoza CaseDiagnoseStadia
-        {
-            get
-            {
-                if (IsMainService && _caseDiagnose != null)
-                    return _caseDiagnose.Stadia;
-                if (Case != null)
-                    return Case.MainDiagnose.Stadia;
-                return StadiaDiagnoza.Net;
-            }
-            set
-            {
-                if (!IsMainService)
-                    return;
-
-                // если услуга основная
-                if (_caseDiagnose == null)
-                    _caseDiagnose = new MKBWithType(Session);
-
-                _caseDiagnose.Stadia = value;
-            }
-        }
-#endregion
-
         #region Первичный диагноз
-        private MKBWithType _casePreDiagnose;
-        [NonPersistent]
+        /// <summary>
+        /// Первичный диагноз
+        /// </summary>
         [XafDisplayName("Первичный диагноз")]
         [ImmediatePostData]
         [Appearance("PrDiagnoseVisibility", Context = "DetailView", Visibility = ViewItemVisibility.Hide, Criteria = "!IsMainService")]
         public MKB10 CasePreDiagnose
         {
-            get
-            {
-                if (IsMainService && _casePreDiagnose != null && _casePreDiagnose.Diagnose != null)
-                    return _casePreDiagnose.Diagnose;
-                if (Case != null)
-                    return Case.PreDiagnose.Diagnose;
-                return null;
-            }
-            set
-            {
-                if (!IsMainService)
-                    return;
-
-                // если услуга основная
-                if (_casePreDiagnose == null)
-                    _casePreDiagnose = new MKBWithType(Session);
-
-                _casePreDiagnose.Diagnose = value;
-            }
+            get { return preDiagnose; }
+            set { SetPropertyValue("CasePreDiagnose", ref preDiagnose, value); }
         }
 
-        [NonPersistent]
+        /// <summary>
+        /// Первичный диагноз впервые выявлен
+        /// </summary>
         [Appearance("PreTimeVisibility", Context = "DetailView", Visibility = ViewItemVisibility.Hide, Criteria = "!IsMainService Or IsNull(CasePreDiagnose)")]
-        [XafDisplayName("Впервые выявлен")]
+        [XafDisplayName("Первичный диагноз впервые выявлен")]
         public bool CasePreDiagnoseIsFirstTime
         {
-            get
-            {
-                if (IsMainService && _casePreDiagnose != null)
-                    return _casePreDiagnose.FirstTime;
-                if (Case != null)
-                    return Case.PreDiagnose.FirstTime;
-                return false;
-            }
-            set
-            {
-                if (!IsMainService)
-                    return;
-
-                // если услуга основная
-                if (_casePreDiagnose == null)
-                    _casePreDiagnose = new MKBWithType(Session);
-
-                _casePreDiagnose.FirstTime = value;
-            }
+            get { return preDiagnoseIsFirstTime; }
+            set { SetPropertyValue("CasePreDiagnoseIsFirstTime", ref preDiagnoseIsFirstTime, value); }
         }
 
-        [NonPersistent]
+        /// <summary>
+        /// Характер первичного диагноза
+        /// </summary>
         [Appearance("PreCharacterVisibility", Context = "DetailView", Visibility = ViewItemVisibility.Hide, Criteria = "!IsMainService Or IsNull(CasePreDiagnose)")]
-        [XafDisplayName("Характер")]
+        [XafDisplayName("Характер первичного диагноза")]
         public KharakterDiagnoza CasePreDiagnoseCharacter
         {
-            get
-            {
-                if (IsMainService && _casePreDiagnose != null)
-                    return _casePreDiagnose.Character;
-                if (Case != null)
-                    return Case.PreDiagnose.Character;
-                return KharakterDiagnoza.Net;
-            }
-            set
-            {
-                if (!IsMainService)
-                    return;
-
-                // если услуга основная
-                if (_casePreDiagnose == null)
-                    _casePreDiagnose = new MKBWithType(Session);
-
-                _casePreDiagnose.Character = value;
-            }
+            get { return preDiagnoseCharacter; }
+            set { SetPropertyValue("CasePreDiagnoseCharacter", ref preDiagnoseCharacter, value); }
         }
 
-        [NonPersistent]
+        /// <summary>
+        ///  Стадия первичного диагноза
+        /// </summary>
         [Appearance("PreStadiaVisibility", Context = "DetailView", Visibility = ViewItemVisibility.Hide, Criteria = "!IsMainService Or IsNull(CasePreDiagnose)")]
-        [XafDisplayName("Стадия")]
+        [XafDisplayName("Стадия первичного диагноза")]
         public StadiaDiagnoza CasePreDiagnoseStadia
         {
-            get
-            {
-                if (IsMainService && _casePreDiagnose != null)
-                    return _casePreDiagnose.Stadia;
-                if (Case != null)
-                    return Case.PreDiagnose.Stadia;
-                return StadiaDiagnoza.Net;
-            }
-            set
-            {
-                if (!IsMainService)
-                    return;
-
-                // если услуга основная
-                if (_casePreDiagnose == null)
-                    _casePreDiagnose = new MKBWithType(Session);
-
-                _casePreDiagnose.Stadia = value;
-            }
+            get { return preDiagnoseStadia; }
+            set { SetPropertyValue("CasePreDiagnoseStadia", ref preDiagnoseStadia, value); }
         }
-        #endregion/// <summary>
+        #endregion
+
+        #region Основной диагноз
+
+        /// <summary>
+        /// Основной диагноз
+        /// </summary>
+        [ImmediatePostData]
+        [XafDisplayName("Основной диагноз")]
+        public MKB10 CaseDiagnose
+        {
+            get { return mainDiagnose; }
+            set { SetPropertyValue("CaseDiagnose", ref mainDiagnose, value); }
+        }
+
+        /// <summary>
+        /// Основной диагноз впервые выявлен
+        /// </summary>
+        [Appearance("TimeVisibility", Context = "DetailView", Visibility = ViewItemVisibility.Hide, Criteria = "IsNull(CaseDiagnose)")]
+        [XafDisplayName("Основной диагноз впервые выявлен")]
+        public bool CaseDiagnoseIsFirstTime
+        {
+            get { return mainDiagnoseIsFirstTime; }
+            set { SetPropertyValue("CaseDiagnoseIsFirstTime", ref mainDiagnoseIsFirstTime, value); }
+        }
+
+        /// <summary>
+        /// Характер основного диагноза
+        /// </summary>
+        [Appearance("CharacterVisibility", Context = "DetailView", Visibility = ViewItemVisibility.Hide, Criteria = "IsNull(CaseDiagnose)")]
+        [XafDisplayName("Характер основного диагноза")]
+        public KharakterDiagnoza CaseDiagnoseCharacter
+        {
+            get { return mainDiagnoseCharacter; }
+            set { SetPropertyValue("CaseDiagnoseCharacter", ref mainDiagnoseCharacter, value); }
+        }
+
+        /// <summary>
+        /// Стадия основного диагноза
+        /// </summary>
+        [Appearance("StadiaVisibility", Context = "DetailView", Visibility = ViewItemVisibility.Hide, Criteria = "IsNull(CaseDiagnose)")]
+        [XafDisplayName("Стадия основного диагноза")]
+        public StadiaDiagnoza CaseDiagnoseStadia
+        {
+            get { return mainDiagnoseStadia; }
+            set { SetPropertyValue("CaseDiagnoseStadia", ref mainDiagnoseStadia, value); }
+        }
+
+        #endregion
 
         /// <summary>
         /// Определяет является ли услуга первой услугой случая
@@ -577,15 +433,15 @@ namespace Registrator.Module.BusinessObjects.Abstract
         [NonPersistent]
         public bool AutoOpen { get; set; }
 
-        // Возвращает Истина если случай, в которой создана услуга - дневной стационар
-        [NonPersistent]
+        /// <summary>
+        /// Возвращает Истина если случай, в которой создана услуга - дневной стационар 
+        /// </summary>
         [Browsable(false)]
         public bool ShowKolUslug
         {
             get
             {
-                if (Case == null) return false;
-                if (Case.GetType().ToString().Contains("HospitalCase"))
+                if (Case != null && Case.GetType() == typeof(HospitalCase))
                     return true;
                 return false;
             }
@@ -598,10 +454,7 @@ namespace Registrator.Module.BusinessObjects.Abstract
         public CommonCase Case
         {
             get { return _case; }
-            set
-            {
-                SetPropertyValue("Case", ref _case, value);
-            }
+            set { SetPropertyValue("Case", ref _case, value); }
         }
 
         /// <summary>
@@ -627,6 +480,8 @@ namespace Registrator.Module.BusinessObjects.Abstract
     /// </summary>
     public abstract class DispService : AbstractService, IReestrTFoms
     {
+        private const string MEDSESTRACODE = "219";
+
         public DispService(Session session) : base(session) { }
 
         public override void AfterConstruction()
@@ -655,14 +510,14 @@ namespace Registrator.Module.BusinessObjects.Abstract
         [XafDisplayName("Мед. сестра")]
         [DataSourceCriteriaProperty("MedSestraCriteria")]
         public Doctor MedSestra { get; set; }
+
+        /// <summary>
+        /// Критерий специальности &quat;Сестринское дело&quat;
+        /// </summary>
         [Browsable(false)]
         public CriteriaOperator MedSestraCriteria
         {
-            get
-            {
-                //219 - Код специальности "Сестринское дело"
-                var medSestraCode = "219";
-                return CriteriaOperator.Parse("SpecialityTree.Code=?", medSestraCode);}
+            get { return CriteriaOperator.Parse("SpecialityTree.Code=?", MEDSESTRACODE); }
         }
 
         [XafDisplayName("Выявленные диагнозы до обследования")]

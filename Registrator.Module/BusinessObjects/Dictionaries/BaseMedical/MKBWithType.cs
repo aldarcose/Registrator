@@ -20,22 +20,17 @@ namespace Registrator.Module.BusinessObjects.Dictionaries
             : base(session)
         {
         }
+
         public override void AfterConstruction()
         {
             base.AfterConstruction();
-            // Place your initialization code here (http://documentation.devexpress.com/#Xaf/CustomDocument2834).
-            // определяем текущего пользователя
             var createdBy = SecuritySystem.CurrentUser as Doctor;
             if (createdBy != null)
             {
                 // находим доктора с таким же Логином
                 var doctor = Session.FindObject<Doctor>(CriteriaOperator.Parse("UserName=?", createdBy.UserName));
-
                 if (doctor != null)
-                {
                     this.Doctor = doctor;
-                }
-
             }
         }
 

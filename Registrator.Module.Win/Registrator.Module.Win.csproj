@@ -195,6 +195,9 @@
     <Compile Include="AddressSelectorForm.Designer.cs">
       <DependentUpon>AddressSelectorForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\AuthenticationStandardLogonParametersController.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controllers\DispanserizationCaseViewController.cs">
       <SubType>Component</SubType>
     </Compile>

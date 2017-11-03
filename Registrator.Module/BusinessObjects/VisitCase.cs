@@ -125,7 +125,7 @@ namespace Registrator.Module.BusinessObjects
         {
             get
             {
-                List<string> codeList = Enumerable.Range(minCodeForResultat, maxCodeForResultat).Select(e => e.ToString()).ToList();
+                var codeList = Enumerable.Range(minCodeForResultat, maxCodeForResultat).Select(e => e.ToString());
                 var criteriaOperators = new List<CriteriaOperator>();
                 criteriaOperators.Add(new InOperator("Code", codeList));
                 

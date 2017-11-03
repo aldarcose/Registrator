@@ -15,30 +15,14 @@ using DevExpress.Persistent.Validation;
 namespace Registrator.Module.BusinessObjects.Dictionaries
 {
     [DefaultClassOptions]
-    //[ImageName("BO_Contact")]
-    //[DefaultProperty("DisplayMemberNameForLookupEditorsOfThisType")]
-    //[DefaultListViewOptions(MasterDetailMode.ListViewOnly, false, NewItemRowPosition.None)]
-    //[Persistent("DatabaseTableName")]
-    // Specify more UI options using a declarative approach (http://documentation.devexpress.com/#Xaf/CustomDocument2701).
     public class MKB10 : DevExpress.Persistent.BaseImpl.BaseObject
-    { // Inherit from a different class to provide a custom primary key, concurrency and deletion behavior, etc. (http://documentation.devexpress.com/#Xaf/CustomDocument3146).
-        public MKB10(Session session)
-            : base(session)
-        {
-        }
-        public override void AfterConstruction()
-        {
-            base.AfterConstruction();
-            // Place your initialization code here (http://documentation.devexpress.com/#Xaf/CustomDocument2834).
-        }
-
-
+    {
+        public MKB10(Session session) : base(session) { }
 
         [XafDisplayName("Код")]
         public string CODE { get; set; }
 
         [XafDisplayName("Название")]
-        //[Size(512)]
         public string NAME { get; set; }
         [XafDisplayName("Key")]
         public string KEY { get; set; }

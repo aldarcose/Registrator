@@ -157,8 +157,7 @@ namespace Registrator.Module.BusinessObjects
             {
                 // получаем все инстансы объекта КСГ
                 // используем след. критерий для получения всех инстансев
-                CriteriaOperator criteria = CriteriaOperator.Parse("1=1");
-                var KSGs = new XPCollection<ClinicStatGroups>(Session, criteria).ToList();
+                var KSGs = new XPCollection<ClinicStatGroups>(Session).ToList();
                 return new InOperator("MKB", KSGs.Select(t => t.Diagnose.MKB));
             }
             set

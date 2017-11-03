@@ -50,7 +50,6 @@ namespace Registrator.Module.Controllers
                     // если нужно автооткрыть первую услугу, делаем это
                     if (commonCase.Services.Count == 1 && commonCase.Services[0].AutoOpen)
                     {
-                        
                         var os = Application.CreateObjectSpace();
                         var service = os.GetObject(commonCase.Services[0]);
 

@@ -26,14 +26,11 @@ namespace Registrator.Module.BusinessObjects.Abstract
     [XafDisplayName("Случаи")]
     public abstract class AbstractCase : BaseObject, IWorkflowCaseStateProvider
     {
-        public AbstractCase(Session session) : base (session)
-        { 
-        }
+        public AbstractCase(Session session) : base(session) { }
 
         public override void AfterConstruction()
         {
             base.AfterConstruction();
-
             this.DateIn = DateTime.Now;
 
             string MOCode = Settings.MOSettings.GetCurrentMOCode(Session);
@@ -210,6 +207,7 @@ namespace Registrator.Module.BusinessObjects.Abstract
         { 
         }
 
+        /// <inheritdoc/>
         public override void AfterConstruction()
         {
             base.AfterConstruction();
@@ -217,7 +215,7 @@ namespace Registrator.Module.BusinessObjects.Abstract
             this.MainDiagnose = new MKBWithType(Session);
 
             // для общих случаев по умолчанию всегда добавляется как минимум одна основная услуга
-            Services.Add(new MedService(Session) {IsMainService = true, AutoOpen = false});
+            Services.Add(new MedService(Session) { IsMainService = true, AutoOpen = false });
 
             // определяем текущего пользователя
             var createdBy = SecuritySystem.CurrentUser as Doctor;
@@ -225,25 +223,10 @@ namespace Registrator.Module.BusinessObjects.Abstract
             {
                 // находим доктора с таким же Логином
                 var doctor = Session.FindObject<Doctor>(CriteriaOperator.Parse("UserName=?", createdBy.UserName));
-
                 if (doctor != null)
-                {
                     this.Doctor = doctor;
-                }
             }
         }
-
-        /*
-        protected override void OnLoaded()
-        {
-            base.OnLoaded();
-            if (MainDiagnose == null)
-                MainDiagnose = new MKBWithType(Session);
-            if (PreDiagnose == null)
-                PreDiagnose = new MKBWithType(Session);
-            Services.Load();
-        }
-        */
 
         #region Мин. поля для реестра ТФОМС
 
@@ -264,7 +247,6 @@ namespace Registrator.Module.BusinessObjects.Abstract
         [LookupEditorMode(LookupEditorMode.AllItemsWithSearch)]
         public MedOrg FromLPU { get; set; }
 
-        [NonPersistent]
         [Browsable(false)]
         private CriteriaOperator LPUCriteria
         {
@@ -302,8 +284,7 @@ namespace Registrator.Module.BusinessObjects.Abstract
         public PriznakDetProfila DetProfil { get; set; }
 
         /// <summary>
-        /// Необязательное поле
-        /// Диагноз первичный
+        /// Первичный диагноз
         /// </summary>
         [XafDisplayName("Первичный диагноз")]
         [Browsable(false)]
@@ -319,7 +300,7 @@ namespace Registrator.Module.BusinessObjects.Abstract
         {
             get
             {
-                //выбрать из диагнозов сопутствующие диагнозы
+                // выбрать из диагнозов сопутствующие диагнозы
                 var list = new List<MKB10>();
                 // выбираем диагнозы
                 return list;
@@ -339,9 +320,7 @@ namespace Registrator.Module.BusinessObjects.Abstract
         {
             get
             {
-                //выбрать из диагнозов диагнозы осложнения
                 var list = new List<MKB10>();
-                // выбираем диагнозы
                 return list;
             }
             set
@@ -483,17 +462,7 @@ namespace Registrator.Module.BusinessObjects.Abstract
         [Association("CommonCase-CommonServices"), DevExpress.Xpo.Aggregated]
         public XPCollection<CommonService> Services 
         {
-            get
-            {
-                var col = GetCollection<CommonService>("Services");
-                col.CollectionChanged += col_CollectionChanged;
-                return col;
-            }
-        }
-
-        void col_CollectionChanged(object sender, XPCollectionChangedEventArgs e)
-        {
-            Session.Save(this);
+            get { return GetCollection<CommonService>("Services"); }
         }
 
         public override decimal TotalSum
