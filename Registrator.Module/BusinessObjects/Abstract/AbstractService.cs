@@ -467,11 +467,8 @@ namespace Registrator.Module.BusinessObjects.Abstract
             get { return GetCollection<MKBWithType>("Diagnoses"); }
         }
 
-        //интерфейс элемента реестра реализуется в конкретной услуге
         public abstract bool IsValidForReestr();
-
         public abstract XElement GetReestrElement();
-
         public abstract XElement GetReestrElement(int zapNumber);
     }
 

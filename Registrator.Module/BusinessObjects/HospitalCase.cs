@@ -243,7 +243,6 @@ namespace Registrator.Module.BusinessObjects
                 // Первичный диагноз
                 element.Add(new XElement("DS0", this.PreDiagnose.Diagnose.CODE));
 
-            // 
             element.Add(new XElement("DS1", this.MainDiagnose.Diagnose.CODE));
 
             // Сопутствующие диагнозы

@@ -329,16 +329,12 @@ namespace Registrator.Module.BusinessObjects
             }
         }
 
-        #region Инвалидность
         /// <summary> 
         /// Данные инвалидности
         /// </summary>
         [XafDisplayName("Инвалидность")]
         [DevExpress.Xpo.Aggregated]
         public DisablityData Disability { get; set; }
-
-        #endregion
-
         #endregion
 
         [DevExpress.Xpo.Aggregated, Association("Pacient_Polis")]

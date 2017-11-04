@@ -40,9 +40,12 @@ namespace Registrator.Module.Win.Controllers
         void filterController_CustomBuildCriteria(object sender, CustomBuildCriteriaEventArgs e)
         {
             var filter = sender as FilterController;
-            
             if (string.IsNullOrEmpty(e.SearchText))
+            {
+                e.Criteria = CriteriaOperator.Parse("1=0");
+                e.Handled = true;
                 return;
+            }
             var normalizedText = e.SearchText.ToUpper();
             if (View.Id =="MKB10_LookupListView")
             {

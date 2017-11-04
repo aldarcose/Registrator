@@ -16,10 +16,7 @@ namespace Registrator.Module.BusinessObjects.Dictionaries
     [XafDisplayName("Данные диагноза")]
     public class MKBWithType : BaseObject
     {
-        public MKBWithType(Session session)
-            : base(session)
-        {
-        }
+        public MKBWithType(Session session) : base(session) { }
 
         public override void AfterConstruction()
         {

@@ -41,7 +41,21 @@ namespace Registrator.Module.BusinessObjects.Abstract
             this.NHistory = this.Oid.ToString();
         }
 
-        #region Мин. поля для реестра ТФОМС
+        /// <summary>
+        /// Диагноз основной T(10)
+        /// </summary>
+        [XafDisplayName("Основной диагноз")]
+        [DataSourceCriteriaProperty("DiagnoseCriteria")]
+        [DevExpress.Xpo.Aggregated]
+        public MKBWithType MainDiagnose { get; set; }
+
+        /// <summary>
+        /// Первичный диагноз
+        /// </summary>
+        [XafDisplayName("Первичный диагноз")]
+        [DevExpress.Xpo.Aggregated]
+        public MKBWithType PreDiagnose { get; set; }
+
         /// <summary>
         /// Обязательное поле N(11)
         /// Номер записи в реестре случаев
@@ -97,14 +111,6 @@ namespace Registrator.Module.BusinessObjects.Abstract
         [XafDisplayName("Дата окончания лечения")]
         public DateTime DateOut {get;set;}
         
-        /// <summary>
-        /// Диагноз основной T(10)
-        /// </summary>
-        [XafDisplayName("Основной диагноз")]
-        [DataSourceCriteriaProperty("DiagnoseCriteria")]
-        [DevExpress.Xpo.Aggregated]
-        public MKBWithType MainDiagnose { get; set; }
-
         [NonPersistent]
         [Browsable(false)]
         public abstract CriteriaOperator DiagnoseCriteria { get; set; }
@@ -162,7 +168,6 @@ namespace Registrator.Module.BusinessObjects.Abstract
         [XafDisplayName("Служебная информация")]
         [Browsable(false)]
         public string Comment { get; set; }
-        #endregion
 
         [Association("AbstractCase-Pacient")]
         [ImmediatePostData]
@@ -201,11 +206,9 @@ namespace Registrator.Module.BusinessObjects.Abstract
     public abstract class CommonCase : AbstractCase, IReestrTFoms
     {
         private VidUsloviyOkazMedPomoshi _uslovia;
+        private XPCollection<CommonService> services;
 
-        public CommonCase(Session session)
-            : base(session)
-        { 
-        }
+        public CommonCase(Session session) : base(session) { }
 
         /// <inheritdoc/>
         public override void AfterConstruction()
@@ -225,6 +228,34 @@ namespace Registrator.Module.BusinessObjects.Abstract
                 var doctor = Session.FindObject<Doctor>(CriteriaOperator.Parse("UserName=?", createdBy.UserName));
                 if (doctor != null)
                     this.Doctor = doctor;
+            }
+        }
+
+        [ImmediatePostData]
+        [Association("CommonCase-CommonServices"), DevExpress.Xpo.Aggregated]
+        public XPCollection<CommonService> Services
+        {
+            get 
+            {
+                if (services == null)
+                {
+                    services = GetCollection<CommonService>("Services");
+                    services.ListChanged += services_ListChanged;
+                }
+                return services; 
+            }
+        }
+
+        void services_ListChanged(object sender, ListChangedEventArgs e)
+        {
+            var firstService = services.FirstOrDefault(s => s.IsMainService);
+            if (firstService != null)
+            {
+                this.MainDiagnose.Diagnose = firstService.CaseDiagnose;
+                this.MainDiagnose.FirstTime = firstService.CaseDiagnoseIsFirstTime;
+                this.MainDiagnose.Stadia = firstService.CaseDiagnoseStadia;
+                this.MainDiagnose.Character = firstService.CaseDiagnoseCharacter;
+                OnChanged("MainDiagnose");
             }
         }
 
@@ -282,14 +313,6 @@ namespace Registrator.Module.BusinessObjects.Abstract
         /// </summary>
         [Browsable(false)]
         public PriznakDetProfila DetProfil { get; set; }
-
-        /// <summary>
-        /// Первичный диагноз
-        /// </summary>
-        [XafDisplayName("Первичный диагноз")]
-        [Browsable(false)]
-        [DevExpress.Xpo.Aggregated]
-        public MKBWithType PreDiagnose { get; set; }
 
         /// <summary>
         /// Условно-обязательный множ.
@@ -399,21 +422,16 @@ namespace Registrator.Module.BusinessObjects.Abstract
         [LookupEditorMode(LookupEditorMode.AllItemsWithSearch)]
         public IshodZabolevaniya Ishod { get; set; }
 
-        [NonPersistent]
         [Browsable(false)]
         public virtual CriteriaOperator ResultatCriteria
         {
             get
             {
-                if (UsloviyaPomoshi == null)
-                {
-                    return CriteriaOperator.Parse("1!=1");
-                }
+                if (UsloviyaPomoshi == null) return CriteriaOperator.Parse("1!=1");
                 return CriteriaOperator.Parse("DlUslov=?", UsloviyaPomoshi.Code.ToString());
             }
         }
 
-        [NonPersistent]
         [Browsable(false)]
         private CriteriaOperator IshodCriteria
         {
@@ -458,12 +476,6 @@ namespace Registrator.Module.BusinessObjects.Abstract
         [Appearance("OsobiySluchay_Invisible", Context = "DetailView", Visibility = ViewItemVisibility.Hide, Criteria = "Iif(IsNull(Pacient), true, !Pacient.IsNewBorn)")]
         public PriznakOsobogoSluchaya OsobiySluchay { get; set; }
         #endregion
-
-        [Association("CommonCase-CommonServices"), DevExpress.Xpo.Aggregated]
-        public XPCollection<CommonService> Services 
-        {
-            get { return GetCollection<CommonService>("Services"); }
-        }
 
         public override decimal TotalSum
         {
@@ -512,7 +524,6 @@ namespace Registrator.Module.BusinessObjects.Abstract
         /// </summary>
         public string MethodHighMedPom {get;set;}
         #endregion
-
     }
 
     /// <summary>
@@ -521,9 +532,7 @@ namespace Registrator.Module.BusinessObjects.Abstract
     [Persistent]
     public abstract class DispCase : AbstractCase, IReestrTFoms
     {
-        public DispCase(Session session)
-            : base(session)
-        { }
+        public DispCase(Session session) : base(session) { }
 
         #region Мин. поля для реестра ТФОМС
         /// <summary>
@@ -538,14 +547,11 @@ namespace Registrator.Module.BusinessObjects.Abstract
         [Association("DispCase-DispServices"), DevExpress.Xpo.Aggregated]
         public XPCollection<DispService> Services
         {
-            get { return GetCollection<DispService>("Services"); }}
+            get { return GetCollection<DispService>("Services"); }
+        }
 
-
-        // методы интерфейса реализует конкретный случай
         public abstract bool IsValidForReestr();
-
         public abstract XElement GetReestrElement();
-
         public abstract XElement GetReestrElement(int zapNumber);
     }
 }
