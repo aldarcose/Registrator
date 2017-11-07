@@ -287,6 +287,12 @@
     <Compile Include="Controllers\CommonCaseViewController.Designer.cs">
       <DependentUpon>CommonCaseViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\CustomController.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\CustomController.Designer.cs">
+      <DependentUpon>CustomController.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\DiagnoseListViewController.cs">
       <SubType>Component</SubType>
     </Compile>
