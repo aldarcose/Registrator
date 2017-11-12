@@ -18,6 +18,8 @@ using DevExpress.ExpressApp.Utils;
 using DevExpress.ExpressApp.Security.Strategy;
 using DevExpress.Data.Filtering;
 using DevExpress.Persistent.BaseImpl;
+using DevExpress.Persistent.Base.General;
+using System.Drawing;
 
 namespace Registrator.Module.BusinessObjects
 {
@@ -26,15 +28,20 @@ namespace Registrator.Module.BusinessObjects
     /// </summary>
     [DefaultClassOptions]
     [DefaultProperty("FullName")]
-    public class Doctor : BaseObject, ISecurityUser, IAuthenticationStandardUser, IOperationPermissionProvider 
+    public class Doctor : BaseObject, ISecurityUser, IAuthenticationStandardUser, IOperationPermissionProvider, IResource
     {
         private bool changePasswordOnFirstLogon;
         private string userName = String.Empty;
         private string storedPassword;
         private bool isActive = true;
 
-        public Doctor(Session session) : base(session)
-        { 
+        public Doctor(Session session) : base(session) { }
+
+        /// <inheritdoc/>
+        public override void AfterConstruction()
+        {
+            base.AfterConstruction();
+            color = Color.White.ToArgb();
         }
 
         /// <summary>
@@ -389,6 +396,41 @@ namespace Registrator.Module.BusinessObjects
             return new EnumerableConverter<IOperationPermissionProvider, DoctorRole>(DoctorRoles);
         }
         #endregion
+
+        [Persistent("Color")]
+        private Int32 color;
+        private string caption;
+
+        [Association("Event-Doctor", typeof(Event))]
+        public XPCollection Events
+        {
+            get { return GetCollection("Events"); }
+        }
+
+        public string Caption
+        {
+            get { return caption; }
+            set { SetPropertyValue("Caption", ref caption, value); }
+        }
+
+        [NonPersistent, Browsable(false)]
+        public object Id
+        {
+            get { return Oid; }
+        }
+
+        [NonPersistent, Browsable(false)]
+        public int OleColor
+        {
+            get { return ColorTranslator.ToOle(Color.FromArgb(color)); }
+        }
+
+        [NonPersistent]
+        public Color Color
+        {
+            get { return Color.FromArgb(color); }
+            set { SetPropertyValue("Color", ref color, value.ToArgb()); }
+        }
     }
     
     [ImageName("BO_Role")]

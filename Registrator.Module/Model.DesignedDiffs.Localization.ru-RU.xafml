@@ -17,6 +17,7 @@
           <Item Id="Constants_ListView" Caption="Константы программы" />
           <Item Id="DnevnoyStacionar_ListView" Caption="Дневной стационар" />
           <Item Id="Pacient_ListView" Caption="Пациенты" />
+          <Item Id="Registrator_Event_ListView" Caption="Событие" />
           <Item Id="VERS_SPEC_ListView" Caption="Медицинские специальности" />
         </Items>
       </Item>

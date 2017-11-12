@@ -397,8 +397,6 @@
                     <LayoutItem Id="Rehab.Progress" ViewItem="Rehab.Progress" SizeConstraintsType="Default" Index="2" RelativeSize="50" IsNewNode="True" />
                   </LayoutGroup>
                 </TabbedGroup>
-                <LayoutItem Id="DateIn" SizeConstraintsType="Default" RelativeSize="15.384615384615385" Removed="True" />
-                <LayoutItem Id="DateOut" SizeConstraintsType="Default" RelativeSize="11.538461538461538" Removed="True" />
               </LayoutGroup>
               <LayoutGroup Id="AbstractCase_col2" RelativeSize="50" Direction="Horizontal" Removed="True">
                 <LayoutItem Id="MainDiagnose.Character" Removed="True" />
@@ -565,7 +563,6 @@
                 <LayoutItem Id="SNILS" SizeConstraintsType="Default" RelativeSize="15.384615384615385" />
               </LayoutGroup>
               <LayoutGroup Id="Doctor_col2" RelativeSize="50">
-                <LayoutItem Id="HireDate" SizeConstraintsType="Default" RelativeSize="15.384615384615385" />
                 <LayoutItem Id="DismissDate" SizeConstraintsType="Default" RelativeSize="11.538461538461538" />
                 <LayoutItem Id="Position" SizeConstraintsType="Default" RelativeSize="11.538461538461538" />
                 <LayoutItem Id="Otdelenie" SizeConstraintsType="Default" RelativeSize="11.538461538461538" />

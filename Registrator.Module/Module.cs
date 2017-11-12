@@ -27,6 +27,11 @@ namespace Registrator.Module
 {
     public sealed partial class RegistratorModule : ModuleBase 
     {
+        static RegistratorModule()
+        {
+            ModelNodesGeneratorSettings.SetIdPrefix(typeof(Event), "Registrator_Event");
+        }
+
         public RegistratorModule() 
         {
             InitializeComponent();
