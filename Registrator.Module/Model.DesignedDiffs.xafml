@@ -103,6 +103,7 @@
           <Item Id="Polis_ListView" Removed="True" />
           <Item Id="ProtocolRecord_ListView" Removed="True" />
           <Item Id="ProtocolRecordType_ListView" Removed="True" />
+          <Item Id="Registrator_Event_ListView" ImageName="BO_Scheduler" />
           <Item Id="Republic_ListView" Removed="True" />
           <Item Id="ResultatDispanserizacii_ListView" Removed="True" />
           <Item Id="ResultatObrasheniya_ListView" Removed="True" />

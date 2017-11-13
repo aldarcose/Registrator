@@ -409,6 +409,12 @@
         </LayoutGroup>
       </Layout>
     </DetailView>
+    <DetailView Id="Registrator_Event_DetailView">
+      <Items>
+        <PropertyEditor Id="EndOn" DisplayFormat="{0:dd.MM.yyyy hh:mm}" EditMask="dd.MM.yyyy hh:mm" />
+        <PropertyEditor Id="StartOn" DisplayFormat="{0:dd.MM.yyyy hh:mm}" EditMask="dd.MM.yyyy hh:mm" />
+      </Items>
+    </DetailView>
     <DetailView Id="VisitCase_DetailView">
       <Layout>
         <LayoutGroup Id="Main">

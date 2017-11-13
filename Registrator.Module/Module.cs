@@ -43,6 +43,7 @@ namespace Registrator.Module
 
             // Установка шрифтов
             AppearanceObject.DefaultFont = new Font(FontFamily.GenericSansSerif, 10);
+            DevExpress.XtraScheduler.SchedulerCompatibility.Base64XmlObjectSerialization = false;
         }
 
         public override void Setup(ApplicationModulesManager moduleManager)

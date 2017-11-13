@@ -5,6 +5,7 @@ using DevExpress.Persistent.BaseImpl;
 using DevExpress.Xpo;
 using System;
 using System.ComponentModel;
+using System.Text;
 using System.Xml;
 
 namespace Registrator.Module.BusinessObjects
@@ -61,10 +62,11 @@ namespace Registrator.Module.BusinessObjects
                     xmlDocument.LoadXml(resourceIds);
                     foreach (XmlNode xmlNode in xmlDocument.DocumentElement.ChildNodes)
                     {
-                        Doctor resource = Session.GetObjectByKey<Doctor>(new Guid(xmlNode.Attributes["Value"].Value));
-                        if (resource != null)
+                        string guidString = xmlNode.Attributes["Value"].Value;
+                        Doctor doctor = Session.GetObjectByKey<Doctor>(new Guid(guidString));
+                        if (doctor != null)
                         {
-                            Doctors.Add(resource);
+                            Doctors.Add(doctor);
                         }
                     }
                 }
