@@ -114,11 +114,14 @@ namespace Registrator.Module.BusinessObjects.Dictionaries
     [DefaultClassOptions]
     public class DoctorSpecTree : BaseObject, ITreeNode
     {
+        private bool scheduling;
+
         public DoctorSpecTree(Session session) : base(session) { }
 
-        [Association("SpecParent-SpecChildren")]
         [Browsable(false)]
+        [Association("SpecParent-SpecChildren")]
         public DoctorSpecTree parent { get; set; }
+        
         [XafDisplayName("Категория")]
         public ITreeNode Parent { get { return parent as ITreeNode; } }
 
@@ -130,17 +133,14 @@ namespace Registrator.Module.BusinessObjects.Dictionaries
         }
         
         [XafDisplayName("Вложенные специальности")]
-        //[Appearance("Spec_Invisible", Context = "DetailView", Visibility = ViewItemVisibility.Hide, Criteria = "IsNull(Children)")]
         public System.ComponentModel.IBindingList Children
         {
-            get
-            {
-                return children as System.ComponentModel.IBindingList;
-            }
-
+            get { return children as System.ComponentModel.IBindingList; }
         }
+
         [XafDisplayName("Имя специальности")]
         public string Name { get; set; }
+
         [XafDisplayName("Код специальности")]
         public string Code { get; set; }
 
@@ -150,6 +150,7 @@ namespace Registrator.Module.BusinessObjects.Dictionaries
         [XafDisplayName("Мед. профиль специальность")]
         [Association("MedProfil-DoctorSpecs")]
         public MedProfil MedProfil { get; set; }
+
         [DataSourceProperty("TerrUslugi")]
         [XafDisplayName("Услуга, оказываемая на дому")]
         public TerritorialUsluga UslugaNaDomy { get; set; }
@@ -170,6 +171,17 @@ namespace Registrator.Module.BusinessObjects.Dictionaries
         public XPCollection<TerritorialUsluga> TerrUslugi
         {
             get { return GetCollection<TerritorialUsluga>("TerrUslugi"); }
+        }
+
+        /// <summary>
+        /// Возможность создания расписания
+        /// </summary>
+        [VisibleInLookupListView(false)]
+        [XafDisplayName("Возможность создания расписания")]
+        public bool Scheduling
+        {
+            get { return scheduling; }
+            set { SetPropertyValue("Scheduling", ref scheduling, value); }
         }
 
         public static void GetTree(IObjectSpace objectSpace, List<DoctorSpec> specs, ITreeNode parentNode)
