@@ -1,4 +1,5 @@
 ﻿using DevExpress.ExpressApp;
+using DevExpress.ExpressApp.Model;
 using DevExpress.Persistent.Base;
 using DevExpress.Persistent.Base.General;
 using DevExpress.Persistent.BaseImpl;
@@ -11,93 +12,29 @@ using System.Xml;
 namespace Registrator.Module.BusinessObjects
 {
     /// <summary>
-    /// Событие
+    /// Событие. Запись на прием к врачу
     /// </summary>
+    /// <remarks>
+    /// Класс реализует интерфейс <see cref="IRecurrentEvent"/> и <see cref="IEvent"/>
+    /// для того, чтобы использовать интерфейс календаря XtraScheduler.
+    /// </remarks>
     [DefaultProperty("Subject")]
     [NavigationItem("Default")]
     [DefaultListViewOptions(true, NewItemRowPosition.None)]
-    public class Event : BaseObject, IRecurrentEvent, IEvent
+    public class DoctorEvent : BaseObject, IRecurrentEvent, IEvent
     {
-        public Event(Session session) : base(session) 
-        {
-            session.ObjectSaving += new ObjectManipulationEventHandler(session_ObjectSaving);
-            Doctors.ListChanged += new ListChangedEventHandler(Resources_ListChanged);
-        }
+        public DoctorEvent(Session session) : base(session) { }
 
-        [Persistent("ResourceIds"), Size(SizeAttribute.Unlimited), ObjectValidatorIgnoreIssue(typeof(ObjectValidatorLargeNonDelayedMember))]
-        private string resourceIds;
         private EventImpl appointmentImpl = new EventImpl();
         [Persistent("RecurrencePattern")]
-        private Event recurrencePattern;
+        private DoctorEvent recurrencePattern;
         private string recurrenceInfoXml;
+        private Doctor doctor;
 
         public override void AfterConstruction()
         {
             base.AfterConstruction();
             appointmentImpl.AfterConstruction();
-        }
-
-        public void UpdateResourceIds()
-        {
-            resourceIds = "<ResourceIds>\r\n";
-            foreach (Doctor resource in Doctors)
-            {
-                resourceIds += string.Format("<ResourceId Type=\"{0}\" Value=\"{1}\" />\r\n", resource.Id.GetType().FullName, resource.Id);
-            }
-            resourceIds += "</ResourceIds>";
-        }
-
-        private void UpdateResources()
-        {
-            Doctors.SuspendChangedEvents();
-            try
-            {
-                while (Doctors.Count > 0)
-                {
-                    Doctors.Remove(Doctors[0]);
-                }
-                if (!String.IsNullOrEmpty(resourceIds))
-                {
-                    XmlDocument xmlDocument = new XmlDocument();
-                    xmlDocument.LoadXml(resourceIds);
-                    foreach (XmlNode xmlNode in xmlDocument.DocumentElement.ChildNodes)
-                    {
-                        string guidString = xmlNode.Attributes["Value"].Value;
-                        Doctor doctor = Session.GetObjectByKey<Doctor>(new Guid(guidString));
-                        if (doctor != null)
-                        {
-                            Doctors.Add(doctor);
-                        }
-                    }
-                }
-            }
-            finally
-            {
-                Doctors.ResumeChangedEvents();
-            }
-        }
-
-        private void Resources_ListChanged(object sender, ListChangedEventArgs e)
-        {
-            if ((e.ListChangedType == ListChangedType.ItemAdded) ||
-                (e.ListChangedType == ListChangedType.ItemDeleted))
-            {
-                UpdateResourceIds();
-                OnChanged("ResourceId");
-            }
-        }
-
-        private void session_ObjectSaving(object sender, ObjectManipulationEventArgs e)
-        {
-        }
-
-        protected override void OnLoaded()
-        {
-            base.OnLoaded();
-            if (Doctors.IsLoaded && !Session.IsNewObject(this))
-            {
-                Doctors.Reload();
-            }
         }
 
         public bool AllDay
@@ -180,26 +117,11 @@ namespace Registrator.Module.BusinessObjects
         {
             get
             {
-                if (resourceIds == null)
-                {
-                    UpdateResourceIds();
-                }
-                return resourceIds;
+                return null;
             }
             set
             {
-                if (resourceIds != value)
-                {
-                    resourceIds = value;
-                    UpdateResources();
-                }
             }
-        }
-
-        [Association("Event-Doctor", typeof(Doctor))]
-        public XPCollection Doctors
-        {
-            get { return GetCollection("Doctors"); }
         }
 
         public int Status
@@ -249,7 +171,13 @@ namespace Registrator.Module.BusinessObjects
         public IRecurrentEvent RecurrencePattern
         {
             get { return recurrencePattern; }
-            set { SetPropertyValue("RecurrencePattern", ref recurrencePattern, (Event)value); }
+            set { SetPropertyValue("RecurrencePattern", ref recurrencePattern, (DoctorEvent)value); }
+        }
+
+        public Doctor AssignedTo
+        {
+            get { return doctor; }
+            set { SetPropertyValue("AssignedTo", ref doctor, value); } 
         }
     }
 }

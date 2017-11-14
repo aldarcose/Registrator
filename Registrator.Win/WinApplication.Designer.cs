@@ -30,7 +30,6 @@ namespace Registrator.Win {
             this.auditTrailModule = new DevExpress.ExpressApp.AuditTrail.AuditTrailModule();
             this.conditionalAppearanceModule = new DevExpress.ExpressApp.ConditionalAppearance.ConditionalAppearanceModule();
             this.notificationsModule = new DevExpress.ExpressApp.Notifications.NotificationsModule();
-            //this.notificationsModuleWin = new DevExpress.ExpressApp.Notifications.Win.NotificationsWindowsFormsModule();
             this.reportsModuleV2 = new DevExpress.ExpressApp.ReportsV2.ReportsModuleV2();
             this.reportsWindowsFormsModuleV2 = new DevExpress.ExpressApp.ReportsV2.Win.ReportsWindowsFormsModuleV2();
             this.validationModule = new DevExpress.ExpressApp.Validation.ValidationModule();
@@ -43,6 +42,8 @@ namespace Registrator.Win {
             this.treeListEditorsModuleBase1 = new DevExpress.ExpressApp.TreeListEditors.TreeListEditorsModuleBase();
             this.treeListEditorsWindowsFormsModule1 = new DevExpress.ExpressApp.TreeListEditors.Win.TreeListEditorsWindowsFormsModule();
             this.stateMachineModule1 = new DevExpress.ExpressApp.StateMachine.StateMachineModule();
+            this.schedulerModuleBase1 = new DevExpress.ExpressApp.Scheduler.SchedulerModuleBase();
+            this.schedulerWindowsFormsModule1 = new DevExpress.ExpressApp.Scheduler.Win.SchedulerWindowsFormsModule();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // auditTrailModule
@@ -51,7 +52,12 @@ namespace Registrator.Win {
             // 
             // notificationsModule
             // 
+            this.notificationsModule.CanAccessPostponedItems = false;
             this.notificationsModule.NotificationsRefreshInterval = System.TimeSpan.Parse("00:00:00.0000300");
+            this.notificationsModule.NotificationsStartDelay = System.TimeSpan.Parse("00:00:05");
+            this.notificationsModule.ShowDismissAllAction = false;
+            this.notificationsModule.ShowNotificationsWindow = true;
+            this.notificationsModule.ShowRefreshAction = false;
             // 
             // reportsModuleV2
             // 
@@ -67,6 +73,7 @@ namespace Registrator.Win {
             // 
             this.securityStrategyComplex1.Authentication = this.authenticationStandard1;
             this.securityStrategyComplex1.RoleType = typeof(Registrator.Module.BusinessObjects.DoctorRole);
+            this.securityStrategyComplex1.UsePermissionRequestProcessor = false;
             this.securityStrategyComplex1.UserType = typeof(Registrator.Module.BusinessObjects.Doctor);
             // 
             // authenticationStandard1
@@ -91,9 +98,10 @@ namespace Registrator.Win {
             this.Modules.Add(this.treeListEditorsWindowsFormsModule1);
             this.Modules.Add(this.stateMachineModule1);
             this.Modules.Add(this.module3);
-            //this.Modules.Add(this.notificationsModuleWin);
             this.Modules.Add(this.reportsWindowsFormsModuleV2);
             this.Modules.Add(this.validationWindowsFormsModule);
+            this.Modules.Add(this.schedulerModuleBase1);
+            this.Modules.Add(this.schedulerWindowsFormsModule1);
             this.Modules.Add(this.module4);
             this.Modules.Add(this.securityModule1);
             this.Security = this.securityStrategyComplex1;
@@ -117,7 +125,6 @@ namespace Registrator.Win {
         private DevExpress.ExpressApp.AuditTrail.AuditTrailModule auditTrailModule;
         private DevExpress.ExpressApp.ConditionalAppearance.ConditionalAppearanceModule conditionalAppearanceModule;
         private DevExpress.ExpressApp.Notifications.NotificationsModule notificationsModule;
-        //private DevExpress.ExpressApp.Notifications.Win.NotificationsWindowsFormsModule notificationsModuleWin;
         private DevExpress.ExpressApp.ReportsV2.ReportsModuleV2 reportsModuleV2;
         private DevExpress.ExpressApp.ReportsV2.Win.ReportsWindowsFormsModuleV2 reportsWindowsFormsModuleV2;
         private DevExpress.ExpressApp.Validation.ValidationModule validationModule;
@@ -125,5 +132,7 @@ namespace Registrator.Win {
         private DevExpress.ExpressApp.TreeListEditors.TreeListEditorsModuleBase treeListEditorsModuleBase1;
         private DevExpress.ExpressApp.TreeListEditors.Win.TreeListEditorsWindowsFormsModule treeListEditorsWindowsFormsModule1;
         private DevExpress.ExpressApp.StateMachine.StateMachineModule stateMachineModule1;
+        private DevExpress.ExpressApp.Scheduler.SchedulerModuleBase schedulerModuleBase1;
+        private DevExpress.ExpressApp.Scheduler.Win.SchedulerWindowsFormsModule schedulerWindowsFormsModule1;
     }
 }

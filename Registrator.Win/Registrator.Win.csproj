@@ -79,6 +79,8 @@
       <SpecificVersion>False</SpecificVersion>
       <Private>True</Private>
     </Reference>
+    <Reference Include="DevExpress.ExpressApp.PivotGrid.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.PivotGrid.Win.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.ExpressApp.ReportsV2.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <Private>True</Private>
@@ -170,6 +172,7 @@
       <SpecificVersion>False</SpecificVersion>
       <Private>True</Private>
     </Reference>
+    <Reference Include="DevExpress.XtraCharts.v17.1.UI, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraGrid.v17.1">
       <SpecificVersion>False</SpecificVersion>
       <Private>True</Private>
@@ -190,6 +193,7 @@
       <SpecificVersion>False</SpecificVersion>
       <Private>True</Private>
     </Reference>
+    <Reference Include="DevExpress.XtraPivotGrid.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraPrinting.v17.1">
       <SpecificVersion>False</SpecificVersion>
       <Private>True</Private>

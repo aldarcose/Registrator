@@ -28,7 +28,7 @@ namespace Registrator.Module.BusinessObjects
     /// </summary>
     [DefaultClassOptions]
     [DefaultProperty("FullName")]
-    public class Doctor : BaseObject, ISecurityUser, IAuthenticationStandardUser, IOperationPermissionProvider, IResource
+    public class Doctor : BaseObject, ISecurityUser, IAuthenticationStandardUser, IOperationPermissionProvider
     {
         private bool changePasswordOnFirstLogon;
         private string userName = String.Empty;
@@ -36,14 +36,7 @@ namespace Registrator.Module.BusinessObjects
         private bool isActive = true;
 
         public Doctor(Session session) : base(session) { }
-
-        /// <inheritdoc/>
-        public override void AfterConstruction()
-        {
-            base.AfterConstruction();
-            color = Color.White.ToArgb();
-        }
-
+       
         /// <summary>
         /// Фамилия
         /// </summary>
@@ -397,6 +390,7 @@ namespace Registrator.Module.BusinessObjects
         }
         #endregion
 
+        /*
         [Persistent("Color")]
         private Int32 color;
         private string caption;
@@ -430,7 +424,7 @@ namespace Registrator.Module.BusinessObjects
         {
             get { return Color.FromArgb(color); }
             set { SetPropertyValue("Color", ref color, value.ToArgb()); }
-        }
+        }*/
     }
     
     [ImageName("BO_Role")]
