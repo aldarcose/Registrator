@@ -45,29 +45,6 @@ namespace Registrator.Module
 
             // Установка шрифтов
             AppearanceObject.DefaultFont = new Font(FontFamily.GenericSansSerif, 10);
-            DevExpress.XtraScheduler.SchedulerCompatibility.Base64XmlObjectSerialization = false;
-            application.SetupComplete += application_SetupComplete;
-            application.LoggedOn += application_LoggedOn;
-        }
-
-        void application_SetupComplete(object sender, EventArgs e)
-        {
-            var module = Application.Modules.FindModule<DevExpress.ExpressApp.Notifications.NotificationsModule>();
-            module.DefaultNotificationsProvider = new DefaultNotificationsProvider(base.Application);
-            module.DefaultNotificationsProvider.NotificationTypesInfo.Add(XafTypesInfo.Instance.FindTypeInfo(typeof(DoctorEvent)));
-        }
-
-        void application_LoggedOn(object sender, LogonEventArgs e)
-        {
-            NotificationsModule notificationsModule = Application.Modules.FindModule<NotificationsModule>();
-            DefaultNotificationsProvider notificationsProvider = notificationsModule.DefaultNotificationsProvider;
-            notificationsProvider.CustomizeNotificationCollectionCriteria += notificationsProvider_CustomizeNotificationCollectionCriteria;
-        }
-        void notificationsProvider_CustomizeNotificationCollectionCriteria(
-            object sender, CustomizeCollectionCriteriaEventArgs e)
-        {
-            //if (e.Type == typeof(Event))
-            //    e.Criteria = CriteriaOperator.Parse("AssignedTo.Oid == CurrentUserId()");
         }
 
         public override void Setup(ApplicationModulesManager moduleManager)

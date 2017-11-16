@@ -8,6 +8,13 @@
         <Member Name="Gender" Caption="Пол" />
       </OwnMembers>
     </Class>
+    <Class Name="Registrator.Module.Controllers.CreateDoctorEventParameters" Caption="Создать расписание для врача">
+      <OwnMembers>
+        <Member Name="DateIn" Caption="Дата с" DisplayFormat="{0:dd.MM.yyyy HH:mm}" EditMask="dd.MM.yyyy HH:mm" />
+        <Member Name="DateOut" DisplayFormat="{0:dd.MM.yyyy HH:mm}" EditMask="dd.MM.yyyy HH:mm" Caption="Дата по" />
+        <Member Name="Norm" Caption="Норма" />
+      </OwnMembers>
+    </Class>
   </BOModel>
   <NavigationItems>
     <Items>
@@ -411,7 +418,6 @@
     </DetailView>
     <DetailView Id="Registrator_Event_DetailView">
       <Items>
-        <PropertyEditor Id="AlarmTime" DisplayFormat="{0:dd.MM.yyyy HH:mm}" EditMask="dd.MM.yyyy HH:mm" />
         <PropertyEditor Id="EndOn" DisplayFormat="{0:dd.MM.yyyy HH:mm}" EditMask="dd.MM.yyyy HH:mm" />
         <PropertyEditor Id="StartOn" DisplayFormat="{0:dd.MM.yyyy HH:mm}" EditMask="dd.MM.yyyy HH:mm" />
       </Items>

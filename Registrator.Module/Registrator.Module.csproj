@@ -272,12 +272,6 @@
     <Compile Include="BusinessRules\DSValueRule.cs" />
     <Compile Include="BusinessRules\PacientValueRule.cs" />
     <Compile Include="BusinessRules\EditableProtocolValueRule.cs" />
-    <Compile Include="Controllers\AbstractServiceViewController.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controllers\AbstractServiceViewController.Designer.cs">
-      <DependentUpon>AbstractServiceViewController.cs</DependentUpon>
-    </Compile>
     <Compile Include="Controllers\CallCardUrgentViewController.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -313,6 +307,12 @@
     </Compile>
     <Compile Include="Controllers\CommonServiceViewController.Designer.cs">
       <DependentUpon>CommonServiceViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\DoctorEventController.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\DoctorEventController.Designer.cs">
+      <DependentUpon>DoctorEventController.cs</DependentUpon>
     </Compile>
     <Compile Include="Controllers\MKBWithDispInfoBeforeViewController.cs">
       <SubType>Component</SubType>
@@ -367,6 +367,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controllers\CommonServiceViewController.resx">
       <DependentUpon>CommonServiceViewController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controllers\DoctorEventController.resx">
+      <DependentUpon>DoctorEventController.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controllers\MKBWithDispInfoBeforeViewController.resx">
       <DependentUpon>MKBWithDispInfoBeforeViewController.cs</DependentUpon>

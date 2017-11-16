@@ -1,4 +1,5 @@
 ﻿using DevExpress.ExpressApp;
+using DevExpress.ExpressApp.DC;
 using DevExpress.ExpressApp.Model;
 using DevExpress.Persistent.Base;
 using DevExpress.Persistent.Base.General;
@@ -30,6 +31,7 @@ namespace Registrator.Module.BusinessObjects
         private DoctorEvent recurrencePattern;
         private string recurrenceInfoXml;
         private Doctor doctor;
+        private Pacient pacient;
 
         public override void AfterConstruction()
         {
@@ -178,6 +180,12 @@ namespace Registrator.Module.BusinessObjects
         {
             get { return doctor; }
             set { SetPropertyValue("AssignedTo", ref doctor, value); } 
+        }
+
+        public Pacient Pacient
+        {
+            get { return pacient; }
+            set { SetPropertyValue("Pacient", ref pacient, value); }
         }
     }
 }
