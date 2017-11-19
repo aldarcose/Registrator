@@ -10,9 +10,23 @@
     </Class>
     <Class Name="Registrator.Module.Controllers.CreateDoctorEventParameters" Caption="Создать расписание для врача">
       <OwnMembers>
-        <Member Name="DateIn" Caption="Дата с" DisplayFormat="{0:dd.MM.yyyy HH:mm}" EditMask="dd.MM.yyyy HH:mm" />
-        <Member Name="DateOut" DisplayFormat="{0:dd.MM.yyyy HH:mm}" EditMask="dd.MM.yyyy HH:mm" Caption="Дата по" />
+        <Member Name="FridayDateIn" Caption="с" />
+        <Member Name="FridayDateOut" Caption="по" />
+        <Member Name="MondayDateIn" Caption="с" />
+        <Member Name="MondayDateOut" Caption="по" />
         <Member Name="Norm" Caption="Норма" />
+        <Member Name="SaturdayDateIn" Caption="с" />
+        <Member Name="SaturdayDateOut" Caption="по" />
+        <Member Name="SundayDateIn" Caption="с" />
+        <Member Name="SundayDateOut" Caption="по" />
+        <Member Name="ThursdayDateIn" Caption="с" />
+        <Member Name="ThursdayDateOut" Caption="по" />
+        <Member Name="TuesdayDateIn" Caption="с" />
+        <Member Name="TuesdayDateOut" Caption="по" />
+        <Member Name="WednesdayDateIn" Caption="с" />
+        <Member Name="WednesdayDateOut" Caption="по" />
+        <Member Name="WeeksCount" Caption="Количество недель" />
+        <Member Name="WeeksInterval" Caption="Через" />
       </OwnMembers>
     </Class>
   </BOModel>

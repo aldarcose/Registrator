@@ -370,6 +370,45 @@
         </LayoutGroup>
       </Layout>
     </DetailView>
+    <DetailView Id="CreateDoctorEventParameters_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="CreateDoctorEventParameters" RelativeSize="100">
+              <LayoutGroup Id="CreateDoctorEventParameters_col1" RelativeSize="49.862258953168045">
+                <LayoutItem Id="Monday" ShowCaption="False" ViewItem="Monday" Index="0" RelativeSize="4.795486600846262" IsNewNode="True" Removed="True" />
+                <LayoutItem Id="MondayDateIn" RelativeSize="3.6671368124118477" Index="1" />
+                <LayoutItem Id="MondayDateOut" ViewItem="MondayDateOut" Index="2" RelativeSize="3.6671368124118477" IsNewNode="True" Removed="True" />
+                <LayoutItem Id="Tuesday" ViewItem="Tuesday" Index="3" RelativeSize="3.6671368124118477" ShowCaption="False" IsNewNode="True" Removed="True" />
+                <LayoutItem Id="TuesdayDateIn" RelativeSize="3.6671368124118477" Index="4" />
+                <LayoutItem Id="TuesdayDateOut" RelativeSize="3.6671368124118477" Index="5" />
+                <LayoutItem Id="Wednesday" RelativeSize="3.6671368124118477" Index="6" ShowCaption="False" />
+                <LayoutItem Id="WednesdayDateIn" RelativeSize="3.6671368124118477" Index="7" />
+                <LayoutItem Id="WednesdayDateOut" RelativeSize="3.6671368124118477" Index="8" />
+                <LayoutItem Id="Thursday" RelativeSize="3.6671368124118477" Index="9" ShowCaption="False" />
+                <LayoutItem Id="ThursdayDateIn" RelativeSize="3.6671368124118477" Index="10" />
+                <LayoutItem Id="ThursdayDateOut" RelativeSize="3.6671368124118477" Index="11" />
+                <LayoutItem Id="Item1" Index="12" RelativeSize="54.866008462623412" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="CreateDoctorEventParameters_col2" RelativeSize="50.137741046831955">
+                <LayoutItem Id="Friday" RelativeSize="4.795486600846262" Index="0" ShowCaption="False" />
+                <LayoutItem Id="FridayDateIn" RelativeSize="3.6671368124118477" Index="1" />
+                <LayoutItem Id="FridayDateOut" RelativeSize="3.6671368124118477" Index="2" />
+                <LayoutItem Id="Saturday" RelativeSize="3.6671368124118477" Index="3" ShowCaption="False" />
+                <LayoutItem Id="SaturdayDateIn" RelativeSize="3.6671368124118477" Index="4" />
+                <LayoutItem Id="SaturdayDateOut" RelativeSize="3.6671368124118477" Index="5" />
+                <LayoutItem Id="Sunday" RelativeSize="3.6671368124118477" Index="6" ShowCaption="False" />
+                <LayoutItem Id="SundayDateIn" RelativeSize="3.6671368124118477" Index="7" />
+                <LayoutItem Id="SundayDateOut" RelativeSize="3.6671368124118477" Index="8" />
+                <LayoutItem Id="Norm" RelativeSize="3.6671368124118477" />
+                <LayoutItem Id="WeeksCount" RelativeSize="3.6671368124118477" />
+                <LayoutItem Id="WeeksInterval" RelativeSize="58.53314527503526" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
     <DetailView Id="DispanserizaionCase_DetailView">
       <Layout>
         <LayoutGroup Id="Main" RelativeSize="100">
@@ -608,6 +647,24 @@
         </LayoutGroup>
       </Layout>
     </DetailView>
+    <ListView Id="Doctor_LookupListView">
+      <Columns>
+        <ColumnInfo Id="FullName" IsPassword="False" />
+        <ColumnInfo Id="ChangePasswordOnFirstLogon" Removed="True" />
+        <ColumnInfo Id="DismissDate" Removed="True" />
+        <ColumnInfo Id="FederalCode" Removed="True" />
+        <ColumnInfo Id="HireDate" Removed="True" />
+        <ColumnInfo Id="InnerCode" Removed="True" />
+        <ColumnInfo Id="IsActive" Removed="True" />
+        <ColumnInfo Id="Oid" Removed="True" />
+        <ColumnInfo Id="Otdelenie" Removed="True" />
+        <ColumnInfo Id="Position" Removed="True" />
+        <ColumnInfo Id="Scheduling" Removed="True" />
+        <ColumnInfo Id="SNILS" Removed="True" />
+        <ColumnInfo Id="SpecialityTree" Removed="True" />
+        <ColumnInfo Id="UserName" Removed="True" />
+      </Columns>
+    </ListView>
     <DetailView Id="DoctorSpecTree_DetailView">
       <Layout>
         <LayoutGroup Id="Main" RelativeSize="100">

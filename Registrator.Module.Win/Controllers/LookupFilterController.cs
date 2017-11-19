@@ -78,7 +78,7 @@ namespace Registrator.Module.Win.Controllers
                 e.Handled = true;
                 return;
             }
-
+            
             if (filter != null)
             {
                 var list = new List<CriteriaOperator>();

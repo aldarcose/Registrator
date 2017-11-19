@@ -1,4 +1,5 @@
-﻿using DevExpress.ExpressApp;
+﻿using DevExpress.Data.Filtering;
+using DevExpress.ExpressApp;
 using DevExpress.ExpressApp.DC;
 using DevExpress.ExpressApp.Model;
 using DevExpress.Persistent.Base;
@@ -186,6 +187,25 @@ namespace Registrator.Module.BusinessObjects
         {
             get { return pacient; }
             set { SetPropertyValue("Pacient", ref pacient, value); }
+        }
+
+        /// <summary>Операнды свойств класса</summary>
+        public static new readonly FieldsClass Fields = new FieldsClass();
+        /// <summary>Операнды свойств класса</summary>
+        public new class FieldsClass : BaseObject.FieldsClass
+        {
+            /// <summary>Конструктор</summary>
+            public FieldsClass() { }
+            /// <summary>Конструктор</summary>
+            /// <param name="propertyName">Название вложенного свойства</param>
+            public FieldsClass(string propertyName) : base(propertyName) { }
+
+            /// <summary>Операнд свойства StartOn</summary>
+            public OperandProperty StartOn { get { return new OperandProperty(GetNestedName("StartOn")); } }
+            /// <summary>Операнд свойства EndOn</summary>
+            public OperandProperty EndOn { get { return new OperandProperty(GetNestedName("EndOn")); } }
+            /// <summary>Операнд свойства AssignedTo</summary>
+            public Doctor.FieldsClass AssignedTo { get { return new Doctor.FieldsClass(GetNestedName("AssignedTo")); } }
         }
     }
 }
