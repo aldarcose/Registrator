@@ -5,6 +5,7 @@ using DevExpress.ExpressApp.Model;
 using DevExpress.Persistent.Base;
 using DevExpress.Persistent.Base.General;
 using DevExpress.Persistent.BaseImpl;
+using DevExpress.Persistent.Validation;
 using DevExpress.Xpo;
 using System;
 using System.ComponentModel;
@@ -162,6 +163,7 @@ namespace Registrator.Module.BusinessObjects
             }
         }
 
+        [Browsable(false)]
         [NonCloneable]
 		[DevExpress.Xpo.DisplayName("Recurrence"), Size(SizeAttribute.Unlimited), ObjectValidatorIgnoreIssue(typeof(ObjectValidatorLargeNonDelayedMember))]
         public string RecurrenceInfoXml
@@ -177,6 +179,7 @@ namespace Registrator.Module.BusinessObjects
             set { SetPropertyValue("RecurrencePattern", ref recurrencePattern, (DoctorEvent)value); }
         }
 
+        [RuleRequiredField("Registrator.Module.BusinessObjects.DoctorEvent.AssignedToRequired", DefaultContexts.Save)]
         public Doctor AssignedTo
         {
             get { return doctor; }

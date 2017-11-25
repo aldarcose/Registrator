@@ -374,35 +374,54 @@
       <Layout>
         <LayoutGroup Id="Main" RelativeSize="100">
           <LayoutGroup Id="SimpleEditors" RelativeSize="100">
-            <LayoutGroup Id="CreateDoctorEventParameters" RelativeSize="100">
-              <LayoutGroup Id="CreateDoctorEventParameters_col1" RelativeSize="49.862258953168045">
-                <LayoutItem Id="Monday" ShowCaption="False" ViewItem="Monday" Index="0" RelativeSize="4.795486600846262" IsNewNode="True" Removed="True" />
-                <LayoutItem Id="MondayDateIn" RelativeSize="3.6671368124118477" Index="1" />
-                <LayoutItem Id="MondayDateOut" ViewItem="MondayDateOut" Index="2" RelativeSize="3.6671368124118477" IsNewNode="True" Removed="True" />
-                <LayoutItem Id="Tuesday" ViewItem="Tuesday" Index="3" RelativeSize="3.6671368124118477" ShowCaption="False" IsNewNode="True" Removed="True" />
-                <LayoutItem Id="TuesdayDateIn" RelativeSize="3.6671368124118477" Index="4" />
-                <LayoutItem Id="TuesdayDateOut" RelativeSize="3.6671368124118477" Index="5" />
-                <LayoutItem Id="Wednesday" RelativeSize="3.6671368124118477" Index="6" ShowCaption="False" />
-                <LayoutItem Id="WednesdayDateIn" RelativeSize="3.6671368124118477" Index="7" />
-                <LayoutItem Id="WednesdayDateOut" RelativeSize="3.6671368124118477" Index="8" />
-                <LayoutItem Id="Thursday" RelativeSize="3.6671368124118477" Index="9" ShowCaption="False" />
-                <LayoutItem Id="ThursdayDateIn" RelativeSize="3.6671368124118477" Index="10" />
-                <LayoutItem Id="ThursdayDateOut" RelativeSize="3.6671368124118477" Index="11" />
-                <LayoutItem Id="Item1" Index="12" RelativeSize="54.866008462623412" IsNewNode="True" />
+            <LayoutGroup Id="CreateDoctorEventParameters" RelativeSize="100" Direction="Vertical">
+              <LayoutGroup Id="CreateDoctorEventParameters_col1" RelativeSize="100">
+                <LayoutGroup Id="Item1" ShowCaption="True" CaptionLocation="Top" Index="0" RelativeSize="10.578279266572638" Direction="Horizontal" IsNewNode="True">
+                  <LayoutItem Id="TimeIn" ViewItem="TimeIn" Index="0" RelativeSize="33.103448275862071" IsNewNode="True" />
+                  <LayoutItem Id="TimeOut" ViewItem="TimeOut" Index="1" RelativeSize="32.988505747126439" IsNewNode="True" />
+                  <LayoutItem Id="Norm" ViewItem="Norm" Index="2" RelativeSize="33.9080459770115" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutItem Id="DateIn" RelativeSize="3.2622333751568382" Index="1" Removed="True" />
+                <LayoutGroup Id="Item7" ShowCaption="True" CaptionLocation="Top" Index="1" RelativeSize="16.784203102961918" IsNewNode="True">
+                  <LayoutItem Id="DateIn" ViewItem="DateIn" Index="0" RelativeSize="36.170212765957444" IsNewNode="True" />
+                  <LayoutItem Id="WeeksCount" ViewItem="WeeksCount" Index="1" RelativeSize="27.659574468085108" IsNewNode="True" />
+                  <LayoutItem Id="Label" ViewItem="Label" Index="2" RelativeSize="36.170212765957444" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutGroup Id="Item2" ShowCaption="True" CaptionLocation="Top" Index="2" RelativeSize="72.637517630465439" Direction="Vertical" IsNewNode="True">
+                  <LayoutGroup Id="Autod269a8ed-b676-4b54-bc2e-be679d538bdb" ShowCaption="False" Direction="Horizontal" Index="0" RelativeSize="14.937759336099585" IsNewNode="True">
+                    <LayoutGroup Id="Autoab75c54c-813a-4e44-b64f-f517ebc6c07a" ShowCaption="False" Index="0" RelativeSize="21.149425287356323" IsNewNode="True">
+                      <LayoutItem Id="Monday" ViewItem="Monday" Index="0" RelativeSize="47.222222222222221" IsNewNode="True" />
+                      <LayoutGroup Id="Auto3b5d21ff-b133-4ad9-acb2-14080307a326" ShowCaption="False" Direction="Horizontal" Index="1" RelativeSize="52.777777777777779" IsNewNode="True">
+                        <LayoutItem Id="Saturday" ViewItem="Saturday" Index="0" RelativeSize="94.565217391304344" IsNewNode="True" />
+                        <LayoutItem Id="Item5" Index="1" RelativeSize="5.4347826086956523" IsNewNode="True" />
+                      </LayoutGroup>
+                    </LayoutGroup>
+                    <LayoutGroup Id="Auto0ed12e5b-6a9e-40a9-9936-625b0efc2291" ShowCaption="False" Index="1" RelativeSize="19.425287356321839" IsNewNode="True">
+                      <LayoutItem Id="Tuesday" ViewItem="Tuesday" Index="0" RelativeSize="47.222222222222221" IsNewNode="True" />
+                      <LayoutItem Id="Sunday" ViewItem="Sunday" Index="1" RelativeSize="36.111111111111114" IsNewNode="True" />
+                      <LayoutItem Id="Item6" Index="2" RelativeSize="16.666666666666668" IsNewNode="True" />
+                    </LayoutGroup>
+                    <LayoutItem Id="Wednesday" ViewItem="Wednesday" Index="2" RelativeSize="19.425287356321839" IsNewNode="True" />
+                    <LayoutItem Id="Thursday" ViewItem="Thursday" Index="3" RelativeSize="19.425287356321839" IsNewNode="True" />
+                    <LayoutItem Id="Friday" ViewItem="Friday" Index="4" RelativeSize="19.425287356321839" IsNewNode="True" />
+                    <LayoutItem Id="Item3" Index="5" RelativeSize="1.1494252873563218" IsNewNode="True" />
+                  </LayoutGroup>
+                  <LayoutItem Id="Item4" Index="1" RelativeSize="85.062240663900411" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutItem Id="WeeksCount" RelativeSize="3.2622333751568382" Index="2" Removed="True" />
+                <LayoutItem Id="Label" ViewItem="Label" Index="3" RelativeSize="3.2622333751568382" Removed="True" />
+                <LayoutItem Id="Monday" ViewItem="Monday" Index="3" RelativeSize="3.1980319803198034" Removed="True" />
+                <LayoutItem Id="Norm" RelativeSize="3.6671368124118477" Removed="True" />
+                <LayoutItem Id="TimeIn" RelativeSize="4.795486600846262" Removed="True" />
+                <LayoutItem Id="TimeOut" RelativeSize="3.6671368124118477" Removed="True" />
               </LayoutGroup>
-              <LayoutGroup Id="CreateDoctorEventParameters_col2" RelativeSize="50.137741046831955">
-                <LayoutItem Id="Friday" RelativeSize="4.795486600846262" Index="0" ShowCaption="False" />
-                <LayoutItem Id="FridayDateIn" RelativeSize="3.6671368124118477" Index="1" />
-                <LayoutItem Id="FridayDateOut" RelativeSize="3.6671368124118477" Index="2" />
-                <LayoutItem Id="Saturday" RelativeSize="3.6671368124118477" Index="3" ShowCaption="False" />
-                <LayoutItem Id="SaturdayDateIn" RelativeSize="3.6671368124118477" Index="4" />
-                <LayoutItem Id="SaturdayDateOut" RelativeSize="3.6671368124118477" Index="5" />
-                <LayoutItem Id="Sunday" RelativeSize="3.6671368124118477" Index="6" ShowCaption="False" />
-                <LayoutItem Id="SundayDateIn" RelativeSize="3.6671368124118477" Index="7" />
-                <LayoutItem Id="SundayDateOut" RelativeSize="3.6671368124118477" Index="8" />
-                <LayoutItem Id="Norm" RelativeSize="3.6671368124118477" />
-                <LayoutItem Id="WeeksCount" RelativeSize="3.6671368124118477" />
-                <LayoutItem Id="WeeksInterval" RelativeSize="58.53314527503526" />
+              <LayoutGroup Id="CreateDoctorEventParameters_col2" RelativeSize="50" Direction="Horizontal" Removed="True">
+                <LayoutItem Id="Friday" Index="0" RelativeSize="4.795486600846262" Removed="True" />
+                <LayoutItem Id="Saturday" Index="0" RelativeSize="4.795486600846262" Removed="True" />
+                <LayoutItem Id="Sunday" Index="0" RelativeSize="100" Removed="True" />
+                <LayoutItem Id="Thursday" Index="0" RelativeSize="4.795486600846262" Removed="True" />
+                <LayoutItem Id="Wednesday" Index="0" RelativeSize="4.795486600846262" Removed="True" />
+                <LayoutItem Id="Tuesday" Removed="True" />
               </LayoutGroup>
             </LayoutGroup>
           </LayoutGroup>

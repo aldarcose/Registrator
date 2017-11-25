@@ -10,23 +10,19 @@
     </Class>
     <Class Name="Registrator.Module.Controllers.CreateDoctorEventParameters" Caption="Создать расписание для врача">
       <OwnMembers>
-        <Member Name="FridayDateIn" Caption="с" />
-        <Member Name="FridayDateOut" Caption="по" />
-        <Member Name="MondayDateIn" Caption="с" />
-        <Member Name="MondayDateOut" Caption="по" />
+        <Member Name="DateIn" Caption="Начало" />
+        <Member Name="Friday" Caption="Пятница" />
+        <Member Name="Label" Caption="Метка" />
+        <Member Name="Monday" Caption="Понедельник" />
         <Member Name="Norm" Caption="Норма" />
-        <Member Name="SaturdayDateIn" Caption="с" />
-        <Member Name="SaturdayDateOut" Caption="по" />
-        <Member Name="SundayDateIn" Caption="с" />
-        <Member Name="SundayDateOut" Caption="по" />
-        <Member Name="ThursdayDateIn" Caption="с" />
-        <Member Name="ThursdayDateOut" Caption="по" />
-        <Member Name="TuesdayDateIn" Caption="с" />
-        <Member Name="TuesdayDateOut" Caption="по" />
-        <Member Name="WednesdayDateIn" Caption="с" />
-        <Member Name="WednesdayDateOut" Caption="по" />
+        <Member Name="Saturday" Caption="Суббота" />
+        <Member Name="Sunday" Caption="Воскресенье" />
+        <Member Name="Thursday" Caption="Четверг" />
+        <Member Name="TimeIn" Caption="Начало" />
+        <Member Name="TimeOut" Caption="Конец" />
+        <Member Name="Tuesday" Caption="Вторник" />
+        <Member Name="Wednesday" Caption="Среда" />
         <Member Name="WeeksCount" Caption="Количество недель" />
-        <Member Name="WeeksInterval" Caption="Через" />
       </OwnMembers>
     </Class>
   </BOModel>
@@ -107,6 +103,29 @@
             <LayoutGroup Id="ObjStatusTerTemplates" Caption="Шаблоны объективного статуса" />
             <LayoutGroup Id="RecomendTemplates" Caption="Шаблоны рекомендаций" />
           </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="CreateDoctorEventParameters_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="CreateDoctorEventParameters">
+              <LayoutGroup Id="CreateDoctorEventParameters_col1">
+                <LayoutGroup Id="Item1" Caption="Время расписания" />
+                <LayoutGroup Id="Item7" Caption=" " />
+                <LayoutGroup Id="Item2" Caption=" ">
+                  <LayoutGroup Id="Autod269a8ed-b676-4b54-bc2e-be679d538bdb" Caption="Autod269a8ed-b676-4b54-bc2e-be679d538bdb(13)">
+                    <LayoutGroup Id="Autoab75c54c-813a-4e44-b64f-f517ebc6c07a" Caption="Autoab75c54c-813a-4e44-b64f-f517ebc6c07a(14)">
+                      <LayoutGroup Id="Auto3b5d21ff-b133-4ad9-acb2-14080307a326" Caption="Auto3b5d21ff-b133-4ad9-acb2-14080307a326(16)" />
+                    </LayoutGroup>
+                    <LayoutGroup Id="Auto0ed12e5b-6a9e-40a9-9936-625b0efc2291" Caption="Auto0ed12e5b-6a9e-40a9-9936-625b0efc2291(19)" />
+                  </LayoutGroup>
+                </LayoutGroup>
+              </LayoutGroup>
+              <LayoutGroup Id="CreateDoctorEventParameters_col2" Caption="CreateDoctorEventParameters_col2" />
+            </LayoutGroup>
+          </LayoutGroup>
         </LayoutGroup>
       </Layout>
     </DetailView>

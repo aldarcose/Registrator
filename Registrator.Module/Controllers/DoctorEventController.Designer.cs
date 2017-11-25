@@ -29,7 +29,22 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            this.FilterDoctorEventAction = new DevExpress.ExpressApp.Actions.SingleChoiceAction(this.components);
             this.CreateDoctorEventAction = new DevExpress.ExpressApp.Actions.PopupWindowShowAction(this.components);
+            // 
+            // FilterDoctorEventAction
+            // 
+            this.FilterDoctorEventAction.Caption = "Врач";
+            this.FilterDoctorEventAction.Category = "Filters";
+            this.FilterDoctorEventAction.ConfirmationMessage = null;
+            this.FilterDoctorEventAction.Id = "FilterDoctorEventAction";
+            this.FilterDoctorEventAction.ShowItemsOnClick = true;
+            this.FilterDoctorEventAction.TargetObjectType = typeof(Registrator.Module.BusinessObjects.DoctorEvent);
+            this.FilterDoctorEventAction.TargetViewNesting = DevExpress.ExpressApp.Nesting.Root;
+            this.FilterDoctorEventAction.TargetViewType = DevExpress.ExpressApp.ViewType.ListView;
+            this.FilterDoctorEventAction.ToolTip = null;
+            this.FilterDoctorEventAction.TypeOfView = typeof(DevExpress.ExpressApp.ListView);
+            this.FilterDoctorEventAction.Execute += new DevExpress.ExpressApp.Actions.SingleChoiceActionExecuteEventHandler(this.FilterDoctorEventAction_Execute);
             // 
             // CreateDoctorEventAction
             // 
@@ -38,10 +53,8 @@
             this.CreateDoctorEventAction.Caption = "Создать расписание";
             this.CreateDoctorEventAction.Category = "ObjectsCreation";
             this.CreateDoctorEventAction.ConfirmationMessage = null;
-            this.CreateDoctorEventAction.Id = "Registrator.Module.Controllers.CreateDoctorEventAction";
-            this.CreateDoctorEventAction.SelectionDependencyType = DevExpress.ExpressApp.Actions.SelectionDependencyType.RequireSingleObject;
-            this.CreateDoctorEventAction.TargetObjectsCriteria = "Scheduling";
-            this.CreateDoctorEventAction.TargetObjectType = typeof(Registrator.Module.BusinessObjects.Doctor);
+            this.CreateDoctorEventAction.Id = "CreateDoctorEventAction";
+            this.CreateDoctorEventAction.TargetObjectType = typeof(Registrator.Module.BusinessObjects.DoctorEvent);
             this.CreateDoctorEventAction.TargetViewNesting = DevExpress.ExpressApp.Nesting.Root;
             this.CreateDoctorEventAction.TargetViewType = DevExpress.ExpressApp.ViewType.ListView;
             this.CreateDoctorEventAction.ToolTip = null;
@@ -51,8 +64,9 @@
             // 
             // DoctorEventController
             // 
+            this.Actions.Add(this.FilterDoctorEventAction);
             this.Actions.Add(this.CreateDoctorEventAction);
-            this.TargetObjectType = typeof(Registrator.Module.BusinessObjects.Doctor);
+            this.TargetObjectType = typeof(Registrator.Module.BusinessObjects.DoctorEvent);
             this.TargetViewNesting = DevExpress.ExpressApp.Nesting.Root;
             this.TargetViewType = DevExpress.ExpressApp.ViewType.ListView;
             this.TypeOfView = typeof(DevExpress.ExpressApp.ListView);
@@ -61,6 +75,7 @@
 
         #endregion
 
+        private DevExpress.ExpressApp.Actions.SingleChoiceAction FilterDoctorEventAction;
         private DevExpress.ExpressApp.Actions.PopupWindowShowAction CreateDoctorEventAction;
     }
 }

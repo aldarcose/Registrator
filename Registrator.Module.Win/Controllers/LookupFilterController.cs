@@ -46,7 +46,8 @@ namespace Registrator.Module.Win.Controllers
                 e.Handled = true;
                 return;
             }
-            var normalizedText = e.SearchText.ToUpper();
+            string normalizedText = e.SearchText.ToUpper();
+            
             if (View.Id =="MKB10_LookupListView")
             {
                 var criteria = CriteriaOperator.Or(
@@ -57,7 +58,6 @@ namespace Registrator.Module.Win.Controllers
                 e.Handled = true;
                 return;
             }
-
             if (View.Id == "Kladr_LookupListView")
             {
                 var criteria = CriteriaOperator.Or(
@@ -67,7 +67,6 @@ namespace Registrator.Module.Win.Controllers
                 e.Handled = true;
                 return;
             }
-
             if (View.Id == "TerritorialUsluga_LookupListView")
             {
                 var criteria = CriteriaOperator.Or(
@@ -78,7 +77,18 @@ namespace Registrator.Module.Win.Controllers
                 e.Handled = true;
                 return;
             }
-            
+            if (View.Id == "Doctor_LookupListView" || View.Id == "Pacient_LookupListView")
+            {
+                var criteria = CriteriaOperator.Or(
+                    CriteriaOperator.Parse("Contains(Upper(FirstName),?)", normalizedText),
+                    CriteriaOperator.Parse("Contains(Upper(LastName), ?)", normalizedText),
+                    CriteriaOperator.Parse("Contains(Upper(MiddleName), ?)", normalizedText)
+                );
+                e.Criteria = criteria;
+                e.Handled = true;
+                return;
+            }
+
             if (filter != null)
             {
                 var list = new List<CriteriaOperator>();
