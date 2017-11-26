@@ -210,6 +210,21 @@ namespace Registrator.Module.BusinessObjects.Dictionaries
                 }
             }
         }
+
+        /// <summary>Операнды свойств класса</summary>
+        public static new readonly FieldsClass Fields = new FieldsClass();
+        /// <summary>Операнды свойств класса</summary>
+        public new class FieldsClass : BaseObject.FieldsClass
+        {
+            /// <summary>Конструктор</summary>
+            public FieldsClass() { }
+            /// <summary>Конструктор</summary>
+            /// <param name="propertyName">Название вложенного свойства</param>
+            public FieldsClass(string propertyName) : base(propertyName) { }
+
+            /// <summary>Операнд свойства Scheduling</summary>
+            public OperandProperty Scheduling { get { return new OperandProperty(GetNestedName("Scheduling")); } }
+        }
     }
 }
 

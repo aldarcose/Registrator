@@ -413,6 +413,9 @@ namespace Registrator.Module.BusinessObjects
 
             /// <summary>Операнд свойства Scheduling</summary>
             public OperandProperty Scheduling { get { return new OperandProperty(GetNestedName("Scheduling")); } }
+
+            /// <summary>Операнд свойства SpecialityTree</summary>
+            public DoctorSpecTree.FieldsClass SpecialityTree { get { return new DoctorSpecTree.FieldsClass(GetNestedName("SpecialityTree")); } }
         }
     }
     

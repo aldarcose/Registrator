@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.FilterDoctorEventAction = new DevExpress.ExpressApp.Actions.SingleChoiceAction(this.components);
             this.CreateDoctorEventAction = new DevExpress.ExpressApp.Actions.PopupWindowShowAction(this.components);
+            this.FilterDoctorSpecEventAction = new DevExpress.ExpressApp.Actions.SingleChoiceAction(this.components);
             // 
             // FilterDoctorEventAction
             // 
@@ -62,14 +63,30 @@
             this.CreateDoctorEventAction.CustomizePopupWindowParams += new DevExpress.ExpressApp.Actions.CustomizePopupWindowParamsEventHandler(this.CreateDoctorEventAction_CustomizePopupWindowParams);
             this.CreateDoctorEventAction.Execute += new DevExpress.ExpressApp.Actions.PopupWindowShowActionExecuteEventHandler(this.CreateDoctorEventAction_Execute);
             // 
+            // FilterDoctorSpecEventAction
+            // 
+            this.FilterDoctorSpecEventAction.Caption = "Специальность";
+            this.FilterDoctorSpecEventAction.Category = "Filters";
+            this.FilterDoctorSpecEventAction.ConfirmationMessage = null;
+            this.FilterDoctorSpecEventAction.Id = "FilterDoctorSpecEvetAction";
+            this.FilterDoctorSpecEventAction.ShowItemsOnClick = true;
+            this.FilterDoctorSpecEventAction.TargetObjectType = typeof(Registrator.Module.BusinessObjects.DoctorEvent);
+            this.FilterDoctorSpecEventAction.TargetViewNesting = DevExpress.ExpressApp.Nesting.Root;
+            this.FilterDoctorSpecEventAction.TargetViewType = DevExpress.ExpressApp.ViewType.ListView;
+            this.FilterDoctorSpecEventAction.ToolTip = null;
+            this.FilterDoctorSpecEventAction.TypeOfView = typeof(DevExpress.ExpressApp.ListView);
+            this.FilterDoctorSpecEventAction.Execute += new DevExpress.ExpressApp.Actions.SingleChoiceActionExecuteEventHandler(this.FilterDoctorSpecEventAction_Execute);
+            // 
             // DoctorEventController
             // 
+            this.Actions.Add(this.FilterDoctorSpecEventAction);
             this.Actions.Add(this.FilterDoctorEventAction);
             this.Actions.Add(this.CreateDoctorEventAction);
             this.TargetObjectType = typeof(Registrator.Module.BusinessObjects.DoctorEvent);
             this.TargetViewNesting = DevExpress.ExpressApp.Nesting.Root;
             this.TargetViewType = DevExpress.ExpressApp.ViewType.ListView;
             this.TypeOfView = typeof(DevExpress.ExpressApp.ListView);
+            this.ViewControlsCreated += new System.EventHandler(this.DoctorEventController_ViewControlsCreated);
 
         }
 
@@ -77,5 +94,6 @@
 
         private DevExpress.ExpressApp.Actions.SingleChoiceAction FilterDoctorEventAction;
         private DevExpress.ExpressApp.Actions.PopupWindowShowAction CreateDoctorEventAction;
+        private DevExpress.ExpressApp.Actions.SingleChoiceAction FilterDoctorSpecEventAction;
     }
 }

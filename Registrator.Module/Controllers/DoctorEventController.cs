@@ -12,6 +12,9 @@ using System.ComponentModel;
 using DevExpress.ExpressApp.Xpo;
 using DevExpress.Xpo;
 using DevExpress.Persistent.AuditTrail;
+using DevExpress.XtraScheduler;
+using DevExpress.XtraEditors;
+using Registrator.Module.BusinessObjects.Dictionaries;
 
 namespace Registrator.Module.Controllers
 {
@@ -22,6 +25,7 @@ namespace Registrator.Module.Controllers
     {
         private const string FILTERKEY = "FilterDoctors";
         private const string CREATEEVENTENABLE = "CreateEventEnabled";
+        private SchedulerViewBase activeView;
         static ListView rootListView = null;
 
         public DoctorEventController()
@@ -29,14 +33,34 @@ namespace Registrator.Module.Controllers
             InitializeComponent();
         }
 
+        private void DoctorEventController_ViewControlsCreated(object sender, EventArgs e)
+        {
+            PanelControl panelControl = View.Control as PanelControl;
+            if (panelControl != null && panelControl.Controls.Count > 0)
+            {
+                var mainControl = panelControl.Controls[0] as SchedulerControl;
+                activeView = mainControl.ActiveView;
+            }
+        }
+
         protected override void OnActivated()
         {
+            rootListView = View as ListView;
+            // Пустое представление при запуске
             ((ListView)View).CollectionSource.Criteria[FILTERKEY] = CriteriaOperator.Parse("1=0");
             SetCreateEventEnable();
-            foreach (var doctor in ObjectSpace.GetObjects<Doctor>(Doctor.Fields.Scheduling))
-                FilterDoctorEventAction.Items.Add(new ChoiceActionItem(doctor.Oid.ToString(), doctor.FullName, doctor));
-            rootListView = View as ListView;
+            foreach (var doctorSpec in ObjectSpace.GetObjects<DoctorSpecTree>(DoctorSpecTree.Fields.Scheduling))
+                FilterDoctorSpecEventAction.Items.Add(new ChoiceActionItem(doctorSpec.Oid.ToString(), doctorSpec.Name, doctorSpec));
             base.OnActivated();
+        }
+
+        private void FilterDoctorSpecEventAction_Execute(object sender, SingleChoiceActionExecuteEventArgs e)
+        {
+            DoctorSpecTree doctorSpec = (DoctorSpecTree)e.SelectedChoiceActionItem.Data;
+            foreach (var doctor in ObjectSpace.GetObjects<Doctor>(Doctor.Fields.Scheduling & Doctor.Fields.SpecialityTree == doctorSpec))
+            {
+                FilterDoctorEventAction.Items.Add(new ChoiceActionItem(doctor.Oid.ToString(), doctor.FullName, doctor));
+            }
         }
 
         private void FilterDoctorEventAction_Execute(object sender, SingleChoiceActionExecuteEventArgs e)
@@ -57,7 +81,8 @@ namespace Registrator.Module.Controllers
         private void CreateDoctorEventAction_CustomizePopupWindowParams(object sender, CustomizePopupWindowParamsEventArgs e)
         {
             IObjectSpace objectSpace = Application.CreateObjectSpace();
-            CreateDoctorEventParameters parameters = new CreateDoctorEventParameters();
+            TimeIntervalCollection intervalCol = activeView.GetVisibleIntervals();
+            CreateDoctorEventParameters parameters = new CreateDoctorEventParameters(intervalCol.Start);
             e.View = Application.CreateDetailView(objectSpace, parameters, true);
         }
 
@@ -70,14 +95,7 @@ namespace Registrator.Module.Controllers
             {
                 DateTime start = parameters.DateIn;
                 DateTime end = parameters.DateIn.AddDays(7 * parameters.WeeksCount);
-                // Удаляем старое расписание доктора за период
-                List<DoctorEvent> oldEvents = new List<DoctorEvent>(os.GetObjects<DoctorEvent>(
-                    DoctorEvent.Fields.AssignedTo == os.GetObject(doctor) &
-                    new FunctionOperator(FunctionOperatorType.GetDate, DoctorEvent.Fields.StartOn) >= start.Date &
-                    new FunctionOperator(FunctionOperatorType.GetDate, DoctorEvent.Fields.EndOn) < end.Date));
-                os.Delete(oldEvents);
-
-                // Цикл по дням
+                
                 while (start < end)
                 {
                     if ((start.DayOfWeek == DayOfWeek.Monday && parameters.Monday) ||
@@ -90,6 +108,29 @@ namespace Registrator.Module.Controllers
                     {
                         DateTime timeStart = start.AddHours(parameters.TimeIn.Hour).AddMinutes(parameters.TimeIn.Minute);
                         DateTime timeEnd = start.AddHours(parameters.TimeOut.Hour).AddMinutes(parameters.TimeOut.Minute);
+
+                        List<DoctorEvent> oldEvents = new List<DoctorEvent>();
+                        GroupOperator oldEventsCriteria = new GroupOperator();
+                        // Удаляем пересекающееся старое расписание
+                        if (timeStart == timeStart.Date && timeEnd == timeEnd.Date)
+                        {
+                            // Если указано пустое расписание, то удаляем старое расписание полностью за день
+                            oldEventsCriteria.Operands.Add(DoctorEvent.Fields.AssignedTo == os.GetObject(doctor) &
+                                new FunctionOperator(FunctionOperatorType.GetDate, DoctorEvent.Fields.StartOn) >= timeStart.Date &
+                                new FunctionOperator(FunctionOperatorType.GetDate, DoctorEvent.Fields.EndOn) < timeStart.Date.AddDays(1));
+                        }
+                        else
+                        {
+                            // Ищем пересекающиеся с указанным временем расписания
+                            oldEventsCriteria.Operands.Add(DoctorEvent.Fields.AssignedTo == os.GetObject(doctor) & (
+                                DoctorEvent.Fields.StartOn < timeStart & DoctorEvent.Fields.EndOn > timeStart |
+                                DoctorEvent.Fields.StartOn >= timeStart & DoctorEvent.Fields.EndOn <= timeEnd |
+                                DoctorEvent.Fields.StartOn < timeEnd & DoctorEvent.Fields.EndOn > timeEnd));
+                        }
+                        
+                        oldEvents.AddRange(os.GetObjects<DoctorEvent>(oldEventsCriteria));
+                        os.Delete(oldEvents);
+
                         // Цикл по времени
                         while (timeStart < timeEnd)
                         {
@@ -121,14 +162,14 @@ namespace Registrator.Module.Controllers
     [DomainComponent]
     public class CreateDoctorEventParameters
     {
-        public CreateDoctorEventParameters()
+        public CreateDoctorEventParameters(DateTime dateIn)
         {
             this.Norm = TimeSpan.FromMinutes(15);
+            this.DateIn = dateIn;
             DateTime today = DateTime.Today;
-            int dayOfWeek = (int)today.DayOfWeek;
-            this.DateIn = today.AddDays(1 - dayOfWeek);
             this.TimeIn = today;
             this.TimeOut = today;
+            this.WeeksCount = 1;
         }
 
         [ModelDefault("EditMask", "HH:mm")]
