@@ -322,6 +322,24 @@
         </LayoutGroup>
       </Layout>
     </DetailView>
+    <DetailView Id="CloneDoctorEventParameters_DetailView">
+      <Items>
+        <StaticText Id="@2ccfde80-5f52-4274-8f1e-6d01d8bbd8e0" IsNewNode="True" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="CloneDoctorEventParameters" RelativeSize="100">
+              <LayoutGroup Id="Item1" ShowCaption="True" CaptionLocation="Top" Index="0" RelativeSize="100" Direction="Horizontal" IsNewNode="True">
+                <LayoutItem Id="NextWeeksCount" ViewItem="NextWeeksCount" Index="0" RelativeSize="36.088154269972449" IsNewNode="True" />
+                <LayoutItem Id="@2ccfde80-5f52-4274-8f1e-6d01d8bbd8e0" ViewItem="@2ccfde80-5f52-4274-8f1e-6d01d8bbd8e0" Index="1" RelativeSize="63.911845730027551" ShowCaption="False" CaptionLocation="Bottom" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutItem Id="NextWeeksCount" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
     <DetailView Id="CommonProtocol_DetailView">
       <Layout>
         <LayoutGroup Id="Main" RelativeSize="100">

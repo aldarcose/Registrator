@@ -1,11 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Application Title="MIS" Copyright="BadmaevaNK &amp; RadnaevMB">
   <BOModel>
+    <Class Name="Registrator.Module.BusinessObjects.DoctorEvent" Caption="Расписание врача">
+      <OwnMembers>
+        <Member Name="AssignedTo" Caption="Врач" />
+        <Member Name="EndOn" Caption="Конец" />
+        <Member Name="Label" Caption="Метка" />
+        <Member Name="Pacient" Caption="Пациент" />
+        <Member Name="StartOn" Caption="Начало" />
+      </OwnMembers>
+    </Class>
     <Class Name="Registrator.Module.BusinessObjects.Pacient" Caption="Пациент">
       <OwnMembers>
         <Member Name="Address" Caption="Адрес" />
         <Member Name="Document" Caption="Документ" />
         <Member Name="Gender" Caption="Пол" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Registrator.Module.Controllers.CloneDoctorEventParameters" Caption="Скопировать расписание недели">
+      <OwnMembers>
+        <Member Name="NextWeeksCount" Caption="Количество недель" />
       </OwnMembers>
     </Class>
     <Class Name="Registrator.Module.Controllers.CreateDoctorEventParameters" Caption="Создать расписание для врача">
@@ -34,7 +48,7 @@
           <Item Id="Constants_ListView" Caption="Константы программы" />
           <Item Id="DnevnoyStacionar_ListView" Caption="Дневной стационар" />
           <Item Id="Pacient_ListView" Caption="Пациенты" />
-          <Item Id="Registrator_Event_ListView" Caption="Событие" />
+          <Item Id="Registrator_Event_ListView" Caption="Расписание врачей" />
           <Item Id="VERS_SPEC_ListView" Caption="Медицинские специальности" />
         </Items>
       </Item>
@@ -86,6 +100,21 @@
     </Items>
   </NavigationItems>
   <Views>
+    <DetailView Id="CloneDoctorEventParameters_DetailView">
+      <Items>
+        <StaticText Id="@2ccfde80-5f52-4274-8f1e-6d01d8bbd8e0" Caption="недель" Text="недель" />
+        <PropertyEditor Id="NextWeeksCount" Caption="Скопировать на следующие" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="CloneDoctorEventParameters" Caption="Количество недель">
+              <LayoutGroup Id="Item1" Caption=" " />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
     <DetailView Id="CommonProtocol_DetailView">
       <Layout>
         <LayoutGroup Id="Main">

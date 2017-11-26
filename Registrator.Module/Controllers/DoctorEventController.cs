@@ -25,6 +25,7 @@ namespace Registrator.Module.Controllers
     {
         private const string FILTERKEY = "FilterDoctors";
         private const string CREATEEVENTENABLE = "CreateEventEnabled";
+        private const string CLONEDOCTOREVENTACTIVE = "CloneDoctorEventActive";
         private SchedulerViewBase activeView;
         static ListView rootListView = null;
 
@@ -40,19 +41,53 @@ namespace Registrator.Module.Controllers
             {
                 var mainControl = panelControl.Controls[0] as SchedulerControl;
                 activeView = mainControl.ActiveView;
+                mainControl.ActiveViewChanged += mainControl_ActiveViewChanged;
+
+                SetDefaultinterval();
             }
+        }
+
+        // Установка текущей недели
+        private void SetDefaultinterval()
+        {
+            TimeIntervalCollection intervals = new TimeIntervalCollection();
+            DateTime today = DateTime.Today;
+            int dayOfWeek = (int)today.DayOfWeek;
+            DateTime currentMonday = today.DayOfWeek == DayOfWeek.Sunday ? today.AddDays(-6) : today.AddDays(1 - dayOfWeek);
+            intervals.SetContent(new TimeInterval(currentMonday, TimeSpan.FromDays(5)));
+            activeView.SetVisibleIntervals(intervals);
+        }
+
+        private void mainControl_ActiveViewChanged(object sender, EventArgs e)
+        {
+            SchedulerControl mainControl = sender as SchedulerControl;
+            if (mainControl != null)
+                SetCloneDoctorEventActive(mainControl.ActiveViewType);
         }
 
         protected override void OnActivated()
         {
+            ObjectSpace.CustomRefresh += ObjectSpace_CustomRefresh;
+
             rootListView = View as ListView;
             // Пустое представление при запуске
             ((ListView)View).CollectionSource.Criteria[FILTERKEY] = CriteriaOperator.Parse("1=0");
+            
             SetCreateEventEnable();
+            SetCloneDoctorEventActive(SchedulerViewType.Day);
+
             foreach (var doctorSpec in ObjectSpace.GetObjects<DoctorSpecTree>(DoctorSpecTree.Fields.Scheduling))
                 FilterDoctorSpecEventAction.Items.Add(new ChoiceActionItem(doctorSpec.Oid.ToString(), doctorSpec.Name, doctorSpec));
             base.OnActivated();
         }
+
+        // При обновлении представления возникало исключение StackOverflow, поэтому оно отключено
+        private void ObjectSpace_CustomRefresh(object sender, HandledEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        #region Фильтрация расписания
 
         private void FilterDoctorSpecEventAction_Execute(object sender, SingleChoiceActionExecuteEventArgs e)
         {
@@ -70,13 +105,24 @@ namespace Registrator.Module.Controllers
             {
                 ((ListView)View).CollectionSource.Criteria[FILTERKEY] = DoctorEvent.Fields.AssignedTo == doctor;
                 SetCreateEventEnable();
+                SetCloneDoctorEventActive(activeView.Type);
             }
         }
+
+        #endregion
 
         private void SetCreateEventEnable()
         {
             CreateDoctorEventAction.Enabled[CREATEEVENTENABLE] = FilterDoctorEventAction.SelectedItem != null;
         }
+
+        private void SetCloneDoctorEventActive(SchedulerViewType type)
+        {
+            CloneDoctorEventAction.Active[CLONEDOCTOREVENTACTIVE] = FilterDoctorEventAction.SelectedItem != null &&
+                type == SchedulerViewType.WorkWeek;
+        }
+
+        #region Создание расписания
 
         private void CreateDoctorEventAction_CustomizePopupWindowParams(object sender, CustomizePopupWindowParamsEventArgs e)
         {
@@ -157,6 +203,73 @@ namespace Registrator.Module.Controllers
                 rootListView.CollectionSource.Reload();
             }
         }
+
+        #endregion
+
+        #region Клонирование расписания
+
+        private void CloneDoctorEventAction_CustomizePopupWindowParams(object sender, CustomizePopupWindowParamsEventArgs e)
+        {
+            CloneDoctorEventParameters parameters = new CloneDoctorEventParameters();
+            e.View = Application.CreateDetailView(ObjectSpaceInMemory.CreateNew(), parameters, true);
+        }
+
+        private void CloneDoctorEventAction_Execute(object sender, PopupWindowShowActionExecuteEventArgs e)
+        {
+            Doctor doctor = FilterDoctorEventAction.SelectedItem.Data as Doctor;
+            // Форма параметров
+            CloneDoctorEventParameters parameters = (CloneDoctorEventParameters)e.PopupWindowViewCurrentObject;
+            using (IObjectSpace os = Application.CreateObjectSpace())
+            {
+                TimeIntervalCollection intervalCol = activeView.GetVisibleIntervals();
+                DateTime clonedWeekDateIn = intervalCol.Start;
+                Dictionary<int, List<DoctorEvent>> clonedWeek = new Dictionary<int, List<DoctorEvent>>();
+                DateTime start = clonedWeekDateIn; int i = 1;
+                // Копируем в буфер неделю, которую мы хотим скопировать
+                while (start < clonedWeekDateIn.AddDays(7))
+                {
+                    clonedWeek[i] = new List<DoctorEvent>(os.GetObjects<DoctorEvent>(
+                        DoctorEvent.Fields.AssignedTo == os.GetObject(doctor) &
+                        DoctorEvent.Fields.StartOn >= start.Date & 
+                        DoctorEvent.Fields.EndOn < start.Date.AddDays(1)));
+                    start = start.AddDays(1);
+                    i++;
+                }
+
+                int weekIndex = 0; start = clonedWeekDateIn.Date.AddDays(7);
+                while (weekIndex < parameters.NextWeeksCount)
+                {
+                    int dayIndex = 1;
+                    while (dayIndex <= 7)
+                    {
+                        foreach (DoctorEvent clonedEvent in clonedWeek[dayIndex])
+                        {
+                            var newEvent = os.CreateObject<DoctorEvent>();
+                            newEvent.AssignedTo = clonedEvent.AssignedTo;
+                            newEvent.Label = clonedEvent.Label;
+                            newEvent.StartOn = start.AddHours(clonedEvent.StartOn.Hour).AddMinutes(clonedEvent.StartOn.Minute);
+                            newEvent.EndOn = start.AddHours(clonedEvent.EndOn.Hour).AddMinutes(clonedEvent.EndOn.Minute);
+                        }
+                        dayIndex++;
+                        start = start.AddDays(1);
+                    }
+                    weekIndex++;
+                }
+
+                // Отключение аудита
+                Session session = ((XPObjectSpace)os).Session;
+                AuditTrailService.Instance.EndSessionAudit(session);
+                os.CommitChanges();
+            }
+
+            // Обновление списочного представления
+            if (rootListView != null && rootListView.ObjectSpace != null && rootListView.CollectionSource != null)
+            {
+                rootListView.CollectionSource.Reload();
+            }
+        }
+
+        #endregion
     }
 
     [DomainComponent]
@@ -202,5 +315,17 @@ namespace Registrator.Module.Controllers
         public bool Sunday { get; set; }
 
         #endregion
+    }
+
+    /// <summary>
+    /// Параметры операции &qout;Клонирование расписания рабочей недели&qout;
+    /// </summary>
+    [DomainComponent]
+    public class CloneDoctorEventParameters
+    {
+        /// <summary>
+        /// Количество следующих недель на которые будут скопировано расписание
+        /// </summary>
+        public uint NextWeeksCount { get; set; }
     }
 }
