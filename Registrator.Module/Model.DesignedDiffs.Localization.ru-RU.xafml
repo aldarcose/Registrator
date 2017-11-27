@@ -5,7 +5,7 @@
       <OwnMembers>
         <Member Name="AssignedTo" Caption="Врач" />
         <Member Name="EndOn" Caption="Конец" />
-        <Member Name="Label" Caption="Метка" />
+        <Member Name="Label" Caption="Вид талона" />
         <Member Name="Pacient" Caption="Пациент" />
         <Member Name="StartOn" Caption="Начало" />
       </OwnMembers>

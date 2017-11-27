@@ -92,6 +92,7 @@ namespace Registrator.Module.Controllers
         private void FilterDoctorSpecEventAction_Execute(object sender, SingleChoiceActionExecuteEventArgs e)
         {
             DoctorSpecTree doctorSpec = (DoctorSpecTree)e.SelectedChoiceActionItem.Data;
+            FilterDoctorEventAction.Items.Clear();
             foreach (var doctor in ObjectSpace.GetObjects<Doctor>(Doctor.Fields.Scheduling & Doctor.Fields.SpecialityTree == doctorSpec))
             {
                 FilterDoctorEventAction.Items.Add(new ChoiceActionItem(doctor.Oid.ToString(), doctor.FullName, doctor));
