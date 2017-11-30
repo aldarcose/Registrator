@@ -147,6 +147,8 @@
     <Reference Include="DevExpress.RichEdit.v17.1.Export, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraReports.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraReports.v17.1.Extensions, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v17.1.Core, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraTreeList.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
@@ -200,6 +202,9 @@
     <Compile Include="Controllers\AuthenticationStandardLogonParametersController.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Controllers\DoctorEvent\CreateDoctorEventWinController.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controllers\DispanserizationCaseViewController.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -211,6 +216,9 @@
     </Compile>
     <Compile Include="Controllers\DnevnoyStacionarController.Designer.cs">
       <DependentUpon>DnevnoyStacionarController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\DoctorEvent\DoctorEventWinController.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Controllers\DocumentChangeMaskController.cs">
       <SubType>Component</SubType>

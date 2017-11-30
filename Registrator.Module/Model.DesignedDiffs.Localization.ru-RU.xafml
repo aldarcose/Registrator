@@ -26,7 +26,7 @@
       <OwnMembers>
         <Member Name="DateIn" Caption="Начало" />
         <Member Name="Friday" Caption="Пятница" />
-        <Member Name="Label" Caption="Метка" />
+        <Member Name="Label" Caption="Вид талона" />
         <Member Name="Monday" Caption="Понедельник" />
         <Member Name="Norm" Caption="Норма" />
         <Member Name="Saturday" Caption="Суббота" />

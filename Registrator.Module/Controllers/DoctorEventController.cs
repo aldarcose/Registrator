@@ -15,6 +15,7 @@ using DevExpress.Persistent.AuditTrail;
 using DevExpress.XtraScheduler;
 using DevExpress.XtraEditors;
 using Registrator.Module.BusinessObjects.Dictionaries;
+using System.Drawing;
 
 namespace Registrator.Module.Controllers
 {
@@ -39,11 +40,29 @@ namespace Registrator.Module.Controllers
             PanelControl panelControl = View.Control as PanelControl;
             if (panelControl != null && panelControl.Controls.Count > 0)
             {
-                var mainControl = panelControl.Controls[0] as SchedulerControl;
-                activeView = mainControl.ActiveView;
-                mainControl.ActiveViewChanged += mainControl_ActiveViewChanged;
+                SchedulerControl scheduler = panelControl.Controls[0] as SchedulerControl;
+                activeView = scheduler.ActiveView;
+                scheduler.ActiveViewChanged += mainControl_ActiveViewChanged;
 
                 SetDefaultinterval();
+                
+                /*
+                scheduler.Storage.Appointments.Clear();
+                string[] IssueList = { "Consultation", "Treatment", "X-Ray" };
+                Color[] IssueColorList = { Color.Ivory, Color.Pink, Color.Plum };
+                string[] PaymentStatuses = { "Paid", "Unpaid" };
+                Color[] PaymentColorStatuses = { Color.Green, Color.Red };
+
+                IAppointmentLabelStorage labelStorage = scheduler.Storage.Appointments.Labels;
+                labelStorage.Clear();
+                int count = IssueList.Length;
+                for (int i = 0; i < count; i++)
+                {
+                    IAppointmentLabel label = labelStorage.CreateNewLabel(i, IssueList[i]);
+                    label.SetColor(IssueColorList[i]);
+                    labelStorage.Add(label);
+                }
+                */
             }
         }
 

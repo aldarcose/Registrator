@@ -9,6 +9,7 @@ using DevExpress.Persistent.Validation;
 using DevExpress.Xpo;
 using System;
 using System.ComponentModel;
+using System.Drawing;
 using System.Text;
 using System.Xml;
 
@@ -209,6 +210,38 @@ namespace Registrator.Module.BusinessObjects
             public OperandProperty EndOn { get { return new OperandProperty(GetNestedName("EndOn")); } }
             /// <summary>Операнд свойства AssignedTo</summary>
             public Doctor.FieldsClass AssignedTo { get { return new Doctor.FieldsClass(GetNestedName("AssignedTo")); } }
+        }
+    }
+
+    /// <summary>
+    /// Вид талона
+    /// </summary>
+    /// <remarks>
+    /// Используется для закрашивания цветами расписания врачей
+    /// </remarks>
+    public class DoctorEventLabel : BaseObject
+    {
+        private Color color;
+        private string name;
+
+        public DoctorEventLabel(Session session) : base(session) { }
+
+        /// <summary>
+        /// Цвет
+        /// </summary>
+        public Color Color
+        {
+            get { return color; }
+            set { SetPropertyValue("Color", ref color, value); }
+        }
+
+        /// <summary>
+        /// Название
+        /// </summary>
+        public string Name
+        {
+            get { return name; }
+            set { SetPropertyValue("Name", ref name, value); }
         }
     }
 }
