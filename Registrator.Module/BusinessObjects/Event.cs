@@ -223,6 +223,7 @@ namespace Registrator.Module.BusinessObjects
     {
         private Color color;
         private string name;
+        private int colorArgb;
 
         public DoctorEventLabel(Session session) : base(session) { }
 
@@ -231,8 +232,25 @@ namespace Registrator.Module.BusinessObjects
         /// </summary>
         public Color Color
         {
-            get { return color; }
-            set { SetPropertyValue("Color", ref color, value); }
+            get { return System.Drawing.Color.FromArgb(ColorArgb); }
+            set 
+            {
+                if (color != value)
+                {
+                    color = value;
+                    ColorArgb = color.ToArgb();
+                }
+            }
+        }
+
+        /// <summary>
+        /// Представление цвета в ARGB
+        /// </summary>
+        [Browsable(false)]
+        public int ColorArgb
+        {
+            get { return colorArgb; }
+            set { SetPropertyValue("ColorArgb", ref colorArgb, value); }
         }
 
         /// <summary>

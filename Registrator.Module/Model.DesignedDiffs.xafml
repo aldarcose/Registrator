@@ -143,6 +143,7 @@
       </Item>
       <Item Id="@04f32711-2bd7-4acf-b37b-97d5368bf049" Index="2" IsNewNode="True">
         <Items IsNewNode="True">
+          <Item Id="@f509f238-8525-4cf7-9bf5-acf09b1080fd" ViewId="DoctorEventLabel_ListView" ImageName="Action_ChooseSkin" IsNewNode="True" />
           <Item Id="Address_ListView" ViewId="Address_ListView" ObjectKey="" IsNewNode="True" />
           <Item Id="CommonProtocol_ListView" ViewId="CommonProtocol_ListView" ObjectKey="" IsNewNode="True" />
           <Item Id="Constants_ListView" ViewId="Constants_ListView" ObjectKey="" IsNewNode="True" />

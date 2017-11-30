@@ -10,6 +10,12 @@
         <Member Name="StartOn" Caption="Начало" />
       </OwnMembers>
     </Class>
+    <Class Name="Registrator.Module.BusinessObjects.DoctorEventLabel" Caption="Вид талона">
+      <OwnMembers>
+        <Member Name="Color" Caption="Цвет" />
+        <Member Name="Name" Caption="Название" />
+      </OwnMembers>
+    </Class>
     <Class Name="Registrator.Module.BusinessObjects.Pacient" Caption="Пациент">
       <OwnMembers>
         <Member Name="Address" Caption="Адрес" />
@@ -54,6 +60,7 @@
       </Item>
       <Item Id="@04f32711-2bd7-4acf-b37b-97d5368bf049" Caption="Справочники">
         <Items>
+          <Item Id="@f509f238-8525-4cf7-9bf5-acf09b1080fd" Caption="Виды талона" />
           <Item Id="Address_ListView" Caption="Адреса" />
           <Item Id="Constants_ListView" Caption="Константы программы" />
           <Item Id="Doctor_ListView" Caption="Доктора" />

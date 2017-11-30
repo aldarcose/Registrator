@@ -39,8 +39,8 @@ namespace Registrator.Module.Win.Controllers
                     if (scheduler != null)
                     {
                         var storage = scheduler.Storage;
-                        storage.Appointments.Labels.Clear();
-                        storage.Appointments.Labels.Add(storage.Appointments.Labels.CreateNewLabel(15, "fuck", "fuck1", Color.Green));
+                        IAppointmentLabelStorage labelStorage = storage.Appointments.Labels;
+                        FillLabelStorage(labelStorage);
                     }
                 }
             }
@@ -51,11 +51,25 @@ namespace Registrator.Module.Win.Controllers
                     {
                         ISchedulerStorage storage = ((AppointmentLabelEdit)pe.Control).Storage;
                         IAppointmentLabelStorage labelStorage = storage.Appointments.Labels;
-                        labelStorage.Clear();
-                        IAppointmentLabel label = labelStorage.CreateNewLabel(15, "fuck", "fuck1");
-                        label.SetColor(Color.Red);
-                        labelStorage.Add(label);
+                        FillLabelStorage(labelStorage);
                     }
+            }
+        }
+
+        private void FillLabelStorage(IAppointmentLabelStorage labelStorage)
+        {
+            labelStorage.Clear();
+            int i = 1;
+            using (IObjectSpace os = Application.CreateObjectSpace())
+            {
+                IList<DoctorEventLabel> labels = os.GetObjects<DoctorEventLabel>();
+                foreach (var doctorEventLabel in labels)
+                {
+                    IAppointmentLabel label = labelStorage.CreateNewLabel(i, doctorEventLabel.Name, doctorEventLabel.Name);
+                    label.SetColor(doctorEventLabel.Color);
+                    labelStorage.Add(label);
+                    i++;
+                }
             }
         }
     }

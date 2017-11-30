@@ -3,7 +3,9 @@ using DevExpress.ExpressApp.Editors;
 using DevExpress.ExpressApp.Scheduler.Win;
 using DevExpress.XtraScheduler;
 using DevExpress.XtraScheduler.UI;
+using Registrator.Module.BusinessObjects;
 using Registrator.Module.Controllers;
+using System.Collections.Generic;
 using System.Drawing;
 
 namespace Registrator.Module.Win.Controllers
@@ -21,9 +23,18 @@ namespace Registrator.Module.Win.Controllers
                 ISchedulerStorage storage = ((AppointmentLabelEdit)editor.Control).Storage;
                 IAppointmentLabelStorage labelStorage = storage.Appointments.Labels;
                 labelStorage.Clear();
-                IAppointmentLabel label = labelStorage.CreateNewLabel(15, "fuck", "fuck1");
-                label.SetColor(Color.Red);
-                labelStorage.Add(label);
+                int i = 1;
+                using (IObjectSpace os = Application.CreateObjectSpace())
+                {
+                    IList<DoctorEventLabel> labels = os.GetObjects<DoctorEventLabel>();
+                    foreach (var doctorEventLabel in labels)
+                    {
+                        IAppointmentLabel label = labelStorage.CreateNewLabel(i, doctorEventLabel.Name, doctorEventLabel.Name);
+                        label.SetColor(doctorEventLabel.Color);
+                        labelStorage.Add(label);
+                        i++;
+                    }
+                }
             }
         }
     }
