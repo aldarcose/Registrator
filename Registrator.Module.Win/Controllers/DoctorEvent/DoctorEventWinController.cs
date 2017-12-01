@@ -18,10 +18,12 @@ using DevExpress.ExpressApp.Scheduler.Win;
 using DevExpress.XtraScheduler;
 using System.Drawing;
 using DevExpress.XtraScheduler.UI;
+using DevExpress.XtraScheduler.Drawing;
+using DevExpress.Utils;
 
 namespace Registrator.Module.Win.Controllers
 {
-    public class DoctorEventWinController : ObjectViewController<ObjectView, DoctorEvent>
+    public class DoctorEventWinController : ObjectViewController<ObjectView, Registrator.Module.BusinessObjects.DoctorEvent>
     {
         protected override void OnViewControlsCreated()
         {
@@ -29,7 +31,7 @@ namespace Registrator.Module.Win.Controllers
 
             ListView listView = View as ListView;
             DetailView detailView = View as DetailView;
-
+            
             if (listView != null)
             {
                 SchedulerListEditor listEditor = ((ListView)View).Editor as SchedulerListEditor;
@@ -38,6 +40,19 @@ namespace Registrator.Module.Win.Controllers
                     SchedulerControl scheduler = listEditor.SchedulerControl;
                     if (scheduler != null)
                     {
+                        scheduler.InitAppointmentDisplayText += (o, e) =>
+                        {
+                            Registrator.Module.BusinessObjects.DoctorEvent doctorEvent =
+                                ObjectSpace.GetObjectByKey<Registrator.Module.BusinessObjects.DoctorEvent>(e.Appointment.Id);
+                            e.Text = doctorEvent != null && doctorEvent.Pacient != null ? doctorEvent.Pacient.FullName : string.Empty;
+                        };
+
+                        //ToolTipController toolTipController = new ToolTipController();
+                        //toolTipController.ShowBeak = true;
+                        //toolTipController.ToolTipType = ToolTipType.Standard;
+                        //scheduler.OptionsView.ToolTipVisibility = ToolTipVisibility.Standard;
+                        //scheduler.ToolTipController = toolTipController;
+
                         var storage = scheduler.Storage;
                         IAppointmentLabelStorage labelStorage = storage.Appointments.Labels;
                         FillLabelStorage(labelStorage);
@@ -62,10 +77,15 @@ namespace Registrator.Module.Win.Controllers
             int i = 1;
             using (IObjectSpace os = Application.CreateObjectSpace())
             {
+                IAppointmentLabel label = labelStorage.CreateNewLabel(i, "Нет", "Нет");
+                label.SetColor(Color.White);
+                labelStorage.Add(label);
+                i++;
+
                 IList<DoctorEventLabel> labels = os.GetObjects<DoctorEventLabel>();
                 foreach (var doctorEventLabel in labels)
                 {
-                    IAppointmentLabel label = labelStorage.CreateNewLabel(i, doctorEventLabel.Name, doctorEventLabel.Name);
+                    label = labelStorage.CreateNewLabel(i, doctorEventLabel.Name, doctorEventLabel.Name);
                     label.SetColor(doctorEventLabel.Color);
                     labelStorage.Add(label);
                     i++;

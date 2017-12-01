@@ -24,12 +24,16 @@ namespace Registrator.Module.Win.Controllers
                 IAppointmentLabelStorage labelStorage = storage.Appointments.Labels;
                 labelStorage.Clear();
                 int i = 1;
+                IAppointmentLabel label = labelStorage.CreateNewLabel(i, "Нет", "Нет");
+                label.SetColor(Color.White);
+                labelStorage.Add(label);
+                i++;
                 using (IObjectSpace os = Application.CreateObjectSpace())
                 {
                     IList<DoctorEventLabel> labels = os.GetObjects<DoctorEventLabel>();
                     foreach (var doctorEventLabel in labels)
                     {
-                        IAppointmentLabel label = labelStorage.CreateNewLabel(i, doctorEventLabel.Name, doctorEventLabel.Name);
+                        label = labelStorage.CreateNewLabel(i, doctorEventLabel.Name, doctorEventLabel.Name);
                         label.SetColor(doctorEventLabel.Color);
                         labelStorage.Add(label);
                         i++;
