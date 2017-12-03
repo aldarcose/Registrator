@@ -35,11 +35,13 @@ namespace Registrator.Module.BusinessObjects
         private string recurrenceInfoXml;
         private Doctor doctor;
         private Pacient pacient;
+        private Doctor createdBy;
 
         public override void AfterConstruction()
         {
             base.AfterConstruction();
             appointmentImpl.AfterConstruction();
+            this.CreatedBy = SecuritySystem.CurrentUser as Doctor;
         }
 
         public bool AllDay
@@ -191,6 +193,16 @@ namespace Registrator.Module.BusinessObjects
         {
             get { return pacient; }
             set { SetPropertyValue("Pacient", ref pacient, value); }
+        }
+
+        /// <summary>
+        /// Кем создан
+        /// </summary>
+        [ModelDefault("AllowEdit", "False")]
+        public Doctor CreatedBy
+        {
+            get { return createdBy; }
+            set { SetPropertyValue("CreatedBy", ref createdBy, value); }
         }
 
         /// <summary>Операнды свойств класса</summary>

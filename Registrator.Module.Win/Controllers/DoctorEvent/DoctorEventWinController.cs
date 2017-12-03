@@ -87,6 +87,7 @@ namespace Registrator.Module.Win.Controllers
                             StringBuilder sb = new StringBuilder();
                             sb.AppendLine(string.Format("Время: с {0:HH:mm} по {1:HH:mm}", doctorEvent.StartOn, doctorEvent.EndOn));
                             sb.AppendLine(string.Format("Пациент: {0}", doctorEvent.Pacient != null ? doctorEvent.Pacient.FullName : null));
+                            sb.AppendLine(string.Format("Кем создано: {0}", doctorEvent.CreatedBy != null ? doctorEvent.CreatedBy.FullName : null));
 
                             SuperToolTip SuperTip = new SuperToolTip();
                             SuperToolTipSetupArgs args = new SuperToolTipSetupArgs();

@@ -4,6 +4,7 @@
     <Class Name="Registrator.Module.BusinessObjects.DoctorEvent" Caption="Расписание врача">
       <OwnMembers>
         <Member Name="AssignedTo" Caption="Врач" />
+        <Member Name="CreatedBy" Caption="Кем создано" />
         <Member Name="EndOn" Caption="Конец" />
         <Member Name="Label" Caption="Вид талона" />
         <Member Name="Pacient" Caption="Пациент" />
