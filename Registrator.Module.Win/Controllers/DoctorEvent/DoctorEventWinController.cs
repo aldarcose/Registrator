@@ -82,6 +82,12 @@ namespace Registrator.Module.Win.Controllers
                             if (aptViewInfo == null) return;
 
                             Guid guid = (Guid)aptViewInfo.Appointment.Id;
+                            if (!eventsDict.ContainsKey(guid))
+                            {
+                                // В словаре нет ключа т.к. расписание было только что создано
+                                var events = new List<DoctorEvent>(ObjectSpace.GetObjects<DoctorEvent>(listView.CollectionSource.Criteria[FILTERKEY]));
+                                eventsDict = events.ToDictionary(de => de.Oid, de => de);
+                            }
                             DoctorEvent doctorEvent = eventsDict[guid];
 
                             StringBuilder sb = new StringBuilder();

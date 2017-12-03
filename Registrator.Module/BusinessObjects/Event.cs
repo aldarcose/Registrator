@@ -41,7 +41,8 @@ namespace Registrator.Module.BusinessObjects
         {
             base.AfterConstruction();
             appointmentImpl.AfterConstruction();
-            this.CreatedBy = SecuritySystem.CurrentUser as Doctor;
+            Doctor curDoctor = SecuritySystem.CurrentUser as Doctor;
+            this.CreatedBy = Session.GetObjectByKey<Doctor>(curDoctor.Oid);
         }
 
         public bool AllDay
