@@ -5,6 +5,7 @@
       <OwnMembers>
         <Member Name="AssignedTo" Caption="Врач" />
         <Member Name="CreatedBy" Caption="Кем создано" />
+        <Member Name="EditedBy" Caption="Кто записал пациента" />
         <Member Name="EndOn" Caption="Конец" />
         <Member Name="Label" Caption="Вид талона" />
         <Member Name="Pacient" Caption="Пациент" />

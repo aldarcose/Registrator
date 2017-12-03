@@ -36,6 +36,7 @@ namespace Registrator.Module.BusinessObjects
         private Doctor doctor;
         private Pacient pacient;
         private Doctor createdBy;
+        private Doctor editedBy;
 
         public override void AfterConstruction()
         {
@@ -190,10 +191,21 @@ namespace Registrator.Module.BusinessObjects
             set { SetPropertyValue("AssignedTo", ref doctor, value); } 
         }
 
+        /// <summary>
+        /// Пациент
+        /// </summary>
         public Pacient Pacient
         {
             get { return pacient; }
-            set { SetPropertyValue("Pacient", ref pacient, value); }
+            set 
+            {
+                SetPropertyValue("Pacient", ref pacient, value);
+                if (!IsLoading && !IsSaving && pacient != null)
+                {
+                    Doctor curDoctor = SecuritySystem.CurrentUser as Doctor;
+                    this.EditedBy = Session.GetObjectByKey<Doctor>(curDoctor.Oid);
+                }
+            }
         }
 
         /// <summary>
@@ -204,6 +216,16 @@ namespace Registrator.Module.BusinessObjects
         {
             get { return createdBy; }
             set { SetPropertyValue("CreatedBy", ref createdBy, value); }
+        }
+
+        /// <summary>
+        /// Кто записал пациента
+        /// </summary>
+        [ModelDefault("AllowEdit", "False")]
+        public Doctor EditedBy
+        {
+            get { return editedBy; }
+            set { SetPropertyValue("EditedBy", ref editedBy, value); }
         }
 
         /// <summary>Операнды свойств класса</summary>

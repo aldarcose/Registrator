@@ -94,17 +94,13 @@ namespace Registrator.Module.Win.Controllers
                             sb.AppendLine(string.Format("Время: с {0:HH:mm} по {1:HH:mm}", doctorEvent.StartOn, doctorEvent.EndOn));
                             sb.AppendLine(string.Format("Пациент: {0}", doctorEvent.Pacient != null ? doctorEvent.Pacient.FullName : null));
                             sb.AppendLine(string.Format("Кем создано: {0}", doctorEvent.CreatedBy != null ? doctorEvent.CreatedBy.FullName : null));
+                            sb.AppendLine(string.Format("Кто записал: {0}", doctorEvent.EditedBy != null ? doctorEvent.EditedBy.FullName : null));
+                            sb.AppendLine("Программа: Регистратура");
 
                             SuperToolTip SuperTip = new SuperToolTip();
                             SuperToolTipSetupArgs args = new SuperToolTipSetupArgs();
-                            //args.Title.Text = "Info";
-                            //args.Title.Font = new Font("Times New Roman", 10);
                             args.Contents.Text = sb.ToString();
                             args.Contents.Font = new Font("Times New Roman", 11);
-                            // args.Contents.Image = resImage;
-                            // args.ShowFooterSeparator = true;
-                            // args.Footer.Font = new Font("Comic Sans MS", 8);
-                            // args.Footer.Text = "SuperTip";
                             SuperTip.Setup(args);
                             e.SuperTip = SuperTip;
                         };
