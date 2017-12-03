@@ -44,30 +44,12 @@ namespace Registrator.Module.Controllers
                 activeView = scheduler.ActiveView;
                 scheduler.ActiveViewChanged += mainControl_ActiveViewChanged;
 
-                SetDefaultinterval();
-                
-                /*
-                scheduler.Storage.Appointments.Clear();
-                string[] IssueList = { "Consultation", "Treatment", "X-Ray" };
-                Color[] IssueColorList = { Color.Ivory, Color.Pink, Color.Plum };
-                string[] PaymentStatuses = { "Paid", "Unpaid" };
-                Color[] PaymentColorStatuses = { Color.Green, Color.Red };
-
-                IAppointmentLabelStorage labelStorage = scheduler.Storage.Appointments.Labels;
-                labelStorage.Clear();
-                int count = IssueList.Length;
-                for (int i = 0; i < count; i++)
-                {
-                    IAppointmentLabel label = labelStorage.CreateNewLabel(i, IssueList[i]);
-                    label.SetColor(IssueColorList[i]);
-                    labelStorage.Add(label);
-                }
-                */
+                SetDefaultInterval();
             }
         }
 
         // Установка текущей недели
-        private void SetDefaultinterval()
+        private void SetDefaultInterval()
         {
             TimeIntervalCollection intervals = new TimeIntervalCollection();
             DateTime today = DateTime.Today;

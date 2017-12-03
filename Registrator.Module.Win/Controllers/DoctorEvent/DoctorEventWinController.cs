@@ -25,6 +25,9 @@ namespace Registrator.Module.Win.Controllers
 {
     public class DoctorEventWinController : ObjectViewController<ObjectView, Registrator.Module.BusinessObjects.DoctorEvent>
     {
+        private const string FILTERKEY = "FilterDoctors";
+        private Dictionary<Guid, DoctorEvent> eventsDict = new Dictionary<Guid, DoctorEvent>();
+
         protected override void OnViewControlsCreated()
         {
             base.OnViewControlsCreated();
@@ -34,6 +37,17 @@ namespace Registrator.Module.Win.Controllers
             
             if (listView != null)
             {
+                listView.CollectionSource.CriteriaApplied += (o, e) =>
+                {
+                    // Предварительная загрузка расписаний докторов
+                    var collectionSB = (CollectionSourceBase)o;
+                    if (collectionSB.Criteria != null)
+                    {
+                        var events = new List<DoctorEvent>(ObjectSpace.GetObjects<DoctorEvent>(collectionSB.Criteria[FILTERKEY]));
+                        eventsDict = events.ToDictionary(de => de.Oid, de => de);
+                    }
+                };
+
                 SchedulerListEditor listEditor = ((ListView)View).Editor as SchedulerListEditor;
                 if (listEditor != null)
                 {
@@ -47,11 +61,46 @@ namespace Registrator.Module.Win.Controllers
                             e.Text = doctorEvent != null && doctorEvent.Pacient != null ? doctorEvent.Pacient.FullName : string.Empty;
                         };
 
-                        //ToolTipController toolTipController = new ToolTipController();
-                        //toolTipController.ShowBeak = true;
-                        //toolTipController.ToolTipType = ToolTipType.Standard;
-                        //scheduler.OptionsView.ToolTipVisibility = ToolTipVisibility.Standard;
-                        //scheduler.ToolTipController = toolTipController;
+                        // https://documentation.devexpress.com/WindowsForms/118551/Controls-and-Libraries/Scheduler/Visual-Elements/Scheduler-Control/Appointment-Flyout
+                        scheduler.OptionsView.ToolTipVisibility = ToolTipVisibility.Always;
+                        scheduler.OptionsCustomization.AllowDisplayAppointmentFlyout = false;
+                        scheduler.ToolTipController = new ToolTipController();
+                        scheduler.ToolTipController.ToolTipType = ToolTipType.SuperTip;
+                        scheduler.ToolTipController.BeforeShow += (o, e) =>
+                        {
+                            var toolTipController = (ToolTipController)o;
+                            AppointmentViewInfo aptViewInfo = null;
+                            try
+                            {
+                                aptViewInfo = (AppointmentViewInfo)toolTipController.ActiveObject;
+                            }
+                            catch
+                            {
+                                return;
+                            }
+
+                            if (aptViewInfo == null) return;
+
+                            Guid guid = (Guid)aptViewInfo.Appointment.Id;
+                            DoctorEvent doctorEvent = eventsDict[guid];
+
+                            StringBuilder sb = new StringBuilder();
+                            sb.AppendLine(string.Format("Время: с {0:HH:mm} по {1:HH:mm}", doctorEvent.StartOn, doctorEvent.EndOn));
+                            sb.AppendLine(string.Format("Пациент: {0}", doctorEvent.Pacient != null ? doctorEvent.Pacient.FullName : null));
+
+                            SuperToolTip SuperTip = new SuperToolTip();
+                            SuperToolTipSetupArgs args = new SuperToolTipSetupArgs();
+                            //args.Title.Text = "Info";
+                            //args.Title.Font = new Font("Times New Roman", 10);
+                            args.Contents.Text = sb.ToString();
+                            args.Contents.Font = new Font("Times New Roman", 11);
+                            // args.Contents.Image = resImage;
+                            // args.ShowFooterSeparator = true;
+                            // args.Footer.Font = new Font("Comic Sans MS", 8);
+                            // args.Footer.Text = "SuperTip";
+                            SuperTip.Setup(args);
+                            e.SuperTip = SuperTip;
+                        };
 
                         var storage = scheduler.Storage;
                         IAppointmentLabelStorage labelStorage = storage.Appointments.Labels;
