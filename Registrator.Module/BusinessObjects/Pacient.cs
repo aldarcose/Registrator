@@ -111,14 +111,14 @@ namespace Registrator.Module.BusinessObjects
         /// <summary>
         /// Полное имя пациента
         /// </summary>
-        [NonPersistent]
         [XafDisplayName("ФИО")]
         [VisibleInDetailView(false)]
         [VisibleInListView(false)]
         [VisibleInLookupListView(false)]
+        [PersistentAlias("Concat(LastName, ' ', FirstName, ' ', MiddleName)")]
         public string FullName
         {
-            get { return string.Format("{0} {1} {2}", LastName, FirstName, MiddleName); }
+            get { return (string)EvaluateAlias("FullName"); }
         }
 
         /// <summary>
@@ -333,7 +333,7 @@ namespace Registrator.Module.BusinessObjects
         /// Данные инвалидности
         /// </summary>
         [XafDisplayName("Инвалидность")]
-        [DevExpress.Xpo.Aggregated]
+        [DevExpress.Xpo.Aggregated, ExpandObjectMembers(ExpandObjectMembers.Never)]
         public DisablityData Disability { get; set; }
         #endregion
 

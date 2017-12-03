@@ -82,7 +82,8 @@ namespace Registrator.Module.Win.Controllers
                 var criteria = CriteriaOperator.Or(
                     CriteriaOperator.Parse("Contains(Upper(FirstName),?)", normalizedText),
                     CriteriaOperator.Parse("Contains(Upper(LastName), ?)", normalizedText),
-                    CriteriaOperator.Parse("Contains(Upper(MiddleName), ?)", normalizedText)
+                    CriteriaOperator.Parse("Contains(Upper(MiddleName), ?)", normalizedText),
+                    CriteriaOperator.Parse("Contains(Upper(FullName), ?)", normalizedText)
                 );
                 e.Criteria = criteria;
                 e.Handled = true;
