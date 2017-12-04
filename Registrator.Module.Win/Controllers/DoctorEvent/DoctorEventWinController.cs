@@ -95,7 +95,8 @@ namespace Registrator.Module.Win.Controllers
                             sb.AppendLine(string.Format("Пациент: {0}", doctorEvent.Pacient != null ? doctorEvent.Pacient.FullName : null));
                             sb.AppendLine(string.Format("Кем создано: {0}", doctorEvent.CreatedBy != null ? doctorEvent.CreatedBy.FullName : null));
                             sb.AppendLine(string.Format("Кто записал: {0}", doctorEvent.EditedBy != null ? doctorEvent.EditedBy.FullName : null));
-                            sb.AppendLine("Программа: Регистратура");
+                            if (doctorEvent.Pacient != null)
+                                sb.AppendLine(string.Format("Источник записи: {0}", CaptionHelper.GetDisplayText(doctorEvent.SourceType)));
 
                             SuperToolTip SuperTip = new SuperToolTip();
                             SuperToolTipSetupArgs args = new SuperToolTipSetupArgs();

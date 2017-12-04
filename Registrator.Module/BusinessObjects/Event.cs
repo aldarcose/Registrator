@@ -37,6 +37,7 @@ namespace Registrator.Module.BusinessObjects
         private Pacient pacient;
         private Doctor createdBy;
         private Doctor editedBy;
+        private DoctorEventSourceType sourceType;
 
         public override void AfterConstruction()
         {
@@ -228,6 +229,15 @@ namespace Registrator.Module.BusinessObjects
             set { SetPropertyValue("EditedBy", ref editedBy, value); }
         }
 
+        /// <summary>
+        /// Источник записи на прием
+        /// </summary>
+        public DoctorEventSourceType SourceType
+        {
+            get { return sourceType; }
+            set { SetPropertyValue("SourceType", ref sourceType, value); }
+        }
+
         /// <summary>Операнды свойств класса</summary>
         public static new readonly FieldsClass Fields = new FieldsClass();
         /// <summary>Операнды свойств класса</summary>
@@ -296,5 +306,31 @@ namespace Registrator.Module.BusinessObjects
             get { return name; }
             set { SetPropertyValue("Name", ref name, value); }
         }
+    }
+
+    /// <summary>
+    /// Источник записи на прием к доктору
+    /// </summary>
+    public enum DoctorEventSourceType
+    {
+        /// <summary>
+        /// Нет
+        /// </summary>
+        None = 1,
+
+        /// <summary>
+        /// Регистратура
+        /// </summary>
+        Registry = 2,
+
+        /// <summary>
+        /// Интернет
+        /// </summary>
+        Internet = 3,
+
+        /// <summary>
+        /// Терминал
+        /// </summary>
+        Terminal = 4
     }
 }
