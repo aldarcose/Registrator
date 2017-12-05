@@ -103,7 +103,6 @@ namespace Registrator.Module.Win.Controllers
                 propertyEditor.ControlCreated += propertyEditor_ControlCreated;
             }
         }
-           
 
         protected override void OnDeactivated()
         {

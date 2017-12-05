@@ -28,7 +28,6 @@ using DevExpress.Persistent.Base;
 
 namespace Registrator.Module.Win.Controllers
 {
-    // For more typical usage scenarios, be sure to check out http://documentation.devexpress.com/#Xaf/clsDevExpressExpressAppViewControllertopic.
     public partial class PacientViewController : ViewController
     {
         private MainRibbonFormV2 _templateMain;
@@ -38,9 +37,8 @@ namespace Registrator.Module.Win.Controllers
         {
             InitializeComponent();
             RegisterActions(components);
-            // Target required Views (via the TargetXXX properties) and create their Actions.
-            
         }
+
         protected override void OnActivated()
         {
             base.OnActivated();
@@ -152,7 +150,7 @@ namespace Registrator.Module.Win.Controllers
                 return;
             }
 
-            if (View is ListView && View.Id == "Pacient_ListView")
+            if (View.Id == "Pacient_ListView")
             {
                 PopupWindowShowActionHelper helper = new PopupWindowShowActionHelper(pacientFilterAction);
                 helper.ShowPopupWindow();
@@ -1367,7 +1365,5 @@ namespace Registrator.Module.Win.Controllers
     [XafDisplayName("Конфликты")]
     public class PacientLoadConflicts
     {
-        
     }
-
 }

@@ -62,7 +62,7 @@
       </OwnMembers>
     </Class>
   </BOModel>
-  <NavigationItems DefaultChildItemsDisplayStyle="List" DefaultLeafImageName="BO_List" NavigationStyle="TreeList" StartupNavigationItem="Pacient_ListView">
+  <NavigationItems DefaultChildItemsDisplayStyle="List" DefaultLeafImageName="BO_List" NavigationStyle="TreeList" StartupNavigationItem="">
     <Items>
       <Item Id="Reports" Index="-1" />
       <Item Id="Default" Index="0">
