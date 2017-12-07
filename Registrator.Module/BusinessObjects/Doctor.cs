@@ -416,6 +416,8 @@ namespace Registrator.Module.BusinessObjects
 
             /// <summary>Операнд свойства SpecialityTree</summary>
             public DoctorSpecTree.FieldsClass SpecialityTree { get { return new DoctorSpecTree.FieldsClass(GetNestedName("SpecialityTree")); } }
+            /// <summary>Операнд свойства Oid</summary>
+            public OperandProperty Oid { get { return new OperandProperty(GetNestedName("Oid")); } }
         }
     }
     

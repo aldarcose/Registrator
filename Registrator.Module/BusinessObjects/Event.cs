@@ -205,6 +205,7 @@ namespace Registrator.Module.BusinessObjects
                 {
                     Doctor curDoctor = SecuritySystem.CurrentUser as Doctor;
                     this.EditedBy = Session.GetObjectByKey<Doctor>(curDoctor.Oid);
+                    this.SourceType = DoctorEventSourceType.Registry;
                 }
             }
         }
@@ -232,6 +233,7 @@ namespace Registrator.Module.BusinessObjects
         /// <summary>
         /// Источник записи на прием
         /// </summary>
+        [ModelDefault("AllowEdit", "False")]
         public DoctorEventSourceType SourceType
         {
             get { return sourceType; }
@@ -255,6 +257,8 @@ namespace Registrator.Module.BusinessObjects
             public OperandProperty EndOn { get { return new OperandProperty(GetNestedName("EndOn")); } }
             /// <summary>Операнд свойства AssignedTo</summary>
             public Doctor.FieldsClass AssignedTo { get { return new Doctor.FieldsClass(GetNestedName("AssignedTo")); } }
+            /// <summary>Операнд свойства Oid</summary>
+            public OperandProperty Oid { get { return new OperandProperty(GetNestedName("Oid")); } }
         }
     }
 

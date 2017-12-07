@@ -34,6 +34,7 @@ namespace Registrator.Module.Win.Controllers
             this.GetPacientPoliciesInfo = new DevExpress.ExpressApp.Actions.SimpleAction(this.components);
             this.CopyAddressToFactAction = new DevExpress.ExpressApp.Actions.SimpleAction(this.components);
             this.CopyAddressFromFactAction = new DevExpress.ExpressApp.Actions.SimpleAction(this.components);
+            this.OpenDoctorEventListViewAction = new DevExpress.ExpressApp.Actions.SimpleAction(this.components);
             // 
             // pacientFilterAction
             // 
@@ -104,6 +105,20 @@ namespace Registrator.Module.Win.Controllers
             this.CopyAddressFromFactAction.TypeOfView = typeof(DevExpress.ExpressApp.DetailView);
             this.CopyAddressFromFactAction.Execute += new DevExpress.ExpressApp.Actions.SimpleActionExecuteEventHandler(this.CopyAddressFromFactAction_Execute);
             // 
+            // OpenDoctorEventListViewAction
+            // 
+            this.OpenDoctorEventListViewAction.Caption = "Открыть расписание";
+            this.OpenDoctorEventListViewAction.ConfirmationMessage = null;
+            this.OpenDoctorEventListViewAction.Id = "Registrator.Module.Win.Controllers.PacientViewController.OpenDoctorEventListViewA" +
+    "ction";
+            this.OpenDoctorEventListViewAction.SelectionDependencyType = DevExpress.ExpressApp.Actions.SelectionDependencyType.RequireSingleObject;
+            this.OpenDoctorEventListViewAction.TargetObjectType = typeof(Registrator.Module.BusinessObjects.Pacient);
+            this.OpenDoctorEventListViewAction.TargetViewNesting = DevExpress.ExpressApp.Nesting.Root;
+            this.OpenDoctorEventListViewAction.TargetViewType = DevExpress.ExpressApp.ViewType.DetailView;
+            this.OpenDoctorEventListViewAction.ToolTip = "Открыть расписание докторов";
+            this.OpenDoctorEventListViewAction.TypeOfView = typeof(DevExpress.ExpressApp.DetailView);
+            this.OpenDoctorEventListViewAction.Execute += new DevExpress.ExpressApp.Actions.SimpleActionExecuteEventHandler(this.OpenDoctorEventListViewAction_Execute);
+            // 
             // PacientViewController
             // 
             this.Actions.Add(this.pacientFilterAction);
@@ -111,6 +126,7 @@ namespace Registrator.Module.Win.Controllers
             this.Actions.Add(this.GetPacientPoliciesInfo);
             this.Actions.Add(this.CopyAddressToFactAction);
             this.Actions.Add(this.CopyAddressFromFactAction);
+            this.Actions.Add(this.OpenDoctorEventListViewAction);
 
         }
 
@@ -121,5 +137,6 @@ namespace Registrator.Module.Win.Controllers
         private DevExpress.ExpressApp.Actions.SimpleAction GetPacientPoliciesInfo;
         private DevExpress.ExpressApp.Actions.SimpleAction CopyAddressToFactAction;
         private DevExpress.ExpressApp.Actions.SimpleAction CopyAddressFromFactAction;
+        private DevExpress.ExpressApp.Actions.SimpleAction OpenDoctorEventListViewAction;
     }
 }

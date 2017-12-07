@@ -16,6 +16,7 @@ using DevExpress.XtraScheduler;
 using DevExpress.XtraEditors;
 using Registrator.Module.BusinessObjects.Dictionaries;
 using System.Drawing;
+using DevExpress.ExpressApp.Editors;
 
 namespace Registrator.Module.Controllers
 {
@@ -105,7 +106,11 @@ namespace Registrator.Module.Controllers
             Doctor doctor = (Doctor)e.SelectedChoiceActionItem.Data;
             if (doctor != null)
             {
-                ((ListView)View).CollectionSource.Criteria[FILTERKEY] = DoctorEvent.Fields.AssignedTo == doctor;
+                CriteriaOperator criteria = DoctorEvent.Fields.AssignedTo.Oid == doctor.Oid;
+                ((ListView)View).CollectionSource.BeginUpdateCriteria();
+                ((ListView)View).CollectionSource.Criteria.Clear();
+                ((ListView)View).CollectionSource.Criteria[FILTERKEY] = criteria;
+                ((ListView)View).CollectionSource.EndUpdateCriteria();
                 SetCreateEventEnable();
                 SetCloneDoctorEventActive(activeView.Type);
             }

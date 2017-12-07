@@ -142,7 +142,7 @@ namespace Registrator.Module.Win.Controllers
             base.OnDeactivated();
         }
 
-        void ShowActionPopup(object sender, EventArgs e)
+        private void ShowActionPopup(object sender, EventArgs e)
         {
             if (_longOperationThread != null && _longOperationThread.IsWorking == false)
             {
@@ -1095,6 +1095,29 @@ namespace Registrator.Module.Win.Controllers
                     dv.Refresh();
                 }
             }
+        }
+
+        private void OpenDoctorEventListViewAction_Execute(object sender, SimpleActionExecuteEventArgs e)
+        {
+            var pacient = e.CurrentObject as Pacient;
+            if (pacient != null)
+                OpenDoctorEventListView(pacient, e.ShowViewParameters);
+        }
+
+        private void OpenDoctorEventListView(Pacient pacient, ShowViewParameters showViewParams)
+        {
+            IObjectSpace os = Application.CreateObjectSpace();
+            string doctorEventListViewId = Application.FindListViewId(typeof(DoctorEvent));
+            var listView = Application.CreateListView(typeof(DoctorEvent), true);
+            var collection = Application.CreateCollectionSource(os,
+                typeof(DoctorEvent), doctorEventListViewId,
+                CollectionSourceDataAccessMode.DataView, CollectionSourceMode.Normal);
+            var view = Application.CreateListView(listView.Model, collection, true);
+            view.Model.Filter = CriteriaOperator.Parse("1=0").LegacyToString();
+            view.Tag = pacient;
+            showViewParams.CreatedView = view;
+            showViewParams.TargetWindow = TargetWindow.Default;
+            showViewParams.CreateAllControllers = true;
         }
     }
 

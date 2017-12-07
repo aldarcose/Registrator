@@ -20,6 +20,7 @@ using System.Drawing;
 using DevExpress.XtraScheduler.UI;
 using DevExpress.XtraScheduler.Drawing;
 using DevExpress.Utils;
+using DevExpress.ExpressApp.Xpo;
 
 namespace Registrator.Module.Win.Controllers
 {
@@ -37,13 +38,14 @@ namespace Registrator.Module.Win.Controllers
             
             if (listView != null)
             {
+                IObjectSpace os = Application.CreateObjectSpace();
                 listView.CollectionSource.CriteriaApplied += (o, e) =>
                 {
                     // Предварительная загрузка расписаний докторов
                     var collectionSB = (CollectionSourceBase)o;
                     if (collectionSB.Criteria != null)
                     {
-                        var events = new List<DoctorEvent>(ObjectSpace.GetObjects<DoctorEvent>(collectionSB.Criteria[FILTERKEY]));
+                        var events = new List<DoctorEvent>(os.GetObjects<DoctorEvent>(collectionSB.Criteria[FILTERKEY]));
                         eventsDict = events.ToDictionary(de => de.Oid, de => de);
                     }
                 };
@@ -54,12 +56,15 @@ namespace Registrator.Module.Win.Controllers
                     SchedulerControl scheduler = listEditor.SchedulerControl;
                     if (scheduler != null)
                     {
+                        // Кастомизация надписи в расписании доктора
                         scheduler.InitAppointmentDisplayText += (o, e) =>
                         {
-                            Registrator.Module.BusinessObjects.DoctorEvent doctorEvent =
-                                ObjectSpace.GetObjectByKey<Registrator.Module.BusinessObjects.DoctorEvent>(e.Appointment.Id);
+                            Guid guid = (Guid)e.Appointment.Id;
+                            var doctorEvent = eventsDict[guid];
                             e.Text = doctorEvent != null && doctorEvent.Pacient != null ? doctorEvent.Pacient.FullName : string.Empty;
                         };
+
+                        #region Кастомизация Тултипа расписания доктора
 
                         // https://documentation.devexpress.com/WindowsForms/118551/Controls-and-Libraries/Scheduler/Visual-Elements/Scheduler-Control/Appointment-Flyout
                         scheduler.OptionsView.ToolTipVisibility = ToolTipVisibility.Always;
@@ -106,14 +111,50 @@ namespace Registrator.Module.Win.Controllers
                             e.SuperTip = SuperTip;
                         };
 
+                        #endregion
+                        
+                        // Кастомизация коллекции меток
                         var storage = scheduler.Storage;
                         IAppointmentLabelStorage labelStorage = storage.Appointments.Labels;
                         FillLabelStorage(labelStorage);
+
+                        scheduler.PopupMenuShowing += (o, e) =>
+                        {
+                            Pacient pacient = listView.Tag as Pacient;
+                            AppointmentBaseCollection appoinments = (o as SchedulerControl).SelectedAppointments;
+                            Appointment appoinment = appoinments.Count == 1 ? appoinments[0] : null;
+                            DoctorEvent dEvent = appoinment != null ? eventsDict[(Guid)appoinment.Id] : null;
+
+                            if (e.Menu.Id != DevExpress.XtraScheduler.SchedulerMenuItemId.AppointmentMenu) return;
+                            if (pacient != null && dEvent.Pacient == null)
+                            {
+                                e.Menu.Items.Insert(0, new SchedulerMenuItem("Записать пациента", (o_, e_) =>
+                                {
+                                    IObjectSpace dEventObjectSpace = XPObjectSpace.FindObjectSpaceByObject(dEvent);
+                                    dEvent.Pacient = dEventObjectSpace.GetObject(pacient);
+                                    dEventObjectSpace.CommitChanges();
+                                    // Обновление списочного представления
+                                    listView.CollectionSource.Reload();
+                                }));
+                            }
+                            else if (dEvent.Pacient != null)
+                            {
+                                e.Menu.Items.Insert(0, new SchedulerMenuItem("Отменить запись", (o_, e_) =>
+                                {
+                                    IObjectSpace dEventObjectSpace = XPObjectSpace.FindObjectSpaceByObject(dEvent);
+                                    dEvent.Pacient = null;
+                                    dEventObjectSpace.CommitChanges();
+                                    // Обновление списочного представления
+                                    listView.CollectionSource.Reload();
+                                }));
+                            }
+                        };
                     }
                 }
             }
             else if (detailView != null)
             {
+                // Кастомизация коллекции меток
                 foreach (SchedulerLabelPropertyEditor pe in ((DetailView)View).GetItems<SchedulerLabelPropertyEditor>())
                     if (pe.Control != null)
                     {

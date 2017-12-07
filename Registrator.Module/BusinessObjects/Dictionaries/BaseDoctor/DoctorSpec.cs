@@ -224,6 +224,8 @@ namespace Registrator.Module.BusinessObjects.Dictionaries
 
             /// <summary>Операнд свойства Scheduling</summary>
             public OperandProperty Scheduling { get { return new OperandProperty(GetNestedName("Scheduling")); } }
+            /// <summary>Операнд свойства Oid</summary>
+            public OperandProperty Oid { get { return new OperandProperty(GetNestedName("Oid")); } }
         }
     }
 }
