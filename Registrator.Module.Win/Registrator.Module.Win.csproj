@@ -274,9 +274,6 @@
     <Compile Include="Controllers\ProtocolRecordViewController.Designer.cs">
       <DependentUpon>ProtocolRecordViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controllers\ResetSettingsViewController.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Controllers\StreetImportController.cs">
       <SubType>Component</SubType>
     </Compile>
