@@ -111,6 +111,7 @@ namespace Registrator.Module.BusinessObjects
             }
         }
 
+        [Browsable(false)]
         public string Location
         {
             get { return appointmentImpl.Location; }
@@ -134,6 +135,7 @@ namespace Registrator.Module.BusinessObjects
             }
         }
 
+        [Browsable(false)]
         public int Status
         {
             get { return appointmentImpl.Status; }
@@ -178,6 +180,7 @@ namespace Registrator.Module.BusinessObjects
             set { SetPropertyValue("RecurrenceInfoXml", ref recurrenceInfoXml, value); }
         }
 
+        [Browsable(false)]
         [PersistentAlias("recurrencePattern")]
         public IRecurrentEvent RecurrencePattern
         {

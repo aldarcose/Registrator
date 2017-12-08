@@ -3,6 +3,7 @@ using DevExpress.ExpressApp.SystemModule;
 using Registrator.Module.BusinessObjects;
 using System.Linq;
 using System;
+using DevExpress.ExpressApp.Win.SystemModule;
 
 namespace Registrator.Module.Controllers
 {
@@ -48,6 +49,8 @@ namespace Registrator.Module.Controllers
         {
             Disable<ResetViewSettingsController>();
             Disable<FilterController>();
+            Disable<RecordsNavigationController>();
+            Disable<OpenObjectController>();
         }
 
         void object_CustomProcessSelectedItem(object sender, CustomProcessListViewSelectedItemEventArgs e)

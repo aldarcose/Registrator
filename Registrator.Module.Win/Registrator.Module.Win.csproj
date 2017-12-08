@@ -238,6 +238,9 @@
     <Compile Include="Controllers\MKBWithTypeViewController.Designer.cs">
       <DependentUpon>MKBWithTypeViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\NewObjectController.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controllers\PacientDynamicMaskChangeController.cs">
       <SubType>Component</SubType>
     </Compile>
