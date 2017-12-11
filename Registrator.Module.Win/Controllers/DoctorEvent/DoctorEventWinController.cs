@@ -60,8 +60,11 @@ namespace Registrator.Module.Win.Controllers
                         scheduler.InitAppointmentDisplayText += (o, e) =>
                         {
                             Guid guid = (Guid)e.Appointment.Id;
-                            var doctorEvent = eventsDict[guid];
-                            e.Text = doctorEvent != null && doctorEvent.Pacient != null ? doctorEvent.Pacient.FullName : string.Empty;
+                            if (eventsDict.ContainsKey(guid))
+                            {
+                                var doctorEvent = eventsDict[guid];
+                                e.Text = doctorEvent != null && doctorEvent.Pacient != null ? doctorEvent.Pacient.FullName : string.Empty;
+                            }
                         };
 
                         #region Кастомизация Тултипа расписания доктора
