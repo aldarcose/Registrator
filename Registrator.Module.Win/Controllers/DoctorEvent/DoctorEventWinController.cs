@@ -121,6 +121,7 @@ namespace Registrator.Module.Win.Controllers
                         IAppointmentLabelStorage labelStorage = storage.Appointments.Labels;
                         FillLabelStorage(labelStorage);
 
+                        // Всплывающее меню на расписании врача
                         scheduler.PopupMenuShowing += (o, e) =>
                         {
                             Pacient pacient = listView.Tag as Pacient;
@@ -150,6 +151,22 @@ namespace Registrator.Module.Win.Controllers
                                     // Обновление списочного представления
                                     listView.CollectionSource.Reload();
                                 }));
+                            }
+                        };
+
+                        // Кастомизация цвета фона расписания:
+                        // Если выбранный пациент уже записан, то цвет данного расписания окрашивается в розовый.
+                        scheduler.AppointmentViewInfoCustomizing += (o_, e_)=>
+                        {
+                            Pacient pacient = listView.Tag as Pacient;
+                            if (pacient != null)
+                            {
+                                Guid guid = (Guid)e_.ViewInfo.Appointment.Id;
+                                if (eventsDict.ContainsKey(guid) && eventsDict[guid].Pacient != null)
+                                {
+                                    e_.ViewInfo.Appearance.BackColor = eventsDict[guid].Pacient.Oid == pacient.Oid ?
+                                        Color.FromArgb(255, 192, 192) : Color.FromArgb(255, 128, 0);
+                                }
                             }
                         };
                     }
