@@ -121,6 +121,8 @@ namespace Registrator.Module.Win.Controllers
                         IAppointmentLabelStorage labelStorage = storage.Appointments.Labels;
                         FillLabelStorage(labelStorage);
 
+                        DoctorEvent recordedEvent = null;
+
                         // Всплывающее меню на расписании врача
                         scheduler.PopupMenuShowing += (o, e) =>
                         {
@@ -130,7 +132,7 @@ namespace Registrator.Module.Win.Controllers
                             DoctorEvent dEvent = appoinment != null ? eventsDict[(Guid)appoinment.Id] : null;
 
                             if (e.Menu.Id != DevExpress.XtraScheduler.SchedulerMenuItemId.AppointmentMenu) return;
-                            if (pacient != null && dEvent.Pacient == null)
+                            if (pacient != null && dEvent.Pacient == null & recordedEvent == null)
                             {
                                 e.Menu.Items.Insert(0, new SchedulerMenuItem("Записать пациента", (o_, e_) =>
                                 {
@@ -139,6 +141,8 @@ namespace Registrator.Module.Win.Controllers
                                     dEventObjectSpace.CommitChanges();
                                     // Обновление списочного представления
                                     listView.CollectionSource.Reload();
+                                    // Расписание на которое записан пациент
+                                    recordedEvent = dEvent;
                                 }));
                             }
                             else if (dEvent.Pacient != null)
@@ -150,6 +154,9 @@ namespace Registrator.Module.Win.Controllers
                                     dEventObjectSpace.CommitChanges();
                                     // Обновление списочного представления
                                     listView.CollectionSource.Reload();
+                                    // Отмена записи пациента на выбранное расписание
+                                    if (recordedEvent != null && recordedEvent.Oid == dEvent.Oid)
+                                        recordedEvent = null;
                                 }));
                             }
                         };
