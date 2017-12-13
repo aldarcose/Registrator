@@ -11,48 +11,36 @@ using System.Collections.Generic;
 using DevExpress.ExpressApp.Model;
 using DevExpress.Persistent.Validation;
 using System.Xml.Linq;
+
 namespace Registrator.Module.BusinessObjects
 {
+
     [DefaultClassOptions]
-    //[ImageName("BO_Contact")]
-    //[DefaultProperty("DisplayMemberNameForLookupEditorsOfThisType")]
-    //[DefaultListViewOptions(MasterDetailMode.ListViewOnly, false, NewItemRowPosition.None)]
-    //[Persistent("DatabaseTableName")]
-    // Specify more UI options using a declarative approach (http://documentation.devexpress.com/#Xaf/CustomDocument2701).
     public class Otdel : DevExpress.Persistent.BaseImpl.BaseObject
-    { // Inherit from a different class to provide a custom primary key, concurrency and deletion behavior, etc. (http://documentation.devexpress.com/#Xaf/CustomDocument3146).
-        public Otdel(Session session)
-            : base(session)
-        {
-        }
-        public override void AfterConstruction()
-        {
-            base.AfterConstruction();
-            // Place your initialization code here (http://documentation.devexpress.com/#Xaf/CustomDocument2834).
-        }
+    {
+        private DoctorEvent doctorEvent;
+        private BusinessObjects.DoctorEventLabel doctorEventLabel;
+        public Otdel(Session session) : base(session) { }    
         
-        [XafDisplayName("Код отделения")]
         /// <summary>
         /// Код отдела
         /// </summary>
+        [XafDisplayName("Код отделения")]
         public string Id { get; set; }
-        [XafDisplayName("Реестровый код")]
+        
         /// <summary>
         /// Код реестра
         /// </summary>
+        [XafDisplayName("Реестровый код")]
         public string Code { get; set; }
 
-        [XafDisplayName("Название")]
+        
         /// <summary>
         /// Название отдела
         /// </summary>
         [Size(255)]
+        [XafDisplayName("Название")]
         public string Name { get; set; }
-
-        public override string ToString()
-        {
-            return Name;
-        }
 
         /// <summary>
         /// Доктора отдела
@@ -60,10 +48,22 @@ namespace Registrator.Module.BusinessObjects
         [Association("Otdel-Doctor")]
         public XPCollection<Doctor> Doctors
         {
-            get
-            {
-                return GetCollection<Doctor>("Doctors");
-            }
+            get { return GetCollection<Doctor>("Doctors"); }
+        }
+
+        /// <summary>
+        /// Вид талона
+        /// </summary>
+        [Association]
+        public DoctorEventLabel DoctorEventLabel
+        {
+            get { return doctorEventLabel; }
+            set { SetPropertyValue("DoctorEventLabel", ref doctorEventLabel, value); }
+        }
+
+        public override string ToString()
+        {
+            return Name;
         }
 
         /// <summary>

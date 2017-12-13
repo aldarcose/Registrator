@@ -276,6 +276,8 @@ namespace Registrator.Module.BusinessObjects
         private Color color;
         private string name;
         private int colorArgb;
+        private DoctorEventSourceType sourceType;
+        private PaymentType paymentType;
 
         public DoctorEventLabel(Session session) : base(session) { }
 
@@ -313,31 +315,88 @@ namespace Registrator.Module.BusinessObjects
             get { return name; }
             set { SetPropertyValue("Name", ref name, value); }
         }
+
+        /// <summary>
+        /// Источник записи
+        /// </summary>
+        [ModelDefault("PropertyEditorType", "Registrator.Module.Win.Editors.EnumFlagsPropertyEditor")]
+        public DoctorEventSourceType SourceType
+        {
+            get { return sourceType; }
+            set { SetPropertyValue("SourceType", ref sourceType, value); }
+        }
+
+        /// <summary>
+        /// Вид оплаты, разрешенной к записи
+        /// </summary>
+        [ModelDefault("PropertyEditorType", "Registrator.Module.Win.Editors.EnumFlagsPropertyEditor")]
+        public PaymentType PaymentType
+        {
+            get { return paymentType; }
+            set { SetPropertyValue("PaymentType", ref paymentType, value); }
+        }
+
+        /// <summary>
+        /// Отделы
+        /// </summary>
+        [Association]
+        public XPCollection<Otdel> Departments
+        {
+            get { return GetCollection<Otdel>("Departments"); }
+        }
     }
 
     /// <summary>
     /// Источник записи на прием к доктору
     /// </summary>
+    [Flags]
     public enum DoctorEventSourceType
     {
         /// <summary>
         /// Нет
         /// </summary>
-        None = 1,
+        None = 0,
 
         /// <summary>
         /// Регистратура
         /// </summary>
-        Registry = 2,
+        Registry = 1,
 
         /// <summary>
         /// Интернет
         /// </summary>
-        Internet = 3,
+        Internet = 2,
 
         /// <summary>
         /// Терминал
         /// </summary>
         Terminal = 4
+    }
+
+    /// <summary>
+    /// Вид оплаты, разрешенный к записи
+    /// </summary>
+    [Flags]
+    public enum PaymentType
+    {
+        /// <summary>
+        /// Нет
+        /// </summary>
+        None = 0,
+
+        /// <summary>
+        /// ОМС
+        /// </summary>
+        OMS = 1,
+
+        /// <summary>
+        /// Бюджет
+        /// </summary>
+        Budget = 2,
+
+        /// <summary>
+        /// Платные услуги
+        /// </summary>
+        PaidServices = 4,
     }
 }

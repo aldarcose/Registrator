@@ -17,7 +17,10 @@
     <Class Name="Registrator.Module.BusinessObjects.DoctorEventLabel" Caption="Вид талона">
       <OwnMembers>
         <Member Name="Color" Caption="Цвет" />
+        <Member Name="Departments" Caption="Отделы" />
         <Member Name="Name" Caption="Название" />
+        <Member Name="PaymentType" Caption="Вид оплаты, разрешенной к записи" />
+        <Member Name="SourceType" Caption="Источник записи" />
       </OwnMembers>
     </Class>
     <Class Name="Registrator.Module.BusinessObjects.Pacient" Caption="Пациент">
@@ -57,6 +60,12 @@
         <LocalizationItem Name="None" Value="Нет" />
         <LocalizationItem Name="Registry" Value="Регистратура" />
         <LocalizationItem Name="Terminal" Value="Терминал" />
+      </LocalizationGroup>
+      <LocalizationGroup Name="Registrator.Module.BusinessObjects.PaymentType" Value="Вид оплаты, разрешенный к записи">
+        <LocalizationItem Name="Budget" Value="Бюджет" />
+        <LocalizationItem Name="None" Value="Нет" />
+        <LocalizationItem Name="OMS" Value="ОМС" />
+        <LocalizationItem Name="PaidServices" Value="Платные услуги" />
       </LocalizationGroup>
     </LocalizationGroup>
   </Localization>

@@ -308,6 +308,7 @@
       <DependentUpon>VisitListController.cs</DependentUpon>
     </Compile>
     <Compile Include="Editors\CheckedListPropertyEditor.cs" />
+    <Compile Include="Editors\EnumFlagsPropertyEditor.cs" />
     <Compile Include="MonthSelectorForm.cs">
       <SubType>Form</SubType>
     </Compile>
