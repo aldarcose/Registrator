@@ -307,8 +307,18 @@
     <Compile Include="Controllers\VisitListController.Designer.cs">
       <DependentUpon>VisitListController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Editors\AurumCheckedListBoxControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Editors\CheckedListPropertyEditor.cs" />
+    <Compile Include="Editors\CustomCheckedListBoxEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Editors\CustomCheckedListBoxEdit.Designer.cs">
+      <DependentUpon>CustomCheckedListBoxEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Editors\EnumFlagsPropertyEditor.cs" />
+    <Compile Include="Editors\WinCheckedListBoxPropertyEditor.cs" />
     <Compile Include="MonthSelectorForm.cs">
       <SubType>Form</SubType>
     </Compile>

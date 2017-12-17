@@ -8,7 +8,16 @@
       <Action Id="fba18e4b-a55f-402d-8a87-4091f8418f35" ValidationContexts="DSSendPacientContext" />
     </Actions>
   </ActionDesign>
+  <BOModel>
+    <Class Name="Registrator.Module.BusinessObjects.DoctorEventLabel">
+      <OwnMembers>
+        <Member Name="Departments" PropertyEditorType="Registrator.Module.Win.Editors.WinCheckedListBoxPropertyEditor" />
+      </OwnMembers>
+    </Class>
+  </BOModel>
   <SchemaModules>
+    <SchemaModule Name="SchedulerModuleBase" Version="17.1.6.0" IsNewNode="True" />
+    <SchemaModule Name="SchedulerWindowsFormsModule" Version="17.1.6.0" IsNewNode="True" />
     <SchemaModule Name="SystemModule" Version="17.1.6.0" IsNewNode="True" />
     <SchemaModule Name="SystemWindowsFormsModule" Version="17.1.6.0" IsNewNode="True" />
   </SchemaModules>

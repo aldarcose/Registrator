@@ -132,7 +132,7 @@ namespace Registrator.Module.Win.Controllers
                             DoctorEvent dEvent = appoinment != null ? eventsDict[(Guid)appoinment.Id] : null;
 
                             if (e.Menu.Id != DevExpress.XtraScheduler.SchedulerMenuItemId.AppointmentMenu) return;
-                            if (pacient != null && dEvent.Pacient == null & recordedEvent == null)
+                            if (pacient != null && dEvent.Pacient == null & recordedEvent == null && dEvent.StartOn > DateTime.Now)
                             {
                                 e.Menu.Items.Insert(0, new SchedulerMenuItem("Записать пациента", (o_, e_) =>
                                 {
