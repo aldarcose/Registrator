@@ -97,12 +97,14 @@ namespace Registrator.Module.Win.Controllers
                                 eventsDict = events.ToDictionary(de => de.Oid, de => de);
                             }
                             DoctorEvent doctorEvent = eventsDict[guid];
-
+                            // Вид талона (метка)
+                            AppointmentLabel label = scheduler.Storage.Appointments.Labels.GetById(doctorEvent.Label);
                             StringBuilder sb = new StringBuilder();
                             sb.AppendLine(string.Format("Время: с {0:HH:mm} по {1:HH:mm}", doctorEvent.StartOn, doctorEvent.EndOn));
                             sb.AppendLine(string.Format("Пациент: {0}", doctorEvent.Pacient != null ? doctorEvent.Pacient.FullName : null));
                             sb.AppendLine(string.Format("Кем создано: {0}", doctorEvent.CreatedBy != null ? doctorEvent.CreatedBy.FullName : null));
                             sb.AppendLine(string.Format("Кто записал: {0}", doctorEvent.EditedBy != null ? doctorEvent.EditedBy.FullName : null));
+                            sb.AppendLine(string.Format("Вид талона: {0}", label.DisplayName));
                             if (doctorEvent.Pacient != null)
                                 sb.AppendLine(string.Format("Источник записи: {0}", CaptionHelper.GetDisplayText(doctorEvent.SourceType)));
 
@@ -121,6 +123,7 @@ namespace Registrator.Module.Win.Controllers
                         IAppointmentLabelStorage labelStorage = storage.Appointments.Labels;
                         FillLabelStorage(labelStorage);
 
+                        #region Кастомизация всплывающего меню на расписании врача
                         DoctorEvent recordedEvent = null;
 
                         // Всплывающее меню на расписании врача
@@ -164,6 +167,8 @@ namespace Registrator.Module.Win.Controllers
                             }
                         };
 
+                        #endregion
+
                         // Кастомизация цвета фона расписания:
                         // Если выбранный пациент уже записан, то цвет расписания окрашивается в светло-розовый.
                         // Если в расписании записан другой пациент, то цвет расписания окрашивается в морковный.
@@ -199,7 +204,7 @@ namespace Registrator.Module.Win.Controllers
         private void FillLabelStorage(IAppointmentLabelStorage labelStorage)
         {
             labelStorage.Clear();
-            int i = 1;
+            int i = 0;
             using (IObjectSpace os = Application.CreateObjectSpace())
             {
                 IAppointmentLabel label = labelStorage.CreateNewLabel(i, "Нет", "Нет");

@@ -23,7 +23,7 @@ namespace Registrator.Module.Win.Controllers
                 ISchedulerStorage storage = ((AppointmentLabelEdit)editor.Control).Storage;
                 IAppointmentLabelStorage labelStorage = storage.Appointments.Labels;
                 labelStorage.Clear();
-                int i = 1;
+                int i = 0;
                 IAppointmentLabel label = labelStorage.CreateNewLabel(i, "Нет", "Нет");
                 label.SetColor(Color.White);
                 labelStorage.Add(label);

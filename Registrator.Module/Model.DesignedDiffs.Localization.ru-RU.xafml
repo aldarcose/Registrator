@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Application Title="MIS" Copyright="BadmaevaNK &amp; RadnaevMB">
+<Application Title="MIS" Copyright="RadnaevMB">
   <BOModel>
     <Class Name="Registrator.Module.BusinessObjects.DoctorEvent" Caption="Расписание врача">
       <OwnMembers>
