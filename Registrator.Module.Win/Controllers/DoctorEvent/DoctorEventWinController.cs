@@ -129,7 +129,10 @@ namespace Registrator.Module.Win.Controllers
                             Pacient pacient = listView.Tag as Pacient;
                             AppointmentBaseCollection appoinments = (o as SchedulerControl).SelectedAppointments;
                             Appointment appoinment = appoinments.Count == 1 ? appoinments[0] : null;
-                            DoctorEvent dEvent = appoinment != null ? eventsDict[(Guid)appoinment.Id] : null;
+                            if (appoinment == null) return;
+                            
+                            Guid key = (Guid)appoinment.Id;
+                            DoctorEvent dEvent = appoinment != null && eventsDict.ContainsKey(key) ? eventsDict[key] : null;
 
                             if (e.Menu.Id != DevExpress.XtraScheduler.SchedulerMenuItemId.AppointmentMenu) return;
                             if (pacient != null && dEvent.Pacient == null & recordedEvent == null && dEvent.StartOn > DateTime.Now)
@@ -145,7 +148,7 @@ namespace Registrator.Module.Win.Controllers
                                     recordedEvent = dEvent;
                                 }));
                             }
-                            else if (dEvent.Pacient != null)
+                            else if (dEvent != null && dEvent.Pacient != null)
                             {
                                 e.Menu.Items.Insert(0, new SchedulerMenuItem("Отменить запись", (o_, e_) =>
                                 {

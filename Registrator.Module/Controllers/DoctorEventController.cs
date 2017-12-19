@@ -191,7 +191,7 @@ namespace Registrator.Module.Controllers
                             doctorEvent.AssignedTo = os.GetObject(doctor);
                             doctorEvent.StartOn = timeStart;
                             doctorEvent.EndOn = timeStart.Add(parameters.Norm);
-                            doctorEvent.Label = parameters.Label;
+                            doctorEvent.Label = parameters.Label + 1;
                             timeStart = timeStart.Add(parameters.Norm);
                         }
                     }
