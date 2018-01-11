@@ -1242,7 +1242,10 @@
         </LayoutGroup>
       </Layout>
     </DetailView>
+    <ListView Id="Pacient_DispanserizaionCases_ListView" MasterDetailMode="ListViewAndDetailView" />
+    <ListView Id="Pacient_HospitalCases_ListView" MasterDetailMode="ListViewAndDetailView" />
     <ListView Id="Pacient_ListView" DataAccessMode="Server" Criteria="False" />
+    <ListView Id="Pacient_VisitCases_ListView" MasterDetailMode="ListViewAndDetailView" />
     <ListView Id="PERS_LIST_People_ListView" IsFooterVisible="True" />
     <DetailView Id="Polis_DetailView">
       <Items>

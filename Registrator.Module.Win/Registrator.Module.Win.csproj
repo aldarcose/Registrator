@@ -396,7 +396,9 @@
     <EmbeddedResource Include="Controllers\VisitListController.resx">
       <DependentUpon>VisitListController.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Model.DesignedDiffs.xafml" />
+    <EmbeddedResource Include="Model.DesignedDiffs.xafml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="MonthSelectorForm.resx">
       <DependentUpon>MonthSelectorForm.cs</DependentUpon>
     </EmbeddedResource>

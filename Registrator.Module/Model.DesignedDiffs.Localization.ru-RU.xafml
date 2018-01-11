@@ -402,56 +402,6 @@
         </LayoutGroup>
       </Layout>
     </DetailView>
-    <DetailView Id="Pacient_DetailView">
-      <Layout>
-        <LayoutGroup Id="Main">
-          <LayoutGroup Id="SimpleEditors">
-            <LayoutGroup Id="Item1" Caption="Пациент">
-              <TabbedGroup Id="Item6" Caption="Tabs">
-                <LayoutGroup Id="Pacient" Caption="Общая информация">
-                  <LayoutGroup Id="Pacient_col1">
-                    <LayoutGroup Id="Auto8c381dd7-2f38-4ffb-b22e-306c72b2ae6e" Caption="Auto8c381dd7-2f38-4ffb-b22e-306c72b2ae6e(7)" />
-                    <LayoutGroup Id="Autodec89098-ef6e-4b42-b866-6dfa51a48eb5" Caption="Autodec89098-ef6e-4b42-b866-6dfa51a48eb5(9)">
-                      <LayoutGroup Id="Auto80e3ae82-d3de-40db-bd8f-b5f130ab4b2b" Caption="Auto80e3ae82-d3de-40db-bd8f-b5f130ab4b2b(10)" />
-                      <LayoutGroup Id="Autocad59d92-4c52-4256-9576-a6a9a240a115" Caption="Autocad59d92-4c52-4256-9576-a6a9a240a115(13)">
-                        <LayoutGroup Id="Auto4fa5883a-1dd1-44d0-ab86-5cb79dafd9e7" Caption="Auto4fa5883a-1dd1-44d0-ab86-5cb79dafd9e7(18)" />
-                        <LayoutGroup Id="Autob3cc080e-ec5c-4ef2-8e74-85b1fc151c56" Caption="Autob3cc080e-ec5c-4ef2-8e74-85b1fc151c56(21)" />
-                      </LayoutGroup>
-                    </LayoutGroup>
-                  </LayoutGroup>
-                </LayoutGroup>
-                <LayoutGroup Id="Disability" Caption="Инвалидность" />
-                <LayoutGroup Id="Document" Caption="Документ">
-                  <LayoutGroup Id="Auto54b487f7-2d8a-45e8-bd85-6f17669c2e87" Caption="Auto54b487f7-2d8a-45e8-bd85-6f17669c2e87(36)">
-                    <LayoutGroup Id="Autodd75d144-7d6a-4515-b3e8-0ce3e1a3b500" Caption="Autodd75d144-7d6a-4515-b3e8-0ce3e1a3b500(37)">
-                      <LayoutGroup Id="Autob7600a52-f34c-401e-ae33-86b3532c8d44" Caption="Autob7600a52-f34c-401e-ae33-86b3532c8d44(39)">
-                        <LayoutGroup Id="Auto8d83cc16-44bc-47e4-b26e-9cd41c6eb945" Caption="Auto8d83cc16-44bc-47e4-b26e-9cd41c6eb945(40)" />
-                        <LayoutGroup Id="Auto15962cc4-8c81-4bfa-8b9d-45c3865e5201" Caption="Auto15962cc4-8c81-4bfa-8b9d-45c3865e5201(43)" />
-                      </LayoutGroup>
-                    </LayoutGroup>
-                  </LayoutGroup>
-                </LayoutGroup>
-                <LayoutGroup Id="Polises" Caption="Полисы" />
-              </TabbedGroup>
-            </LayoutGroup>
-            <LayoutGroup Id="Pacient" Caption="Данные пациента">
-              <LayoutGroup Id="Pacient_col1">
-                <LayoutGroup Id="Autodec89098-ef6e-4b42-b866-6dfa51a48eb5" Caption="Autodec89098-ef6e-4b42-b866-6dfa51a48eb5(9)">
-                  <LayoutGroup Id="Auto80e3ae82-d3de-40db-bd8f-b5f130ab4b2b" Caption="Auto80e3ae82-d3de-40db-bd8f-b5f130ab4b2b(10)" />
-                  <LayoutGroup Id="Autocad59d92-4c52-4256-9576-a6a9a240a115" Caption="Autocad59d92-4c52-4256-9576-a6a9a240a115(13)" />
-                </LayoutGroup>
-              </LayoutGroup>
-            </LayoutGroup>
-          </LayoutGroup>
-          <LayoutGroup Id="Item4" Caption="Мед. данные">
-            <TabbedGroup Id="Tabs">
-              <LayoutGroup Id="VisitCases" Caption="Посещения" />
-              <LayoutGroup Id="DnevnieStacionari" Caption="Дневной стационар" />
-            </TabbedGroup>
-          </LayoutGroup>
-        </LayoutGroup>
-      </Layout>
-    </DetailView>
     <DetailView Id="Polis_DetailView" Caption="Полис">
       <Items>
         <PropertyEditor Id="DateBegin" Caption="Дата начала" />
