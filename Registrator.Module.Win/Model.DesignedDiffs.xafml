@@ -196,10 +196,10 @@
                   </LayoutGroup>
                   <LayoutGroup Id="Disability" ShowCaption="True" TextAlignMode="AlignWithChildren" Index="1" RelativeSize="100" IsNewNode="True">
                     <LayoutItem Id="Disability.Invalidnost" Index="0" RelativeSize="16.978193146417446" IsNewNode="True" />
-                    <LayoutItem Id="Disability.InvalidnostGroup" Index="1" RelativeSize="10.124610591900311" IsNewNode="True" />
-                    <LayoutItem Id="Disability.InvalidDetstva" Index="2" RelativeSize="8.4112149532710276" IsNewNode="True" />
-                    <LayoutItem Id="Disability.Kategoriya" Index="3" RelativeSize="10.124610591900311" IsNewNode="True" />
-                    <LayoutItem Id="Disability.Lgota" Index="4" RelativeSize="49.065420560747661" IsNewNode="True" />
+                    <LayoutItem Id="Disability.InvalidnostGroup" Index="1" RelativeSize="8.4112149532710276" IsNewNode="True" />
+                    <LayoutItem Id="Disability.InvalidDetstva" Index="2" RelativeSize="6.8535825545171338" IsNewNode="True" />
+                    <LayoutItem Id="Disability.Kategoriya" Index="3" RelativeSize="8.4112149532710276" IsNewNode="True" />
+                    <LayoutItem Id="Disability.Lgota" Index="4" RelativeSize="54.049844236760123" IsNewNode="True" />
                     <LayoutItem Id="Disability" ShowCaption="False" ViewItem="Disability" Index="5" RelativeSize="5.29595015576324" IsNewNode="True" />
                   </LayoutGroup>
                   <LayoutGroup Id="Document" ShowCaption="True" CaptionLocation="Top" Index="2" RelativeSize="100" IsNewNode="True">
@@ -251,6 +251,9 @@
                   </LayoutGroup>
                   <LayoutGroup Id="DispanserizaionCases" ShowCaption="True" TextAlignMode="AlignWithChildren" Index="3" RelativeSize="100" IsNewNode="True">
                     <LayoutItem Id="DispanserizaionCases" TextAlignMode="AutoSize" ViewItem="DispanserizaionCases" Index="0" RelativeSize="100" IsNewNode="True" />
+                  </LayoutGroup>
+                  <LayoutGroup Id="Item5" ShowCaption="True" CaptionLocation="Top" Direction="Vertical" Index="4" TextAlignMode="AlignWithChildren" RelativeSize="100" IsNewNode="True">
+                    <LayoutItem Id="VisitCaseServices" ViewItem="VisitCaseServices" Index="0" RelativeSize="100" IsNewNode="True" />
                   </LayoutGroup>
                 </TabbedGroup>
               </LayoutGroup>

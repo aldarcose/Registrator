@@ -25,6 +25,7 @@
                   <LayoutGroup Id="DnevnieStacionari" Caption="Дневной стационар" />
                   <LayoutGroup Id="HostpitalCases" Caption="Госпитализации" />
                   <LayoutGroup Id="DispanserizaionCases" Caption="Диспансеризации" />
+                  <LayoutGroup Id="Item5" Caption="Услуги посещений" />
                 </TabbedGroup>
               </LayoutGroup>
             </TabbedGroup>

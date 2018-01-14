@@ -396,9 +396,22 @@ namespace Registrator.Module.BusinessObjects
             {
                 // Получить все абстрактные случаи
                 var list = new List<VisitCase>();
-                // найти те слуачи типы, которых возвращаемого значения
                 foreach(var visitCase in Cases.OfType<VisitCase>())
                     list.Add(visitCase);
+                return list;
+            }
+        }
+
+        /// <summary>
+        /// Услуги посещений
+        /// </summary>
+        public IList<MedService> VisitCaseServices
+        {
+            get
+            {
+                List<MedService> list = new List<MedService>();
+                foreach (var visitCase in Cases.OfType<VisitCase>())
+                    list.AddRange(visitCase.Services.OfType<MedService>());
                 return list;
             }
         }
