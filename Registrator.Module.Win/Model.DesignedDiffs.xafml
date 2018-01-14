@@ -167,26 +167,26 @@
                   <LayoutGroup Id="Pacient" ShowCaption="True" Index="0" RelativeSize="100" IsNewNode="True">
                     <LayoutGroup Id="Pacient_col1" ShowCaption="False" Index="0" RelativeSize="100" IsNewNode="True">
                       <LayoutGroup Id="Auto8c381dd7-2f38-4ffb-b22e-306c72b2ae6e" ShowCaption="False" Direction="Horizontal" Index="0" RelativeSize="5.7632398753894085" IsNewNode="True">
-                        <LayoutItem Id="LastName" ViewItem="LastName" Index="0" RelativeSize="32.307692307692307" IsNewNode="True" />
-                        <LayoutItem Id="FirstName" ViewItem="FirstName" Index="1" RelativeSize="31.23076923076923" IsNewNode="True" />
-                        <LayoutItem Id="MiddleName" ViewItem="MiddleName" Index="2" RelativeSize="36.46153846153846" IsNewNode="True" />
+                        <LayoutItem Id="LastName" ViewItem="LastName" Index="0" RelativeSize="32.292917166866744" IsNewNode="True" />
+                        <LayoutItem Id="FirstName" ViewItem="FirstName" Index="1" RelativeSize="31.2124849939976" IsNewNode="True" />
+                        <LayoutItem Id="MiddleName" ViewItem="MiddleName" Index="2" RelativeSize="36.494597839135658" IsNewNode="True" />
                       </LayoutGroup>
                       <LayoutGroup Id="Autodec89098-ef6e-4b42-b866-6dfa51a48eb5" ShowCaption="False" Direction="Horizontal" Index="1" RelativeSize="94.2367601246106" IsNewNode="True">
-                        <LayoutGroup Id="Auto80e3ae82-d3de-40db-bd8f-b5f130ab4b2b" ShowCaption="False" Index="0" RelativeSize="32.307692307692307" IsNewNode="True">
+                        <LayoutGroup Id="Auto80e3ae82-d3de-40db-bd8f-b5f130ab4b2b" ShowCaption="False" Index="0" RelativeSize="32.292917166866744" IsNewNode="True">
                           <LayoutItem Id="Gender" ViewItem="Gender" Index="0" RelativeSize="5.2892561983471076" IsNewNode="True" />
                           <LayoutItem Id="SNILS" ViewItem="SNILS" Index="1" RelativeSize="4.2975206611570247" IsNewNode="True" />
                           <LayoutItem Id="Prikreplenie" ViewItem="Prikreplenie" Index="2" RelativeSize="4.2975206611570247" IsNewNode="True" />
                           <LayoutItem Id="Uchastok" ViewItem="Uchastok" Index="3" RelativeSize="4.2975206611570247" IsNewNode="True" />
                           <LayoutItem Id="PhoneNumber" ViewItem="PhoneNumber" Index="4" RelativeSize="81.818181818181813" IsNewNode="True" />
                         </LayoutGroup>
-                        <LayoutGroup Id="Autocad59d92-4c52-4256-9576-a6a9a240a115" ShowCaption="False" Index="1" RelativeSize="67.6923076923077" IsNewNode="True">
+                        <LayoutGroup Id="Autocad59d92-4c52-4256-9576-a6a9a240a115" ShowCaption="False" Index="1" RelativeSize="67.707082833133256" IsNewNode="True">
                           <LayoutGroup Id="Auto4fa5883a-1dd1-44d0-ab86-5cb79dafd9e7" ShowCaption="False" Direction="Horizontal" Index="0" RelativeSize="5.785123966942149" IsNewNode="True">
-                            <LayoutItem Id="Birthdate" ViewItem="Birthdate" Index="0" RelativeSize="46.136363636363633" IsNewNode="True" />
-                            <LayoutItem Id="BirthPlace" ViewItem="BirthPlace" Index="1" RelativeSize="53.863636363636367" IsNewNode="True" />
+                            <LayoutItem Id="Birthdate" ViewItem="Birthdate" Index="0" RelativeSize="46.099290780141843" IsNewNode="True" />
+                            <LayoutItem Id="BirthPlace" ViewItem="BirthPlace" Index="1" RelativeSize="53.900709219858157" IsNewNode="True" />
                           </LayoutGroup>
                           <LayoutGroup Id="Autob3cc080e-ec5c-4ef2-8e74-85b1fc151c56" ShowCaption="False" Direction="Horizontal" Index="1" RelativeSize="5.785123966942149" IsNewNode="True">
-                            <LayoutItem Id="CitizenCategory" ViewItem="CitizenCategory" Index="0" RelativeSize="46.136363636363633" IsNewNode="True" />
-                            <LayoutItem Id="SocStatus" ViewItem="SocStatus" Index="1" RelativeSize="53.863636363636367" IsNewNode="True" />
+                            <LayoutItem Id="CitizenCategory" ViewItem="CitizenCategory" Index="0" RelativeSize="46.099290780141843" IsNewNode="True" />
+                            <LayoutItem Id="SocStatus" ViewItem="SocStatus" Index="1" RelativeSize="53.900709219858157" IsNewNode="True" />
                           </LayoutGroup>
                           <LayoutItem Id="WorkPlace" ViewItem="WorkPlace" Index="2" RelativeSize="4.2975206611570247" IsNewNode="True" />
                           <LayoutItem Id="LearningPlace" ViewItem="LearningPlace" Index="3" RelativeSize="84.132231404958674" IsNewNode="True" />
@@ -195,11 +195,11 @@
                     </LayoutGroup>
                   </LayoutGroup>
                   <LayoutGroup Id="Disability" ShowCaption="True" TextAlignMode="AlignWithChildren" Index="1" RelativeSize="100" IsNewNode="True">
-                    <LayoutItem Id="Disability.Invalidnost" Index="0" RelativeSize="17.757009345794394" IsNewNode="True" />
-                    <LayoutItem Id="Disability.InvalidnostGroup" Index="1" RelativeSize="13.2398753894081" IsNewNode="True" />
-                    <LayoutItem Id="Disability.InvalidDetstva" Index="2" RelativeSize="10.436137071651091" IsNewNode="True" />
-                    <LayoutItem Id="Disability.Kategoriya" Index="3" RelativeSize="13.2398753894081" IsNewNode="True" />
-                    <LayoutItem Id="Disability.Lgota" Index="4" RelativeSize="40.031152647975077" IsNewNode="True" />
+                    <LayoutItem Id="Disability.Invalidnost" Index="0" RelativeSize="16.978193146417446" IsNewNode="True" />
+                    <LayoutItem Id="Disability.InvalidnostGroup" Index="1" RelativeSize="10.124610591900311" IsNewNode="True" />
+                    <LayoutItem Id="Disability.InvalidDetstva" Index="2" RelativeSize="8.4112149532710276" IsNewNode="True" />
+                    <LayoutItem Id="Disability.Kategoriya" Index="3" RelativeSize="10.124610591900311" IsNewNode="True" />
+                    <LayoutItem Id="Disability.Lgota" Index="4" RelativeSize="49.065420560747661" IsNewNode="True" />
                     <LayoutItem Id="Disability" ShowCaption="False" ViewItem="Disability" Index="5" RelativeSize="5.29595015576324" IsNewNode="True" />
                   </LayoutGroup>
                   <LayoutGroup Id="Document" ShowCaption="True" CaptionLocation="Top" Index="2" RelativeSize="100" IsNewNode="True">
@@ -207,11 +207,11 @@
                       <LayoutGroup Id="Autodd75d144-7d6a-4515-b3e8-0ce3e1a3b500" ShowCaption="False" Index="0" RelativeSize="100" IsNewNode="True">
                         <LayoutItem Id="Document.Type" ViewItem="Document.Type" Index="0" RelativeSize="5.29595015576324" IsNewNode="True" />
                         <LayoutGroup Id="Autob7600a52-f34c-401e-ae33-86b3532c8d44" ShowCaption="False" Direction="Horizontal" Index="1" RelativeSize="94.704049844236764" IsNewNode="True">
-                          <LayoutGroup Id="Auto8d83cc16-44bc-47e4-b26e-9cd41c6eb945" ShowCaption="False" Index="0" RelativeSize="42" IsNewNode="True">
+                          <LayoutGroup Id="Auto8d83cc16-44bc-47e4-b26e-9cd41c6eb945" ShowCaption="False" Index="0" RelativeSize="42.016806722689076" IsNewNode="True">
                             <LayoutItem Id="Document.Serial" ViewItem="Document.Serial" Index="0" RelativeSize="5.2631578947368425" IsNewNode="True" />
                             <LayoutItem Id="Document.Number" ViewItem="Document.Number" Index="1" RelativeSize="94.736842105263165" IsNewNode="True" />
                           </LayoutGroup>
-                          <LayoutGroup Id="Auto15962cc4-8c81-4bfa-8b9d-45c3865e5201" ShowCaption="False" Index="1" RelativeSize="58" IsNewNode="True">
+                          <LayoutGroup Id="Auto15962cc4-8c81-4bfa-8b9d-45c3865e5201" ShowCaption="False" Index="1" RelativeSize="57.983193277310924" IsNewNode="True">
                             <LayoutItem Id="Document.DateBegin" ViewItem="Document.DateBegin" Index="0" RelativeSize="5.2631578947368425" IsNewNode="True" />
                             <LayoutItem Id="Document.DateEnd" ViewItem="Document.DateEnd" Index="1" RelativeSize="94.736842105263165" IsNewNode="True" />
                           </LayoutGroup>
@@ -223,18 +223,18 @@
                     <LayoutItem Id="Polises" TextAlignMode="AutoSize" ViewItem="Polises" Index="0" RelativeSize="100" IsNewNode="True" />
                   </LayoutGroup>
                   <LayoutGroup Id="Item2" ShowCaption="True" CaptionLocation="Top" Direction="Horizontal" Index="4" RelativeSize="100" IsNewNode="True">
-                    <LayoutGroup Id="Auto9bc7093d-d592-49ee-a816-8c38b1675529" ShowCaption="False" Index="0" RelativeSize="46.153846153846153" IsNewNode="True">
+                    <LayoutGroup Id="Auto9bc7093d-d592-49ee-a816-8c38b1675529" ShowCaption="False" Index="0" RelativeSize="57.983193277310924" IsNewNode="True">
                       <LayoutItem Id="Address" ViewItem="Address" Index="0" RelativeSize="5.29595015576324" IsNewNode="True" />
                       <LayoutItem Id="AddressFact" ViewItem="AddressFact" Index="1" RelativeSize="94.704049844236764" IsNewNode="True" />
                     </LayoutGroup>
-                    <LayoutGroup Id="Auto1ed8e34a-c3fb-4d3b-825c-f5d4cdc346c9" ShowCaption="False" Direction="Horizontal" Index="1" RelativeSize="52.92307692307692" IsNewNode="True">
+                    <LayoutGroup Id="Auto1ed8e34a-c3fb-4d3b-825c-f5d4cdc346c9" ShowCaption="False" Direction="Horizontal" Index="1" RelativeSize="41.296518607442977" IsNewNode="True">
                       <SplitterItem Id="SplitterItem1" Index="0" RelativeSize="1.7441860465116279" IsNewNode="True" />
                       <LayoutGroup Id="Auto989d857b-360a-43f5-b8f7-abff7bf4b9fc" ShowCaption="False" TextAlignMode="AlignWithChildren" Index="1" RelativeSize="98.255813953488371" IsNewNode="True">
                         <LayoutItem Id="Registrator.Module.Win.Controllers.CopyAddressToFactAction" ViewItem="Registrator.Module.Win.Controllers.CopyAddressToFactAction" Index="0" RelativeSize="4.9844236760124607" IsNewNode="True" />
                         <LayoutItem Id="Registrator.Module.Win.Controllers.CopyAddressFromFactAction" ViewItem="Registrator.Module.Win.Controllers.CopyAddressFromFactAction" Index="1" RelativeSize="95.015576323987545" IsNewNode="True" />
                       </LayoutGroup>
                     </LayoutGroup>
-                    <SeparatorItem Id="Item7" Index="2" RelativeSize="0.92307692307692313" IsNewNode="True" />
+                    <SeparatorItem Id="Item7" Index="2" RelativeSize="0.72028811524609848" IsNewNode="True" />
                   </LayoutGroup>
                 </TabbedGroup>
               </LayoutGroup>
@@ -279,7 +279,7 @@
                   <LayoutItem Id="Disability.Kategoriya" RelativeSize="14.3646408839779" />
                   <LayoutItem Id="Disability.Lgota" RelativeSize="14.3646408839779" />
                 </LayoutGroup>
-                <LayoutGroup Id="Document" Caption="Document">
+                <LayoutGroup Id="Document" Caption="Документ">
                   <LayoutGroup Id="Auto54b487f7-2d8a-45e8-bd85-6f17669c2e87" Caption="Auto54b487f7-2d8a-45e8-bd85-6f17669c2e87">
                     <LayoutGroup Id="Autodd75d144-7d6a-4515-b3e8-0ce3e1a3b500" Caption="Autodd75d144-7d6a-4515-b3e8-0ce3e1a3b500">
                       <LayoutGroup Id="Autob7600a52-f34c-401e-ae33-86b3532c8d44" Caption="Autob7600a52-f34c-401e-ae33-86b3532c8d44" RelativeSize="81.215469613259671">
@@ -296,7 +296,7 @@
                     </LayoutGroup>
                   </LayoutGroup>
                 </LayoutGroup>
-                <LayoutGroup Id="Pacient" Caption="Pacient">
+                <LayoutGroup Id="Pacient" Caption="Пациент">
                   <LayoutGroup Id="Pacient_col1">
                     <LayoutGroup Id="Auto8c381dd7-2f38-4ffb-b22e-306c72b2ae6e" Caption="Auto8c381dd7-2f38-4ffb-b22e-306c72b2ae6e" RelativeSize="20.441988950276244">
                       <LayoutItem Id="FirstName" RelativeSize="31.25" />
@@ -336,39 +336,6 @@
               <LayoutItem Id="IsEarlyBorn" RelativeSize="6.0518731988472618" />
               <LayoutItem Id="IsNewBorn" RelativeSize="6.0518731988472618" />
             </LayoutGroup>
-          </LayoutGroup>
-          <TabbedGroup Id="Tabs" Index="1" RelativeSize="54.215456674473067" Removed="True">
-            <LayoutGroup Id="VisitCases" ShowCaption="True" TextAlignMode="AlignWithChildren" Index="0" RelativeSize="100" IsNewNode="True">
-              <LayoutItem Id="VisitCases" TextAlignMode="AutoSize" ViewItem="VisitCases" Index="0" RelativeSize="100" IsNewNode="True" />
-            </LayoutGroup>
-            <LayoutGroup Id="DnevnieStacionari" ShowCaption="True" TextAlignMode="AlignWithChildren" Index="1" RelativeSize="100" IsNewNode="True">
-              <LayoutItem Id="DnevnieStacionari" TextAlignMode="AutoSize" ViewItem="DnevnieStacionari" Index="0" RelativeSize="100" IsNewNode="True" />
-            </LayoutGroup>
-            <LayoutGroup Id="HostpitalCases" ShowCaption="True" TextAlignMode="AlignWithChildren" Index="2" RelativeSize="100" IsNewNode="True">
-              <LayoutItem Id="HospitalCases" TextAlignMode="AutoSize" ViewItem="HospitalCases" Index="0" RelativeSize="100" IsNewNode="True" />
-            </LayoutGroup>
-            <LayoutGroup Id="DispanserizaionCases" ShowCaption="True" TextAlignMode="AlignWithChildren" Index="3" RelativeSize="100" IsNewNode="True">
-              <LayoutItem Id="DispanserizaionCases" TextAlignMode="AutoSize" ViewItem="DispanserizaionCases" Index="0" RelativeSize="100" IsNewNode="True" />
-            </LayoutGroup>
-          </TabbedGroup>
-          <LayoutGroup Id="Item4" Caption="Item4" RelativeSize="54.215456674473067" Removed="True">
-            <TabbedGroup Id="Tabs">
-              <LayoutGroup Id="Cases" Removed="True">
-                <LayoutItem Id="Cases" TextAlignMode="AutoSize" />
-              </LayoutGroup>
-              <LayoutGroup Id="DispanserizaionCases" TextAlignMode="AlignWithChildren">
-                <LayoutItem Id="DispanserizaionCases" TextAlignMode="AutoSize" />
-              </LayoutGroup>
-              <LayoutGroup Id="DnevnieStacionari" Caption="Дневной стационар" TextAlignMode="AlignWithChildren">
-                <LayoutItem Id="DnevnieStacionari" TextAlignMode="AutoSize" ViewItem="DnevnieStacionari" Index="0" RelativeSize="100" IsNewNode="True" Removed="True" />
-              </LayoutGroup>
-              <LayoutGroup Id="HostpitalCases" TextAlignMode="AlignWithChildren">
-                <LayoutItem Id="HospitalCases" TextAlignMode="AutoSize" />
-              </LayoutGroup>
-              <LayoutGroup Id="VisitCases" Caption="Посещения" TextAlignMode="AlignWithChildren">
-                <LayoutItem Id="VisitCases" TextAlignMode="AutoSize" />
-              </LayoutGroup>
-            </TabbedGroup>
           </LayoutGroup>
         </LayoutGroup>
       </Layout>
