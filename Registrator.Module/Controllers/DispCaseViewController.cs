@@ -22,15 +22,14 @@ using ListView = DevExpress.ExpressApp.ListView;
 
 namespace Registrator.Module.Controllers
 {
-    // For more typical usage scenarios, be sure to check out http://documentation.devexpress.com/#Xaf/clsDevExpressExpressAppViewControllertopic.
     public partial class DispCaseViewController : ViewController
     {
         public DispCaseViewController()
         {
             InitializeComponent();
             RegisterActions(components);
-            // Target required Views (via the TargetXXX properties) and create their Actions.
         }
+
         protected override void OnActivated()
         {
             base.OnActivated();
@@ -45,28 +44,6 @@ namespace Registrator.Module.Controllers
                 Frame.GetController<StateMachineController>().Active.SetItemValue("EnabledStateAction", false);
             }
         }
-        protected override void OnViewControlsCreated()
-        {
-            base.OnViewControlsCreated();
-            // Access and customize the target View control.
-
-            var detailView = View as DetailView;
-
-            if (detailView != null)
-            {
-                var dispCase = View.CurrentObject as DispCase;
-
-                if (dispCase != null)
-                {
-                    
-                }
-            }
-        }
-        protected override void OnDeactivated()
-        {
-            // Unsubscribe from previously subscribed events and release other references and resources.
-            base.OnDeactivated();
-        }
 
         private DispTypeCreateInfo GetDispTypesCanCreated(Pacient pacient, DateTime now)
         {
@@ -75,12 +52,9 @@ namespace Registrator.Module.Controllers
             var age = pacient.Age;
             DispTypeCreateInfo dispTypeSelector = new DispTypeCreateInfo();
 
-            
-
             // если пациент взрослый (18 <= age <= 99)
             if (age >= 18)
             {
-                
                 // если уже создана диспансеризация в этом году
                 if (pacient.DispanserizaionCases != null && pacient.DispanserizaionCases.Any(t => t.DateIn.Year == now.Year))
                     // для взрослых вариантов нет
@@ -98,7 +72,6 @@ namespace Registrator.Module.Controllers
                         // ТО: можно провести диспансеризацию.
                         dispTypeSelector.AddType(DispType.DOGVN1);
                     }
-
                 }
             }
             // если пациент младше 18 лет

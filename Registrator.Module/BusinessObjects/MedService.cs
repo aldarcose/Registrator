@@ -18,6 +18,16 @@ namespace Registrator.Module.BusinessObjects
     {
         public MedService(Session session) : base(session) { }
 
+        public VisitCase VisitCase { get { return (VisitCase)Case; } }
+
+        /*
+        /// <summary>Цель посещения</summary>
+        public CelPosescheniya CelPosescheniya { get { return ((VisitCase)Case).Cel; } }
+
+        /// <summary>Место обслуживания</summary>
+        public MestoObsluzhivaniya MestoObsluzhivaniya { get { return ((VisitCase)Case).Mesto; } }
+        */
+
         #region Reestr Methods
         public override bool IsValidForReestr()
         {

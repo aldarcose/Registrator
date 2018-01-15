@@ -145,6 +145,11 @@
         </LayoutGroup>
       </Layout>
     </DetailView>
+    <ListView Id="CommonProtocol_Medicaments_ListView">
+      <Columns>
+        <ColumnInfo Id="Medicament" Width="124" />
+      </Columns>
+    </ListView>
     <ListView Id="EditableProtocol_Records_ListView" AllowEdit="True" AutoExpandAllGroups="True" DetailViewID="" MasterDetailView="" />
     <DetailView Id="Pacient_DetailView">
       <Items>

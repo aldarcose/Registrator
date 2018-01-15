@@ -103,14 +103,12 @@ namespace Registrator.Module.BusinessObjects
         /// Цель посещения
         /// </summary>
         [XafDisplayName("Цель посещения")]
-        [Browsable(false)]
         public CelPosescheniya Cel { get; set; }
 
         /// <summary>
         /// Место обслуживания
         /// </summary>
         [XafDisplayName("Место обслуживания")]
-        [Browsable(false)]
         public MestoObsluzhivaniya Mesto
         {
             get { return _mesto; }

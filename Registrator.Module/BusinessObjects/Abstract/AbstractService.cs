@@ -461,7 +461,6 @@ namespace Registrator.Module.BusinessObjects.Abstract
         /// Диагнозы случая
         /// </summary>
         [Association("CommonService-Diagnoses"), DevExpress.Xpo.Aggregated]
-        [ImmediatePostData]
         public XPCollection<MKBWithType> Diagnoses
         {
             get { return GetCollection<MKBWithType>("Diagnoses"); }

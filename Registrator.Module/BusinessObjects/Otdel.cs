@@ -14,11 +14,9 @@ using System.Xml.Linq;
 
 namespace Registrator.Module.BusinessObjects
 {
-
     [DefaultClassOptions]
     public class Otdel : DevExpress.Persistent.BaseImpl.BaseObject
     {
-        private DoctorEvent doctorEvent;
         private BusinessObjects.DoctorEventLabel doctorEventLabel;
         public Otdel(Session session) : base(session) { }    
         

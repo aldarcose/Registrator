@@ -290,12 +290,6 @@
     <Compile Include="Controllers\CustomController.Designer.cs">
       <DependentUpon>CustomController.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controllers\DiagnoseListViewController.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controllers\DiagnoseListViewController.Designer.cs">
-      <DependentUpon>DiagnoseListViewController.cs</DependentUpon>
-    </Compile>
     <Compile Include="Controllers\DispCaseViewController.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -359,9 +353,6 @@
     <EmbeddedResource Include="Controllers\CommonCaseViewController.resx">
       <DependentUpon>CommonCaseViewController.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controllers\DiagnoseListViewController.resx">
-      <DependentUpon>DiagnoseListViewController.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Controllers\DispCaseViewController.resx">
       <DependentUpon>DispCaseViewController.cs</DependentUpon>
     </EmbeddedResource>
@@ -396,7 +387,9 @@
     <None Include="DatabaseUpdate\ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Controllers\ReadMe.txt" />
+    <None Include="Controllers\ReadMe.txt">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="FunctionalTests\ReadMe.txt" />
@@ -405,10 +398,6 @@
     <None Include="FunctionalTests\sample.ets" />
     <None Include="FunctionalTests\WebSample.ets" />
     <None Include="Images\ReadMe.txt" />
-    <EmbeddedResource Include="Model.DesignedDiffs.Localization.ru-RU.xafml">
-      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>

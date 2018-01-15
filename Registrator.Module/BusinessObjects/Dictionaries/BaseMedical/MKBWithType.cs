@@ -14,8 +14,11 @@ namespace Registrator.Module.BusinessObjects.Dictionaries
     /// Диагноз с указанием его типа
     /// </summary>
     [XafDisplayName("Данные диагноза")]
+    [DefaultClassOptions]
     public class MKBWithType : BaseObject
     {
+        private CommonService commonService;
+
         public MKBWithType(Session session) : base(session) { }
 
         public override void AfterConstruction()
@@ -68,15 +71,15 @@ namespace Registrator.Module.BusinessObjects.Dictionaries
 
         public override string ToString()
         {
-            if (Diagnose == null)
-            {
-                return "Нет диагноза";
-            }
-            return this.Diagnose.ToString();
+            return Diagnose == null ? "Нет диагноза" : Diagnose.ToString();
         }
 
         [Association("CommonService-Diagnoses")]
-        public CommonService Service { get; set; }
+        public CommonService Service 
+        { 
+            get { return commonService; }
+            set { SetPropertyValue("Service", ref commonService, value); } 
+        }
 
         /// <summary>
         /// Врач, поставивший диагноз

@@ -21,9 +21,9 @@ namespace Registrator.Module.Controllers
         {
             InitializeComponent();
             RegisterActions(components);
-            // Target required Views (via the TargetXXX properties) and create their Actions.
             
         }
+
         protected override void OnActivated()
         {
             base.OnActivated();
@@ -34,7 +34,7 @@ namespace Registrator.Module.Controllers
                 var newController = Frame.GetController<DevExpress.ExpressApp.SystemModule.NewObjectViewController>();
                 newController.ObjectCreated += NewControllerOnObjectCreated;
 
-                Frame.GetController<DevExpress.ExpressApp.SystemModule.DeleteObjectsViewController>().Active.SetItemValue("EnabledDeleteAction", false);
+             // Frame.GetController<DevExpress.ExpressApp.SystemModule.DeleteObjectsViewController>().Active.SetItemValue("EnabledDeleteAction", false);
                 Frame.GetController<DevExpress.ExpressApp.SystemModule.LinkUnlinkController>().Active.SetItemValue("EnabledLinkAction", false);
             }
 
@@ -166,11 +166,6 @@ namespace Registrator.Module.Controllers
                         d1Character.AllowEdit.SetItemValue("DenyEditPreDiagn", commonService.IsMainService);
                 }
             }
-        }
-        protected override void OnDeactivated()
-        {
-            // Unsubscribe from previously subscribed events and release other references and resources.
-            base.OnDeactivated();
         }
     }
 }

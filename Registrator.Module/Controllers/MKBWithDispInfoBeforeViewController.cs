@@ -17,20 +17,13 @@ using DevExpress.Persistent.Validation;
 
 namespace Registrator.Module.Controllers
 {
-    // For more typical usage scenarios, be sure to check out http://documentation.devexpress.com/#Xaf/clsDevExpressExpressAppViewControllertopic.
     public partial class MKBWithDispInfoBeforeViewController : ViewController
     {
         public MKBWithDispInfoBeforeViewController()
         {
             InitializeComponent();
-            // Target required Views (via the TargetXXX properties) and create their Actions.
         }
-        protected override void OnActivated()
-        {
-            base.OnActivated();
-            // Perform various tasks depending on the target View.
-        }
-
+        
         private PropertyEditor notDoneHealingEditor;
         private PropertyEditor notDoneRehabEditor;
         protected override void OnViewControlsCreated()
