@@ -9,7 +9,7 @@ using Registrator.Module.BusinessObjects.Abstract;
 
 namespace Registrator.Module.Win.Controllers
 {
-    public class MedServiceListController : ObjectViewController<ListView, CommonService>
+    public class MedServiceGrouppedListController : ObjectViewController<ListView, CommonService>
     {
         private GridView gridView;
 
@@ -41,7 +41,7 @@ namespace Registrator.Module.Win.Controllers
             GridView view = sender as GridView;
             object val = view.GetGroupRowValue(e.RowHandle);
             GridGroupRowInfo info = e.Info as GridGroupRowInfo;
-            if (info.Column.FieldName == "Oid")
+            if (info.Column.FieldName == "Case.Oid")
                 info.GroupText = "Посещение";
         }
     }
