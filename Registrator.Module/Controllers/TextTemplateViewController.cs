@@ -55,13 +55,7 @@ namespace Registrator.Module.Controllers
                     TextTemplateItemProcess(this, e);
             };
         }
-             
-        protected override void OnDeactivated()
-        {
-            // Unsubscribe from previously subscribed events and release other references and resources.
-            base.OnDeactivated();
-        }
-
+        
         private void EditTemplateAction_Execute(object sender, SimpleActionExecuteEventArgs e)
         {
             Doctor doctor = SecuritySystem.CurrentUser as Doctor;

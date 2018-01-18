@@ -29,24 +29,9 @@ namespace Registrator.Module.Controllers
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.NewCommonCaseAction = new DevExpress.ExpressApp.Actions.SimpleAction(this.components);
-            // 
-            // NewCommonCaseAction
-            // 
-            this.NewCommonCaseAction.Caption = "Создать";
-            this.NewCommonCaseAction.Category = "Edit";
-            this.NewCommonCaseAction.ConfirmationMessage = null;
-            this.NewCommonCaseAction.Id = "e242cd3e-e308-4e95-9e59-2de349368ed6";
-            this.NewCommonCaseAction.ImageName = "MenuBar_New";
-            this.NewCommonCaseAction.TargetViewNesting = DevExpress.ExpressApp.Nesting.Nested;
-            this.NewCommonCaseAction.TargetViewType = DevExpress.ExpressApp.ViewType.ListView;
-            this.NewCommonCaseAction.ToolTip = null;
-            this.NewCommonCaseAction.TypeOfView = typeof(DevExpress.ExpressApp.ListView);
-            this.NewCommonCaseAction.Execute += new DevExpress.ExpressApp.Actions.SimpleActionExecuteEventHandler(this.NewAction_Execute);
             // 
             // CommonCaseViewController
             // 
-            this.Actions.Add(this.NewCommonCaseAction);
             this.TargetObjectType = typeof(Registrator.Module.BusinessObjects.Abstract.CommonCase);
             this.TypeOfView = typeof(DevExpress.ExpressApp.View);
 
@@ -54,6 +39,5 @@ namespace Registrator.Module.Controllers
 
         #endregion
 
-        private DevExpress.ExpressApp.Actions.SimpleAction NewCommonCaseAction;
     }
 }

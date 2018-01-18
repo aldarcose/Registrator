@@ -28,8 +28,6 @@ namespace Registrator.Module.BusinessObjects.Dictionaries
         public override void AfterConstruction()
         {
             base.AfterConstruction();
-            // Place your initialization code here (http://documentation.devexpress.com/#Xaf/CustomDocument2834).
-
             Doctor = SecuritySystem.CurrentUser as Doctor;
         }
 
@@ -73,8 +71,7 @@ namespace Registrator.Module.BusinessObjects.Dictionaries
     /// </summary>
     public class AnamnezTemplate : TextTemplate
     {
-        public AnamnezTemplate(Session session) : base(session)
-        {}
+        public AnamnezTemplate(Session session) : base(session) { }
     }
 
     /// <summary>
@@ -82,19 +79,15 @@ namespace Registrator.Module.BusinessObjects.Dictionaries
     /// </summary>
     public class ComplainTemplate : TextTemplate
     {
-        public ComplainTemplate(Session session)
-            : base(session)
-        { }
+        public ComplainTemplate(Session session) : base(session) { }
     }
 
     /// <summary>
     /// Шаблон рекомендации
     /// </summary>
-    public class RecomendTemplate : TextTemplate
+    public class RecomendTemplate : TextTemplate    
     {
-        public RecomendTemplate(Session session)
-            : base(session)
-        { }
+        public RecomendTemplate(Session session) : base(session) { }
     }
 
     /// <summary>
@@ -102,8 +95,6 @@ namespace Registrator.Module.BusinessObjects.Dictionaries
     /// </summary>
     public class ObjStatusTerTemplate : TextTemplate
     {
-        public ObjStatusTerTemplate(Session session)
-            : base(session)
-        { }
+        public ObjStatusTerTemplate(Session session) : base(session) { }
     }
 }

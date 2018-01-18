@@ -25,11 +25,7 @@ namespace Registrator.Module.BusinessObjects
         private MestoObsluzhivaniya _mesto;
         private const int minCodeForResultat = 301;
         private const int maxCodeForResultat = 315;
-
-        public VisitCase(Session session)
-            : base(session)
-        {
-        }
+        public VisitCase(Session session) : base(session) { }
 
         public override void AfterConstruction()
         {

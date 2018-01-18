@@ -79,8 +79,9 @@ namespace Registrator.Module.BusinessObjects
             get { return CriteriaOperator.Parse("D_End is null"); }
         }
 
-        
-        [Browsable(false)]
+        /// <summary>
+        /// Из другого региона
+        /// </summary>
         public bool IsFromAnotherRegion
         {
             get
@@ -89,7 +90,10 @@ namespace Registrator.Module.BusinessObjects
                 // _isFromAnotherRegion = SMO.TF_OKATO != Settings.RegionSettings.GetCurrentRegionOKATO(Session);
                 return isFromAnotherRegion;
             }
-            set { SetPropertyValue("IsFromAnotherRegion", ref isFromAnotherRegion, value); }
+            set 
+            { 
+                SetPropertyValue("IsFromAnotherRegion", ref isFromAnotherRegion, value); 
+            }
         }
 
         #region Фильтрация по региону

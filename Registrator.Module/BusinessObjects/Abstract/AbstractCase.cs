@@ -155,12 +155,6 @@ namespace Registrator.Module.BusinessObjects.Abstract
         [Browsable(false)]
         public Oplata StatusOplati { get; set; }
 
-        /*
-        SUMP	У	N(15.2)	Сумма, принятая к оплате СМО (ТФОМС)	Заполняется СМО (ТФОМС).
-        SANK_IT	У	N(15.2)	Сумма санкций по случаю	Равна сумме описанных ниже санкций.
-        SANK	УМ	S	Сведения о санкциях	
-        */
-
         /// <summary>
         /// Условно-обязательное поле T(250)
         /// Служебная информация
@@ -197,6 +191,21 @@ namespace Registrator.Module.BusinessObjects.Abstract
 
         [Browsable(false)]
         public WorkflowCaseStatus WorkflowCaseStatus { get; set; }
+
+        /// <summary>Операнды свойств класса</summary>
+        public static new readonly FieldsClass Fields = new FieldsClass();
+        /// <summary>Операнды свойств класса</summary>
+        public new class FieldsClass : BaseObject.FieldsClass
+        {
+            /// <summary>Конструктор</summary>
+            public FieldsClass() { }
+            /// <summary>Конструктор</summary>
+            /// <param name="propertyName">Название вложенного свойства</param>
+            public FieldsClass(string propertyName) : base(propertyName) { }
+
+            /// <summary>Операнд свойства Oid</summary>
+            public OperandProperty Oid { get { return new OperandProperty(GetNestedName("Oid")); } }
+        }
     }
 
     /// <summary>
@@ -221,11 +230,11 @@ namespace Registrator.Module.BusinessObjects.Abstract
             Services.Add(new MedService(Session) { IsMainService = true, AutoOpen = false });
 
             // определяем текущего пользователя
-            var createdBy = SecuritySystem.CurrentUser as Doctor;
-            if (createdBy != null)
+            var currentDoctor = SecuritySystem.CurrentUser as Doctor;
+            if (currentDoctor != null)
             {
                 // находим доктора с таким же Логином
-                var doctor = Session.FindObject<Doctor>(CriteriaOperator.Parse("UserName=?", createdBy.UserName));
+                var doctor = Session.FindObject<Doctor>(CriteriaOperator.Parse("UserName=?", currentDoctor.UserName));
                 if (doctor != null)
                     this.Doctor = doctor;
             }
@@ -323,14 +332,8 @@ namespace Registrator.Module.BusinessObjects.Abstract
         {
             get
             {
-                // выбрать из диагнозов сопутствующие диагнозы
                 var list = new List<MKB10>();
-                // выбираем диагнозы
                 return list;
-            }
-            set
-            {
-                throw new NotImplementedException();
             }
         }
 
@@ -345,10 +348,6 @@ namespace Registrator.Module.BusinessObjects.Abstract
             {
                 var list = new List<MKB10>();
                 return list;
-            }
-            set
-            {
-                throw new NotImplementedException();
             }
         }
 

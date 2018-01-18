@@ -14,14 +14,12 @@ using ListView = DevExpress.ExpressApp.ListView;
 
 namespace Registrator.Module.Controllers
 {
-    // For more typical usage scenarios, be sure to check out http://documentation.devexpress.com/#Xaf/clsDevExpressExpressAppViewControllertopic.
     public partial class CommonServiceViewController : ViewController
     {
         public CommonServiceViewController()
         {
             InitializeComponent();
             RegisterActions(components);
-            
         }
 
         protected override void OnActivated()
@@ -31,13 +29,14 @@ namespace Registrator.Module.Controllers
             var listView = View as ListView;
             if (listView != null)
             {
-                var newController = Frame.GetController<DevExpress.ExpressApp.SystemModule.NewObjectViewController>();
-                newController.ObjectCreated += NewControllerOnObjectCreated;
+                //var newController = Frame.GetController<DevExpress.ExpressApp.SystemModule.NewObjectViewController>();
+                //newController.ObjectCreated += NewControllerOnObjectCreated;
 
-             // Frame.GetController<DevExpress.ExpressApp.SystemModule.DeleteObjectsViewController>().Active.SetItemValue("EnabledDeleteAction", false);
+                Frame.GetController<DevExpress.ExpressApp.SystemModule.DeleteObjectsViewController>().Active.SetItemValue("EnabledDeleteAction", false);
                 Frame.GetController<DevExpress.ExpressApp.SystemModule.LinkUnlinkController>().Active.SetItemValue("EnabledLinkAction", false);
             }
 
+            /*
             var detailView = View as DetailView;
             if (detailView != null)
             {
@@ -58,6 +57,7 @@ namespace Registrator.Module.Controllers
                             : commonService.Case.Doctor.SpecialityTree.UslugaNaDomy;
                 }
             }
+            */
         }
 
         private void NewControllerOnObjectCreated(object sender, ObjectCreatedEventArgs objectCreatedEventArgs)
@@ -93,9 +93,9 @@ namespace Registrator.Module.Controllers
             base.OnFrameAssigned();
             
             // в нем находим контроллер обработчика текущего объекта списка
-            var controller = this.Frame.GetController<TextTemplateViewController>();
+         //   var controller = this.Frame.GetController<TextTemplateViewController>();
             // добавляем обработчик для выбранного элемента
-            controller.TextTemplateItemProcess += ServiceViewController_TextTemplateItemProcess;
+          //  controller.TextTemplateItemProcess += ServiceViewController_TextTemplateItemProcess;
         }
 
         private void ServiceViewController_TextTemplateItemProcess(object sender, EventArgs eArgs)
@@ -132,11 +132,11 @@ namespace Registrator.Module.Controllers
                         }
                     }
                 }
-
                 e.Handled = true;
             }
         }
 
+        /*
         protected override void OnViewControlsCreated()
         {
             base.OnViewControlsCreated();
@@ -148,9 +148,6 @@ namespace Registrator.Module.Controllers
                 if (commonService!=null)
                 {
                     // Основная услуга может изменяться в некоторых случаях (например, медикаментозный аборт, операции)
-                    /*var serviceProperty = view.FindItem("Usluga") as PropertyEditor;
-                    if (serviceProperty != null)
-                        serviceProperty.AllowEdit.SetItemValue("DenyChangeDefault", !commonService.IsMainService);*/
                     var d1Diagnose = view.FindItem("CaseDiagnose") as PropertyEditor;
                     var d1Time = view.FindItem("CaseDiagnoseIsFirstTime") as PropertyEditor;
                     var d1Phase = view.FindItem("CaseDiagnoseStadia") as PropertyEditor;
@@ -167,5 +164,6 @@ namespace Registrator.Module.Controllers
                 }
             }
         }
+        */
     }
 }
