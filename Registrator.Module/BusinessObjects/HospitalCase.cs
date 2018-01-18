@@ -21,6 +21,7 @@ namespace Registrator.Module.BusinessObjects
     /// <summary>
     /// Посещение
     /// </summary>
+    /// <ToDo>Добавить основной диагноз (MainDiagnose) в HospitalCase</ToDo>
     [DefaultClassOptions]
     [XafDisplayName("Госпитализация")]
     public class HospitalCase : CommonCase
@@ -160,10 +161,6 @@ namespace Registrator.Module.BusinessObjects
                 var KSGs = new XPCollection<ClinicStatGroups>(Session).ToList();
                 return new InOperator("MKB", KSGs.Select(t => t.Diagnose.MKB));
             }
-            set
-            {
-                throw new NotImplementedException();
-            }
         }
 
         /// <summary>
@@ -191,7 +188,7 @@ namespace Registrator.Module.BusinessObjects
                 return null;
 
             const string dateTimeFormat = "{0:yyyy-MM-dd}";
-            var ksg = Session.FindObject<ClinicStatGroups>(CriteriaOperator.Parse("MainDiagnose.MKB=?", this.MainDiagnose.Diagnose.MKB));
+            //var ksg = Session.FindObject<ClinicStatGroups>(CriteriaOperator.Parse("MainDiagnose.MKB=?", this.MainDiagnose.Diagnose.MKB));
             Decimal tarif = Settings.TarifSettings.GetDnevnoyStacionarTarif(Session);
 
             XElement element = new XElement("SLUCH");
@@ -243,7 +240,8 @@ namespace Registrator.Module.BusinessObjects
                 // Первичный диагноз
                 element.Add(new XElement("DS0", this.PreDiagnose.Diagnose.CODE));
 
-            element.Add(new XElement("DS1", this.MainDiagnose.Diagnose.CODE));
+            // todo: Добавить основной диагноз (MainDiagnose) в HospitalCase !!!!
+          //  element.Add(new XElement("DS1", this.MainDiagnose.Diagnose.CODE));
 
             // Сопутствующие диагнозы
             foreach (var ds2 in this.SoputsDiagnoses)
@@ -258,8 +256,8 @@ namespace Registrator.Module.BusinessObjects
                 // Вес при рождении
                 element.Add(new XElement("VNOV_M", this.VesPriRozhdenii));
 
-            // Коды МЭС
-            element.Add( new XElement("CODE_MES1", ksg.Number));
+            // Коды МЭС !!!
+            //element.Add( new XElement("CODE_MES1", ksg.Number));
 
             // Коды МЭС сопутствующих заболеваний
             //element.Add(new XElement("CODE_MES2", ));
@@ -288,7 +286,8 @@ namespace Registrator.Module.BusinessObjects
             // Кол-во единиц оплаты мед. помощи
             element.Add(new XElement("ED_COL", this.MedPomCount));
 
-            this.Tarif = tarif * Convert.ToDecimal(ksg.KoeffZatrat);
+            //!!!!
+            //this.Tarif = tarif * Convert.ToDecimal(ksg.KoeffZatrat);
             // Тариф
             element.Add(new XElement("TARIF", this.Tarif));
 

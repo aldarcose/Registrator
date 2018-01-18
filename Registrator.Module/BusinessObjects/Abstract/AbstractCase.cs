@@ -41,13 +41,14 @@ namespace Registrator.Module.BusinessObjects.Abstract
             this.NHistory = this.Oid.ToString();
         }
 
+        /*
         /// <summary>
         /// Диагноз основной T(10)
         /// </summary>
         [XafDisplayName("Основной диагноз")]
         [DataSourceCriteriaProperty("DiagnoseCriteria")]
         [DevExpress.Xpo.Aggregated]
-        public MKBWithType MainDiagnose { get; set; }
+        public MKBWithType MainDiagnose { get; set; }*/
 
         /// <summary>
         /// Первичный диагноз
@@ -110,10 +111,10 @@ namespace Registrator.Module.BusinessObjects.Abstract
         /// </summary>
         [XafDisplayName("Дата окончания лечения")]
         public DateTime DateOut {get;set;}
-        
+
         [NonPersistent]
         [Browsable(false)]
-        public abstract CriteriaOperator DiagnoseCriteria { get; set; }
+        public abstract CriteriaOperator DiagnoseCriteria { get; }
 
         /// <summary>
         /// Обязательное поле N(2)
@@ -224,8 +225,6 @@ namespace Registrator.Module.BusinessObjects.Abstract
         {
             base.AfterConstruction();
             this.PreDiagnose = new MKBWithType(Session);
-            this.MainDiagnose = new MKBWithType(Session);
-
             // для общих случаев по умолчанию всегда добавляется как минимум одна основная услуга
             Services.Add(new MedService(Session) { IsMainService = true, AutoOpen = false });
 
@@ -260,11 +259,11 @@ namespace Registrator.Module.BusinessObjects.Abstract
             var firstService = services.FirstOrDefault(s => s.IsMainService);
             if (firstService != null)
             {
-                this.MainDiagnose.Diagnose = firstService.CaseDiagnose;
-                this.MainDiagnose.FirstTime = firstService.CaseDiagnoseIsFirstTime;
-                this.MainDiagnose.Stadia = firstService.CaseDiagnoseStadia;
-                this.MainDiagnose.Character = firstService.CaseDiagnoseCharacter;
-                OnChanged("MainDiagnose");
+                //this.MainDiagnose.Diagnose = firstService.CaseDiagnose;
+                //this.MainDiagnose.FirstTime = firstService.CaseDiagnoseIsFirstTime;
+                //this.MainDiagnose.Stadia = firstService.CaseDiagnoseStadia;
+                //this.MainDiagnose.Character = firstService.CaseDiagnoseCharacter;
+                //OnChanged("MainDiagnose");
             }
         }
 

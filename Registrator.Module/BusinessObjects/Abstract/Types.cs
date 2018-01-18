@@ -120,10 +120,8 @@ namespace Registrator.Module.BusinessObjects
     /// </summary>
     public enum TipDiagnoza
     {
-        /*[XafDisplayName("Первичный")]
-        Pervichniy = 0,
         [XafDisplayName("Основной")]
-        Osnovnoy = 1,*/
+        Main = 1,
         [XafDisplayName("Сопутствующий")]
         Soputstvuyschiy = 2,
         [XafDisplayName("Осложнение")]

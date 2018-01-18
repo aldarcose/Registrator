@@ -76,9 +76,13 @@ namespace Registrator.Module.Win.Controllers
         {
             GridView view = sender as GridView;
             object val = view.GetGroupRowValue(e.RowHandle);
+            VisitCase visitCase = val != null && val is Guid ? 
+                ObjectSpace.FindObject<VisitCase>(VisitCase.Fields.Oid == (Guid)val) : null;
             GridGroupRowInfo info = e.Info as GridGroupRowInfo;
             if (info.Column.FieldName == "Case.Oid")
-                info.GroupText = "Посещение";
+                info.GroupText = string.Format("Посещение ({0})", 
+                    visitCase.MainDiagnose != null && visitCase.MainDiagnose.Diagnose != null ?
+                    visitCase.MainDiagnose.Diagnose.MKB : null);
         }
 
         private void newObjController_ObjectCreating(object sender, ObjectCreatingEventArgs e)

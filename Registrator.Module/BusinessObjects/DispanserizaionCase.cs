@@ -101,14 +101,7 @@ namespace Registrator.Module.BusinessObjects
 
         public override CriteriaOperator DiagnoseCriteria
         {
-            get
-            {
-                return CriteriaOperator.Parse("true");
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
+            get { return CriteriaOperator.Parse("1=1"); }
         }
 
         public XElement GetCardBlock()

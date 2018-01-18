@@ -36,17 +36,33 @@ namespace Registrator.Module.BusinessObjects
             IsNewBorn = true;
         }
 
-        public void PolisesCollectionChanged(object sender, XPCollectionChangedEventArgs e)
-        {
-            OnChanged("CurrentPolis");
-            OnChanged("IsInogorodniy");
-        }
-
         public void CasesCollectionChanged(object sender, XPCollectionChangedEventArgs e)
         {
             OnChanged("VisitCases");
             OnChanged("HospitalCases");
             OnChanged("DispanserizaionCases");
+        }
+
+        /// <summary>
+        /// Один основной диагноз во всех услугах посещения
+        /// </summary>
+        [Browsable(false)]
+        [RuleFromBoolProperty("OneMainDiagnoseInAllServices", DefaultContexts.Save,
+            "Основной диагноз в одном из посещений указан более одного раза")]
+        public bool OneMainDiagnoseInAllServices
+        {
+            get
+            {
+                foreach (var visitCase in VisitCases)
+                {
+                    IEnumerable<MKBWithType> mainDiagnoses = visitCase.Services.OfType<CommonService>()
+                        .SelectMany(s => s.Diagnoses)
+                        .Where(d => d.Type == TipDiagnoza.Main);
+                
+                    if (mainDiagnoses.Count() > 1) return false;
+                }
+                return true;
+            }
         }
 
         #region Признак детского профиля

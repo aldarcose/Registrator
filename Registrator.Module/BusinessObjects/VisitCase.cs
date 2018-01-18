@@ -12,6 +12,7 @@ using System;
 using System.ComponentModel;
 using System.Linq;
 using System.Xml.Linq;
+using DevExpress.Persistent.Validation;
 
 namespace Registrator.Module.BusinessObjects
 {
@@ -23,6 +24,7 @@ namespace Registrator.Module.BusinessObjects
     public class VisitCase : CommonCase
     {
         private MestoObsluzhivaniya _mesto;
+        private MKBWithType mainDiagnose;
         private const int minCodeForResultat = 301;
         private const int maxCodeForResultat = 315;
         public VisitCase(Session session) : base(session) { }
@@ -112,6 +114,24 @@ namespace Registrator.Module.BusinessObjects
             {
                 SetPropertyValue("Mesto", ref _mesto, value);
                 OnChanged("Resultat");
+            }
+        }
+
+        /// <summary>
+        /// Основной диагноз
+        /// </summary>
+        [XafDisplayName("Основной диагноз")]
+        public MKBWithType MainDiagnose 
+        {
+            get
+            { 
+                if (mainDiagnose == null)
+                {
+                    mainDiagnose = Services.OfType<CommonService>()
+                        .SelectMany(s => s.Diagnoses)
+                        .SingleOrDefault(d => d.Type == TipDiagnoza.Main);
+                }
+                return mainDiagnose;
             }
         }
 
@@ -273,15 +293,7 @@ namespace Registrator.Module.BusinessObjects
         /// </summary>
         public override CriteriaOperator DiagnoseCriteria
         {
-            get
-            {
-                // Выводим все диагнозы
-                return CriteriaOperator.Parse("1=1");
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
+            get { return CriteriaOperator.Parse("1=1"); }
         }
     }
 }
