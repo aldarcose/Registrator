@@ -276,7 +276,7 @@ namespace Registrator.Module.BusinessObjects
             }
 
             Session.Delete(listToDelete);
-            Session.CommitTransaction();
+            //Session.CommitTransaction();
         }
 
         public void CreateTemplates(string text, Type typeToCreate)
@@ -299,7 +299,7 @@ namespace Registrator.Module.BusinessObjects
             OnChanged("ComplainTemplates");
             OnChanged("RecomendTemplates");
             OnChanged("ObjStatusTerTemplates");
-            Session.CommitTransaction();
+          //  Session.CommitTransaction();
         }
 
         private TextTemplate GenTemplate(int level, int start, string[] text, Type typeToCreate)

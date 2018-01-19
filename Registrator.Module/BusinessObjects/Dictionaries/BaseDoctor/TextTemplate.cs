@@ -47,7 +47,10 @@ namespace Registrator.Module.BusinessObjects.Dictionaries
 
         [Association("TextTemplateParent-TextTemplateChildren"), DevExpress.Xpo.Aggregated]
         [Browsable(false)]
-        public XPCollection<TextTemplate> TextTemplateChildren { get { return GetCollection<TextTemplate>("TextTemplateChildren"); } }
+        public XPCollection<TextTemplate> TextTemplateChildren
+        {
+            get { return GetCollection<TextTemplate>("TextTemplateChildren"); }
+        }
 
         [Association("Doctor-TextTemplates")]
         [Browsable(false)]

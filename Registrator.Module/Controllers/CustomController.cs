@@ -48,7 +48,6 @@ namespace Registrator.Module.Controllers
         protected virtual void DisableControllers()
         {
             Disable<ResetViewSettingsController>();
-            Disable<FilterController>();
             Disable<RecordsNavigationController>();
             Disable<OpenObjectController>();
         }

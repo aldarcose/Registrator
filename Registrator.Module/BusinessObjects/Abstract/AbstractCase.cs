@@ -224,10 +224,7 @@ namespace Registrator.Module.BusinessObjects.Abstract
         public override void AfterConstruction()
         {
             base.AfterConstruction();
-            this.PreDiagnose = new MKBWithType(Session);
-            // для общих случаев по умолчанию всегда добавляется как минимум одна основная услуга
-            Services.Add(new MedService(Session) { IsMainService = true, AutoOpen = false });
-
+            
             // определяем текущего пользователя
             var currentDoctor = SecuritySystem.CurrentUser as Doctor;
             if (currentDoctor != null)

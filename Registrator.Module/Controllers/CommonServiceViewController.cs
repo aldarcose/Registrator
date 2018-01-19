@@ -35,57 +35,6 @@ namespace Registrator.Module.Controllers
                 Frame.GetController<DevExpress.ExpressApp.SystemModule.DeleteObjectsViewController>().Active.SetItemValue("EnabledDeleteAction", false);
                 Frame.GetController<DevExpress.ExpressApp.SystemModule.LinkUnlinkController>().Active.SetItemValue("EnabledLinkAction", false);
             }
-
-            /*
-            var detailView = View as DetailView;
-            if (detailView != null)
-            {
-                var commonService = detailView.CurrentObject as CommonService;
-                if (commonService == null) return;
-                
-                if (commonService.AutoOpen) commonService.AutoOpen = false;
-                if (commonService.Usluga == null && commonService.Case is VisitCase && 
-                    commonService.Case.Doctor != null && commonService.Case.Doctor.SpecialityTree != null)
-                {
-                    // устанавливаем услугу по умолчанию
-                    if (commonService.Case.Pacient.IsInogorodniy.HasValue &&
-                        commonService.Case.Pacient.IsInogorodniy.Value)
-                        commonService.Usluga = commonService.Case.Doctor.SpecialityTree.UslugaMUR;
-                    else
-                        commonService.Usluga = ((VisitCase)commonService.Case).Mesto == MestoObsluzhivaniya.LPU
-                            ? commonService.Case.Doctor.SpecialityTree.UslugaLPU
-                            : commonService.Case.Doctor.SpecialityTree.UslugaNaDomy;
-                }
-            }
-            */
-        }
-
-        private void NewControllerOnObjectCreated(object sender, ObjectCreatedEventArgs objectCreatedEventArgs)
-        {
-            var lookAndFeel = new UserLookAndFeel(this);
-            var result = XtraMessageBox.Show(lookAndFeel, "Услуга производится в ЛПУ?", "Уточнение",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            var atLpu = result == DialogResult.Yes;
-
-            var commonService = (objectCreatedEventArgs.CreatedObject as CommonService);
-            if (commonService.Usluga == null)
-            {
-                if (commonService.Case is VisitCase)
-                {
-                    if (commonService.Case.Doctor != null && commonService.Case.Doctor.SpecialityTree != null)
-                    {
-                        // устанавливаем услугу по умолчанию
-                        if (commonService.Case.Pacient.IsInogorodniy.HasValue &&
-                            commonService.Case.Pacient.IsInogorodniy.Value)
-                            commonService.Usluga = commonService.Case.Doctor.SpecialityTree.UslugaMUR;
-                        else
-                            commonService.Usluga = atLpu
-                                ? commonService.Case.Doctor.SpecialityTree.UslugaLPU
-                                : commonService.Case.Doctor.SpecialityTree.UslugaNaDomy;
-                    }
-                }
-            }
         }
 
         protected override void OnFrameAssigned()
@@ -93,17 +42,15 @@ namespace Registrator.Module.Controllers
             base.OnFrameAssigned();
             
             // в нем находим контроллер обработчика текущего объекта списка
-         //   var controller = this.Frame.GetController<TextTemplateViewController>();
+            var controller = this.Frame.GetController<TextTemplateViewController>();
             // добавляем обработчик для выбранного элемента
-          //  controller.TextTemplateItemProcess += ServiceViewController_TextTemplateItemProcess;
+            controller.TextTemplateItemProcess += ServiceViewController_TextTemplateItemProcess;
         }
 
         private void ServiceViewController_TextTemplateItemProcess(object sender, EventArgs eArgs)
         {
             var e = eArgs as CustomProcessListViewSelectedItemEventArgs;
-
             var template = e.InnerArgs.CurrentObject as TextTemplate;
-
             if (template != null)
             {
                 if (this.Frame is NestedFrame)

@@ -58,7 +58,7 @@ namespace Registrator.Module.Controllers
         
         private void EditTemplateAction_Execute(object sender, SimpleActionExecuteEventArgs e)
         {
-            Doctor doctor = SecuritySystem.CurrentUser as Doctor;
+            Doctor doctor = ObjectSpace.GetObject(SecuritySystem.CurrentUser as Doctor);
             if (doctor != null)
             {
                 var listView = View as ListView;
@@ -69,11 +69,11 @@ namespace Registrator.Module.Controllers
 
                     // динамическая выборка по типу объекта
                     MethodInfo method = typeof (Enumerable).GetMethod("OfType");
-                    MethodInfo generic = method.MakeGenericMethod(new Type[] {type});
-                    var templates = (IEnumerable<TextTemplate>)generic.Invoke(null, new object[] {doctor.TextTemplates});
+                    MethodInfo generic = method.MakeGenericMethod(new Type[] { type });
+                    var templates = (IEnumerable<TextTemplate>)generic.Invoke(null, new object[] { doctor.TextTemplates });
 
                     // создаем объект для отображения в окне редактирования
-                    var templateField = new TextTemplateField() {EditTemplates = templates.ToList(), TemplateType = type};
+                    var templateField = new TextTemplateField() { EditTemplates = templates.ToList(), TemplateType = type };
 
                     // отображаем окно
                     ShowView((ActionBase) sender, templateField);
@@ -100,23 +100,16 @@ namespace Registrator.Module.Controllers
         private void DcOnAccepting(object sender, DialogControllerAcceptingEventArgs eventArgs)
         {
             var templateField = eventArgs.AcceptActionArgs.CurrentObject as TextTemplateField;
-            if (templateField != null)
+            if (templateField != null && templateField.EditTemplates != null)
             {
-
-                if (templateField.EditTemplates != null)
+                var doctor = ObjectSpace.GetObject(SecuritySystem.CurrentUser as Doctor);
+                if (doctor != null)
                 {
-                    var doctor = SecuritySystem.CurrentUser as Doctor;
-
-                    if (doctor != null)
-                    {
-                        // удаляем все шаблоны этого типа
-                        doctor.DeleteTemplates(templateField.TemplateType);
-
-                        // создаем новые
-                        doctor.CreateTemplates(templateField.Text, templateField.TemplateType);
-
-                        ObjectSpace.SetModified(templateField);
-                    }
+                    // удаляем все шаблоны этого типа
+                    doctor.DeleteTemplates(templateField.TemplateType);
+                    // создаем новые
+                    doctor.CreateTemplates(templateField.Text, templateField.TemplateType);
+                    ObjectSpace.SetModified(templateField);
                 }
             }
         }
@@ -136,6 +129,7 @@ namespace Registrator.Module.Controllers
         public Type TemplateType { get; set; }
 
         private List<TextTemplate> _editTemplates;
+
         [Browsable(false)]
         public List<TextTemplate> EditTemplates
         {

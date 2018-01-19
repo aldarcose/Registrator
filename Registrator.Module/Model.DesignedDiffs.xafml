@@ -464,11 +464,9 @@
                   <LayoutItem Id="DateIn" ViewItem="DateIn" SizeConstraintsType="Default" Index="0" RelativeSize="50" IsNewNode="True" />
                   <LayoutItem Id="DateOut" ViewItem="DateOut" SizeConstraintsType="Default" Index="1" RelativeSize="50" IsNewNode="True" />
                 </LayoutGroup>
-                <LayoutItem Id="MainDiagnose.Diagnose" SizeConstraintsType="Default" RelativeSize="12.631578947368421" Index="1" Removed="True" />
                 <LayoutItem Id="ResultD" ViewItem="ResultD" SizeConstraintsType="Default" Index="1" RelativeSize="9.16030534351145" IsNewNode="True" />
                 <LayoutItem Id="IsPacientHealthy" ViewItem="IsPacientHealthy" SizeConstraintsType="Default" Index="2" RelativeSize="9.16030534351145" IsNewNode="True" />
                 <LayoutItem Id="InspectionResult" ViewItem="InspectionResult" SizeConstraintsType="Default" Index="3" RelativeSize="9.16030534351145" IsNewNode="True" />
-                <LayoutItem Id="MainDiagnose.Type" SizeConstraintsType="Default" RelativeSize="10.084033613445378" Index="3" Removed="True" />
                 <TabbedGroup Id="Item3" CaptionLocation="Top" Index="4" RelativeSize="58.015267175572518" IsNewNode="True">
                   <LayoutGroup Id="Item2" ShowCaption="True" CaptionLocation="Top" Index="0" RelativeSize="100" IsNewNode="True">
                     <LayoutItem Id="HealthGroupForSportObsBefore" ViewItem="HealthGroupForSportObsBefore" SizeConstraintsType="Default" Index="0" RelativeSize="28.571428571428573" IsNewNode="True" />
@@ -1231,10 +1229,7 @@
         </LayoutGroup>
       </Layout>
     </DetailView>
-    <ListView Id="Pacient_DispanserizaionCases_ListView" MasterDetailMode="ListViewAndDetailView" />
-    <ListView Id="Pacient_HospitalCases_ListView" MasterDetailMode="ListViewAndDetailView" />
     <ListView Id="Pacient_ListView" DataAccessMode="Server" Criteria="False" />
-    <ListView Id="Pacient_VisitCases_ListView" MasterDetailMode="ListViewAndDetailView" />
     <ListView Id="Pacient_VisitCaseServices_ListView" IsGroupPanelVisible="False" MasterDetailMode="ListViewAndDetailView">
       <Columns>
         <ColumnInfo Id="Oid" SortOrder="Ascending" GroupIndex="0" PropertyName="Case.Oid" />
@@ -1365,14 +1360,6 @@
     </DetailView>
     <ListView Id="USL_ListView" IsFooterVisible="True" />
     <DetailView Id="VisitCase_DetailView">
-      <Items>
-        <PropertyEditor Id="MainDiagnose.Character" AllowEdit="False" />
-        <PropertyEditor Id="MainDiagnose.Diagnose" AllowEdit="False" />
-        <PropertyEditor Id="MainDiagnose.Doctor" AllowEdit="False" />
-        <PropertyEditor Id="MainDiagnose.FirstTime" AllowEdit="False" />
-        <PropertyEditor Id="MainDiagnose.Stadia" AllowEdit="False" />
-        <PropertyEditor Id="MainDiagnose.Type" AllowEdit="False" />
-      </Items>
       <Layout>
         <LayoutGroup Id="Main" RelativeSize="100">
           <LayoutGroup Id="SimpleEditors" RelativeSize="35.91885441527446" Direction="Vertical">

@@ -80,14 +80,15 @@ namespace Registrator.Module.Win.Controllers
                 ObjectSpace.FindObject<VisitCase>(VisitCase.Fields.Oid == (Guid)val) : null;
             GridGroupRowInfo info = e.Info as GridGroupRowInfo;
             if (info.Column.FieldName == "Case.Oid")
-                info.GroupText = string.Format("Посещение ({0})", 
+                info.GroupText = string.Format("Посещение ({0})", visitCase != null &&
                     visitCase.MainDiagnose != null && visitCase.MainDiagnose.Diagnose != null ?
                     visitCase.MainDiagnose.Diagnose.MKB : null);
         }
 
         private void newObjController_ObjectCreating(object sender, ObjectCreatingEventArgs e)
         {
-            MedService newMedService = e.ObjectSpace.CreateObject<MedService>();
+            IObjectSpace objectSpace = e.ObjectSpace;
+            MedService newMedService = objectSpace.CreateObject<MedService>();
             if (currentVisitCase != null || currentMedService != null)
             {
                 var lookAndFeel = new UserLookAndFeel(this);
@@ -104,6 +105,7 @@ namespace Registrator.Module.Win.Controllers
                     SetService(newMedService, result == System.Windows.Forms.DialogResult.Yes);
                     newMedService.Case = currentVisitCase != null ? currentVisitCase : currentMedService.VisitCase;
                     e.NewObject = newMedService;
+                    objectSpace.CommitChanges();
                     return;
                 }
             }
@@ -117,14 +119,15 @@ namespace Registrator.Module.Win.Controllers
             dc.Accepting += (o, e_) =>
             {
                 var visitCaseParameters = e_.AcceptActionArgs.CurrentObject as VisitCaseParameters;
-                VisitCase newVisitCase = ObjectSpace.CreateObject<VisitCase>();
+                VisitCase newVisitCase = objectSpace.CreateObject<VisitCase>();
                 newVisitCase.Pacient = currentPacient;
                 newVisitCase.Cel = visitCaseParameters.CelPosesch;
                 newVisitCase.Mesto = visitCaseParameters.Mesto;
                 newMedService.Case = newVisitCase;
                 
                 // устанавливаем услугу по умолчанию
-                SetService(newMedService, visitCaseParameters.LpuService);
+                SetService(newMedService, visitCaseParameters.Mesto == MestoObsluzhivaniya.LPU);
+                objectSpace.CommitChanges();
             };
             dc.CancelAction.Caption = "Отмена";
             svp.Controllers.Add(dc);
@@ -173,9 +176,5 @@ namespace Registrator.Module.Win.Controllers
         /// <summary>Место обслуживания</summary>
         [XafDisplayName("Место обслуживания")]
         public MestoObsluzhivaniya Mesto { get; set; }
-
-        /// <summary>Услуга производится в ЛПУ</summary>
-        [XafDisplayName("Услуга производится в ЛПУ")]
-        public bool LpuService { get; set; }
     }
 }
