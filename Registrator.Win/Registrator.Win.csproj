@@ -330,7 +330,6 @@
   <ItemGroup>
     <Content Include="ExpressApp.ico" />
     <None Include="Images\ReadMe.txt" />
-    <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Registrator.Module.Win\Registrator.Module.Win.csproj">

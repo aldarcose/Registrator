@@ -41,15 +41,6 @@ namespace Registrator.Module.BusinessObjects.Abstract
             this.NHistory = this.Oid.ToString();
         }
 
-        /*
-        /// <summary>
-        /// Диагноз основной T(10)
-        /// </summary>
-        [XafDisplayName("Основной диагноз")]
-        [DataSourceCriteriaProperty("DiagnoseCriteria")]
-        [DevExpress.Xpo.Aggregated]
-        public MKBWithType MainDiagnose { get; set; }*/
-
         /// <summary>
         /// Первичный диагноз
         /// </summary>
@@ -240,28 +231,7 @@ namespace Registrator.Module.BusinessObjects.Abstract
         [Association("CommonCase-CommonServices"), DevExpress.Xpo.Aggregated]
         public XPCollection<CommonService> Services
         {
-            get 
-            {
-                if (services == null)
-                {
-                    services = GetCollection<CommonService>("Services");
-                    services.ListChanged += services_ListChanged;
-                }
-                return services; 
-            }
-        }
-
-        void services_ListChanged(object sender, ListChangedEventArgs e)
-        {
-            var firstService = services.FirstOrDefault(s => s.IsMainService);
-            if (firstService != null)
-            {
-                //this.MainDiagnose.Diagnose = firstService.CaseDiagnose;
-                //this.MainDiagnose.FirstTime = firstService.CaseDiagnoseIsFirstTime;
-                //this.MainDiagnose.Stadia = firstService.CaseDiagnoseStadia;
-                //this.MainDiagnose.Character = firstService.CaseDiagnoseCharacter;
-                //OnChanged("MainDiagnose");
-            }
+            get { return GetCollection<CommonService>("Services"); }
         }
 
         #region Мин. поля для реестра ТФОМС

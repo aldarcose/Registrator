@@ -31,14 +31,11 @@ namespace Registrator.Module.BusinessObjects
             throw new NotImplementedException();
 
             // подумать как лучше сделать!
-            var services = Case.Services.ToList<CommonService>();
-
-            // сортируем по дате
-            services.Sort((c1, c2) => c1.DateIn.CompareTo(c2.DateIn));
-
-            int zap = services.IndexOf(this);
-
-            return GetReestrElement(zap);
+            //var services = Case.Services.ToList<CommonService>();
+            //// сортируем по дате
+            //services.Sort((c1, c2) => c1.DateIn.CompareTo(c2.DateIn));
+            //int zap = services.IndexOf(this);
+            //return GetReestrElement(zap);
         }
 
         public override System.Xml.Linq.XElement GetReestrElement(int zapNumber)
@@ -80,7 +77,8 @@ namespace Registrator.Module.BusinessObjects
             element.Add(new XElement("DATE_OUT", string.Format(dateTimeFormat, this.DateOut)));
 
             // Диагноз, падает основной диагноз
-            element.Add(new XElement("DS", this.CaseDiagnose.CODE));
+            if (VisitCase.MainDiagnose != null && VisitCase.MainDiagnose.Diagnose != null)
+                element.Add(new XElement("DS", VisitCase.MainDiagnose.Diagnose.CODE));
 
             // Код оказанной услуги
             element.Add(new XElement("CODE_USL", Usluga.Code));

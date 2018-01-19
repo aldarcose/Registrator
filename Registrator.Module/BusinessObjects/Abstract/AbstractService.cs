@@ -215,22 +215,6 @@ namespace Registrator.Module.BusinessObjects.Abstract
     public abstract class CommonService : AbstractService, IReestrTFoms
     {
         private CommonCase _case;
-        // Первичный диагноз
-        private MKB10 preDiagnose;
-        // Первичный диагноз выявлен впервые
-        private bool preDiagnoseIsFirstTime;
-        // Характер первичного диагноза
-        private KharakterDiagnoza preDiagnoseCharacter;
-        // Стадия первичного диагноза
-        private StadiaDiagnoza preDiagnoseStadia;
-        // Основной диагноз
-        private MKB10 mainDiagnose;
-        // Основной диагноз впервые выявлен
-        private bool mainDiagnoseIsFirstTime;
-        // характрер основного диагноза
-        private KharakterDiagnoza mainDiagnoseCharacter;
-        // Стадия основного диагноза
-        private StadiaDiagnoza mainDiagnoseStadia;
 
         public CommonService(Session session) : base(session) { }
 
@@ -321,101 +305,6 @@ namespace Registrator.Module.BusinessObjects.Abstract
         [XafDisplayName("Кол-во (койкодни/что-то еще)")]
         [Appearance("KolUslug_Invisible", Context = "DetailView", Visibility = ViewItemVisibility.Hide, Criteria = "!ShowKolUslug")]
         public double KolUslug { get; set; }
-        #endregion
-
-        #region Первичный диагноз
-        /// <summary>
-        /// Первичный диагноз
-        /// </summary>
-        [XafDisplayName("Первичный диагноз")]
-        [ImmediatePostData]
-        [Appearance("PrDiagnoseVisibility", Context = "DetailView", Visibility = ViewItemVisibility.Hide, Criteria = "!IsMainService")]
-        public MKB10 CasePreDiagnose
-        {
-            get { return preDiagnose; }
-            set { SetPropertyValue("CasePreDiagnose", ref preDiagnose, value); }
-        }
-
-        /// <summary>
-        /// Первичный диагноз впервые выявлен
-        /// </summary>
-        [Appearance("PreTimeVisibility", Context = "DetailView", Visibility = ViewItemVisibility.Hide, Criteria = "!IsMainService Or IsNull(CasePreDiagnose)")]
-        [XafDisplayName("Первичный диагноз впервые выявлен")]
-        public bool CasePreDiagnoseIsFirstTime
-        {
-            get { return preDiagnoseIsFirstTime; }
-            set { SetPropertyValue("CasePreDiagnoseIsFirstTime", ref preDiagnoseIsFirstTime, value); }
-        }
-
-        /// <summary>
-        /// Характер первичного диагноза
-        /// </summary>
-        [Appearance("PreCharacterVisibility", Context = "DetailView", Visibility = ViewItemVisibility.Hide, Criteria = "!IsMainService Or IsNull(CasePreDiagnose)")]
-        [XafDisplayName("Характер первичного диагноза")]
-        public KharakterDiagnoza CasePreDiagnoseCharacter
-        {
-            get { return preDiagnoseCharacter; }
-            set { SetPropertyValue("CasePreDiagnoseCharacter", ref preDiagnoseCharacter, value); }
-        }
-
-        /// <summary>
-        ///  Стадия первичного диагноза
-        /// </summary>
-        [Appearance("PreStadiaVisibility", Context = "DetailView", Visibility = ViewItemVisibility.Hide, Criteria = "!IsMainService Or IsNull(CasePreDiagnose)")]
-        [XafDisplayName("Стадия первичного диагноза")]
-        public StadiaDiagnoza CasePreDiagnoseStadia
-        {
-            get { return preDiagnoseStadia; }
-            set { SetPropertyValue("CasePreDiagnoseStadia", ref preDiagnoseStadia, value); }
-        }
-        #endregion
-
-        #region Основной диагноз
-
-        /// <summary>
-        /// Основной диагноз
-        /// </summary>
-        [ImmediatePostData]
-        [XafDisplayName("Основной диагноз")]
-        public MKB10 CaseDiagnose
-        {
-            get { return mainDiagnose; }
-            set { SetPropertyValue("CaseDiagnose", ref mainDiagnose, value); }
-        }
-
-        /// <summary>
-        /// Основной диагноз впервые выявлен
-        /// </summary>
-        [Appearance("TimeVisibility", Context = "DetailView", Visibility = ViewItemVisibility.Hide, Criteria = "IsNull(CaseDiagnose)")]
-        [XafDisplayName("Основной диагноз впервые выявлен")]
-        public bool CaseDiagnoseIsFirstTime
-        {
-            get { return mainDiagnoseIsFirstTime; }
-            set { SetPropertyValue("CaseDiagnoseIsFirstTime", ref mainDiagnoseIsFirstTime, value); }
-        }
-
-        /// <summary>
-        /// Характер основного диагноза
-        /// </summary>
-        [Appearance("CharacterVisibility", Context = "DetailView", Visibility = ViewItemVisibility.Hide, Criteria = "IsNull(CaseDiagnose)")]
-        [XafDisplayName("Характер основного диагноза")]
-        public KharakterDiagnoza CaseDiagnoseCharacter
-        {
-            get { return mainDiagnoseCharacter; }
-            set { SetPropertyValue("CaseDiagnoseCharacter", ref mainDiagnoseCharacter, value); }
-        }
-
-        /// <summary>
-        /// Стадия основного диагноза
-        /// </summary>
-        [Appearance("StadiaVisibility", Context = "DetailView", Visibility = ViewItemVisibility.Hide, Criteria = "IsNull(CaseDiagnose)")]
-        [XafDisplayName("Стадия основного диагноза")]
-        public StadiaDiagnoza CaseDiagnoseStadia
-        {
-            get { return mainDiagnoseStadia; }
-            set { SetPropertyValue("CaseDiagnoseStadia", ref mainDiagnoseStadia, value); }
-        }
-
         #endregion
 
         /// <summary>
