@@ -106,6 +106,9 @@ namespace Registrator.Module.Win.Controllers
                     newMedService.Case = currentVisitCase != null ? currentVisitCase : currentMedService.VisitCase;
                     e.NewObject = newMedService;
                     objectSpace.CommitChanges();
+                    // Обновление представления пациента
+                    ObjectSpace.CommitChanges();
+                    ((DetailView)ObjectSpace.Owner).Refresh();
                     return;
                 }
             }
@@ -128,6 +131,10 @@ namespace Registrator.Module.Win.Controllers
                 // устанавливаем услугу по умолчанию
                 SetService(newMedService, visitCaseParameters.Mesto == MestoObsluzhivaniya.LPU);
                 objectSpace.CommitChanges();
+
+                // Обновление представления пациента
+                ObjectSpace.CommitChanges();
+                ((DetailView)ObjectSpace.Owner).Refresh();
             };
             dc.CancelAction.Caption = "Отмена";
             svp.Controllers.Add(dc);
