@@ -2,11 +2,14 @@ using DevExpress.Xpo;
 using DevExpress.ExpressApp;
 using System.ComponentModel;
 using DevExpress.Persistent.BaseImpl;
+using DevExpress.ExpressApp.Xpo;
 
 namespace Registrator.Module.BusinessObjects.Abstract
 {
     public abstract class AbstractProtocol : BaseObject
     {
+        private Doctor currentDoctor;
+
         public AbstractProtocol(Session session) : base(session) { }
 
         [Browsable(false)]
@@ -16,12 +19,16 @@ namespace Registrator.Module.BusinessObjects.Abstract
         /// Текущий доктор
         /// </summary>
         [Browsable(false)]
-        [NonPersistent]
         public Doctor CurrentDoctor
         {
-            get
+            get 
             {
-                return SecuritySystem.CurrentUser as Doctor;
+                if (currentDoctor == null)
+                {
+                    IObjectSpace os = XPObjectSpace.FindObjectSpaceByObject(this);
+                    currentDoctor = os.GetObject(SecuritySystem.CurrentUser as Doctor);
+                }
+                return currentDoctor; 
             }
         }
     }

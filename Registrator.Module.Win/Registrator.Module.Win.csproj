@@ -304,6 +304,9 @@
     <Compile Include="Controllers\TestRiasViewController.Designer.cs">
       <DependentUpon>TestRiasViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\TextTemplateParametersWinController.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controllers\VisitListController.cs">
       <SubType>Component</SubType>
     </Compile>

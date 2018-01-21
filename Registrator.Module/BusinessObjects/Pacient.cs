@@ -36,13 +36,6 @@ namespace Registrator.Module.BusinessObjects
             IsNewBorn = true;
         }
 
-        public void CasesCollectionChanged(object sender, XPCollectionChangedEventArgs e)
-        {
-            OnChanged("VisitCases");
-            OnChanged("HospitalCases");
-            OnChanged("DispanserizaionCases");
-        }
-
         /// <summary>
         /// ќдин основной диагноз во всех услугах посещени€
         /// </summary>
@@ -58,7 +51,7 @@ namespace Registrator.Module.BusinessObjects
                     IEnumerable<MKBWithType> mainDiagnoses = visitCase.Services.OfType<CommonService>()
                         .SelectMany(s => s.Diagnoses)
                         .Where(d => d.Type == TipDiagnoza.Main);
-                
+
                     if (mainDiagnoses.Count() > 1) return false;
                 }
                 return true;
@@ -368,10 +361,7 @@ namespace Registrator.Module.BusinessObjects
         [DevExpress.Xpo.Aggregated, Association("Pacient_DnevnoyStacionar")]
         public XPCollection<DnevnoyStacionar> DnevnieStacionari
         {
-            get
-            {
-                return GetCollection<DnevnoyStacionar>("DnevnieStacionari");
-            }
+            get { return GetCollection<DnevnoyStacionar>("DnevnieStacionari"); }
         }
         
         /// <summary>
@@ -382,9 +372,7 @@ namespace Registrator.Module.BusinessObjects
         {
             get
             {
-                // ѕолучить все абстрактные случаи
                 var list = new List<DispanserizaionCase>();
-                // найти те слуачи типы, которых возвращаемого значени€
                 foreach (var dispCase in Cases.OfType<DispanserizaionCase>())
                     list.Add(dispCase);
                 return list;
@@ -396,9 +384,7 @@ namespace Registrator.Module.BusinessObjects
         {
             get
             {
-                // ѕолучить все абстрактные случаи
                 var list = new List<HospitalCase>();
-                // найти те слуачи типы, которых возвращаемого значени€
                 foreach (var hospitalCase in Cases.OfType<HospitalCase>())
                     list.Add(hospitalCase);
                 return list;
@@ -410,7 +396,6 @@ namespace Registrator.Module.BusinessObjects
         {
             get
             {
-                // ѕолучить все абстрактные случаи
                 var list = new List<VisitCase>();
                 foreach(var visitCase in Cases.OfType<VisitCase>())
                     list.Add(visitCase);
@@ -446,6 +431,13 @@ namespace Registrator.Module.BusinessObjects
                 coll.CollectionChanged += CasesCollectionChanged;
                 return coll;
             }
+        }
+
+        public void CasesCollectionChanged(object sender, XPCollectionChangedEventArgs e)
+        {
+            OnChanged("VisitCases");
+            OnChanged("HospitalCases");
+            OnChanged("DispanserizaionCases");
         }
 
         #region ћетоды класса

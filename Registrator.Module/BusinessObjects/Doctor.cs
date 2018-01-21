@@ -102,7 +102,8 @@ namespace Registrator.Module.BusinessObjects
         [XafDisplayName("Номер СНИЛС")]
         [ModelDefault("EditMask", "000-000-000 00")]
         [Size(14)]
-        [RuleRequiredField("", DefaultContexts.Save, "Укажите СНИЛС", ResultType = ValidationResultType.Warning)]
+        [RuleRequiredField("Registrator.Module.BusinessObjects.Doctor.SNILSRequered", 
+            DefaultContexts.Save, "Укажите СНИЛС", ResultType = ValidationResultType.Warning)]
         public string SNILS { get; set; }
 
         /// <summary>
@@ -134,7 +135,6 @@ namespace Registrator.Module.BusinessObjects
         /// Специальность
         /// </summary>
         [Browsable(false)]
-        [NonPersistent]
         public string SpecialityCode
         {
             get
@@ -148,7 +148,8 @@ namespace Registrator.Module.BusinessObjects
         /// Специальность
         /// </summary>
         [XafDisplayName("Специальность")]
-        [RuleRequiredField("", DefaultContexts.Save, "Укажите специальность", ResultType = ValidationResultType.Warning)]
+        [RuleRequiredField("Registrator.Module.BusinessObjects.Doctor.SpecialityTreeRequered", 
+            DefaultContexts.Save, "Укажите специальность", ResultType = ValidationResultType.Warning)]
         public DoctorSpecTree SpecialityTree { get; set; }
 
         /// <summary>
@@ -158,10 +159,7 @@ namespace Registrator.Module.BusinessObjects
         [Association("Uchastok-Doctor")]
         public XPCollection<Uchastok> Uchastki
         {
-            get
-            {
-                return GetCollection<Uchastok>("Uchastki");
-            }
+            get { return GetCollection<Uchastok>("Uchastki"); }
         }
         
         /// <inheritdoc/>
@@ -170,10 +168,16 @@ namespace Registrator.Module.BusinessObjects
             return this.FullName;
         }
 
-        // пример записи из XML
-        // <ROW fio="Баирова&#160;Л.В." dan_id="167" fam="Баирова" nam="Людмила" mid="Викторовна" date_born="26.08.1981" sex="ж" full_doctor_id="348" users_id="348" norma="30.12.1899&#160;0:15:00" stavka="1" inner_doctor_code="348" federal_code="348" sp_otdel_id="101" sp_spec_doctor_id="176" spec_doctor="Терапевты-1" sp_lpu_id="2301001" full_fio="348&#160;Баирова&#160;Л.В.&#160;(Терапевты-1)" full_name="348&#160;Баирова&#160;Л.В.&#160;(Терапевты-1)" spec_name="Баирова&#160;Л.В.&#160;(Терапевты-1)" expiration_date="23.02.2025" employee_type="0" dolg_name="Врач-терапевт&#160;участковый" otdel_fio="Баирова&#160;Л.В.&#160;(Теpапия&#160;1)" dolg_fio="Баирова&#160;Л.В.&#160;(Врач-терапевт&#160;участковый)" blist_dolg="ТЕРАПЕВТ" can_have_schedule="1"/>
-        // <ROW fio="Очирова&#160;М.Д." dan_id="78" fam="Очирова" nam="Мария" mid="Дунгаровна" date_born="06.12.1960" sex="ж" full_doctor_id="2650" users_id="2650" norma="30.12.1899" stavka="1" inner_doctor_code="2650" federal_code="null" sp_otdel_id="202" sp_spec_doctor_id="1313" spec_doctor="Педиатры&#160;2" sp_lpu_id="2301001" full_fio="2650&#160;Очирова&#160;М.Д.&#160;(Педиатры&#160;2)" full_name="Очирова&#160;М.Д.&#160;(Педиатры&#160;2)" spec_name="Очирова&#160;М.Д.&#160;(Педиатры&#160;2)" expiration_date="18.02.2045" employee_type="0" dolg_name="Врач-педиатр&#160;участковый" otdel_fio="Очирова&#160;М.Д.&#160;(Педиатрия&#160;2)" dolg_fio="Очирова&#160;М.Д.&#160;(Врач-педиатр&#160;участковый)" blist_dolg="ПЕДИАТР" can_have_schedule="1"/>
-
+        /// <summary>
+        /// Обновить из файла xml
+        /// </summary>
+        /// <param name="objSpace"></param>
+        /// <param name="xmlPath"></param>
+        /// <remarks>
+        /// пример записи из XML
+        /// <ROW fio="Баирова&#160;Л.В." dan_id="167" fam="Баирова" nam="Людмила" mid="Викторовна" date_born="26.08.1981" sex="ж" full_doctor_id="348" users_id="348" norma="30.12.1899&#160;0:15:00" stavka="1" inner_doctor_code="348" federal_code="348" sp_otdel_id="101" sp_spec_doctor_id="176" spec_doctor="Терапевты-1" sp_lpu_id="2301001" full_fio="348&#160;Баирова&#160;Л.В.&#160;(Терапевты-1)" full_name="348&#160;Баирова&#160;Л.В.&#160;(Терапевты-1)" spec_name="Баирова&#160;Л.В.&#160;(Терапевты-1)" expiration_date="23.02.2025" employee_type="0" dolg_name="Врач-терапевт&#160;участковый" otdel_fio="Баирова&#160;Л.В.&#160;(Теpапия&#160;1)" dolg_fio="Баирова&#160;Л.В.&#160;(Врач-терапевт&#160;участковый)" blist_dolg="ТЕРАПЕВТ" can_have_schedule="1"/>
+        /// <ROW fio="Очирова&#160;М.Д." dan_id="78" fam="Очирова" nam="Мария" mid="Дунгаровна" date_born="06.12.1960" sex="ж" full_doctor_id="2650" users_id="2650" norma="30.12.1899" stavka="1" inner_doctor_code="2650" federal_code="null" sp_otdel_id="202" sp_spec_doctor_id="1313" spec_doctor="Педиатры&#160;2" sp_lpu_id="2301001" full_fio="2650&#160;Очирова&#160;М.Д.&#160;(Педиатры&#160;2)" full_name="Очирова&#160;М.Д.&#160;(Педиатры&#160;2)" spec_name="Очирова&#160;М.Д.&#160;(Педиатры&#160;2)" expiration_date="18.02.2045" employee_type="0" dolg_name="Врач-педиатр&#160;участковый" otdel_fio="Очирова&#160;М.Д.&#160;(Педиатрия&#160;2)" dolg_fio="Очирова&#160;М.Д.&#160;(Врач-педиатр&#160;участковый)" blist_dolg="ПЕДИАТР" can_have_schedule="1"/>
+        /// </remarks>
         public static void UpdateDbFromXml(DevExpress.ExpressApp.IObjectSpace objSpace, string xmlPath)
         {
             XDocument doc = XDocument.Load(xmlPath);
@@ -226,15 +230,15 @@ namespace Registrator.Module.BusinessObjects
         }
         
         [Association("Doctors-DoctorRoles")]
-        [RuleRequiredField("DoctorRoleIsRequired", DefaultContexts.Save,
-            TargetCriteria = "IsActive",
-            CustomMessageTemplate = "An active employee must have at least one role assigned")]
+        [RuleRequiredField("Registrator.Module.BusinessObjects.Doctor.DoctorRolesRequired", DefaultContexts.Save,
+            TargetCriteria = "IsActive", CustomMessageTemplate = "An active employee must have at least one role assigned")]
         public XPCollection<DoctorRole> DoctorRoles
         {
             get { return GetCollection<DoctorRole>("DoctorRoles"); }
         }
 
         #region Шаблоны
+
         [XafDisplayName("Анамнез")]
         public IList<AnamnezTemplate> AnamnezTemplates
         {
@@ -276,12 +280,12 @@ namespace Registrator.Module.BusinessObjects
             }
 
             Session.Delete(listToDelete);
-            //Session.CommitTransaction();
+            Session.CommitTransaction();
         }
 
         public void CreateTemplates(string text, Type typeToCreate)
         {
-            var textValues = text.Split(new string[] {"\n"}, StringSplitOptions.RemoveEmptyEntries);
+            var textValues = text.Split(new string[] { "\n" }, StringSplitOptions.RemoveEmptyEntries);
             for (int i = 0; i < textValues.Count(); i++)
             {
                 if (textValues[i].Trim().Length == 0) continue;
@@ -299,7 +303,7 @@ namespace Registrator.Module.BusinessObjects
             OnChanged("ComplainTemplates");
             OnChanged("RecomendTemplates");
             OnChanged("ObjStatusTerTemplates");
-          //  Session.CommitTransaction();
+            Session.CommitTransaction();
         }
 
         private TextTemplate GenTemplate(int level, int start, string[] text, Type typeToCreate)

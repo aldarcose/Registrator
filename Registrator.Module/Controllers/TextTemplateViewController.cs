@@ -3,7 +3,6 @@ using System.ComponentModel;
 using System.Linq;
 using System.Reflection;
 using System.Text;
-using System.Windows.Forms;
 using DevExpress.ExpressApp;
 using System.Collections.Generic;
 using DevExpress.Persistent.Base;
@@ -12,15 +11,13 @@ using DevExpress.ExpressApp.SystemModule;
 using DevExpress.ExpressApp.DC;
 using Registrator.Module.BusinessObjects;
 using Registrator.Module.BusinessObjects.Dictionaries;
-using ListView = DevExpress.ExpressApp.ListView;
-using ViewController = DevExpress.ExpressApp.ViewController;
 
 namespace Registrator.Module.Controllers
 {
-    // For more typical usage scenarios, be sure to check out http://documentation.devexpress.com/#Xaf/clsDevExpressExpressAppViewControllertopic.
     public partial class TextTemplateViewController : ViewController
     {
         public event EventHandler TextTemplateItemProcess;
+
         public TextTemplateViewController()
         {
             InitializeComponent();
@@ -35,17 +32,15 @@ namespace Registrator.Module.Controllers
             if (listView != null)
             {
                 // скрываем дефолтные экшены
-                Frame.GetController<DevExpress.ExpressApp.SystemModule.NewObjectViewController>().Active.SetItemValue("EnabledNewAction", false);
-                Frame.GetController<DevExpress.ExpressApp.SystemModule.DeleteObjectsViewController>().Active.SetItemValue("EnabledDeleteAction", false);
-                Frame.GetController<DevExpress.ExpressApp.SystemModule.LinkUnlinkController>().Active.SetItemValue("EnabledLinkAction", false);
+                Frame.GetController<NewObjectViewController>().Active.SetItemValue("EnabledNewAction", false);
+                Frame.GetController<DeleteObjectsViewController>().Active.SetItemValue("EnabledDeleteAction", false);
+                Frame.GetController<LinkUnlinkController>().Active.SetItemValue("EnabledLinkAction", false);
             }
         }
 
         protected override void OnViewControlsCreated()
         {
             base.OnViewControlsCreated();
-            // Access and customize the target View control.
-            
             // в нем находим контроллер обработчика текущего объекта списка
             var listViewProcessCurrentObjectController = Frame.GetController<ListViewProcessCurrentObjectController>();
             // добавляем обработчик для выбранного элемента
@@ -73,7 +68,7 @@ namespace Registrator.Module.Controllers
                     var templates = (IEnumerable<TextTemplate>)generic.Invoke(null, new object[] { doctor.TextTemplates });
 
                     // создаем объект для отображения в окне редактирования
-                    var templateField = new TextTemplateField() { EditTemplates = templates.ToList(), TemplateType = type };
+                    var templateField = new TextTemplateEditParameters() { EditTemplates = templates.ToList(), TemplateType = type };
 
                     // отображаем окно
                     ShowView((ActionBase) sender, templateField);
@@ -81,7 +76,7 @@ namespace Registrator.Module.Controllers
             }
         }
 
-        private void ShowView(ActionBase action, TextTemplateField templateField)
+        private void ShowView(ActionBase action, TextTemplateEditParameters templateField)
         {
             ShowViewParameters svp = new ShowViewParameters();
 
@@ -99,7 +94,7 @@ namespace Registrator.Module.Controllers
 
         private void DcOnAccepting(object sender, DialogControllerAcceptingEventArgs eventArgs)
         {
-            var templateField = eventArgs.AcceptActionArgs.CurrentObject as TextTemplateField;
+            var templateField = eventArgs.AcceptActionArgs.CurrentObject as TextTemplateEditParameters;
             if (templateField != null && templateField.EditTemplates != null)
             {
                 var doctor = ObjectSpace.GetObject(SecuritySystem.CurrentUser as Doctor);
@@ -117,9 +112,9 @@ namespace Registrator.Module.Controllers
 
     [DomainComponent]
     [XafDisplayName("Редактирование шаблона")]
-    public class TextTemplateField
+    public class TextTemplateEditParameters
     {
-        public TextTemplateField()
+        public TextTemplateEditParameters()
         {
             EditTemplates = null;
             TemplateType = typeof(TextTemplate);
@@ -128,18 +123,18 @@ namespace Registrator.Module.Controllers
         [Browsable(false)]
         public Type TemplateType { get; set; }
 
-        private List<TextTemplate> _editTemplates;
+        private List<TextTemplate> editTemplates;
 
         [Browsable(false)]
         public List<TextTemplate> EditTemplates
         {
-            get { return _editTemplates; }
+            get { return editTemplates; }
             set
             {
-                _editTemplates = value;
-                if (_editTemplates != null)
+                editTemplates = value;
+                if (editTemplates != null)
                 {
-                    GenerateTemplate(_editTemplates);
+                    GenerateTemplate(editTemplates);
                 }
             }
         }
@@ -148,32 +143,27 @@ namespace Registrator.Module.Controllers
         {
             var sb = new StringBuilder();
             foreach (var editTemplate in _editTemplates)
-            {
-                if (editTemplate.Parent==null)
+                if (editTemplate.Parent == null)
                     GenerateTemplate(0, sb, editTemplate);
-            }
             Text = sb.ToString();
         }
 
         private void GenerateTemplate(int level, StringBuilder sb, TextTemplate template)
         {
-            var tab = string.Empty;
+            string tabs = string.Empty;
             for (int i = 0; i < level; i++)
             {
-                tab += "\t";
+                tabs += "\t";
             }
 
-            sb.AppendLine(string.Format("{0}{1}", tab, template.Name));
+            sb.AppendLine(string.Format("{0}{1}", tabs, template.Name));
 
             foreach (var child in template.TextTemplateChildren)
-            {
                 GenerateTemplate(level + 1, sb, child);
-            }
         }
 
         [XafDisplayName("Шаблон")]
         [EditorAlias("RTF")]
         public string Text { get; set; }
-
     }
 }

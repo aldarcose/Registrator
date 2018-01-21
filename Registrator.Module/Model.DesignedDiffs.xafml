@@ -62,7 +62,7 @@
         <Member Name="VisitCaseServices" Caption="Услуги посещений" />
       </OwnMembers>
     </Class>
-    <Class Name="Registrator.Module.Controllers.TextTemplateField">
+    <Class Name="Registrator.Module.Controllers.TextTemplateEditParameters">
       <OwnMembers>
         <Member Name="Text" RowCount="10" />
       </OwnMembers>
@@ -632,34 +632,36 @@
     <DetailView Id="Doctor_DetailView">
       <Layout>
         <LayoutGroup Id="Main" RelativeSize="100">
-          <LayoutGroup Id="SimpleEditors" RelativeSize="28.92271662763466">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="33.840749414519905">
             <LayoutGroup Id="Doctor" Caption="Doctor" RelativeSize="100">
               <LayoutGroup Id="Doctor_col1" RelativeSize="50">
-                <LayoutItem Id="LastName" SizeConstraintsType="Default" RelativeSize="15.384615384615385" />
-                <LayoutItem Id="FirstName" SizeConstraintsType="Default" RelativeSize="11.538461538461538" />
-                <LayoutItem Id="MiddleName" SizeConstraintsType="Default" RelativeSize="11.538461538461538" />
-                <LayoutItem Id="Birthdate" SizeConstraintsType="Default" RelativeSize="11.538461538461538" />
-                <LayoutItem Id="FullName" SizeConstraintsType="Default" RelativeSize="11.538461538461538" />
-                <LayoutItem Id="InnerCode" SizeConstraintsType="Default" RelativeSize="11.538461538461538" />
-                <LayoutItem Id="FederalCode" SizeConstraintsType="Default" RelativeSize="11.538461538461538" />
-                <LayoutItem Id="SNILS" SizeConstraintsType="Default" RelativeSize="15.384615384615385" />
+                <LayoutItem Id="LastName" SizeConstraintsType="Default" RelativeSize="13.6" />
+                <LayoutItem Id="FirstName" SizeConstraintsType="Default" RelativeSize="10.4" />
+                <LayoutItem Id="MiddleName" SizeConstraintsType="Default" RelativeSize="10.4" />
+                <LayoutItem Id="Birthdate" SizeConstraintsType="Default" RelativeSize="10.4" />
+                <LayoutItem Id="FullName" SizeConstraintsType="Default" RelativeSize="10.4" />
+                <LayoutItem Id="Scheduling" RelativeSize="10.4" />
+                <LayoutItem Id="InnerCode" SizeConstraintsType="Default" RelativeSize="10.4" />
+                <LayoutItem Id="FederalCode" SizeConstraintsType="Default" RelativeSize="10.4" />
+                <LayoutItem Id="SNILS" SizeConstraintsType="Default" RelativeSize="13.6" />
               </LayoutGroup>
               <LayoutGroup Id="Doctor_col2" RelativeSize="50">
-                <LayoutItem Id="DismissDate" SizeConstraintsType="Default" RelativeSize="11.538461538461538" />
-                <LayoutItem Id="Position" SizeConstraintsType="Default" RelativeSize="11.538461538461538" />
-                <LayoutItem Id="Otdelenie" SizeConstraintsType="Default" RelativeSize="11.538461538461538" />
-                <LayoutItem Id="SpecialityTree" SizeConstraintsType="Default" RelativeSize="11.538461538461538" />
-                <LayoutItem Id="IsActive" SizeConstraintsType="Default" RelativeSize="11.538461538461538" />
-                <LayoutItem Id="UserName" SizeConstraintsType="Default" RelativeSize="11.538461538461538" />
-                <LayoutItem Id="ChangePasswordOnFirstLogon" SizeConstraintsType="Default" RelativeSize="15.384615384615385" />
+                <LayoutItem Id="HireDate" RelativeSize="13.6" />
+                <LayoutItem Id="DismissDate" SizeConstraintsType="Default" RelativeSize="10.4" />
+                <LayoutItem Id="Position" SizeConstraintsType="Default" RelativeSize="10.4" />
+                <LayoutItem Id="Otdelenie" SizeConstraintsType="Default" RelativeSize="10.4" />
+                <LayoutItem Id="SpecialityTree" SizeConstraintsType="Default" RelativeSize="10.4" />
+                <LayoutItem Id="IsActive" SizeConstraintsType="Default" RelativeSize="10.4" />
+                <LayoutItem Id="UserName" SizeConstraintsType="Default" RelativeSize="10.4" />
+                <LayoutItem Id="ChangePasswordOnFirstLogon" SizeConstraintsType="Default" RelativeSize="24" />
               </LayoutGroup>
             </LayoutGroup>
           </LayoutGroup>
-          <TabbedGroup Id="Tabs" RelativeSize="71.077283372365343">
+          <TabbedGroup Id="Tabs" RelativeSize="66.1592505854801">
             <LayoutGroup Id="Uchastki" RelativeSize="100">
               <LayoutItem Id="Uchastki" SizeConstraintsType="Default" RelativeSize="100" />
             </LayoutGroup>
-            <LayoutGroup Id="Templates" Direction="Vertical" ShowCaption="True" Index="1" RelativeSize="100" IsNewNode="True">
+            <LayoutGroup Id="Templates" Direction="Vertical" ShowCaption="True" Index="1" RelativeSize="100" Caption="Шаблоны" IsNewNode="True">
               <TabbedGroup Id="@efe6566f-abbe-4bbc-b7c0-10efe79f1124" Index="0" RelativeSize="100" IsNewNode="True">
                 <LayoutGroup Id="AnamnezTemplates" Index="0" ShowCaption="True" RelativeSize="100" IsNewNode="True">
                   <LayoutItem Id="AnamnezTemplates" ViewItem="AnamnezTemplates" ShowCaption="False" Index="0" SizeConstraintsType="Default" RelativeSize="100" IsNewNode="True" />
@@ -675,7 +677,7 @@
                 </LayoutGroup>
               </TabbedGroup>
             </LayoutGroup>
-            <LayoutGroup Id="Item1" ShowCaption="True" CaptionLocation="Top" Direction="Vertical" Index="2" RelativeSize="100" IsNewNode="True">
+            <LayoutGroup Id="Item1" ShowCaption="True" CaptionLocation="Top" Direction="Vertical" Index="2" RelativeSize="100" Caption="Роли" IsNewNode="True">
               <LayoutItem Id="DoctorRoles" ViewItem="DoctorRoles" SizeConstraintsType="Default" Index="0" RelativeSize="100" ShowCaption="False" IsNewNode="True" />
             </LayoutGroup>
             <LayoutGroup Id="AnamnezTemplates" Removed="True" />
@@ -1334,11 +1336,11 @@
         </LayoutGroup>
       </Layout>
     </DetailView>
-    <DetailView Id="TextTemplateField_DetailView">
+    <DetailView Id="TextTemplateEditParameters_DetailView">
       <Layout>
         <LayoutGroup Id="Main" RelativeSize="100">
           <LayoutGroup Id="SimpleEditors" RelativeSize="100">
-            <LayoutGroup Id="TextTemplateField" RelativeSize="100">
+            <LayoutGroup Id="TextTemplateEditParameters" RelativeSize="100">
               <LayoutItem Id="Text" CaptionLocation="Top" SizeConstraintsType="Default" RelativeSize="100" />
             </LayoutGroup>
           </LayoutGroup>

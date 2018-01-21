@@ -13,6 +13,7 @@ using DevExpress.ExpressApp.Model;
 using DevExpress.Persistent.BaseImpl;
 using DevExpress.Persistent.Validation;
 using DevExpress.XtraPrinting.Native;
+using DevExpress.ExpressApp.Xpo;
 
 namespace Registrator.Module.BusinessObjects.Dictionaries
 {
@@ -21,14 +22,17 @@ namespace Registrator.Module.BusinessObjects.Dictionaries
     /// </summary>
     public abstract class TextTemplate : BaseObject, ITreeNode
     {
-        public TextTemplate(Session session)
-            : base(session)
-        {
-        }
+        private TextTemplate textTemplateParent;
+        private Doctor doctor;
+
+        public TextTemplate(Session session) : base(session) { }
+
         public override void AfterConstruction()
         {
             base.AfterConstruction();
-            Doctor = SecuritySystem.CurrentUser as Doctor;
+
+            IObjectSpace os = XPObjectSpace.FindObjectSpaceByObject(this);
+            Doctor = os.GetObject(SecuritySystem.CurrentUser as Doctor);
         }
 
         [XafDisplayName("Шаблон")]
@@ -36,26 +40,42 @@ namespace Registrator.Module.BusinessObjects.Dictionaries
         public string Name { get; set; }
 
         [Browsable(false)]
-        public ITreeNode Parent { get { return TextTemplateParent as ITreeNode; } }
+        public ITreeNode Parent 
+        {
+            get { return TextTemplateParent as ITreeNode; } 
+        }
+
         [VisibleInListView(true)]
         [VisibleInDetailView(false)]
-        public IBindingList Children { get { return TextTemplateChildren as IBindingList; } }
+        public IBindingList Children 
+        { 
+            get { return TextTemplateChildren as IBindingList; } 
+        }
 
+        [Browsable(false)]
         [Association("TextTemplateParent-TextTemplateChildren")]
-        [Browsable(false)]
-        public TextTemplate TextTemplateParent { get; set; }
+        public TextTemplate TextTemplateParent
+        {
+            get { return textTemplateParent; }
+            set { SetPropertyValue("TextTemplateParent", ref textTemplateParent, value); } 
+        }
 
-        [Association("TextTemplateParent-TextTemplateChildren"), DevExpress.Xpo.Aggregated]
         [Browsable(false)]
+        [Association("TextTemplateParent-TextTemplateChildren"), DevExpress.Xpo.Aggregated]
         public XPCollection<TextTemplate> TextTemplateChildren
         {
             get { return GetCollection<TextTemplate>("TextTemplateChildren"); }
         }
 
-        [Association("Doctor-TextTemplates")]
         [Browsable(false)]
-        public Doctor Doctor { get; set; }
+        [Association("Doctor-TextTemplates")]
+        public Doctor Doctor
+        {
+            get { return doctor; }
+            set { SetPropertyValue("Doctor", ref doctor, value); } 
+        }
 
+        /// <inheritdoc/>
         public override string ToString()
         {
             return this.GetTextTemplate();
@@ -63,9 +83,8 @@ namespace Registrator.Module.BusinessObjects.Dictionaries
 
         public string GetTextTemplate()
         {
-            if (this.TextTemplateParent == null)
-                return this.Name;
-            return this.TextTemplateParent.GetTextTemplate() + " : " + this.Name;
+            if (TextTemplateParent == null) return Name;
+            return TextTemplateParent.GetTextTemplate() + " : " + this.Name;
         }
     }
 
