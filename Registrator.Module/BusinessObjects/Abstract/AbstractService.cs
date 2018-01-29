@@ -351,6 +351,7 @@ namespace Registrator.Module.BusinessObjects.Abstract
         /// Шаблон услуги
         /// </summary>
         [XafDisplayName("Шаблон услуги")]
+        [DataSourceCriteriaProperty("ServiceTemplateCriteria")]
         [ImmediatePostData]
         public ServiceTemplate ServiceTemplate
         {
@@ -373,7 +374,18 @@ namespace Registrator.Module.BusinessObjects.Abstract
                     OnChanged("CommonProtocol");
                     OnChanged("Usluga");
                     OnChanged("Diagnoses");
+                    
+                    CommonProtocol.Save();
                 }
+            }
+        }
+
+        [Browsable(false)]
+        public CriteriaOperator ServiceTemplateCriteria
+        {
+            get
+            {
+                return ServiceTemplate.Fields.Oid == ((Doctor)SecuritySystem.CurrentUser).SpecialityTree.Oid;
             }
         }
 
