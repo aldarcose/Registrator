@@ -52,6 +52,17 @@
         <AppearanceRule Id="TimeToHide" Context="Any" AppearanceItemType="LayoutItem" Criteria="[TimeType] = ##Enum#Registrator.Module.BusinessObjects.Dictionaries.TimeTypes,FromLimit# Or [TimeType] = ##Enum#Registrator.Module.BusinessObjects.Dictionaries.TimeTypes,All#" />
       </AppearanceRules>
     </Class>
+    <Class Name="Registrator.Module.BusinessObjects.Dictionaries.ServiceTemplate" Caption="Шаблон абстрактной услуги">
+      <OwnMembers>
+        <Member Name="Anamnez" Caption="Анамнез" />
+        <Member Name="Complain" Caption="Жалобы" />
+        <Member Name="Diagnose" Caption="Диагноз" />
+        <Member Name="Name" Caption="Название" />
+        <Member Name="ObjectiveStatus" Caption="Объективный статус" />
+        <Member Name="Recommendations" Caption="Рекомендации" />
+        <Member Name="Service" Caption="Услуга" />
+      </OwnMembers>
+    </Class>
     <Class Name="Registrator.Module.BusinessObjects.DnevnoyStacionar">
       <AppearanceRules>
         <AppearanceRule Id="@cea7339c-a85d-40e5-9f10-e4a687f86469" Context="ListView" TargetItems="ResultatOplati" Criteria="[ResultatOplati] = ##Enum#Registrator.Module.BusinessObjects.Oplata,Polnaya#" BackColor="0, 192, 0" Enabled="False" IsNewNode="True" />
@@ -149,6 +160,7 @@
       </Item>
       <Item Id="@04f32711-2bd7-4acf-b37b-97d5368bf049" Caption="Справочники" Index="2" IsNewNode="True">
         <Items IsNewNode="True">
+          <Item Id="@c84aae5c-22ba-4944-9cc4-0223efa37d9e" ViewId="ServiceTemplate_ListView" Caption="Шаблоны услуг" IsNewNode="True" />
           <Item Id="@f509f238-8525-4cf7-9bf5-acf09b1080fd" ViewId="DoctorEventLabel_ListView" ImageName="Action_ChooseSkin" IsNewNode="True" />
           <Item Id="Address_ListView" ViewId="Address_ListView" ObjectKey="" IsNewNode="True" />
           <Item Id="CommonProtocol_ListView" ViewId="CommonProtocol_ListView" ObjectKey="" IsNewNode="True" />
@@ -764,7 +776,6 @@
               <LayoutGroup Id="CommonCase_col1" RelativeSize="66.423357664233578">
                 <LayoutItem Id="FormaPomoshi" SizeConstraintsType="Default" RelativeSize="19.277108433734941" />
                 <LayoutItem Id="Hospitalizacia" ViewItem="Hospitalizacia" SizeConstraintsType="Default" Index="1" RelativeSize="14.457831325301205" IsNewNode="True" />
-                <LayoutItem Id="Resultat" SizeConstraintsType="Default" RelativeSize="50" Index="1" Removed="True" />
                 <LayoutItem Id="FromLPU" SizeConstraintsType="Default" RelativeSize="14.457831325301205" Index="2" />
                 <LayoutItem Id="DateIn" ViewItem="DateIn" SizeConstraintsType="Default" Index="3" RelativeSize="14.457831325301205" IsNewNode="True" />
                 <LayoutItem Id="DateOut" ViewItem="DateOut" SizeConstraintsType="Default" Index="4" RelativeSize="14.457831325301205" IsNewNode="True" />
@@ -891,35 +902,36 @@
             </LayoutGroup>
             <TabbedGroup Id="Data" Index="0" RelativeSize="100" IsNewNode="True">
               <LayoutGroup Id="CommonService" Index="0" Caption="Общие данные" RelativeSize="100" ShowCaption="True" IsNewNode="True">
-                <LayoutItem Id="VisitCase.Cel" ViewItem="VisitCase.Cel" Index="0" RelativeSize="4.2079207920792081" IsNewNode="True" />
-                <LayoutItem Id="VisitCase.Mesto" ViewItem="VisitCase.Mesto" Index="1" RelativeSize="3.217821782178218" IsNewNode="True" />
-                <LayoutItem Id="Usluga" ViewItem="Usluga" SizeConstraintsType="Default" Index="2" RelativeSize="3.217821782178218" IsNewNode="True" />
-                <LayoutItem Id="KolUslug" Index="3" ViewItem="KolUslug" RelativeSize="3.217821782178218" SizeConstraintsType="Default" IsNewNode="True" />
-                <LayoutItem Id="Doctor" ViewItem="Doctor" SizeConstraintsType="Default" Index="4" RelativeSize="3.217821782178218" IsNewNode="True" />
-                <LayoutGroup Id="Dates" ShowCaption="False" Direction="Vertical" Index="5" RelativeSize="4.7029702970297027" IsNewNode="True">
-                  <LayoutItem Id="DateIn" ViewItem="DateIn" SizeConstraintsType="Default" Index="0" RelativeSize="100" IsNewNode="True" />
+                <LayoutItem Id="VisitCase.Cel" ViewItem="VisitCase.Cel" Index="0" RelativeSize="4.3422733077905491" IsNewNode="True" />
+                <LayoutItem Id="VisitCase.Mesto" ViewItem="VisitCase.Mesto" Index="1" RelativeSize="3.3205619412515963" IsNewNode="True" />
+                <LayoutItem Id="Usluga" ViewItem="Usluga" SizeConstraintsType="Default" Index="2" RelativeSize="3.3205619412515963" IsNewNode="True" />
+                <LayoutItem Id="KolUslug" Index="3" ViewItem="KolUslug" RelativeSize="3.3205619412515963" SizeConstraintsType="Default" IsNewNode="True" />
+                <LayoutItem Id="Doctor" ViewItem="Doctor" SizeConstraintsType="Default" Index="4" RelativeSize="3.3205619412515963" IsNewNode="True" />
+                <LayoutGroup Id="Dates" ShowCaption="False" Direction="Vertical" Index="5" RelativeSize="8.1736909323116222" Caption="Дата начала оказания услуги" IsNewNode="True">
+                  <LayoutItem Id="DateIn" ViewItem="DateIn" SizeConstraintsType="Default" Index="0" RelativeSize="50" IsNewNode="True" />
+                  <LayoutItem Id="ServiceTemplate" ViewItem="ServiceTemplate" Index="1" RelativeSize="50" IsNewNode="True" />
                 </LayoutGroup>
-                <TabbedGroup Id="@252aad17-fe87-4ac7-a50a-3e01b6f09cb9" Index="6" RelativeSize="78.21782178217822" IsNewNode="True">
+                <TabbedGroup Id="@252aad17-fe87-4ac7-a50a-3e01b6f09cb9" Index="6" RelativeSize="74.201787994891447" IsNewNode="True">
                   <LayoutGroup Id="Diagnoses" ShowCaption="True" Index="0" RelativeSize="100" IsNewNode="True">
                     <LayoutItem Id="Diagnoses" ViewItem="Diagnoses" Index="0" RelativeSize="100" IsNewNode="True" />
                   </LayoutGroup>
                 </TabbedGroup>
               </LayoutGroup>
               <LayoutGroup Id="@00125a52-d82b-4714-bd25-33b7ae2fcde8" ShowCaption="True" Direction="Horizontal" Index="1" RelativeSize="100" Caption="Анамнез" IsNewNode="True">
-                <LayoutItem Id="CommonProtocol.AnamnezTemplates" ViewItem="CommonProtocol.AnamnezTemplates" Index="0" RelativeSize="44.483568075117368" IsNewNode="True" />
-                <LayoutItem Id="CommonProtocol.Anamnez" ShowCaption="False" ViewItem="CommonProtocol.Anamnez" Index="1" RelativeSize="55.516431924882632" IsNewNode="True" />
+                <LayoutItem Id="CommonProtocol.AnamnezTemplates" ViewItem="CommonProtocol.AnamnezTemplates" Index="0" RelativeSize="44.496487119437937" IsNewNode="True" />
+                <LayoutItem Id="CommonProtocol.Anamnez" ShowCaption="False" ViewItem="CommonProtocol.Anamnez" Index="1" RelativeSize="55.503512880562063" IsNewNode="True" />
               </LayoutGroup>
               <LayoutGroup Id="@210a5f45-c6a7-4c58-88ef-0e0fa01e9e54" ShowCaption="True" Direction="Horizontal" Index="2" RelativeSize="100" Caption="Жалобы" IsNewNode="True">
-                <LayoutItem Id="CommonProtocol.ComplainTemplates" ViewItem="CommonProtocol.ComplainTemplates" Index="0" RelativeSize="44.483568075117368" IsNewNode="True" />
-                <LayoutItem Id="CommonProtocol.Complain" ShowCaption="False" ViewItem="CommonProtocol.Complain" Index="1" RelativeSize="55.516431924882632" IsNewNode="True" />
+                <LayoutItem Id="CommonProtocol.ComplainTemplates" ViewItem="CommonProtocol.ComplainTemplates" Index="0" RelativeSize="44.496487119437937" IsNewNode="True" />
+                <LayoutItem Id="CommonProtocol.Complain" ShowCaption="False" ViewItem="CommonProtocol.Complain" Index="1" RelativeSize="55.503512880562063" IsNewNode="True" />
               </LayoutGroup>
               <LayoutGroup Id="@b8a36eef-ab47-4674-a300-36dcd237c204" ShowCaption="True" Direction="Horizontal" Index="3" RelativeSize="100" Caption="Рекомендации" IsNewNode="True">
-                <LayoutItem Id="CommonProtocol.RecomendTemplates" ViewItem="CommonProtocol.RecomendTemplates" Index="0" RelativeSize="44.483568075117368" IsNewNode="True" />
-                <LayoutItem Id="CommonProtocol.Recommendation" ShowCaption="False" ViewItem="CommonProtocol.Recommendation" Index="1" RelativeSize="55.516431924882632" IsNewNode="True" />
+                <LayoutItem Id="CommonProtocol.RecomendTemplates" ViewItem="CommonProtocol.RecomendTemplates" Index="0" RelativeSize="44.496487119437937" IsNewNode="True" />
+                <LayoutItem Id="CommonProtocol.Recommendation" ShowCaption="False" ViewItem="CommonProtocol.Recommendation" Index="1" RelativeSize="55.503512880562063" IsNewNode="True" />
               </LayoutGroup>
               <LayoutGroup Id="@ee043f3f-35c7-4e88-a6b8-60bf3fa07b4a" ShowCaption="True" Direction="Horizontal" Index="4" RelativeSize="100" Caption="Объективный Статус" IsNewNode="True">
-                <LayoutItem Id="CommonProtocol.ObjStatusTerTemplates" ViewItem="CommonProtocol.ObjStatusTerTemplates" Index="0" RelativeSize="44.483568075117368" IsNewNode="True" />
-                <LayoutItem Id="CommonProtocol.ObjectiveStatus" ShowCaption="False" ViewItem="CommonProtocol.ObjectiveStatus" Index="1" RelativeSize="55.516431924882632" IsNewNode="True" />
+                <LayoutItem Id="CommonProtocol.ObjStatusTerTemplates" ViewItem="CommonProtocol.ObjStatusTerTemplates" Index="0" RelativeSize="44.496487119437937" IsNewNode="True" />
+                <LayoutItem Id="CommonProtocol.ObjectiveStatus" ShowCaption="False" ViewItem="CommonProtocol.ObjectiveStatus" Index="1" RelativeSize="55.503512880562063" IsNewNode="True" />
               </LayoutGroup>
               <LayoutGroup Id="@644be72d-70f9-44a3-970c-5ad175cb3ca8" ShowCaption="True" Index="5" RelativeSize="100" Caption="Препараты" IsNewNode="True">
                 <LayoutItem Id="CommonProtocol.Medicaments" ViewItem="CommonProtocol.Medicaments" Index="0" RelativeSize="100" IsNewNode="True" />
@@ -1372,7 +1384,6 @@
                 <LayoutItem Id="FromLPU" SizeConstraintsType="Default" RelativeSize="29.906542056074766" Index="1" Removed="True" />
                 <LayoutItem Id="VesPriRozhdenii" ViewItem="VesPriRozhdenii" SizeConstraintsType="Default" Index="2" RelativeSize="50" Removed="True" />
                 <LayoutItem Id="FormaPomoshi" Removed="True" />
-                <LayoutItem Id="Resultat" Removed="True" />
               </LayoutGroup>
               <LayoutGroup Id="CommonCase_col2" RelativeSize="35.114503816793892" Direction="Vertical" Index="1" Caption="CommonCase_col2">
                 <LayoutGroup Id="Auto7fe4713d-44cc-419a-95a4-c462bc9c98fd" ShowCaption="False" Direction="Horizontal" Index="0" RelativeSize="39.130434782608695" Caption="Auto7fe4713d-44cc-419a-95a4-c462bc9c98fd" IsNewNode="True">
@@ -1381,7 +1392,7 @@
                 </LayoutGroup>
                 <LayoutItem Id="Doctor" ViewItem="Doctor" SizeConstraintsType="Default" Index="1" RelativeSize="20.338983050847457" Removed="True" />
                 <LayoutItem Id="Ishod" ViewItem="Ishod" SizeConstraintsType="Default" Index="1" RelativeSize="26.086956521739129" IsNewNode="True" Removed="True" />
-                <LayoutItem Id="Resultat" ViewItem="Resultat" SizeConstraintsType="Default" Index="2" RelativeSize="34.782608695652172" IsNewNode="True" />
+                <LayoutItem Id="Resultat" SizeConstraintsType="Default" Index="2" RelativeSize="34.782608695652172" ViewItem="Resultat" IsNewNode="True" />
                 <LayoutItem Id="OsobiySluchay" Removed="True" />
               </LayoutGroup>
             </LayoutGroup>

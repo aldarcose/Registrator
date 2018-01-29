@@ -379,6 +379,7 @@ namespace Registrator.Module.BusinessObjects
             }
         }
 
+        [Browsable(false)]
         [XafDisplayName("Госпитализации")]
         public IList<HospitalCase> HospitalCases
         {
@@ -391,6 +392,7 @@ namespace Registrator.Module.BusinessObjects
             }
         }
 
+        [Browsable(false)]
         [XafDisplayName("Посещения")]
         public IList<VisitCase> VisitCases
         {
@@ -696,11 +698,8 @@ namespace Registrator.Module.BusinessObjects
                 return null;*/
 
             const string dateTimeFormat = "{0:yyyy-MM-dd}";
-
-            var element = new XElement("PERS",
-                                        new XElement("ID_PAC", this.Oid)
-                                    );
-
+            var element = new XElement("PERS", new XElement("ID_PAC", this.Oid));
+            
             // приказ №79
             // при отсутствии полей, например, фамилии, элемента с фамилией может не быть, но при этом должен появиться элемент DOST со значение 1.
             // если нет еще какого-либо поля, добавляется еще один элемент DOST

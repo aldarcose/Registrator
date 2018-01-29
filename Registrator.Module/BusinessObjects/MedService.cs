@@ -40,9 +40,11 @@ namespace Registrator.Module.BusinessObjects
 
         public override System.Xml.Linq.XElement GetReestrElement(int zapNumber)
         {
+            const string decimalFormat = "n2";
+
             // проверяем поля услуги
-            if (IsValidForReestr() == false)
-                return null;
+            //if (IsValidForReestr() == false)
+            //    return null;
 
             const string dateTimeFormat = "{0:yyyy-M-d}";
 
@@ -63,7 +65,8 @@ namespace Registrator.Module.BusinessObjects
                 element.Add(new XElement("PODR"), this.LPU_1);
 
             // профиль мед. услуги
-            element.Add(new XElement("PROFIL", this.Profil.Code));
+            if (Profil != null)
+                element.Add(new XElement("PROFIL", Profil.Code));
 
             // вид мед. вмешательства
             if (this.VidVme != null)
@@ -89,12 +92,12 @@ namespace Registrator.Module.BusinessObjects
             // тариф услуги (для госпитализации брать КЗ из КСГ)
             if (this.Usluga != null && this.Usluga.Tarif.HasValue)
             {
-                var value = this.Usluga.Tarif.Value;
-                element.Add(new XElement("TARIF", value.ToString("0.00")));
+                decimal value = this.Usluga.Tarif.Value;
+                element.Add(new XElement("TARIF", value.ToString(decimalFormat).Replace(",", ".")));
             }
 
             // Сумма услуги
-            element.Add(new XElement("SUMV_USL", this.Sum));
+            element.Add(new XElement("SUMV_USL", this.Sum.ToString(decimalFormat).Replace(",", ".")));
 
             // код специльаности врача
             element.Add(new XElement("PRVS", DoctorSpec.Code));

@@ -97,16 +97,6 @@ namespace Registrator.Module.Win.Controllers
                     openRelatedController.Active.SetItemValue("NoNeedInStacionar", false);
             }
         }
-        protected override void OnViewControlsCreated()
-        {
-            base.OnViewControlsCreated();
-            // Access and customize the target View control.
-        }
-        protected override void OnDeactivated()
-        {
-            // Unsubscribe from previously subscribed events and release other references and resources.
-            base.OnDeactivated();
-        }
 
         private void BindDoctorAction_Execute(object sender, PopupWindowShowActionExecuteEventArgs e)
         {
@@ -159,17 +149,14 @@ namespace Registrator.Module.Win.Controllers
 
         private void exportDataReestrAction_CustomizePopupWindowParams(object sender, CustomizePopupWindowParamsEventArgs e)
         {
-            e.View = Application.CreateDetailView(Application.CreateObjectSpace(), new FilterExportDnevnoyStacionarFields() { ToDate = DateTime.Now });
+            e.View = Application.CreateDetailView(Application.CreateObjectSpace(), new DayHospitalExportParameters());
         }
 
         private void exportDataReestrAction_Execute(object sender, PopupWindowShowActionExecuteEventArgs e)
         {
-            var fields = e.PopupWindowViewCurrentObject as FilterExportDnevnoyStacionarFields;
-            /*fields.FromDate = fields.FromDate == null ? DateTime.MinValue : fields.FromDate;
-            fields.ToDate = fields.ToDate == null ? DateTime.MaxValue : fields.ToDate;*/
+            var fields = e.PopupWindowViewCurrentObject as DayHospitalExportParameters;
 
             // перед выгрузкой следует проверить данные на валидность, при необходимости вывести список с ошибками.
-
             var sfd = new System.Windows.Forms.SaveFileDialog();
             sfd.Title = "Экспорт данных";
             sfd.Filter = "XML файлы (*.xml)|*.xml";
@@ -186,16 +173,16 @@ namespace Registrator.Module.Win.Controllers
                 string name = System.IO.Path.GetFileName(sfd.FileName);
                 string dirpath = System.IO.Path.GetFullPath(sfd.FileName);
                 dirpath = dirpath.Substring(0, dirpath.Length - name.Length);
+                // Пространство хранимых объектов
+                IObjectSpace objectSpace = Application.CreateObjectSpace();
 
-                var objectSpace = Application.CreateObjectSpace();
-
-                var DSs = objectSpace.GetObjects<DnevnoyStacionar>().ToList()
-                                .Where(t=>t.ResultatOplati != Oplata.Polnaya)
-                                .Where(t => t.DataVypiski != DateTime.MinValue && t.DataVypiski >= fields.FromDate && t.DataVypiski <= fields.ToDate);
+                IList<DnevnoyStacionar> dayHospitals = objectSpace.GetObjects<DnevnoyStacionar>(
+                    DnevnoyStacionar.Fields.ResultatOplati != new OperandValue(Oplata.Polnaya) &
+                    DnevnoyStacionar.Fields.DataVypiski >= fields.FromDate &
+                    DnevnoyStacionar.Fields.DataVypiski <= fields.ToDate);
 
                 // проверить стационары на полноту данных
-
-
+                
                 // опеределить имя рута
                 XElement rootHM = new XElement("ZL_LIST");
                 XElement rootLM = new XElement("PERS_LIST");
@@ -207,47 +194,107 @@ namespace Registrator.Module.Win.Controllers
                 rootHM.Add(schet);
 
                 rootLM.Add(CreateZGLV(true, name));
-                int recordNum = 0;
-                decimal summAv = 0;
+                int recordNum = 0; decimal summAv = 0; int count = 0;
 
-                int count = 0;
-                foreach (var ds in DSs)
+                foreach (var dayHospital in dayHospitals)
                 {
                     // пропускаем невыписанных пациентов
-                    if ((ds.DataVypiski == DateTime.MinValue) || (ds.DataVypiski < fields.FromDate) || (ds.DataVypiski > fields.ToDate))
+                    if ((dayHospital.DataVypiski == DateTime.MinValue) || (dayHospital.DataVypiski < fields.FromDate) || (dayHospital.DataVypiski > fields.ToDate))
                         continue;
 
                     // если установлен флаг поиска иногородних и пациент не иногородний, то пропускаем
-                    if (ds.Pacient != null)
+                    if (dayHospital.Pacient != null)
                     {
-                        var polis = ds.Pacient.CurrentPolis;
-                        if (polis != null)
-                            if (polis.IsFromAnotherRegion != fields.IsInogorodniy)
-                                continue;
+                        Polis polis = dayHospital.Pacient.CurrentPolis;
+                        if (polis != null && polis.IsFromAnotherRegion != fields.IsInogorodniy)
+                            continue;
                     }
 
                     // пропускаем оплаченные стационары
-                    if (ds.ResultatOplati == Oplata.Polnaya)
+                    if (dayHospital.ResultatOplati == Oplata.Polnaya)
                         continue;
                     try
                     {
                         // получаем запись LM реестра
-                        rootLM.Add(ds.Pacient.GetReestrElement());
+                        rootLM.Add(dayHospital.Pacient.GetReestrElement());
                         // получаем запись HM реестра
-                        var zap = ds.GetReestElement(++recordNum);
-                        rootHM.Add(zap);
+                        XElement xZap = dayHospital.GetReesterElement(++recordNum);
+                        rootHM.Add(xZap);
 
-                        var decimalValue = Utils.GetDecimalFromString(zap.Element("SLUCH").Element("SUMV").Value);
+                        var decimalValue = Utils.GetDecimalFromString(xZap.Element("SLUCH").Element("SUMV").Value);
                         summAv += decimalValue;
                     }
                     catch (Exception error)
                     {
                         string er = error.Message;
-                        var erds = ds;
+                        var erds = dayHospital;
                     }
                     
-
                     count++;
+                }
+
+                // Посещения
+                IList<VisitCase> visitCases = objectSpace.GetObjects<VisitCase>(
+                    VisitCase.Fields.DateIn >= fields.FromDate &
+                    VisitCase.Fields.DateOut <= fields.ToDate);
+
+                foreach (var visitCase in visitCases)
+                {
+                    // если установлен флаг поиска иногородних и пациент не иногородний, то пропускаем
+                    if (visitCase.Pacient != null)
+                    {
+                        Polis polis = visitCase.Pacient.CurrentPolis;
+                        if (polis != null && polis.IsFromAnotherRegion != fields.IsInogorodniy)
+                            continue;
+                    }
+
+                    try
+                    {
+                        // получаем запись LM реестра
+                        rootLM.Add(visitCase.Pacient.GetReestrElement());
+                        // получаем запись HM реестра
+                        XElement xZap = visitCase.GetReestrElement(++recordNum);
+                        rootHM.Add(xZap);
+
+                        var decimalValue = Utils.GetDecimalFromString(xZap.Element("SLUCH").Element("SUMV").Value);
+                        summAv += decimalValue;
+                    }
+                    catch (Exception error)
+                    {
+                        string er = error.Message;
+                    }
+                }
+
+                // Диспансеризации
+                IList<DispanserizaionCase> dispCases = objectSpace.GetObjects<DispanserizaionCase>(
+                    VisitCase.Fields.DateIn >= fields.FromDate &
+                    VisitCase.Fields.DateOut <= fields.ToDate);
+
+                foreach (var dispCase in dispCases)
+                {
+                    // если установлен флаг поиска иногородних и пациент не иногородний, то пропускаем
+                    if (dispCase.Pacient != null)
+                    {
+                        Polis polis = dispCase.Pacient.CurrentPolis;
+                        if (polis != null && polis.IsFromAnotherRegion != fields.IsInogorodniy)
+                            continue;
+                    }
+
+                    try
+                    {
+                        // получаем запись LM реестра
+                        rootLM.Add(dispCase.Pacient.GetReestrElement());
+                        // получаем запись HM реестра
+                        XElement xZap = dispCase.GetReestrElement(++recordNum);
+                        rootHM.Add(xZap);
+
+                        var decimalValue = Utils.GetDecimalFromString(xZap.Element("SLUCH").Element("SUMV").Value);
+                        summAv += decimalValue;
+                    }
+                    catch (Exception error)
+                    {
+                        string er = error.Message;
+                    }
                 }
 
                 if (count != 0)
@@ -381,7 +428,7 @@ namespace Registrator.Module.Win.Controllers
                         XElement reestrElement = null;
                         try
                         {
-                            reestrElement = dnevnoyStacionar.GetReestElement(0);
+                            reestrElement = dnevnoyStacionar.GetReesterElement(0);
                         }
                         catch (Exception)
                         {
@@ -545,17 +592,23 @@ namespace Registrator.Module.Win.Controllers
     }
 
     [DomainComponent]
-    [XafDisplayName("Фильтр стационаров")]
-    public class FilterExportDnevnoyStacionarFields
+    [XafDisplayName("Параметры выгрузки дневного стационара")]
+    public class DayHospitalExportParameters
     {
+        public DayHospitalExportParameters()
+        {
+            this.FromDate = DateTime.Today;
+            this.ToDate = DateTime.Today;
+        }
+
         /// <summary>
         /// Фильтруем по дате выписки
         /// </summary>
-        [XafDisplayName("От:")]
+        [XafDisplayName("От")]
         [RuleRequiredField]
         public DateTime FromDate { get; set; }
 
-        [XafDisplayName("До:")]
+        [XafDisplayName("До")]
         [RuleRequiredField]
         public DateTime ToDate { get; set; }
 

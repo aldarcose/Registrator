@@ -26,21 +26,18 @@ namespace Registrator.Module.BusinessObjects
             throw new NotImplementedException();
             
             // подумать как лучше сделать!
-            var services = Case.Services.ToList<DispService>();
-
-            // сортируем по дате
-            services.Sort((c1, c2) => c1.DateIn.CompareTo(c2.DateIn));
-
-            int zap = services.IndexOf(this);
-
-            return GetReestrElement(zap);
+            //var services = Case.Services.ToList<DispService>();
+            //// сортируем по дате
+            //services.Sort((c1, c2) => c1.DateIn.CompareTo(c2.DateIn));
+            //int zap = services.IndexOf(this);
+            //return GetReestrElement(zap);
         }
 
         public override System.Xml.Linq.XElement GetReestrElement(int zapNumber)
         {
             // проверяем поля услуги
-            if (IsValidForReestr() == false)
-                return null;
+            //if (IsValidForReestr() == false)
+            //    return null;
 
             const string dateTimeFormat = "{0:yyyy-M-d}";
 
@@ -48,7 +45,6 @@ namespace Registrator.Module.BusinessObjects
 
             // идентификатор услуги
             element.Add(new XElement("IDSERV", zapNumber));
-
             // код МО
             element.Add(new XElement("LPU"), this.LPU.Code);
 

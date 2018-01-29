@@ -197,6 +197,12 @@ namespace Registrator.Module.BusinessObjects.Abstract
 
             /// <summary>Операнд свойства Oid</summary>
             public OperandProperty Oid { get { return new OperandProperty(GetNestedName("Oid")); } }
+
+            /// <summary>Операнд свойства DateIn</summary>
+            public OperandProperty DateIn { get { return new OperandProperty(GetNestedName("DateIn")); } }
+
+            /// <summary>Операнд свойства DateOut</summary>
+            public OperandProperty DateOut { get { return new OperandProperty(GetNestedName("DateOut")); } }
         }
     }
 
@@ -269,7 +275,6 @@ namespace Registrator.Module.BusinessObjects.Abstract
         /// Отделение МО лечения из регионального справочника
         /// </summary>
         [XafDisplayName("Отделение МО")]
-        [Browsable(false)]
         public Otdel Otdelenie { get; set; }
 
         /// <summary>
@@ -278,7 +283,6 @@ namespace Registrator.Module.BusinessObjects.Abstract
         /// Классификатор профилей оказанной медицинской помощи (V002)
         /// </summary>
         [XafDisplayName("Мед. профиль")]
-        [Browsable(false)]
         public MedProfil Profil { get; set; }
 
         /// <summary>
@@ -358,7 +362,7 @@ namespace Registrator.Module.BusinessObjects.Abstract
         [Browsable(false)]
         public VidUsloviyOkazMedPomoshi UsloviyaPomoshi 
         { 
-            get {return _uslovia; }
+            get { return _uslovia; }
             set
             {
                 SetPropertyValue("UsloviyaPomoshi", ref _uslovia, value);

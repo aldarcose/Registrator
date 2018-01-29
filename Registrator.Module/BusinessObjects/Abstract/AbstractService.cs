@@ -20,7 +20,7 @@ using System.Xml.Linq;
 namespace Registrator.Module.BusinessObjects.Abstract
 {
     [DefaultClassOptions]
-    [XafDisplayName("Услуги")]
+    [XafDisplayName("Абстрактная услуга")]
     public abstract class AbstractService : BaseObject
     {
         private Doctor _doctor;
@@ -212,9 +212,10 @@ namespace Registrator.Module.BusinessObjects.Abstract
     /// <summary>
     /// Услуга
     /// </summary>
-    public abstract class CommonService : AbstractService, IReestrTFoms
+    public abstract class CommonService : AbstractService, IReestrTFoms, INotifyPropertyChanged
     {
         private CommonCase _case;
+        private ServiceTemplate serviceTemplate;
 
         public CommonService(Session session) : base(session) { }
 
@@ -347,6 +348,36 @@ namespace Registrator.Module.BusinessObjects.Abstract
         }
 
         /// <summary>
+        /// Шаблон услуги
+        /// </summary>
+        [XafDisplayName("Шаблон услуги")]
+        [ImmediatePostData]
+        public ServiceTemplate ServiceTemplate
+        {
+            get { return serviceTemplate; }
+            set
+            {
+                SetPropertyValue("ServiceTemplate", ref serviceTemplate, value);
+                if (!IsLoading && !IsSaving && serviceTemplate != null)
+                {
+                    CommonProtocol.Anamnez = serviceTemplate.Anamnez;
+                    CommonProtocol.Complain = serviceTemplate.Complain;
+                    CommonProtocol.ObjectiveStatus = serviceTemplate.ObjectiveStatus;
+                    CommonProtocol.Recommendation = serviceTemplate.Recommendations;
+                    Usluga = serviceTemplate.Service;
+                    Diagnoses.Add(new MKBWithType(Session) 
+                    { 
+                        Diagnose  = serviceTemplate.Diagnose
+                    });
+
+                    OnChanged("CommonProtocol");
+                    OnChanged("Usluga");
+                    OnChanged("Diagnoses");
+                }
+            }
+        }
+
+        /// <summary>
         /// Диагнозы случая
         /// </summary>
         [Association("CommonService-Diagnoses"), DevExpress.Xpo.Aggregated]
@@ -358,6 +389,24 @@ namespace Registrator.Module.BusinessObjects.Abstract
         public abstract bool IsValidForReestr();
         public abstract XElement GetReestrElement();
         public abstract XElement GetReestrElement(int zapNumber);
+
+
+        #region INotifyPropertyChanged
+
+        /// <summary>
+        /// Вызывает событие изменения указанного свойства
+        /// </summary>
+        /// <param name="propertyName">Название свойства, которое было изменено</param>
+        protected void OnChangedProperty(string propertyName)
+        {
+            if (PropertyChanged != null)
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        /// <contentfrom cref="System.ComponentModel.INotifyPropertyChanged.PropertyChanged"/>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        #endregion
     }
 
     /// <summary>

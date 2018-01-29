@@ -81,7 +81,7 @@ namespace Registrator.Win {
 
         private void RegistratorWindowsFormsApplication_SettingUp(object sender, SetupEventArgs e)
         {
-           DatabaseUpdateMode = DatabaseUpdateMode.Never;
+            DatabaseUpdateMode = DatabaseUpdateMode.Never;
         }
     }
 }

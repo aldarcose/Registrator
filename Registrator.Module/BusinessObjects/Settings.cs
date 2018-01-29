@@ -87,12 +87,11 @@ namespace Registrator.Module.BusinessObjects.Settings
         }
     }
 
-    [NonPersistent]
     public class TarifSettings
     {
         public static decimal GetDnevnoyStacionarTarif(Session session)
         {
-            var tarif = session.FindObject<Constants>(DevExpress.Data.Filtering.CriteriaOperator.Parse("Name=?", "DnevnoyStacionarTarif"));
+            var tarif = session.FindObject<Constants>(CriteriaOperator.Parse("Name=?", "DnevnoyStacionarTarif"));
             if (tarif != null)
             {
                 return Utils.GetDecimalFromString(tarif.Value);
@@ -106,7 +105,7 @@ namespace Registrator.Module.BusinessObjects.Settings
 
         public static decimal GetDnevnoyStacionarTarif(IObjectSpace objectSpace)
         {
-            var tarif = objectSpace.FindObject<Constants>(DevExpress.Data.Filtering.CriteriaOperator.Parse("Name=?", "DnevnoyStacionarTarif"));
+            var tarif = objectSpace.FindObject<Constants>(CriteriaOperator.Parse("Name=?", "DnevnoyStacionarTarif"));
             if (tarif != null)
             {
                 return Utils.GetDecimalFromString(tarif.Value);

@@ -17,7 +17,7 @@ using System.Windows.Forms;
 namespace Registrator.Module.BusinessObjects.Dictionaries
 {
     [DefaultClassOptions]
-    [XafDisplayName("Территориальные услуги")]
+    [XafDisplayName("Территориальная услуга")]
     public class TerritorialUsluga : DevExpress.Persistent.BaseImpl.BaseObject, ITreeNode
     {
         public TerritorialUsluga() { }

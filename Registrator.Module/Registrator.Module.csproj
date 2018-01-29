@@ -205,6 +205,7 @@
     <Compile Include="BusinessObjects\Dictionaries\BaseStacionar\CsgVidVme.cs" />
     <Compile Include="BusinessObjects\Dictionaries\BaseStacionar\StacionarBindDoctorHistory.cs" />
     <Compile Include="BusinessObjects\Dictionaries\Constants.cs" />
+    <Compile Include="BusinessObjects\Dictionaries\ServiceTemplate.cs" />
     <Compile Include="BusinessObjects\DispanserizaionCase.cs" />
     <Compile Include="BusinessObjects\DispanserizationService.cs" />
     <Compile Include="BusinessObjects\Event.cs" />

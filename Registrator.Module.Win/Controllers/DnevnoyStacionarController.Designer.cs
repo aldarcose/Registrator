@@ -42,9 +42,9 @@ namespace Registrator.Module.Win.Controllers
             this.ExportDataReestrAction.AcceptButtonCaption = "Экспорт";
             this.ExportDataReestrAction.CancelButtonCaption = "Отмена";
             this.ExportDataReestrAction.Caption = "Экспорт реестра";
-            this.ExportDataReestrAction.Category = "Export";
+            this.ExportDataReestrAction.Category = "Edit";
             this.ExportDataReestrAction.ConfirmationMessage = null;
-            this.ExportDataReestrAction.Id = "0a185e00-6f7c-4fc3-935c-faeb088d8cf0";
+            this.ExportDataReestrAction.Id = "ExportDataReestrAction";
             this.ExportDataReestrAction.TargetObjectType = typeof(Registrator.Module.BusinessObjects.DnevnoyStacionar);
             this.ExportDataReestrAction.TargetViewType = DevExpress.ExpressApp.ViewType.ListView;
             this.ExportDataReestrAction.ToolTip = null;

@@ -24,7 +24,7 @@ namespace Registrator.Module.BusinessObjects
 {
     [DefaultClassOptions]
     [RuleCriteria("", DefaultContexts.Save, "KoikoDni > 0",
-   "Кол-во койко-дней должно быть больше 0", SkipNullOrEmptyValues = false)]
+        "Кол-во койко-дней должно быть больше 0", SkipNullOrEmptyValues = false)]
     public class DnevnoyStacionar : XPObject
     {
         private MKB10 _diagnose;
@@ -44,14 +44,9 @@ namespace Registrator.Module.BusinessObjects
             {
                 // находим доктора с таким же Логином
                 var doctor = Session.FindObject<Doctor>(CriteriaOperator.Parse("UserName=?", createdBy.UserName));
-
                 if (doctor !=null)
-                {
-                    this.Doctor = doctor;
-                }
-
+                    Doctor = doctor;
             }
-            
         }
 
         /// <summary>
@@ -67,7 +62,7 @@ namespace Registrator.Module.BusinessObjects
         [XafDisplayName("Дата выписки")]
         [VisibleInListView(true)]
         [ImmediatePostData(true)]
-        [Appearance("DateVipiski_Invisible", Context="DetailView", Visibility = ViewItemVisibility.Hide, Criteria = "IsNull(DataVypiski)")]
+        // [Appearance("DateVipiski_Invisible", Context="DetailView", Visibility = ViewItemVisibility.Hide, Criteria = "IsNull(DataVypiski)")]
         public DateTime DataVypiski { get; set; }
 
         /// <summary>
@@ -111,15 +106,13 @@ namespace Registrator.Module.BusinessObjects
                 return new InOperator("MKB", KSGs.Select(t => t.Diagnose.MKB));
             }
         }
+
         [XafDisplayName("Вид мед. вмешательства")]
         [DataSourceCriteriaProperty("VidVmeCriteria")]
         [LookupEditorMode(LookupEditorMode.AllItemsWithSearch)]
         [Appearance("VidVme_Invisible", Visibility = ViewItemVisibility.Hide, Criteria = "IsNull(VidVmeCriteria)")]
         public VidMedVmeshatelstva VidVme { get; set; }
 
-        [VisibleInListView(false)]
-        [VisibleInLookupListView(false)]
-        [NonPersistent]
         [Browsable(false)]
         public CriteriaOperator VidVmeCriteria
         {
@@ -176,7 +169,7 @@ namespace Registrator.Module.BusinessObjects
         [Browsable(false)]
         public Napravlenie Napravlenie { get; set; }
 
-/// <summary>
+        /// <summary>
         /// Результат госпитализации, представляет исход заболевания для дневного стационара
         /// </summary>
         [XafDisplayName("Результат госпитализации")]
@@ -217,9 +210,6 @@ namespace Registrator.Module.BusinessObjects
         [LookupEditorMode(LookupEditorMode.AllItemsWithSearch)]
         public MedOrg FromLPU { get; set; }
 
-        [VisibleInListView(false)]
-        [VisibleInLookupListView(false)]
-        [NonPersistent]
         [Browsable(false)]
         private CriteriaOperator LPUCriteria
         {
@@ -249,7 +239,7 @@ namespace Registrator.Module.BusinessObjects
         /// Получаем запись для реестра HM в формате XElement
         /// </summary>
         /// <returns>Элемент XML</returns>
-        public XElement GetReestElement(int zapNumber)
+        public XElement GetReesterElement(int zapNumber)
         {
             const int isBaby = 0;
             string lpuCode = Settings.MOSettings.GetCurrentMOCode(Session);
@@ -268,17 +258,17 @@ namespace Registrator.Module.BusinessObjects
             zap.Add(new XElement("PR_NOV", (ResultatOplati == Oplata.NetResheniya) ? 0 : 1));
 
             //данные пациента
-            var polis = this.Pacient.Polises.First(t => (t.DateEnd == null) || (t.DateEnd != null && DateTime.Now <= t.DateEnd));
+            var polis = this.Pacient.Polises.FirstOrDefault(t => (t.DateEnd == null) || (t.DateEnd != null && DateTime.Now <= t.DateEnd));
             zap.Add(new XElement("PACIENT",
-                            new XElement("ID_PAC", this.Pacient.Oid), // GUID!
+                            new XElement("ID_PAC", Pacient.Oid), // GUID!
                             // вид полиса. Классификатор
-                            new XElement("VPOLIS", polis.Type.Code),
+                            new XElement("VPOLIS", polis != null && polis.Type != null ? polis.Type.Code : string.Empty),
                             // серия полиса
-                            new XElement("SPOLIS", polis.Serial),
+                            new XElement("SPOLIS", polis != null ? polis.Serial : string.Empty),
                             // номер полиса
-                            new XElement("NPOLIS", polis.Number),
+                            new XElement("NPOLIS", polis != null ? polis.Number : string.Empty),
                             // код СМО
-                            new XElement("SMO", polis.SMO.Code),
+                            new XElement("SMO", polis != null && polis.SMO != null ? polis.SMO.Code : string.Empty),
                             // признак новорожденного
                             new XElement("NOVOR", isBaby)));
 
@@ -312,8 +302,8 @@ namespace Registrator.Module.BusinessObjects
                     break;
             }
 
-            //данные случая
-            var sluch = new XElement("SLUCH", 
+            // данные случая
+            XElement sluch = new XElement("SLUCH", 
                             // порядковый номер случая для пациента. При слиянии с основным реестром следует изменить значение с учетом уже существующих случаев.
                             new XElement("IDCASE", this.Oid),
                             // код 2: Дневной стацинар. Классификатор условий оказания медицинской помощи (V006)
@@ -322,7 +312,7 @@ namespace Registrator.Module.BusinessObjects
                             new XElement("VIDPOM", 1),
                             // код 3: Плановая. Классификатор форм оказания медицинской помощи (V014)
                             new XElement("FOR_POM", 3),
-                            // Направление (госпитализация)	1 –плановая; 2 – экстренная
+                            // Направление (госпитализация)	1 – плановая; 2 – экстренная
                             new XElement("EXTR", (int)this.Napravlenie),
                             // Код МО. МО лечения, указывается в соответствии с реестром F003.
                             new XElement("LPU", lpuCode),
@@ -364,7 +354,7 @@ namespace Registrator.Module.BusinessObjects
                             // можно фильтровать по оплате (если 1, вообще не трогаем)
                             new XElement("OPLATA", 0));
             
-            //данные оказанной услуги
+            // данные оказанной услуги
             var medService = new XElement("USL",
                     // порядковый номер в пределах случая. Для дневного стационара всегда 1, т.к. оказывается одна услуга
                     new XElement("IDSERV", 1),
@@ -393,7 +383,7 @@ namespace Registrator.Module.BusinessObjects
                 );
 
             var criteria = VidVmeCriteria;
-            if (criteria != null)
+            if (!Object.ReferenceEquals(criteria, null))
             {
                 if (VidVme != null)
                 {
@@ -408,6 +398,24 @@ namespace Registrator.Module.BusinessObjects
             sluch.Add(medService);
             zap.Add(sluch);
             return zap;
+        }
+
+         /// <summary>Операнды свойств класса</summary>
+        public static new readonly FieldsClass Fields = new FieldsClass();
+        /// <summary>Операнды свойств класса</summary>
+        public new class FieldsClass : BaseObject.FieldsClass
+        {
+            /// <summary>Конструктор</summary>
+            public FieldsClass() { }
+            /// <summary>Конструктор</summary>
+            /// <param name="propertyName">Название вложенного свойства</param>
+            public FieldsClass(string propertyName) : base(propertyName) { }
+
+            /// <summary>Операнд свойства ResultatOplati</summary>
+            public OperandProperty ResultatOplati { get { return new OperandProperty(GetNestedName("ResultatOplati")); } }
+
+            /// <summary>Операнд свойства DataVypiski</summary>
+            public OperandProperty DataVypiski { get { return new OperandProperty(GetNestedName("DataVypiski")); } }
         }
     }
 
