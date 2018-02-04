@@ -26,12 +26,16 @@ namespace Registrator.Module.BusinessObjects.Abstract
     [XafDisplayName("Случаи")]
     public abstract class AbstractCase : BaseObject, IWorkflowCaseStateProvider
     {
+        public const string CaseCode = "Visitation";
+
+        private string num;
+
         public AbstractCase(Session session) : base(session) { }
 
         public override void AfterConstruction()
         {
             base.AfterConstruction();
-            this.DateIn = DateTime.Now;
+            this.DateIn = DateTime.Today;
 
             string MOCode = Settings.MOSettings.GetCurrentMOCode(Session);
             this.LPU = Session.FindObject<MedOrg>(CriteriaOperator.Parse("Code=?", MOCode));
@@ -39,6 +43,17 @@ namespace Registrator.Module.BusinessObjects.Abstract
 
             // пока используем ГУИД идентификатор объекта
             this.NHistory = this.Oid.ToString();
+            // Номер случая
+            this.Num = Sequence.GetNext(Session, CaseCode).ToString();
+        }
+
+        /// <summary>
+        /// Номер случая
+        /// </summary>
+        public string Num
+        {
+            get { return num; }
+            set { SetPropertyValue("Num", ref num, value); }
         }
 
         /// <summary>
@@ -203,6 +218,9 @@ namespace Registrator.Module.BusinessObjects.Abstract
 
             /// <summary>Операнд свойства DateOut</summary>
             public OperandProperty DateOut { get { return new OperandProperty(GetNestedName("DateOut")); } }
+
+            /// <summary>Операнд свойства Pacient</summary>
+            public Pacient.FieldsClass Pacient { get { return new Pacient.FieldsClass("Pacient"); } }
         }
     }
 
@@ -213,7 +231,6 @@ namespace Registrator.Module.BusinessObjects.Abstract
     public abstract class CommonCase : AbstractCase, IReestrTFoms
     {
         private VidUsloviyOkazMedPomoshi _uslovia;
-        private XPCollection<CommonService> services;
 
         public CommonCase(Session session) : base(session) { }
 
@@ -229,7 +246,9 @@ namespace Registrator.Module.BusinessObjects.Abstract
                 // находим доктора с таким же Логином
                 var doctor = Session.FindObject<Doctor>(CriteriaOperator.Parse("UserName=?", currentDoctor.UserName));
                 if (doctor != null)
+                {
                     this.Doctor = doctor;
+                }
             }
         }
 
@@ -465,6 +484,21 @@ namespace Registrator.Module.BusinessObjects.Abstract
         public abstract bool IsValidForReestr();
         public abstract XElement GetReestrElement();
         public abstract XElement GetReestrElement(int zapNumber);
+
+        /// <summary>Операнды свойств класса</summary>
+        public static new readonly FieldsClass Fields = new FieldsClass();
+        /// <summary>Операнды свойств класса</summary>
+        public new class FieldsClass : AbstractCase.FieldsClass
+        {
+            /// <summary>Конструктор</summary>
+            public FieldsClass() { }
+            /// <summary>Конструктор</summary>
+            /// <param name="propertyName">Название вложенного свойства</param>
+            public FieldsClass(string propertyName) : base(propertyName) { }
+
+            /// <summary>Операнд свойства Doctor</summary>
+            public Doctor.FieldsClass Doctor { get { return new Doctor.FieldsClass(GetNestedName("Doctor")); } }
+        }
     }
 
     /// <summary>

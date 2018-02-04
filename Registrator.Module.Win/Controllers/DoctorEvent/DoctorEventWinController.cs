@@ -125,6 +125,7 @@ namespace Registrator.Module.Win.Controllers
 
                         #region Кастомизация всплывающего меню на расписании врача
                         DoctorEvent recordedEvent = null;
+                        VisitCase visitCase = null;
 
                         // Всплывающее меню на расписании врача
                         scheduler.PopupMenuShowing += (o, e) =>
@@ -149,6 +150,11 @@ namespace Registrator.Module.Win.Controllers
                                     listView.CollectionSource.Reload();
                                     // Расписание на которое записан пациент
                                     recordedEvent = dEvent;
+                                    // Создание посещения для пациента
+                                    visitCase = VisitCase.CreateVisitCase(dEventObjectSpace,
+                                        dEventObjectSpace.GetObject(pacient),
+                                        dEvent.AssignedTo);
+                                    dEventObjectSpace.CommitChanges();
                                 }));
                             }
                             else if (dEvent != null && dEvent.Pacient != null)
@@ -163,6 +169,11 @@ namespace Registrator.Module.Win.Controllers
                                     // Отмена записи пациента на выбранное расписание
                                     if (recordedEvent != null && recordedEvent.Oid == dEvent.Oid)
                                         recordedEvent = null;
+                                    if (visitCase != null)
+                                    {
+                                        dEventObjectSpace.Delete(visitCase);
+                                        dEventObjectSpace.CommitChanges();
+                                    }
                                 }));
                             }
                         };

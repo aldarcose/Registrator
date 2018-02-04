@@ -148,6 +148,7 @@ namespace Registrator.Module.BusinessObjects
         }
 
         [Size(250)]
+        [Browsable(false)]
         public string Subject
         {
             get { return appointmentImpl.Subject; }
@@ -262,6 +263,8 @@ namespace Registrator.Module.BusinessObjects
             public Doctor.FieldsClass AssignedTo { get { return new Doctor.FieldsClass(GetNestedName("AssignedTo")); } }
             /// <summary>Операнд свойства Oid</summary>
             public OperandProperty Oid { get { return new OperandProperty(GetNestedName("Oid")); } }
+            /// <summary>Операнд свойства Pacient</summary>
+            public Pacient.FieldsClass Pacient { get { return new Pacient.FieldsClass(GetNestedName("Pacient")); } }
         }
     }
 

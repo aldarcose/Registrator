@@ -44,6 +44,7 @@
         <Member Name="Age" ImmediatePostData="True" />
       </OwnMembers>
     </Class>
+    <Class Name="Registrator.Module.BusinessObjects.Dictionaries.DoctorSpecTree" Caption="Специальность врача" />
     <Class Name="Registrator.Module.BusinessObjects.Dictionaries.ProtocolRecord">
       <OwnMembers>
         <Member Name="Type" AllowEdit="False" />
@@ -71,9 +72,52 @@
         <AppearanceRule Id="@cea7339c-a85d-40e5-9f10-e4a687f86469" Context="ListView" TargetItems="ResultatOplati" Criteria="[ResultatOplati] = ##Enum#Registrator.Module.BusinessObjects.Oplata,Polnaya#" BackColor="0, 192, 0" Enabled="False" IsNewNode="True" />
       </AppearanceRules>
     </Class>
+    <Class Name="Registrator.Module.BusinessObjects.Doctor" Caption="Врач" />
+    <Class Name="Registrator.Module.BusinessObjects.DoctorEvent" Caption="Запись на прием к врачу">
+      <OwnMembers>
+        <Member Name="AssignedTo" Caption="Доктор" />
+        <Member Name="EndOn" Caption="Конец" />
+        <Member Name="Label" Caption="Вид талона" />
+        <Member Name="Pacient" Caption="Пациент" />
+        <Member Name="SourceType" Caption="Источник записи на прием" />
+        <Member Name="StartOn" Caption="Начало" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Registrator.Module.BusinessObjects.DoctorEventLabel" Caption="Вид талона">
+      <OwnMembers>
+        <Member Name="Color" Caption="Цвет" />
+        <Member Name="Departments" Caption="Отделы" />
+        <Member Name="Name" Caption="Название" />
+        <Member Name="PaymentType" Caption="Вид оплаты" ToolTip="Вид оплаты, разрешенной к записи" />
+        <Member Name="SourceType" Caption="Источник записи" />
+      </OwnMembers>
+    </Class>
     <Class Name="Registrator.Module.BusinessObjects.Pacient">
       <OwnMembers>
+        <Member Name="CurrentDoctorRecordDate" Caption="Время записи" />
         <Member Name="VisitCaseServices" Caption="Услуги посещений" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Registrator.Module.Controllers.CloneDoctorEventParameters" Caption="Клонировать расписание">
+      <OwnMembers>
+        <Member Name="NextWeeksCount" Caption="Количество следующих недель" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Registrator.Module.Controllers.CreateDoctorEventParameters" Caption="Создать расписание">
+      <OwnMembers>
+        <Member Name="DateIn" Caption="Дата с" />
+        <Member Name="Friday" Caption="Пятница" />
+        <Member Name="Label" Caption="Вид талона" />
+        <Member Name="Monday" Caption="Понедельник" />
+        <Member Name="Norm" Caption="Норма" />
+        <Member Name="Saturday" Caption="Суббота" />
+        <Member Name="Sunday" Caption="Воскресенье" />
+        <Member Name="Thursday" Caption="Четверг" />
+        <Member Name="TimeIn" Caption="С" />
+        <Member Name="TimeOut" Caption="До" />
+        <Member Name="Tuesday" Caption="Вторник" />
+        <Member Name="Wednesday" Caption="Среда" />
+        <Member Name="WeeksCount" Caption="Количество недель" />
       </OwnMembers>
     </Class>
     <Class Name="Registrator.Module.Controllers.TextTemplateEditParameters">
@@ -261,7 +305,7 @@
           <Item Id="Country_ListView" ViewId="Country_ListView" ObjectKey="" IsNewNode="True" />
           <Item Id="District_ListView" ViewId="District_ListView" ObjectKey="" IsNewNode="True" />
           <Item Id="DoctorProfil_ListView" ViewId="DoctorProfil_ListView" ObjectKey="" IsNewNode="True" />
-          <Item Id="DoctorSpecTree_ListView" ViewId="DoctorSpecTree_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="DoctorSpecTree_ListView" ViewId="DoctorSpecTree_ListView" ObjectKey="" Caption="Специальности врачей" IsNewNode="True" />
           <Item Id="DoctorUslugi_ListView" ViewId="DoctorUslugi_ListView" ObjectKey="" IsNewNode="True" />
           <Item Id="FormaMedPomoshi_ListView" ViewId="FormaMedPomoshi_ListView" ObjectKey="" IsNewNode="True" />
           <Item Id="IshodZabolevaniya_ListView" ViewId="IshodZabolevaniya_ListView" ObjectKey="" IsNewNode="True" />
@@ -767,6 +811,27 @@
         </LayoutGroup>
       </Layout>
     </DetailView>
+    <ListView Id="Doctor_ListView">
+      <Columns>
+        <ColumnInfo Id="ChangePasswordOnFirstLogon" Index="-1" />
+        <ColumnInfo Id="DismissDate" Index="-1" />
+        <ColumnInfo Id="FederalCode" Index="-1" />
+        <ColumnInfo Id="FullName" Index="-1" />
+        <ColumnInfo Id="HireDate" Index="-1" />
+        <ColumnInfo Id="InnerCode" Index="-1" />
+        <ColumnInfo Id="Otdelenie" Index="-1" />
+        <ColumnInfo Id="Position" Index="-1" />
+        <ColumnInfo Id="SNILS" Index="-1" />
+        <ColumnInfo Id="SpecialityTree" Index="-1" />
+        <ColumnInfo Id="LastName" Index="0" />
+        <ColumnInfo Id="FirstName" Index="1" />
+        <ColumnInfo Id="MiddleName" Index="2" />
+        <ColumnInfo Id="Birthdate" Index="3" />
+        <ColumnInfo Id="Scheduling" Index="4" />
+        <ColumnInfo Id="IsActive" Index="5" />
+        <ColumnInfo Id="UserName" Index="6" />
+      </Columns>
+    </ListView>
     <ListView Id="Doctor_LookupListView">
       <Columns>
         <ColumnInfo Id="FullName" IsPassword="False" />
@@ -1302,7 +1367,25 @@
         </LayoutGroup>
       </Layout>
     </DetailView>
-    <ListView Id="Pacient_ListView" DataAccessMode="Server" Criteria="False" />
+    <ListView Id="Pacient_ListView" DataAccessMode="Server" Criteria="False">
+      <Columns>
+        <ColumnInfo Id="Age" Index="-1" />
+        <ColumnInfo Id="BornWeight" Index="-1" />
+        <ColumnInfo Id="ChildParent" Index="-1" />
+        <ColumnInfo Id="CurrentPolis" Index="-1" />
+        <ColumnInfo Id="Disability" Index="-1" />
+        <ColumnInfo Id="IsEarlyBorn" Index="-1" />
+        <ColumnInfo Id="IsInogorodniy" Index="-1" />
+        <ColumnInfo Id="IsNewBorn" Index="-1" />
+        <ColumnInfo Id="PhoneNumber" Index="-1" />
+        <ColumnInfo Id="SNILS" Index="-1" />
+        <ColumnInfo Id="Uchastok" Index="-1" Width="62" />
+        <ColumnInfo Id="LastName" Index="0" />
+        <ColumnInfo Id="FirstName" Index="1" />
+        <ColumnInfo Id="MiddleName" Index="2" />
+        <ColumnInfo Id="Birthdate" Index="3" />
+      </Columns>
+    </ListView>
     <ListView Id="Pacient_VisitCaseServices_ListView" IsGroupPanelVisible="False" MasterDetailMode="ListViewAndDetailView">
       <Columns>
         <ColumnInfo Id="Oid" SortOrder="Ascending" GroupIndex="0" PropertyName="Case.Oid" />

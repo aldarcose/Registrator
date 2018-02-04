@@ -23,7 +23,7 @@ namespace Registrator.Module.BusinessObjects
     [XafDisplayName("Посещение")]
     public class VisitCase : CommonCase
     {
-        private MestoObsluzhivaniya _mesto;
+        private MestoObsluzhivaniya mesto;
         private MKBWithType mainDiagnose;
         private const int minCodeForResultat = 301;
         private const int maxCodeForResultat = 315;
@@ -109,10 +109,10 @@ namespace Registrator.Module.BusinessObjects
         [XafDisplayName("Место обслуживания")]
         public MestoObsluzhivaniya Mesto
         {
-            get { return _mesto; }
+            get { return mesto; }
             set
             {
-                SetPropertyValue("Mesto", ref _mesto, value);
+                SetPropertyValue("Mesto", ref mesto, value);
                 OnChanged("Resultat");
             }
         }
@@ -134,6 +134,26 @@ namespace Registrator.Module.BusinessObjects
                 return mainDiagnose;
             }
         }
+
+        /// <summary>
+        /// Создать случай посещения с услугой для пациента
+        /// </summary>
+        /// <param name="objectSpace"></param>
+        /// <param name="pacient"></param>
+        /// <param name="doctor"></param>
+        public static VisitCase CreateVisitCase(IObjectSpace objectSpace, Pacient pacient, Doctor doctor)
+        {
+            Doctor currentDoctor = objectSpace.GetObject((Doctor)SecuritySystem.CurrentUser);
+            VisitCase newVisitCase = objectSpace.CreateObject<VisitCase>();
+            newVisitCase.Doctor = doctor;
+            newVisitCase.Pacient = pacient;
+            MedService newMedService = objectSpace.CreateObject<MedService>();
+            newMedService.Case = newVisitCase;
+            newMedService.Doctor = doctor;
+            return newVisitCase;
+        }
+
+        #region overriden
 
         public override CriteriaOperator ResultatCriteria
         {
@@ -307,5 +327,7 @@ namespace Registrator.Module.BusinessObjects
         {
             get { return CriteriaOperator.Parse("1=1"); }
         }
+
+        #endregion
     }
 }

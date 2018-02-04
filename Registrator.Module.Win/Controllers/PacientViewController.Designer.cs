@@ -127,6 +127,7 @@ namespace Registrator.Module.Win.Controllers
             this.Actions.Add(this.CopyAddressToFactAction);
             this.Actions.Add(this.CopyAddressFromFactAction);
             this.Actions.Add(this.OpenDoctorEventListViewAction);
+            this.TargetObjectType = typeof(Registrator.Module.BusinessObjects.Pacient);
 
         }
 

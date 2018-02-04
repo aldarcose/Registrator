@@ -47,8 +47,6 @@ namespace Registrator.Module.BusinessObjects
                 Doctor = Session.FindObject<Doctor>(CriteriaOperator.Parse("UserName=?", createdBy.UserName));
             }
 
-            this.DateIn = DateTime.Now;
-
             string MOCode = Settings.MOSettings.GetCurrentMOCode(Session);
             this.LPU = Session.FindObject<MedOrg>(CriteriaOperator.Parse("Code=?", MOCode));
             this.LPU_1 = MOCode;

@@ -226,15 +226,6 @@ namespace Registrator.Module.BusinessObjects.Abstract
         {
             base.AfterConstruction();
             
-            var createdBy = SecuritySystem.CurrentUser as Doctor;
-            if (createdBy != null)
-            {
-                // находим доктора с таким же Логином
-                var doctor = Session.FindObject<Doctor>(CriteriaOperator.Parse("UserName=?", createdBy.UserName));
-                if (doctor != null)
-                    this.Doctor = doctor;
-            }
-
             this.DateIn = DateTime.Now;
             string MOCode = Settings.MOSettings.GetCurrentMOCode(Session);
             this.LPU = Session.FindObject<MedOrg>(CriteriaOperator.Parse("Code=?", MOCode));

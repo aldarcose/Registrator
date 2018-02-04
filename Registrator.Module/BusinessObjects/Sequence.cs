@@ -12,7 +12,6 @@ namespace Registrator.Module.BusinessObjects
     /// </summary>
     public class Sequence : BaseObject
     {
-        private static Session innerSession;
         private static object locker = new object();
 
         private string code;
@@ -35,7 +34,7 @@ namespace Registrator.Module.BusinessObjects
         /// <summary>
         /// Код последовательности
         /// </summary>
-        [Size(200), Indexed("Owner", Unique = true)]
+        [Size(200)]
         [RuleRequiredField("Registrator.Module.BusinessObjects.Sequence.CodeRequired", DefaultContexts.Save)]
         public string Code
         {
@@ -238,8 +237,6 @@ namespace Registrator.Module.BusinessObjects
 
             /// <summary>Операнд свойства Code</summary>
             public OperandProperty Code { get { return new OperandProperty(GetNestedName("Code")); } }
-            /// <summary>Поля класса Sequence</summary>
-            public static new readonly FieldsClass Fields = new FieldsClass();
         }
     }
 }

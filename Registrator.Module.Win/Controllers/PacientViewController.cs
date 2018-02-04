@@ -30,9 +30,9 @@ namespace Registrator.Module.Win.Controllers
 {
     public partial class PacientViewController : ViewController
     {
-        private MainRibbonFormV2 _templateMain;
-
+        private MainRibbonFormV2 templateMain;
         private static LongOperationThread _longOperationThread;
+
         public PacientViewController()
         {
             InitializeComponent();
@@ -42,34 +42,17 @@ namespace Registrator.Module.Win.Controllers
         protected override void OnActivated()
         {
             base.OnActivated();
-            // Perform various tasks depending on the target View.
-            if (Application.MainWindow == null)
+
+            templateMain = Application.MainWindow.Template as MainRibbonFormV2;
+            if (Application.MainWindow == null) 
                 return;
-            _templateMain = Application.MainWindow.Template as MainRibbonFormV2;
-            if (_templateMain != null)
+
+            Doctor curDoctor = (Doctor)SecuritySystem.CurrentUser;
+            bool isAdmin = curDoctor.DoctorRoles.Any(t => t.IsAdministrative);
+            if (templateMain != null && View is ListView && isAdmin)
             {
-                if (View.Id == "Pacient_DetailView")
-                {
-                    /*
-                    _templateMain.Ribbon.SelectedPage = _templateMain.Ribbon.Pages[0];
-                    var pacient = View.CurrentObject as Pacient;
-                    if (pacient != null)
-                    {
-                        DisabilitySetView(false);
-                    }
-
-                    PropertyEditor disabilityEditor = ((DetailView)View).FindItem("Disability.Invalidnost") as PropertyEditor;
-                    if (disabilityEditor != null)
-                    {
-                        disabilityEditor.ControlValueChanged += propertyEditorDisability_ControlValueChanged;
-                    }*/
-                }
-
-                if (View is ListView && View.Id == "Pacient_ListView")
-                {
-                    ListView l = View as ListView;
-                    l.ControlsCreated += ShowActionPopup;
-                }
+                ListView l = View as ListView;
+                l.ControlsCreated += ShowActionPopup;
             }
 
             /*
@@ -92,56 +75,6 @@ namespace Registrator.Module.Win.Controllers
             */
         }
 
-        private void propertyEditorDisability_ControlValueChanged(object sender, EventArgs e)
-        {
-            var disabilityEditor = sender as PropertyEditor;
-            if (disabilityEditor != null)
-            {
-                var value = (Invalidnost)disabilityEditor.ControlValue;
-                DisabilitySetView(value != Invalidnost.Net);
-            }
-        }
-
-        private void DisabilitySetView(bool show)
-        {
-            PropertyEditor disabilityGroupEditor = ((DetailView)View).FindItem("Disability.InvalidnostGroup") as PropertyEditor;
-            PropertyEditor disabilityChildhoodEditor = ((DetailView)View).FindItem("Disability.InvalidDetstva") as PropertyEditor;
-
-            if (disabilityChildhoodEditor == null || disabilityGroupEditor == null)
-                return;
-
-            if (!show)
-            {
-                disabilityChildhoodEditor.AllowEdit.SetItemValue("DisabilityChildReadOnly", false);
-                disabilityGroupEditor.AllowEdit.SetItemValue("DisabilityGroupReadOnly", false);
-            }
-            else
-            {
-                disabilityChildhoodEditor.AllowEdit.SetItemValue("DisabilityChildReadOnly", true);
-                disabilityGroupEditor.AllowEdit.SetItemValue("DisabilityGroupReadOnly", true);
-            }
-
-            disabilityChildhoodEditor.Refresh();
-            disabilityGroupEditor.Refresh();
-        }
-
-        protected override void OnDeactivated()
-        {
-            var view = View as DetailView;
-            if (view != null)
-            {
-                /*
-                var pacient = view.CurrentObject as Pacient;
-                if (pacient != null)
-                {
-                    pacient.Cases.CollectionChanged -= pacient.CasesCollectionChanged;
-                    pacient.Polises.CollectionChanged -= pacient.PolisesCollectionChanged;
-                }*/
-            }
-            // Unsubscribe from previously subscribed events and release other references and resources.s
-            base.OnDeactivated();
-        }
-
         private void ShowActionPopup(object sender, EventArgs e)
         {
             if (_longOperationThread != null && _longOperationThread.IsWorking == false)
@@ -154,27 +87,6 @@ namespace Registrator.Module.Win.Controllers
             {
                 PopupWindowShowActionHelper helper = new PopupWindowShowActionHelper(pacientFilterAction);
                 helper.ShowPopupWindow();
-            }
-        }
-
-        protected override void OnViewControlsCreated()
-        {
-            base.OnViewControlsCreated();
-            // Access and customize the target View control.
-
-            var view = View as DetailView;
-            if (view != null)
-            {
-                /*
-                var pacient = view.CurrentObject as Pacient;
-                if (pacient != null)
-                {
-                    // реагируем на изменения в случаях
-                    pacient.Cases.CollectionChanged += pacient.CasesCollectionChanged;
-
-                    // реагируем на изменения в полисах
-                    pacient.Polises.CollectionChanged += pacient.PolisesCollectionChanged;
-                }*/
             }
         }
 

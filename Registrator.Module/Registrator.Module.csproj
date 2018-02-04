@@ -318,6 +318,9 @@
     <Compile Include="Controllers\MKBWithDispInfoBeforeViewController.Designer.cs">
       <DependentUpon>MKBWithDispInfoBeforeViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\PacientListViewController.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controllers\TextTemplateViewController.cs">
       <SubType>Component</SubType>
     </Compile>

@@ -17,6 +17,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Xml.Linq;
 using Registrator.Module.BusinessObjects.Interfaces;
+using DevExpress.Persistent.BaseImpl;
 
 namespace Registrator.Module.BusinessObjects
 {
@@ -34,6 +35,19 @@ namespace Registrator.Module.BusinessObjects
         {
             base.AfterConstruction();
             IsNewBorn = true;
+        }
+
+        /// <summary>
+        /// Дата записи пациента к текущему врачу
+        /// </summary>
+        [VisibleInDetailView(false)]
+        [VisibleInLookupListView(false)]
+        [PersistentAlias("[<Registrator.Module.BusinessObjects.DoctorEvent>][AssignedTo.Oid = CurrentUserId() and " +
+            "Pacient.Oid = ^.Oid and StartOn >= Today() and StartOn < AddDays(Today(), 1)].Max(StartOn)")]
+        [ModelDefault("DisplayFormat", "{0:HH:mm}")]
+        public DateTime? CurrentDoctorRecordDate
+        {
+            get { return (DateTime?)EvaluateAlias("CurrentDoctorRecordDate"); }
         }
 
         /// <summary>
@@ -740,5 +754,21 @@ namespace Registrator.Module.BusinessObjects
             return GetReestrElement();
         }
         #endregion
+
+
+        /// <summary>Операнды свойств класса</summary>
+        public static new readonly FieldsClass Fields = new FieldsClass();
+        /// <summary>Операнды свойств класса</summary>
+        public new class FieldsClass : BaseObject.FieldsClass
+        {
+            /// <summary>Конструктор</summary>
+            public FieldsClass() { }
+            /// <summary>Конструктор</summary>
+            /// <param name="propertyName">Название вложенного свойства</param>
+            public FieldsClass(string propertyName) : base(propertyName) { }
+            
+            /// <summary>Операнд свойства Oid</summary>
+            public OperandProperty Oid { get { return new OperandProperty(GetNestedName("Oid")); } }
+        }
     }
 }

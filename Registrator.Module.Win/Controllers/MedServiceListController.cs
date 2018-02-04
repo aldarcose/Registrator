@@ -91,7 +91,7 @@ namespace Registrator.Module.Win.Controllers
                 ObjectSpace.FindObject<VisitCase>(VisitCase.Fields.Oid == (Guid)val) : null;
             GridGroupRowInfo info = e.Info as GridGroupRowInfo;
             if (info.Column.FieldName == "Case.Oid")
-                info.GroupText = string.Format("Посещение ({0})", visitCase != null &&
+                info.GroupText = string.Format("Посещение {0} ({1})", visitCase.Num, visitCase != null &&
                     visitCase.MainDiagnose != null && visitCase.MainDiagnose.Diagnose != null ?
                     visitCase.MainDiagnose.Diagnose.MKB : null);
         }
