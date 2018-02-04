@@ -316,7 +316,6 @@
     <Compile Include="Editors\AurumCheckedListBoxControl.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Editors\CheckedListPropertyEditor.cs" />
     <Compile Include="Editors\CustomCheckedListBoxEdit.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -421,9 +420,6 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="Controllers\ReadMe.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Editors\ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Images\ReadMe.txt" />

@@ -16,6 +16,9 @@ using Registrator.Module.BusinessObjects.Interfaces;
 using System;
 using System.ComponentModel;
 using System.Xml.Linq;
+using Registrator.Module.BusinessObjects.Enums;
+using DevExpress.ExpressApp.Model;
+using DevExpress.ExpressApp.Utils;
 
 namespace Registrator.Module.BusinessObjects.Abstract
 {
@@ -359,6 +362,7 @@ namespace Registrator.Module.BusinessObjects.Abstract
             set
             {
                 SetPropertyValue("ServiceTemplate", ref serviceTemplate, value);
+                /*
                 if (!IsLoading && !IsSaving && serviceTemplate != null)
                 {
                     CommonProtocol.Anamnez = serviceTemplate.Anamnez;
@@ -376,7 +380,77 @@ namespace Registrator.Module.BusinessObjects.Abstract
                     OnChanged("Diagnoses");
                     
                     CommonProtocol.Save();
+                }*/
+            }
+        }
+
+        /// <summary>
+        /// Зубы
+        /// </summary>
+        [NonPersistent]
+        [ModelDefault("PropertyEditorType", "Registrator.Module.Win.Editors.EnumFlagsPropertyEditor")]
+        public Teeth Teeth { get; set; }
+
+        /// <summary>
+        /// Молочный прикус
+        /// </summary>
+        [NonPersistent]
+        [ModelDefault("PropertyEditorType", "Registrator.Module.Win.Editors.EnumFlagsPropertyEditor")]
+        public MilkByteTeeth MilkByteTeeth { get; set; }
+
+        /// <summary>
+        /// Установить шаблон
+        /// </summary>
+        [Action(PredefinedCategory.PopupActions)]
+        public void AcceptServiceTemplate()
+        {
+            if (ServiceTemplate != null)
+            {
+                string teethText = null;
+                string milkbyteTeethText = null;
+
+                if (Teeth != Enums.Teeth.None)
+                {
+                    List<string> list = new List<string>();
+                    foreach (Teeth tooth in Enum.GetValues(typeof(Teeth)))
+                    {
+                        if (tooth == Enums.Teeth.None) continue;
+                        if (Teeth.HasFlag(tooth)) list.Add(CaptionHelper.GetDisplayText(tooth));
+                    }
+
+                    teethText = string.Join(", ", list);
                 }
+                if (MilkByteTeeth != Enums.MilkByteTeeth.None)
+                {
+                    List<string> list = new List<string>();
+                    foreach (MilkByteTeeth tooth in Enum.GetValues(typeof(MilkByteTeeth)))
+                    {
+                        if (tooth == Enums.MilkByteTeeth.None) continue;
+                        if (MilkByteTeeth.HasFlag(tooth)) list.Add(CaptionHelper.GetDisplayText(tooth));
+                    }
+
+                    milkbyteTeethText = string.Join(", ", list);
+                }
+
+                string replacement = !string.IsNullOrEmpty(teethText) && !string.IsNullOrEmpty(milkbyteTeethText) ?
+                    string.Concat(teethText, ", ", milkbyteTeethText) : 
+                    string.Concat(teethText, milkbyteTeethText);
+
+                CommonProtocol.Anamnez = serviceTemplate.Anamnez.Replace("{replacement}", replacement);
+                CommonProtocol.Complain = serviceTemplate.Complain.Replace("{replacement}", replacement);
+                CommonProtocol.ObjectiveStatus = serviceTemplate.ObjectiveStatus.Replace("{replacement}", replacement);
+                CommonProtocol.Recommendation = serviceTemplate.Recommendations.Replace("{replacement}", replacement);
+                Usluga = serviceTemplate.Service;
+                Diagnoses.Add(new MKBWithType(Session)
+                {
+                    Diagnose = serviceTemplate.Diagnose
+                });
+
+                OnChanged("CommonProtocol");
+                OnChanged("Usluga");
+                OnChanged("Diagnoses");
+
+                CommonProtocol.Save();
             }
         }
 
@@ -385,7 +459,10 @@ namespace Registrator.Module.BusinessObjects.Abstract
         {
             get
             {
-                return ServiceTemplate.Fields.Oid == ((Doctor)SecuritySystem.CurrentUser).SpecialityTree.Oid;
+                Doctor currentDoctor = (Doctor)SecuritySystem.CurrentUser;
+                if (currentDoctor.SpecialityTree == null)
+                    return CriteriaOperator.Parse("1=1");
+                return ServiceTemplate.Fields.DoctorSpec.Oid == currentDoctor.SpecialityTree.Oid;
             }
         }
 

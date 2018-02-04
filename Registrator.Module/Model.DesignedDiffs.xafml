@@ -2,6 +2,7 @@
 <Application Title="Registrator" Logo="ExpressAppLogo" Copyright="Sayan Damdinov">
   <ActionDesign>
     <Actions>
+      <Action Id="CommonService.AcceptServiceTemplate" Caption="Установить шаблон" />
       <Action Id="EditTextTemplateAction" ImageName="Action_Edit" SelectionDependencyType="Independent" />
     </Actions>
   </ActionDesign>
@@ -20,6 +21,8 @@
       </AppearanceRules>
       <OwnMembers>
         <Member Name="Diagnoses" Caption="Диагнозы" />
+        <Member Name="MilkByteTeeth" Caption="Зубы (молочный прикус)" />
+        <Member Name="Teeth" Caption="Зубы" />
       </OwnMembers>
     </Class>
     <Class Name="Registrator.Module.BusinessObjects.Dictionaries.CommonProtocol">
@@ -79,6 +82,67 @@
       </OwnMembers>
     </Class>
   </BOModel>
+  <Localization>
+    <LocalizationGroup Name="Enums">
+      <LocalizationGroup Name="Registrator.Module.BusinessObjects.Enums.MilkByteTeeth" Value="Зубы (молочный прикус)">
+        <LocalizationItem Name="None" Value="Нет" />
+        <LocalizationItem Name="Tooth51" Value="51" />
+        <LocalizationItem Name="Tooth52" Value="52" />
+        <LocalizationItem Name="Tooth53" Value="53" />
+        <LocalizationItem Name="Tooth54" Value="54" />
+        <LocalizationItem Name="Tooth55" Value="55" />
+        <LocalizationItem Name="Tooth61" Value="61" />
+        <LocalizationItem Name="Tooth62" Value="62" />
+        <LocalizationItem Name="Tooth63" Value="63" />
+        <LocalizationItem Name="Tooth64" Value="64" />
+        <LocalizationItem Name="Tooth65" Value="65" />
+        <LocalizationItem Name="Tooth71" Value="71" />
+        <LocalizationItem Name="Tooth72" Value="72" />
+        <LocalizationItem Name="Tooth73" Value="73" />
+        <LocalizationItem Name="Tooth74" Value="74" />
+        <LocalizationItem Name="Tooth75" Value="75" />
+        <LocalizationItem Name="Tooth81" Value="81" />
+        <LocalizationItem Name="Tooth82" Value="82" />
+        <LocalizationItem Name="Tooth83" Value="83" />
+        <LocalizationItem Name="Tooth84" Value="84" />
+        <LocalizationItem Name="Tooth85" Value="85" />
+      </LocalizationGroup>
+      <LocalizationGroup Name="Registrator.Module.BusinessObjects.Enums.Teeth" Value="Зубы">
+        <LocalizationItem Name="None" Value="Нет" />
+        <LocalizationItem Name="Tooth11" Value="11" />
+        <LocalizationItem Name="Tooth12" Value="12" />
+        <LocalizationItem Name="Tooth13" Value="13" />
+        <LocalizationItem Name="Tooth14" Value="14" />
+        <LocalizationItem Name="Tooth15" Value="15" />
+        <LocalizationItem Name="Tooth16" Value="16" />
+        <LocalizationItem Name="Tooth17" Value="17" />
+        <LocalizationItem Name="Tooth18" Value="18" />
+        <LocalizationItem Name="Tooth21" Value="21" />
+        <LocalizationItem Name="Tooth22" Value="22" />
+        <LocalizationItem Name="Tooth23" Value="23" />
+        <LocalizationItem Name="Tooth24" Value="24" />
+        <LocalizationItem Name="Tooth25" Value="25" />
+        <LocalizationItem Name="Tooth26" Value="26" />
+        <LocalizationItem Name="Tooth27" Value="27" />
+        <LocalizationItem Name="Tooth28" Value="28" />
+        <LocalizationItem Name="Tooth31" Value="31" />
+        <LocalizationItem Name="Tooth32" Value="32" />
+        <LocalizationItem Name="Tooth33" Value="33" />
+        <LocalizationItem Name="Tooth34" Value="34" />
+        <LocalizationItem Name="Tooth35" Value="35" />
+        <LocalizationItem Name="Tooth37" Value="37" />
+        <LocalizationItem Name="Tooth38" Value="38" />
+        <LocalizationItem Name="Tooth41" Value="41" />
+        <LocalizationItem Name="Tooth42" Value="42" />
+        <LocalizationItem Name="Tooth43" Value="43" />
+        <LocalizationItem Name="Tooth44" Value="44" />
+        <LocalizationItem Name="Tooth45" Value="45" />
+        <LocalizationItem Name="Tooth46" Value="46" />
+        <LocalizationItem Name="Tooth47" Value="47" />
+        <LocalizationItem Name="Tooth48" Value="48" />
+      </LocalizationGroup>
+    </LocalizationGroup>
+  </Localization>
   <NavigationItems DefaultChildItemsDisplayStyle="List" DefaultLeafImageName="BO_List" NavigationStyle="TreeList" StartupNavigationItem="">
     <Items>
       <Item Id="Reports" Index="-1" Caption="Отчеты" />
@@ -883,6 +947,7 @@
     <ListView Id="MedProfil_ListView" AllowNew="False" AllowDelete="True" />
     <DetailView Id="MedService_DetailView">
       <Items>
+        <ActionContainerViewItem Id="@cfba7c16-3d92-4cfc-b414-c9c3f931952a" ActionContainer="PopupActions" Caption="Установить шаблон" IsNewNode="True" />
         <PropertyEditor Id="VisitCase.Cel" PropertyName="VisitCase.Cel" IsNewNode="True" />
         <PropertyEditor Id="VisitCase.Mesto" PropertyName="VisitCase.Mesto" IsNewNode="True" />
       </Items>
@@ -902,36 +967,43 @@
             </LayoutGroup>
             <TabbedGroup Id="Data" Index="0" RelativeSize="100" IsNewNode="True">
               <LayoutGroup Id="CommonService" Index="0" Caption="Общие данные" RelativeSize="100" ShowCaption="True" IsNewNode="True">
-                <LayoutItem Id="VisitCase.Cel" ViewItem="VisitCase.Cel" Index="0" RelativeSize="4.3422733077905491" IsNewNode="True" />
-                <LayoutItem Id="VisitCase.Mesto" ViewItem="VisitCase.Mesto" Index="1" RelativeSize="3.3205619412515963" IsNewNode="True" />
-                <LayoutItem Id="Usluga" ViewItem="Usluga" SizeConstraintsType="Default" Index="2" RelativeSize="3.3205619412515963" IsNewNode="True" />
-                <LayoutItem Id="KolUslug" Index="3" ViewItem="KolUslug" RelativeSize="3.3205619412515963" SizeConstraintsType="Default" IsNewNode="True" />
-                <LayoutItem Id="Doctor" ViewItem="Doctor" SizeConstraintsType="Default" Index="4" RelativeSize="3.3205619412515963" IsNewNode="True" />
-                <LayoutGroup Id="Dates" ShowCaption="False" Direction="Vertical" Index="5" RelativeSize="8.1736909323116222" Caption="Дата начала оказания услуги" IsNewNode="True">
-                  <LayoutItem Id="DateIn" ViewItem="DateIn" SizeConstraintsType="Default" Index="0" RelativeSize="50" IsNewNode="True" />
-                  <LayoutItem Id="ServiceTemplate" ViewItem="ServiceTemplate" Index="1" RelativeSize="50" IsNewNode="True" />
+                <LayoutItem Id="VisitCase.Cel" ViewItem="VisitCase.Cel" Index="0" RelativeSize="4.2079207920792081" IsNewNode="True" />
+                <LayoutItem Id="VisitCase.Mesto" ViewItem="VisitCase.Mesto" Index="1" RelativeSize="3.217821782178218" IsNewNode="True" />
+                <LayoutItem Id="Usluga" ViewItem="Usluga" SizeConstraintsType="Default" Index="2" RelativeSize="3.217821782178218" IsNewNode="True" />
+                <LayoutItem Id="KolUslug" Index="3" ViewItem="KolUslug" RelativeSize="3.217821782178218" SizeConstraintsType="Default" IsNewNode="True" />
+                <LayoutItem Id="Doctor" ViewItem="Doctor" SizeConstraintsType="Default" Index="4" RelativeSize="3.217821782178218" IsNewNode="True" />
+                <LayoutGroup Id="Dates" ShowCaption="False" Direction="Vertical" Index="5" RelativeSize="7.5495049504950495" Caption="Дата начала оказания услуги" IsNewNode="True">
+                  <LayoutItem Id="DateIn" ViewItem="DateIn" SizeConstraintsType="Default" Index="0" RelativeSize="52.459016393442624" IsNewNode="True" />
+                  <LayoutItem Id="ServiceTemplate" ViewItem="ServiceTemplate" Index="1" RelativeSize="47.540983606557376" IsNewNode="True" />
                 </LayoutGroup>
-                <TabbedGroup Id="@252aad17-fe87-4ac7-a50a-3e01b6f09cb9" Index="6" RelativeSize="74.201787994891447" IsNewNode="True">
+                <LayoutGroup Id="Autoe2e33e5c-1d82-4fee-ad28-f0583fd76f60" ShowCaption="False" Caption="Autoe2e33e5c-1d82-4fee-ad28-f0583fd76f60(13)" Direction="Horizontal" Index="6" RelativeSize="4.7029702970297027" IsNewNode="True">
+                  <LayoutGroup Id="Autodacf0eac-98f9-4de2-bd27-b253d8055cf7" ShowCaption="False" Caption="Autodacf0eac-98f9-4de2-bd27-b253d8055cf7(14)" Index="0" RelativeSize="51.898734177215189" IsNewNode="True">
+                    <LayoutItem Id="Teeth" ViewItem="Teeth" Index="0" RelativeSize="100" IsNewNode="True" />
+                  </LayoutGroup>
+                  <LayoutItem Id="MilkByteTeeth" ViewItem="MilkByteTeeth" Index="1" RelativeSize="48.101265822784811" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutItem Id="@cfba7c16-3d92-4cfc-b414-c9c3f931952a" ViewItem="@cfba7c16-3d92-4cfc-b414-c9c3f931952a" Index="7" RelativeSize="2.9702970297029703" IsNewNode="True" />
+                <TabbedGroup Id="@252aad17-fe87-4ac7-a50a-3e01b6f09cb9" Index="8" RelativeSize="67.6980198019802" IsNewNode="True">
                   <LayoutGroup Id="Diagnoses" ShowCaption="True" Index="0" RelativeSize="100" IsNewNode="True">
                     <LayoutItem Id="Diagnoses" ViewItem="Diagnoses" Index="0" RelativeSize="100" IsNewNode="True" />
                   </LayoutGroup>
                 </TabbedGroup>
               </LayoutGroup>
               <LayoutGroup Id="@00125a52-d82b-4714-bd25-33b7ae2fcde8" ShowCaption="True" Direction="Horizontal" Index="1" RelativeSize="100" Caption="Анамнез" IsNewNode="True">
-                <LayoutItem Id="CommonProtocol.AnamnezTemplates" ViewItem="CommonProtocol.AnamnezTemplates" Index="0" RelativeSize="44.496487119437937" IsNewNode="True" />
-                <LayoutItem Id="CommonProtocol.Anamnez" ShowCaption="False" ViewItem="CommonProtocol.Anamnez" Index="1" RelativeSize="55.503512880562063" IsNewNode="True" />
+                <LayoutItem Id="CommonProtocol.AnamnezTemplates" ViewItem="CommonProtocol.AnamnezTemplates" Index="0" RelativeSize="42.0253164556962" IsNewNode="True" />
+                <LayoutItem Id="CommonProtocol.Anamnez" ShowCaption="False" ViewItem="CommonProtocol.Anamnez" Index="1" RelativeSize="57.9746835443038" IsNewNode="True" />
               </LayoutGroup>
               <LayoutGroup Id="@210a5f45-c6a7-4c58-88ef-0e0fa01e9e54" ShowCaption="True" Direction="Horizontal" Index="2" RelativeSize="100" Caption="Жалобы" IsNewNode="True">
-                <LayoutItem Id="CommonProtocol.ComplainTemplates" ViewItem="CommonProtocol.ComplainTemplates" Index="0" RelativeSize="44.496487119437937" IsNewNode="True" />
-                <LayoutItem Id="CommonProtocol.Complain" ShowCaption="False" ViewItem="CommonProtocol.Complain" Index="1" RelativeSize="55.503512880562063" IsNewNode="True" />
+                <LayoutItem Id="CommonProtocol.ComplainTemplates" ViewItem="CommonProtocol.ComplainTemplates" Index="0" RelativeSize="42.0253164556962" IsNewNode="True" />
+                <LayoutItem Id="CommonProtocol.Complain" ShowCaption="False" ViewItem="CommonProtocol.Complain" Index="1" RelativeSize="57.9746835443038" IsNewNode="True" />
               </LayoutGroup>
               <LayoutGroup Id="@b8a36eef-ab47-4674-a300-36dcd237c204" ShowCaption="True" Direction="Horizontal" Index="3" RelativeSize="100" Caption="Рекомендации" IsNewNode="True">
-                <LayoutItem Id="CommonProtocol.RecomendTemplates" ViewItem="CommonProtocol.RecomendTemplates" Index="0" RelativeSize="44.496487119437937" IsNewNode="True" />
-                <LayoutItem Id="CommonProtocol.Recommendation" ShowCaption="False" ViewItem="CommonProtocol.Recommendation" Index="1" RelativeSize="55.503512880562063" IsNewNode="True" />
+                <LayoutItem Id="CommonProtocol.RecomendTemplates" ViewItem="CommonProtocol.RecomendTemplates" Index="0" RelativeSize="42.0253164556962" IsNewNode="True" />
+                <LayoutItem Id="CommonProtocol.Recommendation" ShowCaption="False" ViewItem="CommonProtocol.Recommendation" Index="1" RelativeSize="57.9746835443038" IsNewNode="True" />
               </LayoutGroup>
               <LayoutGroup Id="@ee043f3f-35c7-4e88-a6b8-60bf3fa07b4a" ShowCaption="True" Direction="Horizontal" Index="4" RelativeSize="100" Caption="Объективный Статус" IsNewNode="True">
-                <LayoutItem Id="CommonProtocol.ObjStatusTerTemplates" ViewItem="CommonProtocol.ObjStatusTerTemplates" Index="0" RelativeSize="44.496487119437937" IsNewNode="True" />
-                <LayoutItem Id="CommonProtocol.ObjectiveStatus" ShowCaption="False" ViewItem="CommonProtocol.ObjectiveStatus" Index="1" RelativeSize="55.503512880562063" IsNewNode="True" />
+                <LayoutItem Id="CommonProtocol.ObjStatusTerTemplates" ViewItem="CommonProtocol.ObjStatusTerTemplates" Index="0" RelativeSize="42.0253164556962" IsNewNode="True" />
+                <LayoutItem Id="CommonProtocol.ObjectiveStatus" ShowCaption="False" ViewItem="CommonProtocol.ObjectiveStatus" Index="1" RelativeSize="57.9746835443038" IsNewNode="True" />
               </LayoutGroup>
               <LayoutGroup Id="@644be72d-70f9-44a3-970c-5ad175cb3ca8" ShowCaption="True" Index="5" RelativeSize="100" Caption="Препараты" IsNewNode="True">
                 <LayoutItem Id="CommonProtocol.Medicaments" ViewItem="CommonProtocol.Medicaments" Index="0" RelativeSize="100" IsNewNode="True" />

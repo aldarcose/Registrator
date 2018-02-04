@@ -23,6 +23,7 @@ namespace Registrator.Module.BusinessObjects.Dictionaries
         public ServiceTemplate() { }
         public ServiceTemplate(Session session) : base(session) { }
 
+        /// <inheritdoc/>
         public override void AfterConstruction()
         {
             base.AfterConstruction();
@@ -109,6 +110,9 @@ namespace Registrator.Module.BusinessObjects.Dictionaries
             public FieldsClass(string propertyName) : base(propertyName) { }
 
             public OperandProperty Oid { get { return new OperandProperty(GetNestedName("Oid")); } }
+
+            public DoctorSpecTree.FieldsClass DoctorSpec { get { return new DoctorSpecTree.FieldsClass("DoctorSpec"); } }
+
         }
     }
 }

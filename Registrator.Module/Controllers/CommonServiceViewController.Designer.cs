@@ -28,8 +28,9 @@ namespace Registrator.Module.Controllers
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             // 
-            // ServiceViewController
+            // CommonServiceViewController
             // 
             this.TargetObjectType = typeof(Registrator.Module.BusinessObjects.Abstract.CommonService);
             this.TypeOfView = typeof(DevExpress.ExpressApp.View);
@@ -37,6 +38,7 @@ namespace Registrator.Module.Controllers
         }
 
         #endregion
+
 
     }
 }

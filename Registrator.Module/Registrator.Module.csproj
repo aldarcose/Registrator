@@ -205,9 +205,11 @@
     <Compile Include="BusinessObjects\Dictionaries\BaseStacionar\CsgVidVme.cs" />
     <Compile Include="BusinessObjects\Dictionaries\BaseStacionar\StacionarBindDoctorHistory.cs" />
     <Compile Include="BusinessObjects\Dictionaries\Constants.cs" />
+    <Compile Include="BusinessObjects\Dictionaries\ObjectList.cs" />
     <Compile Include="BusinessObjects\Dictionaries\ServiceTemplate.cs" />
     <Compile Include="BusinessObjects\DispanserizaionCase.cs" />
     <Compile Include="BusinessObjects\DispanserizationService.cs" />
+    <Compile Include="BusinessObjects\Enums\Teeth.cs" />
     <Compile Include="BusinessObjects\Event.cs" />
     <Compile Include="BusinessObjects\HospitalCase.cs" />
     <Compile Include="BusinessObjects\Interfaces\IReestrFederalPortalChildren.cs" />
@@ -217,6 +219,7 @@
     <Compile Include="BusinessObjects\Interfaces\IWorkflowServiceStateProvider.cs" />
     <Compile Include="BusinessObjects\Interfaces\IWorkflowServiceStatus.cs" />
     <Compile Include="BusinessObjects\MedService.cs" />
+    <Compile Include="BusinessObjects\Sequence.cs" />
     <Compile Include="BusinessObjects\Settings.cs" />
     <Compile Include="BusinessObjects\Interfaces\IOrganization.cs" />
     <Compile Include="BusinessObjects\Dictionaries\BaseDoctor\DoctorUslugi.cs" />

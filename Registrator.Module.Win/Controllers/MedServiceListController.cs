@@ -2,6 +2,7 @@
 using DevExpress.ExpressApp.DC;
 using DevExpress.ExpressApp.SystemModule;
 using DevExpress.LookAndFeel;
+using DevExpress.Persistent.Validation;
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Views.Base;
@@ -33,9 +34,12 @@ namespace Registrator.Module.Win.Controllers
         {
             base.OnViewControlsCreated();
 
+            // Отключение валидации объектов
+            DevExpress.Persistent.Validation.RuleSet.CustomNeedToValidateRule += RuleSet_CustomNeedToValidateRule;
+
             // Получаем текущего пациента
             DetailView ownerView = ObjectSpace.Owner as DetailView;
-            currentPacient = ownerView.CurrentObject as Pacient;
+            currentPacient = ObjectSpace.GetObject(ownerView.CurrentObject) as Pacient;
             // Текущий доктор
             currentDoctor = ObjectSpace.GetObject((Doctor)SecuritySystem.CurrentUser);
             
@@ -72,6 +76,13 @@ namespace Registrator.Module.Win.Controllers
             };
         }
 
+        // Отключение валидации объектов
+        private void RuleSet_CustomNeedToValidateRule(object sender, CustomNeedToValidateRuleEventArgs e)
+        {
+            e.NeedToValidateRule = false;
+            e.Handled = true;
+        }
+        
         private void gridView_CustomDrawGroupRow(object sender, RowObjectCustomDrawEventArgs e)
         {
             GridView view = sender as GridView;
@@ -88,6 +99,10 @@ namespace Registrator.Module.Win.Controllers
         private void newObjController_ObjectCreating(object sender, ObjectCreatingEventArgs e)
         {
             IObjectSpace objectSpace = e.ObjectSpace;
+            // objectdisposedexception fix
+            currentDoctor = objectSpace.GetObject(currentDoctor);
+            currentPacient = objectSpace.GetObject(currentPacient);
+
             MedService newMedService = objectSpace.CreateObject<MedService>();
             if (currentVisitCase != null || currentMedService != null)
             {
@@ -123,7 +138,7 @@ namespace Registrator.Module.Win.Controllers
             {
                 var visitCaseParameters = e_.AcceptActionArgs.CurrentObject as VisitCaseParameters;
                 VisitCase newVisitCase = objectSpace.CreateObject<VisitCase>();
-                newVisitCase.Pacient = currentPacient;
+                newVisitCase.Pacient = objectSpace.GetObject(currentPacient);
                 newVisitCase.Cel = visitCaseParameters.CelPosesch;
                 newVisitCase.Mesto = visitCaseParameters.Mesto;
                 newMedService.Case = newVisitCase;
@@ -164,6 +179,8 @@ namespace Registrator.Module.Win.Controllers
                 gridView.CustomDrawGroupRow -= gridView_CustomDrawGroupRow;
             if (newObjController != null)
                 newObjController.ObjectCreating -= newObjController_ObjectCreating;
+
+            DevExpress.Persistent.Validation.RuleSet.CustomNeedToValidateRule -= RuleSet_CustomNeedToValidateRule;
         }
     }
 
