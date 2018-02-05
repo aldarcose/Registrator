@@ -98,6 +98,14 @@
         <Member Name="VisitCaseServices" Caption="Услуги посещений" />
       </OwnMembers>
     </Class>
+    <Class Name="Registrator.Module.BusinessObjects.Sequence" Caption="Последовательность целых чисел">
+      <OwnMembers>
+        <Member Name="Code" Caption="Код последовательности" />
+        <Member Name="Current" Caption="Текущее значение" />
+        <Member Name="LastChange" Caption="Дата последнего изменения" ToolTip="Дата последнего изменения последовательности (получения очередного значения)" />
+        <Member Name="Reset" Caption="Условие сброса значения последовательности" />
+      </OwnMembers>
+    </Class>
     <Class Name="Registrator.Module.Controllers.CloneDoctorEventParameters" Caption="Клонировать расписание">
       <OwnMembers>
         <Member Name="NextWeeksCount" Caption="Количество следующих недель" />
@@ -268,6 +276,7 @@
       </Item>
       <Item Id="@04f32711-2bd7-4acf-b37b-97d5368bf049" Caption="Справочники" Index="2" IsNewNode="True">
         <Items IsNewNode="True">
+          <Item Id="@2a851425-1d20-4ed6-8c82-ee3c0d247793" ViewId="Sequence_ListView" Caption="Последовательности" IsNewNode="True" />
           <Item Id="@c84aae5c-22ba-4944-9cc4-0223efa37d9e" ViewId="ServiceTemplate_ListView" Caption="Шаблоны услуг" IsNewNode="True" />
           <Item Id="@f509f238-8525-4cf7-9bf5-acf09b1080fd" ViewId="DoctorEventLabel_ListView" ImageName="Action_ChooseSkin" IsNewNode="True" />
           <Item Id="Address_ListView" ViewId="Address_ListView" ObjectKey="" IsNewNode="True" />

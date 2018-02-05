@@ -19,6 +19,7 @@ using System.Xml.Linq;
 using Registrator.Module.BusinessObjects.Enums;
 using DevExpress.ExpressApp.Model;
 using DevExpress.ExpressApp.Utils;
+using InnerConstants = Registrator.Module.BusinessObjects.Dictionaries.Constants;
 
 namespace Registrator.Module.BusinessObjects.Abstract
 {
@@ -217,8 +218,9 @@ namespace Registrator.Module.BusinessObjects.Abstract
     /// </summary>
     public abstract class CommonService : AbstractService, IReestrTFoms, INotifyPropertyChanged
     {
-        private CommonCase _case;
+        private CommonCase @case;
         private ServiceTemplate serviceTemplate;
+        private bool? isDentistry;
 
         public CommonService(Session session) : base(session) { }
 
@@ -337,8 +339,8 @@ namespace Registrator.Module.BusinessObjects.Abstract
         [Association("CommonCase-CommonServices")]
         public CommonCase Case
         {
-            get { return _case; }
-            set { SetPropertyValue("Case", ref _case, value); }
+            get { return @case; }
+            set { SetPropertyValue("Case", ref @case, value); }
         }
 
         /// <summary>
@@ -350,29 +352,7 @@ namespace Registrator.Module.BusinessObjects.Abstract
         public ServiceTemplate ServiceTemplate
         {
             get { return serviceTemplate; }
-            set
-            {
-                SetPropertyValue("ServiceTemplate", ref serviceTemplate, value);
-                /*
-                if (!IsLoading && !IsSaving && serviceTemplate != null)
-                {
-                    CommonProtocol.Anamnez = serviceTemplate.Anamnez;
-                    CommonProtocol.Complain = serviceTemplate.Complain;
-                    CommonProtocol.ObjectiveStatus = serviceTemplate.ObjectiveStatus;
-                    CommonProtocol.Recommendation = serviceTemplate.Recommendations;
-                    Usluga = serviceTemplate.Service;
-                    Diagnoses.Add(new MKBWithType(Session) 
-                    { 
-                        Diagnose  = serviceTemplate.Diagnose
-                    });
-
-                    OnChanged("CommonProtocol");
-                    OnChanged("Usluga");
-                    OnChanged("Diagnoses");
-                    
-                    CommonProtocol.Save();
-                }*/
-            }
+            set { SetPropertyValue("ServiceTemplate", ref serviceTemplate, value); }
         }
 
         /// <summary>
@@ -380,6 +360,7 @@ namespace Registrator.Module.BusinessObjects.Abstract
         /// </summary>
         [NonPersistent]
         [ModelDefault("PropertyEditorType", "Registrator.Module.Win.Editors.EnumFlagsPropertyEditor")]
+        [Appearance("TeethVisible", Visibility = ViewItemVisibility.Hide, Criteria = "IsDentistry=false", Context = "DetailView")]
         public Teeth Teeth { get; set; }
 
         /// <summary>
@@ -387,7 +368,24 @@ namespace Registrator.Module.BusinessObjects.Abstract
         /// </summary>
         [NonPersistent]
         [ModelDefault("PropertyEditorType", "Registrator.Module.Win.Editors.EnumFlagsPropertyEditor")]
+        [Appearance("MilkByteTeethVisible", Visibility = ViewItemVisibility.Hide, Criteria = "IsDentistry=false", Context = "DetailView")]
         public MilkByteTeeth MilkByteTeeth { get; set; }
+
+        [Browsable(false)]
+        public bool IsDentistry
+        {
+            get
+            {
+                if (!isDentistry.HasValue)
+                {
+                    isDentistry = false;
+                    var dentistryConst = Session.FindObject<InnerConstants>(InnerConstants.Fields.Name == InnerConstants.Dentistry);
+                    if (dentistryConst != null && !string.IsNullOrEmpty(Doctor.SpecialityCode) && !string.IsNullOrEmpty(dentistryConst.Value))
+                        isDentistry = dentistryConst.Value.IndexOf(Doctor.SpecialityCode) >= 0;
+                }
+                return isDentistry.Value;
+            }
+        }
 
         /// <summary>
         /// Установить шаблон

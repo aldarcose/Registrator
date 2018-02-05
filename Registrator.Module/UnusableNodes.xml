@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <NavigationItems Id="NavigationItems">
+    <Items Id="Items">
+      <Item Id="@ffaaf455-8652-42aa-8784-3d65c1407880">
+        <Items Id="Items">
+          <Item Id="DoctorProfil_ListView" ViewId="DoctorProfil_ListView" />
+          <Item Id="Celpos_ListView" ViewId="Celpos_ListView" />
+          <Item Id="VidUslugiMedPomoshi_ListView" ViewId="VidUslugiMedPomoshi_ListView" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+  <Views Id="Views">
+    <DetailView Id="CallCardUrgent_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="CallCardUrgent">
+              <LayoutGroup Id="CallCardUrgent_col2">
+                <LayoutItem Id="Address" ViewItem="Address" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="HospitalCase_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="CommonCase">
+              <LayoutGroup Id="CommonCase_col2">
+                <LayoutItem Id="MainDiagnose.FirstTime" ViewItem="MainDiagnose.FirstTime" />
+                <LayoutItem Id="MainDiagnose.Character" ViewItem="MainDiagnose.Character" />
+                <LayoutItem Id="MainDiagnose.Stadia" ViewItem="MainDiagnose.Stadia" />
+                <LayoutItem Id="MainDiagnose.Diagnose" ViewItem="MainDiagnose.Diagnose" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Pacient_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="Item1">
+              <TabbedGroup Id="Item6">
+                <LayoutGroup Id="Disability">
+                  <LayoutItem Id="Disability.Lgota" ViewItem="Disability.Lgota" />
+                  <LayoutItem Id="Disability.Kategoriya" ViewItem="Disability.Kategoriya" />
+                  <LayoutItem Id="Disability.InvalidDetstva" ViewItem="Disability.InvalidDetstva" />
+                  <LayoutItem Id="Disability.InvalidnostGroup" ViewItem="Disability.InvalidnostGroup" />
+                  <LayoutItem Id="Disability.Invalidnost" ViewItem="Disability.Invalidnost" />
+                </LayoutGroup>
+              </TabbedGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="VisitCase_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="CommonCase">
+              <LayoutGroup Id="CommonCase_col1">
+                <LayoutGroup Id="Auto6c1517ed-0c27-4ffd-a7aa-06a0e1330fb3">
+                  <LayoutGroup Id="Auto1fc2a34e-291d-44e8-9c93-b041fe18d9d3">
+                    <LayoutItem Id="MainDiagnose.Character" ViewItem="MainDiagnose.Character" />
+                    <LayoutItem Id="MainDiagnose.Stadia" ViewItem="MainDiagnose.Stadia" />
+                    <LayoutItem Id="MainDiagnose.FirstTime" ViewItem="MainDiagnose.FirstTime" />
+                  </LayoutGroup>
+                  <LayoutItem Id="MainDiagnose.Diagnose" ViewItem="MainDiagnose.Diagnose" />
+                </LayoutGroup>
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>
