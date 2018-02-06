@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using Registrator.Module.BusinessObjects.Dictionaries;
+using DevExpress.Persistent.Base;
 
 namespace Registrator.Module.BusinessObjects
 {
@@ -14,6 +15,7 @@ namespace Registrator.Module.BusinessObjects
     /// Конкретная реализация общей услуги
     /// </summary>
     [Persistent]
+    [VisibleInReports(true)]
     public class MedService : CommonService
     {
         public MedService(Session session) : base(session) { }

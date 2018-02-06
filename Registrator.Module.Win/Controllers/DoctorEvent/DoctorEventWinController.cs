@@ -153,7 +153,7 @@ namespace Registrator.Module.Win.Controllers
                                     // Создание посещения для пациента
                                     visitCase = VisitCase.CreateVisitCase(dEventObjectSpace,
                                         dEventObjectSpace.GetObject(pacient),
-                                        dEvent.AssignedTo);
+                                        dEvent.AssignedTo, dEvent.StartOn);
                                     dEventObjectSpace.CommitChanges();
                                 }));
                             }

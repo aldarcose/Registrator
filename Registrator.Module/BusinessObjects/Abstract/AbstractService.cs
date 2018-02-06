@@ -425,10 +425,10 @@ namespace Registrator.Module.BusinessObjects.Abstract
                     string.Concat(teethText, ", ", milkbyteTeethText) : 
                     string.Concat(teethText, milkbyteTeethText);
 
-                CommonProtocol.Anamnez = serviceTemplate.Anamnez.Replace("{replacement}", replacement);
-                CommonProtocol.Complain = serviceTemplate.Complain.Replace("{replacement}", replacement);
-                CommonProtocol.ObjectiveStatus = serviceTemplate.ObjectiveStatus.Replace("{replacement}", replacement);
-                CommonProtocol.Recommendation = serviceTemplate.Recommendations.Replace("{replacement}", replacement);
+                CommonProtocol.Anamnez = (serviceTemplate.Anamnez ?? string.Empty).Replace("{replacement}", replacement);
+                CommonProtocol.Complain = (serviceTemplate.Complain ?? string.Empty).Replace("{replacement}", replacement);
+                CommonProtocol.ObjectiveStatus = (serviceTemplate.ObjectiveStatus ?? string.Empty).Replace("{replacement}", replacement);
+                CommonProtocol.Recommendation = (serviceTemplate.Recommendations ?? string.Empty).Replace("{replacement}", replacement);
                 Usluga = serviceTemplate.Service;
                 Diagnoses.Add(new MKBWithType(Session)
                 {

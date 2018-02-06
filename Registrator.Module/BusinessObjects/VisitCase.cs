@@ -141,14 +141,17 @@ namespace Registrator.Module.BusinessObjects
         /// <param name="objectSpace"></param>
         /// <param name="pacient"></param>
         /// <param name="doctor"></param>
-        public static VisitCase CreateVisitCase(IObjectSpace objectSpace, Pacient pacient, Doctor doctor)
+        /// <param name="dateIn"></param>
+        public static VisitCase CreateVisitCase(IObjectSpace objectSpace, Pacient pacient, Doctor doctor, DateTime dateIn)
         {
             Doctor currentDoctor = objectSpace.GetObject((Doctor)SecuritySystem.CurrentUser);
             VisitCase newVisitCase = objectSpace.CreateObject<VisitCase>();
+            newVisitCase.DateIn = dateIn;
             newVisitCase.Doctor = doctor;
             newVisitCase.Pacient = pacient;
             MedService newMedService = objectSpace.CreateObject<MedService>();
             newMedService.Case = newVisitCase;
+            newMedService.DateIn = dateIn;
             newMedService.Doctor = doctor;
             return newVisitCase;
         }
