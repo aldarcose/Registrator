@@ -15,7 +15,7 @@ namespace Registrator.Module.BusinessObjects.Dictionaries
         /// <summary>
         /// Анамнез
         /// </summary>
-        [Size(1000)]
+        [Size(2000)]
         [XafDisplayName("Анамнез")]
         public string Anamnez { get; set; }
 
@@ -31,7 +31,7 @@ namespace Registrator.Module.BusinessObjects.Dictionaries
         /// <summary>
         /// Жалобы
         /// </summary>
-        [Size(1000)]
+        [Size(2000)]
         [XafDisplayName("Жалобы")]
         public string Complain { get; set; }
 
@@ -47,7 +47,7 @@ namespace Registrator.Module.BusinessObjects.Dictionaries
         /// <summary>
         /// Рекомендации
         /// </summary>
-        [Size(1000)]
+        [Size(2000)]
         [XafDisplayName("Рекомендации")]
         public string Recommendation { get; set; }
 
@@ -63,7 +63,7 @@ namespace Registrator.Module.BusinessObjects.Dictionaries
         /// <summary>
         /// Объективный статус терапевта
         /// </summary>
-        [Size(1000)]
+        [Size(2000)]
         [XafDisplayName("Объективный статус терапевта")]
         public string ObjectiveStatus { get; set; }
 
