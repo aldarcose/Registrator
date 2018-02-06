@@ -45,7 +45,7 @@ namespace Registrator.Module.BusinessObjects.Dictionaries
         }
 
         /// <summary>Анамнез</summary>
-        [Size(SizeAttribute.Unlimited)]
+        [Size(2000)]
         public string Anamnez
         {
             get { return anamnez; }
@@ -53,7 +53,7 @@ namespace Registrator.Module.BusinessObjects.Dictionaries
         }
 
         /// <summary>Жалобы</summary>
-        [Size(SizeAttribute.Unlimited)]
+        [Size(2000)]
         public string Complain
         {
             get { return complain; }
@@ -61,7 +61,7 @@ namespace Registrator.Module.BusinessObjects.Dictionaries
         }
 
         /// <summary>Рекомендации</summary>
-        [Size(SizeAttribute.Unlimited)]
+        [Size(2000)]
         public string Recommendations
         {
             get { return recommendations; }
@@ -69,7 +69,7 @@ namespace Registrator.Module.BusinessObjects.Dictionaries
         }
 
         /// <summary>Объективный статус</summary>
-        [Size(SizeAttribute.Unlimited)]
+        [Size(2000)]
         public string ObjectiveStatus
         {
             get { return objectiveStatus; }
