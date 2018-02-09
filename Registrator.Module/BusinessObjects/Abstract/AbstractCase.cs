@@ -480,6 +480,20 @@ namespace Registrator.Module.BusinessObjects.Abstract
             }
         }
 
+        protected override void OnSaving()
+        {
+            if (DateOut != default(DateTime))
+            {
+                if (Resultat == null)
+                    throw new UserFriendlyException("Не заполнен результат обращения");
+                if (Ishod == null)
+                    throw new UserFriendlyException("Не заполнен Исход заболевания");
+            }
+            
+            base.OnSaving();
+        }
+
+
         // интерфейс элемента реестра реализуется у потомков (у госпитализации свои необходимые поля)
         public abstract bool IsValidForReestr();
         public abstract XElement GetReestrElement();

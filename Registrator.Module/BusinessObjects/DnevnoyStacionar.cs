@@ -379,7 +379,7 @@ namespace Registrator.Module.BusinessObjects
                     // специальность врача
                     new XElement("PRVS", this.Doctor.SpecialityCode),
                     // Код врача, закрывшего талон/историю болезни
-                    new XElement("CODE_MD", this.Doctor.InnerCode)
+                    new XElement("CODE_MD", this.Doctor.SNILS)
                 );
 
             var criteria = VidVmeCriteria;

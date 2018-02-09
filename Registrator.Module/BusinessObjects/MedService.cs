@@ -56,15 +56,15 @@ namespace Registrator.Module.BusinessObjects
             element.Add(new XElement("IDSERV", zapNumber));
 
             // код МО
-            element.Add(new XElement("LPU"), this.LPU.Code);
+            element.Add(new XElement("LPU", this.LPU.Code));
 
             // код подразделения МО
             if (!string.IsNullOrEmpty(this.LPU_1))
-                element.Add(new XElement("LPU_1"), this.LPU_1);
+                element.Add(new XElement("LPU_1", this.LPU_1));
 
             // код отделения
             if (this.Otdelenie != null)
-                element.Add(new XElement("PODR"), this.LPU_1);
+                element.Add(new XElement("PODR", this.LPU_1));
 
             // профиль мед. услуги
             if (Profil != null)
@@ -105,7 +105,7 @@ namespace Registrator.Module.BusinessObjects
             element.Add(new XElement("PRVS", DoctorSpec.Code));
 
             // Код врача
-            element.Add(new XElement("CODE_MD", this.Doctor.InnerCode));
+            element.Add(new XElement("CODE_MD", this.Doctor.SNILS));
 
             if (!string.IsNullOrEmpty(this.Comment))
                 element.Add(new XElement("COMENTU", this.Comment));

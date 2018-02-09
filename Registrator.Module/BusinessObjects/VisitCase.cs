@@ -282,9 +282,9 @@ namespace Registrator.Module.BusinessObjects
             element.Add(new XElement("CODE_MES2", ));*/
 
             // Результат обращения 
-            sluchElement.Add(new XElement("RSLT", this.Resultat.Code));
+            sluchElement.Add(new XElement("RSLT", Resultat != null ? Resultat.Code : ""));
             // Исход заболевания
-            sluchElement.Add(new XElement("ISHOD", this.Ishod.Code));
+            sluchElement.Add(new XElement("ISHOD", Ishod != null ? Ishod.Code : ""));
             // Специальность леч. врача
             sluchElement.Add(new XElement("PRVS", this.DoctorSpec.Code));
             // Код классификатора мед. спец-й
