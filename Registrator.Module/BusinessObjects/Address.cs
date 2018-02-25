@@ -69,42 +69,7 @@ namespace Registrator.Module.BusinessObjects
         public string OKATO
         {
             get { return okato; }
-            set
-            {
-                SetPropertyValue("OKATO", ref okato, value);
-
-                /*if (!String.IsNullOrWhiteSpace(value))
-                {
-                    var kladr = Session.FindObject<Kladr>(new BinaryOperator("CodeOkato", value));
-                    if (kladr != null)
-                    {
-                        if (kladr.Level == 1)
-                        {
-                            Level1 = kladr;
-                        }
-                        if (kladr.Level == 2)
-                        {
-                            Level2 = kladr;
-                        }
-                        if (kladr.Level == 3)
-                        {
-                            Level3 = kladr;
-                        }
-                        if (kladr.Level == 4)
-                        {
-                            Level4 = kladr;
-                        }
-                    }
-                    else
-                    {
-                        var str = Session.FindObject<Street>(new BinaryOperator("CodeOkato", value));
-                        if (str != null)
-                        {
-                            Street = str;
-                        }
-                    }
-                }*/
-            }
+            set { SetPropertyValue("OKATO", ref okato, value); }
         }
 
         [Browsable(false)]
@@ -112,6 +77,7 @@ namespace Registrator.Module.BusinessObjects
 
         [XafDisplayName("Страна")]
         public Country Country { get; set; }
+
         [DataSourceCriteria("Level=1")]
         [Appearance("Level1TypeDisabled", Enabled=false, Criteria= "!IsNull(Level1)")]
         [Appearance("Level1TypeInvisible", Visibility = ViewItemVisibility.Hide, Criteria = "IsNull(Country) AND IsNull(Level1)")]
@@ -158,8 +124,11 @@ namespace Registrator.Module.BusinessObjects
             set { SetPropertyValue("StreetType", ref streetType, value); }
         }
 
+        /// <summary>
+        /// Регион
+        /// </summary>
         [DataSourceCriteria("Level=1")]
-        [Appearance("Level1Invisible", Visibility = ViewItemVisibility.Hide, Criteria = "IsNull(Country) AND IsNull(Level1)")]
+        [Appearance("Level1Invisible", Visibility = ViewItemVisibility.Hide, Criteria = "IsNull(Country)")]
         [ImmediatePostData]
         public Kladr Level1
         {
@@ -174,8 +143,12 @@ namespace Registrator.Module.BusinessObjects
                 //ReloadOkato();
             }
         }
+
+        /// <summary>
+        /// Район
+        /// </summary>
         [DataSourceCriteriaProperty("Level2Criteria")]
-        [Appearance("Level2Invisible", Visibility = ViewItemVisibility.Hide, Criteria = "IsNull(Level1) AND IsNull(Level2)")]
+        [Appearance("Level2Invisible", Visibility = ViewItemVisibility.Hide, Criteria = "IsNull(Level1)")]
         [ImmediatePostData]
         public Kladr Level2
         {
@@ -199,7 +172,7 @@ namespace Registrator.Module.BusinessObjects
         }
         
         [DataSourceCriteriaProperty("Level3Criteria")]
-        [Appearance("Level3Invisible", Visibility = ViewItemVisibility.Hide, Criteria = "IsNull(Level2) AND IsNull(Level3)")]
+        [Appearance("Level3Invisible", Visibility = ViewItemVisibility.Hide, Criteria = "IsNull(Level1) AND IsNull(Level2)")]
         [ImmediatePostData]
         public Kladr Level3
         {
@@ -229,7 +202,8 @@ namespace Registrator.Module.BusinessObjects
         }
 
         [DataSourceCriteriaProperty("Level4Criteria")]
-        [Appearance("Level4Invisible", Visibility = ViewItemVisibility.Hide, Criteria = "IsNull(Level3) AND IsNull(Level4)")]
+        [Appearance("Level4Invisible", Visibility = ViewItemVisibility.Hide, 
+            Criteria = "IsNull(Level1) and IsNull(Level2) and IsNull(Level3)")]
         [ImmediatePostData]
         public Kladr Level4
         {
@@ -265,7 +239,8 @@ namespace Registrator.Module.BusinessObjects
 
         [ImmediatePostData]
         [DataSourceCriteriaProperty ("StreetCriteria")]
-        [Appearance("Level5Invisible", Visibility = ViewItemVisibility.Hide, Criteria = "(Not IsNull(Level1) AND Not Level1.IsCity) AND IsNull(Level3) AND IsNull(Level4) AND IsNull(Street)")]
+        [Appearance("Level5Invisible", Visibility = ViewItemVisibility.Hide,
+            Criteria = "IsNull(Level1) and IsNull(Level2) and IsNull(Level3) and IsNull(Level4)")]
         public Street Street
         {
             get { return street; }
@@ -278,31 +253,6 @@ namespace Registrator.Module.BusinessObjects
                     var city = GetFieldByLevel(value.City.Level);
                     CheckAndRefreshAddress(city);
                 }
-
-                /*ReloadOkato();
-                if (value != null && value.City != null)
-                {
-                    Level1 = null;
-                    Level2 = null;
-                    Level3 = null;
-                    Level4 = null;
-                    if (value.City.Level == 1)
-                    {
-                        Level1 = value.City;
-                    }
-                    if (value.City.Level == 2)
-                    {
-                        Level2 = value.City;
-                    }
-                    if (value.City.Level == 3)
-                    {
-                        Level3 = value.City;
-                    }
-                    if (value.City.Level == 4)
-                    {
-                        Level4 = value.City;
-                    }
-                }*/
             }
         }
 
@@ -426,27 +376,37 @@ namespace Registrator.Module.BusinessObjects
 
         private void UpdateCriterias(int level)
         {
-            switch (level)
-            {
-                case 1:
-                    OnChanged("Level2Criteria");
-                    OnChanged("Level3Criteria");
-                    OnChanged("Level4Criteria");
-                    OnChanged("StreetCriteria");
-                    break;
-                case 2:
-                    OnChanged("Level3Criteria");
-                    OnChanged("Level4Criteria");
-                    OnChanged("StreetCriteria");
-                    break;
-                case 3:
-                    OnChanged("Level4Criteria");
-                    OnChanged("StreetCriteria");
-                    break;
-                case 4:
-                    OnChanged("StreetCriteria");
-                    break;
-            }
+            OnChanged("Level2Criteria");
+            OnChanged("Level3Criteria");
+            OnChanged("Level4Criteria");
+            OnChanged("StreetCriteria");
+
+            OnChanged("Level2");
+            OnChanged("Level3");
+            OnChanged("Level4");
+            OnChanged("Street");
+
+            //switch (level)
+            //{
+            //    case 1:
+            //        OnChanged("Level2Criteria");
+            //        OnChanged("Level3Criteria");
+            //        OnChanged("Level4Criteria");
+            //        OnChanged("StreetCriteria");
+            //        break;
+            //    case 2:
+            //        OnChanged("Level3Criteria");
+            //        OnChanged("Level4Criteria");
+            //        OnChanged("StreetCriteria");
+            //        break;
+            //    case 3:
+            //        OnChanged("Level4Criteria");
+            //        OnChanged("StreetCriteria");
+            //        break;
+            //    case 4:
+            //        OnChanged("StreetCriteria");
+            //        break;
+            //}
         }
 
         private Kladr GetFieldByLevel(int level)
@@ -489,49 +449,63 @@ namespace Registrator.Module.BusinessObjects
             return null;
         }
 
+        /// <summary>
+        /// Критерий выбора района
+        /// </summary>
         [Browsable(false)]
-        [VisibleInDetailView(false)]
-        [VisibleInListView(false)]
-        [VisibleInLookupListView(false)]
         public CriteriaOperator Level2Criteria
         {
             get
             {
+                // Если регион не выбран, то район нельзя выбрать (пустой список)
                 var level = new BinaryOperator("Level", 2);
-                return this.Level1 != null ? CriteriaOperator.And(new BinaryOperator("Parent", Level1), level) : level;
+                return Level1 != null ? 
+                    CriteriaOperator.And(new BinaryOperator("Parent", Level1), level)
+                    : CriteriaOperator.Parse("1=0");
             }
         }
 
+        /// <summary>
+        /// Критерий выбора города
+        /// </summary>
         [Browsable(false)]
-        [VisibleInDetailView(false)]
-        [VisibleInListView(false)]
-        [VisibleInLookupListView(false)]
         public CriteriaOperator Level3Criteria
         {
             get
             {
                 var level = new BinaryOperator("Level", 3);
                 var collection = new CriteriaOperatorCollection();
-                if (this.Level1 != null) { collection.Add(new BinaryOperator("Parent", Level1)); }
-                if (this.Level2 != null) { collection.Add(new BinaryOperator("Parent", Level2)); }
-
+                if (Level2 != null)
+                {
+                    collection.Add(new BinaryOperator("Parent", Level2));
+                } 
+                else if (Level1 != null)
+                {
+                    collection.Add(new BinaryOperator("Parent", Level1));
+                }
                 return CriteriaOperator.And(level, CriteriaOperator.Or(collection));
             }
         }
 
+        /// <summary>
+        /// Критерий выбора населенного пункта
+        /// </summary>
         [Browsable(false)]
-        [VisibleInDetailView(false)]
-        [VisibleInListView(false)]
-        [VisibleInLookupListView(false)]
         public CriteriaOperator Level4Criteria
         {
             get
             {
                 var level = new BinaryOperator("Level", 4);
                 var collection = new CriteriaOperatorCollection();
-                if (this.Level1 != null) { collection.Add(new BinaryOperator("Parent", Level1)); }
-                if (this.Level2 != null) { collection.Add(new BinaryOperator("Parent", Level2)); }
-                if (this.Level3 != null) { collection.Add(new BinaryOperator("Parent", Level3)); }
+
+                if (Level2 != null)
+                {
+                    collection.Add(new BinaryOperator("Parent", Level2));
+                }
+                else if (Level1 != null)
+                {
+                    collection.Add(new BinaryOperator("Parent", Level1));
+                }
 
                 return CriteriaOperator.And(level, CriteriaOperator.Or(collection));
             }
@@ -547,22 +521,22 @@ namespace Registrator.Module.BusinessObjects
             get
             {
                 var collection = new CriteriaOperatorCollection();
-                if (this.Level4 != null) { collection.Add(new BinaryOperator("City", Level4)); }
-                else
-                {
-                    if (this.Level3 != null) { collection.Add(new BinaryOperator("City", Level3)); } 
-                    else
-                    {
-                        if (this.Level2 != null) { collection.Add(new BinaryOperator("City", Level2)); }
-                        else
-                            if (this.Level1 != null) { collection.Add(new BinaryOperator("City", Level1)); }
-                    }
+                if (Level4 != null) 
+                { 
+                    collection.Add(new BinaryOperator("City", Level4)); 
                 }
-
-                /*if (this.Level1 != null) { collection.Add(new BinaryOperator("City", Level1)); }
-                if (this.Level2 != null) { collection.Add(new BinaryOperator("City", Level2)); }
-                if (this.Level3 != null) { collection.Add(new BinaryOperator("City", Level3)); } 
-                if (this.Level4 != null) { collection.Add(new BinaryOperator("City", Level4)); }*/
+                else if (Level3 != null) 
+                {
+                    collection.Add(new BinaryOperator("City", Level3)); 
+                } 
+                else if (Level2 != null) 
+                { 
+                    collection.Add(new BinaryOperator("City", Level2)); 
+                } 
+                else if (Level1 != null) 
+                { 
+                    collection.Add(new BinaryOperator("City", Level1)); 
+                }
 
                 return CriteriaOperator.Or(collection);
             }
@@ -570,7 +544,21 @@ namespace Registrator.Module.BusinessObjects
 
         public override string ToString()
         {
-            return String.Format("{3}{0}, д.{1}, кв.{2}", Street, House, Flat, Level3 != null && Level3.IsCity ? "г. " + Level3.Name + ", " : "");
+            StringBuilder sb = new StringBuilder();
+            // Район
+            if (Level2 != null) sb.Append((Level2.Type != null ? Level2.Type.ShortName + " " : "") + Level2.Name + ", ");
+            // Город
+            if (Level3 != null) sb.Append((Level3.Type != null ? Level3.Type.ShortName + " " : "") + Level3.Name + ", ");
+            // Населенный пункт
+            if (Level4 != null) sb.Append((Level4.Type != null ? Level4.Type.ShortName + " " : "") + Level4.Name + ", ");
+            // Улица
+            if (Street != null) sb.Append((Street.Type != null ? Street.Type.ShortName + " " : "") + Street.Name + ", ");
+            if (!string.IsNullOrEmpty(House))
+                sb.Append("д." + House + ", ");
+            if (!string.IsNullOrEmpty(Flat))
+                sb.Append("кв." + Flat);
+
+            return sb.ToString().TrimEnd(',', ' ');
         }
 
         public static Address GetAddressByOkato(IObjectSpace objectSpace, string okato)
