@@ -570,7 +570,7 @@ namespace Registrator.Module.BusinessObjects
 
         public override string ToString()
         {
-            return String.Format("ул. {0}, д.{1}, кв.{2}", Street, House, Flat);
+            return String.Format("{3}{0}, д.{1}, кв.{2}", Street, House, Flat, Level3 != null && Level3.IsCity ? "г. " + Level3.Name + ", " : "");
         }
 
         public static Address GetAddressByOkato(IObjectSpace objectSpace, string okato)
