@@ -80,7 +80,6 @@ namespace Registrator.Module.BusinessObjects
 
         [DataSourceCriteria("Level=1")]
         [Appearance("Level1TypeDisabled", Enabled=false, Criteria= "!IsNull(Level1)")]
-        [Appearance("Level1TypeInvisible", Visibility = ViewItemVisibility.Hide, Criteria = "IsNull(Country) AND IsNull(Level1)")]
         [Browsable(false)]
         public KladrType Level1Type
         {
@@ -89,7 +88,6 @@ namespace Registrator.Module.BusinessObjects
         }
 
         [DataSourceCriteria("Level=2")]
-        [Appearance("Level2TypeInvisible", Visibility = ViewItemVisibility.Hide, Criteria = "IsNull(Level1) AND IsNull(Level2)")]
         [Browsable(false)]
         public KladrType Level2Type
         {
@@ -98,7 +96,6 @@ namespace Registrator.Module.BusinessObjects
         }
 
         [DataSourceCriteria("Level=3")]
-        [Appearance("Level3TypeInvisible", Visibility = ViewItemVisibility.Hide, Criteria = "IsNull(Level2) AND IsNull(Level3)")]
         [Browsable(false)]
         public KladrType Level3Type
         {
@@ -107,7 +104,6 @@ namespace Registrator.Module.BusinessObjects
         }
 
         [DataSourceCriteria("Level=4")]
-        [Appearance("Level4TypeInvisible", Visibility = ViewItemVisibility.Hide, Criteria = "IsNull(Level3) AND IsNull(Level4)")]
         [Browsable(false)]
         public KladrType Level4Type
         {
@@ -116,7 +112,6 @@ namespace Registrator.Module.BusinessObjects
         }
         
         [DataSourceCriteria("Level=5")]
-        [Appearance("Level5TypeInvisible", Visibility = ViewItemVisibility.Hide, Criteria = "IsNull(Level3) AND IsNull(Level4) AND IsNull(Street)")]
         [Browsable(false)]
         public KladrType StreetType
         {
@@ -139,8 +134,6 @@ namespace Registrator.Module.BusinessObjects
                 Level1Type = (value != null) ? value.Type : null;
 
                 CheckAndRefreshAddress(value);
-
-                //ReloadOkato();
             }
         }
 
@@ -148,7 +141,6 @@ namespace Registrator.Module.BusinessObjects
         /// Район
         /// </summary>
         [DataSourceCriteriaProperty("Level2Criteria")]
-        [Appearance("Level2Invisible", Visibility = ViewItemVisibility.Hide, Criteria = "IsNull(Level1)")]
         [ImmediatePostData]
         public Kladr Level2
         {
@@ -159,15 +151,6 @@ namespace Registrator.Module.BusinessObjects
                 Level2Type = (value != null) ? value.Type : null;
 
                 CheckAndRefreshAddress(value);
-
-                /*ReloadOkato();
-                if (value != null && value.Parent != null)
-                {
-                    if (value.Parent.Level == 1)
-                    {
-                        Level1 = value.City;
-                    }
-                }*/
             }
         }
         
@@ -183,27 +166,10 @@ namespace Registrator.Module.BusinessObjects
                 Level3Type = (value != null) ? value.Type : null;
 
                 CheckAndRefreshAddress(value);
-
-                /*//ReloadOkato();
-                if (value != null && value.Parent != null)
-                {
-                    Level1 = null;
-                    Level2 = null;
-                    if (value.Parent.Level == 1)
-                    {
-                        Level1 = value.Parent;
-                    }
-                    if (value.Parent.Level == 2)
-                    {
-                        Level2 = value.Parent;
-                    }
-                }*/
             }
         }
 
         [DataSourceCriteriaProperty("Level4Criteria")]
-        [Appearance("Level4Invisible", Visibility = ViewItemVisibility.Hide, 
-            Criteria = "IsNull(Level1) and IsNull(Level2) and IsNull(Level3)")]
         [ImmediatePostData]
         public Kladr Level4
         {
@@ -214,33 +180,11 @@ namespace Registrator.Module.BusinessObjects
                 Level4Type = (value != null) ? value.Type : null;
 
                 CheckAndRefreshAddress(value);
-
-                /*ReloadOkato();
-                if (value != null && value.Parent != null)
-                {
-                    Level1 = null;
-                    Level2 = null;
-                    Level3 = null;
-                    if (value.Parent.Level == 1)
-                    {
-                        Level1 = value.Parent;
-                    }
-                    if (value.Parent.Level == 2)
-                    {
-                        Level2 = value.Parent;
-                    }
-                    if (value.Parent.Level == 3)
-                    {
-                        Level3 = value.Parent;
-                    }
-                }*/
             }
         }
 
         [ImmediatePostData]
         [DataSourceCriteriaProperty ("StreetCriteria")]
-        [Appearance("Level5Invisible", Visibility = ViewItemVisibility.Hide,
-            Criteria = "IsNull(Level1) and IsNull(Level2) and IsNull(Level3) and IsNull(Level4)")]
         public Street Street
         {
             get { return street; }
@@ -385,28 +329,6 @@ namespace Registrator.Module.BusinessObjects
             OnChanged("Level3");
             OnChanged("Level4");
             OnChanged("Street");
-
-            //switch (level)
-            //{
-            //    case 1:
-            //        OnChanged("Level2Criteria");
-            //        OnChanged("Level3Criteria");
-            //        OnChanged("Level4Criteria");
-            //        OnChanged("StreetCriteria");
-            //        break;
-            //    case 2:
-            //        OnChanged("Level3Criteria");
-            //        OnChanged("Level4Criteria");
-            //        OnChanged("StreetCriteria");
-            //        break;
-            //    case 3:
-            //        OnChanged("Level4Criteria");
-            //        OnChanged("StreetCriteria");
-            //        break;
-            //    case 4:
-            //        OnChanged("StreetCriteria");
-            //        break;
-            //}
         }
 
         private Kladr GetFieldByLevel(int level)
@@ -510,7 +432,6 @@ namespace Registrator.Module.BusinessObjects
                 return CriteriaOperator.And(level, CriteriaOperator.Or(collection));
             }
         }
-
 
         [Browsable(false)]
         [VisibleInDetailView(false)]
