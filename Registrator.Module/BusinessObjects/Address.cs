@@ -466,6 +466,8 @@ namespace Registrator.Module.BusinessObjects
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
+            // Регион
+            if (Level1 != null) sb.Append((Level1.Type != null ? Level1.Type.ShortName + " " : "") + Level1.Name + ", ");
             // Район
             if (Level2 != null) sb.Append((Level2.Type != null ? Level2.Type.ShortName + " " : "") + Level2.Name + ", ");
             // Город
