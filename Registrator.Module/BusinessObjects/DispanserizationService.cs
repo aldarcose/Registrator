@@ -33,7 +33,7 @@ namespace Registrator.Module.BusinessObjects
             //return GetReestrElement(zap);
         }
 
-        public override System.Xml.Linq.XElement GetReestrElement(int zapNumber)
+        public System.Xml.Linq.XElement GetReestrElement(int zapNumber, string lpuCode = null)
         {
             // проверяем поля услуги
             //if (IsValidForReestr() == false)

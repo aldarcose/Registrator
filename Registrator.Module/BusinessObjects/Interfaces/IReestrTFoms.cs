@@ -24,11 +24,5 @@ namespace Registrator.Module.BusinessObjects.Interfaces
         /// </summary>
         /// <returns>XElement записи</returns>
         XElement GetReestrElement();
-
-        /// <summary>
-        /// Возвращает элемент записи реестра
-        /// </summary>
-        /// <returns>XElement записи</returns>
-        XElement GetReestrElement(int zapNumber);
     }
 }

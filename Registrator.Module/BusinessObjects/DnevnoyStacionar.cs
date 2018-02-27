@@ -239,10 +239,10 @@ namespace Registrator.Module.BusinessObjects
         /// Получаем запись для реестра HM в формате XElement
         /// </summary>
         /// <returns>Элемент XML</returns>
-        public XElement GetReesterElement(int zapNumber)
+        public XElement GetReesterElement(int zapNumber, string lpuCode = null)
         {
             const int isBaby = 0;
-            string lpuCode = Settings.MOSettings.GetCurrentMOCode(Session);
+            //string lpuCode = Settings.MOSettings.GetCurrentMOCode(Session);
             string lpuCode_1 = lpuCode;
             const string dateTimeFormat = "{0:yyyy-MM-dd}";
             const string decimalFormat = "0.00";
@@ -344,7 +344,7 @@ namespace Registrator.Module.BusinessObjects
                             // Код классификатора специальностей
                             new XElement("VERS_SPEC", "V015"),
                             // Код врача, закрывшего талон/историю болезни
-                            new XElement("IDDOKT", this.Doctor.InnerCode),
+                            new XElement("IDDOKT", this.Doctor.SNILS),
                             new XElement("IDSP", paymentCode),
                             // Количество единиц оплаты медицинской помощи
                             new XElement("ED_COL", 1),
@@ -353,7 +353,7 @@ namespace Registrator.Module.BusinessObjects
                             // тип оплаты. При отправке всегда 0. Решение принимает ТФОМС и возвращает как статус.
                             // можно фильтровать по оплате (если 1, вообще не трогаем)
                             new XElement("OPLATA", 0));
-            
+
             // данные оказанной услуги
             var medService = new XElement("USL",
                     // порядковый номер в пределах случая. Для дневного стационара всегда 1, т.к. оказывается одна услуга
@@ -416,6 +416,9 @@ namespace Registrator.Module.BusinessObjects
 
             /// <summary>Операнд свойства DataVypiski</summary>
             public OperandProperty DataVypiski { get { return new OperandProperty(GetNestedName("DataVypiski")); } }
+
+            /// <summary>Операнд свойства Doctor</summary>
+            public Doctor.FieldsClass Doctor { get { return new Doctor.FieldsClass("Doctor"); } }
         }
     }
 

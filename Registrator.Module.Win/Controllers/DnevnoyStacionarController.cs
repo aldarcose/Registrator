@@ -155,6 +155,16 @@ namespace Registrator.Module.Win.Controllers
         private void exportDataReestrAction_Execute(object sender, PopupWindowShowActionExecuteEventArgs e)
         {
             var fields = e.PopupWindowViewCurrentObject as DayHospitalExportParameters;
+            
+            GroupOperator doctorDSCriteria = new GroupOperator();
+            GroupOperator doctorVCCriteria = new GroupOperator();
+            if (fields.Doctor != null)
+            {
+                doctorDSCriteria.Operands.Add(DnevnoyStacionar.Fields.Doctor.Oid == fields.Doctor.Oid);
+                doctorVCCriteria.Operands.Add(VisitCase.Fields.Doctor.Oid == fields.Doctor.Oid);
+            }
+
+            string lpuCode = fields.LpuCode;
 
             // перед выгрузкой следует проверить данные на валидность, при необходимости вывести список с ошибками.
             var sfd = new System.Windows.Forms.SaveFileDialog();
@@ -176,7 +186,7 @@ namespace Registrator.Module.Win.Controllers
                 // Пространство хранимых объектов
                 IObjectSpace objectSpace = Application.CreateObjectSpace();
 
-                IList<DnevnoyStacionar> dayHospitals = objectSpace.GetObjects<DnevnoyStacionar>(
+                IList<DnevnoyStacionar> dayHospitals = objectSpace.GetObjects<DnevnoyStacionar>(doctorDSCriteria &
                     DnevnoyStacionar.Fields.ResultatOplati != new OperandValue(Oplata.Polnaya) &
                     DnevnoyStacionar.Fields.DataVypiski >= fields.FromDate &
                     DnevnoyStacionar.Fields.DataVypiski <= fields.ToDate);
@@ -218,7 +228,7 @@ namespace Registrator.Module.Win.Controllers
                         // получаем запись LM реестра
                         rootLM.Add(dayHospital.Pacient.GetReestrElement());
                         // получаем запись HM реестра
-                        XElement xZap = dayHospital.GetReesterElement(++recordNum);
+                        XElement xZap = dayHospital.GetReesterElement(++recordNum, lpuCode);
                         rootHM.Add(xZap);
 
                         var decimalValue = Utils.GetDecimalFromString(xZap.Element("SLUCH").Element("SUMV").Value);
@@ -234,7 +244,7 @@ namespace Registrator.Module.Win.Controllers
                 }
 
                 // Посещения
-                IList<VisitCase> visitCases = objectSpace.GetObjects<VisitCase>(
+                IList<VisitCase> visitCases = objectSpace.GetObjects<VisitCase>(doctorVCCriteria &
                     VisitCase.Fields.DateIn >= fields.FromDate &
                     VisitCase.Fields.DateOut <= fields.ToDate);
 
@@ -253,7 +263,7 @@ namespace Registrator.Module.Win.Controllers
                         // получаем запись LM реестра
                         rootLM.Add(visitCase.Pacient.GetReestrElement());
                         // получаем запись HM реестра
-                        XElement xZap = visitCase.GetReestrElement(++recordNum);
+                        XElement xZap = visitCase.GetReestrElement(++recordNum, lpuCode);
                         rootHM.Add(xZap);
 
                         var decimalValue = Utils.GetDecimalFromString(xZap.Element("SLUCH").Element("SUMV").Value);
@@ -285,7 +295,7 @@ namespace Registrator.Module.Win.Controllers
                         // получаем запись LM реестра
                         rootLM.Add(dispCase.Pacient.GetReestrElement());
                         // получаем запись HM реестра
-                        XElement xZap = dispCase.GetReestrElement(++recordNum);
+                        XElement xZap = dispCase.GetReestrElement(++recordNum, lpuCode);
                         rootHM.Add(xZap);
 
                         var decimalValue = Utils.GetDecimalFromString(xZap.Element("SLUCH").Element("SUMV").Value);
@@ -614,6 +624,12 @@ namespace Registrator.Module.Win.Controllers
 
         [XafDisplayName("Выгрузить иногородних")]
         public bool IsInogorodniy { get; set; }
+
+        [XafDisplayName("Доктор")]
+        public Doctor Doctor { get; set; }
+
+        [XafDisplayName("Код ЛПУ")]
+        public string LpuCode { get; set; }
     }
 
     [DomainComponent]

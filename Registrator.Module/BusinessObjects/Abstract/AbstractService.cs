@@ -466,8 +466,6 @@ namespace Registrator.Module.BusinessObjects.Abstract
 
         public abstract bool IsValidForReestr();
         public abstract XElement GetReestrElement();
-        public abstract XElement GetReestrElement(int zapNumber);
-
 
         #region INotifyPropertyChanged
 
@@ -555,6 +553,5 @@ namespace Registrator.Module.BusinessObjects.Abstract
         //интерфейс элемента реестра реализуется в конкретной услуге
         public abstract bool IsValidForReestr();
         public abstract XElement GetReestrElement();
-        public abstract XElement GetReestrElement(int zapNumber);
     }
 }

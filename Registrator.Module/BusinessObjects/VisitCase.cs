@@ -185,14 +185,14 @@ namespace Registrator.Module.BusinessObjects
             throw new NotImplementedException();
         }
 
-        public override System.Xml.Linq.XElement GetReestrElement(int zapNumber)
+        public System.Xml.Linq.XElement GetReestrElement(int zapNumber, string lpuCode = null)
         {
             // проверяем поля услуги
             //if (IsValidForReestr() == false)
             //    return null;
 
             const int isBaby = 0;
-            string lpuCode = Settings.MOSettings.GetCurrentMOCode(Session);
+            //string lpuCode = Settings.MOSettings.GetCurrentMOCode(Session);
             string lpuCode_1 = lpuCode;
             const string dateTimeFormat = "{0:yyyy-MM-dd}";
             const string decimalFormat = "n2";
@@ -240,12 +240,14 @@ namespace Registrator.Module.BusinessObjects
             // Код МО
             sluchElement.Add(new XElement("LPU", this.LPU.Code));
 
+            string podr = lpuCode + (Profil != null ? (int?)Profil.Code : null) +
+                (Otdelenie != null ? Otdelenie.Code : null);
+
             if (!string.IsNullOrEmpty(this.LPU_1))
                 // код подразделения МО
                 sluchElement.Add(new XElement("LPU_1", this.LPU_1));
             // Код отделения
-            if (Otdelenie != null)
-                sluchElement.Add(new XElement("PODR", this.Otdelenie.Code));
+            sluchElement.Add(new XElement("PODR", podr));
             // Профиль
             if (Profil != null)
                 sluchElement.Add(new XElement("PROFIL", Profil.Code));
@@ -258,17 +260,17 @@ namespace Registrator.Module.BusinessObjects
             sluchElement.Add(new XElement("DATE_2", string.Format(dateTimeFormat, this.DateOut)));
             // Первичный диагноз
             if (PreDiagnose != null && PreDiagnose.Diagnose != null)
-                sluchElement.Add(new XElement("DS0", PreDiagnose.Diagnose.CODE));
+                sluchElement.Add(new XElement("DS0", PreDiagnose.Diagnose.MKB));
             // основной диагноз
             if (MainDiagnose != null && MainDiagnose.Diagnose != null)
-                sluchElement.Add(new XElement("DS1", MainDiagnose.Diagnose.CODE));
+                sluchElement.Add(new XElement("DS1", MainDiagnose.Diagnose.MKB));
 
             // Сопутствующие диагнозы
             foreach(var ds2 in SoputsDiagnoses)
-                sluchElement.Add(new XElement("DS2", ds2.CODE));
+                sluchElement.Add(new XElement("DS2", ds2.MKB));
             // Диагнозы осложнений
             foreach(var ds3 in OslozhDiagnoses)
-                sluchElement.Add(new XElement("DS3", ds3.CODE));
+                sluchElement.Add(new XElement("DS3", ds3.MKB));
 
             // проверить карту пациента
             // Вес при рождении
@@ -290,7 +292,7 @@ namespace Registrator.Module.BusinessObjects
             // Код классификатора мед. спец-й
             sluchElement.Add(new XElement("VERS_SPEC", this.VersionSpecClassifier));
             // Код врача, закрывшего случай
-            sluchElement.Add(new XElement("IDDOCT", this.Doctor.InnerCode));
+            sluchElement.Add(new XElement("IDDOCT", this.Doctor.SNILS));
 
             // Особые случаи
             //sluchElement.Add(new XElement("OS_SLUCH", (int)this.OsobiySluchay));
@@ -312,8 +314,8 @@ namespace Registrator.Module.BusinessObjects
 
             // Данные по услугам
             int serviceCounter = 1;
-            foreach (var usl in Services)
-                sluchElement.Add(usl.GetReestrElement(serviceCounter++));
+            foreach (var usl in Services.OfType<MedService>())
+                sluchElement.Add(usl.GetReestrElement(serviceCounter++, lpuCode));
 
             if (!string.IsNullOrEmpty(this.Comment))
                 // Служебное поле

@@ -91,10 +91,10 @@ namespace Registrator.Module.BusinessObjects
             throw new NotImplementedException();
         }
 
-        public override System.Xml.Linq.XElement GetReestrElement(int zapNumber)
+        public System.Xml.Linq.XElement GetReestrElement(int zapNumber, string lpuCode = null)
         {
             const int isBaby = 0;
-            string lpuCode = Settings.MOSettings.GetCurrentMOCode(Session);
+            //string lpuCode = Settings.MOSettings.GetCurrentMOCode(Session);
             string lpuCode_1 = lpuCode;
             const string dateTimeFormat = "{0:yyyy-MM-dd}";
             const string decimalFormat = "n2";
@@ -215,8 +215,8 @@ namespace Registrator.Module.BusinessObjects
 
             // Данные по услугам
             int serviceCounter = 1;
-            foreach (var usl in Services)
-                sluchElement.Add(usl.GetReestrElement(serviceCounter++));
+            foreach (var usl in Services.OfType<DispanserizationService>())
+                sluchElement.Add(usl.GetReestrElement(serviceCounter++, lpuCode));
 
             if (!string.IsNullOrEmpty(this.Comment))
                 // Служебное поле

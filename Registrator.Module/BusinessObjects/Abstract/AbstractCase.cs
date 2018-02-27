@@ -124,10 +124,9 @@ namespace Registrator.Module.BusinessObjects.Abstract
 
         /// <summary>
         /// Обязательное поле N(2)
-        /// Способо оплаты мед. помощи
+        /// Способ оплаты мед. помощи
         /// </summary>
         [XafDisplayName("Способ оплаты мед. помощи")]
-        [Browsable(false)]
         public SposobOplatiMedPom SposobOplMedPom { get; set; }
 
         /// <summary>
@@ -497,7 +496,6 @@ namespace Registrator.Module.BusinessObjects.Abstract
         // интерфейс элемента реестра реализуется у потомков (у госпитализации свои необходимые поля)
         public abstract bool IsValidForReestr();
         public abstract XElement GetReestrElement();
-        public abstract XElement GetReestrElement(int zapNumber);
 
         /// <summary>Операнды свойств класса</summary>
         public static new readonly FieldsClass Fields = new FieldsClass();
@@ -569,6 +567,5 @@ namespace Registrator.Module.BusinessObjects.Abstract
 
         public abstract bool IsValidForReestr();
         public abstract XElement GetReestrElement();
-        public abstract XElement GetReestrElement(int zapNumber);
     }
 }

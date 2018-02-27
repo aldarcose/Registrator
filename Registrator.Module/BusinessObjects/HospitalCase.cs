@@ -179,7 +179,7 @@ namespace Registrator.Module.BusinessObjects
             return GetReestrElement(index);
         }
 
-        public override System.Xml.Linq.XElement GetReestrElement(int zapNumber)
+        public System.Xml.Linq.XElement GetReestrElement(int zapNumber, string lpuCode = null)
         {
             // проверяем поля услуги
             if (IsValidForReestr() == false)
@@ -217,9 +217,11 @@ namespace Registrator.Module.BusinessObjects
                 // код подразделения МО
                 element.Add(new XElement("LPU_1", this.LPU_1));
 
-            if (this.Otdelenie != null)
-                // Код отделения
-                element.Add(new XElement("PODR", this.Otdelenie.Code));
+            string podr = lpuCode + (Profil != null ? (int?)Profil.Code : null) +
+                            (Otdelenie != null ? Otdelenie.Code : null);
+
+            // Код отделения
+            element.Add(new XElement("PODR", podr));
 
             // Профиль
             element.Add(new XElement("PROFIL", this.Profil.Code));
@@ -273,7 +275,7 @@ namespace Registrator.Module.BusinessObjects
             element.Add(new XElement("VERS_SPEC", this.VersionSpecClassifier));
 
             // Код врача, закрывшего случай
-            element.Add(new XElement("IDDOCT", this.Doctor.InnerCode));
+            element.Add(new XElement("IDDOCT", this.Doctor.SNILS));
 
             /*// Особые случаи
             element.Add(new XElement("OS_SLUCH", (int)this.OsobiySluchay));*/
@@ -297,8 +299,8 @@ namespace Registrator.Module.BusinessObjects
 
             // Данные по услугам
             int serviceCounter = 1;
-            foreach (var usl in Services)
-                element.Add(new XElement("USL", usl.GetReestrElement(serviceCounter++)));
+            foreach (var usl in Services.OfType<MedService>())
+                element.Add(new XElement("USL", usl.GetReestrElement(serviceCounter++, lpuCode)));
 
             if (!string.IsNullOrEmpty(this.Comment))
                 // Служебное поле

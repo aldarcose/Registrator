@@ -40,7 +40,7 @@ namespace Registrator.Module.BusinessObjects
             //return GetReestrElement(zap);
         }
 
-        public override System.Xml.Linq.XElement GetReestrElement(int zapNumber)
+        public System.Xml.Linq.XElement GetReestrElement(int zapNumber, string lpuCode = null)
         {
             const string decimalFormat = "n2";
 
@@ -56,19 +56,24 @@ namespace Registrator.Module.BusinessObjects
             element.Add(new XElement("IDSERV", zapNumber));
 
             // код МО
-            element.Add(new XElement("LPU", this.LPU.Code));
+            element.Add(new XElement("LPU", lpuCode));
 
             // код подразделения МО
             if (!string.IsNullOrEmpty(this.LPU_1))
-                element.Add(new XElement("LPU_1", this.LPU_1));
+                element.Add(new XElement("LPU_1", lpuCode));
 
+            string podr = lpuCode + (Profil != null ? (int?)Profil.Code : null) + 
+                (Otdelenie != null ? Otdelenie.Code : null);
             // код отделения
             if (this.Otdelenie != null)
-                element.Add(new XElement("PODR", this.LPU_1));
+                element.Add(new XElement("PODR", podr));
 
             // профиль мед. услуги
             if (Profil != null)
-                element.Add(new XElement("PROFIL", Profil.Code));
+                element.Add(new XElement("PROFIL", lpuCode + 
+                    (Profil != null ? (int?)Profil.Code : null) +
+                    (Otdelenie != null ? Otdelenie.Code : null)
+                    ));
 
             // вид мед. вмешательства
             if (this.VidVme != null)
@@ -83,7 +88,7 @@ namespace Registrator.Module.BusinessObjects
 
             // Диагноз, падает основной диагноз
             if (VisitCase.MainDiagnose != null && VisitCase.MainDiagnose.Diagnose != null)
-                element.Add(new XElement("DS", VisitCase.MainDiagnose.Diagnose.CODE));
+                element.Add(new XElement("DS", VisitCase.MainDiagnose.Diagnose.MKB));
 
             // Код оказанной услуги
             element.Add(new XElement("CODE_USL", Usluga.Code));
