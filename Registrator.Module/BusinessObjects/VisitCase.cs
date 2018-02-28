@@ -238,14 +238,12 @@ namespace Registrator.Module.BusinessObjects
             if (FromLPU != null)
                 sluchElement.Add(new XElement("NRP_MO", this.FromLPU.Code));
             // Код МО
-            sluchElement.Add(new XElement("LPU", this.LPU.Code));
+            sluchElement.Add(new XElement("LPU", lpuCode));
+            // код подразделения МО
+            sluchElement.Add(new XElement("LPU_1", lpuCode));
 
             string podr = lpuCode + (Profil != null ? (int?)Profil.Code : null) +
                 (Otdelenie != null ? Otdelenie.Code : null);
-
-            if (!string.IsNullOrEmpty(this.LPU_1))
-                // код подразделения МО
-                sluchElement.Add(new XElement("LPU_1", this.LPU_1));
             // Код отделения
             sluchElement.Add(new XElement("PODR", podr));
             // Профиль
