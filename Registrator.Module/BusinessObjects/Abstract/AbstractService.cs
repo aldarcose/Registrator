@@ -274,7 +274,6 @@ namespace Registrator.Module.BusinessObjects.Abstract
         /// Классификатор профилей оказанной медицинской помощи (V002)
         /// </summary>
         [XafDisplayName("Отделение МО")]
-        [Browsable(false)]
         public MedProfil Profil { get; set; }
 
         /// <summary>
@@ -283,7 +282,6 @@ namespace Registrator.Module.BusinessObjects.Abstract
         /// Указывается в соответствии с номенклатурой медицинских услуг (V001)
         /// </summary>
         [XafDisplayName("Вид мед. вмешательства")]
-        [Browsable(false)]
         public VidMedVmeshatelstva VidVme { get; set; }
 
         /// <summary>
@@ -292,7 +290,6 @@ namespace Registrator.Module.BusinessObjects.Abstract
         /// Заполняется в зависимости от профиля оказанной медицинской помощи
         /// </summary>
         [XafDisplayName("Детский профиль")]
-        [Browsable(false)]
         public PriznakDetProfila DetProfil { get; set; }
 
         /// <summary>

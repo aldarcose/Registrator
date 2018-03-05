@@ -48,7 +48,7 @@ namespace Registrator.Module.BusinessObjects
             //if (IsValidForReestr() == false)
             //    return null;
 
-            const string dateTimeFormat = "{0:yyyy-M-d}";
+            const string dateTimeFormat = "{0:yyyy-MM-dd}";
 
             XElement element = new XElement("USL");
 
@@ -65,15 +65,11 @@ namespace Registrator.Module.BusinessObjects
             string podr = lpuCode + (Profil != null ? (int?)Profil.Code : null) + 
                 (Otdelenie != null ? Otdelenie.Code : null);
             // код отделения
-            if (this.Otdelenie != null)
-                element.Add(new XElement("PODR", podr));
+            element.Add(new XElement("PODR", podr));
 
             // профиль мед. услуги
             if (Profil != null)
-                element.Add(new XElement("PROFIL", lpuCode + 
-                    (Profil != null ? (int?)Profil.Code : null) +
-                    (Otdelenie != null ? Otdelenie.Code : null)
-                    ));
+                element.Add(new XElement("PROFIL", Profil.Code));
 
             // вид мед. вмешательства
             if (this.VidVme != null)
@@ -94,7 +90,7 @@ namespace Registrator.Module.BusinessObjects
             element.Add(new XElement("CODE_USL", Usluga.Code));
 
             // кол-во оказанных услуг
-            element.Add(new XElement("KOL_USL", this.KolUslug.ToString("0.00")));
+            element.Add(new XElement("KOL_USL", this.KolUslug.ToString("N0")));
 
             // тариф услуги (для госпитализации брать КЗ из КСГ)
             if (this.Usluga != null && this.Usluga.Tarif.HasValue)

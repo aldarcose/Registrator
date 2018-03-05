@@ -373,7 +373,7 @@ namespace Registrator.Module.BusinessObjects
                     // Код услуги	Территориальный классификатор услуг
                     new XElement("CODE_USL", codeUslugi),
                     // койкодни
-                    new XElement("KOL_USL", this.KoikoDni),
+                    new XElement("KOL_USL", KoikoDni),
                     new XElement("TARIF", (tarif * Convert.ToDecimal(ksg.KoeffZatrat)).ToString(decimalFormat).Replace(",", ".")),
                     new XElement("SUMV_USL", (tarif * Convert.ToDecimal(ksg.KoeffZatrat)).ToString(decimalFormat).Replace(",", ".")),
                     // специальность врача

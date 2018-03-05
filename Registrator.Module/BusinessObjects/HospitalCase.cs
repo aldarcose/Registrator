@@ -205,7 +205,7 @@ namespace Registrator.Module.BusinessObjects
 
             if (this.FromLPU != null)
                 // Направившее МО
-                element.Add(new XElement("NRP_MO", this.FromLPU.Code));
+                element.Add(new XElement("NPR_MO", this.FromLPU.Code));
 
             // Направление (госпитализация)
             element.Add(new XElement("EXTR", (int)this.Hospitalizacia));
@@ -275,7 +275,7 @@ namespace Registrator.Module.BusinessObjects
             element.Add(new XElement("VERS_SPEC", this.VersionSpecClassifier));
 
             // Код врача, закрывшего случай
-            element.Add(new XElement("IDDOCT", this.Doctor.SNILS));
+            element.Add(new XElement("IDDOKT", this.Doctor.SNILS));
 
             /*// Особые случаи
             element.Add(new XElement("OS_SLUCH", (int)this.OsobiySluchay));*/

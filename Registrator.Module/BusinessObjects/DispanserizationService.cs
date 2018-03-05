@@ -39,7 +39,7 @@ namespace Registrator.Module.BusinessObjects
             //if (IsValidForReestr() == false)
             //    return null;
 
-            const string dateTimeFormat = "{0:yyyy-M-d}";
+            const string dateTimeFormat = "{0:yyyy-MM-dd}";
 
             XElement element = new XElement("USL");
 

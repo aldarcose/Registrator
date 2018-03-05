@@ -139,7 +139,7 @@ namespace Registrator.Module.BusinessObjects
 
             // Направившее МО
             //if (FromLPU != null)
-            //    sluchElement.Add(new XElement("NRP_MO", this.FromLPU.Code));
+            //    sluchElement.Add(new XElement("NPR_MO", this.FromLPU.Code));
             // Код МО
             sluchElement.Add(new XElement("LPU", this.LPU.Code));
 
@@ -193,7 +193,7 @@ namespace Registrator.Module.BusinessObjects
             // Код классификатора мед. спец-й
            // sluchElement.Add(new XElement("VERS_SPEC", this.VersionSpecClassifier));
             // Код врача, закрывшего случай
-           // sluchElement.Add(new XElement("IDDOCT", this.Doctor.InnerCode));
+           // sluchElement.Add(new XElement("IDDOKT", this.Doctor.InnerCode));
 
             // Особые случаи
             //sluchElement.Add(new XElement("OS_SLUCH", (int)this.OsobiySluchay));

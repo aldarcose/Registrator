@@ -254,7 +254,7 @@ namespace Registrator.Module.Win.Controllers
                     xschet = AddXElement(xschet, "YEAR", list.SCHET.YEAR, false);
                     xschet = AddXElement(xschet, "MONTH", list.SCHET.MONTH, false);
                     xschet = AddXElement(xschet, "NSCHET", list.SCHET.NSCHET, false);
-                    xschet = AddXElement(xschet, "DSCHET", list.SCHET.DSCHET, false);
+                    xschet = AddXElement(xschet, "NSCHET", list.SCHET.DSCHET, false);
                     xschet = AddXElement(xschet, "PLAT", list.SCHET.PLAT, false);
                     xschet = AddXElement(xschet, "SUMMAV", list.SCHET.SUMMAV, false);
                     xschet = AddXElement(xschet, "COMENTS", list.SCHET.COMENTS, false);
